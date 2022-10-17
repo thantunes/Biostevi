@@ -1,0 +1,218 @@
+.CustomDescData {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 1140px !important;
+    padding: 1rem !important;
+}
+
+.CustomDescData>div>h2 {
+    color: #009fc2 !important;
+    font-size: 26px;
+    font-weight: normal !important;
+}
+
+.CustomDescData>div>p {
+    color: #555;
+    font-size: 17px !important;
+    font-family: Helvetica;
+    font-weight: normal;
+    margin-top: 10px;
+}
+
+html {
+    scroll-padding-top: 60px;
+}
+
+
+.BlockStyle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.BlockStyle div>p {
+    display: flex;
+    flex-direction: row;
+}
+
+.BlockStyle p .descricao-pdp-esq {
+    float: left;
+    max-width: 708px;
+    padding-right: 15px;
+    overflow: auto;
+    direction: rtl;
+    text-align: left;
+}
+
+.BlockStyle .descricao-pdp-dir .BlockStyle:nth-child(odd) div:not(.descricao-pdp-esq) {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.BlockStyle:nth-child(even) div:not() {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.HorizontalBanner {
+    flex-direction: column;
+}
+
+.Default-Data {
+    margin: 10px 0px;
+}
+
+.BlockStyle .Default-Data h2 {
+    color: #009fc2 !important;
+    font-size: 26px;
+    font-weight: normal !important;
+    text-align: start;
+    width: 100%;
+
+}
+
+.Default-Data span {
+    width: 100%;
+    color: #555;
+    font-size: 17px !important;
+    font-family: Helvetica;
+    font-weight: normal;
+    margin-top: 10px;
+    white-space: break-spaces;
+    line-height: 23px;
+}
+
+
+.Default-Data {
+    justify-content: flex-start;
+
+}
+
+.BlockStyle table {
+    width: 75%;
+}
+
+.TableHeader {
+    width: 100%;
+}
+
+.TableContentBox {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas: ". . .";
+}
+
+.TableContentBox td div {
+    text-align: start;
+    justify-content: center !important;
+    align-items: center !important;
+    display: flex;
+    flex-direction: column;
+}
+
+.tableCenter {
+    margin-top: 25px;
+    align-items: center;
+    justify-content: center;
+}
+
+.TableContentBox td {
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.TableContentBox td img {
+    min-width: 100px;
+    max-width: 100px;
+}
+
+.TableContentBox td div h3 {
+    color: #009fc2;
+}
+
+.DescBox h2 {
+    color: #009fc2 !important;
+    font-size: 26px;
+    font-weight: normal !important;
+    text-align: start;
+    width: 100%;
+}
+
+.descricao-pdp-esq h2,
+.descricao-pdp-full-check h2 {
+    color: #009fc2 !important;
+    font-size: 26px;
+    font-weight: normal !important;
+    text-align: start;
+    width: 100%;
+}
+
+.descricao-pdp-full-check h2 {
+    text-align: center;
+}
+
+.descricao-pdp-esq,
+.descricao-pdp-full-check {
+    color: #727273;
+    line-height: 24px;
+    padding: 1rem !important;
+    margin-top: 30px;
+}
+
+.TableContentBox td div h3,
+.TableContentBox td div p {
+    margin: 5px 0;
+    padding: 0;
+}
+.BlockStyle p .descricao-pdp-dir{
+    float: right;
+    max-width: 708px;
+    padding-right: 15px;
+    direction: rtl;
+    text-align: left;
+}
+.BlockStyle p .descricao-pdp-dir{
+    color: #727273;
+    line-height: 24px;
+    padding: 1rem !important;
+    margin-top: 30px;
+}
+.BlockStyle p .descricao-pdp-dir h2  {
+    color: #009fc2 !important;
+    font-size: 26px;
+    font-weight: normal !important;
+    width: 100%;
+}
+.BlockStyle p .descricao-pdp-dir h3 {
+    direction: ltr;
+}
+.BlockStyle p .descricao-pdp-esq h3 {
+    direction: ltr;
+}
+.DescBox {
+    color: #727273;
+    line-height: 24px;
+    padding: 1rem !important;
+    margin-top: 30px;
+    white-space: break-spaces;
+}
+
+    iframe {
+    margin: auto;
+    display: block;
+    border-radius: 25px;
+}

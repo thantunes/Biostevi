@@ -1,0 +1,67 @@
+{
+    "store.custom#influenciador": {
+      "blocks": [ "image#bannerinfluenciador","image#mobilebannerinfluenciador","flex-layout.row#influenciador","flex-layout.row#shelfprateleirainfluences"]
+    },
+    "flex-layout.row#influenciador": {
+      "children": ["flex-layout.col#text-influenciador"]
+    },
+
+
+
+    "image#bannerinfluenciador": {
+        "props": {
+          "src": "/arquivos/imagem-banner-influenciador.png",
+        
+          "blockClass": "banner-influenciador-desktop"
+        }
+      },
+    
+
+      "image#mobilebannerinfluenciador": {
+        "props": {
+          "src": "/arquivos/imagem-banner-influenciador.png",
+          "blockClass": "banner-influenciador-mobile"
+        }
+      },
+   
+
+
+
+
+
+
+
+
+
+
+    "flex-layout.col#text-influenciador": {
+      "children": ["rich-text#influenciador-title", "rich-text#influenciador-content"],
+      "props": {
+        "preventVerticalStretch": true
+      }
+    },
+    "rich-text#influenciador-title": {
+      "props": {
+        "text": "Nome do Influenciador",
+        "blockClass": "titulo"
+      }
+    },
+    "rich-text#influenciador-content": {
+      "props": {
+        "text": "Texto" }
+    },
+
+
+    "flex-layout.row#shelfprateleirainfluences": {
+        "children": ["list-context.product-list#prateleirainfluence"]
+      },
+      "list-context.product-list#prateleirainfluence": {
+        "blocks": ["product-summary.shelf"],
+        "children": ["slider-layout#prateleiralancamentos"],
+        "props": {
+          "orderBy": "OrderByReleaseDateDESC",
+          "collection": "148"
+        }
+      }
+
+  }

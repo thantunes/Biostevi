@@ -1,0 +1,398 @@
+{
+  "footer": {
+    "blocks": ["footer-layout.desktop", "footer-layout.mobile"]
+  },
+  "footer-layout.desktop": {
+    "children": [
+      "flex-layout.row#footer-1-desktop",
+      "flex-layout.row#espacamento-footer",
+      "flex-layout.row#footer-2-desktop",
+      "flex-layout.row#espacamento-footer",
+      "flex-layout.row#footer-3-desktop", 
+      "flex-layout.row#footer-4-desktop",
+      "flex-layout.row#developers",
+      "flex-layout.row#iconwhats"
+
+    ]
+  },
+
+
+  "flex-layout.row#iconwhats": {
+    "children": ["image#whatsapp-flutuante"],
+    "props": {
+      "blockClass": "textofooterfinal"
+    }
+  },
+  
+
+
+
+  
+
+
+  
+
+  "flex-layout.row#footer-1-desktop": {
+    "children": [
+      "vtex.menu@2.x:menu#Products",
+      "footer-spacer",
+      "vtex.menu@2.x:menu#footer-decoration",
+      "footer-spacer",
+      "vtex.menu@2.x:menu#footer-clothing",
+      "footer-spacer",
+      "vtex.menu@2.x:menu#footer-bags",
+      "footer-spacer"
+     
+    ],
+    "props": {
+      "blockClass": "menu-row",
+      "paddingTop": 6,
+      "paddingBottom": 3
+    }
+  },
+
+
+  "footer-spacer":{
+    "props": {
+      "blockClass": "footer-espaco"
+    }
+  },
+
+
+
+
+
+
+  "social-networks": {
+    "props": {
+      "text": "Social",
+      "socialNetworks": [
+        {
+          "name": "Facebook",
+          "url": "https://www.facebook.com/Biostevi"
+        },
+        {
+          "name": "Instagram",
+          "url": "https://www.instagram.com/biostevi/?hl=pt-br"
+        },
+        {
+          "name": "Pinterest",
+          "url": "https://br.pinterest.com/mkt1986/_saved/"
+        },
+        {
+          "name": "LinkedIn",
+          "url": "https://www.linkedin.com/company/biost%C3%A9vi/?viewAsMember=true"
+        },
+        {
+          "name": "Youtube",
+          "url": "https://www.youtube.com/channel/UClf3HG1LXG_eywTd9A582uw"
+        }
+      ]
+    }
+  },
+
+  
+
+
+
+ 
+
+
+
+  "flex-layout.row#espacamento-footer":{
+     "props":{
+      "blockClass": "espacamento-footer"
+     }
+  },
+
+
+
+
+
+  "flex-layout.row#footer-2-desktop": {
+    "children": [
+      "social-networks",
+    
+      "flex-layout.col#metodos-de-pagamentos"
+      
+    ],
+    "props": {
+      "blockClass": "payment-methods"
+    }
+  },
+  "accepted-payment-methods": {
+    "props": {
+      "blockClass": "payment-methods-title",
+      "paymentMethods": ["MasterCard", "Visa", "Diners Club"]
+    
+    }
+  },
+
+
+
+  "flex-layout.col#metodos-de-pagamentos":{
+     "children":["rich-text#metodos-de-pagamentos-titulo","flex-layout.row#metodos-de-pagamentos-bandeiras"],
+     "props":{
+      "blockClass": "footer-bandeiras-cartoes"
+    }
+  },
+
+
+  "rich-text#metodos-de-pagamentos-titulo": {
+    "props": {
+      "text": "Formas de Pagamento",
+      "blockClass": "footer-bandeiras-titulo"
+    }
+  },
+
+  
+
+
+
+
+
+
+
+
+
+
+  "flex-layout.row#metodos-de-pagamentos-bandeiras":{
+    "children": ["image#ame","image#mastercard","image#visa","image#americanexpress","image#elo","image#hipercard","image#aura","image#jcb","image#discover","image#diners","image#boleto","image#pix"],
+    "props":{
+      "blockClass": "bandeiras-cartoes"
+    }
+  },
+
+
+
+
+  "image#ame": {
+    "props": {
+      "src":"https://stevia.vteximg.com.br/arquivos/ame.png",
+      "blockClass": "bandeira-ame"
+    }
+  },
+
+  "image#boleto": {
+    "props": {
+      "src":"https://stevia.vteximg.com.br/arquivos/boleto.png",
+      "blockClass": "bandeira-boleto"
+    }
+  },
+
+  "image#pix": {
+    "props": {
+      "src":"https://stevia.vteximg.com.br/arquivos/pix.png",
+      "blockClass": "bandeira-pix"
+    }
+  },
+
+
+  "image#mastercard": {
+    "props": {
+      "src":"https://stevia.vteximg.com.br/arquivos/mastercard.png",
+      "blockClass": "bandeira-mastercard"
+    }
+  },
+  "image#visa": {
+    "props": {
+      "src":"https://stevia.vteximg.com.br/arquivos/visa.png",
+      "blockClass": "bandeira-visa"
+    }
+  },
+  "image#americanexpress": {
+    "props": {
+      "src":"https://stevia.vteximg.com.br/arquivos/american.png",
+      "blockClass": "bandeira-amex"
+    }
+  },
+  "image#elo": {
+    "props": {
+      "src":"https://stevia.vteximg.com.br/arquivos/elo.png",
+      "blockClass": "bandeira-elo"
+    }
+  },
+  "image#hipercard": {
+    "props": {
+      "src":"https://stevia.vteximg.com.br/arquivos/hipercard.png",
+      "blockClass": "bandeira-hipercard"
+    }
+  },
+  "image#aura": {
+    "props": {
+      "src":"https://stevia.vteximg.com.br/arquivos/aura.png",
+      "blockClass": "bandeira-aura"
+    }
+  },
+  "image#jcb": {
+    "props": {
+      "src":"https://stevia.vteximg.com.br/arquivos/jcb.png",
+      "blockClass": "bandeira-jcb"
+    }
+  },
+  "image#discover": {
+    "props": {
+      "src":"https://stevia.vteximg.com.br/arquivos/discover.png",
+      "blockClass": "bandeira-discover"
+    }
+  },
+  "image#diners": {
+    "props": {
+      "src":"https://stevia.vteximg.com.br/arquivos/dinners.png",
+      "blockClass": "bandeira-diners"
+    }
+  },
+
+  
+
+
+
+
+
+
+
+
+  "flex-layout.row#footer-3-desktop": {
+    "children": ["rich-text#footer","rich-text#farmaucetico","rich-text#copyright"],
+    "props": {
+      "blockClass": "credits"
+    }
+  },
+  
+  "rich-text#footer": {
+    "props": {
+      "text": "BIOSTÉVI PHARMA \n Razão Social: Manipulação Stevia LTDA \n CNPJ 65.776.015/0001-91 \n Rua Bernardino de Campos, 156 - Santo André - São Paulo, CEP 09015-010",
+      "blockClass": "footer-aling-center"
+    }
+  },
+
+  "rich-text#farmaucetico": {
+    "props": {
+      "text": "Farmacêutico Responsável: Dr. Hélio Takashi Kozima | CDF-SP: 7795 \n e-mail: farmaceutico@biostevi.com.br \n AE:1.40443.9 | AFE:7.03654.7 \n Licença Sanitária nº: 354780901-477-000043-1-6 \n Certidão de Regularidade CRF SP 03322",
+      "blockClass": "footer-aling-center"
+    }
+  },
+
+  "rich-text#copyright": {
+    "props": {
+      "text": "Copyright © 2020. Todos os direitos reservados. \n Todas as marcas e suas imagens são de propriedade de seus respectivos donos. \n É vedada a reprodução, total ou parcial, de qualquer conteúdo sem expressa autorização. \n Fotos meramente ilustrativas.", 
+      "blockClass": "footer-aling-center"
+    }
+  },
+
+  "flex-layout.row#footer-4-desktop": {
+    "children": ["rich-text#textofooterfinal"],
+    "props": {
+      "blockClass": "textofooterfinal"
+    }
+  },
+  
+
+  "rich-text#textofooterfinal": {
+    "props": {
+      "text": "PARA MEDICAMENTOS SUJEITOS À PRESCRIÇÃO MÉDICA E FORMULAÇÃO MAGISTRAL, SERÁ SEMPRE REALIZADA AVALIAÇÃO PELO FARMACÊUTICO ANTES DA MANIPULAÇÃO E DISPENSAÇÃO. \n \n As informações contidas neste site são exclusivas para profissionais habilitados da área de saúde, não devem ser usadas para automedicação e não substituem, em hipótese alguma a medicação prescrita pelo profissional da área médica. Somente um profissional habilitado está em condições de diagnosticar qualquer problema de saúde e prescrever o tratamento adequado. \n \n Qualquer dúvida sobre os produtos divulgados em nosso site, entre em contato com um de nossos farmacêuticos através do atendimento ao cliente ou pelo telefone (11) 97133-1874 (Vendas/SAC) e se preferir, poderá dirigir-se a nossa loja na Rua Bernardino de Campos, 156 - Santo André - São Paulo, pois contamos com profissionais farmacêuticos habilitados para mais esclarecimentos. \n \n Os medicamentos sob prescrição só serão dispensados mediante apresentação da receita ou envio por imagens ou e-mail. \n É proibido comercializar medicamentos controlados por meio remoto. \n Medicamentos podem causar efeitos indesejados. \n Evite a automedicação: informe-se com o médico ou farmacêutico. \n 'SE PERSISTIREM OS SINTOMAS, O MÉDICO OU FARMACÊCUTICO DEVERÁ SER CONSULTADO'. \n \n Lei Geral de Proteção de Dados (LGPD): Os dados dos usuários não são utilizados para qualquer forma de promoção, publicidade, propaganda ou outra forma de indução de consumo de medicamentos.", 
+      "blockClass": "footer-aling-center"
+    }
+  },
+
+  
+
+
+
+  "flex-layout.row#developers": {
+    "children": ["image#evision","image#vtex"],
+    "props": {
+      "text": "evision",
+      "blockClass": "footer-aling-center-devs"
+    }
+  },
+
+  "image#vtex": {
+    "props": {
+      "type": "external",
+      "text": "Vtex", 
+      "url": "https://vtex.com/br-pt/",
+      "src":"https://stevia.vteximg.com.br/arquivos/logo-feito-por-vtex.png?v=1312",
+      "blockClass": "footer-logo-vtex"
+    }
+  },
+
+  "image#evision": {
+    "props": {
+      "type": "external",
+      "text": "eVision", 
+      "url": "https://evision.com.br/",
+      "src":"https://stevia.vteximg.com.br/arquivos/logo-feito-por-evision.png?v=1322123",
+      "blockClass": "footer-logo-evision"
+    }
+  },
+
+
+  "image#whatsapp-flutuante": {
+    "props": {
+      "type": "external",
+      "text": "Whatsapp", 
+      "url": "https://api.whatsapp.com/send/?phone=5511971331874&text&app_absent=0",
+      "src":"https://stevia.vteximg.com.br/arquivos/whats-icon.png",
+      "blockClass": "whatsapp-flutuante-icon"
+    }
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+  "footer-layout.mobile": {
+    "children": [
+      "flex-layout.row#1-footer-mobile",
+      "flex-layout.row#2-footer-mobile",
+      "flex-layout.row#footer-3-desktop",
+      "flex-layout.row#footer-4-desktop",
+      "flex-layout.row#developers",
+      "flex-layout.row#iconwhats"
+    ]
+  },
+  "flex-layout.row#2-footer-mobile": {
+    "children": ["flex-layout.col#footer-1-mobile"],
+    "props": {
+      "blockClass": "payment-methods",
+      "paddingTop": 4,
+      "paddingBottom": 4
+    }
+  },
+  "flex-layout.col#footer-1-mobile": {
+    "children": [
+      "flex-layout.col#metodos-de-pagamentos",
+    
+      "social-networks",
+      "rich-text#footer-mobile"
+    ],
+    "props": {
+      "blockClass": "payment-methods",
+      "paddingTop": 4,
+      "paddingBottom": 4,
+      "rowGap": 4
+    }
+  },
+  "flex-layout.row#1-footer-mobile": {
+    "props": {
+      "paddingTop": 4,
+      "paddingBottom": 4
+    },
+    "children": ["vtex.menu@2.x:menu#footer-mobile"]
+  },
+  "rich-text#footer-mobile": {
+    "props": {
+      "text": "Biostevi © | Todos os direitos reservados",
+      "blockClass": "footer-aling-center"
+    }
+  }
+}

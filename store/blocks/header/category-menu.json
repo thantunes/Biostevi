@@ -1,0 +1,2333 @@
+{
+  "vtex.menu@2.x:menu#category-menu": {
+    "props": {
+      "experimentalOptimizeRendering": true
+    },
+    "children": [
+      "menu-item#category-imunidade",
+      "menu-item#category-barbaecabelo",
+      "menu-item#category-emagrecimento",
+      "menu-item#category-desempenhofisico",
+      "menu-item#category-beleza",
+      "menu-item#category-saude",
+      "menu-item#category-saudesexual",
+      "menu-item#category-vegano",
+      "menu-item#blog"
+    ]
+  },
+
+  "menu-item#category-imunidade": {
+    "props": {
+    "id": "menu-item-category-imunidade",
+    "blockClass": "menuimunidade",
+    "type": "custom",
+    "iconId": null,
+    "highlight": false,
+    "itemProps": {
+    "type": "internal",
+    "categoryID":"97",
+    "href": "/saude/imunidade/",
+    "noFollow": false,
+    "tagTitle": "Imunidade",
+    "text": "Imunidade",
+    "blockClass": "link-menu"
+   }
+ }
+},
+
+
+
+
+  "menu-item#category-barbaecabelo": {
+    "props": {
+      "id": "menu-item-category-barbaecabelo",
+      "blockClass": "menubarbaecabelo",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "categoryID":"80",
+        "href": "/barba-e-cabelo/",
+        "noFollow": false,
+        "tagTitle": "Barba e Cabelo",
+        "text": "Barba e Cabelo",
+        "blockClass": "link-menu"
+      }
+    },
+    "blocks": [
+      "vtex.menu@2.x:submenu#barbaecabelo"
+    ]
+  },
+
+  "vtex.menu@2.x:submenu#barbaecabelo": {
+    "props": {
+      "width": "100%"
+    },
+    "children": [
+      "flex-layout.row#menu-barbaecabelo-more"
+    ]
+  },
+
+  "flex-layout.row#menu-barbaecabelo-more": {
+    "children": [
+      "flex-layout.col#menu-barbaecabelo-more-1",
+      "flex-layout.col#menu-barbaecabelo-more-2"
+    ]
+  },
+
+  "flex-layout.col#menu-barbaecabelo-more-1": {
+    "children": [
+      "vtex.menu@2.x:menu#barbaecabelo-more"
+    ]
+  },
+  "flex-layout.col#menu-barbaecabelo-more-2": {
+    "children": [
+      "flex-layout.row#barbacabelobannermenu"
+    ]
+  },
+
+
+
+
+
+
+  
+  "flex-layout.row#barbacabelobannermenu":{
+    "props": {
+      "blockClass": "bloco-home-barbacabelobannermenu"
+      
+    },
+    "children": [
+      "image#barbacabelobannermenu"
+    ]
+  },
+ 
+  "image#barbacabelobannermenu": {
+    "props": {
+      "src": "https://stevia.vteximg.com.br/arquivos/ids/161234/Barba%20e%20Cabelo.png?v=637777821082200000",
+      "link":"/pantogar-master-60-capsulas-1205/p",
+      "maxWidth": "100%" 
+    }
+  },
+
+
+ 
+
+
+
+
+  "vtex.menu@2.x:menu#barbaecabelo-more": {
+    "props": {
+      "orientation": "vertical"
+    },
+    "children": [
+      "menu-item#cabelo",
+      "menu-item#anticaspa",
+      "menu-item#antiqueda",
+      "menu-item#cabelosmistos",
+      "menu-item#cabelosnormais",
+      "menu-item#cabelosoleosos",
+      "menu-item#cabelossecos",
+      "menu-item#espumas",
+      "menu-item#kittratamento",
+      "menu-item#locoes",
+      "menu-item#shampoo",
+      "menu-item#suplementos",
+      "menu-item#barba",
+      "menu-item#espumasbarba",
+      "menu-item#locoesbarba",
+      "menu-item#shampoobarba",
+      "menu-item#suplementosbarba"
+    ]
+  },
+  "menu-item#cabelo": {
+    "props": {
+      "id": "menu-item-cabelo",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/barba-e-cabelo/cabelo",
+        "noFollow": true,
+        "tagTitle": "Cabelo",
+        "text": "Cabelo"
+      }
+    }
+  },
+  "menu-item#anticaspa": {
+    "props": {
+      "id": "menu-item-anticaspa",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/barba-e-cabelo/cabelo/anticaspa",
+        "noFollow": true,
+        "tagTitle": "Anti Caspa",
+        "text": "Anti Caspa"
+      }
+    }
+  },
+  "menu-item#antiqueda": {
+    "props": {
+      "id": "menu-item-antiqueda",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/barba-e-cabelo/cabelo/antiqueda-e-acao-reparadora",
+        "noFollow": true,
+        "tagTitle": "Antiqueda e Ação Reparadora",
+        "text": "Antiqueda e Ação Reparadora"
+      }
+    }
+  },
+
+
+
+
+
+  "menu-item#cabelosmistos": {
+    "props": {
+      "id": "menu-item-cabelosmistos",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/barba-e-cabelo/cabelo/cabelos-mistos",
+        "noFollow": true,
+        "tagTitle": "Cabelos Mistos",
+        "text": "Cabelos Mistos"
+      }
+    }
+  },
+
+
+
+  "menu-item#cabelosnormais": {
+    "props": {
+      "id": "menu-item-cabelosnormaiss",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/barba-e-cabelo/cabelo/cabelos-normais",
+        "noFollow": true,
+        "tagTitle": "Cabelos Normais",
+        "text": "Cabelos Normais"
+      }
+    }
+  },
+
+
+
+
+  "menu-item#cabelosoleosos": {
+    "props": {
+      "id": "menu-item-cabelosoleosos",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/barba-e-cabelo/cabelo/cabelos-oleosos",
+        "noFollow": true,
+        "tagTitle": "Cabelos Oleosos",
+        "text": "Cabelos Oleosos"
+      }
+    }
+  },
+
+
+
+
+  "menu-item#cabelossecos": {
+    "props": {
+      "id": "menu-item-cabelossecos",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/barba-e-cabelo/cabelo/cabelos-secos",
+        "noFollow": true,
+        "tagTitle": "Cabelos Secos",
+        "text": "Cabelos Secos"
+      }
+    }
+  },
+
+
+  "menu-item#espumas": {
+    "props": {
+      "id": "menu-item-cabelossecos",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/barba-e-cabelo/cabelo/espumas",
+        "noFollow": true,
+        "tagTitle": "Espumas",
+        "text": "Espumas"
+      }
+    }
+  },
+
+
+
+  "menu-item#espumasbarba": {
+    "props": {
+      "id": "menu-item-espumabarbas",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/barba-e-cabelo/barba/espumas",
+        "noFollow": true,
+        "tagTitle": "Espumas",
+        "text": "Espumas"
+      }
+    }
+  },
+
+
+  "menu-item#suplementosbarba": {
+    "props": {
+      "id": "menu-item-espumabarbas",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/barba-e-cabelo/barba/suplementos-e-vitaminas",
+        "noFollow": true,
+        "tagTitle": "Suplementos e Vitaminas",
+        "text": "Suplementos e Vitaminas"
+      }
+    }
+  },
+
+ 
+
+
+  "menu-item#shampoobarba": {
+    "props": {
+      "id": "menu-item-shampoobarbas",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/barba-e-cabelo/barba/shampoo-e-condicionador",
+        "noFollow": true,
+        "tagTitle": "Shampoo e Condicionador",
+        "text": "Shampoo e Condicionador"
+      }
+    }
+  },
+
+  
+
+
+
+  "menu-item#locoesbarba": {
+    "props": {
+      "id": "menu-item-locoesbarbas",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/barba-e-cabelo/barba/locoes",
+        "noFollow": true,
+        "tagTitle": "Loções",
+        "text": "Loções"
+      }
+    }
+  },
+
+
+  "menu-item#kittratamento": {
+    "props": {
+      "id": "menu-item-kittratamento",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/barba-e-cabelo/cabelo/kit-tratamentos",
+        "noFollow": true,
+        "tagTitle": "Kit Tratamentos",
+        "text": "Kit Tratamentos"
+      }
+    }
+  },
+
+
+
+  "menu-item#locoes": {
+    "props": {
+      "id": "menu-item-locoes",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/barba-e-cabelo/cabelo/locoes",
+        "noFollow": true,
+        "tagTitle": "Loções",
+        "text": "Loções"
+      }
+    }
+  },
+
+
+
+  
+  "menu-item#shampoo": {
+    "props": {
+      "id": "menu-item-shampoo",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/barba-e-cabelo/cabelo/shampoo-e-condicionador",
+        "noFollow": true,
+        "tagTitle": "Shampoo e Condicionador",
+        "text": "Shampoo e Condicionador"
+      }
+    }
+  },
+
+
+
+
+  "menu-item#suplementos": {
+    "props": {
+      "id": "menu-item-suplementos",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/barba-e-cabelo/cabelo/suplementos-e-vitaminas",
+        "noFollow": true,
+        "tagTitle": "Suplementos e Vitaminas",
+        "text": "Suplementos e Vitaminas"
+      }
+    }
+  },
+
+
+
+  "menu-item#barba": {
+    "props": {
+      "id": "menu-item-Barba",
+      "blockClass": "link-megamenu-bold",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/barba-e-cabelo/barba",
+        "noFollow": true,
+        "tagTitle": "Barba",
+        "text": "\n**Barba"
+      }
+    }
+  },
+
+
+
+  "menu-item#category-emagrecimento": {
+    "props": {
+      "id": "menu-item-category-emagrecimento",
+      "blockClass": "menuemagrecimento",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "categoryID":"5",
+        "href": "/emagrecimento/",
+        "noFollow": false,
+        "tagTitle": "Emagrecimento",
+        "text": "Emagrecimento",
+        "blockClass": "link-menu"
+      }
+    },
+    "blocks": [
+      "vtex.menu@2.x:submenu#emagrecimento"
+    ]
+  },
+
+
+
+
+  "vtex.menu@2.x:submenu#emagrecimento": {
+    "props": {
+      "width": "100%"
+    },
+    "children": [
+      "flex-layout.row#menu-emagrecimento-more"
+    ]
+  },
+
+  "flex-layout.row#menu-emagrecimento-more": {
+    "children": [
+      "flex-layout.col#menu-emagrecimento-more-1",
+      "flex-layout.col#menu-emagrecimento-more-2"
+    ]
+  },
+
+  "flex-layout.col#menu-emagrecimento-more-1": {
+    "children": [
+      "vtex.menu@2.x:menu#emagrecimento-more"
+    ]
+  },
+
+  "flex-layout.col#menu-emagrecimento-more-2": {
+    "children": [
+      "flex-layout.row#emagrecimentobannermenu"
+    ]
+  },
+
+
+  "flex-layout.row#emagrecimentobannermenu":{
+    "props": {
+      "blockClass": "bloco-home-emagrecimentobannermenu"
+    },
+    "children": [
+      "image#emagrecimentobannermenu"
+    ]
+  },
+ 
+  "image#emagrecimentobannermenu": {
+    "props": {
+      "src": "https://stevia.vteximg.com.br/arquivos/ids/161233/Emagrecimento%20.png?v=637777820147400000",
+      "maxWidth": "100%"
+    }
+  },
+
+
+
+
+
+
+
+
+
+  "vtex.menu@2.x:menu#emagrecimento-more": {
+    "props": {
+      "orientation": "vertical"
+    },
+    "children": [
+      "menu-item#acaolipolitica",
+      "menu-item#acelerarmetabolismo",
+      "menu-item#antioxidantes",
+      "menu-item#bloqueadordecarboidratos",
+      "menu-item#bloqueadordegorduras",
+      "menu-item#cerulite",
+      "menu-item#diureticos",
+      "menu-item#emagrecedores",
+      "menu-item#gorduralocalizada",
+      "menu-item#inibirapetite",
+      "menu-item#queimadegordura",
+      "menu-item#emagrecimentotermogenico",
+      "menu-item#vontadededoces"
+    ]
+  },
+  "menu-item#acaolipolitica": {
+    "props": {
+      "id": "menu-item-acaolipolitica",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/emagrecimento/acao-lipolitica",
+        "noFollow": true,
+        "tagTitle": "Ação Lipolítica",
+        "text": "Ação Lipolítica"
+      }
+    }
+  },
+
+  "menu-item#acelerarmetabolismo": {
+    "props": {
+      "id": "menu-item-acelerarmetabolismo",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/emagrecimento/acelerar-metabolismoa",
+        "noFollow": true,
+        "tagTitle": "Acelerar Metabolismo",
+        "text": "Acelerar Metabolismo"
+      }
+    }
+  },
+
+  "menu-item#antioxidantes": {
+    "props": {
+      "id": "menu-item-antioxidantes",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/emagrecimento/antioxidantes--detox",
+        "noFollow": true,
+        "tagTitle": "Antioxidantes/ Detox",
+        "text": "Antioxidantes/ Detox"
+      }
+    }
+  },
+
+  "menu-item#bloqueadordecarboidratos": {
+    "props": {
+      "id": "menu-item-bloqueadordecarboidratos",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/emagrecimento/bloqueador-de-carboidratos",
+        "noFollow": true,
+        "tagTitle": "Bloqueador de Carboidratos",
+        "text": "Bloqueador de Carboidratos"
+      }
+    }
+  },
+
+  "menu-item#bloqueadordegorduras": {
+    "props": {
+      "id": "menu-item-bloqueadordegorduras",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/emagrecimento/bloqueador-de-gordura",
+        "noFollow": true,
+        "tagTitle": "Bloqueador de Gordura",
+        "text": "Bloqueador de Gordura"
+      }
+    }
+  },
+
+  "menu-item#emagrecimentotermogenico": {
+    "props": {
+      "id": "menu-item-shorts",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/emagrecimento/termogenico",
+        "noFollow": false,
+        "tagTitle": "Termogênico",
+        "text": "Termogênico"
+      }
+    }
+  },
+  "menu-item#cerulite": {
+    "props": {
+      "id": "menu-item-cerulite",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/emagrecimento/celulite",
+        "noFollow": true,
+        "tagTitle": "Celulite",
+        "text": "Celulite"
+      }
+    }
+  },
+
+  "menu-item#diureticos": {
+    "props": {
+      "id": "menu-item-diureticos",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/emagrecimento/diureticos",
+        "noFollow": true,
+        "tagTitle": "Diuréticos",
+        "text": "Diuréticos"
+      }
+    }
+  },
+
+  "menu-item#emagrecedores": {
+    "props": {
+      "id": "menu-item-emagrecedores",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/emagrecimento/emagrecedores",
+        "noFollow": true,
+        "tagTitle": "Emagrecedores",
+        "text": "Emagrecedores"
+      }
+    }
+  },
+
+  "menu-item#gorduralocalizada": {
+    "props": {
+      "id": "menu-item-gorduralocalizada",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/emagrecimento/gordura-localizada",
+        "noFollow": true,
+        "tagTitle": "Gordura Localizada",
+        "text": "Gordura Localizada"
+      }
+    }
+  },
+
+
+
+  "menu-item#inibirapetite": {
+    "props": {
+      "id": "menu-item-inibirapetite",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/emagrecimento/inibir-apetite",
+        "noFollow": true,
+        "tagTitle": "Inibir Apetite",
+        "text": "Inibir Apetite"
+      }
+    }
+  },
+
+  "menu-item#queimadegordura": {
+    "props": {
+      "id": "menu-item-queimadegordura",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/emagrecimento/queima-de-gordura",
+        "noFollow": true,
+        "tagTitle": "Queima de Gordura",
+        "text": "Queima de Gordura"
+      }
+    }
+  },
+
+
+
+  "menu-item#vontadededoces": {
+    "props": {
+      "id": "menu-item-queimadegordura",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/emagrecimento/vontade-de-doces",
+        "noFollow": true,
+        "tagTitle": "Vontade de Doces",
+        "text": "Vontade de Doces"
+      }
+    }
+  },
+
+
+
+
+
+  "menu-item#category-desempenhofisico": {
+    "props": {
+      "id": "menu-item-category-desempenhofisico",
+      "blockClass": "menudesempenhofisico",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "categoryID":"4",
+        "href": "/desempenho-fisico/",
+        "noFollow": false,
+        "tagTitle": "Desempenho Físico",
+        "text": "Desempenho Físico",
+        "blockClass": "link-menu"
+      }
+    },
+    "blocks": [
+      "vtex.menu@2.x:submenu#desempenhofisico"
+    ]
+  },
+
+
+  "vtex.menu@2.x:submenu#desempenhofisico": {
+    "props": {
+      "width": "100%"
+    },
+    "children": [
+      "flex-layout.row#menu-desempenhofisico-more"
+    ]
+  },
+
+  "flex-layout.row#menu-desempenhofisico-more": {
+    "children": [
+      "flex-layout.col#menu-desempenhofisico-more-1",
+      "flex-layout.col#menu-desempenhofisico-more-2"
+    ]
+  },
+
+  "flex-layout.col#menu-desempenhofisico-more-1": {
+    "children": [
+      "vtex.menu@2.x:menu#desempenhofisico-more"
+    ]
+  },
+  "flex-layout.col#menu-desempenhofisico-more-2": {
+    "children": [
+      "flex-layout.row#desempenhofisicobannermenu"
+    ]
+  },
+
+
+
+  "flex-layout.row#desempenhofisicobannermenu":{
+    "props": {
+      "blockClass": "bloco-home-desempenhofisicobannermenu"
+    },
+    "children": [
+      "image#desempenhofisicobannermenu"
+    ]
+  },
+ 
+  "image#desempenhofisicobannermenu": {
+    "props": {
+      "src": "https://stevia.vteximg.com.br/arquivos/ids/161235/Desempenho%20f%C3%ADsico%20.png?v=637777823366000000",
+      "maxWidth": "100%"
+    }
+  },
+
+
+
+
+
+
+
+
+  "vtex.menu@2.x:menu#desempenhofisico-more": {
+    "props": {
+      "orientation": "vertical"
+    },
+    "children": [
+      "menu-item#acidosgraxos",
+      "menu-item#aumentoapetite",
+      "menu-item#definicaomuscular",
+      "menu-item#diureticosfisico",
+      "menu-item#energia",
+      "menu-item#forca",
+      "menu-item#massamuscularfisico",
+      "menu-item#postreino",
+      "menu-item#pretreino",
+      "menu-item#prohotmonal",
+      "menu-item#protecaofigadorins",
+      "menu-item#suplementosfisico",
+      "menu-item#desempenhofisicotermogenico",
+      "menu-item#testoterona",
+      "menu-item#tpc",
+      "menu-item#vasodilatacao",
+      "menu-item#vitaminasminerais"
+    ]
+  },
+
+
+
+
+  "menu-item#acidosgraxos": {
+    "props": {
+      "id": "menu-item-acidosgraxos",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/desempenho-fisico/acidos-graxos",
+        "noFollow": true,
+        "tagTitle": "Ácidos Graxos",
+        "text": "Ácidos Graxos"
+      }
+    }
+  },
+
+
+
+
+
+  "menu-item#aumentoapetite": {
+    "props": {
+      "id": "menu-item-aumentoapetite",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/desempenho-fisico/aumento-do-apetite",
+        "noFollow": true,
+        "tagTitle": "Aumento do Apetite",
+        "text": "Aumento do Apetite"
+      }
+    }
+  },
+
+
+
+
+  "menu-item#definicaomuscular": {
+    "props": {
+      "id": "menu-item-definicaomuscular",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/desempenho-fisico/definicao-muscular",
+        "noFollow": true,
+        "tagTitle": "Definição Muscular",
+        "text": "Definição Muscular"
+      }
+    }
+  },
+
+
+
+  "menu-item#diureticosfisico": {
+    "props": {
+      "id": "menu-item-diureticos",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/desempenho-fisico/diureticos",
+        "noFollow": true,
+        "tagTitle": "Diuréticos",
+        "text": "Diuréticos"
+      }
+    }
+  },
+
+  "menu-item#desempenhofisicotermogenico": {
+    "props": {
+      "id": "menu-item-shorts",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/desempenho-fisico/termogenico?initialMap=c&initialQuery=desempenho-fisico&map=category-1,category-2",
+        "noFollow": false,
+        "tagTitle": "Termogênico",
+        "text": "Termogênico"
+      }
+    }
+  },
+
+
+
+  "menu-item#energia": {
+    "props": {
+      "id": "menu-item-energia",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/desempenho-fisico/energia",
+        "noFollow": true,
+        "tagTitle": "Energia",
+        "text": "Energia"
+      }
+    }
+  },
+
+
+
+  "menu-item#forca": {
+    "props": {
+      "id": "menu-item-forca",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/desempenho-fisico/forca",
+        "noFollow": true,
+        "tagTitle": "Força",
+        "text": "Força"
+      }
+    }
+  },
+
+
+
+
+  "menu-item#massamuscularfisico": {
+    "props": {
+      "id": "menu-item-massamuscular",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/desempenho-fisico/massa-muscular",
+        "noFollow": true,
+        "tagTitle": "Massa Muscular",
+        "text": "Massa Muscular"
+      }
+    }
+  },
+
+
+
+  "menu-item#postreino": {
+    "props": {
+      "id": "menu-item-postreino",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/desempenho-fisico/pos-treino",
+        "noFollow": true,
+        "tagTitle": "Pós-Treino",
+        "text": "Pós-Treino"
+      }
+    }
+  },
+
+
+
+
+  "menu-item#pretreino": {
+    "props": {
+      "id": "menu-item-postreino",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/desempenho-fisico/pre-treino",
+        "noFollow": true,
+        "tagTitle": "Pré-Treino",
+        "text": "Pré-Treino"
+      }
+    }
+  },
+
+
+  "menu-item#prohotmonal": {
+    "props": {
+      "id": "menu-item-prohotmonal",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/desempenho-fisico/pro-hormonal",
+        "noFollow": true,
+        "tagTitle": "Pró-Hormonal",
+        "text": "Pró-Hormonal"
+      }
+    }
+  },
+
+
+
+  "menu-item#protecaofigadorins": {
+    "props": {
+      "id": "menu-item-protecaofigadorins",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/desempenho-fisico/protecao-dos-figados-rins",
+        "noFollow": true,
+        "tagTitle": "Proteção dos Fígados/Rins",
+        "text": "Proteção dos Fígados/Rins"
+      }
+    }
+  },
+
+
+
+
+
+  "menu-item#suplementosfisico": {
+    "props": {
+      "id": "menu-item-suplementos",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/desempenho-fisico/suplementos",
+        "noFollow": true,
+        "tagTitle": "Suplementos",
+        "text": "Suplementos"
+      }
+    }
+  },
+
+
+
+  "menu-item#testoterona": {
+    "props": {
+      "id": "menu-item-testoterona",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/desempenho-fisico/testosterona",
+        "noFollow": true,
+        "tagTitle": "Testosterona",
+        "text": "Testosterona"
+      }
+    }
+  },
+
+
+
+
+
+  "menu-item#tpc": {
+    "props": {
+      "id": "menu-item-tpc",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/desempenho-fisico/tpc--terapia-pos-ciclo-",
+        "noFollow": true,
+        "tagTitle": "TPC (Terapia Pós Ciclo)",
+        "text": "TPC (Terapia Pós Ciclo)"
+      }
+    }
+  },
+
+
+
+
+  
+  "menu-item#vasodilatacao": {
+    "props": {
+      "id": "menu-item-vasodilatacao",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/desempenho-fisico/vaso-dilatacao",
+        "noFollow": true,
+        "tagTitle": "Vaso Dilatação",
+        "text": "Vaso Dilatação"
+      }
+    }
+  },
+
+
+
+
+  "menu-item#vitaminasminerais": {
+    "props": {
+      "id": "menu-item-vitaminasminerais",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/desempenho-fisico/vitaminas-e-minerais",
+        "noFollow": true,
+        "tagTitle": "Vitaminas e Minerais",
+        "text": "Vitaminas e Minerais"
+      }
+    }
+  },
+
+
+
+
+
+
+
+
+
+
+  "menu-item#category-beleza": {
+    "props": {
+      "id": "menu-item-category-beleza",
+      "blockClass": "menubeleza",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "categoryID":"3",
+        "href": "/beleza/",
+        "noFollow": false,
+        "tagTitle": "Beleza",
+        "text": "Beleza",
+        "blockClass": "link-menu"
+      }
+    },
+    "blocks": [
+      "vtex.menu@2.x:submenu#beleza"
+    ]
+  },
+
+
+  "vtex.menu@2.x:submenu#beleza": {
+    "props": {
+      "width": "100%"
+    },
+    "children": [
+      "flex-layout.row#menu-beleza-more"
+    ]
+  },
+
+  "flex-layout.row#menu-beleza-more": {
+    "children": [
+      "flex-layout.col#menu-beleza-more-1",
+      "flex-layout.col#menu-beleza-more-2"
+    ]
+  },
+
+
+  "flex-layout.col#menu-beleza-more-1": {
+    "children": [
+      "vtex.menu@2.x:menu#beleza-more"
+    ]
+  },
+  "flex-layout.col#menu-beleza-more-2": {
+    "children": [
+      "flex-layout.row#belezabannermenu"
+    ]
+  },
+
+
+
+
+  
+  "flex-layout.row#belezabannermenu":{
+    "props": {
+      "blockClass": "bloco-home-belezabannermenu"
+    },
+    "children": [
+      "image#belezabannermenu"
+    ]
+  },
+ 
+  "image#belezabannermenu": {
+    "props": {
+      "src": "https://stevia.vteximg.com.br/arquivos/ids/161231/Beleza.jpg?v=637777786498400000",
+      "maxWidth": "100%"
+    }
+  },
+
+
+
+
+  "vtex.menu@2.x:menu#beleza-more": {
+    "props": {
+      "orientation": "vertical"
+    },
+    "children": [
+      "menu-item#acaoclaeadora",
+      "menu-item#acne",
+      "menu-item#antienvelhecimento",
+      "menu-item#celulite",
+      "menu-item#cilios",
+      "menu-item#cuidadointimo",
+      "menu-item#cuidadocomocorpo",
+      "menu-item#firmadores",
+      "menu-item#lifiting",
+      "menu-item#linhapremium",
+      "menu-item#manchasemelasmas",
+      "menu-item#maosepes",
+      "menu-item#olheiras",
+	    "menu-item#pele",
+	    "menu-item#unhas"
+    ]
+  },
+
+  "menu-item#acaoclaeadora": {
+    "props": {
+      "id": "menu-item-acaoclaeadora",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/beleza",
+        "noFollow": true,
+        "tagTitle": "Ação Clareadora",
+        "text": "Ação Clareadora"
+      }
+    }
+  },
+
+  "menu-item#acne": {
+    "props": {
+      "id": "menu-item-acne",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/beleza/acne-e-oleosidade",
+        "noFollow": true,
+        "tagTitle": "Acne e Oleosidade",
+        "text": "Acne e Oleosidade"
+      }
+    }
+  },
+
+
+
+  "menu-item#antienvelhecimento": {
+    "props": {
+      "id": "menu-item-acne",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/beleza/antienvelhecimento",
+        "noFollow": true,
+        "tagTitle": "AntiEnvelhecimento",
+        "text": "AntiEnvelhecimento"
+      }
+    }
+  },
+
+
+
+  "menu-item#celulite": {
+    "props": {
+      "id": "menu-item-acne",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/beleza/celulite-e-estrias",
+        "noFollow": true,
+        "tagTitle": "Celulite e Estrias",
+        "text": "Celulite e Estrias"
+      }
+    }
+  },
+
+
+  "menu-item#cilios": {
+    "props": {
+      "id": "menu-item-acne",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/beleza/cilios-e--sobrancelhas",
+        "noFollow": true,
+        "tagTitle": "Cílios e Sobrancelhas",
+        "text": "Cílios e Sobrancelhas"
+      }
+    }
+  },
+
+
+
+  "menu-item#cuidadointimo": {
+    "props": {
+      "id": "menu-item-acne",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/beleza/cuidado-intimo",
+        "noFollow": true,
+        "tagTitle": "Cuidado Íntimo",
+        "text": "Cuidado Íntimo"
+      }
+    }
+  },
+
+
+  "menu-item#cuidadocomocorpo": {
+    "props": {
+      "id": "menu-item-acne",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/beleza/cuidado-com-o-corpo",
+        "noFollow": true,
+        "tagTitle": "Cuidados com o Corpo",
+        "text": "Cuidados com o Corpo"
+      }
+    }
+  },
+
+
+  "menu-item#firmadores": {
+    "props": {
+      "id": "menu-item-acne",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/beleza/firmadores",
+        "noFollow": true,
+        "tagTitle": "Firmadores",
+        "text": "Firmadores"
+      }
+    }
+  },
+
+
+  "menu-item#lifiting": {
+    "props": {
+      "id": "menu-item-acne",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/beleza/lifiting",
+        "noFollow": true,
+        "tagTitle": "Lifiting",
+        "text": "Lifiting"
+      }
+    }
+  },
+
+
+  "menu-item#linhapremium": {
+    "props": {
+      "id": "menu-item-acne",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/beleza/linha-premium",
+        "noFollow": true,
+        "tagTitle": "Linha Premium",
+        "text": "Linha Premium"
+      }
+    }
+  },
+
+
+
+
+  "menu-item#manchasemelasmas": {
+    "props": {
+      "id": "menu-item-manchasemelasmas",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/beleza/manchas-e-melasmas",
+        "noFollow": true,
+        "tagTitle": "Manchas e Melasmas",
+        "text": "Manchas e Melasmas"
+      }
+    }
+  },
+
+  "menu-item#maosepes": {
+    "props": {
+      "id": "menu-item-maosepes",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/beleza/maos-e-pes",
+        "noFollow": true,
+        "tagTitle": "Mãos e Pés",
+        "text": "Mãos e Pés"
+      }
+    }
+  },
+
+  "menu-item#olheiras": {
+    "props": {
+      "id": "menu-item-olheiras",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/beleza/olheira-e-rugas",
+        "noFollow": true,
+        "tagTitle": "Olheira e Rugas",
+        "text": "Olheira e Rugas"
+      }
+    }
+  },
+
+
+
+
+  "menu-item#pele": {
+    "props": {
+      "id": "menu-item-pele",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/beleza/pele",
+        "noFollow": true,
+        "tagTitle": "Pele",
+        "text": "Pele"
+      }
+    }
+  },
+
+
+
+
+  "menu-item#unhas": {
+    "props": {
+      "id": "menu-item-unhas",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/beleza/unhas",
+        "noFollow": true,
+        "tagTitle": "Unhas",
+        "text": "Unhas"
+      }
+    }
+  },
+
+
+
+
+  "menu-item#category-saude": {
+    "props": {
+      "id": "menu-item-category-saude",
+      "blockClass": "menusaude",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/saude/",
+        "categoryID":"2",
+        "noFollow": false,
+        "tagTitle": "Saúde",
+        "text": "Saúde",
+        "blockClass": "link-menu"
+      }
+     
+    },
+    "blocks": [
+      "vtex.menu@2.x:submenu#saude"
+    ]
+  },
+
+  "vtex.menu@2.x:submenu#saude": {
+    "props": {
+      "width": "100%"
+    },
+    "children": [
+      "flex-layout.row#menu-saude-more"
+    ]
+  },
+
+  "flex-layout.row#menu-saude-more": {
+    "children": [
+      "flex-layout.col#menu-saude-more-1",
+      "flex-layout.col#menu-saude-more-2"
+    ]
+  },
+
+
+  "flex-layout.col#menu-saude-more-1": {
+    "children": [
+      "vtex.menu@2.x:menu#saude-more"
+    ]
+  },
+  "flex-layout.col#menu-saude-more-2": {
+    "children": [
+      "flex-layout.row#saudebannermenu"
+    ]
+  },
+
+
+  "flex-layout.row#saudebannermenu":{
+    "props": {
+      "blockClass": "bloco-home-saudebannermenu"
+    },
+    "children": [
+      "image#saudebannermenu"
+    ]
+  },
+ 
+  "image#saudebannermenu": {
+    "props": {
+      "src": "https://stevia.vteximg.com.br/arquivos/ids/161232/Saude.jpg?v=637777804251570000",
+      "maxWidth": "100%"
+    }
+  },
+
+
+
+
+  "vtex.menu@2.x:menu#saude-more": {
+    "props": {
+      "orientation": "vertical"
+    },
+    "children": [
+      
+      "menu-item#articulacoes",
+      "menu-item#cardioprotetor",
+      "menu-item#cartilagel",
+      "menu-item#cicatrizantes",
+      "menu-item#colesterol",
+      "menu-item#depressao",
+      "menu-item#diabetes",
+      "menu-item#diuretico",
+      "menu-item#digestao",
+      "menu-item#dormiebem",
+      "menu-item#doraguda",
+      "menu-item#extresse",
+      "menu-item#fertilidade",
+      "menu-item#fibromialgia",
+	    "menu-item#gestante",
+      "menu-item#imunidade",
+	    "menu-item#intestino",
+      "menu-item#libido",
+      "menu-item#memoria",
+	    "menu-item#menopausa",
+      "menu-item#Olhos",
+	    "menu-item#ossos",
+      "menu-item#figadorins",
+	    "menu-item#vascular",
+      "menu-item#saudeenergia",
+      "menu-item#sistema-urinario",
+      "menu-item#sistema-respiratorio",
+	    "menu-item#tiroides",
+	    "menu-item#tpm",
+	    "menu-item#vitaminaseminerais"
+    ]
+  },
+
+
+  "menu-item#articulacoes": {
+    "props": {
+      "id": "menu-item-articulacoes",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/saude/articulacoes",
+        "noFollow": true,
+        "tagTitle": "Articulações",
+        "text": "Articulações"
+      }
+    }
+  },
+  "menu-item#Olhos": {
+    "props": {
+      "id": "menu-item-olhos",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/saude/olhos",
+        "noFollow": true,
+        "tagTitle": "Olhos",
+        "text": "Olhos"
+      }
+    }
+  },
+
+
+  "menu-item#cardioprotetor": {
+    "props": {
+      "id": "menu-item-cardioprotetor",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/saude/cardioprotetor",
+        "noFollow": true,
+        "tagTitle": "Cardioprotetor",
+        "text": "Cardioprotetor"
+      }
+    }
+  },
+
+
+  "menu-item#sistema-urinario": {
+    "props": {
+      "id": "menu-item-shorts",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/saude/sistema-urinario---bexiga---rins",
+        "noFollow": false,
+        "tagTitle": "Sistema Urinário / Bexiga / Rins",
+        "text": "Sistema Urinário / Bexiga / Rins"
+      }
+    }
+  },
+
+  
+"menu-item#diuretico": {
+  "props": {
+    "id": "menu-item-shorts",
+    "type": "custom",
+    "iconId": null,
+    "highlight": false,
+    "itemProps": {
+      "type": "internal",
+      "href": "/emagrecimento/diureticos",
+      "noFollow": false,
+      "tagTitle": "Diurético",
+      "text": "Diurético"
+    }
+  }
+},
+
+
+  "menu-item#fertilidade": {
+    "props": {
+      "id": "menu-item-shorts",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/saude/fertilidade",
+        "noFollow": false,
+        "tagTitle": "Fertilidade",
+        "text": "Fertilidade"
+      }
+    }
+  },
+
+  "menu-item#cartilagel": {
+    "props": {
+      "id": "menu-item-cartilagel",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/saude/cartilagem",
+        "noFollow": true,
+        "tagTitle": "Cartilagem",
+        "text": "Cartilagem"
+      }
+    }
+  },
+
+
+  "menu-item#sistema-respiratorio": {
+    "props": {
+      "id": "menu-item-shorts",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/saude/sistema-respiratorio",
+        "noFollow": false,
+        "tagTitle": "Sistema respiratório",
+        "text": "Sistema respiratório"
+      }
+    }
+  },
+
+
+  "menu-item#cicatrizantes": {
+    "props": {
+      "id": "menu-item-cicatrizantes",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/saude/cicatrizantes",
+        "noFollow": true,
+        "tagTitle": "Cicatrizantes",
+        "text": "Cicatrizantes"
+      }
+    }
+  },
+
+
+
+  "menu-item#colesterol": {
+    "props": {
+      "id": "menu-item-colesterol",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/saude/colesterol",
+        "noFollow": true,
+        "tagTitle": "Colesterol",
+        "text": "Colesterol"
+      }
+    }
+  },
+
+
+
+  "menu-item#depressao": {
+    "props": {
+      "id": "menu-item-depressao",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/saude/depressao",
+        "noFollow": true,
+        "tagTitle": "Depressão",
+        "text": "Depressão"
+      }
+    }
+  },
+
+
+
+
+  "menu-item#diabetes": {
+    "props": {
+      "id": "menu-item-diabetes",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/saude/diabetes",
+        "noFollow": true,
+        "tagTitle": "Diabetes",
+        "text": "Diabetes"
+      }
+    }
+  },
+
+
+
+  "menu-item#digestao": {
+    "props": {
+      "id": "menu-item-digestao",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/saude/digestao-e-refluxo",
+        "noFollow": true,
+        "tagTitle": "Digestão e Refluxo",
+        "text": "Digestão e Refluxo"
+      }
+    }
+  },
+
+
+
+  "menu-item#dormiebem": {
+    "props": {
+      "id": "menu-item-dormiebem",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/saude/dormir-bem",
+        "noFollow": true,
+        "tagTitle": "Dormir Bem",
+        "text": "Dormir Bem"
+      }
+    }
+  },
+
+  "menu-item#doraguda": {
+    "props": {
+      "id": "menu-item-shorts",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/saude/dores-agudas",
+        "noFollow": false,
+        "tagTitle": "Dores Agudas",
+        "text": "Dores Agudas"
+      }
+    }
+  },
+
+
+  "menu-item#saudeenergia": {
+    "props": {
+      "id": "menu-item-energia",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/saude/energia",
+        "noFollow": true,
+        "tagTitle": "Energia",
+        "text": "Energia"
+      }
+    }
+  },
+
+
+  "menu-item#extresse": {
+    "props": {
+      "id": "menu-item-energia",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/saude/estresse-ansiedade",
+        "noFollow": true,
+        "tagTitle": "Estresse/Ansiedade",
+        "text": "Estresse/Ansiedade"
+      }
+    }
+  },
+
+
+
+
+
+  "menu-item#fibromialgia": {
+    "props": {
+      "id": "menu-item-fibromialgia",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/saude/fibromialgia",
+        "noFollow": true,
+        "tagTitle": "Fibromialgia",
+        "text": "Fibromialgia"
+      }
+    }
+  },
+
+
+
+
+  "menu-item#gestante": {
+    "props": {
+      "id": "menu-item-gestante",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/saude/gestante-e-lactante",
+        "noFollow": true,
+        "tagTitle": "Gestante e Lactante",
+        "text": "Gestante e Lactante"
+      }
+    }
+  },
+
+
+
+  "menu-item#imunidade": {
+    "props": {
+      "id": "menu-item-imunidade",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/saude/imunidade",
+        "noFollow": true,
+        "tagTitle": "Imunidade",
+        "text": "Imunidade"
+      }
+    }
+  },
+
+
+
+  "menu-item#intestino": {
+    "props": {
+      "id": "menu-item-intestino",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/saude/intestino-prisao-de-ventre",
+        "noFollow": true,
+        "tagTitle": "Intestino/Prisão de Ventre",
+        "text": "Intestino/Prisão de Ventre"
+      }
+    }
+  },
+
+
+
+
+  "menu-item#libido": {
+    "props": {
+      "id": "menu-item-libido",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/saude/libido-e-estimulante-sexual",
+        "noFollow": true,
+        "tagTitle": "Libido e Estimulante Sexual",
+        "text": "Libido e Estimulante Sexual"
+      }
+    }
+  },
+
+
+
+  "menu-item#memoria": {
+    "props": {
+      "id": "menu-item-#memoria",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/saude/memoria-e-concentracao",
+        "noFollow": true,
+        "tagTitle": "Memória e Concentração",
+        "text": "Memória e Concentração"
+      }
+    }
+  },
+
+
+  "menu-item#menopausa": {
+    "props": {
+      "id": "menu-item-#menopausa",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/saude/menopausa",
+        "noFollow": true,
+        "tagTitle": "Menopausa",
+        "text": "Menopausa"
+      }
+    }
+  },
+
+
+  "menu-item#ossos": {
+    "props": {
+      "id": "menu-item-#ossos",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/saude/ossos",
+        "noFollow": true,
+        "tagTitle": "Ossos",
+        "text": "Ossos"
+      }
+    }
+  },
+
+
+
+
+  "menu-item#figadorins": {
+    "props": {
+      "id": "menu-item-#ossos",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/saude/protecao-dos-figados-rins",
+        "noFollow": true,
+        "tagTitle": "Proteção dos Fígados/Rins",
+        "text": "Proteção dos Fígados/Rins"
+      }
+    }
+  },
+
+
+
+  "menu-item#vascular": {
+    "props": {
+      "id": "menu-item-#vascular",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/saude/sistema-vascular",
+        "noFollow": true,
+        "tagTitle": "Sistema Vascular",
+        "text": "Sistema Vasculars"
+      }
+    }
+  },
+
+
+
+  "menu-item#tiroides": {
+    "props": {
+      "id": "menu-item-#vascular",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/saude/tireoides",
+        "noFollow": true,
+        "tagTitle": "Tireoides",
+        "text": "Tireoides"
+      }
+    }
+  },
+
+
+
+  "menu-item#tpm": {
+    "props": {
+      "id": "menu-item-#tpm",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/saude/tpm-e-colicas",
+        "noFollow": true,
+        "tagTitle": "TPM e Cólicas",
+        "text": "TPM e Cólicas"
+      }
+    }
+  },
+
+
+
+  "menu-item#vitaminaseminerais": {
+    "props": {
+      "id": "menu-item-#vitaminaseminerais",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/saude/vitaminas-e-minerais",
+        "noFollow": true,
+        "tagTitle": "Vitaminas e Minerais",
+        "text": "Vitaminas e Minerais"
+      }
+    }
+  },
+
+
+
+
+
+  "menu-item#category-saudesexual": {
+    "props": {
+      "id": "menu-item-category-saudesexual",
+      "type": "custom",
+      "blockClass": "blog",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/saude/libido-e-estimulante-sexual",
+        "noFollow": true,
+        "tagTitle": "Saúde Sexual",
+        "text": "Saúde Sexual"
+      }
+    }
+  },
+
+
+  
+  "menu-item#category-vegano": {
+    "props": {
+      "id": "menu-item-category-home",
+      "type": "custom",
+      "blockClass": "vegano",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/vegano/",
+        "noFollow": false,
+        "tagTitle": "Vegano",
+        "text": "Vegano"
+      }
+    }
+  },
+  "menu-item#blog": {
+    "props": {
+      "id": "menu-item-blog",
+      "type": "custom",
+      "blockClass": "blog",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "external",
+        "href": "#",
+        "noFollow": true,
+        "tagTitle": "Blog",
+        "text": "Blog"
+      }
+    }
+  }
+ 
+ 
+ 
+
+  
+ 
+ 
+}

@@ -1,0 +1,61 @@
+.BuyTogether__Container__Row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.BuyTogether__Product__Name h2 {
+    font-size: 14px;
+    overflow-y: hidden;
+    height: 32px;
+}
+
+.BuyTogether__Container {
+    width: 250px;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+}
+
+.BuyTogether__Container:nth-child(odd) {
+    margin-right: 45px;
+    position: relative;
+}
+
+.BuyTogether__Container:nth-child(odd)::after {
+    content: '+';
+    color: black;
+    font-size: 52px;
+    margin: 0px 22px;
+    position: absolute;
+    top: 50%;
+    left: calc(100% - 13px);
+}
+
+.BuyTogether__Container__BuyButton {
+    height: 55px;
+    padding: 0px 20px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 7px;
+    background-color: #00c231;
+    font-size: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-family: Fabriga, -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
+    color: white;
+    text-transform: uppercase;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+.BuyTogether__Container__BuyButton:hover{
+    background-color: #008d23;
+}
+.BuyTogether__Container__Row__Container {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    max-width: 1140px !important;
+    padding: 1rem !important;
+}

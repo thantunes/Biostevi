@@ -1,0 +1,819 @@
+{
+  "store.product": {
+    "children": [
+      "UpAnchorComp",
+      "flex-layout.row#product-breadcrumb",
+      "DescriptionAnchorComp",
+      "flex-layout.row#product-main",
+      "flex-layout.row#informativos",
+      "slider-layout#informativo-mobile",
+      "flex-layout.row#AnchorsComp",
+      "DescriptionContructorComp",
+      //"flex-layout.row#description",<--Default desc
+      //teste
+     // "flex-layout.row#specifications-title",
+     // "product-specification-group",
+     // "product-specification-group#table",
+     //"flex-layout.row#tabelagrupo", <--Default desc
+      //end teste
+     // "flex-layout.row#product",
+     // "flex-layout.row#product-2",
+
+
+
+
+
+
+
+
+
+
+
+
+
+     // --------------- NOVOS CAMPOS 14-07-2022 ----------------------
+
+    //"flex-layout.row#productbeneficios",
+     //"flex-layout.row#productcomposicao",
+     //"flex-layout.row#productmododeuso",
+
+     //"flex-layout.row#productimagemtexto",
+     //"flex-layout.row#productimagemgrande",
+
+     //"flex-layout.row#productcheckins",
+     //"flex-layout.row#productadvertencia",
+
+
+
+     // --------------END NOVOS CAMPOS  14-07-2022 --------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     "BuyTogetherComp",
+     "shelf.relatedProducts",
+      "product-reviews",
+      "flex-layout.row#buy-together",
+      "product-questions-and-answers",
+      "rich-text#pdp-informativo1",
+      "flex-layout.row#informativo2",
+      //"rich-text#pdp-informativo2",
+      //"rich-text#pdp-informativo3",
+      "flex-layout.row#informativo3",
+      //"rich-text#pdp-informativo4",
+      "flex-layout.row#informativo4",
+     // "newsletter"
+      "flex-layout.row#bloconews"
+    ]
+  },
+
+
+
+  "flex-layout.row#shelfCompreJunto": {
+    "children": ["list-context.product-list#shelfCompreJunto"],
+    "props":{
+      "blockClass":"TestePrime22"
+    }
+  },
+  "list-context.product-list#shelfCompreJunto": {
+    "blocks": ["product-summary.shelf"],
+    "children": ["slider-layout#prateleiralancamentos"],
+    "props": {
+      "orderBy": "OrderByReleaseDateDESC",
+      "collection": "148"
+    }
+  },
+  "flex-layout.row#tabelagrupo": {
+    "children": ["flex-layout.col#tabelagrupo"],
+    "props": {
+      "blockClass": "colunas-descricao-pdp"
+    }
+  },
+
+  "flex-layout.col#tabelagrupo": {
+    "children": ["product-specification-group#table"]
+    
+  },
+
+  "shelf.relatedProducts": {
+    "blocks": ["product-summary.shelf"],
+    "props": {
+        "recommendation": "suggestions",
+        "productList": {
+            "titleText": "Quem viu, viu também",
+            "itemsPerPage": 4
+        }
+    }
+  },
+
+
+ 
+
+  "flex-layout.row#buy-together": {
+    "children": ["recommendation-buy-together"],
+    "props":{
+      "blockClass":"TestePrime22"
+    }
+  },
+  "recommendation-buy-together": {
+    "blocks": ["buy-together"]
+  },
+  "buy-together": {
+    "blocks": ["product-summary.shelf#buy-together"],
+    "props": {
+      "BuyButton": "add-to-cart-button"
+    }
+  },
+  "product-summary.shelf#buy-together": {
+    "children": [
+      "responsive-layout.desktop#product-summary",
+      "responsive-layout.tablet#product-summary",
+      "responsive-layout.phone#product-summary"
+    ]
+  },
+  "responsive-layout.desktop#product-summary": {
+    "children": ["flex-layout.row#product-summary-desktop"]
+  },
+  "responsive-layout.tablet#product-summary": {
+    "children": ["flex-layout.row#product-summary-mobile"]
+  },
+  "responsive-layout.phone#product-summary": {
+    "children": ["flex-layout.row#product-summary-mobile"]
+  },
+  "flex-layout.row#product-summary-desktop": {
+    "children": ["flex-layout.col#product-summary-desktop"]
+  },
+  "flex-layout.col#product-summary-desktop": {
+    "children": [
+      "product-summary-image#shelf",
+      "product-summary-name",
+      "product-summary-space",
+      "product-list-price#summary",
+      "product-installments#summary",
+      "product-summary-sku-selector"
+    ]
+  },
+  "flex-layout.row#product-summary-mobile": {
+    "children": [
+      "flex-layout.col#product-image",
+      "flex-layout.col#product-summary-details"
+    ]
+  },
+  "flex-layout.col#product-image": {
+    "children": ["product-summary-image#shelf"]
+  },
+  "flex-layout.col#product-summary-details": {
+    "props": {
+      "marginLeft": 4
+    },
+    "children": [
+      "product-summary-name",
+      "product-summary-space",
+      "product-list-price#summary",
+      "product-installments#summary",
+      "product-summary-sku-selector"
+    ]
+  },
+
+  "rich-text#pdp-informativo1":{
+    "props": {
+      "text": "Não se trata de propaganda, e sim de descrição do produto, consulte sempre um especialista.*Venda Sob prescrição de profissional habilitado, podendo este ser o nosso farmacêutico de acordo com a resolução 586/2013 do conselho de farmácia. Consulte-o.Sugestão de uso e benefícios desenvolvidos por profissional habilitado. Todo produto deste site possui dosagens dentro dos padrões usuais.'Abaixo das advertências",
+      "textPosition": "center",
+      "textAlignment": "center",
+      "blockClass": "small-text"
+    }
+  },
+
+  "flex-layout.row#informativo2":{
+    "props":{
+      "blockClass": "texto-informativo-footer"
+    },
+    "children":["rich-text#pdp-informativo2","breadcrumb","rich-text#pdp-informativo2-cont"]
+  },
+
+  "rich-text#pdp-informativo2":{
+    "props": {
+      "text": "A Biostévi tem ",
+      "textPosition": "center",
+      "textAlignment": "center",
+      "blockClass": "small-text"
+    }
+  },
+
+  "rich-text#pdp-informativo2-cont":{
+    "props": {
+      "text": "com o melhor preço e qualidade!",
+      "textPosition": "center",
+      "textAlignment": "center",
+      "blockClass": "small-text"
+    }
+  },
+
+  "flex-layout.row#informativo3":{
+    "props":{
+      "blockClass": "texto-informativo-footer"
+    },
+    "children":["rich-text#pdp-informativo3","breadcrumb","rich-text#pdp-informativo3-cont"]
+  },
+
+  "rich-text#pdp-informativo3":{
+    "props": {
+      "text": "Nossos especialistas explicam para que serve  ",
+      "textPosition": "center",
+      "textAlignment": "center",
+      "blockClass": "small-text"
+    }
+  },
+
+  "rich-text#pdp-informativo3-cont":{
+    "props": {
+      "text": " na descrição completa, e para mais informações entre em contato pelo nosso WhatsApp!",
+      "textPosition": "center",
+      "textAlignment": "center",
+      "blockClass": "small-text"
+    }
+  },
+
+  "flex-layout.row#informativo4":{
+    "props":{
+      "blockClass": "texto-informativo-footer"
+    },
+    "children":["rich-text#pdp-informativo4","breadcrumb","rich-text#pdp-informativo4-cont","rich-text#pdp-informativo4-cont2"]
+  },
+
+
+  "rich-text#pdp-informativo4":{
+    "props": {
+      "text": "Se você está procurando onde comprar ",
+      "textPosition": "center",
+      "textAlignment": "center",
+      "blockClass": "small-text"
+    }
+  },
+
+  "rich-text#pdp-informativo4-cont":{
+    "props": {
+      "text": " , a Biostévi tem os melhores manipulados",
+      "textPosition": "center",
+      "textAlignment": "center",
+      "blockClass": "small-text"
+    }
+  },
+
+  "rich-text#pdp-informativo4-cont2":{
+    "props": {
+      "text": " com os melhores preços, qualidade e pagamento parcelado!",
+      "textPosition": "center",
+      "textAlignment": "center",
+      "blockClass": "small-text"
+    }
+  },
+
+  "slider-layout#informativo-mobile": {
+    "props": {
+        "autoplay": {
+           "timeout": 5000,
+           "stopOnHover": false
+           },
+      "itemsPerPage": {
+        "desktop": 1,
+        "tablet": 1,
+        "phone": 1
+      },
+      "infinite": true,
+      "showNavigationArrows": "desktopOnly",
+      "blockClass": "carrousel-mobile"
+    },
+    "children": ["rich-text#frete-gratis", "rich-text#descontoprogressivo","rich-text#desconto","rich-text#parcelamento","rich-text#siteseguro","rich-text#whats1"]
+   
+  },
+
+  "flex-layout.row#product": {
+    "children": [
+    
+    "product-specifications#product"
+    ]
+  },
+
+  "product-specifications#product": {
+    "props": {
+      "showSpecificationsTab": true,
+      "visibleSpecifications":["Benefícios","Composição","Modo de Usar","Advertência"],
+      "collapsible": "never"
+    }
+  },
+
+  "flex-layout.row#product-2": {
+    "props":{
+      "blockClass":"bloco-especificacao-teste"
+    },
+    "children": [
+    "product-specifications#product-2"
+    ]
+  },
+  
+
+
+  "product-specifications#product-2": {
+    "props": {
+      "blockClass": "especificacao-do-produto-2",
+      //"showSpecificationsTab": true,
+      "hiddenSpecifications":["Benefícios","Composição","Modo de Usar","Advertência"],
+      "collapsible": "false"
+    }
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ------------------ teste NOVOS CAMPOS ---------------------
+
+
+"flex-layout.row#productbeneficios": {
+  "children": [
+  "product-specifications#productbeneficios"
+  ],
+  "props":{
+    "blockClass": "new-pdp-beneficios"
+  }
+},
+
+"product-specifications#productbeneficios": {
+  "props": {
+    "shoudCollapseOnTabChange": false,
+    "visibleSpecifications":["Benefícios"],
+    "collapsible": "never"
+   
+  }
+},
+
+
+"flex-layout.row#productcomposicao": {
+  "children": [
+  "product-specifications#productcomposicao"
+  ],
+  "props":{
+    "blockClass": "new-pdp-composicao"
+  }
+},
+
+"product-specifications#productcomposicao": {
+  "props": {
+    "shoudCollapseOnTabChange": false,
+    "visibleSpecifications":["Composição"],
+    "collapsible": "never"
+   
+  }
+},
+
+
+
+"flex-layout.row#productmododeuso": {
+  "children": [
+  "product-specifications#productmododeuso"
+  ],
+  "props":{
+    "blockClass": "new-pdp-mododeuso"
+  }
+},
+
+"product-specifications#productmododeuso": {
+  "props": {
+    "shoudCollapseOnTabChange": false,
+    "visibleSpecifications":["Modo de Uso"],
+    "collapsible": "never"
+   
+  }
+},
+
+
+
+
+"flex-layout.row#productimagemtexto": {
+  "children": [
+  "product-specifications#productimagemtexto"
+  ],
+  "props":{
+    "blockClass": "new-pdp-imagemtexto"
+  }
+},
+
+
+
+
+"product-specifications#productimagemtexto": {
+  "props": {
+    "shoudCollapseOnTabChange": false,
+    "visibleSpecifications":["Imagem primeira linha","Texto primeira linha"],
+    "collapsible": "never",
+    "markers": [
+      "h2"
+    ]
+   
+  }
+},
+
+
+
+
+
+
+
+"flex-layout.row#productimagemgrande": {
+  "children": [
+  "product-specifications#productimagemgrande"
+  ],
+  "props":{
+    "blockClass": "new-pdp-imagemgrande"
+  }
+},
+
+"product-specifications#productimagemgrande": {
+  "props": {
+    "shoudCollapseOnTabChange": false,
+    "visibleSpecifications":["Bloco Imagem Grande"],
+    "collapsible": "never"
+   
+  }
+},
+
+
+
+
+"flex-layout.row#productcheckins": {
+  "children": [
+  "product-specifications#primeiro-productcheckins",
+  "product-specifications#segundo-productcheckins"
+  ],
+  "props":{
+    "blockClass": "new-pdp-checkins"
+  }
+},
+
+"product-specifications#primeiro-productcheckins": {
+  "props": {
+    "shoudCollapseOnTabChange": false,
+    "visibleSpecifications":["Primeiro Bloco Check-in Titulo","Primeiro Bloco Check-in Texto"],
+    "collapsible": "never"
+   
+  }
+},
+
+
+"product-specifications#segundo-productcheckins": {
+  "props": {
+    "shoudCollapseOnTabChange": false,
+    "visibleSpecifications":["Segundo Bloco Check-in Titulo","Segundo Bloco Check-in Texto"],
+    "collapsible": "never"
+   
+  }
+},
+
+
+
+
+"flex-layout.row#productadvertencia": {
+  "children": [
+  "product-specifications#advertencia"
+  ],
+  "props":{
+    "blockClass": "new-pdp-advertencia"
+  }
+},
+
+"product-specifications#advertencia": {
+  "props": {
+    "shoudCollapseOnTabChange": false,
+    "visibleSpecifications":["Advertência"],
+    "collapsible": "never"
+   
+  }
+},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// -----------------end - teste NOVOS CAMPOS------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  "flex-layout.row#product-breadcrumb": {
+    "props": {
+      "marginTop": 4
+    },
+    "children": ["breadcrumb"]
+  },
+
+
+
+  "flex-layout.row#description": {
+    "props": {
+      "marginBottom": 7,
+      "collapseContent":false
+    },
+    "children": ["product-description"]
+  },
+
+
+
+  "product-description":{
+    "props": {
+      "collapseContent":false
+    }
+  },
+
+
+
+
+  "flex-layout.row#product-main": {
+    "props": {
+      "colGap": 7,
+      "rowGap": 7,
+      "marginTop": 4,
+      "marginBottom": 7,
+      "paddingTop": 7,
+      "paddingBottom": 7
+    },
+    "children": ["flex-layout.col#stack", "flex-layout.col#right-col"]
+  },
+
+  "stack-layout": {
+    "props": {
+      "blockClass": "product"
+    },
+    "children": [
+      "flex-layout.row#product-image",
+      "product-bookmark",
+      "product-specification-badges"
+    ]
+  },
+
+  "product-specification-badges": {
+    "props": {
+      "specificationGroupName": "Group",
+      "specificationName": "On Sale",
+      "visibleWhen": "True",
+      "displayValue": "SPECIFICATION_NAME"
+    }
+  },
+
+  "flex-layout.col#stack": {
+    "children": ["stack-layout"],
+    "props": {
+      "width": "60%",
+      "rowGap": 0
+    }
+  },
+  "flex-layout.row#product-image": {
+    "children": ["product-images"]
+  },
+  "product-images": {
+    "props": {
+      "aspectRatio": {
+        "desktop": "auto",
+        "phone": "16:9"
+      },
+      "displayThumbnailsArrows": true
+    }
+  },
+  "flex-layout.col#right-col": {
+    "props": {
+      "preventVerticalStretch": true,
+      "rowGap": 0
+    },
+    "children": [
+      "add-to-list-btn",
+      "flex-layout.row#product-name",
+     // "product-rating-inline",
+
+"product-reviews",
+
+      "flex-layout.row#list-price-savings",
+      "flex-layout.row#selling-price",
+      "product-installments",
+      "product-separator",
+      "product-identifier.product",
+      "sku-selector", 
+      "product-assembly-options",
+      "product-gifts",
+      "product-quantity",
+      "flex-layout.row#buy-button",
+      "availability-subscriber",
+      "shipping-simulator",
+      "share#default"
+     
+    ]
+  },
+
+  "flex-layout.row#product-name": {
+    "props": {
+      "marginBottom": 3
+    },
+    "children": ["vtex.store-components:product-name"]
+  },
+
+  "sku-selector": {
+    "props": {
+      "variationsSpacing": 3,
+      "showValueNameForImageVariation": true
+    }
+  },
+
+  "flex-layout.row#buy-button": {
+    "props": {
+      "marginTop": 4,
+      "marginBottom": 7,
+      "blockClass":"pdp-botao-add-carrinho"
+    },
+    "children": ["add-to-cart-button"]
+  },
+
+  "share#default": {
+    "props": {
+      "social": {
+        "Facebook": false,
+        "WhatsApp": false,
+        "Twitter": false,
+        "Pinterest": false
+      }
+    }
+  }
+
+
+
+
+
+}
+
+
+
+

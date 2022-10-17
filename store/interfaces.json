@@ -1,0 +1,17 @@
+{
+    "DescriptionContructorComp": {
+        "component": "DescriptionContructor"
+    },
+    "DescriptionAnchorComp": {
+        "component": "DescriptionAnchor"
+    },
+    "UpAnchorComp": {
+        "component": "UpAnchor"
+    },
+    "BuyTogetherComp": {
+        "component": "BuyTogether"
+    },
+    "ReclameAq": {
+        "component": "reclameaq"
+    }
+}

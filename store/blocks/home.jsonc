@@ -1,0 +1,964 @@
+{
+  "store.home": {
+    "blocks": [
+      "list-context.image-list#demo",
+      //"info-card#home",
+      "flex-layout.row#informativos",
+      "slider-layout#informativo-mobile",
+      "rich-text#shelf-title-lancamentos",
+      "flex-layout.row#shelfprateleiralancamentos",
+
+
+      //"shelf#produtos-em-lancamentos",
+
+      "flex-layout.row#descontos",
+      "slider-layout#descontos-mobile",
+
+      "rich-text#shelf-title-maisvendidos",
+      "flex-layout.row#shelfmaisvendidos",
+
+      "flex-layout.row#mosaico",
+      "slider-layout#mosaico-mobile",
+
+
+      "rich-text#shelf-title-ofertas",
+      "flex-layout.row#shelfofertas",
+  
+
+      //"rich-text#question",
+     // "rich-text#link",
+
+
+
+      "rich-text#shelf-title-euquero",
+      "flex-layout.row#mosaicoeuquero",
+      "flex-layout.row#mosaicoeuqueromobile",
+     // "slider-layout#euqueromobile",
+
+      "rich-text#shelf-title-influencers",
+      "slider-layout#influencers",
+
+
+      //"newsletter",
+      "flex-layout.row#bloconews"
+    ]
+  },
+
+  "flex-layout.row#bloconews": {
+    "props": {
+      "blockClass": "bloco-home-news"
+    },
+    "children": ["newsletter-form"]
+  },
+
+  "newsletter-form": {
+
+    "props":{
+
+      "block": [
+        "ErrorState",
+        "SuccessState",
+        "LoadingState"
+      ]
+    },
+  
+    "children": [
+      "rich-text#title-news",
+      "newsletter-input-name",
+      "newsletter-input-email",
+      "newsletter-hidden-field",
+      "newsletter-submit",
+      "newsletter-checkbox-confirmation"
+    ]
+  },
+
+  "rich-text#title-news":{
+    "props": {
+      "text": "### Receba Ofertas Exclusivas",
+      "textPosition": "center",
+      "textAlignment": "center",
+      "blockClass": "titulo-news"
+    }
+  },
+
+  "flex-layout.row#shelfprateleiralancamentos": {
+    "children": ["list-context.product-list#prateleiralancamentos"]
+  },
+  "list-context.product-list#prateleiralancamentos": {
+    "blocks": ["product-summary.shelf"],
+    "children": ["slider-layout#prateleiralancamentos"],
+    "props": {
+      "orderBy": "OrderByReleaseDateDESC",
+      "collection": "148"
+    }
+  },
+
+
+  "slider-layout#prateleiralancamentos": {
+    "props": {
+      "itemsPerPage": {
+        "desktop":4,
+        "tablet": 2,
+        "phone": 2
+      },
+      "infinite": true,
+      "fullWidth": false,
+      "blockClass": "shelf"
+    }
+  },
+
+  "slider-layout#informativo-mobile": {
+    "props": {
+        "autoplay": {
+           "timeout": 5000,
+           "stopOnHover": false
+           },
+      "itemsPerPage": {
+        "desktop": 1,
+        "tablet": 1,
+        "phone": 1
+      },
+      "infinite": true,
+      "showNavigationArrows": "desktopOnly",
+      "blockClass": "carrousel-mobile"
+    },
+    "children": ["rich-text#frete-gratis", "rich-text#descontoprogressivo","rich-text#desconto","rich-text#parcelamento","rich-text#siteseguro","rich-text#whats1"]
+   
+  },
+
+  "flex-layout.row#informativos":{
+    "props": {
+      "blockClass": "bloco-home-informativos"
+    },
+
+    "children": [
+      "rich-text#frete-gratis",
+      "rich-text#descontoprogressivo",
+      "rich-text#desconto",
+      "rich-text#parcelamento",
+      "rich-text#siteseguro",
+      "rich-text#whats1"
+ 
+    ]
+  },
+"rich-text#frete-gratis":{
+  "props": {
+    "text": "### Frete Grátis* \n Confira as regras",
+    "textPosition": "LEFT",
+    "textAlignment": "LEFT",
+    "blockClass": "informativo-frete"
+  }
+},
+"rich-text#descontoprogressivo":{
+  "props": {
+    "text": "### Desconto Progressivo \n Compre mais e pague menos",
+    "textPosition": "LEFT",
+    "textAlignment": "LEFT",
+    "blockClass": "informativo-desconto-progressivo"
+  }
+},
+"rich-text#desconto":{
+  "props": {
+    "text": "### 5% de Desconto \n No pix, transf ou boleto",
+    "textPosition": "LEFT",
+    "textAlignment": "LEFT",
+    "blockClass": "informativo-desconto"
+  }
+},
+"rich-text#parcelamento":{
+  "props": {
+    "text": "### Parcele em até 10x \n sem juros no cartão",
+    "textPosition": "LEFT",
+    "textAlignment": "LEFT",
+    "blockClass": "informativo-parcelamento"
+  }
+},
+"rich-text#siteseguro":{
+  "props": {
+    "text": "### Site seguro \n Proteção para suas informações",
+    "textPosition": "LEFT",
+    "textAlignment": "LEFT",
+    "blockClass": "informativo-site-seguro"
+  }
+},
+"rich-text#whats1":{
+  "props": {
+    "text": "### WhatsApp \n (11)97133-1874",
+    "textPosition": "LEFT",
+    "textAlignment": "LEFT",
+    "blockClass": "informativo-whats"
+  }
+},
+
+
+
+
+"flex-layout.row#descontos":{
+
+    "props": {
+      "blockClass": "bloco-home-mosaico"
+    },
+    "children": [
+      "flex-layout.col#primeiro",
+      "flex-layout.col#segundo",
+      "flex-layout.col#terceiro" 
+    ]
+  },
+  "flex-layout.col#primeiro": {
+    "props": {
+      "blockClass": "mosaico-bloco-1"
+    },
+    "children": [
+      "image#produtodescontoum",
+      "image#produtodescontodois"
+    ]
+  },
+  "image#produtodescontoum": {
+    "props": {
+      "src": "https://stevia.vteximg.com.br/arquivos/supesqdescontoprogressivo.png",
+      "maxWidth": "100%"
+    }
+  },
+  "image#produtodescontodois": {
+    "props": {
+      "src": "https://stevia.vteximg.com.br/arquivos/InfEsqDescontoProgressivo.png",
+      "maxWidth": "100%"
+    }
+  },
+  "flex-layout.col#segundo": {
+    "props": {
+      "blockClass": "mosaico-bloco-2"
+    },
+    "children": [
+      "image#produtodescontocentro"
+    ]
+  },
+  "image#produtodescontocentro": {
+    "props": {
+      "src": "https://stevia.vteximg.com.br/arquivos/PrincipalDescontoProgressivo.png",
+      "maxWidth": "100%"
+    }
+  },
+"flex-layout.col#terceiro": {
+    "props": {
+      "blockClass": "mosaico-bloco-3"
+    },
+    "children": [
+      "image#produtodescontoquarto",
+      "image#produtodescontoquinto"
+    ]
+  },
+  "image#produtodescontoquarto": {
+    "props": {
+      "src": "https://stevia.vteximg.com.br/arquivos/SupDirDescontoProgressivo.png",
+      "maxWidth": "100%"
+    }
+  },
+  "image#produtodescontoquinto": {
+    "props": {
+      "src": "https://stevia.vteximg.com.br/arquivos/InfDirDescontoProgressivo.png",
+      "maxWidth": "100%"
+    }
+  },
+
+  "flex-layout.row#mosaico":{
+    "props": {
+      "blockClass": "bloco-home-mosaico"
+    },
+    "children": [
+      "flex-layout.col#mosaicoprimeiro",
+      "flex-layout.col#mosaicosegundo",
+      "flex-layout.col#mosaicoterceiro"      
+    ]
+  },
+  "flex-layout.col#mosaicoprimeiro": {
+
+    "props": {
+      "blockClass": "mosaico-bloco-1"
+    },
+    "children": [
+      "image#mosaicoum",
+      "image#mosaicodois"
+    ]
+  },
+  "image#mosaicoum": {
+    "props": {
+      "src": "https://stevia.vteximg.com.br/arquivos/Mosaico-Outubro-Cabelo-Esquerdasuperior.png",
+      "maxWidth": "100%"
+    }
+  },
+  "image#mosaicodois": {
+    "props": {
+      "src": "https://stevia.vteximg.com.br/arquivos/Mosaico-Outubro-Cabelo-Esquerdainferior.png",
+      "maxWidth": "100%"
+    }
+  },
+  "flex-layout.col#mosaicosegundo": {
+    "props": {
+      "blockClass": "mosaico-bloco-2"
+    },
+    "children": [
+      "image#mosaicocentro"
+    ]
+  },
+  "image#mosaicocentro": {
+    "props": {
+      "src": "https://stevia.vteximg.com.br/arquivos/Mosaico-Outubro-CabeloPrincipal.png",
+      "maxWidth": "100%"
+    }
+  },
+  "flex-layout.col#mosaicoterceiro": {
+    "props": {
+      "blockClass": "mosaico-bloco-3"
+    },
+    "children": [
+      "image#mosaicoquarto",
+      "image#mosaicoquinto"
+    ]
+  },
+  "image#mosaicoquarto": {
+    "props": {
+      "src": "https://stevia.vteximg.com.br/arquivos/Mosaico-Outubro-Cabelo-Direitasuperior.png",
+      "maxWidth": "100%"
+    }
+  },
+  "image#mosaicoquinto": {
+    "props": {
+      "src": "https://stevia.vteximg.com.br/arquivos/Mosaico-Outubro-Cabelo-Direitainferior.png",
+      "maxWidth": "100%"
+    }
+  },
+  "rich-text#shelf-title-lancamentos": {
+    "props": {
+      "text": "# Lançamentos Biostévi",
+      "blockClass": "shelfTitle"
+    }
+  },
+
+
+
+  /*thiago*/
+  "slider-layout#descontos-mobile": {
+    "props": {
+        "autoplay": {
+           "timeout": 5000,
+           "stopOnHover": false
+           },
+      "itemsPerPage": {
+        "desktop": 1,
+        "tablet": 1,
+        "phone": 1
+      },
+      "infinite": true,
+      "showNavigationArrows": "desktopOnly",
+      "blockClass": "carrousel-mosaico-mobile"
+    },
+    "children": ["image#produtodescontoum","image#produtodescontodois","image#produtodescontocentro","image#produtodescontoquarto","image#produtodescontoquinto"]
+   
+  },
+
+
+
+
+  
+  "slider-layout#mosaico-mobile": {
+    "props": {
+        "autoplay": {
+           "timeout": 5000,
+           "stopOnHover": false
+           },
+      "itemsPerPage": {
+        "desktop": 1,
+        "tablet": 1,
+        "phone": 1
+      },
+      "infinite": true,
+      "showNavigationArrows": "desktopOnly",
+      "blockClass": "carrousel-mosaico-mobile"
+    },
+    "children": ["image#mosaicoum","image#mosaicodois","image#mosaicocentro","image#mosaicoquarto","image#mosaicoquinto"]
+   
+  },
+
+
+
+
+
+  "flex-layout.row#shelflancamentos": {
+    "children": ["list-context.product-list#lancamentos"]
+  },
+  "list-context.product-list#lancamentos": {
+    "blocks": ["product-summary.shelf"],
+    "children": ["slider-layout#lancamentos"],
+    "props": {
+      "orderBy": "OrderByReleaseDateDESC",
+      "collection": "148"
+    }
+  },
+
+  "slider-layout#produtos-em-lancamentos": {
+
+    "props": {
+      "itemsPerPage": {
+        "desktop":4,
+        "tablet": 2,
+        "phone": 1
+      },
+      "infinite": true,
+      "fullWidth": false,
+      "blockClass": "shelf"
+    }
+  },
+
+  "slider-layout#lancamentos": {
+    "props": {
+      "itemsPerPage": {
+        "desktop":4,
+        "tablet": 2,
+        "phone": 1
+      },
+      "infinite": true,
+      "fullWidth": false,
+      "blockClass": "shelf"
+    }
+  },
+
+  "rich-text#shelf-title-maisvendidos": {
+    "props": {
+      "text": "Mais Vendidos",
+      "blockClass": "shelfTitle"
+    }
+  },
+
+  "flex-layout.row#shelfmaisvendidos": {
+    "children": ["list-context.product-list#maisvendidos"]
+  },
+  "list-context.product-list#maisvendidos": {
+    "blocks": ["product-summary.shelf"],
+    "children": ["slider-layout#maisvendidos"],
+    "props": {
+      "orderBy": "OrderByReleaseDateDESC",
+      "collection": "137"
+    }
+  },
+  "slider-layout#maisvendidos": {
+    "props": {
+      "itemsPerPage": {
+        "desktop":4,
+        "tablet": 2,
+        "phone": 2
+      },
+      "infinite": true,
+      "fullWidth": false,
+      "blockClass": "shelf"
+    }
+  },
+
+  "rich-text#shelf-title-ofertas": {
+    "props": {
+      "text": "Ofertas",
+      "blockClass": "shelfTitle"
+    }
+  },
+
+  "flex-layout.row#shelfofertas": {
+    "children": ["list-context.product-list#ofertas"]
+  },
+  "list-context.product-list#ofertas": {
+    "blocks": ["product-summary.shelf"],
+    "children": ["slider-layout#ofertas"],
+    "props": {
+      "orderBy": "OrderByReleaseDateDESC",
+      "collection": "137"
+    }
+  },
+  "slider-layout#ofertas": {
+    "props": {
+      "itemsPerPage": {
+        "desktop":4,
+        "tablet": 2,
+        "phone": 2
+      },
+      "infinite": true,
+      "fullWidth": false,
+      "blockClass": "shelf"
+    }
+  },
+
+
+
+  "list-context.image-list#demo": {
+    "children": ["slider-layout#demo-images"],
+    "props": {
+      "height": 720,
+      "images": [
+        {
+          "image": "https://storecomponents.vteximg.com.br/arquivos/banner-principal.png",
+          "mobileImage": "https://storecomponents.vteximg.com.br/arquivos/banner-principal-mobile.jpg"
+        },
+        {
+          "image": "https://storecomponents.vteximg.com.br/arquivos/banner.jpg",
+          "mobileImage": "https://storecomponents.vteximg.com.br/arquivos/banner-principal-mobile.jpg"
+        }
+      ]
+    }
+  },
+  "slider-layout#demo-images": {
+    "props": {
+      "itemsPerPage": {
+        "desktop": 1,
+        "tablet": 1,
+        "phone": 1
+      },
+     
+      "autoplay":{
+        "timeout":5000,
+        "stopOnHover":true
+
+     },
+
+      "infinite": true,
+      "showNavigationArrows": "desktopOnly",
+      "blockClass": "carousel"
+    }
+  },
+
+  "rich-text#shelf-title": {
+    "props": {
+      "text": "## Lançamento",
+      "blockClass": "shelfTitle"
+    }
+  },
+  "flex-layout.row#shelf": {
+    "children": ["list-context.product-list#demo1"]
+  },
+  "list-context.product-list#demo1": {
+    "blocks": ["product-summary.shelf"],
+    "children": ["slider-layout#demo-products"],
+    "props": {
+      "orderBy": "OrderByTopSaleDESC"
+    }
+  },
+  "slider-layout#demo-products": {
+    "props": {
+      "itemsPerPage": {
+        "desktop": 4,
+        "tablet": 2,
+        "phone": 2
+      },
+      "infinite": true,
+      "fullWidth": true,
+      "blockClass": "shelf"
+    }
+  },
+
+  "info-card#home": {
+    "props": {
+      "id": "info-card-home",
+      "isFullModeStyle": false,
+      "textPosition": "left",
+      "imageUrl": "https://storecomponents.vteximg.com.br/arquivos/banner-infocard2.png",
+      "headline": "Clearance Sale",
+      "callToActionText": "DISCOVER",
+      "callToActionUrl": "/sale/d",
+      "blockClass": "info-card-home",
+      "textAlignment": "center"
+    }
+  },
+
+
+
+
+  "rich-text#shelf-title-novidades": {
+    "props": {
+      "text": "NOVIDADES",
+      "blockClass": "shelfTitle"
+      
+    }
+  },
+
+
+
+
+  
+
+
+  "rich-text#shelf-title-euquero": {
+    "props": {
+      "text": "EU QUERO",
+      "blockClass": "shelfTitle"
+      
+    }
+  },
+
+
+
+
+
+
+  "slider-layout#euqueromobile": {
+    "props": {
+        "autoplay": {
+           "timeout": 5000,
+           "stopOnHover": false
+           },
+      "itemsPerPage": {
+        "desktop": 1,
+        "tablet": 1,
+        "phone": 1
+      },
+      "infinite": true,
+      "showNavigationArrows": "desktopOnly",
+      "blockClass": "carrousel-euquero-mobile"
+    },
+    "children": ["image#mosaicoeuqueroum","image#mosaicoeuquerodois","image#mosaicoeuquerotres","image#mosaicoeuqueroquatro","image#mosaicoeuquerocinco","image#mosaicoeuqueroseis","image#mosaicoeuquerosete","image#mosaicoeuquerooito","image#mosaicoeuqueronove","image#mosaicoeuquerodez","image#mosaicoeuqueroonze","image#mosaicoeuquerodoze"]
+   
+  },
+
+
+
+ 
+
+
+  "flex-layout.row#mosaicoeuquero":{
+    "props": {
+      "blockClass": "bloco-home-mosaicoeuquero"
+    },
+    "children": [
+      "flex-layout.col#mosaicoeuqueroprimeiro",
+      "flex-layout.col#mosaicoeuquerosegundo",
+      "flex-layout.col#mosaicoeuqueroterceiro",
+      "flex-layout.col#mosaicoeuqueroquarto"      
+    ]
+  },
+  "flex-layout.col#mosaicoeuqueroprimeiro": {
+    "children": [
+      "image#mosaicoeuqueroum",
+      "image#mosaicoeuquerodois",
+      "image#mosaicoeuquerotres"
+    ]
+  },
+  "image#mosaicoeuqueroum": {
+    "props": {
+      "src": "https://stevia.vteximg.com.br/arquivos/menumetabolismo.png",
+      "maxWidth": "100%"
+    }
+  },
+  "image#mosaicoeuquerodois": {
+    "props": {
+      "src": "https://stevia.vteximg.com.br/arquivos/menuanciedade.png",
+      "maxWidth": "100%"
+    }
+  },
+  "image#mosaicoeuquerotres": {
+    "props": {
+      "src": "https://stevia.vteximg.com.br/arquivos/menuemagrecimento.png",
+      "maxWidth": "100%"
+    }
+  },
+
+
+
+
+  "flex-layout.col#mosaicoeuquerosegundo": {
+    "children": [
+      "image#mosaicoeuqueroquatro",
+      "image#mosaicoeuquerocinco",
+      "image#mosaicoeuqueroseis"
+    ]
+  },
+  "image#mosaicoeuqueroquatro": {
+    "props": {
+      "src": "https://stevia.vteximg.com.br/arquivos/menuaumentoseios.png",
+      "maxWidth": "100%"
+    }
+  },
+  "image#mosaicoeuquerocinco": {
+    "props": {
+      "src": "https://stevia.vteximg.com.br/arquivos/menudoces.png",
+      "maxWidth": "100%"
+    }
+  },
+  "image#mosaicoeuqueroseis": {
+    "props": {
+      "src": "https://stevia.vteximg.com.br/arquivos/menuconcentracao.png",
+      "maxWidth": "100%"
+    }
+  },
+
+
+
+
+
+
+  "flex-layout.col#mosaicoeuqueroterceiro": {
+    "children": [
+      "image#mosaicoeuquerosete",
+      "image#mosaicoeuquerooito",
+      "image#mosaicoeuqueronove"
+    ]
+  },
+  "image#mosaicoeuquerosete": {
+    "props": {
+      "src": "https://stevia.vteximg.com.br/arquivos/menubarba.png",
+      "maxWidth": "100%"
+    }
+  },
+  "image#mosaicoeuquerooito": {
+    "props": {
+      "src": "https://stevia.vteximg.com.br/arquivos/menugordura.png",
+      "maxWidth": "100%"
+    }
+  },
+  "image#mosaicoeuqueronove": {
+    "props": {
+      "src": "https://stevia.vteximg.com.br/arquivos/menurugas.png",
+      "maxWidth": "100%"
+    }
+  },
+
+
+
+  "flex-layout.col#mosaicoeuqueroquarto": {
+    "children": [
+      "image#mosaicoeuquerodez",
+      "image#mosaicoeuqueroonze",
+      "image#mosaicoeuquerodoze"
+    ]
+  },
+  "image#mosaicoeuquerodez": {
+    "props": {
+      "src": "https://stevia.vteximg.com.br/arquivos/menucabelo.png",
+      "maxWidth": "100%"
+    }
+  },
+  "image#mosaicoeuqueroonze": {
+    "props": {
+      "src": "https://stevia.vteximg.com.br/arquivos/menucelulite.png",
+      "maxWidth": "100%"
+    }
+  },
+  "image#mosaicoeuquerodoze": {
+    "props": {
+      "src": "https://stevia.vteximg.com.br/arquivos/menuacne.png",
+      "maxWidth": "100%"
+    }
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  "flex-layout.row#mosaicoeuqueromobile":{
+    "props": {
+      "blockClass": "bloco-home-mosaicoeuqueromobile"
+    },
+    "children": [
+      "flex-layout.col#mosaicoeuqueroprimeiromobile",
+      "flex-layout.col#mosaicoeuquerosegundomobile",
+      "flex-layout.col#mosaicoeuqueroterceiromobile",
+      "flex-layout.col#mosaicoeuqueroquartomobile",
+      "flex-layout.col#mosaicoeuqueroquintomobile",
+      "flex-layout.col#mosaicoeuquerosextomobile"     
+    ]
+  },
+  "flex-layout.col#mosaicoeuqueroprimeiromobile": {
+    "children": [
+      "image#mosaicoeuqueroum",
+      "image#mosaicoeuquerodois"
+    ]
+  },
+  "flex-layout.col#mosaicoeuquerosegundomobile": {
+    "children": [
+      "image#mosaicoeuquerotres",
+      "image#mosaicoeuqueroquatro"
+    ]
+  },
+  "flex-layout.col#mosaicoeuqueroterceiromobile": {
+    "children": [
+      "image#mosaicoeuquerocinco",
+      "image#mosaicoeuqueroseis"
+    ]
+  },
+  "flex-layout.col#mosaicoeuqueroquartomobile": {
+    "children": [
+      "image#mosaicoeuquerosete",
+      "image#mosaicoeuquerooito"
+    ]
+  },
+  "flex-layout.col#mosaicoeuqueroquintomobile": {
+    "children": [
+      "image#mosaicoeuqueronove",
+      "image#mosaicoeuquerodez"
+    ]
+  },
+
+  "flex-layout.col#mosaicoeuquerosextomobile": {
+    "children": [
+      "image#mosaicoeuqueroonze",
+      "image#mosaicoeuquerodoze"
+    ]
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  "rich-text#question": {
+    "props": {
+      "text": "**This is an example store built using the VTEX platform.\nWant to know more?**",
+      "blockClass": "question"
+    }
+  },
+
+  "rich-text#link": {
+    "props": {
+      "text": "\n**Reach us at**\nwww.vtex.com.br",
+      "blockClass": "link"
+    }
+  },
+
+  "product-summary-buy-button": {
+    "props": { 
+      "displayBuyButton": "displayButtonAlways"
+    }
+  },
+
+
+
+
+
+  "rich-text#shelf-title-influencers": {
+    "props": {
+      "text": "Time Biostévi",
+      "blockClass": "shelfTitle"
+    }
+  },
+  
+
+
+
+  
+  "slider-layout#influencers": {
+    "props": {
+      "itemsPerPage": {
+        "desktop": 4,
+        "tablet": 4,
+        "phone": 2
+      },
+      "infinite": true,
+      "showNavigationArrows": "desktopOnly",
+      "blockClass": "influenciadores"
+    },
+    "children": ["image#influenter1","image#influenter2","image#influenter3","image#influenter4","image#influenter5","image#influenter6","image#influenter7","image#influenter8","image#influenter9","image#influenter10"]
+  },
+
+  "image#influenter1": {
+    "props": {
+      "src": "/arquivos/kindpng_785827.png",
+      "maxWidth": "100%"
+    }
+  },
+  "image#influenter2": {
+    "props": {
+      "src": "/arquivos/kindpng_785827.png",
+      "maxWidth": "100%"
+    }
+  },
+  "image#influenter3": {
+    "props": {
+      "src": "/arquivos/kindpng_785827.png",
+      "maxWidth": "100%"
+    }
+  },
+  "image#influenter4": {
+    "props": {
+      "src": "/arquivos/kindpng_785827.png",
+      "maxWidth": "100%"
+    }
+  },
+  "image#influenter5": {
+    "props": {
+      "src": "/arquivos/kindpng_785827.png",
+      "maxWidth": "100%"
+    }
+  },
+  "image#influenter6": {
+    "props": {
+      "src": "/arquivos/kindpng_785827.png",
+      "maxWidth": "100%"
+    }
+  },
+  "image#influenter7": {
+    "props": {
+      "src": "/arquivos/Laura-Keller.png",
+      "maxWidth": "100%"
+    }
+  },
+  "image#influenter8": {
+    "props": {
+      "src": "/arquivos/Rodrigo-Cazarotti.png",
+      "maxWidth": "100%"
+    }
+  },
+  "image#influenter9": {
+    "props": {
+      "src": "/arquivos/Sarah-Paim.png",
+      "maxWidth": "100%"
+    }
+  },
+  "image#influenter10": {
+    "props": {
+      "src": "/arquivos/Jonathas_Morandini.png",
+      "maxWidth": "100%"
+    }
+  }
+  
+  
+
+  
+
+
+
+
+
+}

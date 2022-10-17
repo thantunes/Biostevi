@@ -1,0 +1,49 @@
+{
+    "flex-layout.row#AnchorsComp": {
+        "children": [
+            "flex-layout.row#AnchorsContainer"
+        ],
+        "props": {
+            "blockClass": "AnchorsComp"
+        }
+    },
+    "flex-layout.row#AnchorsContainer": {
+        "children": [
+            "link#-Beneficios",
+            "link#-Composicao",
+            "link#-ModoDeUsar",
+            "link#-Advertencia"
+        ],
+        "props": {
+            "blockClass": "AnchorsContainer"
+        }
+    },
+    "link#-Beneficios": {
+        "props": {
+            "href":"#Beneficios",
+            "label": "Beneficios",
+            "blockClass":"PDPAnchor"
+        }
+    },
+    "link#-Composicao": {
+        "props": {
+            "href":"#Composicao",
+            "label": "Composição",
+            "blockClass":"PDPAnchor"
+        }
+    },
+    "link#-ModoDeUsar": {
+        "props": {
+            "href":"#ModoDeUsar",
+            "label": "Modo de Usar",
+            "blockClass":"PDPAnchor"
+        }
+    },
+    "link#-Advertencia": {
+        "props": {
+            "href":"#Advertencia",
+            "label": "Advertência",
+            "blockClass":"PDPAnchor"
+        }
+    }
+}

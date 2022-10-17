@@ -1,0 +1,126 @@
+{
+    "store.custom#quem-somos": {
+      "blocks": ["flex-layout.row#quem-somos","flex-layout.row#espaco","flex-layout.row#tres-blocos","flex-layout.row#espaco"]
+    },
+    "flex-layout.row#quem-somos": {
+      "children": ["flex-layout.col#text-quem-somos", "flex-layout.col#text-diferenciais"]
+    },
+    "flex-layout.col#text-quem-somos": {
+      "children": ["rich-text#quem-somos-title", "rich-text#quem-somos-content"],
+      "props": {
+        "blockClass": "bloco-quem-somos",
+        "preventVerticalStretch": true
+      }
+    },
+
+
+
+    "flex-layout.row#espaco":{
+      "props": {
+        "blockClass": "bloco-quem-somos-espacamento",
+        "preventVerticalStretch": true
+      }
+
+    },
+
+
+    "rich-text#quem-somos-title": {
+      "props": {
+        "text": "QUEM SOMOS",
+        "blockClass": "titulo-quem-somos"
+      }
+    },
+    "rich-text#quem-somos-content": {
+      "props": {
+        "text": "A Biostevi começou com um sonho. Hoje, depois de 40 anos do sonho realizado, continuaremos a sonhar e a realizar o nosso propósito, com paixão, brilho nos olhos e com o orgulho de fazer bem feito. Quem compra nossos produtos, compra muito mais que medicamentos, suplementos, cosméticos, entre outros, compra a nossa história, nossa marca e o nosso orgulho de proporcionar saúde, beleza e bem estar aos nossos clientes."
+      }
+    },
+    "flex-layout.col#text-diferenciais": {
+      "children": ["rich-text#diferenciais-title", "rich-text#diferenciais-content"],
+      "props": {
+        "blockClass": "bloco-diferenciais",
+        "preventVerticalStretch": true
+      }
+    },
+    "rich-text#diferenciais-title": {
+      "props": {
+        "text": "DEFERENCIAIS",
+        "blockClass": "titulo-quem-somos"
+      }
+    },
+    "rich-text#diferenciais-content": {
+      "props": {
+        "text": "Flexibilidade; \n Tempo rápido de resposta ao cliente; \n Pesquisa e desenvolvimento de novos produtos; \n Investimento em pessoas através de diversos programas de desenvolvimento; \n Comprometimento com resultados; \n Criatividade e inovação."
+      }
+    },
+
+
+
+
+
+    "flex-layout.row#tres-blocos": {
+      "children": ["flex-layout.col#missao", "flex-layout.col#visao", "flex-layout.col#valores"]
+    },
+
+
+
+    "flex-layout.col#missao": {
+      "children": ["rich-text#missao-title", "rich-text#missao-content"],
+      "props": {
+        "blockClass": "bloco-missao",
+        "preventVerticalStretch": true
+      }
+    },
+    "rich-text#missao-title": {
+      "props": {
+        "text": "MISSÃO",
+        "blockClass": "titulo-quem-somos"
+      }
+    },
+    "rich-text#missao-content": {
+      "props": {
+        "text": "Nosso compromisso é o bem-estar dos nossos clientes. \n Seja contribuindo para: \n Vida saudável \n  Beleza \n  Autoestima \n Desempenho físico"
+      }
+    },
+
+
+    "flex-layout.col#visao": {
+      "children": ["rich-text#visao-title", "rich-text#visao-content"],
+      "props": {
+        "blockClass": "bloco-visao",
+        "preventVerticalStretch": true
+      }
+    },
+    "rich-text#visao-title": {
+      "props": {
+        "text": "VISÃO",
+        "blockClass": "titulo-quem-somos"
+      }
+    },
+    "rich-text#visao-content": {
+      "props": {
+        "text": "A Biostévi será reconhecida por sua liderança inovadora e por atender as expectativas de nossos clientes e nossos colaboradores, gerando assim o coeficiente “amor” pela marca.Ser uma empresa de médio porte, mantendo o relacionamento próximo e efetivo com todos os clientes, colaboradores, através de seus valores e competências corporativas."
+      }
+    },
+
+    "flex-layout.col#valores": {
+      "children": ["rich-text#valores-title", "rich-text#valores-content"],
+      "props": {
+        "blockClass": "bloco-valores",
+        "preventVerticalStretch": true
+      }
+    },
+    "rich-text#valores-title": {
+      "props": {
+        "text": "VALORES",
+        "blockClass": "titulo-quem-somos"
+      }
+    },
+    "rich-text#valores-content": {
+      "props": {
+        "text": "Ética nas relações com os cientes, colaboradores e parceiros. \n Qualidade e eficácia nos produtos.\n Trabalho em equipe: Buscar a união e a cooperação entre todos, visando o resultado.\n Comprometimento: Atender os objetivos do cliente e da empresa."
+      }
+    }
+
+    
+  }

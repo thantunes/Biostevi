@@ -1,0 +1,19 @@
+.MobileUpAnchor{
+    position: fixed;
+    z-index: 999999;
+    left: 5px;
+    bottom: 85px;
+    width: 35px;
+    height: 35px;
+    background-color: white;
+    box-shadow: 5px 5px 15px 5px #0000002c;
+    padding: 10px;
+    border-radius: 100%;
+}
+
+
+@media screen and (min-width:768px) {
+    .MobileUpAnchor{
+        display: none;
+    }
+}
