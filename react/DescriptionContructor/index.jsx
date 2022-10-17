@@ -315,14 +315,7 @@ function DescriptionContructor() {
                                     <div>
                                         {
                                             data.map((e) => {
-                                                if (e.name.includes("Linha5-Titulo")) {
-                                                    return <h2>{e.values[0]}</h2>
-                                                }
-                                            })
-                                        }
-                                        {
-                                            data.map((e) => {
-                                                if (e.values[0].includes('class="descricao-pdp-full"')) {
+                                                if (e.values[0].includes('class="descricao-pdp-full"') || e.values[0].includes('<br />') ) {
                                                     return null
                                                 } else {
                                                     if (e.name.includes("Linha5-Paragrafo")) {
@@ -390,7 +383,7 @@ function DescriptionContructor() {
             {
                 data.map((e) => {
                     if (e.name.includes("Linha8-VIDEO")) {
-                        return <div className='vtex-product-specifications-1-x-specificationValue' dangerouslySetInnerHTML={{ __html: e.values[0]}}></div>
+                        return <div className='vtex-product-specifications-1-x-specificationValue teste' dangerouslySetInnerHTML={{ __html: e.values[0]}}></div>
                     } else {
                         return null
                     }
