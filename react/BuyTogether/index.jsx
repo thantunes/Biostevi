@@ -118,28 +118,31 @@ export function BuyTogether() {
     return (
         <>
             <div className={`BuyTogether__Box`}>
+                <h2>Compre Junto</h2>
                 <div className='BuyTogether__Container__Row'>
                     <div className='BuyTogether__Container__Row__Container'>
-                        {
-                            ProdsTouse?.map((e) => {
-                                return (
-                                    <div className={`BuyTogether__Container`}>
-                                        <div className={`BuyTogether__Product__Image`}>
-                                            <img src={e?.items[0].images[0].imageUrl} alt={e?.items[0].images[0].imageText} />
+                        <div className='BuyTogether__Container__Row__Prod'>
+                            {
+                                ProdsTouse?.map((e) => {
+                                    return (
+                                        <div className={`BuyTogether__Container`}>
+                                            <div className={`BuyTogether__Product__Image`}>
+                                                <img src={e?.items[0].images[0].imageUrl} alt={e?.items[0].images[0].imageText} />
+                                            </div>
+                                            <div className={`BuyTogether__Product__Name`}>
+                                                <h2>{e?.productName}</h2>
+                                            </div>
+                                            <div className={`BuyTogether__Product__Price`}>
+                                                <p>{formatPrice(e?.items[0].sellers[0].commertialOffer.Price)}</p>
+                                            </div>
                                         </div>
-                                        <div className={`BuyTogether__Product__Name`}>
-                                            <h2>{e?.productName}</h2>
-                                        </div>
-                                        <div className={`BuyTogether__Product__Price`}>
-                                            <p>{formatPrice(e?.items[0].sellers[0].commertialOffer.Price)}</p>
-                                        </div>
-                                    </div>
-                                );
-                            })
-                        }
-                        <div style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
+                                    );
+                                })
+                            }
+                        </div>
+                        <div className='BuyTogether__Container__Row__Buy' style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
                             <p style={{ margin: "0px 25px", fontSize: "52px" }}>=</p>
-                            <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+                            <div className='BuyTogether__Container__Row__Desc' style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
                                 <h3 style={{ margin: "0px" }}>Comprando dois Produtos por</h3>
                                 <p style={{ fontWeight: "bolder", fontSize: "22px" }}>{formatPrice(ProdsTouse?.[0]?.items[0].sellers[0].commertialOffer.Price + ProdsTouse?.[1]?.items[0].sellers[0].commertialOffer.Price)}</p>
                                 <button className='BuyTogether__Container__BuyButton' onClick={SaveData}>Adicionar ao Carrinho</button>

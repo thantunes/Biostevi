@@ -65,21 +65,26 @@
      "shelf.relatedProducts",
       "product-reviews",
       "flex-layout.row#buy-together",
-      "product-questions-and-answers",
-      "rich-text#pdp-informativo1",
-      "flex-layout.row#informativo2",
-      //"rich-text#pdp-informativo2",
-      //"rich-text#pdp-informativo3",
-      "flex-layout.row#informativo3",
-      //"rich-text#pdp-informativo4",
-      "flex-layout.row#informativo4",
+      "product-questions-and-answers"
+      // "rich-text#pdp-informativo1",
+      // "flex-layout.row#informativo2",
+      // //"rich-text#pdp-informativo2",
+      // //"rich-text#pdp-informativo3",
+      // "flex-layout.row#informativo3",
+      // //"rich-text#pdp-informativo4",
+      // "flex-layout.row#informativo4",
      // "newsletter"
-      "flex-layout.row#bloconews"
+      // "flex-layout.row#bloconews"
     ]
   },
 
 
-
+  "rich-text#shelf-titlepdp": {
+    "props": {
+      "text": "Compre Junto",
+      "blockClass": "shelfTitle"
+    }
+  },
   "flex-layout.row#shelfCompreJunto": {
     "children": ["list-context.product-list#shelfCompreJunto"],
     "props":{

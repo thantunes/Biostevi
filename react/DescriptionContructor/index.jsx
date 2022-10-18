@@ -274,7 +274,7 @@ function DescriptionContructor() {
                                         {
                                             data.map((e) => {
                                                 if (e.name.includes("Linha4-Titulo")) {
-                                                    return <h2>{e.values[0]}</h2>
+                                                    return <h2 dangerouslySetInnerHTML={{__html: e.values[0]}}></h2>
                                                 }
                                             })
                                         }
@@ -284,7 +284,7 @@ function DescriptionContructor() {
                                                     return null
                                                 } else {
                                                     if (e.name.includes("Linha4-Paragrafo")) {
-                                                        return <p>{e.values[0]}</p>
+                                                        return <p dangerouslySetInnerHTML={{ __html: e.values[0]}}></p>
                                                     }
                                                 }
 
@@ -319,7 +319,7 @@ function DescriptionContructor() {
                                                     return null
                                                 } else {
                                                     if (e.name.includes("Linha5-Paragrafo")) {
-                                                        return <p>{e.values[0]}</p>
+                                                        return <p dangerouslySetInnerHTML={{ __html: e.values[0] }}></p>
                                                     }
                                                 }
 
