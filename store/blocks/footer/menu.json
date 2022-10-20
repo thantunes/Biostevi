@@ -248,7 +248,8 @@
     "children": [
       "menu-item#atendimendotitulo",
       "menu-item#bags",
-      "menu-item#backpacks"
+      "menu-item#backpacks",
+      "ReclameAq"
     ]
   },
 

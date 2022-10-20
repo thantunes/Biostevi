@@ -28,7 +28,7 @@
   },
 
   "flex-layout.row#2-desktop": {
-    "children": ["notification.bar#home", "ReclameAq"],
+    "children": ["notification.bar#home"],
     "props": {
       "fullWidth": "true"
     }

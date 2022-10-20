@@ -65,9 +65,9 @@
      "shelf.relatedProducts",
       "product-reviews",
       "flex-layout.row#buy-together",
-      "product-questions-and-answers"
-      // "rich-text#pdp-informativo1",
-      // "flex-layout.row#informativo2",
+      "product-questions-and-answers",
+      "rich-text#pdp-informativo1"
+      // "flex-layout.row#informativo2"
       // //"rich-text#pdp-informativo2",
       // //"rich-text#pdp-informativo3",
       // "flex-layout.row#informativo3",

@@ -67,75 +67,8 @@ function DescriptionContructor() {
             <p className='DescBox' dangerouslySetInnerHTML={{ __html: FullData?.product.description }}></p>
             {
                 data.map((e) => {
-                    if (e.name.includes("Benefícios")) {
-                        return (
-                            <div className='BlockStyle'>
-
-                                <div className='Default-Data'>
-                                    <h2 id='Beneficios'>Benefícios</h2>
-                                    {
-                                        data.map((e) => {
-                                            if (e.name.includes("Benefícios")) {
-                                                const value = e.values
-                                                return <span style={{ whiteSpace: "break-spaces" }} data-specification-value={e.values[0]} dangerouslySetInnerHTML={{__html: e.values[0]}}></span>
-                                            }
-                                        })
-                                    }
-                                </div>
-                            </div>
-                        );
-                    }
-                })
-            }
-            {
-                data.map((e) => {
-                    if (e.name.includes("Composição")) {
-                        return (
-                            <div className='BlockStyle'>
-
-                                <div className='Default-Data'>
-                                    <h2 id='Composicao'>Composição</h2>
-                                    {
-                                        data.map((e) => {
-                                            if (e.name.includes("Composição")) {
-                                                const value = e.values
-                                                return <span style={{ whiteSpace: "break-spaces" }} data-specification-value={e.values[0]} dangerouslySetInnerHTML={{__html: e.values[0]}}></span>
-                                            }
-                                        })
-                                    }
-                                </div>
-                            </div>
-                        );
-                    }
-                })
-            }
-            {
-                data.map((e) => {
-                    if (e.name.includes("Modo de Usar")) {
-                        return (
-                            <div className='BlockStyle'>
-
-                                <div className='Default-Data'>
-                                    <h2 id='ModoDeUsar'>Modo de Usar</h2>
-                                    {
-                                        data.map((e) => {
-                                            if (e.name.includes("Modo de Usar")) {
-                                                const value = e.values
-                                                return <span style={{ whiteSpace: "break-spaces" }} data-specification-value={e.values[0]} dangerouslySetInnerHTML={{__html: e.values[0]}}></span>
-                                            }
-                                        })
-                                    }
-                                </div>
-                            </div>
-                        );
-                    }
-                })
-            }
-
-            {
-                data.map((e) => {
                     if (e.values[0].includes('class="descricao-pdp-full"')) {
-                        return <div className='vtex-product-specifications-1-x-specificationValue' dangerouslySetInnerHTML={{ __html: e.values[0] }}></div>
+                        return <div className='vtex-product-specifications-1-x-specificationValue MobileStyle' dangerouslySetInnerHTML={{ __html: e.values[0] }}></div>
                     } else {
                         if (e.name.includes("Linha1-Paragrafo")) {
                             return (
@@ -160,9 +93,8 @@ function DescriptionContructor() {
                                                 if (e.values[0].includes('div')) {
                                                     return null
                                                 } else {
-                                                    console.log(e.values[0].includes("div"))
                                                     if (e.name.includes("Linha1-Paragrafo")) {
-                                                        return <p dangerouslySetInnerHTML={{ __html: e.values[0]}}></p>
+                                                        return <p className='MobileStyle' dangerouslySetInnerHTML={{ __html: e.values[0]}}></p>
                                                     }
                                                 }
 
@@ -200,7 +132,7 @@ function DescriptionContructor() {
                                                 } else {
                                                     console.log(e.values[0].includes('class="descricao-pdp-full"'))
                                                     if (e.name.includes("Linha2-Paragrafo")) {
-                                                        return <p dangerouslySetInnerHTML={{ __html: e.values[0]}}></p>
+                                                        return <p className='MobileStyle' dangerouslySetInnerHTML={{ __html: e.values[0]}}></p>
                                                     }
                                                 }
 
@@ -284,7 +216,7 @@ function DescriptionContructor() {
                                                     return null
                                                 } else {
                                                     if (e.name.includes("Linha4-Paragrafo")) {
-                                                        return <p dangerouslySetInnerHTML={{ __html: e.values[0]}}></p>
+                                                        return <p className='MobileStyle' dangerouslySetInnerHTML={{ __html: e.values[0]}}></p>
                                                     }
                                                 }
 
@@ -550,6 +482,72 @@ function DescriptionContructor() {
                         null
                     }
 
+                })
+            }
+            {
+                data.map((e) => {
+                    if (e.name.includes("Benefícios")) {
+                        return (
+                            <div className='BlockStyle'>
+
+                                <div className='Default-Data'>
+                                    <h2 id='Beneficios'>Benefícios</h2>
+                                    {
+                                        data.map((e) => {
+                                            if (e.name.includes("Benefícios")) {
+                                                const value = e.values
+                                                return <span style={{ whiteSpace: "break-spaces" }} data-specification-value={e.values[0]} dangerouslySetInnerHTML={{__html: e.values[0]}}></span>
+                                            }
+                                        })
+                                    }
+                                </div>
+                            </div>
+                        );
+                    }
+                })
+            }
+            {
+                data.map((e) => {
+                    if (e.name.includes("Composição")) {
+                        return (
+                            <div className='BlockStyle'>
+
+                                <div className='Default-Data'>
+                                    <h2 id='Composicao'>Composição</h2>
+                                    {
+                                        data.map((e) => {
+                                            if (e.name.includes("Composição")) {
+                                                const value = e.values
+                                                return <span style={{ whiteSpace: "break-spaces" }} data-specification-value={e.values[0]} dangerouslySetInnerHTML={{__html: e.values[0]}}></span>
+                                            }
+                                        })
+                                    }
+                                </div>
+                            </div>
+                        );
+                    }
+                })
+            }
+            {
+                data.map((e) => {
+                    if (e.name.includes("Modo de Usar")) {
+                        return (
+                            <div className='BlockStyle'>
+
+                                <div className='Default-Data'>
+                                    <h2 id='ModoDeUsar'>Modo de Usar</h2>
+                                    {
+                                        data.map((e) => {
+                                            if (e.name.includes("Modo de Usar")) {
+                                                const value = e.values
+                                                return <span style={{ whiteSpace: "break-spaces" }} data-specification-value={e.values[0]} dangerouslySetInnerHTML={{__html: e.values[0]}}></span>
+                                            }
+                                        })
+                                    }
+                                </div>
+                            </div>
+                        );
+                    }
                 })
             }
             {
