@@ -226,6 +226,10 @@ iframe {
     direction: rtl;
     text-align: left;
 }
+.TableContentBox td div p{
+    width: 100%;
+    text-align: center;
+}
 @media screen and (max-width:768px) {
     .BuyTogether__Container__Row__Desc h3 {
         font-size: 13px;
