@@ -31,3 +31,8 @@
         width: 172px !important;
     }
 }
+@media screen and (max-width:420px){
+    .containerNormal{
+        width: 134px !important;
+    }
+}
