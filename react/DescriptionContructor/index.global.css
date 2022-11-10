@@ -229,6 +229,10 @@ iframe {
 .TableContentBox td div p{
     width: 100%;
     text-align: center;
+
+}
+.TableContentBox td div h3 {
+    text-align: center;
 }
 @media screen and (max-width:768px) {
     .BuyTogether__Container__Row__Desc h3 {

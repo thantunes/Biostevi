@@ -25,3 +25,9 @@
 .containerNormal{
     width: 242px;
 }
+
+@media screen and (max-width:769px){
+    .containerNormal{
+        width: 172px !important;
+    }
+}
