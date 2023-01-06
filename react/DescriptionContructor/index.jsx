@@ -200,7 +200,7 @@ function DescriptionContructor() {
                     } else {
                         if (e.name.includes("Linha4-Paragrafo")) {
                             return (
-                                <div className='BlockStyle'>
+                                <div className='BlockStyle HorizontalBanner'>
 
                                     <div>
                                         {

@@ -37,6 +37,26 @@ html {
     display: flex;
     flex-direction: row;
 }
+.BlockStyle div{
+    margin: 0 20px;
+}
+.BlockStyle div>p{
+    color: #727273;
+    line-height: 24px;
+    padding: 1rem !important;
+    margin-top: 30px;
+    white-space: break-spaces;
+}
+.BlockStyle div>h2 {
+
+    color: #009fc2 !important;
+    font-size: 26px;
+    font-weight: normal !important;
+    text-align: start;
+    width: 100%;
+    line-height: 24px;
+
+}
 
 .BlockStyle p .descricao-pdp-esq {
     float: left;
@@ -192,6 +212,7 @@ html {
     padding: 1rem;
     margin-top: 30px;
 }
+
 .BlockStyle p .descricao-pdp-dir h2 {
     color: #009fc2 !important;
     font-size: 26px;
@@ -227,15 +248,18 @@ iframe {
     direction: rtl;
     text-align: left;
 }
-.TableContentBox td div p{
+
+.TableContentBox td div p {
     width: 100%;
     text-align: center;
     font-size: unset;
 }
+
 .TableContentBox td div h3 {
     text-align: center;
     font-size: unset;
 }
+
 @media screen and (max-width:768px) {
     .BuyTogether__Container__Row__Desc h3 {
         font-size: 13px;
@@ -250,41 +274,54 @@ iframe {
         margin-right: 0px !important;
     }
 
-    .BuyTogether__Container__Row__Buy > p {
+    .BuyTogether__Container__Row__Buy>p {
         font-size: 32px !important;
     }
 
     .BuyTogether__Container__BuyButton {
         font-size: 12px !important;
     }
+
     .CustomDescData iframe {
         margin: 25px auto;
         width: 100%;
         height: 350px;
     }
-    .BuyTogether__Container__Row__Container{
+
+    .BuyTogether__Container__Row__Container {
         flex-direction: column !important;
     }
-    .BuyTogether__Container__Row__Buy{
+
+    .BuyTogether__Container__Row__Buy {
         flex-direction: column !important;
     }
-    .BuyTogether__Container:nth-child(odd){
+
+    .BuyTogether__Container:nth-child(odd) {
         margin-bottom: 55px;
     }
+
     .BuyTogether__Container:nth-child(odd)::after {
         top: 100% !important;
         left: calc(50% - 33px) !important;
     }
-    .MobileStyle{
+
+    .MobileStyle {
         flex-direction: column-reverse !important;
     }
+
     .BlockStyle p .descricao-pdp-dir {
         float: right;
         max-width: 708px;
-        padding-right:unset !important;
+        padding-right: unset !important;
         padding: unset !important;
         direction: rtl;
         text-align: left;
     }
-    
+    .BlockStyle{
+        flex-direction: column;
+
+    }
+    .BlockStyle:nth-child(odd){
+        flex-direction: column-reverse;
+    }
 }
