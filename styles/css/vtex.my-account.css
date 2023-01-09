@@ -351,10 +351,10 @@
     display: block;
   }
 
-  :global(.descricao-pdp-esq),
+  /* :global(.descricao-pdp-esq),
   :global(.descricao-pdp-dir) {
     max-height: 400px !important;
-  }
+  } */
 
 
 
@@ -416,15 +416,15 @@
 }
 
 :global(.descricao-pdp-esq img) {
-  max-width: 355px;
-  margin-right: 25px;
+  width: 100%;
   border-radius: 20px;
+  margin: 0px !important;
 }
 
 :global(.descricao-pdp-dir img) {
-  max-width: 355px;
-  margin-right: 25px;
+  width: 100%;
   border-radius: 20px;
+  margin: 0px !important;
 }
 
 :global(.descricao-pdp-esq) p {

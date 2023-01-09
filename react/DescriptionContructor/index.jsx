@@ -73,11 +73,9 @@ function DescriptionContructor() {
                         if (e.name.includes("Linha1-Paragrafo")) {
                             return (
                                 <div className='BlockStyle'>
-                                    {
-                                    }
                                     {data.map((e) => {
                                         if (e.name.includes("Linha1-Banner")) {
-                                            return <img src={`https://stevia.vteximg.com.br/arquivos/${e.values}`} alt="" />
+                                            return <img src={`https://stevia.vteximg.com.br/arquivos/${e.values}`}  style={{maxWidth:"30%", borderRadius:"20px"}} alt="" />
                                         }
                                     })}
                                     <div>
@@ -141,7 +139,7 @@ function DescriptionContructor() {
                                     </div>
                                     {data.map((e) => {
                                         if (e.name.includes("Linha2-Banner")) {
-                                            return <img src={`https://stevia.vteximg.com.br/arquivos/${e.values}`} alt="" />
+                                            return <img src={`https://stevia.vteximg.com.br/arquivos/${e.values}`} style={{maxWidth:"30%", borderRadius:"20px"}} alt="" />
                                         }
                                     })}
                                 </div>
@@ -161,7 +159,7 @@ function DescriptionContructor() {
                                 <div className='BlockStyle'>
                                     {data.map((e) => {
                                         if (e.name.includes("Linha3-Banner")) {
-                                            return <img src={`https://stevia.vteximg.com.br/arquivos/${e.values}`} alt="" />
+                                            return <img src={`https://stevia.vteximg.com.br/arquivos/${e.values}`}  style={{maxWidth:"30%", borderRadius:"20px"}} alt="" />
                                         }
                                     })}
                                     <div>
@@ -200,7 +198,7 @@ function DescriptionContructor() {
                     } else {
                         if (e.name.includes("Linha4-Paragrafo")) {
                             return (
-                                <div className='BlockStyle HorizontalBanner'>
+                                <div className='BlockStyle'>
 
                                     <div>
                                         {
@@ -225,7 +223,7 @@ function DescriptionContructor() {
                                     </div>
                                     {data.map((e) => {
                                         if (e.name.includes("Linha4-Banner")) {
-                                            return <img src={`https://stevia.vteximg.com.br/arquivos/${e.values}`} alt="" />
+                                            return <img src={`https://stevia.vteximg.com.br/arquivos/${e.values}`} style={{maxWidth:"30%", borderRadius:"20px"}} alt="" />
                                         }
                                     })}
                                 </div>
@@ -242,8 +240,12 @@ function DescriptionContructor() {
                     } else {
                         if (e.name.includes("Linha5-Paragrafo")) {
                             return (
-                                <div className='BlockStyle HorizontalBanner'>
-
+                                <div className='BlockStyle HorizontalBanner' style={{marginTop:"15px"}}>
+                                    {data.map((e) => {
+                                        if (e.name.includes("Linha5-Banner")) {
+                                            return <img src={`https://stevia.vteximg.com.br/arquivos/${e.values}`} style={{borderRadius:"20px"}} alt="" />
+                                        }
+                                    })}
                                     <div>
                                         {
                                             data.map((e) => {
@@ -258,11 +260,7 @@ function DescriptionContructor() {
                                             })
                                         }
                                     </div>
-                                    {data.map((e) => {
-                                        if (e.name.includes("Linha5-Banner")) {
-                                            return <img src={`https://stevia.vteximg.com.br/arquivos/${e.values}`} alt="" />
-                                        }
-                                    })}
+                                    
                                 </div>
                             );
                         }

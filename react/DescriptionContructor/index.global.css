@@ -10,8 +10,11 @@
     color: #009fc2 !important;
     font-size: 26px;
     font-weight: normal !important;
+    padding: 0 1rem !important;
 }
-
+.BlockStyle>div>h2 {
+    margin-bottom: 0 !important;
+}
 .CustomDescData>div>p {
     color: #555;
     font-size: 17px !important;
@@ -36,14 +39,16 @@ html {
 .BlockStyle div>p {
     display: flex;
     flex-direction: row;
+    margin-top: 0px !important;
+    padding-top: 0px !important;
 }
 .BlockStyle div{
-    margin: 0 20px;
+    margin: 15px 0px;
 }
 .BlockStyle div>p{
     color: #727273;
     line-height: 24px;
-    padding: 1rem !important;
+    padding: 1rem 0px !important;
     margin-top: 30px;
     white-space: break-spaces;
 }
@@ -62,7 +67,6 @@ html {
     float: left;
     max-width: 708px;
     padding-right: 15px;
-    overflow: auto;
     direction: rtl;
     text-align: left;
 }
@@ -98,13 +102,14 @@ html {
     text-align: start;
     width: 100%;
     line-height: 24px;
+    padding-left: 0px !important; 
 }
 
-.descricao-pdp-dir img {
+/* .descricao-pdp-dir img {
     max-width: 325px !important;
     margin-right: 25px !important;
     border-radius: 20px !important;
-}
+} */
 
 .Default-Data span {
     width: 100%;
@@ -201,7 +206,7 @@ html {
 
 .TableContentBox td div h3,
 .TableContentBox td div p {
-    margin: 5px 0;
+    margin: 0px 0;
     padding: 0;
     font-size: unset;
 }
@@ -218,6 +223,7 @@ html {
     font-size: 26px;
     font-weight: normal !important;
     width: 100%;
+    text-align: center;
 }
 
 .BlockStyle p .descricao-pdp-dir h3 {
@@ -253,13 +259,16 @@ iframe {
     width: 100%;
     text-align: center;
     font-size: unset;
+    padding-top: 0px !important;
 }
 
 .TableContentBox td div h3 {
     text-align: center;
     font-size: unset;
 }
-
+.BlockStyle img{
+    margin: 30px;
+}
 @media screen and (max-width:768px) {
     .BuyTogether__Container__Row__Desc h3 {
         font-size: 13px;
@@ -323,5 +332,19 @@ iframe {
     }
     .BlockStyle:nth-child(odd){
         flex-direction: column-reverse;
+    }
+
+    .BlockStyle img{
+        width: 263px !important;
+        margin: 0px;
+        max-width: unset !important;
+    }
+    .TableContentBox td img{
+        width: 100% !important;
+        margin: 0px;
+        max-width: 100px;
+    }
+    .HorizontalBanner img {
+        width: 100% !important;
     }
 }
