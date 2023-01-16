@@ -39,7 +39,7 @@
   :global(.vtex-flex-layout-0-x-flexRow--productSpecificationGroup):first-child 
   :global(.vtex-flex-layout-0-x-flexCol--productSpecificationName){border:none!important;}
 
-  :global(.vtex-store-components-3-x-productDescriptionText){    padding: 1rem!important;}
+  /* :global(.vtex-store-components-3-x-productDescriptionText){    padding: 1rem!important;} */
 
 
   :global(.vtex-flex-layout-0-x-flexRow--texto-informativo-footer)
@@ -1180,3 +1180,19 @@
   :global(.vtex-store-components-3-x-imageElement--bandeira-aura){    max-height: 23px;margin-top: 3px;}
   :global(.vtex-store-components-3-x-imageElement--bandeira-jcb){    max-height: 24px;margin-top: 2px;}
   :global(.vtex-store-components-3-x-imageElement--bandeira-boleto){    max-height: 21px;margin-top: 4px;}
+
+
+
+
+  .pointerEventsAuto{
+    text-align: left !important;
+  }
+  .content{
+    padding: 0px !important;
+  }
+  .showMoreButton{
+    margin: 0px !important;
+  }
+  .productDescriptionText .container {
+    height: 120px;
+  }

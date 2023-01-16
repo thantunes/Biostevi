@@ -64,25 +64,25 @@ function DescriptionContructor() {
     };
     return (
         <div className='CustomDescData'>
-            <p className='DescBox' dangerouslySetInnerHTML={{ __html: FullData?.product.description }}></p>
+            <p className='DescBox' dangerouslySetInnerHTML={{ __html: FullData?.product.description }} id="MetaTag-PDP"></p>
             {
                 data.map((e) => {
                     if (e.values[0].includes('class="descricao-pdp-full"')) {
-                        return <div className='vtex-product-specifications-1-x-specificationValue MobileStyle' dangerouslySetInnerHTML={{ __html: e.values[0] }}></div>
+                        return null
                     } else {
                         if (e.name.includes("Linha1-Paragrafo")) {
                             return (
                                 <div className='BlockStyle'>
                                     {data.map((e) => {
                                         if (e.name.includes("Linha1-Banner")) {
-                                            return <img src={`https://stevia.vteximg.com.br/arquivos/${e.values}`}  style={{maxWidth:"30%", borderRadius:"20px"}} alt="" />
+                                            return <img src={`https://stevia.vteximg.com.br/arquivos/${e.values}`} style={{ maxWidth: "30%", borderRadius: "20px" }} alt="" />
                                         }
                                     })}
                                     <div>
                                         {
                                             data.map((e) => {
                                                 if (e.name.includes("Linha1-Titulo")) {
-                                                    return <h2 dangerouslySetInnerHTML={{ __html: e.values[0]}}></h2>
+                                                    return <h2 dangerouslySetInnerHTML={{ __html: e.values[0] }}></h2>
                                                 }
                                             })
                                         }
@@ -92,7 +92,7 @@ function DescriptionContructor() {
                                                     return null
                                                 } else {
                                                     if (e.name.includes("Linha1-Paragrafo")) {
-                                                        return <p className='MobileStyle' dangerouslySetInnerHTML={{ __html: e.values[0]}}></p>
+                                                        return <p className='MobileStyle linha1' dangerouslySetInnerHTML={{ __html: e.values[0] }}></p>
                                                     }
                                                 }
 
@@ -113,12 +113,12 @@ function DescriptionContructor() {
                     } else {
                         if (e.name.includes("Linha2-Paragrafo")) {
                             return (
-                                <div className='BlockStyle'>
+                                <div className='BlockStyle Linha2'>
                                     <div>
                                         {
                                             data.map((e) => {
                                                 if (e.name.includes("Linha2-Titulo")) {
-                                                    return <h2 dangerouslySetInnerHTML={{ __html: e.values[0]}}></h2>
+                                                    return <h2 dangerouslySetInnerHTML={{ __html: e.values[0] }}></h2>
                                                 }
                                             })
                                         }
@@ -128,9 +128,9 @@ function DescriptionContructor() {
                                                     return null
                                                     console.log("linha 6 existe")
                                                 } else {
-                                                    console.log(e.values[0].includes('class="descricao-pdp-full"'))
+                                                    console.log("linha 2 pdp-full", e.values[0].includes('class="descricao-pdp-full"'))
                                                     if (e.name.includes("Linha2-Paragrafo")) {
-                                                        return <p className='MobileStyle' dangerouslySetInnerHTML={{ __html: e.values[0]}}></p>
+                                                        return <p className='MobileStyle Linha2' dangerouslySetInnerHTML={{ __html: e.values[0] }}></p>
                                                     }
                                                 }
 
@@ -139,7 +139,7 @@ function DescriptionContructor() {
                                     </div>
                                     {data.map((e) => {
                                         if (e.name.includes("Linha2-Banner")) {
-                                            return <img src={`https://stevia.vteximg.com.br/arquivos/${e.values}`} style={{maxWidth:"30%", borderRadius:"20px"}} alt="" />
+                                            return <img src={`https://stevia.vteximg.com.br/arquivos/${e.values}`} style={{ maxWidth: "30%", borderRadius: "20px" }} alt="" />
                                         }
                                     })}
                                 </div>
@@ -159,7 +159,7 @@ function DescriptionContructor() {
                                 <div className='BlockStyle'>
                                     {data.map((e) => {
                                         if (e.name.includes("Linha3-Banner")) {
-                                            return <img src={`https://stevia.vteximg.com.br/arquivos/${e.values}`}  style={{maxWidth:"30%", borderRadius:"20px"}} alt="" />
+                                            return <img src={`https://stevia.vteximg.com.br/arquivos/${e.values}`} style={{ maxWidth: "30%", borderRadius: "20px" }} alt="" />
                                         }
                                     })}
                                     <div>
@@ -177,7 +177,7 @@ function DescriptionContructor() {
                                                     return null
                                                 } else {
                                                     if (e.name.includes("Linha3-Paragrafo")) {
-                                                        return <p dangerouslySetInnerHTML={{__html: e.values[0]}}></p>
+                                                        return <p className='MobileStyle linha3' dangerouslySetInnerHTML={{ __html: e.values[0] }}></p>
                                                     }
                                                 }
 
@@ -204,7 +204,7 @@ function DescriptionContructor() {
                                         {
                                             data.map((e) => {
                                                 if (e.name.includes("Linha4-Titulo")) {
-                                                    return <h2 dangerouslySetInnerHTML={{__html: e.values[0]}}></h2>
+                                                    return <h2 dangerouslySetInnerHTML={{ __html: e.values[0] }}></h2>
                                                 }
                                             })
                                         }
@@ -214,7 +214,7 @@ function DescriptionContructor() {
                                                     return null
                                                 } else {
                                                     if (e.name.includes("Linha4-Paragrafo")) {
-                                                        return <p className='MobileStyle' dangerouslySetInnerHTML={{ __html: e.values[0]}}></p>
+                                                        return <p className='MobileStyle linha4' dangerouslySetInnerHTML={{ __html: e.values[0] }}></p>
                                                     }
                                                 }
 
@@ -223,7 +223,7 @@ function DescriptionContructor() {
                                     </div>
                                     {data.map((e) => {
                                         if (e.name.includes("Linha4-Banner")) {
-                                            return <img src={`https://stevia.vteximg.com.br/arquivos/${e.values}`} style={{maxWidth:"30%", borderRadius:"20px"}} alt="" />
+                                            return <img src={`https://stevia.vteximg.com.br/arquivos/${e.values}`} style={{ maxWidth: "30%", borderRadius: "20px" }} alt="" />
                                         }
                                     })}
                                 </div>
@@ -236,20 +236,23 @@ function DescriptionContructor() {
             {
                 data.map((e) => {
                     if (e.values[0].includes('class="descricao-pdp-full"')) {
-                        return null
+                        return <div className='vtex-product-specifications-1-x-specificationValue MobileStyle' dangerouslySetInnerHTML={{ __html: e.values[0] }}></div>
                     } else {
                         if (e.name.includes("Linha5-Paragrafo")) {
                             return (
-                                <div className='BlockStyle HorizontalBanner' style={{marginTop:"15px"}}>
-                                    {data.map((e) => {
-                                        if (e.name.includes("Linha5-Banner")) {
-                                            return <img src={`https://stevia.vteximg.com.br/arquivos/${e.values}`} style={{borderRadius:"20px"}} alt="" />
-                                        }
-                                    })}
+                                <div className='BlockStyle HorizontalBanner Linha5' style={{ marginTop: "15px" }}>
+
                                     <div>
                                         {
                                             data.map((e) => {
-                                                if (e.values[0].includes('class="descricao-pdp-full"') || e.values[0].includes('<br />') ) {
+                                                if (e.name.includes("Linha5-Titulo")) {
+                                                    return <h2 dangerouslySetInnerHTML={{ __html: e.values[0] }}></h2>
+                                                }
+                                            })
+                                        }
+                                        {
+                                            data.map((e) => {
+                                                if (e.values[0].includes('class="descricao-pdp-full"') || e.values[0].includes('<br />')) {
                                                     return null
                                                 } else {
                                                     if (e.name.includes("Linha5-Paragrafo")) {
@@ -260,7 +263,11 @@ function DescriptionContructor() {
                                             })
                                         }
                                     </div>
-                                    
+                                    {data.map((e) => {
+                                        if (e.name.includes("Linha5-Banner")) {
+                                            return <img src={`https://stevia.vteximg.com.br/arquivos/${e.values}`} style={{ borderRadius: "20px" }} alt="" />
+                                        }
+                                    })}
                                 </div>
                             );
                         }
@@ -299,7 +306,7 @@ function DescriptionContructor() {
                                         }
                                     </div>
                                     {data.map((e) => {
-                                        if (e.name.includes("Linha5-Banner")) {
+                                        if (e.name.includes("Linha4-Banner")) {
                                             return <img src={`https://stevia.vteximg.com.br/arquivos/${e.values}`} alt="" />
                                         }
                                     })}
@@ -313,7 +320,7 @@ function DescriptionContructor() {
             {
                 data.map((e) => {
                     if (e.name.includes("Linha8-VIDEO")) {
-                        return <div className='vtex-product-specifications-1-x-specificationValue teste' dangerouslySetInnerHTML={{ __html: e.values[0]}}></div>
+                        return <div className='vtex-product-specifications-1-x-specificationValue teste' dangerouslySetInnerHTML={{ __html: e.values[0] }}></div>
                     } else {
                         return null
                     }
@@ -323,7 +330,7 @@ function DescriptionContructor() {
             {
                 data.map((e) => {
                     if (e.name.includes("Ultima Sessão-Linha1-Paragrafo1")) {
-                        return <div dangerouslySetInnerHTML={{ __html: e.values[0]}}></div>
+                        return <div dangerouslySetInnerHTML={{ __html: e.values[0] }}></div>
                     } else {
                     }
 
@@ -363,17 +370,18 @@ function DescriptionContructor() {
                                         </td>
                                         <td className='TableSpacer'></td>
                                         <td>
+
+                                            {data.map((e) => {
+                                                if (e.name.includes("Imagem-SegundoBloco")) {
+                                                    return <img src={`https://stevia.vtexassets.com/arquivos/${e.values}`} />
+                                                }
+                                            })}
                                             <div>
-                                                {data.map((e) => {
-                                                    if (e.name.includes("Imagem-SegundoBloco")) {
-                                                        return <img src={`https://stevia.vtexassets.com/arquivos/${e.values}`} />
-                                                    }
-                                                })}
                                                 <h3>
                                                     {
                                                         data.map((e) => {
                                                             if (e.name.includes("Segundo-Bloco-Check-in-Titulo")) {
-                                                                return <h3>{e.values}</h3>
+                                                                return <p>{e.values}</p>
                                                             }
                                                         })}
                                                 </h3>
@@ -386,6 +394,7 @@ function DescriptionContructor() {
                                                         })}
                                                 </p>
                                             </div>
+
                                         </td>
                                     </tr>
                                     <tr className='TableContentBox'>
@@ -416,13 +425,14 @@ function DescriptionContructor() {
                                         </td>
                                         <td className='TableSpacer'></td>
                                         <td>
+
+                                            {
+                                                data.map((e) => {
+                                                    if (e.name.includes("Segunda-linha Segundo Bloco Check-in Imagem")) {
+                                                        return <img src={`https://stevia.vtexassets.com/arquivos/${e.values}`} />
+                                                    }
+                                                })}
                                             <div>
-                                                {
-                                                    data.map((e) => {
-                                                        if (e.name.includes("Segunda-linha Segundo Bloco Check-in Imagem")) {
-                                                            return <img src={`https://stevia.vtexassets.com/arquivos/${e.values}`} />
-                                                        }
-                                                    })}
                                                 <h3>
                                                     {
                                                         data.map((e) => {
@@ -442,6 +452,7 @@ function DescriptionContructor() {
                                                         })}
                                                 </p>
                                             </div>
+
                                         </td>
                                     </tr>
                                 </table>
@@ -486,7 +497,7 @@ function DescriptionContructor() {
                 data.map((e) => {
                     if (e.name.includes("Benefícios")) {
                         return (
-                            <div className='BlockStyle'>
+                            <div className='BlockStyle Default-prop'>
 
                                 <div className='Default-Data'>
                                     <h2 id='Beneficios'>Benefícios</h2>
@@ -494,7 +505,7 @@ function DescriptionContructor() {
                                         data.map((e) => {
                                             if (e.name.includes("Benefícios")) {
                                                 const value = e.values
-                                                return <span style={{ whiteSpace: "break-spaces" }} data-specification-value={e.values[0]} dangerouslySetInnerHTML={{__html: e.values[0]}}></span>
+                                                return <span style={{ whiteSpace: "break-spaces" }} data-specification-value={e.values[0]} dangerouslySetInnerHTML={{ __html: e.values[0] }}></span>
                                             }
                                         })
                                     }
@@ -508,7 +519,7 @@ function DescriptionContructor() {
                 data.map((e) => {
                     if (e.name.includes("Composição")) {
                         return (
-                            <div className='BlockStyle'>
+                            <div className='BlockStyle Default-prop'>
 
                                 <div className='Default-Data'>
                                     <h2 id='Composicao'>Composição</h2>
@@ -516,7 +527,7 @@ function DescriptionContructor() {
                                         data.map((e) => {
                                             if (e.name.includes("Composição")) {
                                                 const value = e.values
-                                                return <span style={{ whiteSpace: "break-spaces" }} data-specification-value={e.values[0]} dangerouslySetInnerHTML={{__html: e.values[0]}}></span>
+                                                return <span style={{ whiteSpace: "break-spaces" }} data-specification-value={e.values[0]} dangerouslySetInnerHTML={{ __html: e.values[0] }}></span>
                                             }
                                         })
                                     }
@@ -530,7 +541,7 @@ function DescriptionContructor() {
                 data.map((e) => {
                     if (e.name.includes("Modo de Usar")) {
                         return (
-                            <div className='BlockStyle'>
+                            <div className='BlockStyle Default-prop'>
 
                                 <div className='Default-Data'>
                                     <h2 id='ModoDeUsar'>Modo de Usar</h2>
@@ -538,7 +549,7 @@ function DescriptionContructor() {
                                         data.map((e) => {
                                             if (e.name.includes("Modo de Usar")) {
                                                 const value = e.values
-                                                return <span style={{ whiteSpace: "break-spaces" }} data-specification-value={e.values[0]} dangerouslySetInnerHTML={{__html: e.values[0]}}></span>
+                                                return <span style={{ whiteSpace: "break-spaces" }} data-specification-value={e.values[0]} dangerouslySetInnerHTML={{ __html: e.values[0] }}></span>
                                             }
                                         })
                                     }
@@ -552,7 +563,7 @@ function DescriptionContructor() {
                 data.map((e) => {
                     if (e.name.includes("Advertência")) {
                         return (
-                            <div className='BlockStyle'>
+                            <div className='BlockStyle Default-prop'>
 
                                 <div className='Default-Data'>
                                     <h2 id='Advertencia'>Advertência</h2>
@@ -560,7 +571,7 @@ function DescriptionContructor() {
                                         data.map((e) => {
                                             if (e.name.includes("Advertência")) {
                                                 const value = e.values
-                                                return <span style={{ whiteSpace: "break-spaces" }} data-specification-value={e.values[0]} dangerouslySetInnerHTML={{__html: e.values[0]}}></span>
+                                                return <span style={{ whiteSpace: "break-spaces" }} data-specification-value={e.values[0]} dangerouslySetInnerHTML={{ __html: e.values[0] }}></span>
                                             }
                                         })
                                     }

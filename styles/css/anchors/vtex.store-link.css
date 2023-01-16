@@ -10,8 +10,9 @@
     align-items: center;
     justify-content: center;
     border: 1px solid #52bed6;
-    border-radius:7px;
+    border-radius: 7px;
 }
+
 .link--PDPAnchor:hover {
     background-color: #52bed6;
     color: white;
@@ -20,4 +21,11 @@
 
 .label--PDPAnchor {
     text-decoration: none;
+}
+
+@media (max-width:768px) {
+    .link--PDPAnchor {
+        width: 100% !important;
+        margin: 10px 0px;
+    }
 }

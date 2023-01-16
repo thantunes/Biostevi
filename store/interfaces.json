@@ -13,5 +13,8 @@
     },
     "ReclameAq": {
         "component": "reclameaq"
+    },
+    "DescriptionInline": {
+        "component": "CustomDescription"
     }
 }

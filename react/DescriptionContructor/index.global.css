@@ -43,12 +43,17 @@ html {
     padding-top: 0px !important;
 }
 .BlockStyle div{
+    margin: 0px 30px;
+}
+.BlockStyle div>p{
     margin: 15px 0px;
+    max-height: 420px;
+    overflow: scroll;
 }
 .BlockStyle div>p{
     color: #727273;
     line-height: 24px;
-    padding: 1rem 0px !important;
+    /* padding: 1rem 0px !important; */
     margin-top: 30px;
     white-space: break-spaces;
 }
@@ -59,7 +64,7 @@ html {
     font-weight: normal !important;
     text-align: start;
     width: 100%;
-    line-height: 24px;
+    line-height: 32px;
 
 }
 
@@ -67,9 +72,18 @@ html {
     float: left;
     max-width: 708px;
     padding-right: 15px;
-    direction: rtl;
+    /* direction: rtl; */
     text-align: left;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
+.descricao-pdp-esq, .descricao-pdp-dir{
+    margin: 0px 0px !important;
+}
+
 
 .BlockStyle .descricao-pdp-dir .BlockStyle:nth-child(odd) div:not(.descricao-pdp-esq) {
     width: 90%;
@@ -103,6 +117,7 @@ html {
     width: 100%;
     line-height: 24px;
     padding-left: 0px !important; 
+    margin-bottom: 10px !important;
 }
 
 /* .descricao-pdp-dir img {
@@ -120,6 +135,7 @@ html {
     margin-top: 10px;
     white-space: break-spaces;
     line-height: 23px;
+    padding-top: 15px;
 }
 
 
@@ -129,7 +145,7 @@ html {
 }
 
 .BlockStyle table {
-    width: 75%;
+    width: 100%;
 }
 
 .TableHeader {
@@ -138,7 +154,7 @@ html {
 
 .TableContentBox {
     display: grid;
-    grid-template-columns: 2fr 1fr 2fr;
+    grid-template-columns: 4fr 1fr 4fr;
     grid-template-rows: 1fr;
     gap: 0px 0px;
     grid-template-areas: ". . .";
@@ -190,6 +206,7 @@ html {
     font-weight: normal !important;
     text-align: start;
     width: 100%;
+
 }
 
 .descricao-pdp-full-check h2 {
@@ -216,6 +233,10 @@ html {
     line-height: 24px;
     padding: 1rem;
     margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .BlockStyle p .descricao-pdp-dir h2 {
@@ -223,7 +244,9 @@ html {
     font-size: 26px;
     font-weight: normal !important;
     width: 100%;
-    text-align: center;
+    text-align: left;
+    margin: 0px !important;
+    margin-top: 10px !important;
 }
 
 .BlockStyle p .descricao-pdp-dir h3 {
@@ -238,8 +261,13 @@ html {
     color: #727273;
     line-height: 24px;
     /* padding: 1rem !important; */
-    margin-top: 30px;
+    margin:30px auto;
     white-space: break-spaces;
+}
+
+p.MobileStyle{
+    margin-bottom: 0px !important;
+    padding-bottom: 0px !important;
 }
 
 iframe {
@@ -251,7 +279,7 @@ iframe {
 .BlockStyle p .descricao-pdp-dir {
     float: right;
     max-width: 708px;
-    direction: rtl;
+    /* direction: rtl; */
     text-align: left;
 }
 
@@ -260,14 +288,31 @@ iframe {
     text-align: center;
     font-size: unset;
     padding-top: 0px !important;
+    
 }
+
+
 
 .TableContentBox td div h3 {
     text-align: center;
     font-size: unset;
 }
-.BlockStyle img{
+/* .BlockStyle img{
     margin: 30px;
+} */
+.descricao-pdp-full-check h4{
+    color: #009fc2;
+}
+
+.Descricao--Inline{
+    text-decoration: none;
+    color: #727273;
+    padding-left: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+.Descricao--Inline p {
+    margin: 0px;
 }
 @media screen and (max-width:768px) {
     .BuyTogether__Container__Row__Desc h3 {
@@ -314,24 +359,20 @@ iframe {
         left: calc(50% - 33px) !important;
     }
 
-    .MobileStyle {
-        flex-direction: column-reverse !important;
-    }
-
     .BlockStyle p .descricao-pdp-dir {
         float: right;
         max-width: 708px;
         padding-right: unset !important;
         padding: unset !important;
-        direction: rtl;
+        /* direction: rtl; */
         text-align: left;
     }
     .BlockStyle{
-        flex-direction: column;
+        flex-direction: column-reverse;
 
     }
     .BlockStyle:nth-child(odd){
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
 
     .BlockStyle img{
@@ -340,11 +381,52 @@ iframe {
         max-width: unset !important;
     }
     .TableContentBox td img{
-        width: 100% !important;
+        width: 100px !important;
         margin: 0px;
         max-width: 100px;
     }
     .HorizontalBanner img {
         width: 100% !important;
+    }
+    .TableContentBox td div h3{
+        font-size: 12px;
+    }
+    .TableContentBox td{
+        height: 313px !important;
+    }
+    .BlockStyle div{
+        margin: 0px !important;
+        max-height: unset;
+        overflow: unset;
+    }
+    .TableContentBox td div p{
+        font-size: 14px;
+        line-height: 14px;
+    }
+    .Default-prop{
+        align-items: flex-start;
+    }
+    .MobileStyle{
+        overflow: visible !important;
+        height: fit-content !important;
+        max-height: unset !important;
+    }
+    .BlockStyle:nth-child(even) .MobileStyle{
+        flex-direction: column-reverse;
+    }
+    .BlockStyle:nth-child(odd) .MobileStyle{
+        flex-direction: column;
+    }
+    .BlockStyle .MobileStyle .descricao-pdp-full{
+        flex-direction: column-reverse;
+    }
+    .descricao-pdp-full-check{
+        margin-top: 0px;
+    }
+    /* .descricao-pdp-full-check:first-child{
+
+    } */
+    .descricao-pdp-full-check img{
+        margin-top: 0px !important;
     }
 }

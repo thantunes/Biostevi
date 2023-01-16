@@ -386,6 +386,8 @@
   text-align: left;
   direction: initial;
   padding-left: 15px;
+  margin: 0px !important;
+  margin-top: 10px !important;
 }
 
 :global(.descricao-pdp-esq p) {
@@ -394,7 +396,7 @@
   padding-left: 15px;
 }
 
-:global(.descricao-pdp-dir) {
+:global{
   overflow: auto;
 }
 
@@ -411,18 +413,20 @@
   max-width: 708px;
   padding-right: 15px;
   overflow: auto;
-  direction: rtl;
+  /* direction: rtl; */
   text-align: left;
 }
 
 :global(.descricao-pdp-esq img) {
-  width: 100%;
+  width: 333px;
   border-radius: 20px;
   margin: 0px !important;
 }
-
+:global(.vtex-product-specifications-1-x-specificationValue br){
+  display: none;
+}
 :global(.descricao-pdp-dir img) {
-  width: 100%;
+  width: 333px;
   border-radius: 20px;
   margin: 0px !important;
 }
@@ -720,6 +724,7 @@
 
   :global(.descricao-pdp-dir) {
     max-height: initial;
+    overflow: visible;
   }
 
   :global(.descricao-pdp-esq) {
@@ -801,6 +806,18 @@
 
   :global(.descricao-pdp-esq) {
     padding-right: 0px !important;
+  }
+  :global(.descricao-pdp-dir){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  :global(.descricao-pdp-esq){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
   }
 }
 

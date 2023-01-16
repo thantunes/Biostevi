@@ -79,6 +79,10 @@
     flex-direction: row;
     align-items: center;
 }
+/* .vtex-product-specifications-1-x-specificationValue iframe{
+    width: 100% !important;
+    height: 450px !important;
+} */
 @media screen and (max-width:768px) {
     .vtex-product-specifications-1-x-specificationValue iframe {
         width: 100%;
@@ -90,4 +94,8 @@
     .BuyTogether__Container__Row__Prod{
         flex-direction: column;
     }
+    /* .vtex-product-specifications-1-x-specificationValue iframe{
+        width: 90vw !important;
+        height: 50vw !important;
+    } */
 }
