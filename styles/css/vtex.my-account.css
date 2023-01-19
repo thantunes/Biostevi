@@ -810,7 +810,7 @@
   :global(.descricao-pdp-dir){
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     flex-direction: column;
   }
   :global(.descricao-pdp-esq){

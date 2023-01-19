@@ -235,8 +235,8 @@ html {
     margin-top: 30px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    max-height: 330px;
+    overflow-y: scroll;
 }
 
 .BlockStyle p .descricao-pdp-dir h2 {
@@ -251,6 +251,8 @@ html {
 
 .BlockStyle p .descricao-pdp-dir h3 {
     direction: ltr;
+    margin: 2px 0px;
+    margin-top: 15px;
 }
 
 .BlockStyle p .descricao-pdp-esq h3 {
@@ -339,7 +341,7 @@ iframe {
     .CustomDescData iframe {
         margin: 25px auto;
         width: 100%;
-        height: 350px;
+        height: 52vw;
     }
 
     .BuyTogether__Container__Row__Container {
