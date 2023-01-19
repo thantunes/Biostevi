@@ -45,6 +45,9 @@ html {
 .BlockStyle div{
     margin: 0px 30px;
 }
+.BlockStyle > div{
+    margin: 0px 0px;
+}
 .BlockStyle div>p{
     margin: 15px 0px;
     max-height: 420px;
@@ -235,7 +238,7 @@ html {
     margin-top: 30px;
     display: flex;
     flex-direction: column;
-    max-height: 330px;
+    max-height: 370px;
     overflow-y: scroll;
 }
 
@@ -315,6 +318,9 @@ iframe {
 }
 .Descricao--Inline p {
     margin: 0px;
+}
+.Default-prop :first-child{
+    margin-top: 20px;
 }
 @media screen and (max-width:768px) {
     .BuyTogether__Container__Row__Desc h3 {
@@ -408,6 +414,7 @@ iframe {
     .Default-prop{
         align-items: flex-start;
     }
+    
     .MobileStyle{
         overflow: visible !important;
         height: fit-content !important;

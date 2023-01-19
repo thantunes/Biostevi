@@ -7,7 +7,9 @@
   }
 
 
- 
+ .productImageTag--main{
+  max-height: 400px !important;
+ }
   
   .searchBarContainer :global(.vtex-styleguide-9-x-input) {
     /*max-width: 208px;*/
