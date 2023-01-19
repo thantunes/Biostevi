@@ -42,3 +42,7 @@
 }
 
 :global(.vtex-product-summary-2-x-description){color: #555;margin-bottom: 10px;font-size: 12px;}
+
+.containerNormal :global(.vtex-reviews-and-ratings-3-x-reviewCommentsContainer){
+  display: none;
+}

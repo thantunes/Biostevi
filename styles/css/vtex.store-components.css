@@ -88,7 +88,7 @@
   }
   
   .inputGroup :global(.vtex-button) {
-    background-color: transparent;
+    /* background-color: transparent; */
     color: #fff;
     border: none;
     margin-right: -24px;
@@ -115,7 +115,7 @@
   @media only screen and (min-width: 640px) {
 
 
-    :global(.vtex-store-components-3-x-productImageTag){max-height: 420px!important;}
+    /* :global(.vtex-store-components-3-x-productImageTag){max-height: 420px!important;} */
 
     .newsletter .container {
       padding: 140px;
@@ -667,7 +667,7 @@
 :global(.vtex-flex-layout-0-x-flexColChild)
 :global(.vtex-reviews-and-ratings-3-x-container)
 :global(.vtex-reviews-and-ratings-3-x-reviewComment){display:none;}
-:global(.vtex-reviews-and-ratings-3-x-reviewCommentsContainer) {display:none;}
+/* :global(.vtex-reviews-and-ratings-3-x-reviewCommentsContainer) {display:none;} */
 :global(.vtex-flex-layout-0-x-flexColChild)
 :global(.vtex-reviews-and-ratings-3-x-container)
 :global(.vtex-reviews-and-ratings-3-x-reviewsPaging){display:none;}
@@ -735,7 +735,7 @@
 :global(.vtex-reviews-and-ratings-3-x-reviewsOrderBy){display:none;}
 
 :global(.vtex-slider-layout-0-x-slide)
-:global(.vtex-reviews-and-ratings-3-x-reviewCommentsContainer){display:none;}
+/* :global(.vtex-reviews-and-ratings-3-x-reviewCommentsContainer){display:none;} */
 
 :global(.vtex-slider-layout-0-x-slide)
 :global(.vtex-reviews-and-ratings-3-x-container){    margin-left: 0px;    padding-left: 0px;}
@@ -762,7 +762,7 @@
 
 :global(.vtex-flex-layout-0-x-flexColChild)
 :global(.vtex-reviews-and-ratings-3-x-container)
-:global(.vtex-reviews-and-ratings-3-x-reviewCommentsContainer){display:none;}
+/* :global(.vtex-reviews-and-ratings-3-x-reviewCommentsContainer){display:none;} */
 
 
 
@@ -959,7 +959,7 @@
 :global(.vtex-rich-text-0-x-paragraph--small-text){    margin: 0px;}
 
 :global(.vtex-search-result-3-x-gallery)
-:global(.vtex-reviews-and-ratings-3-x-reviewCommentsContainer){display:none;}
+/* :global(.vtex-reviews-and-ratings-3-x-reviewCommentsContainer){display:none;} */
 
 :global(.vtex-store-components-3-x-imageElement--bandeira){    max-width: 46px;}
 

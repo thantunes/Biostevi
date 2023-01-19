@@ -233,7 +233,11 @@
   background-color: red !important;
   color: #fff;
 }
-
+:global(.vtex-my-account-1-x-boxContainerBody) :global(.vtex-button){
+  background-color: #00C234;
+  color: #fff;
+  padding: 10px !important;
+}
 
 :global(.vtex-my-account-1-x-profileFormBoxContainer):global(.vtex-button__label) {
   color: #fff;
