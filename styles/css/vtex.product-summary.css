@@ -46,3 +46,10 @@
 .containerNormal :global(.vtex-reviews-and-ratings-3-x-reviewCommentsContainer){
   display: none;
 }
+
+:global(.vtex-product-specifications-1-x-specificationValue) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}

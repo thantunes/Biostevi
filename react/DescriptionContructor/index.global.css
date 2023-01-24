@@ -47,7 +47,14 @@ html {
 }
 .BlockStyle > div{
     margin: 0px 0px;
+    gap: 15px;
 }
+.BlockStyle {
+    gap: 25px;
+}
+/* .BlockStyle > div >h2, .BlockStyle > div > p {
+    width: 67% !important;
+} */
 .BlockStyle div>p{
     margin: 15px 0px;
     max-height: 420px;
@@ -322,6 +329,9 @@ iframe {
 .Default-prop :first-child{
     margin-top: 20px;
 }
+.descricao-pdp-full>img {
+    border-radius: 20px;
+}
 @media screen and (max-width:768px) {
     .BuyTogether__Container__Row__Desc h3 {
         font-size: 13px;
@@ -438,4 +448,11 @@ iframe {
     .descricao-pdp-full-check img{
         margin-top: 0px !important;
     }
+}
+
+.MobileStyle > img {
+    border-radius: 20px;
+}
+.TableContentBox td div p {
+    overflow: visible;
 }
