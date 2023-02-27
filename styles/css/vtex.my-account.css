@@ -1086,3 +1086,6 @@
 :global(.vtex_my-authentication_savePassButton_container) :global(.vtex-button__label) {
   color: #0f3e99 !important;
 }
+:global(.vtex-sticky-layout-0-x-container){
+  z-index: 999 !important;
+}
