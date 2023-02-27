@@ -154,6 +154,9 @@
 
 
   "sticky-layout#1-mobile": {
+    "props":{
+      "blockClass":"sticky-header"
+    },
     "children": ["flex-layout.row#1-mobile","search-bar"]
   },
   "flex-layout.row#1-mobile": {

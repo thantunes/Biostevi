@@ -4,7 +4,6 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
-    "stevia.minimumtheme": "https://guilherme2--stevia.myvtex.com/_v/private/typings/linked/v1/stevia.minimumtheme@3.1.63+build1666028999/public/@types/stevia.minimumtheme",
     "vtex.add-to-cart-button": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.add-to-cart-button@0.28.0/public/@types/vtex.add-to-cart-button",
     "vtex.badges": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.badges@3.5.0/public/@types/vtex.badges",
     "vtex.breadcrumb": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.breadcrumb@1.9.4/public/@types/vtex.breadcrumb",

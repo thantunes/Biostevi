@@ -70,7 +70,7 @@ function DescriptionContructor() {
                     if (e.values[0].includes('class="descricao-pdp-full"')) {
                         return null
                     } else {
-                        if (e.name.includes("Linha1-Paragrafo")) {
+                        if (e.name == "Linha1-Paragrafo") {
                             return (
                                 <div className='BlockStyle'>
                                     {data.map((e) => {
@@ -88,11 +88,13 @@ function DescriptionContructor() {
                                         }
                                         {
                                             data.map((e) => {
-                                                if (e.values[0].includes('div')) {
+                                                console.log(e, e.values[0].includes('div') )
+                                                if (e.values[0].includes('<div')) {
                                                     return null
                                                 } else {
                                                     if (e.name.includes("Linha1-Paragrafo")) {
-                                                        return <p className='MobileStyle linha1' dangerouslySetInnerHTML={{ __html: e.values[0] }}></p>
+                                                        console.log(e)
+                                                        return <p className={`MobileStyle linha1 ${e.values[0].includes("<a") ? "TemLink" : ""}`} dangerouslySetInnerHTML={{ __html: e.values[0] }}></p>
                                                     }
                                                 }
 
@@ -130,7 +132,8 @@ function DescriptionContructor() {
                                                 } else {
                                                     console.log("linha 2 pdp-full", e.values[0].includes('class="descricao-pdp-full"'))
                                                     if (e.name.includes("Linha2-Paragrafo")) {
-                                                        return <p className='MobileStyle Linha2' dangerouslySetInnerHTML={{ __html: e.values[0] }}></p>
+                                                        console.log("value:",e.values , e.values[0].includes("<a"))
+                                                        return <p className={`MobileStyle Linha2 ${e.values[0].includes("<a") ? "TemLink" : ""}`} dangerouslySetInnerHTML={{ __html: e.values[0] }}></p>
                                                     }
                                                 }
 
@@ -177,7 +180,7 @@ function DescriptionContructor() {
                                                     return null
                                                 } else {
                                                     if (e.name.includes("Linha3-Paragrafo")) {
-                                                        return <p className='MobileStyle linha3' dangerouslySetInnerHTML={{ __html: e.values[0] }}></p>
+                                                        return <p className={`MobileStyle Linha3 ${e.values[0].includes("<a") ? "TemLink" : ""}`} dangerouslySetInnerHTML={{ __html: e.values[0] }}></p>
                                                     }
                                                 }
 
