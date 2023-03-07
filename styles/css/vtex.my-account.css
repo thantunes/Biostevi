@@ -1089,3 +1089,6 @@
 :global(.vtex-sticky-layout-0-x-container){
   z-index: 999 !important;
 }
+:global(.vtex-profile-form-3-x-toggleBusinessButtonWrapper){
+  display: none;
+}
