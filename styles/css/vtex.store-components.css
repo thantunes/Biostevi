@@ -1021,7 +1021,7 @@
     :global(.vtex-slider-layout-0-x-sliderLayoutContainer--carrousel-mobile){display:none;}
     :global(.vtex-product-quantity-1-x-quantitySelectorContainer){margin-top: 20px;}
     :global(.vtex-address-form__postalCode){float:left;}
-    :global(.vtex-flex-layout-0-x-flexRow--pdp-botao-add-carrinho){ float: left; position: absolute; top: -77px; right: 95px!important;}
+    :global(.vtex-flex-layout-0-x-flexRow--pdp-botao-add-carrinho){ float: left; position: relative;}
     :global(.vtex-flex-layout-0-x-flexRow--pdp-botao-add-carrinho)
     :global(.vtex-add-to-cart-button-0-x-buttonText) { background-color: #00c231;font-size: 15px;border-radius: 5px;font-weight: bold;}
     :global(.vtex-flex-layout-0-x-flexColChild)

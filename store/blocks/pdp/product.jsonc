@@ -768,8 +768,7 @@
 "sku-selector", 
 "product-assembly-options",
 "product-gifts",
-"product-quantity",
-"flex-layout.row#buy-button",
+"EnvioReceitaComp",
 "flex-layout.row#description",
       "availability-subscriber",
       "shipping-simulator",
@@ -777,7 +776,15 @@
      
     ]
   },
-
+  "EnvioReceitaComp":{
+    "children":["flex-layout.row#BuyQuantity"]
+  },
+  "flex-layout.row#BuyQuantity":{
+    "children":[
+      "product-quantity",
+      "flex-layout.row#buy-button"
+    ]
+  },
   "flex-layout.row#product-name": {
     "props": {
       "marginBottom": 3
@@ -798,8 +805,9 @@
       "marginBottom": 7,
       "blockClass":"pdp-botao-add-carrinho"
     },
-    "children": ["add-to-cart-button"]
+    "children": ["add-to-cart-button#PDP"]
   },
+  "add-to-cart-button#PDP":{},
 
   "share#default": {
     "props": {

@@ -18,6 +18,11 @@
       "add-to-cart-button"
     ]
   },
+  "add-to-cart-button":{
+    "props":{
+      "onClickBehavior":"go-to-product-page"
+    }
+  },
 
   "stack-layout#prodsum": {
     "children": [

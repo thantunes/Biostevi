@@ -16,5 +16,9 @@
     },
     "DescriptionInline": {
         "component": "CustomDescription"
+    },
+    "EnvioReceitaComp": {
+        "component": "EnvioReceita",
+        "composition":"children"
     }
 }
