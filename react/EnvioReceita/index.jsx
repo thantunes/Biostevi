@@ -67,7 +67,7 @@ const EnvioReceita = ({ children }) => {
             }
         };
 
-        console.log(Params)
+        // console.log(Params)
         if (DOCURL != '' && DOCURL != undefined) {
             console.log($)
             console.log(DOCURL)
