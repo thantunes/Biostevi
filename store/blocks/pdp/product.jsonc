@@ -768,7 +768,7 @@
 "sku-selector", 
 "product-assembly-options",
 "product-gifts",
-"EnvioReceitaComp",
+"flex-layout.row#BuyQuantity",
 "flex-layout.row#description",
       "availability-subscriber",
       "shipping-simulator",
