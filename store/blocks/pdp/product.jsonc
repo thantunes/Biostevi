@@ -59,7 +59,7 @@
 
 
 
-
+     "EnvioReceitaComp",
      "BuyTogetherComp",
      "shelf.relatedProducts",
       "product-reviews",
@@ -74,6 +74,7 @@
       // "flex-layout.row#informativo4",
      // "newsletter"
       // "flex-layout.row#bloconews"
+      
     ]
   },
 
@@ -768,6 +769,7 @@
 "sku-selector", 
 "product-assembly-options",
 "product-gifts",
+ 
 "flex-layout.row#BuyQuantity",
 "flex-layout.row#description",
       "availability-subscriber",

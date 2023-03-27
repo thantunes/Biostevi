@@ -24,7 +24,7 @@ const EnvioReceita = ({ children }) => {
     const [DOCURL, setDocURL] = useState()
     const [Trigger, setTrigger] = useState(false)
     const [Enviado, setEnviado] = useState(false)
-
+    const [ PostVisible, setPostVisible] =  useState('none') 
     useEffect(() => {
         setTrigger(!Trigger)
     }, [])
@@ -44,6 +44,7 @@ const EnvioReceita = ({ children }) => {
             },
             () => {
                 getDownloadURL(Up.snapshot.ref).then(url => {
+                    console.log('Dentro do Up',url)
                     setDocURL(url)
                 })
             }
@@ -61,16 +62,15 @@ const EnvioReceita = ({ children }) => {
             user_id: 'HhXbUVRq4M8ocYz_D',
             template_params: {
                 'Link-Receita': DOCURL,
-                'Nome':Nome,
-                'Telefone':Tel,
-                'NomeProduto':product.productName
+                'Nome': Nome,
+                'Telefone': Tel,
+                'NomeProduto': product.productName
             }
         };
 
         // console.log(Params)
         if (DOCURL != '' && DOCURL != undefined) {
             console.log($)
-            console.log(DOCURL)
             $.ajax('https://api.emailjs.com/api/v1.0/email/send', {
                 type: 'POST',
                 data: JSON.stringify(data),
@@ -95,7 +95,7 @@ const EnvioReceita = ({ children }) => {
 
                 setReceita(
                     <>
-                        
+
                         <p style={{ fontWeight: 'bold' }}>Compra liberada</p>
                         {children}
                         <p style={{ fontWeight: 'bold' }}>Receita Enviada !</p>
@@ -104,26 +104,7 @@ const EnvioReceita = ({ children }) => {
             } else {
                 console.log("Escopo Sub-Não")
                 setReceita(
-                    <>
-                        <p style={{ fontWeight: 'bold' }}>Envie sua receita para que a compra do item seja liberada.</p>
-                        <form className='FormProduct' action="">
-                            <label htmlFor="NameProduct">
-                                Nome:
-                                <input required type="text" onChange={e => setNome(e.target.value)} name="NameProduct" id="NameProduct" />
-                            </label>
-                            <label htmlFor="TellProduct">
-                                Telefone:
-                                <input required type="text" onChange={e => setTel(e.target.value)} data-mask="(00) 0000-0000" name="TellProduct" id="TellProduct" />
-                            </label>
-                            <div style={{display:'flex', flexDirection:'row',gap: '25px'}}>
-                                <label className='ReceitaInput' htmlFor="ReceitaInput">
-                                    {file}
-                                    <input required id='ReceitaInput' onChange={e => setArchive(e.target.files[0])} type={'file'}/>
-                                </label>
-                                <button className='SubmitButton' onClick={(e) => OnSave(e)} >Enviar formulário</button>
-                            </div>
-                        </form>
-                    </>
+
                 )
             }
         } else {
@@ -131,9 +112,37 @@ const EnvioReceita = ({ children }) => {
         }
     }, [Trigger, Enviado])
     return (
-        <>
-            {Receita}
-        </>
+        <div class='FormContainer'>
+            <img src="https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/70963de3-4d2f-4d5e-85b9-57627f6d491d___25fb1d2abe6e31202519b997774cc7e9.png" alt="Banner" />
+            <form className='FormProduct' action="">
+                <label htmlFor="NameProduct">
+                    <input required type="text" placeholder='Nome' onChange={e => setNome(e.target.value)} name="NameProduct" id="NameProduct" />
+                </label>
+                <label htmlFor="TellProduct">
+                    <input required type="text" placeholder='Telefone:' onChange={e => setTel(e.target.value)} data-mask="(00) 0000-0000" name="TellProduct" id="TellProduct" />
+                </label>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+                    <label className='ReceitaInput' htmlFor="ReceitaInput">
+                        {file}
+                        <input required={true} id='ReceitaInput' onChange={e => {
+                            setArchive(e.target.files[0])
+                            setFile('Arquivo anexado')
+                            setPostVisible('flex')
+                        }} type={'file'} />
+                    </label>
+                    <button style={{display: `${PostVisible}`}} className='SubmitButton' onClick={(e) => {
+                        e.preventDefault();
+                        const  Input  = document.getElementById('ReceitaInput')
+                        console.log(Input)
+                        if (Input.files[0] != undefined){
+                            OnSave(e)
+                        } else {
+                            alert('Anexe sua receita para enviar !')
+                        }
+                    }} >Enviar formulário</button>
+                </div>
+            </form>
+        </div>
     )
 }
 
