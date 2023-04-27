@@ -327,7 +327,9 @@
 
 :global(.vtex-flex-layout-0-x-flexRow--bloco-home-mosaico){    padding-top: 50px;}
 
-
+@media (max-width:768px){
+  :global(.vtex-flex-layout-0-x-flexRow--bloco-home-mosaico){    padding-top: 0px;}
+}
 :global(.vtex-store-components-3-x-specificationsTitle--especificacao-do-produto-2){display:none;}
 :global(.vtex-store-components-3-x-specificationsTablePropertyHeading--especificacao-do-produto-2){display:none;}
 :global(.vtex-store-components-3-x-specificationsTableSpecificationHeading--especificacao-do-produto-2){display:none;}
