@@ -12,6 +12,7 @@
             "link#-Beneficios",
             "link#-Composicao",
             "link#-ModoDeUsar",
+            "link#-InformaImp",
             "link#-Advertencia"
         ],
         "props": {
@@ -22,6 +23,13 @@
         "props": {
             "href":"#Beneficios",
             "label": "Beneficios",
+            "blockClass":"PDPAnchor"
+        }
+    },
+    "link#-InformaImp": {
+        "props": {
+            "href":"#InformaImp",
+            "label": "Importante",
             "blockClass":"PDPAnchor"
         }
     },

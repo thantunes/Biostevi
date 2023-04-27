@@ -820,11 +820,19 @@
         "Pinterest": false
       }
     }
+  },
+
+  "rich-text#Informacoes":{
+    "props":{
+      "text":"escreva aqui",
+      "blockClass":"Informacoes-Imp",
+      "title":"Informações importantes"
+    }
+  },
+
+  "DescriptionContructorComp":{
+    "children":["rich-text#Informacoes"]
   }
-
-
-
-
 
 }
 

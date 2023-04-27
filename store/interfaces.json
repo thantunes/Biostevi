@@ -1,6 +1,7 @@
 {
     "DescriptionContructorComp": {
-        "component": "DescriptionContructor"
+        "component": "DescriptionContructor",
+        "composition": "children"
     },
     "DescriptionAnchorComp": {
         "component": "DescriptionAnchor"

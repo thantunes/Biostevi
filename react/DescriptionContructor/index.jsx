@@ -3,7 +3,7 @@ import { useProduct } from 'vtex.product-context'
 import './index.global.css'
 // import { Container } from './styles';
 
-function DescriptionContructor() {
+function DescriptionContructor({children}) {
     const productContextValue = useProduct()
     console.log(productContextValue)
     const [data, setData] = useState([])
@@ -88,7 +88,7 @@ function DescriptionContructor() {
                                         }
                                         {
                                             data.map((e) => {
-                                                console.log(e, e.values[0].includes('div') )
+                                                console.log(e, e.values[0].includes('div'))
                                                 if (e.values[0].includes('<div')) {
                                                     return null
                                                 } else {
@@ -132,7 +132,7 @@ function DescriptionContructor() {
                                                 } else {
                                                     console.log("linha 2 pdp-full", e.values[0].includes('class="descricao-pdp-full"'))
                                                     if (e.name.includes("Linha2-Paragrafo")) {
-                                                        console.log("value:",e.values , e.values[0].includes("<a"))
+                                                        console.log("value:", e.values, e.values[0].includes("<a"))
                                                         return <p className={`MobileStyle Linha2 ${e.values[0].includes("<a") ? "TemLink" : ""}`} dangerouslySetInnerHTML={{ __html: e.values[0] }}></p>
                                                     }
                                                 }
@@ -562,6 +562,11 @@ function DescriptionContructor() {
                     }
                 })
             }
+            <div className='BlockStyle Default-prop'>
+                <div className='Default-Data' id='InformaImp'>
+                    {children}
+                </div>
+            </div>
             {
                 data.map((e) => {
                     if (e.name.includes("Advertência")) {
