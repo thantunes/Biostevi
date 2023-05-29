@@ -889,7 +889,7 @@
       "showNavigationArrows": "desktopOnly",
       "blockClass": "influenciadores"
     },
-    "children": ["image#influenter1","image#influenter2","image#influenter3","image#influenter4","image#influenter5","image#influenter6","image#influenter7","image#influenter8","image#influenter9","image#influenter10"]
+    "children": ["image#influenter1","image#influenter2","image#influenter3","image#influenter4","image#influenter5","image#influenter6","image#influenter7","image#influenter8","image#influenter9","image#influenter10","image#influenter11"]
   },
 
   "image#influenter1": {
@@ -951,14 +951,11 @@
       "src": "/arquivos/Jonathas_Morandini.png",
       "maxWidth": "100%"
     }
+  },
+  "image#influenter11": {
+    "props": {
+      "src": "/arquivos/kindpng_785827.png",
+      "maxWidth": "100%"
+    }
   }
-  
-  
-
-  
-
-
-
-
-
 }
