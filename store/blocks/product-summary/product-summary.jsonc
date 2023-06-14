@@ -20,7 +20,7 @@
   },
   "add-to-cart-button":{
     "props":{
-      "onClickBehavior":"go-to-product-page"
+      "onClickBehavior":"add-to-cart"
     }
   },
 
