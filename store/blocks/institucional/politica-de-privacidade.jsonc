@@ -1,25 +1,124 @@
 {
-    "store.custom#politica-de-privacidade": {
-      "blocks": ["flex-layout.row#politica-de-privacidade"]
-    },
-    "flex-layout.row#politica-de-privacidade": {
-      "children": ["flex-layout.col#text-politica-de-privacidade"]
-    },
-    "flex-layout.col#text-politica-de-privacidade": {
-      "children": ["rich-text#about-title", "rich-text#about-content"],
-      "props": {
-        "preventVerticalStretch": true
-      }
-    },
-    "rich-text#about-title": {
-      "props": {
-        "text": "Política de Privacidade",
-        "blockClass": "titulo"
-      }
-    },
-    "rich-text#about-content": {
-      "props": {
-        "text": "Acreditamos que é essencial para nosso cliente ter segurança em suas transações e garantir que autoridades certificadoras estão desempenhando seu papel naquele domínio. \n Dentro do nosso site as informações obtidas dos clientes passam por diversos processos eletrônicos de codificação e segurança.  \n Uma das tecnologias é a encriptação, ou seja, o sistema embaralha as informações de forma que, os dados são truncados, não podendo, portanto, serem utilizados.\n Ao preencher qualquer formulário em nosso site você estará protegido através do certificado SSL (Secure Socket Layer). Além de todos esses cuidados, a Biostévi adquiriu alguns sistemas anti-fraude com um modelo estatístico mais preciso do mercado e o maior data lake de consumo do país." }
+  "store.custom#politica-de-privacidade": {
+    "blocks": [
+      "flex-layout.row#politica-de-privacidade"
+    ]
+  },
+  "flex-layout.row#politica-de-privacidade": {
+    "children": [
+      "flex-layout.col#text-politica-de-privacidade"
+    ]
+  },
+  "flex-layout.col#text-politica-de-privacidade": {
+    "children": [
+      "rich-text#about-title",
+      "rich-text#Subtitle-1",
+      "rich-text#content-1",
+      //
+      "rich-text#subtitle-2",
+      "rich-text#content-2",
+      //
+      "rich-text#subtitle-3",
+      "rich-text#content-3",
+      //
+      "rich-text#subtitle-4",
+      "rich-text#content-4",
+      //
+      "rich-text#subtitle-5",
+      "rich-text#content-5",
+      //
+      "rich-text#subtitle-6",
+      "rich-text#content-6",
+      //
+      "rich-text#subtitle-7",
+      "rich-text#content-7"
+    ],
+    "props": {
+      "preventVerticalStretch": true
     }
-
+  },
+  "rich-text#about-title": {
+    "props": {
+      "text": "Política de Privacidade",
+      "blockClass": "titulo"
+    }
+  },
+  "rich-text#Subtitle-1": {
+    "props": {
+      "text": "Subtitle-1",
+      "blockClass": "subtitulo"
+    }
+  },
+  "rich-text#content-1": {
+    "props": {
+      "text": "content-1"
+    }
+  },
+  //
+  "rich-text#subtitle-2": {
+    "props": {
+      "text": "subtitle-2:",
+      "blockClass": "subtitulo"
+    }
+  },
+  "rich-text#content-2": {
+    "props": {
+      "text":"content-2" }
+  },
+  //
+  "rich-text#subtitle-3": {
+    "props": {
+      "text": "subtitle-3:",
+      "blockClass": "subtitulo"
+    }
+  },
+  "rich-text#content-3": {
+    "props": {
+      "text":"content-3" }
+  },
+  //
+  "rich-text#subtitle-4": {
+    "props": {
+      "text": "subtitle-4:",
+      "blockClass": "subtitulo"
+    }
+  },
+  "rich-text#content-4": {
+    "props": {
+      "text":"content-4" }
+  },
+  //
+  "rich-text#subtitle-5": {
+    "props": {
+      "text": "subtitle-5:",
+      "blockClass": "subtitulo"
+    }
+  },
+  "rich-text#content-5": {
+    "props": {
+      "text":"content-5" }
+  },
+  //
+  "rich-text#subtitle-6": {
+    "props": {
+      "text": "subtitle-6:",
+      "blockClass": "subtitulo"
+    }
+  },
+  "rich-text#content-6": {
+    "props": {
+      "text":"content-6" }
+  },
+  //
+  "rich-text#subtitle-7": {
+    "props": {
+      "text": "subtitle-7:",
+      "blockClass": "subtitulo"
+    }
+  },
+  "rich-text#content-7": {
+    "props": {
+      "text":"content-7" }
   }
+  
+}
