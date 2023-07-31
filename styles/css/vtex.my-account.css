@@ -233,7 +233,8 @@
   background-color: red !important;
   color: #fff;
 }
-:global(.vtex-my-account-1-x-boxContainerBody) :global(.vtex-button){
+
+:global(.vtex-my-account-1-x-boxContainerBody) :global(.vtex-button) {
   background-color: #00C234;
   color: #fff;
   padding: 10px !important;
@@ -400,7 +401,7 @@
   padding-left: 15px;
 }
 
-:global{
+:global {
   overflow: auto;
 }
 
@@ -426,9 +427,11 @@
   border-radius: 20px;
   margin: 0px !important;
 }
-:global(.vtex-product-specifications-1-x-specificationValue br){
+
+:global(.vtex-product-specifications-1-x-specificationValue br) {
   display: none;
 }
+
 :global(.descricao-pdp-dir img) {
   width: 333px;
   border-radius: 20px;
@@ -811,13 +814,15 @@
   :global(.descricao-pdp-esq) {
     padding-right: 0px !important;
   }
-  :global(.descricao-pdp-dir){
+
+  :global(.descricao-pdp-dir) {
     display: flex;
     align-items: center;
     /* justify-content: center; */
     flex-direction: column;
   }
-  :global(.descricao-pdp-esq){
+
+  :global(.descricao-pdp-esq) {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1086,12 +1091,45 @@
 :global(.vtex_my-authentication_savePassButton_container) :global(.vtex-button__label) {
   color: #0f3e99 !important;
 }
-:global(.vtex-sticky-layout-0-x-container){
+
+:global(.vtex-sticky-layout-0-x-container) {
   z-index: 999 !important;
 }
-:global(.vtex-profile-form-3-x-toggleBusinessButtonWrapper){
+
+:global(.vtex-profile-form-3-x-toggleBusinessButtonWrapper) {
   display: none;
 }
-:global(.vtex-product-gifts-0-x-productGiftsContainer) > :global(.vtex-flex-layout-0-x-flexRow){
+
+:global(.vtex-product-gifts-0-x-productGiftsContainer)> :global(.vtex-flex-layout-0-x-flexRow) {
   display: none;
+}
+
+:global(.vtex-product-gifts-0-x-giftDescription) {
+  display: none;
+}
+
+:global(.vtex-product-gifts-0-x-giftNameText) {
+  position: relative;
+}
+
+/* :global(.vtex-product-gifts-0-x-giftNameText)::before {
+  content: 'Brinde \A';
+  font-size: 1rem;
+  color: black;
+  position: relative;
+  white-space: pre-wrap;
+  font-weight: bold;
+  padding-bottom: 5px;
+} */
+
+:global(.vtex-product-gifts-0-x-productGiftListContainer)::before {
+  content: 'Brinde \A';
+  font-size: 1rem;
+  color: black;
+  position: relative;
+  white-space: pre-wrap;
+  font-weight: bold;
+  padding-bottom: 5px;
+  margin: 10px;
+  margin-top: 15px;
 }
