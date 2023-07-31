@@ -1092,3 +1092,6 @@
 :global(.vtex-profile-form-3-x-toggleBusinessButtonWrapper){
   display: none;
 }
+:global(.vtex-product-gifts-0-x-productGiftsContainer) > :global(.vtex-flex-layout-0-x-flexRow){
+  display: none;
+}
