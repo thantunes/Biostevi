@@ -1133,3 +1133,6 @@
   margin: 10px;
   margin-top: 15px;
 }
+:global(.vtex-product-gifts-0-x-productGiftListContainer){
+  margin-top: 10px;
+}
