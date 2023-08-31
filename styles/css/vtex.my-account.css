@@ -1133,6 +1133,13 @@
   margin: 10px;
   margin-top: 15px;
 }
-:global(.vtex-product-gifts-0-x-productGiftListContainer){
+
+:global(.vtex-product-gifts-0-x-productGiftListContainer) {
   margin-top: 10px;
+}
+
+:global(.vtex-add-to-cart-button-0-x-buttonText--outstock){
+  background-color:#777 !important;
+  width: 40% !important;
+  margin-bottom: 10px;
 }

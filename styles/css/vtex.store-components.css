@@ -1200,3 +1200,11 @@
   .productDescriptionText .container {
     height: 120px;
   }
+  .submit :global(.vtex-button){
+    /* background-color: red; */
+    padding: 8px 13px;
+    border:1px solid lightgray;
+  }
+  .submit :global(.vtex-button__label){
+    color: lightgray !important;
+  }

@@ -1,0 +1,13 @@
+{
+    "condition-layout.product#ProductAvailable": {
+        "props": {
+            "conditions": [
+                {
+                    "subject": "isProductAvailable"
+                }
+            ],
+            "Then": "flex-layout.col#right-col",
+            "Else": "flex-layout.col#right-Offstock"
+        }
+    }
+}

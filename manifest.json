@@ -66,7 +66,8 @@
     "vtex.shelf-components": "0.x",
     "vtex.product-context": "0.x",
     "vtex.order-items": "0.x",
-    "vtex.pixel-interfaces": "1.x"
+    "vtex.pixel-interfaces": "1.x",
+    "vtex.condition-layout": "2.x"
   },
   "peerDependencies": {
     "vtexeurope.minicart-freeshipping-bar": "1.x",
