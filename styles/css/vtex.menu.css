@@ -1,0 +1,14 @@
+.menuItem--link-More{
+    background-color: #009fc2;
+    height: 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+.styledLink--link-More{
+    color: white;
+    font-weight: bold;
+    
+}

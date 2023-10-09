@@ -269,7 +269,86 @@
       }
     }
   },
-
+  "menu-item#EmaMore": {
+    "props": {
+      "id": "menu-item-BarbaCabeloMore",
+      "blockClass": "link-More",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/emagrecimento/",
+        "noFollow": true,
+        "tagTitle": "Ver Todos",
+        "text": "Ver Todos"
+      }
+    }
+  },
+  "menu-item#DesemMore": {
+    "props": {
+      "id": "menu-item-BarbaCabeloMore",
+      "blockClass": "link-More",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/desempenho-fisico/",
+        "noFollow": true,
+        "tagTitle": "Ver Todos",
+        "text": "Ver Todos"
+      }
+    }
+  },
+  "menu-item#BeleMore": {
+    "props": {
+      "id": "menu-item-BarbaCabeloMore",
+      "blockClass": "link-More",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/beleza/",
+        "noFollow": true,
+        "tagTitle": "Ver Todos",
+        "text": "Ver Todos"
+      }
+    }
+  },
+  "menu-item#SaudeMore": {
+    "props": {
+      "id": "menu-item-BarbaCabeloMore",
+      "blockClass": "link-More",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/saude/",
+        "noFollow": true,
+        "tagTitle": "Ver Todos",
+        "text": "Ver Todos"
+      }
+    }
+  },
+  "menu-item#BarbaCabeloMore": {
+    "props": {
+      "id": "menu-item-BarbaCabeloMore",
+      "blockClass": "link-More",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/barba-e-cabelo/",
+        "noFollow": true,
+        "tagTitle": "Ver Todos",
+        "text": "Ver Todos"
+      }
+    }
+  },
 
   "menu-item#espumas": {
     "props": {
