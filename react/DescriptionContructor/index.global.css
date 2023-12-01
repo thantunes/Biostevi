@@ -59,8 +59,8 @@ html {
 } */
 .BlockStyle div>p{
     margin: 15px 0px;
-    max-height: 420px;
-    overflow: scroll;
+    /* max-height: 420px;
+    overflow: scroll; */
 }
 .BlockStyle div>p{
     color: #727273;

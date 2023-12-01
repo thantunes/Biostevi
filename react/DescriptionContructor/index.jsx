@@ -56,6 +56,7 @@ function DescriptionContructor({children}) {
         // setDataCheckIn(DadosCheckIn)
         setData(arraydados)
         setFullData(productContextValue)
+        console.log(data, FullData)
     }, [])
     let ConvertStringToHTML = function (str) {
         let parser = new DOMParser();
@@ -311,6 +312,50 @@ function DescriptionContructor({children}) {
                                     {data.map((e) => {
                                         if (e.name.includes("Linha4-Banner")) {
                                             return <img src={`https://stevia.vteximg.com.br/arquivos/${e.values}`} alt="" />
+                                        }
+                                    })}
+                                </div>
+                            );
+                        }
+                    }
+
+                })
+            }
+            {
+                data.map((e) => {
+                    if (e.values[0].includes('class="descricao-pdp-full"')) {
+                        return null
+                    } else {
+                        if (e.name.includes("Linha7-Paragrafo")) {
+                            return (
+                                <div className='BlockStyle Linha2'>
+                                    <div>
+                                        {
+                                            data.map((e) => {
+                                                if (e.name.includes("Linha7-Titulo")) {
+                                                    return <h2 dangerouslySetInnerHTML={{ __html: e.values[0] }}></h2>
+                                                }
+                                            })
+                                        }
+                                        {
+                                            data.map((e) => {
+                                                if (e.values[0].includes('class="descricao-pdp-full"')) {
+                                                    return null
+                                                    console.log("linha 6 existe")
+                                                } else {
+                                                    console.log("linha 2 pdp-full", e.values[0].includes('class="descricao-pdp-full"'))
+                                                    if (e.name.includes("Linha7-Paragrafo")) {
+                                                        console.log("value:", e.values, e.values[0].includes("<a"))
+                                                        return <p className={`MobileStyle Linha2 ${e.values[0].includes("<a") ? "TemLink" : ""}`} dangerouslySetInnerHTML={{ __html: e.values[0] }}></p>
+                                                    }
+                                                }
+
+                                            })
+                                        }
+                                    </div>
+                                    {data.map((e) => {
+                                        if (e.name.includes("Linha7-Banner")) {
+                                            return <img src={`https://stevia.vteximg.com.br/arquivos/${e.values}`} style={{ maxWidth: "30%", borderRadius: "20px" }} alt="" />
                                         }
                                     })}
                                 </div>
