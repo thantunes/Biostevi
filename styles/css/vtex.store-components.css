@@ -305,6 +305,7 @@
   :global(.vtex-menu-2-x-styledLinkContent--menusaude){font-weight: bold;font-size: 16px;color: #555;}
   :global(.vtex-menu-2-x-styledLinkContent--blog){font-weight: bold;font-size: 16px;color: #555;}
   :global(.vtex-menu-2-x-styledLink--vegano){font-weight: bold;font-size: 16px;color: #555;}
+  
 
 
 :global(.vtex-store-components-3-x-imageElement--whatsapp-flutuante-icon){position: fixed;bottom: 37px;right: 43px;    max-width: 50px;}
@@ -1208,3 +1209,4 @@
   .submit :global(.vtex-button__label){
     color: lightgray !important;
   }
+ 

@@ -177,7 +177,6 @@
       "vtex.menu@2.x:menu#beleza-mobile",
       "vtex.menu@2.x:menu#saude-mobile",
       "menu-item#category-saudesexual",
-      "menu-item#category-vegano",
       "menu-item#blog"
     ],
     "props": {

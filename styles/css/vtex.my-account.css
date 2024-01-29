@@ -1143,3 +1143,28 @@
   width: 40% !important;
   margin-bottom: 10px;
 }
+.vtex-menu-2-x-styledLinkContent--nutrition {
+  font-size:20px;
+  border:1px solid #ed6c17;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:30px;
+  padding:1px 13px;
+  margin-top:0;
+  background:#e7e7e7;
+}
+.vtex-menu-2-x-menuItem--nutrition .vtex-menu-2-x-submenuWrapper {
+  top:50px
+}
+.vtex-menu-2-x-styledLinkContent--nutrition::after {
+  content:"";
+  background:url(/arquivos/biostevi-nutrition-horizontal-new.png) no-repeat;
+  display:block;
+  width:60px;
+  height:26px;
+  background-size:100%
+}
+.vtex-menu-2-x-styledLinkContainer--nutrition {
+  padding:10px 0 0
+}
