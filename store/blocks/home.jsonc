@@ -889,20 +889,7 @@
       "showNavigationArrows": "desktopOnly",
       "blockClass": "influenciadores"
     },
-    "children": ["image#influenter7","image#influenter4","image#influenter5","image#influenter3","image#influenter1","image#influenter9","image#influenter6","image#influenter10","image#influenter2","image#influenter8","image#influenter11","image#influenter12"]
-  },
-
-  "image#influenter1": {
-    "props": {
-      "src": "/arquivos/kindpng_785827.png",
-      "maxWidth": "100%"
-    }
-  },
-  "image#influenter2": {
-    "props": {
-      "src": "/arquivos/kindpng_785827.png",
-      "maxWidth": "100%"
-    }
+    "children": ["image#influenter7","image#influenter4","image#influenter5","image#influenter3","image#influenter9","image#influenter6","image#influenter10","image#influenter11","image#influenter12"]
   },
   "image#influenter3": {
     "props": {
@@ -931,12 +918,6 @@
   "image#influenter7": {
     "props": {
       "src": "/arquivos/Laura-Keller.png",
-      "maxWidth": "100%"
-    }
-  },
-  "image#influenter8": {
-    "props": {
-      "src": "/arquivos/Rodrigo-Cazarotti.png",
       "maxWidth": "100%"
     }
   },

@@ -11,32 +11,30 @@
       "menu-item#category-beleza",
       "menu-item#category-saude",
       "menu-item#category-saudesexual",
-      "menu-item#category-vegano",
+      "menu-item#category-bionutrition",
+      "menu-item#category-bioveg",
       "menu-item#blog"
     ]
   },
 
   "menu-item#category-imunidade": {
     "props": {
-    "id": "menu-item-category-imunidade",
-    "blockClass": "menuimunidade",
-    "type": "custom",
-    "iconId": null,
-    "highlight": false,
-    "itemProps": {
-    "type": "internal",
-    "categoryID":"97",
-    "href": "/saude/imunidade/",
-    "noFollow": false,
-    "tagTitle": "Imunidade",
-    "text": "Imunidade",
-    "blockClass": "link-menu"
-   }
- }
-},
-
-
-
+      "id": "menu-item-category-imunidade",
+      "blockClass": "menuimunidade",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "categoryID": "97",
+        "href": "/saude/imunidade/",
+        "noFollow": false,
+        "tagTitle": "Imunidade",
+        "text": "Imunidade",
+        "blockClass": "link-menu"
+      }
+    }
+  },
 
   "menu-item#category-barbaecabelo": {
     "props": {
@@ -47,7 +45,7 @@
       "highlight": false,
       "itemProps": {
         "type": "internal",
-        "categoryID":"80",
+        "categoryID": "80",
         "href": "/barba-e-cabelo/",
         "noFollow": false,
         "tagTitle": "Barba e Cabelo",
@@ -55,18 +53,14 @@
         "blockClass": "link-menu"
       }
     },
-    "blocks": [
-      "vtex.menu@2.x:submenu#barbaecabelo"
-    ]
+    "blocks": ["vtex.menu@2.x:submenu#barbaecabelo"]
   },
 
   "vtex.menu@2.x:submenu#barbaecabelo": {
     "props": {
       "width": "100%"
     },
-    "children": [
-      "flex-layout.row#menu-barbaecabelo-more"
-    ]
+    "children": ["flex-layout.row#menu-barbaecabelo-more"]
   },
 
   "flex-layout.row#menu-barbaecabelo-more": {
@@ -77,45 +71,26 @@
   },
 
   "flex-layout.col#menu-barbaecabelo-more-1": {
-    "children": [
-      "vtex.menu@2.x:menu#barbaecabelo-more"
-    ]
+    "children": ["vtex.menu@2.x:menu#barbaecabelo-more"]
   },
   "flex-layout.col#menu-barbaecabelo-more-2": {
-    "children": [
-      "flex-layout.row#barbacabelobannermenu"
-    ]
+    "children": ["flex-layout.row#barbacabelobannermenu"]
   },
 
-
-
-
-
-
-  
-  "flex-layout.row#barbacabelobannermenu":{
+  "flex-layout.row#barbacabelobannermenu": {
     "props": {
       "blockClass": "bloco-home-barbacabelobannermenu"
-      
     },
-    "children": [
-      "image#barbacabelobannermenu"
-    ]
+    "children": ["image#barbacabelobannermenu"]
   },
- 
+
   "image#barbacabelobannermenu": {
     "props": {
       "src": "https://stevia.vteximg.com.br/arquivos/ids/161234/Barba%20e%20Cabelo.png?v=637777821082200000",
-      "link":"/pantogar-master-60-capsulas-1205/p",
-      "maxWidth": "100%" 
+      "link": "/pantogar-master-60-capsulas-1205/p",
+      "maxWidth": "100%"
     }
   },
-
-
- 
-
-
-
 
   "vtex.menu@2.x:menu#barbaecabelo-more": {
     "props": {
@@ -190,10 +165,6 @@
     }
   },
 
-
-
-
-
   "menu-item#cabelosmistos": {
     "props": {
       "id": "menu-item-cabelosmistos",
@@ -210,8 +181,6 @@
       }
     }
   },
-
-
 
   "menu-item#cabelosnormais": {
     "props": {
@@ -230,9 +199,6 @@
     }
   },
 
-
-
-
   "menu-item#cabelosoleosos": {
     "props": {
       "id": "menu-item-cabelosoleosos",
@@ -249,9 +215,6 @@
       }
     }
   },
-
-
-
 
   "menu-item#cabelossecos": {
     "props": {
@@ -367,8 +330,6 @@
     }
   },
 
-
-
   "menu-item#espumasbarba": {
     "props": {
       "id": "menu-item-espumabarbas",
@@ -385,7 +346,6 @@
       }
     }
   },
-
 
   "menu-item#suplementosbarba": {
     "props": {
@@ -404,9 +364,6 @@
     }
   },
 
- 
-
-
   "menu-item#shampoobarba": {
     "props": {
       "id": "menu-item-shampoobarbas",
@@ -423,10 +380,6 @@
       }
     }
   },
-
-  
-
-
 
   "menu-item#locoesbarba": {
     "props": {
@@ -445,7 +398,6 @@
     }
   },
 
-
   "menu-item#kittratamento": {
     "props": {
       "id": "menu-item-kittratamento",
@@ -462,8 +414,6 @@
       }
     }
   },
-
-
 
   "menu-item#locoes": {
     "props": {
@@ -482,9 +432,6 @@
     }
   },
 
-
-
-  
   "menu-item#shampoo": {
     "props": {
       "id": "menu-item-shampoo",
@@ -501,9 +448,6 @@
       }
     }
   },
-
-
-
 
   "menu-item#suplementos": {
     "props": {
@@ -522,8 +466,6 @@
     }
   },
 
-
-
   "menu-item#barba": {
     "props": {
       "id": "menu-item-Barba",
@@ -541,8 +483,6 @@
     }
   },
 
-
-
   "menu-item#category-emagrecimento": {
     "props": {
       "id": "menu-item-category-emagrecimento",
@@ -552,7 +492,7 @@
       "highlight": false,
       "itemProps": {
         "type": "internal",
-        "categoryID":"5",
+        "categoryID": "5",
         "href": "/emagrecimento/",
         "noFollow": false,
         "tagTitle": "Emagrecimento",
@@ -560,21 +500,14 @@
         "blockClass": "link-menu"
       }
     },
-    "blocks": [
-      "vtex.menu@2.x:submenu#emagrecimento"
-    ]
+    "blocks": ["vtex.menu@2.x:submenu#emagrecimento"]
   },
-
-
-
 
   "vtex.menu@2.x:submenu#emagrecimento": {
     "props": {
       "width": "100%"
     },
-    "children": [
-      "flex-layout.row#menu-emagrecimento-more"
-    ]
+    "children": ["flex-layout.row#menu-emagrecimento-more"]
   },
 
   "flex-layout.row#menu-emagrecimento-more": {
@@ -585,41 +518,26 @@
   },
 
   "flex-layout.col#menu-emagrecimento-more-1": {
-    "children": [
-      "vtex.menu@2.x:menu#emagrecimento-more"
-    ]
+    "children": ["vtex.menu@2.x:menu#emagrecimento-more"]
   },
 
   "flex-layout.col#menu-emagrecimento-more-2": {
-    "children": [
-      "flex-layout.row#emagrecimentobannermenu"
-    ]
+    "children": ["flex-layout.row#emagrecimentobannermenu"]
   },
 
-
-  "flex-layout.row#emagrecimentobannermenu":{
+  "flex-layout.row#emagrecimentobannermenu": {
     "props": {
       "blockClass": "bloco-home-emagrecimentobannermenu"
     },
-    "children": [
-      "image#emagrecimentobannermenu"
-    ]
+    "children": ["image#emagrecimentobannermenu"]
   },
- 
+
   "image#emagrecimentobannermenu": {
     "props": {
       "src": "https://stevia.vteximg.com.br/arquivos/ids/161233/Emagrecimento%20.png?v=637777820147400000",
       "maxWidth": "100%"
     }
   },
-
-
-
-
-
-
-
-
 
   "vtex.menu@2.x:menu#emagrecimento-more": {
     "props": {
@@ -809,8 +727,6 @@
     }
   },
 
-
-
   "menu-item#inibirapetite": {
     "props": {
       "id": "menu-item-inibirapetite",
@@ -845,8 +761,6 @@
     }
   },
 
-
-
   "menu-item#vontadededoces": {
     "props": {
       "id": "menu-item-queimadegordura",
@@ -864,10 +778,6 @@
     }
   },
 
-
-
-
-
   "menu-item#category-desempenhofisico": {
     "props": {
       "id": "menu-item-category-desempenhofisico",
@@ -877,7 +787,7 @@
       "highlight": false,
       "itemProps": {
         "type": "internal",
-        "categoryID":"4",
+        "categoryID": "4",
         "href": "/desempenho-fisico/",
         "noFollow": false,
         "tagTitle": "Desempenho Físico",
@@ -885,19 +795,14 @@
         "blockClass": "link-menu"
       }
     },
-    "blocks": [
-      "vtex.menu@2.x:submenu#desempenhofisico"
-    ]
+    "blocks": ["vtex.menu@2.x:submenu#desempenhofisico"]
   },
-
 
   "vtex.menu@2.x:submenu#desempenhofisico": {
     "props": {
       "width": "100%"
     },
-    "children": [
-      "flex-layout.row#menu-desempenhofisico-more"
-    ]
+    "children": ["flex-layout.row#menu-desempenhofisico-more"]
   },
 
   "flex-layout.row#menu-desempenhofisico-more": {
@@ -908,40 +813,25 @@
   },
 
   "flex-layout.col#menu-desempenhofisico-more-1": {
-    "children": [
-      "vtex.menu@2.x:menu#desempenhofisico-more"
-    ]
+    "children": ["vtex.menu@2.x:menu#desempenhofisico-more"]
   },
   "flex-layout.col#menu-desempenhofisico-more-2": {
-    "children": [
-      "flex-layout.row#desempenhofisicobannermenu"
-    ]
+    "children": ["flex-layout.row#desempenhofisicobannermenu"]
   },
 
-
-
-  "flex-layout.row#desempenhofisicobannermenu":{
+  "flex-layout.row#desempenhofisicobannermenu": {
     "props": {
       "blockClass": "bloco-home-desempenhofisicobannermenu"
     },
-    "children": [
-      "image#desempenhofisicobannermenu"
-    ]
+    "children": ["image#desempenhofisicobannermenu"]
   },
- 
+
   "image#desempenhofisicobannermenu": {
     "props": {
       "src": "https://stevia.vteximg.com.br/arquivos/ids/161235/Desempenho%20f%C3%ADsico%20.png?v=637777823366000000",
       "maxWidth": "100%"
     }
   },
-
-
-
-
-
-
-
 
   "vtex.menu@2.x:menu#desempenhofisico-more": {
     "props": {
@@ -968,9 +858,6 @@
     ]
   },
 
-
-
-
   "menu-item#acidosgraxos": {
     "props": {
       "id": "menu-item-acidosgraxos",
@@ -987,10 +874,6 @@
       }
     }
   },
-
-
-
-
 
   "menu-item#aumentoapetite": {
     "props": {
@@ -1009,9 +892,6 @@
     }
   },
 
-
-
-
   "menu-item#definicaomuscular": {
     "props": {
       "id": "menu-item-definicaomuscular",
@@ -1028,8 +908,6 @@
       }
     }
   },
-
-
 
   "menu-item#diureticosfisico": {
     "props": {
@@ -1064,8 +942,6 @@
     }
   },
 
-
-
   "menu-item#energia": {
     "props": {
       "id": "menu-item-energia",
@@ -1082,8 +958,6 @@
       }
     }
   },
-
-
 
   "menu-item#forca": {
     "props": {
@@ -1102,9 +976,6 @@
     }
   },
 
-
-
-
   "menu-item#massamuscularfisico": {
     "props": {
       "id": "menu-item-massamuscular",
@@ -1121,8 +992,6 @@
       }
     }
   },
-
-
 
   "menu-item#postreino": {
     "props": {
@@ -1141,9 +1010,6 @@
     }
   },
 
-
-
-
   "menu-item#pretreino": {
     "props": {
       "id": "menu-item-postreino",
@@ -1160,7 +1026,6 @@
       }
     }
   },
-
 
   "menu-item#prohotmonal": {
     "props": {
@@ -1179,8 +1044,6 @@
     }
   },
 
-
-
   "menu-item#protecaofigadorins": {
     "props": {
       "id": "menu-item-protecaofigadorins",
@@ -1197,10 +1060,6 @@
       }
     }
   },
-
-
-
-
 
   "menu-item#suplementosfisico": {
     "props": {
@@ -1219,8 +1078,6 @@
     }
   },
 
-
-
   "menu-item#testoterona": {
     "props": {
       "id": "menu-item-testoterona",
@@ -1237,10 +1094,6 @@
       }
     }
   },
-
-
-
-
 
   "menu-item#tpc": {
     "props": {
@@ -1259,10 +1112,6 @@
     }
   },
 
-
-
-
-  
   "menu-item#vasodilatacao": {
     "props": {
       "id": "menu-item-vasodilatacao",
@@ -1279,9 +1128,6 @@
       }
     }
   },
-
-
-
 
   "menu-item#vitaminasminerais": {
     "props": {
@@ -1300,15 +1146,6 @@
     }
   },
 
-
-
-
-
-
-
-
-
-
   "menu-item#category-beleza": {
     "props": {
       "id": "menu-item-category-beleza",
@@ -1318,7 +1155,7 @@
       "highlight": false,
       "itemProps": {
         "type": "internal",
-        "categoryID":"3",
+        "categoryID": "3",
         "href": "/beleza/",
         "noFollow": false,
         "tagTitle": "Beleza",
@@ -1326,19 +1163,14 @@
         "blockClass": "link-menu"
       }
     },
-    "blocks": [
-      "vtex.menu@2.x:submenu#beleza"
-    ]
+    "blocks": ["vtex.menu@2.x:submenu#beleza"]
   },
-
 
   "vtex.menu@2.x:submenu#beleza": {
     "props": {
       "width": "100%"
     },
-    "children": [
-      "flex-layout.row#menu-beleza-more"
-    ]
+    "children": ["flex-layout.row#menu-beleza-more"]
   },
 
   "flex-layout.row#menu-beleza-more": {
@@ -1348,40 +1180,26 @@
     ]
   },
 
-
   "flex-layout.col#menu-beleza-more-1": {
-    "children": [
-      "vtex.menu@2.x:menu#beleza-more"
-    ]
+    "children": ["vtex.menu@2.x:menu#beleza-more"]
   },
   "flex-layout.col#menu-beleza-more-2": {
-    "children": [
-      "flex-layout.row#belezabannermenu"
-    ]
+    "children": ["flex-layout.row#belezabannermenu"]
   },
 
-
-
-
-  
-  "flex-layout.row#belezabannermenu":{
+  "flex-layout.row#belezabannermenu": {
     "props": {
       "blockClass": "bloco-home-belezabannermenu"
     },
-    "children": [
-      "image#belezabannermenu"
-    ]
+    "children": ["image#belezabannermenu"]
   },
- 
+
   "image#belezabannermenu": {
     "props": {
       "src": "https://stevia.vteximg.com.br/arquivos/ids/161231/Beleza.jpg?v=637777786498400000",
       "maxWidth": "100%"
     }
   },
-
-
-
 
   "vtex.menu@2.x:menu#beleza-more": {
     "props": {
@@ -1401,8 +1219,8 @@
       "menu-item#manchasemelasmas",
       "menu-item#maosepes",
       "menu-item#olheiras",
-	    "menu-item#pele",
-	    "menu-item#unhas"
+      "menu-item#pele",
+      "menu-item#unhas"
     ]
   },
 
@@ -1440,8 +1258,6 @@
     }
   },
 
-
-
   "menu-item#antienvelhecimento": {
     "props": {
       "id": "menu-item-acne",
@@ -1458,8 +1274,6 @@
       }
     }
   },
-
-
 
   "menu-item#celulite": {
     "props": {
@@ -1478,7 +1292,6 @@
     }
   },
 
-
   "menu-item#cilios": {
     "props": {
       "id": "menu-item-acne",
@@ -1495,8 +1308,6 @@
       }
     }
   },
-
-
 
   "menu-item#cuidadointimo": {
     "props": {
@@ -1515,7 +1326,6 @@
     }
   },
 
-
   "menu-item#cuidadocomocorpo": {
     "props": {
       "id": "menu-item-acne",
@@ -1532,7 +1342,6 @@
       }
     }
   },
-
 
   "menu-item#firmadores": {
     "props": {
@@ -1551,7 +1360,6 @@
     }
   },
 
-
   "menu-item#lifiting": {
     "props": {
       "id": "menu-item-acne",
@@ -1569,7 +1377,6 @@
     }
   },
 
-
   "menu-item#linhapremium": {
     "props": {
       "id": "menu-item-acne",
@@ -1586,9 +1393,6 @@
       }
     }
   },
-
-
-
 
   "menu-item#manchasemelasmas": {
     "props": {
@@ -1641,9 +1445,6 @@
     }
   },
 
-
-
-
   "menu-item#pele": {
     "props": {
       "id": "menu-item-pele",
@@ -1660,9 +1461,6 @@
       }
     }
   },
-
-
-
 
   "menu-item#unhas": {
     "props": {
@@ -1681,9 +1479,6 @@
     }
   },
 
-
-
-
   "menu-item#category-saude": {
     "props": {
       "id": "menu-item-category-saude",
@@ -1694,26 +1489,21 @@
       "itemProps": {
         "type": "internal",
         "href": "/saude/",
-        "categoryID":"2",
+        "categoryID": "2",
         "noFollow": false,
         "tagTitle": "Saúde",
         "text": "Saúde",
         "blockClass": "link-menu"
       }
-     
     },
-    "blocks": [
-      "vtex.menu@2.x:submenu#saude"
-    ]
+    "blocks": ["vtex.menu@2.x:submenu#saude"]
   },
 
   "vtex.menu@2.x:submenu#saude": {
     "props": {
       "width": "100%"
     },
-    "children": [
-      "flex-layout.row#menu-saude-more"
-    ]
+    "children": ["flex-layout.row#menu-saude-more"]
   },
 
   "flex-layout.row#menu-saude-more": {
@@ -1723,28 +1513,20 @@
     ]
   },
 
-
   "flex-layout.col#menu-saude-more-1": {
-    "children": [
-      "vtex.menu@2.x:menu#saude-more"
-    ]
+    "children": ["vtex.menu@2.x:menu#saude-more"]
   },
   "flex-layout.col#menu-saude-more-2": {
-    "children": [
-      "flex-layout.row#saudebannermenu"
-    ]
+    "children": ["flex-layout.row#saudebannermenu"]
   },
 
-
-  "flex-layout.row#saudebannermenu":{
+  "flex-layout.row#saudebannermenu": {
     "props": {
       "blockClass": "bloco-home-saudebannermenu"
     },
-    "children": [
-      "image#saudebannermenu"
-    ]
+    "children": ["image#saudebannermenu"]
   },
- 
+
   "image#saudebannermenu": {
     "props": {
       "src": "https://stevia.vteximg.com.br/arquivos/ids/161232/Saude.jpg?v=637777804251570000",
@@ -1752,15 +1534,11 @@
     }
   },
 
-
-
-
   "vtex.menu@2.x:menu#saude-more": {
     "props": {
       "orientation": "vertical"
     },
     "children": [
-      
       "menu-item#articulacoes",
       "menu-item#cardioprotetor",
       "menu-item#cartilagel",
@@ -1775,25 +1553,24 @@
       "menu-item#extresse",
       "menu-item#fertilidade",
       "menu-item#fibromialgia",
-	    "menu-item#gestante",
+      "menu-item#gestante",
       "menu-item#imunidade",
-	    "menu-item#intestino",
+      "menu-item#intestino",
       "menu-item#libido",
       "menu-item#memoria",
-	    "menu-item#menopausa",
+      "menu-item#menopausa",
       "menu-item#Olhos",
-	    "menu-item#ossos",
+      "menu-item#ossos",
       "menu-item#figadorins",
-	    "menu-item#vascular",
+      "menu-item#vascular",
       "menu-item#saudeenergia",
       "menu-item#sistema-urinario",
       "menu-item#sistema-respiratorio",
-	    "menu-item#tiroides",
-	    "menu-item#tpm",
-	    "menu-item#vitaminaseminerais"
+      "menu-item#tiroides",
+      "menu-item#tpm",
+      "menu-item#vitaminaseminerais"
     ]
   },
-
 
   "menu-item#articulacoes": {
     "props": {
@@ -1828,7 +1605,6 @@
     }
   },
 
-
   "menu-item#cardioprotetor": {
     "props": {
       "id": "menu-item-cardioprotetor",
@@ -1846,7 +1622,6 @@
     }
   },
 
-
   "menu-item#sistema-urinario": {
     "props": {
       "id": "menu-item-shorts",
@@ -1863,23 +1638,21 @@
     }
   },
 
-  
-"menu-item#diuretico": {
-  "props": {
-    "id": "menu-item-shorts",
-    "type": "custom",
-    "iconId": null,
-    "highlight": false,
-    "itemProps": {
-      "type": "internal",
-      "href": "/emagrecimento/diureticos",
-      "noFollow": false,
-      "tagTitle": "Diurético",
-      "text": "Diurético"
+  "menu-item#diuretico": {
+    "props": {
+      "id": "menu-item-shorts",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/emagrecimento/diureticos",
+        "noFollow": false,
+        "tagTitle": "Diurético",
+        "text": "Diurético"
+      }
     }
-  }
-},
-
+  },
 
   "menu-item#fertilidade": {
     "props": {
@@ -1914,7 +1687,6 @@
     }
   },
 
-
   "menu-item#sistema-respiratorio": {
     "props": {
       "id": "menu-item-shorts",
@@ -1930,7 +1702,6 @@
       }
     }
   },
-
 
   "menu-item#cicatrizantes": {
     "props": {
@@ -1949,8 +1720,6 @@
     }
   },
 
-
-
   "menu-item#colesterol": {
     "props": {
       "id": "menu-item-colesterol",
@@ -1967,8 +1736,6 @@
       }
     }
   },
-
-
 
   "menu-item#depressao": {
     "props": {
@@ -1987,9 +1754,6 @@
     }
   },
 
-
-
-
   "menu-item#diabetes": {
     "props": {
       "id": "menu-item-diabetes",
@@ -2007,8 +1771,6 @@
     }
   },
 
-
-
   "menu-item#digestao": {
     "props": {
       "id": "menu-item-digestao",
@@ -2025,8 +1787,6 @@
       }
     }
   },
-
-
 
   "menu-item#dormiebem": {
     "props": {
@@ -2061,7 +1821,6 @@
     }
   },
 
-
   "menu-item#saudeenergia": {
     "props": {
       "id": "menu-item-energia",
@@ -2078,7 +1837,6 @@
       }
     }
   },
-
 
   "menu-item#extresse": {
     "props": {
@@ -2097,10 +1855,6 @@
     }
   },
 
-
-
-
-
   "menu-item#fibromialgia": {
     "props": {
       "id": "menu-item-fibromialgia",
@@ -2117,9 +1871,6 @@
       }
     }
   },
-
-
-
 
   "menu-item#gestante": {
     "props": {
@@ -2138,8 +1889,6 @@
     }
   },
 
-
-
   "menu-item#imunidade": {
     "props": {
       "id": "menu-item-imunidade",
@@ -2156,8 +1905,6 @@
       }
     }
   },
-
-
 
   "menu-item#intestino": {
     "props": {
@@ -2176,9 +1923,6 @@
     }
   },
 
-
-
-
   "menu-item#libido": {
     "props": {
       "id": "menu-item-libido",
@@ -2195,8 +1939,6 @@
       }
     }
   },
-
-
 
   "menu-item#memoria": {
     "props": {
@@ -2215,7 +1957,6 @@
     }
   },
 
-
   "menu-item#menopausa": {
     "props": {
       "id": "menu-item-#menopausa",
@@ -2232,7 +1973,6 @@
       }
     }
   },
-
 
   "menu-item#ossos": {
     "props": {
@@ -2251,9 +1991,6 @@
     }
   },
 
-
-
-
   "menu-item#figadorins": {
     "props": {
       "id": "menu-item-#ossos",
@@ -2270,8 +2007,6 @@
       }
     }
   },
-
-
 
   "menu-item#vascular": {
     "props": {
@@ -2290,8 +2025,6 @@
     }
   },
 
-
-
   "menu-item#tiroides": {
     "props": {
       "id": "menu-item-#vascular",
@@ -2308,8 +2041,6 @@
       }
     }
   },
-
-
 
   "menu-item#tpm": {
     "props": {
@@ -2328,8 +2059,6 @@
     }
   },
 
-
-
   "menu-item#vitaminaseminerais": {
     "props": {
       "id": "menu-item-#vitaminaseminerais",
@@ -2346,10 +2075,6 @@
       }
     }
   },
-
-
-
-
 
   "menu-item#category-saudesexual": {
     "props": {
@@ -2368,13 +2093,136 @@
     }
   },
 
-
-  
-  "menu-item#category-vegano": {
+  "menu-item#category-bionutrition": {
     "props": {
       "id": "menu-item-category-home",
       "type": "custom",
-      "blockClass": "vegano",
+      "blockClass": "nutrition",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/nutrition/",
+        "noFollow": false,
+        "tagTitle": "Nutrition",
+        "text": "Nutrition"
+      }
+    },
+    "blocks": ["vtex.menu@2.x:submenu#bionutri"]
+  },
+  "vtex.menu@2.x:submenu#bionutri": {
+    "props": {
+      "width": "100%"
+    },
+    "children": ["flex-layout.row#menu-bionutri-more"]
+  },
+  "flex-layout.row#menu-bionutri-more": {
+    "children": [
+      "flex-layout.col#menu-bionutri-more-1",
+      "flex-layout.col#menu-bionutri-more-2"
+    ]
+  },
+
+  "flex-layout.col#menu-bionutri-more-1": {
+    "children": ["vtex.menu@2.x:menu#bionutri-more"]
+  },
+  "flex-layout.col#menu-bionutri-more-2": {
+    "children": ["flex-layout.row#bionutribannermenu"]
+  },
+  "flex-layout.row#bionutribannermenu": {
+    "props": {
+      "blockClass": "bloco-home-bionutribannermenu"
+    },
+    "children": ["image#bionutribannermenu"]
+  },
+  "image#bionutribannermenu": {
+    "props": {
+      "src": "https://stevia.vteximg.com.br/arquivos/ids/161234/Barba%20e%20Cabelo.png?v=637777821082200000",
+      "link": "/pantogar-master-60-capsulas-1205/p",
+      "maxWidth": "100%"
+    }
+  },
+  "vtex.menu@2.x:menu#bionutri-more": {
+    "props": {
+      "orientation": "vertical"
+    },
+    "children": [
+      "menu-item#chas",
+      "menu-item#pastas",
+      "menu-item#suplementosbionutri",
+      "menu-item#farinhas"
+    ]
+  },
+  "menu-item#chas": {
+    "props": {
+      "id": "menu-item-chas",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/nutrition/chas",
+        "noFollow": true,
+        "tagTitle": "Chás",
+        "text": "Chás"
+      }
+    }
+  },
+  "menu-item#pastas": {
+    "props": {
+      "id": "menu-item-pastas",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/nutrition/pastas",
+        "noFollow": true,
+        "tagTitle": "Pastas",
+        "text": "Pastas"
+      }
+    }
+  },
+  "menu-item#suplementosbionutri": {
+    "props": {
+      "id": "menu-item-suplementosbionutri",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/nutrition/suplementos",
+        "noFollow": true,
+        "tagTitle": "Suplementos",
+        "text": "Suplementos"
+      }
+    }
+  },
+  "menu-item#farinhas": {
+    "props": {
+      "id": "menu-item-farinhas",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/nutrition/farinhas",
+        "noFollow": true,
+        "tagTitle": "Farinhas",
+        "text": "Farinhas"
+      }
+    }
+  },
+
+  "menu-item#category-bioveg": {
+    "props": {
+      "id": "menu-item-category-home",
+      "type": "custom",
+      "blockClass": "bioveg",
       "iconId": null,
       "highlight": false,
       "itemProps": {
@@ -2402,11 +2250,4 @@
       }
     }
   }
- 
- 
- 
-
-  
- 
- 
 }
