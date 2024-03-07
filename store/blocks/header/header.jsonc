@@ -16,8 +16,15 @@
       "flex-layout.row#1-desktop",
       "flex-layout.row#2-desktop",
       "flex-layout.row#3-desktop",
-      "sticky-layout#4-desktop"
+      "sticky-layout#4-desktop",
+      "rich-text#h1"
     ]
+  },
+  "rich-text#h1": {
+    "props": {
+      "text": "# Biostévi Pharma",
+      "blockClass":"none"
+    }
   },
   "flex-layout.row#1-desktop": {
     "children": [
