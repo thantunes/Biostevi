@@ -20,6 +20,12 @@
     },
     "EnvioReceitaComp": {
         "component": "EnvioReceita",
-        "composition":"children"
+        "composition": "children"
+    },
+    "Faq": {
+        "component": "Faq"
+    },
+    "changeSearchTag": {
+        "component": "changeSearchTag"
     }
 }

@@ -56,13 +56,13 @@
 
 
 
-:global(.vtex-rich-text-0-x-headingLevel1--shelfTitle) {
+:global(.vtex-rich-text-0-x-headingLevel2--shelfTitle) {
   color: #555;
   text-transform: uppercase;
   margin-bottom: 5px !important;
   font-size: 20px !important;
   font-weight: 700 !important;
-  margin-top: 30px;
+  margin-top: 30px !important;
 }
 
 

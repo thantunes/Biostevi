@@ -12,6 +12,10 @@
 
 .headingLevel2--shelfTitle {
   font-weight: 200;
+  
+}
+.headingLevel1--none{
+  display: none;
 }
 
 .container--deals .paragraph {
