@@ -251,12 +251,12 @@
         "stopOnHover": false
       },
       "itemsPerPage": {
-        "desktop": 1,
-        "tablet": 1,
+        "desktop": 6,
+        "tablet": 3,
         "phone": 1
       },
-      "infinite": true,
-      "showNavigationArrows": "desktopOnly",
+      "infinite": false,
+      "showNavigationArrows": "never",
       "blockClass": "carrousel-mobile"
     },
     "children": [

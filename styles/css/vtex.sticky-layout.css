@@ -1,3 +1,6 @@
 .wrapper--sticky-header{
     z-index: 999;
 }
+.container--sticky-header{
+    background-color: lightgray;
+}

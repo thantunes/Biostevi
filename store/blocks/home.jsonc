@@ -3,7 +3,7 @@
     "blocks": [
       "list-context.image-list#demo",
       //"info-card#home",
-      "flex-layout.row#informativos",
+      // "flex-layout.row#informativos",
       "slider-layout#informativo-mobile",
       "rich-text#shelf-title-lancamentos",
       "flex-layout.row#shelfprateleiralancamentos",
@@ -31,7 +31,7 @@
 
       "rich-text#shelf-title-euquero",
       "flex-layout.row#mosaicoeuquero",
-      "flex-layout.row#mosaicoeuqueromobile",
+      // "flex-layout.row#mosaicoeuqueromobile",
      // "slider-layout#euqueromobile",
 
       "rich-text#shelf-title-influencers",
@@ -97,7 +97,7 @@
     "props": {
       "itemsPerPage": {
         "desktop":4,
-        "tablet": 2,
+        "tablet": 3,
         "phone": 2
       },
       "infinite": true,
@@ -113,13 +113,13 @@
            "stopOnHover": false
            },
       "itemsPerPage": {
-        "desktop": 1,
-        "tablet": 1,
+        "desktop": 6,
+        "tablet": 3,
         "phone": 1
       },
-      "infinite": true,
-      "showNavigationArrows": "desktopOnly",
-      "blockClass": "carrousel-mobile"
+      "infinite": false,
+      "showNavigationArrows": "never",
+      "blockClass": ["carrousel-mobile", "carrousel-Informativo"]
     },
     "children": ["rich-text#frete-gratis", "rich-text#descontoprogressivo","rich-text#desconto","rich-text#parcelamento","rich-text#siteseguro","rich-text#whats1"]
    
@@ -183,7 +183,7 @@
 },
 "rich-text#whats1":{
   "props": {
-    "text": " **WhatsApp** \n (11)97133-1874",
+    "text": "**WhatsApp** \n (11)97133-1874",
     "textPosition": "LEFT",
     "textAlignment": "LEFT",
     "blockClass": "informativo-whats"
@@ -346,7 +346,7 @@
            },
       "itemsPerPage": {
         "desktop": 1,
-        "tablet": 1,
+        "tablet": 3,
         "phone": 1
       },
       "infinite": true,
@@ -401,7 +401,7 @@
     "props": {
       "itemsPerPage": {
         "desktop":4,
-        "tablet": 2,
+        "tablet": 3,
         "phone": 1
       },
       "infinite": true,
@@ -414,7 +414,7 @@
     "props": {
       "itemsPerPage": {
         "desktop":4,
-        "tablet": 2,
+        "tablet": 3,
         "phone": 1
       },
       "infinite": true,
@@ -445,7 +445,7 @@
     "props": {
       "itemsPerPage": {
         "desktop":4,
-        "tablet": 2,
+        "tablet": 3,
         "phone": 2
       },
       "infinite": true,
@@ -476,7 +476,7 @@
     "props": {
       "itemsPerPage": {
         "desktop":4,
-        "tablet": 2,
+        "tablet": 3,
         "phone": 2
       },
       "infinite": true,
@@ -543,7 +543,7 @@
     "props": {
       "itemsPerPage": {
         "desktop": 4,
-        "tablet": 2,
+        "tablet": 3,
         "phone": 2
       },
       "infinite": true,
@@ -883,7 +883,7 @@
       "itemsPerPage": {
         "desktop": 4,
         "tablet": 4,
-        "phone": 2
+        "phone": 3
       },
       "infinite": true,
       "showNavigationArrows": "desktopOnly",

@@ -28,3 +28,9 @@
 .sliderLayoutContainer--shelf :global(.vtex-product-highlights-2-x-productHighlightWrapper--collection){
   top: 5px !important;
 }
+.slideChildrenContainer--carrousel-mobile{
+  width: fit-content;
+}
+.slide--carrousel-mobile{
+  width: fit-content !important;
+}

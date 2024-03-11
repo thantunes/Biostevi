@@ -96,3 +96,7 @@
 .flexRow--addToCartRow {
   padding-bottom: 1rem;
 }
+
+.flexCol--login-menu-retratil{
+  justify-content: space-around;
+}
