@@ -222,10 +222,12 @@
 }
 
 
-:global(.vtex-reviews-and-ratings-3-x-formSubmit):global(.vtex-button__label) {
-  background-color: #00C234;
-  color: #fff;
-  padding: 10px !important;
+:global(.vtex-reviews-and-ratings-3-x-formSection) :global(.vtex-button) {
+  color: #000;
+  border: 1px solid;
+  font-size: 14px;
+  padding: 0px 20px;
+  margin-top: 15px;
 }
 
 
