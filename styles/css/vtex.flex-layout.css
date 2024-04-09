@@ -96,3 +96,15 @@
 .flexRow--addToCartRow {
   padding-bottom: 1rem;
 }
+
+.flexRowContent--bloco-home-informativos .stretchChildrenWidth :global(.vtex-rich-text-0-x-container){
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width:768px){
+  .flexRow--bloco-home-informativos{
+    display: none;
+  }
+}

@@ -332,7 +332,7 @@
     "props": {
       "type": "external",
       "text": "Whatsapp", 
-      "url": "https://api.whatsapp.com/send/?phone=5511971331874&text&app_absent=0",
+      "url": "https://api.whatsapp.com/send/?phone=5511930877190&text&app_absent=0",
       "src":"https://stevia.vteximg.com.br/arquivos/whats-icon.png",
       "blockClass": "whatsapp-flutuante-icon"
     }

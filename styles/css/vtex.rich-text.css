@@ -72,7 +72,21 @@
   font-size: 28px;
   font-weight: 700;
 }
-
+.strong--informativo-whats{
+  font-size: 14px;
+  font-weight: 700;
+  color: black;
+}
+.headingLevel3--informativo-desconto-progressivo{
+  white-space: nowrap;
+  margin-right: 80px;
+}
+.container--informativo-whats{
+  width: fit-content !important;
+  justify-content: start !important;
+  height: fit-content !important;
+  margin-top: 7px;
+}
 @media only screen and (min-width: 640px) {
   .container--question .strong {
     font-size: 40px;

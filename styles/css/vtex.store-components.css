@@ -326,7 +326,7 @@
 
 :global(.vtex-flex-layout-0-x-flexRowContent--main-header){background-color:#d2d3d3!important;}
 
-:global(.vtex-flex-layout-0-x-flexRow--bloco-home-mosaico){    padding-top: 50px;}
+:global(.vtex-flex-layout-0-x-flexRow--bloco-home-mosaico){    padding-top: 50px; padding-bottom: 50px;}
 
 @media (max-width:768px){
   :global(.vtex-flex-layout-0-x-flexRow--bloco-home-mosaico){    padding-top: 0px;}
@@ -383,7 +383,7 @@
 :global(.vtex-rich-text-0-x-wrapper--shelfTitle){border-bottom:2px solid #ff6c00!important;max-width: 1140px!important;margin-bottom:35px!important;}
 
 :global(.vtex-flex-layout-0-x-flexRow--bloco-home-mosaicoeuquero)
-:global(.vtex-store-components-3-x-imageElement) {width: 90%!important;padding-bottom: 25px; margin: auto; display: block;    opacity: 0.6;transition:0.2s;}
+:global(.vtex-store-components-3-x-imageElement) {width: 90%!important;padding-bottom: 25px; margin: auto; display: block;    opacity: 1;transition:0.2s;}
 
 
 :global(.vtex-search-result-3-x-galleryItem){position: relative;    margin-top: 30px;}
@@ -782,10 +782,10 @@
   :global(.vtex-rich-text-0-x-wrapper--informativo-desconto){background-image: url("https://stevia.vtexassets.com/arquivos/icon-desconto.png");background-size: 65px;background-repeat: no-repeat;background-position: left center;padding-left: 74px;width: 100%;}
   :global(.vtex-rich-text-0-x-container--informativo-parcelamento){background-image: url("https://stevia.vtexassets.com/arquivos/icon-parcele.png");background-size: 65px;background-repeat: no-repeat;background-position: left center;padding-left: 74px;width: 100%;}
   :global(.vtex-rich-text-0-x-container--informativo-site-seguro){background-image: url("https://stevia.vtexassets.com/arquivos/icon-site-seguro.png");background-size: 65px;background-repeat: no-repeat;background-position: left center;padding-left: 74px;width: 100%;}
-  :global(.vtex-rich-text-0-x-container--informativo-whats){background-image: url("https://stevia.vtexassets.com/arquivos/icon-whatsapp.png");background-size: 65px;background-repeat: no-repeat;background-position: left center;padding-left: 74px;width: 100%;}
+  :global(.vtex-rich-text-0-x-container--informativo-whats){background-image: url("https://stevia.vtexassets.com/arquivos/icon-whatsapp.png");background-size: 65px;background-repeat: no-repeat;background-position: left center;padding-left: 64px;width: 100%;}
 
   :global(.vtex-flex-layout-0-x-flexRow--bloco-home-informativos)
-  :global(.vtex-store-components-3-x-container){max-width: 1460px!important;width: 100%; border: 1px solid #ededed;border-radius: 10px; margin-top: 30px;}
+  :global(.vtex-store-components-3-x-container){max-width: 1460px!important;width: 100%; border: 1px solid #ededed;border-radius: 10px; margin: 30px auto;}
 
   :global(.vtex-store-components-3-x-imageElement--imagem-dimensao){max-width: 495px;max-height: 504px; width: 100%;}
   :global(.vtex-product-specifications-1-x-groupName){font-size: 14px!important;font-weight: bold;margin-top: 10px; text-transform: uppercase;}
@@ -862,10 +862,10 @@
 :global(.vtex-flex-layout-0-x-flexRow--credits){background-color: #fff;}
 
 :global(.vtex-rich-text-0-x-paragraph--footer-aling-center){    font-size: 10px;}
-  :global(.vtex-rich-text-0-x-headingLevel3--informativo-frete){font-size: 14px;margin-bottom: 0px;}
+  :global(.vtex-rich-text-0-x-headingLevel3--informativo-frete){font-size: 14px;margin-bottom: 0px; margin-top: 0px;}
   :global(.vtex-rich-text-0-x-headingLevel3--informativo-desconto-progressivo){font-size: 14px;margin-bottom: 0px;}
   :global(.vtex-rich-text-0-x-headingLevel3--informativo-desconto){font-size: 14px;margin-bottom: 0px;}
-  :global(.vtex-rich-text-0-x-headingLevel3--informativo-parcelamento){font-size: 14px;margin-bottom: 0px;}
+  :global(.vtex-rich-text-0-x-headingLevel3--informativo-parcelamento){font-size: 14px;margin-bottom: 0px; margin-top: 0px;}
   :global(.vtex-rich-text-0-x-headingLevel3--informativo-site-seguro){font-size: 14px;margin-bottom: 0px;}
   :global(.vtex-rich-text-0-x-heading--informativo-whats){font-size: 14px;margin-bottom: 0px;}
 
@@ -1018,7 +1018,7 @@
 :global(.vtex-store-components-3-x-container) {max-width: 1190px!important;}
 
 :global(.vtex-flex-layout-0-x-flexRow--bloco-home-mosaicoeuquero) 
-:global(.vtex-store-components-3-x-imageElement) { width: 85%!important; padding-bottom: 30px;margin: auto; display: block;opacity: 0.6;transition: 0.2s;}
+:global(.vtex-store-components-3-x-imageElement) { width: 85%!important; padding-bottom: 30px;margin: auto; display: block;opacity: 1;transition: 0.2s;}
     :global(.vtex-slider-layout-0-x-sliderLayoutContainer--carrousel-euquero-mobile){display:none;}
     :global(.vtex-slider-layout-0-x-sliderLayoutContainer--carrousel-mosaico-mobile){display:none;}
     :global(.vtex-slider-layout-0-x-sliderLayoutContainer--carrousel-mobile){display:none;}
@@ -1210,3 +1210,22 @@
     color: lightgray !important;
   }
  
+
+
+  /* :global(.vtex-flex-layout-0-x-flexRow--bloco-home-informativos){margin-bottom: 20px;} */
+@media (max-width:1024px) {
+  .searchBarContainer{
+      max-width: 100vw;
+      padding: 10px 10px;
+  }
+  .searchBarInnerContainer{
+    width: unset !important;
+    margin: 0px;
+  }
+  :global(.vtex-rich-text-0-x-paragraph--informativo-frete){color: #949494;font-size: 9px;letter-spacing: 1px;margin-top: 5px;}
+  :global(.vtex-rich-text-0-x-paragraph--informativo-desconto-progressivo){color: #949494;font-size: 9px;letter-spacing: 1px;margin-top: 5px;}
+  :global(.vtex-rich-text-0-x-paragraph--informativo-desconto){color: #949494;font-size: 9px;letter-spacing: 1px;margin-top: 5px;}
+  :global(.vtex-rich-text-0-x-paragraph--informativo-parcelamento){color: #949494;font-size: 9px;letter-spacing: 1px;margin-top: 5px;}
+  :global(.vtex-rich-text-0-x-paragraph--informativo-site-seguro){color: #949494;font-size: 9px;letter-spacing: 1px;margin-top: 5px;}
+  :global(.vtex-rich-text-0-x-paragraph--informativo-whats){color: #949494;font-size: 9px;letter-spacing: 1px;margin-top: 5px;}
+}

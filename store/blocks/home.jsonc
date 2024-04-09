@@ -7,60 +7,43 @@
       "slider-layout#informativo-mobile",
       "rich-text#shelf-title-lancamentos",
       "flex-layout.row#shelfprateleiralancamentos",
-
       //"shelf#produtos-em-lancamentos",
-
       "flex-layout.row#descontos",
       "slider-layout#descontos-mobile",
-
       "rich-text#shelf-title-maisvendidos",
       "flex-layout.row#shelfmaisvendidos",
-
       "flex-layout.row#mosaico",
       "slider-layout#mosaico-mobile",
-
-
       "rich-text#shelf-title-ofertas",
       "flex-layout.row#shelfofertas",
-  
-
       //"rich-text#question",
-     // "rich-text#link",
-
-
-
+      // "rich-text#link",
       "rich-text#shelf-title-euquero",
       "flex-layout.row#mosaicoeuquero",
       "flex-layout.row#mosaicoeuqueromobile",
-     // "slider-layout#euqueromobile",
-
+      // "slider-layout#euqueromobile",
       "rich-text#shelf-title-influencers",
       "slider-layout#influencers",
-
-
       //"newsletter",
       "flex-layout.row#bloconews"
     ]
   },
-
   "flex-layout.row#bloconews": {
     "props": {
       "blockClass": "bloco-home-news"
     },
-    "children": ["newsletter-form"]
+    "children": [
+      "newsletter-form"
+    ]
   },
-
   "newsletter-form": {
-
-    "props":{
-
+    "props": {
       "block": [
         "ErrorState",
         "SuccessState",
         "LoadingState"
       ]
     },
-  
     "children": [
       "rich-text#title-news",
       "newsletter-input-name",
@@ -70,8 +53,7 @@
       "newsletter-checkbox-confirmation"
     ]
   },
-
-  "rich-text#title-news":{
+  "rich-text#title-news": {
     "props": {
       "text": "### Receba Ofertas Exclusivas",
       "textPosition": "center",
@@ -79,24 +61,27 @@
       "blockClass": "titulo-news"
     }
   },
-
   "flex-layout.row#shelfprateleiralancamentos": {
-    "children": ["list-context.product-list#prateleiralancamentos"]
+    "children": [
+      "list-context.product-list#prateleiralancamentos"
+    ]
   },
   "list-context.product-list#prateleiralancamentos": {
-    "blocks": ["product-summary.shelf"],
-    "children": ["slider-layout#prateleiralancamentos"],
+    "blocks": [
+      "product-summary.shelf"
+    ],
+    "children": [
+      "slider-layout#prateleiralancamentos"
+    ],
     "props": {
       "orderBy": "OrderByReleaseDateDESC",
       "collection": "148"
     }
   },
-
-
   "slider-layout#prateleiralancamentos": {
     "props": {
       "itemsPerPage": {
-        "desktop":4,
+        "desktop": 4,
         "tablet": 2,
         "phone": 2
       },
@@ -105,13 +90,12 @@
       "blockClass": "shelf"
     }
   },
-
   "slider-layout#informativo-mobile": {
     "props": {
-        "autoplay": {
-           "timeout": 5000,
-           "stopOnHover": false
-           },
+      "autoplay": {
+        "timeout": 5000,
+        "stopOnHover": false
+      },
       "itemsPerPage": {
         "desktop": 1,
         "tablet": 1,
@@ -119,89 +103,131 @@
       },
       "infinite": true,
       "showNavigationArrows": "desktopOnly",
-      "blockClass": "carrousel-mobile"
+      "blockClass": "carrousel-mobile",
+      "showPaginationDots": "never"
     },
-    "children": ["rich-text#frete-gratis", "rich-text#descontoprogressivo","rich-text#desconto","rich-text#parcelamento","rich-text#siteseguro","rich-text#whats1"]
-   
-  },
-
-  "flex-layout.row#informativos":{
-    "props": {
-      "blockClass": "bloco-home-informativos"
-    },
-
     "children": [
       "rich-text#frete-gratis",
       "rich-text#descontoprogressivo",
-
       "rich-text#desconto",
       "rich-text#parcelamento",
       "rich-text#siteseguro",
       "rich-text#whats1"
- 
     ]
   },
-"rich-text#frete-gratis":{
-  "props": {
-    "text": "### Frete Grátis* \n Confira as regras",
-    "textPosition": "LEFT",
-    "textAlignment": "LEFT",
-    "blockClass": "informativo-frete"
-  }
-},
-"rich-text#descontoprogressivo":{
-  "props": {
-    "text": "### Desconto Progressivo \n Compre mais e pague menos",
-    "textPosition": "LEFT",
-    "textAlignment": "LEFT",
-    "blockClass": "informativo-desconto-progressivo"
-  }
-},
-"rich-text#desconto":{
-  "props": {
-    "text": "### 5% de Desconto \n No pix, transf ou boleto",
-    "textPosition": "LEFT",
-    "textAlignment": "LEFT",
-    "blockClass": "informativo-desconto"
-  }
-},
-"rich-text#parcelamento":{
-  "props": {
-    "text": "### Parcele em até 10x \n sem juros no cartão",
-    "textPosition": "LEFT",
-    "textAlignment": "LEFT",
-    "blockClass": "informativo-parcelamento"
-  }
-},
-"rich-text#siteseguro":{
-  "props": {
-    "text": "### Site seguro \n Proteção para suas informações",
-    "textPosition": "LEFT",
-    "textAlignment": "LEFT",
-    "blockClass": "informativo-site-seguro"
-  }
-},
-"rich-text#whats1":{
-  "props": {
-    "text": "### WhatsApp \n (11)97133-1874",
-    "textPosition": "LEFT",
-    "textAlignment": "LEFT",
-    "blockClass": "informativo-whats"
-  }
-},
-
-
-
-
-"flex-layout.row#descontos":{
-
+  "flex-layout.row#informativos": {
+    "props": {
+      "blockClass": "bloco-home-informativos",
+      "preventHorizontalStretch": true
+    },
+    "children": [
+      "responsive-layout.desktop#Informativos",
+      "responsive-layout.tablet#Informativos"
+    ]
+  },
+  "slider-layout#SliderLayoutInfomativos": {
+    "children": [
+      "rich-text#frete-gratis",
+      "rich-text#descontoprogressivo",
+      "rich-text#desconto",
+      "rich-text#parcelamento",
+      "rich-text#siteseguro",
+      "rich-text#whats1"
+    ],
+    "props": {
+      "autoplay": {
+        "timeout": 7000,
+        "stopOnHover": true
+      },
+      "itemsPerPage": {
+        "desktop": 5,
+        "tablet": 3,
+        "phone": 1
+      },
+      "showNavigationArrows": false,
+      "showPaginationDots": false,
+      "blockClass": "InformativoSlider"
+    }
+  },
+  "responsive-layout.desktop#Informativos": {
+    "children": [
+      "flex-layout.row#informativosContainer"
+    ]
+  },
+  "flex-layout.row#informativosContainer": {
+    "props": {
+      "blockClass": "bloco-home-informativos"
+    },
+    "children": [
+      "rich-text#frete-gratis",
+      "rich-text#descontoprogressivo",
+      "rich-text#desconto",
+      "rich-text#parcelamento",
+      "rich-text#siteseguro",
+      "rich-text#whats1"
+    ]
+  },
+  "responsive-layout.tablet#Informativos": {
+    "children": [
+      "slider-layout#SliderLayoutInfomativos"
+    ]
+  },
+  "rich-text#frete-gratis": {
+    "props": {
+      "text": "### Frete Grátis* \n Confira as regras",
+      "textPosition": "LEFT",
+      "textAlignment": "LEFT",
+      "blockClass": "informativo-frete"
+    }
+  },
+  "rich-text#descontoprogressivo": {
+    "props": {
+      "text": "### Desconto Progressivo \n Compre mais e pague menos",
+      "textPosition": "LEFT",
+      "textAlignment": "LEFT",
+      "blockClass": "informativo-desconto-progressivo"
+    }
+  },
+  "rich-text#desconto": {
+    "props": {
+      "text": "### 5% de Desconto \n No pix, transf ou boleto",
+      "textPosition": "LEFT",
+      "textAlignment": "LEFT",
+      "blockClass": "informativo-desconto"
+    }
+  },
+  "rich-text#parcelamento": {
+    "props": {
+      "text": "### Parcele em até 10x \n sem juros no cartão",
+      "textPosition": "LEFT",
+      "textAlignment": "LEFT",
+      "blockClass": "informativo-parcelamento"
+    }
+  },
+  "rich-text#siteseguro": {
+    "props": {
+      "text": "### Site seguro \n Proteção para suas informações",
+      "textPosition": "LEFT",
+      "textAlignment": "LEFT",
+      "blockClass": "informativo-site-seguro"
+    }
+  },
+  "rich-text#whats1": {
+    "props": {
+      "text": "### WhatsApp \n (11)97133-1874",
+      "textPosition": "LEFT",
+      "textAlignment": "LEFT",
+      "blockClass": ["informativo-whats"]
+    }
+  },
+  "flex-layout.row#descontos": {
     "props": {
       "blockClass": "bloco-home-mosaico"
     },
     "children": [
       "flex-layout.col#primeiro",
       "flex-layout.col#segundo",
-      "flex-layout.col#terceiro" 
+      "flex-layout.col#terceiro"
     ]
   },
   "flex-layout.col#primeiro": {
@@ -239,7 +265,7 @@
       "maxWidth": "100%"
     }
   },
-"flex-layout.col#terceiro": {
+  "flex-layout.col#terceiro": {
     "props": {
       "blockClass": "mosaico-bloco-3"
     },
@@ -260,19 +286,17 @@
       "maxWidth": "100%"
     }
   },
-
-  "flex-layout.row#mosaico":{
+  "flex-layout.row#mosaico": {
     "props": {
       "blockClass": "bloco-home-mosaico"
     },
     "children": [
       "flex-layout.col#mosaicoprimeiro",
       "flex-layout.col#mosaicosegundo",
-      "flex-layout.col#mosaicoterceiro"      
+      "flex-layout.col#mosaicoterceiro"
     ]
   },
   "flex-layout.col#mosaicoprimeiro": {
-
     "props": {
       "blockClass": "mosaico-bloco-1"
     },
@@ -334,16 +358,13 @@
       "blockClass": "shelfTitle"
     }
   },
-
-
-
   /*thiago*/
   "slider-layout#descontos-mobile": {
     "props": {
-        "autoplay": {
-           "timeout": 5000,
-           "stopOnHover": false
-           },
+      "autoplay": {
+        "timeout": 5000,
+        "stopOnHover": false
+      },
       "itemsPerPage": {
         "desktop": 1,
         "tablet": 1,
@@ -353,20 +374,20 @@
       "showNavigationArrows": "desktopOnly",
       "blockClass": "carrousel-mosaico-mobile"
     },
-    "children": ["image#produtodescontoum","image#produtodescontodois","image#produtodescontocentro","image#produtodescontoquarto","image#produtodescontoquinto"]
-   
+    "children": [
+      "image#produtodescontoum",
+      "image#produtodescontodois",
+      "image#produtodescontocentro",
+      "image#produtodescontoquarto",
+      "image#produtodescontoquinto"
+    ]
   },
-
-
-
-
-  
   "slider-layout#mosaico-mobile": {
     "props": {
-        "autoplay": {
-           "timeout": 5000,
-           "stopOnHover": false
-           },
+      "autoplay": {
+        "timeout": 5000,
+        "stopOnHover": false
+      },
       "itemsPerPage": {
         "desktop": 1,
         "tablet": 1,
@@ -376,31 +397,35 @@
       "showNavigationArrows": "desktopOnly",
       "blockClass": "carrousel-mosaico-mobile"
     },
-    "children": ["image#mosaicoum","image#mosaicodois","image#mosaicocentro","image#mosaicoquarto","image#mosaicoquinto"]
-   
+    "children": [
+      "image#mosaicoum",
+      "image#mosaicodois",
+      "image#mosaicocentro",
+      "image#mosaicoquarto",
+      "image#mosaicoquinto"
+    ]
   },
-
-
-
-
-
   "flex-layout.row#shelflancamentos": {
-    "children": ["list-context.product-list#lancamentos"]
+    "children": [
+      "list-context.product-list#lancamentos"
+    ]
   },
   "list-context.product-list#lancamentos": {
-    "blocks": ["product-summary.shelf"],
-    "children": ["slider-layout#lancamentos"],
+    "blocks": [
+      "product-summary.shelf"
+    ],
+    "children": [
+      "slider-layout#lancamentos"
+    ],
     "props": {
       "orderBy": "OrderByReleaseDateDESC",
       "collection": "148"
     }
   },
-
   "slider-layout#produtos-em-lancamentos": {
-
     "props": {
       "itemsPerPage": {
-        "desktop":4,
+        "desktop": 4,
         "tablet": 2,
         "phone": 1
       },
@@ -409,11 +434,10 @@
       "blockClass": "shelf"
     }
   },
-
   "slider-layout#lancamentos": {
     "props": {
       "itemsPerPage": {
-        "desktop":4,
+        "desktop": 4,
         "tablet": 2,
         "phone": 1
       },
@@ -422,20 +446,24 @@
       "blockClass": "shelf"
     }
   },
-
   "rich-text#shelf-title-maisvendidos": {
     "props": {
       "text": "Mais Vendidos",
       "blockClass": "shelfTitle"
     }
   },
-
   "flex-layout.row#shelfmaisvendidos": {
-    "children": ["list-context.product-list#maisvendidos"]
+    "children": [
+      "list-context.product-list#maisvendidos"
+    ]
   },
   "list-context.product-list#maisvendidos": {
-    "blocks": ["product-summary.shelf"],
-    "children": ["slider-layout#maisvendidos"],
+    "blocks": [
+      "product-summary.shelf"
+    ],
+    "children": [
+      "slider-layout#maisvendidos"
+    ],
     "props": {
       "orderBy": "OrderByReleaseDateDESC",
       "collection": "137"
@@ -444,7 +472,7 @@
   "slider-layout#maisvendidos": {
     "props": {
       "itemsPerPage": {
-        "desktop":4,
+        "desktop": 4,
         "tablet": 2,
         "phone": 2
       },
@@ -453,20 +481,24 @@
       "blockClass": "shelf"
     }
   },
-
   "rich-text#shelf-title-ofertas": {
     "props": {
       "text": "Ofertas",
       "blockClass": "shelfTitle"
     }
   },
-
   "flex-layout.row#shelfofertas": {
-    "children": ["list-context.product-list#ofertas"]
+    "children": [
+      "list-context.product-list#ofertas"
+    ]
   },
   "list-context.product-list#ofertas": {
-    "blocks": ["product-summary.shelf"],
-    "children": ["slider-layout#ofertas"],
+    "blocks": [
+      "product-summary.shelf"
+    ],
+    "children": [
+      "slider-layout#ofertas"
+    ],
     "props": {
       "orderBy": "OrderByReleaseDateDESC",
       "collection": "137"
@@ -475,7 +507,7 @@
   "slider-layout#ofertas": {
     "props": {
       "itemsPerPage": {
-        "desktop":4,
+        "desktop": 4,
         "tablet": 2,
         "phone": 2
       },
@@ -484,11 +516,10 @@
       "blockClass": "shelf"
     }
   },
-
-
-
   "list-context.image-list#demo": {
-    "children": ["slider-layout#demo-images"],
+    "children": [
+      "slider-layout#demo-images"
+    ],
     "props": {
       "height": 720,
       "images": [
@@ -510,19 +541,15 @@
         "tablet": 1,
         "phone": 1
       },
-     
-      "autoplay":{
-        "timeout":5000,
-        "stopOnHover":true
-
-     },
-
+      "autoplay": {
+        "timeout": 5000,
+        "stopOnHover": true
+      },
       "infinite": true,
       "showNavigationArrows": "desktopOnly",
       "blockClass": "carousel"
     }
   },
-
   "rich-text#shelf-title": {
     "props": {
       "text": "## Lançamento",
@@ -530,11 +557,17 @@
     }
   },
   "flex-layout.row#shelf": {
-    "children": ["list-context.product-list#demo1"]
+    "children": [
+      "list-context.product-list#demo1"
+    ]
   },
   "list-context.product-list#demo1": {
-    "blocks": ["product-summary.shelf"],
-    "children": ["slider-layout#demo-products"],
+    "blocks": [
+      "product-summary.shelf"
+    ],
+    "children": [
+      "slider-layout#demo-products"
+    ],
     "props": {
       "orderBy": "OrderByTopSaleDESC"
     }
@@ -551,7 +584,6 @@
       "blockClass": "shelf"
     }
   },
-
   "info-card#home": {
     "props": {
       "id": "info-card-home",
@@ -565,43 +597,24 @@
       "textAlignment": "center"
     }
   },
-
-
-
-
   "rich-text#shelf-title-novidades": {
     "props": {
       "text": "NOVIDADES",
       "blockClass": "shelfTitle"
-      
     }
   },
-
-
-
-
-  
-
-
   "rich-text#shelf-title-euquero": {
     "props": {
       "text": "EU QUERO",
       "blockClass": "shelfTitle"
-      
     }
   },
-
-
-
-
-
-
   "slider-layout#euqueromobile": {
     "props": {
-        "autoplay": {
-           "timeout": 5000,
-           "stopOnHover": false
-           },
+      "autoplay": {
+        "timeout": 5000,
+        "stopOnHover": false
+      },
       "itemsPerPage": {
         "desktop": 1,
         "tablet": 1,
@@ -611,16 +624,22 @@
       "showNavigationArrows": "desktopOnly",
       "blockClass": "carrousel-euquero-mobile"
     },
-    "children": ["image#mosaicoeuqueroum","image#mosaicoeuquerodois","image#mosaicoeuquerotres","image#mosaicoeuqueroquatro","image#mosaicoeuquerocinco","image#mosaicoeuqueroseis","image#mosaicoeuquerosete","image#mosaicoeuquerooito","image#mosaicoeuqueronove","image#mosaicoeuquerodez","image#mosaicoeuqueroonze","image#mosaicoeuquerodoze"]
-   
+    "children": [
+      "image#mosaicoeuqueroum",
+      "image#mosaicoeuquerodois",
+      "image#mosaicoeuquerotres",
+      "image#mosaicoeuqueroquatro",
+      "image#mosaicoeuquerocinco",
+      "image#mosaicoeuqueroseis",
+      "image#mosaicoeuquerosete",
+      "image#mosaicoeuquerooito",
+      "image#mosaicoeuqueronove",
+      "image#mosaicoeuquerodez",
+      "image#mosaicoeuqueroonze",
+      "image#mosaicoeuquerodoze"
+    ]
   },
-
-
-
- 
-
-
-  "flex-layout.row#mosaicoeuquero":{
+  "flex-layout.row#mosaicoeuquero": {
     "props": {
       "blockClass": "bloco-home-mosaicoeuquero"
     },
@@ -628,7 +647,7 @@
       "flex-layout.col#mosaicoeuqueroprimeiro",
       "flex-layout.col#mosaicoeuquerosegundo",
       "flex-layout.col#mosaicoeuqueroterceiro",
-      "flex-layout.col#mosaicoeuqueroquarto"      
+      "flex-layout.col#mosaicoeuqueroquarto"
     ]
   },
   "flex-layout.col#mosaicoeuqueroprimeiro": {
@@ -656,10 +675,6 @@
       "maxWidth": "100%"
     }
   },
-
-
-
-
   "flex-layout.col#mosaicoeuquerosegundo": {
     "children": [
       "image#mosaicoeuqueroquatro",
@@ -685,12 +700,6 @@
       "maxWidth": "100%"
     }
   },
-
-
-
-
-
-
   "flex-layout.col#mosaicoeuqueroterceiro": {
     "children": [
       "image#mosaicoeuquerosete",
@@ -716,9 +725,6 @@
       "maxWidth": "100%"
     }
   },
-
-
-
   "flex-layout.col#mosaicoeuqueroquarto": {
     "children": [
       "image#mosaicoeuquerodez",
@@ -744,30 +750,7 @@
       "maxWidth": "100%"
     }
   },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  "flex-layout.row#mosaicoeuqueromobile":{
+  "flex-layout.row#mosaicoeuqueromobile": {
     "props": {
       "blockClass": "bloco-home-mosaicoeuqueromobile"
     },
@@ -777,7 +760,7 @@
       "flex-layout.col#mosaicoeuqueroterceiromobile",
       "flex-layout.col#mosaicoeuqueroquartomobile",
       "flex-layout.col#mosaicoeuqueroquintomobile",
-      "flex-layout.col#mosaicoeuquerosextomobile"     
+      "flex-layout.col#mosaicoeuquerosextomobile"
     ]
   },
   "flex-layout.col#mosaicoeuqueroprimeiromobile": {
@@ -810,74 +793,35 @@
       "image#mosaicoeuquerodez"
     ]
   },
-
   "flex-layout.col#mosaicoeuquerosextomobile": {
     "children": [
       "image#mosaicoeuqueroonze",
       "image#mosaicoeuquerodoze"
     ]
   },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   "rich-text#question": {
     "props": {
       "text": "**This is an example store built using the VTEX platform.\nWant to know more?**",
       "blockClass": "question"
     }
   },
-
   "rich-text#link": {
     "props": {
       "text": "\n**Reach us at**\nwww.vtex.com.br",
       "blockClass": "link"
     }
   },
-
   "product-summary-buy-button": {
-    "props": { 
+    "props": {
       "displayBuyButton": "displayButtonAlways"
     }
   },
-
-
-
-
-
   "rich-text#shelf-title-influencers": {
     "props": {
       "text": "Time Biostévi",
       "blockClass": "shelfTitle"
     }
   },
-  
-
-
-
-  
   "slider-layout#influencers": {
     "props": {
       "itemsPerPage": {
@@ -889,7 +833,17 @@
       "showNavigationArrows": "desktopOnly",
       "blockClass": "influenciadores"
     },
-    "children": ["image#influenter7","image#influenter4","image#influenter5","image#influenter3","image#influenter9","image#influenter6","image#influenter10","image#influenter11","image#influenter12"]
+    "children": [
+      "image#influenter7",
+      "image#influenter4",
+      "image#influenter5",
+      "image#influenter3",
+      "image#influenter9",
+      "image#influenter6",
+      "image#influenter10",
+      "image#influenter11",
+      "image#influenter12"
+    ]
   },
   "image#influenter3": {
     "props": {
@@ -945,13 +899,4 @@
       "maxWidth": "100%"
     }
   }
-  
-  
-
-  
-
-
-
-
-
 }

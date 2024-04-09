@@ -257,7 +257,8 @@
       },
       "infinite": true,
       "showNavigationArrows": "desktopOnly",
-      "blockClass": "carrousel-mobile"
+      "blockClass": "carrousel-mobile",
+      "showPaginationDots": "never"
     },
     "children": [
       "rich-text#frete-gratis",

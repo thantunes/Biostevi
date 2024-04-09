@@ -28,3 +28,7 @@
 .sliderLayoutContainer--shelf :global(.vtex-product-highlights-2-x-productHighlightWrapper--collection){
   top: 5px !important;
 }
+
+.sliderLayoutContainer--InformativoSlider{
+  width: 100vw;
+}

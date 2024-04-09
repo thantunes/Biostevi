@@ -1,3 +1,10 @@
 .wrapper--sticky-header{
     z-index: 999;
 }
+
+
+@media (max-width:1024px) {
+    .container--sticky-header{
+        background-color: #d2d3d3!important;
+    }
+}

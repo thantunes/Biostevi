@@ -16,7 +16,8 @@
       "flex-layout.row#1-desktop",
       "flex-layout.row#2-desktop",
       "flex-layout.row#3-desktop",
-      "sticky-layout#4-desktop"
+      "sticky-layout#4-desktop",
+      "ChangeTag"
     ]
   },
   "flex-layout.row#1-desktop": {
@@ -103,7 +104,8 @@
   "header-layout.mobile": {
     "children": [
       "sticky-layout#1-envie-sua-receita-mobile",
-      "sticky-layout#1-mobile"
+      "sticky-layout#1-mobile",
+      "ChangeTag"
     ]
   },
   "sticky-layout#1-envie-sua-receita-mobile": {
