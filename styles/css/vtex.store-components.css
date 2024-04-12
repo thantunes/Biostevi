@@ -862,12 +862,12 @@
 :global(.vtex-flex-layout-0-x-flexRow--credits){background-color: #fff;}
 
 :global(.vtex-rich-text-0-x-paragraph--footer-aling-center){    font-size: 10px;}
-  :global(.vtex-rich-text-0-x-headingLevel3--informativo-frete){font-size: 14px;margin-bottom: 0px; margin-top: 0px;}
-  :global(.vtex-rich-text-0-x-headingLevel3--informativo-desconto-progressivo){font-size: 14px;margin-bottom: 0px;}
-  :global(.vtex-rich-text-0-x-headingLevel3--informativo-desconto){font-size: 14px;margin-bottom: 0px;}
-  :global(.vtex-rich-text-0-x-headingLevel3--informativo-parcelamento){font-size: 14px;margin-bottom: 0px; margin-top: 0px;}
-  :global(.vtex-rich-text-0-x-headingLevel3--informativo-site-seguro){font-size: 14px;margin-bottom: 0px;}
-  :global(.vtex-rich-text-0-x-heading--informativo-whats){font-size: 14px;margin-bottom: 0px;}
+  :global(.vtex-rich-text-0-x-strong--informativo-frete){font-size: 14px; font-weight: 700; color:black; margin-bottom: 0px; margin-top: 0px;}
+  :global(.vtex-rich-text-0-x-strong--informativo-desconto-progressivo){font-size: 14px; font-weight: 700; color:black; margin-bottom: 0px;}
+  :global(.vtex-rich-text-0-x-strong--informativo-desconto){font-size: 14px; font-weight: 700; color:black; margin-bottom: 0px;}
+  :global(.vtex-rich-text-0-x-strong--informativo-parcelamento){font-size: 14px; font-weight: 700; color:black; margin-bottom: 0px; margin-top: 0px;}
+  :global(.vtex-rich-text-0-x-strong--informativo-site-seguro){font-size: 14px; font-weight: 700; color:black; margin-bottom: 0px;}
+  :global(.vtex-rich-text-0-x-heading--informativo-whats){font-size: 14px; font-weight: 700; color:black; margin-bottom: 0px;}
 
   :global(.vtex-store-footer-2-x-footerLayout){background-color: #d2d3d3;    }
   :global(.vtex-store-components-3-x-newsletter){background-color: #d2d3d3!important;border-top: 2px solid #ff6c00;}

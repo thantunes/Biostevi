@@ -3,6 +3,8 @@ import $ from 'jquery'
 export default function ChangeTag () {
     useEffect(() => {
         $('body').append('<h1 id="titleRemove" style="display:none !important">Biostévi</h1>')
+
+        window.location.pathname.split('/')?.[window.location.pathname.split('/').length-1] == 'p' ? $('#titleRemove').remove() : null
         setInterval(() => {
 
             $('.vtex-search-result-3-x-galleryTitle--layout.t-heading-1').each(function() {
