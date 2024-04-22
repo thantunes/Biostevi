@@ -7,6 +7,7 @@
       "flex-layout.row#footer-1-desktop",
       "flex-layout.row#espacamento-footer",
       "flex-layout.row#footer-2-desktop",
+      "flex-layout.row#Security",
       "flex-layout.row#espacamento-footer",
       "flex-layout.row#footer-3-desktop", 
       "flex-layout.row#footer-4-desktop",
@@ -15,8 +16,47 @@
 
     ]
   },
+  "flex-layout.row#Security": {
+    "children": [
+      "rich-text#SecTitle",
+      "flex-layout.row#SecImages"
+    ],
+    "props": {
+      "blockClass": "SecurityFooter"
+    }
+  },
+  "rich-text#SecTitle": {
+    "props": {
+      "text": "Segurança",
+      "blockClass": "SecTitle"
+    }
+  },
+  "flex-layout.row#SecImages": {
+    "props": {
+      "blockClass": "SecImages"
+    },
+    "children": ["image#vtexCert","image#SecClear","image#SecLets"]
+  },
+  "image#vtexCert": {
+    "props": {
+      "src": "assets/footer/selo-vtex.png",
+      "maxHeight": "55px"
 
-
+    }
+  },
+  "image#SecClear": {
+    "props": {
+      "src": "assets/footer/selo-clearsale.png",
+      "maxHeight": "55px"
+    }
+  },
+  "image#SecLets": {
+    "props": {
+      "src": "assets/footer/lets-encrypt-selo.png",
+      "maxHeight": "55px"
+      
+    }
+  },
   "flex-layout.row#iconwhats": {
     "children": ["image#whatsapp-flutuante"],
     "props": {
@@ -354,7 +394,7 @@
     "children": [
       "flex-layout.row#1-footer-mobile",
       "flex-layout.row#2-footer-mobile",
-      "flex-layout.row#footer-3-desktop",
+      "flex-layout.row#Security",
       "flex-layout.row#footer-4-desktop",
       "flex-layout.row#developers",
       "flex-layout.row#iconwhats"

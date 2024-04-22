@@ -25,13 +25,17 @@
 .container--question {
   justify-content: center;
 }
-.container--Informacoes-Imp, .wrapper--Informacoes-Imp{
+
+.container--Informacoes-Imp,
+.wrapper--Informacoes-Imp {
   margin: 0 !important;
 }
-.paragraph--Informacoes-Imp{
+
+.paragraph--Informacoes-Imp {
   color: #555 !important;
   font-style: 17px;
 }
+
 .container--question .paragraph {
   text-align: center;
   max-width: 540px;
@@ -72,21 +76,35 @@
   font-size: 28px;
   font-weight: 700;
 }
-.strong--informativo-whats{
+
+.strong--informativo-whats {
   font-size: 14px;
   font-weight: 700;
   color: black;
 }
-.headingLevel3--informativo-desconto-progressivo{
+
+.headingLevel3--informativo-desconto-progressivo {
   white-space: nowrap;
   margin-right: 80px;
 }
-.container--informativo-whats{
+
+.container--informativo-whats {
   width: fit-content !important;
   justify-content: start !important;
   height: fit-content !important;
   margin-top: 7px;
 }
+
+.paragraph--SecTitle {
+  display: block;
+  color: #555 !important;
+  font-size: 19px !important;
+  font-weight: 600 !important;
+  cursor: default;
+  padding-bottom: 0px !important;
+  margin-bottom: 5px;
+}
+
 @media only screen and (min-width: 640px) {
   .container--question .strong {
     font-size: 40px;
@@ -106,5 +124,10 @@
 
   .container--title .paragraph {
     line-height: 1.3em;
+  }
+}
+@media screen and (max-width:768px) {
+  .wrapper--SecTitle{
+    width: 100%;
   }
 }

@@ -214,19 +214,20 @@
   },
   "image#logintipomenuretratil": {
     "props": {
-      "src": "https://stevia.vteximg.com.br/arquivos/login.png",
+      "src": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/aed2980f-5377-45c0-b2ef-57b693d15808___52eb9c1893be3b53c9b0663ef28ac87b.png",
       "maxWidth": "100%"
     }
   },
   "image#teltipomenuretratil": {
     "props": {
-      "src": "https://stevia.vteximg.com.br/arquivos/tel.png",
-      "maxWidth": "100%"
+      "src": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/4a899497-db03-4953-bbe6-14a2b5a85aa2___2b4f557f9850d543581ad0f110e41b97.png",
+      "maxWidth": "100%",
+      "blockClass":"teltipomenuretratil"
     }
   },
   "image#whatstipomenuretratil": {
     "props": {
-      "src": "https://stevia.vteximg.com.br/arquivos/iconewhatsp.png",
+      "src": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/7aa20ecc-1314-4598-9aa0-e69e48080c4a___75154a25a25bad9e8950f9da3c1bbe40.png",
       "maxWidth": "100%"
     }
   },
