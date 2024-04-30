@@ -312,7 +312,12 @@
       "blockClass": "footer-aling-center"
     }
   },
-
+  "rich-text#Promocoes": {
+    "props": {
+      "text": "Farmacêutico Responsável: Dr. Hélio Takashi Kozima | CDF-SP: 7795 \n e-mail: farmaceutico@biostevi.com.br \n AE:1.40443.9 | AFE:7.03654.7 \n Licença Sanitária nº: 354780901-477-000043-1-6 \n Certidão de Regularidade CRF SP 03322",
+      "blockClass": "footer-aling-center"
+    }
+  },
   "rich-text#copyright": {
     "props": {
       "text": "Copyright © 2020. Todos os direitos reservados. \n Todas as marcas e suas imagens são de propriedade de seus respectivos donos. \n É vedada a reprodução, total ou parcial, de qualquer conteúdo sem expressa autorização. \n Fotos meramente ilustrativas.", 
@@ -395,6 +400,7 @@
       "flex-layout.row#1-footer-mobile",
       "flex-layout.row#2-footer-mobile",
       "flex-layout.row#Security",
+      "flex-layout.row#footer-3-desktop",
       "flex-layout.row#footer-4-desktop",
       "flex-layout.row#developers",
       "flex-layout.row#iconwhats"

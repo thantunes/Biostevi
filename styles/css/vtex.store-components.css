@@ -212,11 +212,11 @@
 :global(.vtex-flex-layout-0-x-flexRow--topomenuretratil){    margin-bottom: 15px;}
 
 :global(.vtex-flex-layout-0-x-flexCol--login-menu-retratil)
-:global(.vtex-flex-layout-0-x-flexColChild--login-menu-retratil):first-child{     margin-right: 15px;  margin-top: 0px;padding: 0px; width: 170px;}
+:global(.vtex-flex-layout-0-x-flexColChild--login-menu-retratil):first-child{     margin: 0px; padding: 0px; width: 170px;}
 
 
 :global(.vtex-flex-layout-0-x-flexCol--login-menu-retratil)
-:global(.vtex-flex-layout-0-x-flexColChild--login-menu-retratil){width: 53px;margin-top: 26px;    padding: 0px 12px;}
+:global(.vtex-flex-layout-0-x-flexColChild--login-menu-retratil){width: 53px;margin-top: 15px;    padding: 0px 12px;}
 
   
 :global(.vtex-flex-layout-0-x-flexRow--texto-informativo-footer){margin-left: 13px;}

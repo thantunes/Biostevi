@@ -10,7 +10,8 @@
       "menu-item#sale",
       "menu-item#personalization",
       "menu-item#blog",
-      "menu-item#farmaceuticoresponsavel"
+      "menu-item#farmaceuticoresponsavel",
+      "menu-item#Promo"
     ]
   },
 
@@ -430,7 +431,8 @@
       "menu-item#trocas",
       "menu-item#politica",
       "menu-item#blogmobile",
-      "menu-item#farmaceutico"
+      "menu-item#farmaceutico",
+      "menu-item#Promo"
     ]
   },
 
@@ -530,7 +532,21 @@
       }
     }
   },
-
+  "menu-item#Promo": {
+    "props": {
+      "id": "menu-item-shorts",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "Internal",
+        "href": "/politicas-de-promocoes-e-cupons",
+        "noFollow": false,
+        "tagTitle": "Políticas de promoções e cupons",
+        "text": "Políticas de promoções e cupons"
+      }
+    }
+  },
   
 
 
