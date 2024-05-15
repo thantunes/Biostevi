@@ -713,7 +713,7 @@
 
 :global(.vtex-flex-layout-0-x-flexColChild)
 :global(.vtex-reviews-and-ratings-3-x-container)
-:global(.vtex-reviews-and-ratings-3-x-reviewsRating){float:left;    margin-top: 10px;    margin-left: -20px;}
+:global(.vtex-reviews-and-ratings-3-x-reviewsRating){float:left; margin-right: 8px;   margin-left: -20px;}
 
 :global(.vtex-reviews-and-ratings-3-x-writeReviewButton) {color: #000!important;}
 
@@ -1204,7 +1204,6 @@
   .submit :global(.vtex-button){
     /* background-color: red; */
     padding: 8px 13px;
-    border:1px solid lightgray;
   }
   .submit :global(.vtex-button__label){
     color: lightgray !important;
@@ -1228,4 +1227,9 @@
   :global(.vtex-rich-text-0-x-paragraph--informativo-parcelamento){color: #949494;font-size: 9px;letter-spacing: 1px;margin-top: 5px;}
   :global(.vtex-rich-text-0-x-paragraph--informativo-site-seguro){color: #949494;font-size: 9px;letter-spacing: 1px;margin-top: 5px;}
   :global(.vtex-rich-text-0-x-paragraph--informativo-whats){color: #949494;font-size: 9px;letter-spacing: 1px;margin-top: 5px;}
+}
+
+:global(.vtex-store-components-3-x-subscriberContainer) :global(.vtex-store-components-3-x-title), :global(.vtex-store-components-3-x-subscribeLabel) {
+  text-align: center;
+    max-width: 79%;
 }
