@@ -92,7 +92,7 @@
   width: fit-content !important;
   justify-content: start !important;
   height: fit-content !important;
-  margin-top: 7px;
+
 }
 
 .paragraph--SecTitle {
@@ -130,4 +130,27 @@
   .wrapper--SecTitle{
     width: 100%;
   }
+}
+
+.wrapper--faq-question .paragraph {
+  margin: 0;
+  font-weight: 700;
+}
+
+.wrapper--whatsapp-text .strong {
+  margin-top: 60px;
+  display: block;
+}
+
+.container--faq-title {
+  padding: 0 !important;
+}
+
+.link--informativo-whats {
+  text-decoration: none;
+  color: #949494;
+}
+
+.link--informativo-whats .strong {
+  color: black;
 }

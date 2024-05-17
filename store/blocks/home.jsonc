@@ -24,6 +24,7 @@
       // "slider-layout#euqueromobile",
       "rich-text#shelf-title-influencers",
       "slider-layout#influencers",
+      "flex-layout.row#faq-container",
       //"newsletter",
       "flex-layout.row#bloconews"
     ]

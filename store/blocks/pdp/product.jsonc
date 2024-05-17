@@ -14,7 +14,8 @@
       "product-reviews",
       "flex-layout.row#buy-together",
       "product-questions-and-answers",
-      "rich-text#pdp-informativo1"
+      "rich-text#pdp-informativo1",
+      "flex-layout.row#faq-container"
     ]
   },
   "rich-text#shelf-titlepdp": {

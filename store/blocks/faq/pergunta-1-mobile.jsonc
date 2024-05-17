@@ -1,0 +1,166 @@
+{
+    "disclosure-layout#primeira-pergunta-mobile": {
+        "children": [
+            "disclosure-trigger#primeira-pergunta-mobile",
+            "disclosure-content#primeira-pergunta-mobile"
+        ]
+    },
+    "disclosure-trigger#primeira-pergunta-mobile": {
+        "children": [
+            "rich-text#pergunta-1-mobile",
+            "disclosure-state-indicator"
+        ],
+        "props": {
+            "blockClass": "question"
+        }
+    },
+    "disclosure-content#primeira-pergunta-mobile": {
+        "children": [
+            "flex-layout.col#primeira-pergunta-mobile-container"
+        ]
+    },
+    "flex-layout.col#primeira-pergunta-mobile-container": {
+        "title": "Mobile - Primeira Pergunta - Resposta",
+        "children": [
+            "rich-text#resposta-1-1-mobile",
+            "image#resposta-1-1-mobile",
+            "rich-text#resposta-1-2-mobile",
+            "image#resposta-1-2-mobile",
+            "rich-text#resposta-1-3-mobile",
+            "image#resposta-1-3-mobile",
+            "rich-text#resposta-1-4-mobile",
+            "image#resposta-1-4-mobile",
+            "rich-text#resposta-1-5-mobile",
+            "image#resposta-1-5-mobile",
+            "rich-text#resposta-1-6-mobile",
+            "image#resposta-1-6-mobile",
+            "rich-text#resposta-1-7-mobile",
+            "image#resposta-1-7-mobile",
+            "rich-text#resposta-1-8-mobile",
+            "image#resposta-1-8-mobile",
+            "rich-text#resposta-1-9-mobile",
+            "image#resposta-1-9-mobile"
+        ],
+        "props": {
+            "preventVerticalStretch": true,
+            "blockClass": [
+                "primeira-pergunta-mobile-container"
+            ]
+        }
+    },
+    "rich-text#pergunta-1-mobile": {
+        "title": "Primeira pergunta - Texto",
+        "props": {
+            "text": "Como acompanhar o meu pedido?",
+            "blockClass": "faq-question"
+        }
+    },
+    "rich-text#resposta-1-1-mobile": {
+        "title": "Passo - 1",
+        "props": {
+            "text": "1-Para acompanhar seu pedido e ter informações sobre código de rastreio e data de entrega é muito fácil, basta clicar no ícone “Menu de opções” no canto superior esquerdo do site."
+        }
+    },
+    "image#resposta-1-1-mobile": {
+        "title": "Passo - 1 - Imagem",
+        "props": {
+            "src": "/arquivos/faq-1-1-mobile.png"
+        }
+    },
+    "rich-text#resposta-1-2-mobile": {
+        "title": "Passo - 2",
+        "props": {
+            "text": "2-Para acessar a área de login, clique no botão “área do cliente”."
+        }
+    },
+    "image#resposta-1-2-mobile": {
+        "title": "Passo - 2 - Imagem",
+        "props": {
+            "src": "/arquivos/faq-1-2-mobile.png"
+        }
+    },
+    "rich-text#resposta-1-3-mobile": {
+        "title": "Passo - 3",
+        "props": {
+            "text": "3-Para acessar sua conta em nosso site, existem duas possibilidades:\n\n 1º Através do recebimento do código de acesso por e-mail.\n 2º Através de e-mail e senha."
+        }
+    },
+    "image#resposta-1-3-mobile": {
+        "title": "Passo - 3 - Imagem",
+        "props": {
+            "src": "/arquivos/faq-1-3-mobile.png"
+        }
+    },
+    "rich-text#resposta-1-4-mobile": {
+        "title": "Passo - 4",
+        "props": {
+            "text": "4-Depois de fazer o login, clique em voltar no canto esquerdo da tela."
+        }
+    },
+    "image#resposta-1-4-mobile": {
+        "title": "Passo - 4 - Imagem",
+        "props": {
+            "src": "/arquivos/faq-1-4-mobile.png"
+        }
+    },
+    "rich-text#resposta-1-5-mobile": {
+        "title": "Passo - 5",
+        "props": {
+            "text": "5-Clique em PEDIDOS."
+        }
+    },
+    "image#resposta-1-5-mobile": {
+        "title": "Passo - 5 - Imagem",
+        "props": {
+            "src": "/arquivos/faq-1-5-mobile.png"
+        }
+    },
+    "rich-text#resposta-1-6-mobile": {
+        "title": "Passo - 6",
+        "props": {
+            "text": "6-Encontre o pedido que deseja consultar e clique em cima do botão “ver detalhes do pedido”."
+        }
+    },
+    "image#resposta-1-6-mobile": {
+        "title": "Passo - 6 - Imagem",
+        "props": {
+            "src": "/arquivos/faq-1-6-mobile.png"
+        }
+    },
+    "rich-text#resposta-1-7-mobile": {
+        "title": "Passo - 7",
+        "props": {
+            "text": "7-Nesta tela você terá acesso a todas as informações sobre o seu pedido, inclusive data estimada de entrega e o código de rastreio (caso a entrega seja por correios) quando já estiver liberado.\n\n  Se na hora da compra, no campo de entrega, você selecionou a opção de motoboy ou retirada na loja, irá aparecer apenas o status do pedido (Sem o código dos correios)."
+        }
+    },
+    "image#resposta-1-7-mobile": {
+        "title": "Passo - 7 - Imagem",
+        "props": {
+            "src": "/arquivos/faq-1-7-mobile.png"
+        }
+    },
+    "rich-text#resposta-1-8-mobile": {
+        "title": "Passo - 8",
+        "props": {
+            "text": "8-Se o código já estiver liberado, basta copia-lo e entrar no site dos correios (https://rastreamento.correios.com.br/app/index.php). Cole o código no campo abaixo, complete o captcha e clique em “consultar”:"
+        }
+    },
+    "image#resposta-1-8-mobile": {
+        "title": "Passo - 8 - Imagem",
+        "props": {
+            "src": "/arquivos/faq-1-8-mobile.png"
+        }
+    },
+    "rich-text#resposta-1-9-mobile": {
+        "title": "Passo - 9",
+        "props": {
+            "text": "9-Pronto, agora é só acompanhar o seu pedido!"
+        }
+    },
+    "image#resposta-1-9-mobile": {
+        "title": "Passo - 9 - Imagem",
+        "props": {
+            "src": "/arquivos/faq-1-9-mobile.png"
+        }
+    }
+}

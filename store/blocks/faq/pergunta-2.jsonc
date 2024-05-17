@@ -1,0 +1,138 @@
+{
+    "disclosure-layout#segunda-pergunta": {
+        "children": [
+            "disclosure-trigger#segunda-pergunta",
+            "disclosure-content#segunda-pergunta"
+        ]
+    },
+    "disclosure-trigger#segunda-pergunta": {
+        "children": [
+            "rich-text#pergunta-2",
+            "disclosure-state-indicator"
+        ],
+        "props": {
+            "blockClass": "question"
+        }
+    },
+    "disclosure-content#segunda-pergunta": {
+        "children": [
+            "flex-layout.col#segunda-pergunta-container"
+        ]
+    },
+    "flex-layout.col#segunda-pergunta-container": {
+        "title": "Segunda Pergunta - Resposta",
+        "children": [
+            "rich-text#resposta-2-1",
+            "image#resposta-2-1",
+            "rich-text#resposta-2-2",
+            "image#resposta-2-2",
+            "rich-text#resposta-2-3",
+            "image#resposta-2-3",
+            "rich-text#resposta-2-4-1",
+            "image#resposta-2-4-1",
+            "rich-text#resposta-2-4-2",
+            "image#resposta-2-4-2",
+            "rich-text#resposta-2-5",
+            "image#resposta-2-5",
+            "rich-text#resposta-2-6",
+            "image#resposta-2-6"
+        ],
+        "props": {
+            "preventVerticalStretch": true,
+            "blockClass": [
+                "segunda-pergunta-container"
+            ]
+        }
+    },
+    "rich-text#pergunta-2": {
+        "title": "Segunda pergunta - Texto",
+        "props": {
+            "text": "Como recuperar a minha senha?",
+            "blockClass": "faq-question"
+        }
+    },
+    "rich-text#resposta-2-1": {
+        "title": "Passo - 1",
+        "props": {
+            "text": "1-Para recuperar a sua senha basta entrar no site da Biostévi (www.biostevi.com.br) e clicar no botão “Minha conta”."
+        }
+    },
+    "image#resposta-2-1": {
+        "title": "Passo - 1 - Imagem",
+        "props": {
+            "src": "/arquivos/faq-2-1.png"
+        }
+    },
+    "rich-text#resposta-2-2": {
+        "title": "Passo - 2",
+        "props": {
+            "text": "2-Após acessar a área de login, clique na opção “Esqueci minha senha” logo abaixo dos campos de e-mail e senha."
+        }
+    },
+    "image#resposta-2-2": {
+        "title": "Passo - 2 - Imagem",
+        "props": {
+            "src": "/arquivos/faq-2-2.png"
+        }
+    },
+    "rich-text#resposta-2-3": {
+        "title": "Passo - 3",
+        "props": {
+            "text": "3-Agora você terá que adicionar o seu e-mail no campo indicado (Adicionar um e-mail valido que esteja vinculado com a sua conta). \n\nIMPORTANTE: E-mails que não estiverem vinculados com nenhuma conta, não conseguirão recuperar a senha."
+        }
+    },
+    "image#resposta-2-3": {
+        "title": "Passo - 3 - Imagem",
+        "props": {
+            "src": "/arquivos/faq-2-3.png"
+        }
+    },
+    "rich-text#resposta-2-4-1": {
+        "title": "Passo - 4 - Primeiro",
+        "props": {
+            "text": "4-Agora você terá que preencher os campos abaixo com: \n\n1º Código de acesso (Esse código chegará para você por e-mail):"
+        }
+    },
+    "image#resposta-2-4-1": {
+        "title": "Passo - 4 - Primeira Imagem",
+        "props": {
+            "src": "/arquivos/faq-2-4-1.png"
+        }
+    },
+    "rich-text#resposta-2-4-2": {
+        "title": "Passo - 4 - Segundo",
+        "props": {
+            "text": "2º Preencha o campo de senha com uma nova senha que necessariamente precisa ter no mínimo 8 caracteres, 1 letra maiúscula, 1 letra minúscula e 1 número\n\n 3º Repita a mesma senha no terceiro campo. "
+        }
+    },
+    "image#resposta-2-4-2": {
+        "title": "Passo - 4 - Segunda Imagem",
+        "props": {
+            "src": "/arquivos/faq-2-4-2.png"
+        }
+    },
+    "rich-text#resposta-2-5": {
+        "title": "Passo - 5",
+        "props": {
+            "text": "5-Após preencher os campos, clique no botão verde “Criar”."
+        }
+    },
+    "image#resposta-2-5": {
+        "title": "Passo - 5 - Imagem",
+        "props": {
+            "src": "/arquivos/faq-2-5.png"
+        }
+    },
+    "rich-text#resposta-2-6": {
+        "title": "Passo - 6",
+        "props": {
+            "text": "6-Pronto! Após isso você será direcionado para sua conta e sua senha já terá sido alterada."
+        }
+    },
+    "image#resposta-2-6": {
+        "title": "Passo - 6 - Imagem",
+        "props": {
+            "src": "/arquivos/faq-2-6.png"
+        }
+    }
+}

@@ -1,0 +1,68 @@
+{
+    "disclosure-layout#terceira-pergunta": {
+        "children": [
+            "disclosure-trigger#terceira-pergunta",
+            "disclosure-content#terceira-pergunta"
+        ]
+    },
+    "disclosure-trigger#terceira-pergunta": {
+        "children": [
+            "rich-text#pergunta-3",
+            "disclosure-state-indicator"
+        ],
+        "props": {
+            "blockClass": "question"
+        }
+    },
+    "disclosure-content#terceira-pergunta": {
+        "children": [
+            "flex-layout.col#terceira-pergunta-container"
+        ]
+    },
+    "flex-layout.col#terceira-pergunta-container": {
+        "title": "Terceira Pergunta - Resposta",
+        "children": [
+            "rich-text#resposta-3-1",
+            "image#resposta-3-1",
+            "rich-text#resposta-3-2",
+            "image#resposta-3-2"
+        ],
+        "props": {
+            "preventVerticalStretch": true,
+            "blockClass": [
+                "terceira-pergunta-container"
+            ]
+        }
+    },
+    "rich-text#pergunta-3": {
+        "title": "Terceira pergunta - Texto",
+        "props": {
+            "text": "Como saber se tenho direito a frete grátis?",
+            "blockClass": "faq-question"
+        }
+    },
+    "rich-text#resposta-3-1": {
+        "title": "Passo - 1",
+        "props": {
+            "text": "1-Para conferir as regras do frete grátis é muito fácil. Entre na página inicial da Biostévi (www.biostevi.com.br) e desça até o rodapé."
+        }
+    },
+    "image#resposta-3-1": {
+        "title": "Passo - 1 - Imagem",
+        "props": {
+            "src": "/arquivos/faq-3-1.png"
+        }
+    },
+    "rich-text#resposta-3-2": {
+        "title": "Passo - 2",
+        "props": {
+            "text": "2-Chegando no rodapé do site, clique em “frete e entrega” (https://www.biostevi.com.br/frete-e-entrega)."
+        }
+    },
+    "image#resposta-3-2": {
+        "title": "Passo - 2 - Imagem",
+        "props": {
+            "src": "/arquivos/faq-3-2.png"
+        }
+    }
+}

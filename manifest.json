@@ -1,7 +1,7 @@
 {
   "vendor": "stevia",
   "name": "minimumtheme",
-  "version": "5.0.70",
+  "version": "5.0.71",
   "builders": {
     "styles": "2.x",
     "store": "0.x",
@@ -67,7 +67,8 @@
     "vtex.product-context": "0.x",
     "vtex.order-items": "0.x",
     "vtex.pixel-interfaces": "1.x",
-    "vtex.condition-layout": "2.x"
+    "vtex.condition-layout": "2.x",
+    "vtex.disclosure-layout": "1.x"
   },
   "peerDependencies": {
     "vtexeurope.minicart-freeshipping-bar": "1.x",

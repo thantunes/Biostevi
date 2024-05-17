@@ -1,0 +1,78 @@
+{
+    "flex-layout.row#faq-container": {
+        "title": "FAQ",
+        "children": [
+            "rich-text#faq-title-euquero",
+            "flex-layout.col#faq-content"
+        ],
+        "props": {
+            "blockClass": "faq-container"
+        }
+    },
+    "flex-layout.col#faq-content": {
+        "children": [
+            "disclosure-layout-group#Faq"
+        ],
+        "props": {
+            "preventVerticalStretch": true,
+            "blockClass": "faq-content"
+        }
+    },
+    "rich-text#faq-title-euquero": {
+        "props": {
+            "text": "PERGUNTAS FREQUENTES",
+            "blockClass": [
+                "shelfTitle",
+                "faq-title"
+            ]
+        }
+    },
+    "disclosure-layout-group#Faq": {
+        "children": [
+            "flex-layout.row#primeira-pergunta-container",
+            "disclosure-layout#segunda-pergunta",
+            "disclosure-layout#terceira-pergunta",
+            "disclosure-layout#quarta-pergunta"
+        ]
+    },
+    "flex-layout.row#primeira-pergunta-container": {
+        "children": [
+            "responsive-layout.desktop#primeira-pergunta",
+            "responsive-layout.mobile#primeira-pergunta"
+        ],
+        "props": {
+            "experimentalHideEmptyCols": true,
+            "blockClass": [
+                "primeira-pergunta-container"
+            ]
+        }
+    },
+    "responsive-layout.desktop#primeira-pergunta": {
+        "children": [
+            "disclosure-layout#primeira-pergunta"
+        ]
+    },
+    "responsive-layout.mobile#primeira-pergunta": {
+        "children": [
+            "disclosure-layout#primeira-pergunta-mobile"
+        ]
+    },
+    "disclosure-state-indicator": {
+        "props": {
+            "Show": "image#faq-down-arrow",
+            "Hide": "image#faq-up-arrow"
+        }
+    },
+    "image#faq-down-arrow": {
+        "props": {
+            "src": "/arquivos/faq-down-arrow.svg",
+            "maxWidth": "30px"
+        }
+    },
+    "image#faq-up-arrow": {
+        "props": {
+            "src": "/arquivos/faq-up-arrow.svg",
+            "maxWidth": "30px"
+        }
+    }
+}

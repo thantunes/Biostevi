@@ -1000,12 +1000,12 @@
 
 :global(.vtex-input-prefix__group){border: 1px solid #ccc!important;}
 
-  :global(.vtex-rich-text-0-x-paragraph--informativo-frete){color: #949494;font-size: 11px;letter-spacing: 1px;margin-top: 5px;}
-  :global(.vtex-rich-text-0-x-paragraph--informativo-desconto-progressivo){color: #949494;font-size: 11px;letter-spacing: 1px;margin-top: 5px;}
-  :global(.vtex-rich-text-0-x-paragraph--informativo-desconto){color: #949494;font-size: 11px;letter-spacing: 1px;margin-top: 5px;}
-  :global(.vtex-rich-text-0-x-paragraph--informativo-parcelamento){color: #949494;font-size: 11px;letter-spacing: 1px;margin-top: 5px;}
-  :global(.vtex-rich-text-0-x-paragraph--informativo-site-seguro){color: #949494;font-size: 11px;letter-spacing: 1px;margin-top: 5px;}
-  :global(.vtex-rich-text-0-x-paragraph--informativo-whats){color: #949494;font-size: 11px;letter-spacing: 1px;margin-top: 5px;}
+  :global(.vtex-rich-text-0-x-paragraph--informativo-frete){color: #949494;font-size: 11px;letter-spacing: 1px;}
+  :global(.vtex-rich-text-0-x-paragraph--informativo-desconto-progressivo){color: #949494;font-size: 11px;letter-spacing: 1px;}
+  :global(.vtex-rich-text-0-x-paragraph--informativo-desconto){color: #949494;font-size: 11px;letter-spacing: 1px;}
+  :global(.vtex-rich-text-0-x-paragraph--informativo-parcelamento){color: #949494;font-size: 11px;letter-spacing: 1px;}
+  :global(.vtex-rich-text-0-x-paragraph--informativo-site-seguro){color: #949494;font-size: 11px;letter-spacing: 1px;}
+  :global(.vtex-rich-text-0-x-paragraph--informativo-whats){color: #949494;font-size: 11px;letter-spacing: 1px;}
   :global(.vtex-store-components-3-x-imageElement--footer-logo-vtex){height: 16px;    margin-top: 38px;    float: right;}
   :global(.vtex-store-components-3-x-imageElement--footer-logo-evision){height: 16px;    margin-top: 38px;    float: right;}
 

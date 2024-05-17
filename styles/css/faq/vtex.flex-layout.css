@@ -1,4 +1,20 @@
-.flexRowContent--faq {
+.flexRow--faq-container {
+  margin-bottom: 40px;
+}
+
+.flexCol--faq-content {
   max-width: 700px;
   margin: auto;
+}
+
+.flexRowContent--faq-container {
+  flex-direction: column;
+}
+
+.flexRow--faq-container .stretchChildrenWidth {
+  width: 100% !important;
+}
+
+.flexRow--faq-container .stretchChildrenWidth {
+  flex-direction: column;
 }

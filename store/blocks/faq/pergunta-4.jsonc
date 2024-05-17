@@ -1,0 +1,149 @@
+{
+    "disclosure-layout#quarta-pergunta": {
+        "children": [
+            "disclosure-trigger#quarta-pergunta",
+            "disclosure-content#quarta-pergunta"
+        ]
+    },
+    "disclosure-trigger#quarta-pergunta": {
+        "children": [
+            "rich-text#pergunta-4",
+            "disclosure-state-indicator"
+        ],
+        "props": {
+            "blockClass": "question"
+        }
+    },
+    "disclosure-content#quarta-pergunta": {
+        "children": [
+            "flex-layout.col#quarta-pergunta-container"
+        ]
+    },
+    "flex-layout.col#quarta-pergunta-container": {
+        "title": "Quarta Pergunta - Resposta",
+        "children": [
+            "flex-layout.col#quarta-pergunta-site",
+            "flex-layout.col#quarta-pergunta-whatsapp"
+        ],
+        "props": {
+            "preventVerticalStretch": true,
+            "blockClass": [
+                "quarta-pergunta-container"
+            ]
+        }
+    },
+    "flex-layout.col#quarta-pergunta-site": {
+        "title": "Site",
+        "children": [
+            "rich-text#resposta-4-1-site",
+            "image#resposta-4-1-site",
+            "rich-text#resposta-4-2-site",
+            "image#resposta-4-2-site",
+            "rich-text#resposta-4-3-site",
+            "image#resposta-4-3-site"
+        ],
+        "props": {
+            "preventVerticalStretch": true,
+            "blockClass": [
+                "quarta-pergunta-site"
+            ]
+        }
+    },
+    "rich-text#pergunta-4": {
+        "title": "Quarta pergunta - Texto",
+        "props": {
+            "text": "Como enviar minhas receitas para manipulação?",
+            "blockClass": "faq-question"
+        }
+    },
+    "rich-text#resposta-4-1-site": {
+        "title": "Passo - 1",
+        "props": {
+            "text": "**Enviar sua receita para a Biostévi através do site:** \n\n 1-Para você enviar sua receita para a Biostévi, basta entrar no nosso site (www.biostevi.com.br) e clicar no botão “Envie sua Receita”."
+        }
+    },
+    "image#resposta-4-1-site": {
+        "title": "Passo - 1 - Imagem",
+        "props": {
+            "src": "/arquivos/faq-4-1-sites.png"
+        }
+    },
+    "rich-text#resposta-4-2-site": {
+        "title": "Passo - 2",
+        "props": {
+            "text": "2-Após entrar nesta página, preencha os campos a seguir com as suas informações: \n\n1º Seu nome;\n\n 2º Seu e-mail;\n\n 3º Seu número de telefone ou número de celular (WhatsApp);\n\n 4º Caso queira, pode escrever uma mensagem para especificar algo sobre a receita ou qualquer outra informação que queira nos passar;\n\n 5º Anexe o arquivo da sua receita."
+        }
+    },
+    "image#resposta-4-2-site": {
+        "title": "Passo - 2 - Imagem",
+        "props": {
+            "src": "/arquivos/faq-4-2-sites.png"
+        }
+    },
+    "rich-text#resposta-4-3-site": {
+        "title": "Passo - 3",
+        "props": {
+            "text": "3- Após preencher todos os campos, basta clicar no botão “Enviar” e pronto."
+        }
+    },
+    "image#resposta-4-3-site": {
+        "title": "Passo - 3 - Imagem",
+        "props": {
+            "src": "/arquivos/faq-4-3-sites.png"
+        }
+    },
+    "flex-layout.col#quarta-pergunta-whatsapp": {
+        "title": "WhatsApp",
+        "children": [
+            "rich-text#resposta-4-1-whatsapp",
+            "image#resposta-4-1-whatsapp",
+            "rich-text#resposta-4-2-whatsapp",
+            "image#resposta-4-2-whatsapp",
+            "rich-text#resposta-4-3-whatsapp",
+            "image#resposta-4-3-whatsapp"
+        ],
+        "props": {
+            "preventVerticalStretch": true,
+            "blockClass": [
+                "quarta-pergunta-whatsapp"
+            ]
+        }
+    },
+    "rich-text#resposta-4-1-whatsapp": {
+        "title": "Passo - 1",
+        "props": {
+            "blockClass": "whatsapp-text",
+            "text": "**Enviar sua receita para a Biostévi através do WhatsApp:** \n\n 1-Para você conseguir enviar sua receita para a Biostévi, basta entrar no nosso site (www.biostevi.com.br) e clicar no botão verde do WhatsApp no canto inferior direito."
+        }
+    },
+    "image#resposta-4-1-whatsapp": {
+        "title": "Passo - 1 - Imagem",
+        "props": {
+            "src": "/arquivos/faq-4-1-whatsapps.png"
+        }
+    },
+    "rich-text#resposta-4-2-whatsapp": {
+        "title": "Passo - 2",
+        "props": {
+            "text": "2-Clicando no botão você será redirecionado para o WhatsApp Web caso esteja no computador (Caso esteja no celular ele irá direcionar diretamente para o seu WhatsApp). Entrando no site do WhatsApp, basta clicar no botão iniciar conversa que você será encaminhado direto para o atendimento."
+        }
+    },
+    "image#resposta-4-2-whatsapp": {
+        "title": "Passo - 2 - Imagem",
+        "props": {
+            "src": "/arquivos/faq-4-2-whatsapps.png"
+        }
+    },
+    "rich-text#resposta-4-3-whatsapp": {
+        "title": "Passo - 3",
+        "props": {
+            "text": "3-Agora é só escrever sua mensagem que um de nossos atendentes entrará o mais rápido possível em contato com você"
+        }
+    },
+    "image#resposta-4-3-whatsapp": {
+        "title": "Passo - 3 - Imagem",
+        "props": {
+            "src": "/arquivos/faq-4-3-whatsapps.png"
+        }
+    }
+}
