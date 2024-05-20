@@ -32,8 +32,7 @@
   "vtex.menu@2.x:menu#institutional": {
     "children": [
       "menu-item#receita",
-      "menu-item#minhaconta",
-    
+      "login",
       "rich-text#institutional",
       "minicart.v2"
     ]
@@ -86,7 +85,6 @@
       "blockClass": "help-message"
     }
   },
-
 
   "menu-item#minhaconta": {
     "props": {

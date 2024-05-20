@@ -110,7 +110,8 @@
 
 .flexRowContent--bloco-home-informativos .stretchChildrenWidth {
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
+  width: fit-content !important;
 }
 
 .flexColChild--login-menu-retratil :global(.vtex-store-components-3-x-imageElementLink) :global(.vtex-store-components-3-x-imageElement) {

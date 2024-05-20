@@ -92,7 +92,7 @@
   width: fit-content !important;
   justify-content: start !important;
   height: fit-content !important;
-
+  margin-left: -50px;
 }
 
 .paragraph--SecTitle {
