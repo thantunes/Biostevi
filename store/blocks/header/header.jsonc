@@ -207,7 +207,8 @@
     },
     "children": [
       "image#logotipomenuretratil",
-      "image#logintipomenuretratil",
+      // "image#logintipomenuretratil",
+      "login",
       "image#teltipomenuretratil",
       "image#whatstipomenuretratil"
     ]
