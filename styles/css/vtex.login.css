@@ -27,17 +27,21 @@
 }
 
 @media screen and (max-width: 768px) {
+    .container :global(.vtex-button) :global(.vtex-button__label) .label {
+        margin: 0px -8px 0 13px;
+    }
+
     .container :global(.vtex-button) :global(.vtex-button__label) .label, .profile {
         display: block;
         padding-top: 33px;
-        font-size: 9px !important;
-        margin: 0px 6px 0 13px;
+        font-size: 7px !important;
         background-size: 27px;
         width: 32px;
     }
 
     .container :global(.vtex-button) :global(.vtex-button__label) .profile {
         margin: 2px -11px 0 3px;
+        text-wrap: wrap;
     }
 
     :global(.vtex-flex-layout-0-x-flexRowContent--main-header-mobile) .container {
