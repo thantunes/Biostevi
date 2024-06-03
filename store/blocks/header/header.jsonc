@@ -98,7 +98,8 @@
       "title": "Logo",
       "href": "/",
       "url": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/70963de3-4d2f-4d5e-85b9-57627f6d491d___25fb1d2abe6e31202519b997774cc7e9.png",
-      "width": "180"
+      "width": 155,
+      "height": 62
     }
   },
   "header-layout.mobile": {
