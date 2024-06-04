@@ -278,10 +278,17 @@
 
 
 :global(.vtex-login-2-x-sendButton) :global(.t-small) {
-  font-size: 20px;
-  padding: 10px;
+  font-size: 16px;
+  padding: 0 10px;
 }
 
+:global(.vtex-login-2-x-backButton) :global(.t-small) {
+  color: #009fc2;
+}
+
+:global(.vtex-login-2-x-accountOptions) :global(.t-action--small) {
+  color: #009fc2;
+}
 
 :global(.vtex-my-account-1-x-profileFormBoxContainer) :global(.vtex-button__label) {
   background-color: #00C234;

@@ -26,6 +26,41 @@
     color: inherit;
 }
 
+.contentContainer {
+    max-width: 323px;
+    margin-left: -190px;
+}
+
+.options, .contentForm {
+    min-width: initial;
+    width: 100%;
+}
+
+.button :global(.vtex-button) {
+    border: none;
+    border-radius: 25px;
+    background-color: #009fc2;
+    color: #fff;
+    text-transform: initial;
+}
+
+.contentContainer, .content, .contentInitialScreen, .box  {
+    border-radius: 15px !important;
+}
+
+.sendButton :global(.vtex-button) {
+    background-color: #009fc2;
+}
+
+.formTitle {
+    text-wrap: nowrap;
+    padding: 0;
+}
+
+.arrowBackIcon {
+    filter: invert(65%) sepia(77%) saturate(6107%) hue-rotate(162deg) brightness(96%) contrast(103%);
+}
+
 @media screen and (max-width: 768px) {
     .container :global(.vtex-button) :global(.vtex-button__label) .label {
         margin: 0px -8px 0 13px;
