@@ -1038,6 +1038,9 @@
 
 
   @media only screen and (max-width: 980px) {
+    :global(.vtex-store-components-3-x-searchBarContainer)
+    :global(.vtex-input-prefix__group){     width: 100%; margin: 0;}
+    :global(.vtex-store-components-3-x-logoImage){max-width: initial;margin-top: -9px;}
 
 :global(.vtex-store-newsletter-1-x-confirmationCheckboxContainer){ padding-top: 15px;}
     
@@ -1095,7 +1098,7 @@
     :global(.vtex-store-newsletter-1-x-formSubmitContainer){background: #ff6c00;float: inherit;padding: 0px 15px;text-align: center;border-radius: 4px;margin-top: 5px;}
     :global(.vtex-store-newsletter-1-x-nameInputContainer){float: inherit;padding-right: 0px;padding-bottom: 5px;}
     :global(.vtex-store-newsletter-1-x-emailInputContainer){float: inherit;padding-right: 0px;padding-bottom: 5px;}
-    :global(.vtex-minicart-2-x-minicartContainer){margin-top: 3px;}
+    :global(.vtex-minicart-2-x-minicartContainer){margin-top: 3px; background-position: 36px 9px;}
     :global(.vtex-minicart-2-x-minicartContainer)::before{display:none;}
     :global(.vtex-flex-layout-0-x-flexRow--bloco-home-news){margin-top: 30px;}
     :global(.vtex-flex-layout-0-x-flexRowContent--bloco-home-mosaicoeuquero){display:none;}
