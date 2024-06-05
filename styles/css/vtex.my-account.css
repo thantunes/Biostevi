@@ -286,8 +286,49 @@
   color: #009fc2;
 }
 
+:global(.vtex-login-2-x-accountOptions)  {
+  display: flex;
+  flex-direction: column;
+}
+
 :global(.vtex-login-2-x-accountOptions) :global(.t-action--small) {
-  color: #009fc2;
+  color: #FFFFFF;
+  padding: 10px;
+  text-transform: initial;
+  background-color: #009fc2;
+  border-radius: 17px;
+}
+
+:global(.vtex-login-2-x-accountOptions) :global(.mv4.min-h-2.b--muted-4) {
+  border: none;
+  margin: 0;
+  width: 100%;
+}
+
+:global(.vtex-login-2-x-accountOptions) :global(.mv4.min-h-2.b--muted-4) :globa(.vtex-login-2-x-button) {
+  width: 100%;
+}
+
+:global(.vtex-login-2-x-accountOptions) :global(.mv4.min-h-2.b--muted-4):last-child :globa(.vtex-login-2-x-button) {
+  width: auto;
+}
+
+:global(.vtex-login-2-x-accountOptions) :global(.mv4.min-h-2.b--muted-4):last-child {
+  width: auto;
+}
+
+:global(.vtex-login-2-x-accountOptions) :global(.mv4.min-h-2.b--muted-4):last-child :global(.vtex-button)  {
+  background-color: transparent;
+}
+
+:global(.vtex-login-2-x-accountOptions) :global(.mv4.min-h-2.b--muted-4):last-child :global(.t-action--small) {
+  background-color: transparent;
+  color: red;
+  padding: 0;
+}
+
+:global(.vtex-login-2-x-accountOptions) :global(.mv4.min-h-2.b--muted-4):last-child :global(.vtex-button__label) {
+  padding: 0;
 }
 
 :global(.vtex-my-account-1-x-profileFormBoxContainer) :global(.vtex-button__label) {
