@@ -502,7 +502,7 @@
  
   :global(.vtex-minicart-2-x-minicartContainer) { background: url("https://stevia.vteximg.com.br/arquivos/cart.png") no-repeat;background-position: 22px 9px;background-size: 35px;width: 100px;background-size: 35px; margin-top: -13px;}
   
-  :global(.vtex-login-2-x-arrowUp){left: 40px;}
+  :global(.vtex-login-2-x-arrowUp){    left: 50px;  }
   
   /*:global(.vtex-slider-layout-0-x-slide--shelf)
   :global(.vtex-button) {background: #4caf50;border:none;}*/
