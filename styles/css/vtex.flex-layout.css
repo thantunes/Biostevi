@@ -132,6 +132,11 @@
   gap: 20px;
 }
 
+.flexRow--menu-link :global(.vtex-menu-2-x-menuContainerNav) .flexCol {
+  min-width: 187px;
+  min-height: 76.59px;
+}
+
 @media (max-width:768px) {
   .flexRow--bloco-home-informativos {
     display: none;
