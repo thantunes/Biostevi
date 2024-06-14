@@ -24,5 +24,8 @@
     },
     "ChangeTag":{
         "component": "ChangeTag"
+    },
+    "CryptoScript":{
+        "component": "CryptoScript"
     }
 }

@@ -17,7 +17,8 @@
       "flex-layout.row#2-desktop",
       "flex-layout.row#3-desktop",
       "sticky-layout#4-desktop",
-      "ChangeTag"
+      "ChangeTag",
+      "CryptoScript"
     ]
   },
   "flex-layout.row#1-desktop": {
@@ -106,7 +107,8 @@
     "children": [
       "sticky-layout#1-envie-sua-receita-mobile",
       "sticky-layout#1-mobile",
-      "ChangeTag"
+      "ChangeTag",
+      "CryptoScript"
     ]
   },
   "sticky-layout#1-envie-sua-receita-mobile": {
