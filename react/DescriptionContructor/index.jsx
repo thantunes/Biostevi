@@ -1,22 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useProduct } from 'vtex.product-context'
 import './index.global.css'
-// import { Container } from './styles';
 
 function DescriptionContructor({children}) {
     const productContextValue = useProduct()
-    console.log(productContextValue)
     const [data, setData] = useState([])
     const [FullData, setFullData] = useState()
     useEffect(() => {
-        // let arraydados = productContextValue.product.properties
-        // let arry = []
-        // for (var i = 0; i < arraydados.length; i++) {
-        //     if (arraydados[i].name.includes("Linha")) {
-        //         arry.push(arraydados[i])
-        //     }
-        // }
-        // setData(arry)
         const VanillaComponents = document.querySelectorAll("[data-specification-group='Descrição de Produto Personalizada']")
 
         VanillaComponents.forEach((e) => {
@@ -27,42 +17,9 @@ function DescriptionContructor({children}) {
 
     useEffect(() => {
         let arraydados = productContextValue.product.properties
-        // let DadosDeLinha = [] //check
-        // let DadosImg = []
-        // let DadosCheckIn = []
-        // let DadosDefault = []
-        // for (var i = 0; i < arraydados.length; i++) {
-        //     if (arraydados[i].name.includes("Linha")) {
-        //         DadosDeLinha.push(arraydados[i])
-        //     } else if (arraydados[i].name.includes("Imagem primeira linha")) {
-        //         DadosImg.push(arraydados[i])
-        //     } else if (arraydados[i].name.includes("Texto primeira linha")) {
-        //         DadosImg.push(arraydados[i])
-        //     } else if (arraydados[i].name.includes("Check-in")) {
-        //         DadosCheckIn.push(arraydados[i])
-        //     } else {
-        //         DadosDefault.push(arraydados[i])
-        //     }
-        // }
-        // console.log(
-        //     "linha:", DadosDeLinha,
-        //     "img:", DadosImg,
-        //     "check:", DadosCheckIn,
-        //     "dafault:", DadosDefault
-        // )
-        // setDataDefault(DadosDefault)
-        // setDataLinha(DadosDeLinha)
-        // setDataImg(DadosImg)
-        // setDataCheckIn(DadosCheckIn)
         setData(arraydados)
         setFullData(productContextValue)
-        console.log(data, FullData)
     }, [])
-    let ConvertStringToHTML = function (str) {
-        let parser = new DOMParser();
-        let doc = parser.parseFromString(str, 'text/html');
-        return doc.body;
-    };
     return (
         <div className='CustomDescData'>
             <p className='DescBox' dangerouslySetInnerHTML={{ __html: FullData?.product.description }} id="MetaTag-PDP"></p>
@@ -129,7 +86,6 @@ function DescriptionContructor({children}) {
                                             data.map((e) => {
                                                 if (e.values[0].includes('class="descricao-pdp-full"')) {
                                                     return null
-                                                    console.log("linha 6 existe")
                                                 } else {
                                                     console.log("linha 2 pdp-full", e.values[0].includes('class="descricao-pdp-full"'))
                                                     if (e.name.includes("Linha2-Paragrafo")) {
@@ -177,7 +133,6 @@ function DescriptionContructor({children}) {
                                         {
                                             data.map((e) => {
                                                 if (e.values[0].includes('class="descricao-pdp-full"')) {
-                                                    console.log("linha 6 existe")
                                                     return null
                                                 } else {
                                                     if (e.name.includes("Linha3-Paragrafo")) {

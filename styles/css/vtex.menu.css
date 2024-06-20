@@ -71,13 +71,6 @@
     padding-top: 10px;
 }
 
-/* :global(.vtex-flex-layout-0-x-flexRowContent--main-header) .menuItem{
-    align-items: center;
-    justify-content: center;
-    display: flex;
-} */
-
-
 @media (max-width:768px) {
     .styledLink--bioveg, .styledLink--nutrition  {
         height: 44px;

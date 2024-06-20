@@ -3,7 +3,6 @@
     "children": [
       "UpAnchorComp",
       "flex-layout.row#product-breadcrumb",
-      "DescriptionAnchorComp",
       "flex-layout.row#product-main",
       "flex-layout.row#informativos",
       "slider-layout#informativo-mobile",

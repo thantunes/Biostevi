@@ -27,7 +27,7 @@
       "itemProps": {
         "type": "internal",
         "categoryID": "97",
-        "href": "/saude/imunidade/",
+        "href": "/saude/imunidade",
         "noFollow": false,
         "tagTitle": "Imunidade",
         "text": "Imunidade",
@@ -46,7 +46,7 @@
       "itemProps": {
         "type": "internal",
         "categoryID": "80",
-        "href": "/barba-e-cabelo/",
+        "href": "/barba-e-cabelo",
         "noFollow": false,
         "tagTitle": "Barba e Cabelo",
         "text": "Barba e Cabelo",
@@ -241,7 +241,7 @@
       "highlight": false,
       "itemProps": {
         "type": "internal",
-        "href": "/emagrecimento/",
+        "href": "/emagrecimento",
         "noFollow": true,
         "tagTitle": "Ver Todos",
         "text": "Ver Todos"
@@ -257,7 +257,7 @@
       "highlight": false,
       "itemProps": {
         "type": "internal",
-        "href": "/desempenho-fisico/",
+        "href": "/desempenho-fisico",
         "noFollow": true,
         "tagTitle": "Ver Todos",
         "text": "Ver Todos"
@@ -273,7 +273,7 @@
       "highlight": false,
       "itemProps": {
         "type": "internal",
-        "href": "/beleza/",
+        "href": "/beleza",
         "noFollow": true,
         "tagTitle": "Ver Todos",
         "text": "Ver Todos"
@@ -289,7 +289,7 @@
       "highlight": false,
       "itemProps": {
         "type": "internal",
-        "href": "/saude/",
+        "href": "/saude",
         "noFollow": true,
         "tagTitle": "Ver Todos",
         "text": "Ver Todos"
@@ -305,7 +305,7 @@
       "highlight": false,
       "itemProps": {
         "type": "internal",
-        "href": "/barba-e-cabelo/",
+        "href": "/barba-e-cabelo",
         "noFollow": true,
         "tagTitle": "Ver Todos",
         "text": "Ver Todos"
@@ -493,7 +493,7 @@
       "itemProps": {
         "type": "internal",
         "categoryID": "5",
-        "href": "/emagrecimento/",
+        "href": "/emagrecimento",
         "noFollow": false,
         "tagTitle": "Emagrecimento",
         "text": "Emagrecimento",
@@ -788,7 +788,7 @@
       "itemProps": {
         "type": "internal",
         "categoryID": "4",
-        "href": "/desempenho-fisico/",
+        "href": "/desempenho-fisico",
         "noFollow": false,
         "tagTitle": "Desempenho Físico",
         "text": "Desempenho Físico",
@@ -1488,7 +1488,7 @@
       "highlight": false,
       "itemProps": {
         "type": "internal",
-        "href": "/saude/",
+        "href": "/saude",
         "categoryID": "2",
         "noFollow": false,
         "tagTitle": "Saúde",
@@ -2102,7 +2102,7 @@
       "highlight": false,
       "itemProps": {
         "type": "internal",
-        "href": "/nutrition/",
+        "href": "/nutrition",
         "noFollow": false,
         "tagTitle": "Nutrition",
         "text": "Nutrition"
@@ -2227,7 +2227,7 @@
       "highlight": false,
       "itemProps": {
         "type": "internal",
-        "href": "/vegano/",
+        "href": "/vegano",
         "noFollow": false,
         "tagTitle": "Vegano",
         "text": "Vegano"

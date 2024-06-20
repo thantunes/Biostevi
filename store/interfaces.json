@@ -3,9 +3,6 @@
         "component": "DescriptionContructor",
         "composition": "children"
     },
-    "DescriptionAnchorComp": {
-        "component": "DescriptionAnchor"
-    },
     "UpAnchorComp": {
         "component": "UpAnchor"
     },

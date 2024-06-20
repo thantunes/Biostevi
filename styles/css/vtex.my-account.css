@@ -121,14 +121,6 @@
   width: 100% !important;
 }
 
-
-/*titulos paragrafos*/
-
-
-
-
-
-
 :global(.render-route-store-product):global(.vtex-product-gifts-0-x-giftDescription) {
   display: none;
 }
@@ -146,16 +138,6 @@
   font-size: 20px;
 }
 
-
-
-
-
-
-
-
-/* :global(.descricao-pdp-full){    padding: 0px 10px;} */
-
-
 :global(.vtex-login-2-x-formFooter) {
   background-color: #fff !important;
 }
@@ -168,7 +150,6 @@
   width: 100% !important;
   height: auto !important;
 }
-
 
 :global(.vtex-product-specifications-1-x-specificationValue) h2 {
   color: #009fc2 !important;
@@ -246,8 +227,6 @@
   color: #fff;
 }
 
-
-
 :global(.vtex-store-components-3-x-productDescriptionText) {
   padding-bottom: 30px;
   line-height: 24px;
@@ -270,12 +249,9 @@
   margin-left: 0px !important;
 }
 
-
-
 :global(.vtex-login-2-x-button) :global(.vtex-button) {
   font-size: 13px;
 }
-
 
 :global(.vtex-login-2-x-sendButton) :global(.t-small) {
   font-size: 16px;
@@ -409,15 +385,6 @@
     margin: auto;
     display: block;
   }
-
-  /* :global(.descricao-pdp-esq),
-  :global(.descricao-pdp-dir) {
-    max-height: 400px !important;
-  } */
-
-
-
-
 }
 
 
@@ -472,7 +439,6 @@
   max-width: 708px;
   padding-right: 15px;
   overflow: auto;
-  /* direction: rtl; */
   text-align: left;
 }
 
@@ -709,8 +675,6 @@
     margin-top: 25px;
   }
 
-  /* :global(.descricao-pdp-full) {padding: 1rem!important;} */
-
   :global(.vtex-store-components-3-x-productNameContainer--quickview) {
     padding: 1rem !important;
   }
@@ -872,7 +836,6 @@
   :global(.descricao-pdp-dir) {
     display: flex;
     align-items: center;
-    /* justify-content: center; */
     flex-direction: column;
   }
 
@@ -912,8 +875,6 @@
 
 
 
-
-/*:global(.vtexeurope-minicart-freeshipping-bar-1-x-freigthScaleContainer){display:none;}*/
 :global(.vtex-store-icons-0-x-cartIcon) {
   opacity: 0;
 }
@@ -939,11 +900,6 @@
   width: 100% !important;
 }
 
-
-
-
-
-
 :global(.vtex-flex-layout-0-x-flexRow--new-pdp-beneficios) :global(.vtex-store-components-3-x-specificationItemProperty) {
   color: #009fc2 !important;
   font-weight: 400;
@@ -953,13 +909,6 @@
   margin-bottom: 0;
 }
 
-
-
-
-
-
-
-
 :global(.vtex-flex-layout-0-x-flexRow--new-pdp-composicao) :global(.vtex-store-components-3-x-specificationsTitle) {
   display: none;
 }
@@ -968,17 +917,14 @@
   display: none;
 }
 
-
 :global(.vtex-flex-layout-0-x-flexRow--new-pdp-composicao) :global(.vtex-store-components-3-x-specificationsTableRow) {
   flex-direction: column;
   display: flex;
 }
 
-
 :global(.vtex-flex-layout-0-x-flexRow--new-pdp-composicao) :global(.vtex-store-components-3-x-specificationsTableRow) td {
   width: 100% !important;
 }
-
 
 :global(.vtex-flex-layout-0-x-flexRow--new-pdp-composicao) :global(.vtex-store-components-3-x-specificationItemProperty) {
   color: #009fc2 !important;
@@ -988,7 +934,6 @@
   line-height: 35px;
   margin-bottom: 0;
 }
-
 
 :global(.vtex-flex-layout-0-x-flexRow--new-pdp-mododeuso) :global(.vtex-store-components-3-x-specificationsTitle) {
   display: none;
@@ -1008,9 +953,6 @@
   width: 100%;
 }
 
-
-
-
 :global(.vtex-flex-layout-0-x-flexRow--new-pdp-mododeuso) :global(.vtex-store-components-3-x-specificationItemProperty) {
   color: #009fc2 !important;
   font-weight: 400;
@@ -1019,8 +961,6 @@
   line-height: 35px;
   margin-bottom: 0;
 }
-
-
 
 :global(.vtex-flex-layout-0-x-flexRow--new-pdp-imagemtexto) :global(.vtex-store-components-3-x-specificationsTitle) {
   display: none;
@@ -1059,13 +999,9 @@
   display: flex;
 }
 
-
-
 :global(.vtex-flex-layout-0-x-flexRow--new-pdp-advertencia) :global(.vtex-store-components-3-x-specificationsTableRow) td {
   width: 100%;
 }
-
-
 
 :global(.vtex-flex-layout-0-x-flexRow--new-pdp-advertencia) :global(.vtex-store-components-3-x-specificationItemProperty) {
   color: #009fc2 !important;
@@ -1075,8 +1011,6 @@
   line-height: 35px;
   margin-bottom: 0;
 }
-
-
 
 :global(.vtex-flex-layout-0-x-flexRow--new-pdp-checkins) :global(.vtex-store-components-3-x-specificationsTableHead) {
   display: none;
@@ -1123,7 +1057,6 @@
 }
 
 :global(.vtex-flex-layout-0-x-flexRow--new-pdp-checkins) :global(.vtex-store-components-3-x-specificationsTableRow):nth-child(2) {
-
   color: #555;
   font-size: 17px !important;
   font-family: Helvetica;
@@ -1136,11 +1069,9 @@
   display: none;
 }
 
-
 :global([data-specification-group="Primeiro Bloco Check-in"]) {
   display: none;
 }
-
 
 :global(.vtex_my-authentication_savePassButton_container) :global(.vtex-button__label) {
   color: #0f3e99 !important;
@@ -1165,16 +1096,6 @@
 :global(.vtex-product-gifts-0-x-giftNameText) {
   position: relative;
 }
-
-/* :global(.vtex-product-gifts-0-x-giftNameText)::before {
-  content: 'Brinde \A';
-  font-size: 1rem;
-  color: black;
-  position: relative;
-  white-space: pre-wrap;
-  font-weight: bold;
-  padding-bottom: 5px;
-} */
 
 :global(.vtex-product-gifts-0-x-productGiftListContainer)::before {
   content: 'Brinde \A';
