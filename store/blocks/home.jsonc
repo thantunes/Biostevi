@@ -843,7 +843,9 @@
       "image#influenter6",
       "image#influenter10",
       "image#influenter11",
-      "image#influenter12"
+      "image#influenter12",
+      "image#influenter13",
+      "image#influenter14"
     ]
   },
   "image#influenter3": {
@@ -898,6 +900,24 @@
     "props": {
       "src": "/arquivos/Jonathas_Morandini.png",
       "maxWidth": "100%"
+    }
+  },
+  "image#influenter13": {
+    "props": {
+      "src": "/arquivos/julio-rocha.png",
+      "maxWidth": "100%",
+      "link": {
+        "url": "/423?map=productClusterIds"
+      }
+    }
+  },
+  "image#influenter14": {
+    "props": {
+      "src": "/arquivos/juliana-knust.png",
+      "maxWidth": "100%",
+      "link": {
+        "url": "/372?map=productClusterIds"
+      }
     }
   }
 }
