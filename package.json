@@ -25,9 +25,15 @@
     "eslint": "7.12.1",
     "eslint-config-vtex": "12.3.2",
     "eslint-config-vtex-react": "6.3.2",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-uglify": "^3.0.2",
     "husky": "4.2.3",
     "lint-staged": "10.1.1",
     "prettier": "2.0.2",
-    "typescript": "3.8.3"
+    "typescript": "3.8.3",
+    "uglify-js": "^3.17.4",
+    "uglifyjs-folder": "^3.3.0"
   }
 }

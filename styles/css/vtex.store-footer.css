@@ -1,12 +1,1 @@
-.row--menu-row {
-  padding-right: 24px;
-}
-
-.row--menu-row .rowContainer {
-  align-items: flex-start;
-}
-
-.row--payment-methods {
-  padding-top: 16px;
-}
-
+.row--menu-row{padding-right:24px}.row--menu-row .rowContainer{align-items:flex-start}.row--payment-methods{padding-top:16px}
