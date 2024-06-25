@@ -835,6 +835,8 @@
       "blockClass": "influenciadores"
     },
     "children": [
+      "image#influenter13",
+      "image#influenter14",
       "image#influenter7",
       "image#influenter4",
       "image#influenter5",
@@ -843,9 +845,7 @@
       "image#influenter6",
       "image#influenter10",
       "image#influenter11",
-      "image#influenter12",
-      "image#influenter13",
-      "image#influenter14"
+      "image#influenter12"
     ]
   },
   "image#influenter3": {
