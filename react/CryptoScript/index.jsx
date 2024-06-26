@@ -5,7 +5,7 @@ const CryptoScript = () => {
     
 useEffect(() => {
     const script = document.createElement('script');
-    script.src = 'https://prime.altubots.com/tag/mercadaodosoculos/a616e99fcc304320b43f2c76/tag.js';
+    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js';
     document.head.appendChild(script);
     }, []);
 
