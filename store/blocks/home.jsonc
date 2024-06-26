@@ -7,6 +7,7 @@
       "slider-layout#informativo-mobile",
       "rich-text#shelf-title-lancamentos",
       "flex-layout.row#shelfprateleiralancamentos",
+      "__fold__",
       //"shelf#produtos-em-lancamentos",
       "flex-layout.row#descontos",
       "slider-layout#descontos-mobile",
@@ -218,7 +219,9 @@
       "text": "### WhatsApp \n (11)97133-1874",
       "textPosition": "LEFT",
       "textAlignment": "LEFT",
-      "blockClass": ["informativo-whats"]
+      "blockClass": [
+        "informativo-whats"
+      ]
     }
   },
   "flex-layout.row#descontos": {
