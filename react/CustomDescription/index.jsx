@@ -5,11 +5,11 @@ import { useProduct } from 'vtex.product-context'
 
 function CustomDescription() {
     const productContextValue = useProduct()
-    return (
+    return (    
         <div>
-            <a class="Descricao--Inline" href="#MetaTag-PDP">
+            <div class="Descricao--Inline">
                 <p  dangerouslySetInnerHTML={{ __html: productContextValue.product.metaTagDescription }}></p>
-            </a>
+            </div>
         </div>
     );
 }
