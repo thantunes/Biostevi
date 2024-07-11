@@ -5,6 +5,8 @@ import { useProduct } from 'vtex.product-context'
 
 function CustomDescription() {
     const productContextValue = useProduct()
+
+    console.log({productContextValue})
     return (    
         <div>
             <div class="Descricao--Inline">

@@ -6,6 +6,7 @@ function DescriptionContructor({children}) {
     const productContextValue = useProduct()
     const [data, setData] = useState([])
     const [FullData, setFullData] = useState()
+    
     useEffect(() => {
         const VanillaComponents = document.querySelectorAll("[data-specification-group='Descrição de Produto Personalizada']")
 

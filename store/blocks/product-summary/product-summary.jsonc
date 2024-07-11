@@ -1,16 +1,11 @@
 {
   "product-summary.shelf": {
     "children": [
-     
       "stack-layout#prodsum",
-     
-      //"product-highlights",
       "add-to-list-btn",
       "product-summary-name",
-      "product-summary-description",
-     //"product-rating-inline",
       "product-reviews",
-     
+      "product-summary-description",
       "product-summary-space",
       "product-list-price#summary",
       "flex-layout.row#selling-price-savings",
@@ -18,12 +13,11 @@
       "add-to-cart-button"
     ]
   },
-  "add-to-cart-button":{
-    "props":{
-      "onClickBehavior":"add-to-cart"
+  "add-to-cart-button": {
+    "props": {
+      "onClickBehavior": "add-to-cart"
     }
   },
-
   "stack-layout#prodsum": {
     "children": [
       "product-summary-image#shelf",
@@ -31,7 +25,6 @@
       "modal-trigger#quickview" // Check quickview.jsonc
     ]
   },
-
   "product-summary-image#shelf": {
     "props": {
       "showBadge": false,
@@ -39,25 +32,27 @@
       "maxHeight": 300
     }
   },
-
   "vtex.product-highlights@2.x:product-highlights#collection": {
     "props": {
       "type": "collection"
     },
-    "children": ["product-highlight-wrapper"]
+    "children": [
+      "product-highlight-wrapper"
+    ]
   },
   "product-highlight-wrapper": {
     "props": {
       "blockClass": "collection"
     },
-    "children": ["product-highlight-text"]
+    "children": [
+      "product-highlight-text"
+    ]
   },
   "product-highlight-text": {
     "props": {
       "message": "{highlightName}"
     }
   },
-
   "product-list-price#summary": {
     "props": {
       "blockClass": "summary"
