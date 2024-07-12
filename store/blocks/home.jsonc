@@ -838,6 +838,7 @@
       "blockClass": "influenciadores"
     },
     "children": [
+      "image#influenter15",
       "image#influenter13",
       "image#influenter14",
       "image#influenter7",
@@ -910,7 +911,7 @@
       "src": "/arquivos/julio-rocha.png",
       "maxWidth": "100%",
       "link": {
-        "url": "/423?map=productClusterIds"
+        "url": "/julio-rocha"
       }
     }
   },
@@ -919,7 +920,16 @@
       "src": "/arquivos/juliana-knust.png",
       "maxWidth": "100%",
       "link": {
-        "url": "/372?map=productClusterIds"
+        "url": "/juliana-knust"
+      }
+    }
+  },
+  "image#influenter15": {
+    "props": {
+      "src": "/arquivos/monique-alfradique.png",
+      "maxWidth": "100%",
+      "link": {
+        "url": "/monique-alfradique"
       }
     }
   }
