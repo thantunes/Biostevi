@@ -1,10 +1,1 @@
-.buttonDataContainer .buttonText {
-  border-radius: 8px;
-  background: #007504;
-  padding: 16px 32px;
-  color: #fff;
-  font-family: 'Signika';
-  font-size: 16px;
-  font-weight: 600;
-  font-variant: small-caps;
-}
+.buttonDataContainer .buttonText{border-radius:8px;background:#007504;padding:16px 32px;color:#fff;font-family:Signika;font-size:16px;font-weight:600;font-variant:small-caps}
