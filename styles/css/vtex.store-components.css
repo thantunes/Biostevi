@@ -1851,9 +1851,9 @@
   :global(.vtex-flex-layout-0-x-flexRow--pdp-botao-add-carrinho) {
     position: fixed;
     z-index: 2;
-    bottom: 5px;
-    right: 20px;
-    max-width: 60%;
+    bottom: 6px;
+    right: 13px;
+    max-width: 62%;
   }
   :global(.vtex-store-components-3-x-searchBarContainer) {
     padding-top: 0;

@@ -1,7 +1,7 @@
 {
   "vendor": "stevia",
   "name": "minimumtheme",
-  "version": "5.1.6",
+  "version": "5.1.7",
   "builders": {
     "styles": "2.x",
     "store": "0.x",
