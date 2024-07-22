@@ -572,7 +572,8 @@
       "product-assembly-options",
       "product-gifts",
       "flex-layout.row#BuyQuantity-outStock",
-      "availability-subscriber",
+      "availability-notify",
+      // "availability-subscriber",
       "share#default"
     ]
   },

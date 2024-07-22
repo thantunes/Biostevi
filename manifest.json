@@ -1,7 +1,7 @@
 {
   "vendor": "stevia",
   "name": "minimumtheme",
-  "version": "5.1.7",
+  "version": "6.0.0",
   "builders": {
     "styles": "2.x",
     "store": "0.x",
@@ -71,6 +71,7 @@
     "vtex.disclosure-layout": "1.x"
   },
   "peerDependencies": {
+    "vtex.availability-notify": "1.x",
     "vtexeurope.minicart-freeshipping-bar": "1.x",
     "vtex.wish-list": "1.x",
     "vtex.badges": "3.x"
