@@ -459,7 +459,7 @@
       "collapseContent": true
     },
     "children": [
-      "DescriptionInline"
+      "ProductCustomDescription"
     ]
   },
   "product-description": {
