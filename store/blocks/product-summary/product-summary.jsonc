@@ -5,13 +5,16 @@
       "add-to-list-btn",
       "product-summary-name",
       "product-reviews",
-      "product-summary-description",
+      "DescriptionInline",
       "product-summary-space",
       "product-list-price#summary",
       "flex-layout.row#selling-price-savings",
       "product-installments#summary",
       "add-to-cart-button"
     ]
+  },
+  "DescriptionInline": {
+    "children": ["product-summary-description"]
   },
   "add-to-cart-button": {
     "props": {

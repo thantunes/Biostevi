@@ -13,7 +13,8 @@
         "component": "reclameaq"
     },
     "DescriptionInline": {
-        "component": "CustomDescription"
+        "component": "CustomDescription",
+        "composition":"children"
     },
     "EnvioReceitaComp": {
         "component": "EnvioReceita",
