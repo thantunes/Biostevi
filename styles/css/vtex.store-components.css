@@ -978,7 +978,7 @@
 }
 :global(.vtex-store-drawer-0-x-opened) {
   background-color: #fff !important;
-  z-index: 99999;
+  z-index: 999999;
 }
 :global(.vtex-rich-text-0-x-container--shelfTitle) {
   padding: 0 10px;
