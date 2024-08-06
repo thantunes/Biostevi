@@ -96,6 +96,11 @@
     margin-left: -15px !important;
   }
 
+  :global(.vtex-flex-layout-0-x-flexRow--topomenuretratil) .container :global(.vtex-button) :global(.vtex-button__label) .profile {
+    width: auto;
+    margin-right: 30px;
+  }
+
   :global(.vtex-flex-layout-0-x-flexRow--topomenuretratil) .buttonLink {
     margin-top: 30px;
     margin-right: 7px;
