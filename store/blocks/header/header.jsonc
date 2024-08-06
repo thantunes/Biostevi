@@ -151,18 +151,40 @@
   },
   "flex-layout.row#1-mobile": {
     "children": [
-      "drawer",
-      "flex-layout.col#spacer",
-      "logo#mobile",
-      "flex-layout.col#spacer",
-      "login",
-      "minicart.v2"
+      "flex-layout.row#header-mobile-left",
+      "flex-layout.row#header-mobile-right"
     ],
     "props": {
       "blockClass": "main-header-mobile",
       "preventHorizontalStretch": true,
       "preserveLayoutOnMobile": true,
       "fullWidth": true
+    }
+  },
+  "flex-layout.row#header-mobile-left": {
+    "children": [
+      "drawer",
+      "logo#mobile"
+    ],
+    "props": {
+      "blockClass": [
+        "header-mobile-left"
+      ],
+      "preventHorizontalStretch": true,
+      "preventVerticalStretch": true
+    }
+  },
+  "flex-layout.row#header-mobile-right": {
+    "children": [
+      "login",
+      "minicart.v2"
+    ],
+    "props": {
+      "blockClass": [
+        "header-mobile-right"
+      ],
+      "preventHorizontalStretch": true,
+      "preventVerticalStretch": true
     }
   },
   "drawer": {
@@ -181,13 +203,45 @@
       "vtex.menu@2.x:menu#desempenhofisico-mobile",
       "vtex.menu@2.x:menu#beleza-mobile",
       "vtex.menu@2.x:menu#saude-mobile",
-      "menu-item#category-saudesexual",
-      "menu-item#category-bionutrition",
-      "menu-item#category-bioveg",
-      "menu-item#blog"
+      "menu-item#category-saudesexual-mobile",
+      "menu-item#category-bioveg-mobile",
+      "menu-item#category-bionutrition-mobile",
+      "menu-item#blog-mobile"
     ],
     "props": {
       "orientation": "vertical"
+    }
+  },
+  "menu-item#category-bioveg-mobile": {
+    "props": {
+      "id": "menu-item-category-home",
+      "type": "custom",
+      "blockClass": "bioveg",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/vegano",
+        "noFollow": false,
+        "tagTitle": "Vegano",
+        "text": "Vegano"
+      }
+    }
+  },
+  "menu-item#category-bionutrition-mobile": {
+    "props": {
+      "id": "menu-item-category-home",
+      "type": "custom",
+      "blockClass": "nutrition-mobile",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/nutrition",
+        "noFollow": false,
+        "tagTitle": "Biostévi Nutrition",
+        "text": "Biostévi Nutrition"
+      }
     }
   },
   "flex-layout.row#topo-menu-mobile": {
@@ -209,12 +263,44 @@
       "blockClass": "login-menu-retratil"
     },
     "children": [
-      "image#logotipomenuretratil",
-      // "image#logintipomenuretratil",
       "login",
-      "image#teltipomenuretratil",
-      "image#whatstipomenuretratil"
+      "flex-layout.col#mobile-menu-message"
+      // "image#teltipomenuretratil",
+      // "image#whatstipomenuretratil"
     ]
+  },
+  "flex-layout.col#mobile-menu-message": {
+    "children": [
+      "HeaderDrawer"
+    ],
+    "props": {
+      "blockClass": [
+        "mobile-menu-message"
+      ],
+      "preventVerticalStretch": true
+    }
+  },
+  "HeaderDrawer": {
+    "children": [
+      "rich-text#mobile-menu-welcome",
+      "rich-text#mobile-menu-login"
+    ]
+  },
+  "rich-text#mobile-menu-welcome": {
+    "props": {
+      "blockClass": [
+        "mobile-menu-welcome"
+      ],
+      "text": "[Seja bem-vindo!](/login?returnUrl=%2F)"
+    }
+  },
+  "rich-text#mobile-menu-login": {
+    "props": {
+      "blockClass": [
+        "mobile-menu-login"
+      ],
+      "text": "[Faça login ou cadastre-se](/login?returnUrl=%2F)"
+    }
   },
   "image#logintipomenuretratil": {
     "props": {
@@ -226,7 +312,7 @@
     "props": {
       "src": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/4a899497-db03-4953-bbe6-14a2b5a85aa2___2b4f557f9850d543581ad0f110e41b97.png",
       "maxWidth": "100%",
-      "blockClass":"teltipomenuretratil"
+      "blockClass": "teltipomenuretratil"
     }
   },
   "image#whatstipomenuretratil": {
@@ -237,7 +323,10 @@
   },
   "vtex.menu@2.x:menu#barbacabelo-mobile": {
     "props": {
-      "orientation": "vertical"
+      "orientation": "vertical",
+      "blockClass": [
+        "barbacabelo-mobile"
+      ]
     },
     "children": [
       "menu-item#barba-e-cabelo-mobile"
@@ -245,6 +334,9 @@
   },
   "menu-item#barba-e-cabelo-mobile": {
     "props": {
+      "blockClass": [
+        "barba-e-cabelo-mobile"
+      ],
       "itemProps": {
         "tagTitle": "Barba e Cabelo",
         "text": "Barba e Cabelo"
@@ -541,7 +633,10 @@
   },
   "vtex.menu@2.x:menu#emagrecimento-mobile": {
     "props": {
-      "orientation": "vertical"
+      "orientation": "vertical",
+      "blockClass": [
+        "emagrecimento-mobile"
+      ]
     },
     "children": [
       "menu-item#emagrecimento-mobile"
@@ -549,6 +644,9 @@
   },
   "menu-item#emagrecimento-mobile": {
     "props": {
+      "blockClass": [
+        "emagrecimento-mobile"
+      ],
       "itemProps": {
         "tagTitle": "Emagrecimento",
         "text": "Emagrecimento"
@@ -781,7 +879,10 @@
   },
   "vtex.menu@2.x:menu#desempenhofisico-mobile": {
     "props": {
-      "orientation": "vertical"
+      "orientation": "vertical",
+      "blockClass": [
+        "desempenhofisico-mobile"
+      ]
     },
     "children": [
       "menu-item#desempenhofisico-mobile"
@@ -789,6 +890,9 @@
   },
   "menu-item#desempenhofisico-mobile": {
     "props": {
+      "blockClass": [
+        "desempenho-fisico-mobile"
+      ],
       "itemProps": {
         "tagTitle": "Desempenho Físiso",
         "text": "Desempenho Físico"
@@ -1085,7 +1189,10 @@
   },
   "vtex.menu@2.x:menu#beleza-mobile": {
     "props": {
-      "orientation": "vertical"
+      "orientation": "vertical",
+      "blockClass": [
+        "beleza-mobile"
+      ]
     },
     "children": [
       "menu-item#beleza-mobile"
@@ -1093,6 +1200,9 @@
   },
   "menu-item#beleza-mobile": {
     "props": {
+      "blockClass": [
+        "beleza-mobile"
+      ],
       "itemProps": {
         "tagTitle": "Beleza",
         "text": "Beleza"
@@ -1358,13 +1468,16 @@
     "props": {
       "title": "Logo",
       "href": "/",
-      "url": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/70963de3-4d2f-4d5e-85b9-57627f6d491d___25fb1d2abe6e31202519b997774cc7e9.pngg",
+      "url": "/arquivos/new-logo-biostevi.png",
       "width": "167"
     }
   },
   "vtex.menu@2.x:menu#saude-mobile": {
     "props": {
-      "orientation": "vertical"
+      "orientation": "vertical",
+      "blockClass": [
+        "saude-mobile"
+      ]
     },
     "children": [
       "menu-item#saude-mobile"
@@ -1372,6 +1485,9 @@
   },
   "menu-item#saude-mobile": {
     "props": {
+      "blockClass": [
+        "saude-mobile"
+      ],
       "itemProps": {
         "tagTitle": "Saúde",
         "text": "Saúde"

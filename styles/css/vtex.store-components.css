@@ -31,6 +31,7 @@
 }
 :global(.vtex-flex-layout-0-x-flexCol--login-menu-retratil) {
   flex-direction: inherit;
+  justify-content: center;
 }
 :global(.vtex-store-components-3-x-logoImage) {
   width: 200px;
@@ -38,7 +39,7 @@
   max-width: initial;
 }
 :global(.vtex-flex-layout-0-x-flexRowContent--topomenuretratil) {
-  background-color: #009fc2;
+  background-color: transparent !important;
 }
 .infoCardContainer--info-card-home {
   max-width: 1520px;
@@ -187,14 +188,18 @@
 }
 :global(.vtex-flex-layout-0-x-flexRow--topomenuretratil) {
   margin-bottom: 15px;
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
+}
+:global(.vtex-store-drawer-0-x-drawer) {
+  border-radius: 0px 16px 16px 0px;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.25);
+}
+:global(.vtex-store-drawer-0-x-overlay) {
+  background-color: #000;
 }
 :global(.vtex-store-drawer-0-x-drawerContent)
   :global(.vtex-menu-2-x-menuItem--menuimunidade) {
-  margin-top: 80px;
+  margin-top: 0 !important;
 }
 :global(.vtex-flex-layout-0-x-flexRow--texto-informativo-footer)
   :global(.vtex-rich-text-0-x-container--small-text) {
@@ -210,6 +215,7 @@
 }
 :global(.vtex-flex-layout-0-x-flexRow--topomenuretratil) {
   margin-bottom: 15px;
+  position: initial !important;
 }
 :global(.vtex-flex-layout-0-x-flexCol--login-menu-retratil)
   :global(.vtex-flex-layout-0-x-flexColChild--login-menu-retratil):first-child {
@@ -1205,7 +1211,7 @@
   background-image: url(https://stevia.vtexassets.com/arquivos/icon-frete-gratis.png);
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: left center;
+  background-position: left 0;
   padding-left: 74px;
   width: 100%;
 }
@@ -1213,7 +1219,7 @@
   background-image: url(https://stevia.vtexassets.com/arquivos/icon-desconto-progressivo.png);
   background-size: 65px;
   background-repeat: no-repeat;
-  background-position: left center;
+  background-position: left 0;
   padding-left: 74px;
   width: 100%;
 }
@@ -1221,7 +1227,7 @@
   background-image: url(https://stevia.vtexassets.com/arquivos/icon-desconto.png);
   background-size: 65px;
   background-repeat: no-repeat;
-  background-position: left center;
+  background-position: left 0;
   padding-left: 74px;
   width: 100%;
 }
@@ -1229,7 +1235,7 @@
   background-image: url(https://stevia.vtexassets.com/arquivos/icon-parcele.png);
   background-size: 65px;
   background-repeat: no-repeat;
-  background-position: left center;
+  background-position: left 0;
   padding-left: 74px;
   width: 100%;
 }
@@ -1237,7 +1243,7 @@
   background-image: url(https://stevia.vtexassets.com/arquivos/icon-site-seguro.png);
   background-size: 65px;
   background-repeat: no-repeat;
-  background-position: left center;
+  background-position: left 0;
   padding-left: 74px;
   width: 100%;
 }
@@ -1245,7 +1251,7 @@
   background-image: url(https://stevia.vtexassets.com/arquivos/icon-whatsapp.png);
   background-size: 65px;
   background-repeat: no-repeat;
-  background-position: left center;
+  background-position: left 0;
   padding-left: 64px;
   width: 100%;
 }
@@ -1863,6 +1869,8 @@
   }
   :global(.vtex-flex-layout-0-x-flexRowContent--main-header-mobile) {
     border-bottom: none !important;
+    justify-content: space-between;
+    padding: 8px 8px;
   }
   :global(.vtex-sticky-layout-0-x-wrapper) {
     background-color: #009fc2;
@@ -1946,6 +1954,13 @@
   :global(.vtex-minicart-2-x-minicartContainer) {
     margin-top: 3px;
     background-position: 12px 9px;
+    background-image: url(/arquivos/new-minicart-icon.svg) !important;
+    width: fit-content !important;
+    background-size: 60%;
+  }
+  :global(.vtex-minicart-2-x-openIconContainer),
+  :global(.vtex-minicart-2-x-minicartWrapperContainer) {
+    width: fit-content !important;
   }
   :global(.vtex-minicart-2-x-minicartContainer)::before {
     display: none;
@@ -2012,9 +2027,17 @@
     :global(.vtex-store-components-3-x-imageElement) {
     width: 100%;
   }
+  :global(.vtex-menu-2-x-submenuAccordion) {
+    padding-left: 25px;
+  }
   :global(.vtex-menu-2-x-submenuAccordion) :global(.vtex-menu-2-x-menuItem) {
-    border: none;
+    border: none !important;
     padding: 0;
+  }
+  :global(.vtex-menu-2-x-submenuAccordion) :global(.vtex-menu-2-x-menuItem) :global(.vtex-menu-2-x-styledLinkContent) {
+    border: none !important;
+    padding: 0;
+    font-size: 12px !important;
   }
   :global(.vtex-store-footer-2-x-acceptedPaymentMethodContainer--payment-methods-title)::before {
     text-align: center;
@@ -2028,15 +2051,113 @@
     :global(.vtex-menu-2-x-menuItem)
     :global(.vtex-menu-2-x-styledLinkContent) {
     font-size: 16px;
+    font-weight: 400;
+    font-family: 'Signika';
   }
   :global(.vtex-menu-2-x-menuItemInnerDiv)
     :global(.vtex-menu-2-x-styledLinkContent) {
-    font-weight: 700;
+    font-weight: 400;
     font-size: 16px;
     padding-bottom: 0;
+    font-family: 'Signika';
+  }
+  :global(.vtex-menu-2-x-styledLinkContent) {
+    font-weight: 400;
+    font-family: 'Signika';
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+  }
+  :global(.vtex-menu-2-x-menuItem) {
+    padding-left: 0 !important;
+  }
+  :global(.vtex-menu-2-x-accordionIcon) {
+    flex: 1;
+    text-align: right;
+  }
+  :global(.vtex-menu-2-x-menuItem)
+    :global(.vtex-menu-2-x-styledLinkContent--menuimunidade)::before {
+    content: '';
+    background: url(/arquivos/mobile-drawer-1.svg) center/100% no-repeat;
+    width: 25px;
+    height: 28px;
+  }
+  :global(.vtex-menu-2-x-menuItem)
+    :global(.vtex-menu-2-x-styledLinkContent--barba-e-cabelo-mobile)::before {
+    content: '';
+    width: 25px;
+    height: 34px;
+    background: url(/arquivos/barba-icon.svg) center/100% no-repeat;
+  }
+  :global(.vtex-menu-2-x-menuItem)
+    :global(.vtex-menu-2-x-styledLinkContent--emagrecimento-mobile)::before {
+    content: '';
+    width: 25px;
+    height: 28px;
+    background: url(/arquivos/mobile-drawer-3.svg) center/100% no-repeat;
+  }
+  :global(.vtex-menu-2-x-menuItem)
+    :global(.vtex-menu-2-x-styledLinkContent--desempenho-fisico-mobile)::before {
+    content: '';
+    width: 25px;
+    height: 28px;
+    background: url(/arquivos/mobile-drawer-4.svg) center/100% no-repeat;
+  }
+  :global(.vtex-menu-2-x-menuItem)
+    :global(.vtex-menu-2-x-styledLinkContent--beleza-mobile)::before {
+    content: '';
+    width: 25px;
+    height: 28px;
+    background: url(/arquivos/beleza-icon.svg) center/100% no-repeat;
+  }
+  :global(.vtex-menu-2-x-menuItem)
+    :global(.vtex-menu-2-x-styledLinkContent--saude-mobile)::before {
+    content: '';
+    width: 25px;
+    height: 28px;
+    background: url(/arquivos/mobile-drawer-6.svg) center/100% no-repeat;
+  }
+  :global(.vtex-menu-2-x-menuItem)
+    :global(.vtex-menu-2-x-styledLinkContent--saudesexual-mobile)::before {
+    content: '';
+    width: 25px;
+    height: 28px;
+    background: url(/arquivos/mobile-drawer-7.svg) center/100% no-repeat;
+  }
+  :global(.vtex-menu-2-x-menuItem) :global(.vtex-menu-2-x-styledLink--bioveg) {
+    padding-left: 0;
+  }
+  :global(.vtex-menu-2-x-menuItem)
+    :global(.vtex-menu-2-x-styledLinkContent--bioveg) {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  :global(.vtex-menu-2-x-menuItem)
+    :global(.vtex-menu-2-x-styledLinkContent--bioveg)::before {
+    content: '';
+    width: 25px;
+    height: 28px;
+    background: url(/arquivos/mobile-drawer-8.svg) center/100% no-repeat;
+  }
+  :global(.vtex-menu-2-x-menuItem)
+    :global(.vtex-menu-2-x-styledLinkContent--nutrition-mobile)::before {
+    content: '';
+    width: 25px;
+    height: 28px;
+    background: url(/arquivos/mobile-drawer-9.svg) center/100% no-repeat;
+  }
+  :global(.vtex-menu-2-x-menuItem)
+    :global(.vtex-menu-2-x-styledLinkContent--blog-mobile)::before {
+    content: '';
+    width: 25px;
+    height: 28px;
+    background: url(/arquivos/mobile-drawer-10.svg) center/100% no-repeat;
   }
   :global(.vtex-store-drawer-0-x-childrenContainer) {
-    padding: 10px;
+    padding: 15px;
+    background-color: #f5f5f5 !important;
+    border-radius: 0px 16px 16px 0px;
   }
   :global(.vtex-slider-layout-0-x-sliderLayoutContainer--carousel) {
     margin-top: 0 !important;
@@ -2044,14 +2165,16 @@
   :global(.vtex-menu-2-x-menuContainerNav) {
     width: 100%;
   }
-  :global(.vtex-menu-2-x-menuItem) {
-    margin-bottom: 10px;
+  :global(.vtex-store-drawer-0-x-drawerContent)
+    :global(.vtex-menu-2-x-menuItem) {
+    margin-bottom: 5px;
     color: #555;
     font-size: 18px;
     font-weight: 700;
-    border: 2px solid #009fc2;
-    padding: 10px 16px;
-    border-radius: 10px;
+    border: none;
+    border-bottom: 1px solid #adadad;
+    padding: 4px 16px;
+    border-radius: 0;
   }
   :global(.vtex-menu-2-x-styledLinkContainer) {
     margin: 0;
@@ -2059,8 +2182,27 @@
   :global(.vtex-menu-2-x-menuItem--vegano) {
     background-color: #00c234;
   }
+  :global(.vtex-store-drawer-0-x-closeIconContainer) {
+    right: 10px !important;
+    top: 15px;
+    padding: 5px;
+  }
   :global(.vtex-store-drawer-0-x-closeIconButton) {
     color: #ff6c00;
+  }
+  :global(.vtex-store-drawer-0-x-closeIconButton)::before {
+    content: '';
+    background-image: url(/arquivos/new-close-drawer.svg);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 8px;
+    height: 8px;
+    display: block;
+  }
+  :global(.vtex-store-drawer-0-x-closeIconButton)
+    :global(.vtex-store-drawer-0-x-closeIcon) {
+    display: none;
   }
   :global(.vtex-search-result-3-x-galleryItem)
     :global(.vtex-product-summary-2-x-container)
@@ -2092,6 +2234,19 @@
   }
   :global(.vtex-rich-text-0-x-wrapper--shelfTitle) {
     margin-top: 30px;
+  }
+  :global(.vtex-minicart-2-x-minicartQuantityBadgeDefault) {
+    right: -0.9rem;
+    top: -0.5rem;
+    background-color: #e26001;
+  }
+  :global(.vtex-flex-layout-0-x-flexColChild--login-menu-retratil) {
+    width: auto !important;
+    margin: 0 !important;
+  }
+  :global(.vtex-flex-layout-0-x-flexCol--login-menu-retratil)
+    :global(.vtex-flex-layout-0-x-flexColChild--login-menu-retratil):first-child {
+    width: fit-content;
   }
 }
 :global(.vtex-menu-2-x-submenu) :global(.vtex-menu-2-x-menuContainerNav) {
@@ -2211,6 +2366,23 @@
     font-size: 9px;
     letter-spacing: 1px;
     margin-top: 5px;
+  }
+  .logoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: initial;
+    max-height: initial;
+    min-width: initial;
+    width: 119px;
+    height: 48px;
+    padding: 0;
+  }
+  .logoContainer .logoImage {
+    width: 169px;
+    height: 68px;
+    margin: 0;
+    margin-left: 12px;
   }
 }
 :global(.vtex-store-components-3-x-subscribeLabel),

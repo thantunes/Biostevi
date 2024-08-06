@@ -2093,6 +2093,23 @@
     }
   },
 
+  "menu-item#category-saudesexual-mobile": {
+    "props": {
+      "id": "menu-item-category-saudesexual",
+      "type": "custom",
+      "blockClass": ["blog", "saudesexual-mobile"],
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/saude/libido-e-estimulante-sexual",
+        "noFollow": true,
+        "tagTitle": "Saúde Sexual",
+        "text": "Saúde Sexual"
+      }
+    }
+  },
+
   "menu-item#category-bionutrition": {
     "props": {
       "id": "menu-item-category-home",

@@ -108,7 +108,22 @@
       }
     }
   },
-
+  "menu-item#blog-mobile": {
+    "props": {
+      "id": "menu-item-blog",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "blockClass": ["blog-mobile"],
+      "itemProps": {
+        "type": "external",
+        "href": "https://blog.biostevi.com.br/",
+        "noFollow": false,
+        "tagTitle": "Blog Biostévi Pharma",
+        "text": "Blog Biostévi Pharma"
+      }
+    }
+  },
 
 
   

@@ -28,5 +28,9 @@
     },
     "CryptoScript":{
         "component": "CryptoScript"
+    },
+    "HeaderDrawer":{
+        "component": "HeaderDrawer",
+        "composition": "children"
     }
 }
