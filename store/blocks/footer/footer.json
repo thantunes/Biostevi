@@ -11,8 +11,7 @@
       "flex-layout.row#espacamento-footer",
       "flex-layout.row#footer-3-desktop",
       "flex-layout.row#footer-4-desktop",
-      "flex-layout.row#developers",
-      "flex-layout.row#iconwhats"
+      "flex-layout.row#developers"
     ]
   },
   "flex-layout.row#Security": {
@@ -351,8 +350,7 @@
       "flex-layout.row#Security",
       "flex-layout.row#footer-3-desktop",
       "flex-layout.row#footer-4-desktop",
-      "flex-layout.row#developers",
-      "flex-layout.row#iconwhats"
+      "flex-layout.row#developers"
     ]
   },
   "flex-layout.row#2-footer-mobile": {

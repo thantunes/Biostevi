@@ -390,6 +390,7 @@
   bottom: 97px;
   right: 25px;
   max-width: 50px;
+  z-index: 999;
 }
 :global(.vtex-store-components-3-x-showMoreButton) {
   background-color: transparent;
