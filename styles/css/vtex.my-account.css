@@ -955,14 +955,20 @@
   padding: 10px 0 0;
 }
 :global(.vtex-availability-notify-1-x-submit) {
-    background: #009fc2;
-    border-radius: 10px;
-    padding: 0 14px;
-    max-height: 40px;
+  background: #009fc2;
+  border-radius: 10px;
+  padding: 0 14px;
+  max-height: 40px;
 }
-:global(.vtex-availability-notify-1-x-submit) :global(.vtex-button__label){
-    color: #fff;
+:global(.vtex-availability-notify-1-x-submit) :global(.vtex-button__label) {
+  color: #fff;
 }
-:global(.vtex-availability-notify-1-x-title), :global(.vtex-availability-notify-1-x-notifyLabel) {
-    text-align: center;
+:global(.vtex-availability-notify-1-x-title),
+:global(.vtex-availability-notify-1-x-notifyLabel) {
+  text-align: center;
+}
+:global(.octadesk-octachat-app--bottomRight),
+:global(.octadesk-octachat-app--bottomRight.octa-widget-v2) {
+  right: 20px !important;
+  bottom: 20px !important;
 }
