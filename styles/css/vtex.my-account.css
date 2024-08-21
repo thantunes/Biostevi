@@ -977,15 +977,15 @@
   :global(.render-route-store-product)
     :global(.vtex-store-components-3-x-imageElement--whatsapp-flutuante-icon) {
     position: fixed;
-    bottom: 150px !important;
-    right: 15px !important;
+    bottom: 170px !important;
+    right: 35px !important;
     max-width: 50px;
     z-index: 99999;
   }
 
   :global(.render-route-store-home)
     :global(.vtex-store-components-3-x-imageElement--whatsapp-flutuante-icon) {
-    bottom: 12px !important;
-    right: 15px !important;
+    bottom: 20px !important;
+    right: 35px !important;
   }
 }
