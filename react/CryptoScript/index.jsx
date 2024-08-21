@@ -7,7 +7,6 @@ const CryptoScript = () => {
   const { useOrderForm } = OrderForm
   const orderFormContext = useOrderForm()
   const isLoggedIn = orderFormContext.orderForm.loggedIn
-  const isMobile = runtime.deviceInfo.isMobile
 
   useEffect(() => {
     const script = document.createElement('script')
@@ -35,17 +34,6 @@ const CryptoScript = () => {
       }
     }
   }, [isLoggedIn]);
-
-  useEffect(() => {
-    const chatBotDiv = document.querySelector(
-      '#octadesk-octachat-appchat'
-    );
-
-    if (chatBotDiv && runtime.page == "store.product" && isMobile) {
-      chatBotDiv.style.bottom = '165px !important';
-      chatBotDiv.style.right = '13px !important';
-    }
-  }, [])
 
   return null
 }

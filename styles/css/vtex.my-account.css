@@ -967,8 +967,25 @@
 :global(.vtex-availability-notify-1-x-notifyLabel) {
   text-align: center;
 }
-:global(.octadesk-octachat-app--bottomRight),
-:global(.octadesk-octachat-app--bottomRight.octa-widget-v2) {
-  right: 20px !important;
-  bottom: 20px !important;
+@media (max-width: 768px) {
+  :global(.octadesk-octachat-app--bottomRight),
+  :global(.octadesk-octachat-app--bottomRight.octa-widget-v2) {
+    right: 10px !important;
+    bottom: 75px !important;
+  }
+
+  :global(.render-route-store-product)
+    :global(.vtex-store-components-3-x-imageElement--whatsapp-flutuante-icon) {
+    position: fixed;
+    bottom: 150px !important;
+    right: 15px !important;
+    max-width: 50px;
+    z-index: 99999;
+  }
+
+  :global(.render-route-store-home)
+    :global(.vtex-store-components-3-x-imageElement--whatsapp-flutuante-icon) {
+    bottom: 12px !important;
+    right: 15px !important;
+  }
 }
