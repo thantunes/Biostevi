@@ -970,22 +970,22 @@
 @media (max-width: 768px) {
   :global(.octadesk-octachat-app--bottomRight),
   :global(.octadesk-octachat-app--bottomRight.octa-widget-v2) {
-    right: 10px !important;
+    right: 0px !important;
     bottom: 75px !important;
   }
 
   :global(.render-route-store-product)
     :global(.vtex-store-components-3-x-imageElement--whatsapp-flutuante-icon) {
     position: fixed;
-    bottom: 155px !important;
-    right: 15px !important;
+    bottom: 175px !important;
+    right: 25px !important;
     max-width: 50px;
     z-index: 99999;
   }
 
   :global(.render-route-store-home)
     :global(.vtex-store-components-3-x-imageElement--whatsapp-flutuante-icon) {
-    bottom: 10px !important;
-    right: 15px !important;
+    bottom: 20px !important;
+    right: 25px !important;
   }
 }
