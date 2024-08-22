@@ -337,7 +337,10 @@
     "props": {
       "type": "external",
       "text": "Whatsapp",
-      "url": "https://api.whatsapp.com/send/?phone=5511930877190&text&app_absent=0",
+      "link": {
+        "url": "https://api.whatsapp.com/send/?phone=5511930877190&text&app_absent=0",
+        "openNewTab": true
+      },
       "src": "/arquivos/whatsapp-biostevi.svg",
       "blockClass": "whatsapp-flutuante-icon"
     }

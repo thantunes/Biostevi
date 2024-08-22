@@ -525,13 +525,16 @@
       "slider-layout#demo-images"
     ],
     "props": {
+      "preload": true,
       "height": 720,
       "images": [
         {
+          "loading": "eager",
           "image": "https://storecomponents.vteximg.com.br/arquivos/banner-principal.png",
           "mobileImage": "https://storecomponents.vteximg.com.br/arquivos/banner-principal-mobile.jpg"
         },
         {
+          "loading": "lazy",
           "image": "https://storecomponents.vteximg.com.br/arquivos/banner.jpg",
           "mobileImage": "https://storecomponents.vteximg.com.br/arquivos/banner-principal-mobile.jpg"
         }
