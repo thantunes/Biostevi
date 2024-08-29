@@ -7,7 +7,7 @@
       "slider-layout#informativo-mobile",
       "rich-text#shelf-title-lancamentos",
       "flex-layout.row#shelfprateleiralancamentos",
-      // "__fold__",
+      "__fold__",
       //"shelf#produtos-em-lancamentos",
       "flex-layout.row#descontos",
       "slider-layout#descontos-mobile",
