@@ -23,15 +23,11 @@
       "highlight": false,
       "blockClass": "tituloinstitucional",
       "itemProps": {
-       
         "tagTitle": "Institucional",
         "text": "Institucional"
       }
     }
   },
-
-
-
 
   "menu-item#news": {
     "props": {
@@ -125,10 +121,6 @@
     }
   },
 
-
-  
-
-
   "menu-item#farmaceuticoresponsavel": {
     "props": {
       "id": "menu-item-blog",
@@ -145,8 +137,6 @@
     }
   },
 
-
-
   "vtex.menu@2.x:menu#footer-decoration": {
     "props": {
       "orientation": "vertical"
@@ -155,12 +145,11 @@
       "menu-item#ajudatitulo",
       "menu-item#smartphones",
       "menu-item#videogames",
-     
+
       "menu-item#tvs",
       "menu-item#meuspedidos"
     ]
   },
-
 
   "menu-item#ajudatitulo": {
     "props": {
@@ -224,7 +213,6 @@
     }
   },
 
-
   "menu-item#tvs": {
     "props": {
       "id": "menu-item-tvs",
@@ -283,11 +271,6 @@
     }
   },
 
-
-
-
-
-
   "menu-item#bags": {
     "props": {
       "id": "menu-item-bags",
@@ -297,7 +280,7 @@
       "highlight": false,
       "itemProps": {
         "type": "internal",
-      
+
         "noFollow": true,
         "tagTitle": "Segunda a Sexta: 08:00 às 18:30",
         "text": "Segunda a Sexta: 08:00 às 18:30"
@@ -314,7 +297,7 @@
       "highlight": false,
       "itemProps": {
         "type": "internal",
-       
+
         "noFollow": true,
         "tagTitle": "Sábados: 08:00 às 12:00",
         "text": "Sábados: 08:00 às 12:00"
@@ -347,7 +330,7 @@
       "menu-item#clothing",
       "menu-item#shorts",
       "menu-item#tank-tops",
-      "menu-item#shirts",
+      "menu-item#shirts-1",
       "menu-item#sweatshirt",
       "menu-item#cropped"
     ]
@@ -392,11 +375,10 @@
     "children": [
       "menu-item#shorts",
       "menu-item#tank-tops",
-      "menu-item#shirts",
+      "menu-item#shirts-1",
       "menu-item#sweatshirt"
     ]
   },
-
 
   "menu-item#decoration-mobile": {
     "props": {
@@ -527,11 +509,6 @@
     }
   },
 
- 
-
- 
-
-
   "menu-item#farmaceutico": {
     "props": {
       "id": "menu-item-shorts",
@@ -562,8 +539,6 @@
       }
     }
   },
-  
-
 
   "menu-item#horario-atendimento-mobile": {
     "props": {
@@ -582,10 +557,7 @@
     "props": {
       "orientation": "vertical"
     },
-    "children": [
-      "menu-item#semana",
-      "menu-item#finaldesemana"
-    ]
+    "children": ["menu-item#semana", "menu-item#finaldesemana"]
   },
 
   "menu-item#semana": {
@@ -596,7 +568,6 @@
       "iconId": null,
       "highlight": false,
       "itemProps": {
-     
         "noFollow": false,
         "tagTitle": "Segunda a Sexta: 08:00 às 18:30",
         "text": "Segunda a Sexta: 08:00 às 18:30"
@@ -611,37 +582,12 @@
       "iconId": null,
       "highlight": false,
       "itemProps": {
-      
         "noFollow": false,
         "tagTitle": "Sábados: 08:00 às 12:00",
         "text": "Sábados: 08:00 às 12:00"
       }
     }
   },
- 
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-  
-
 
   "menu-item#contatotitulo": {
     "props": {
@@ -705,7 +651,7 @@
     }
   },
 
-  "menu-item#shirts": {
+  "menu-item#shirts-1": {
     "props": {
       "id": "menu-item-shirts",
       "type": "custom",
@@ -715,8 +661,8 @@
         "type": "internal",
         "href": "/#",
         "noFollow": false,
-        "tagTitle": "Whatsapp:(11) 97133-1874",
-        "text": "Whatsapp:(11) 97133-1874"
+        "tagTitle": "Whatsapp: (11) 93268-7581",
+        "text": "Whatsapp: (11) 93268-7581"
       }
     }
   },
