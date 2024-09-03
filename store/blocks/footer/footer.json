@@ -287,7 +287,7 @@
 
   "rich-text#textofooterfinal-1": {
     "props": {
-      "text": "PARA MEDICAMENTOS SUJEITOS À PRESCRIÇÃO MÉDICA E FORMULAÇÃO MAGISTRAL, SERÁ SEMPRE REALIZADA AVALIAÇÃO PELO FARMACÊUTICO ANTES DA MANIPULAÇÃO E DISPENSAÇÃO. \n \n As informações contidas neste site são exclusivas para profissionais habilitados da área de saúde, não devem ser usadas para automedicação e não substituem, em hipótese alguma a medicação prescrita pelo profissional da área médica. Somente um profissional habilitado está em condições de diagnosticar qualquer problema de saúde e prescrever o tratamento adequado. \n \n Qualquer dúvida sobre os produtos divulgados em nosso site, entre em contato com um de nossos farmacêuticos através do atendimento ao cliente ou pelo telefone (11) 93268-7581 (Vendas/SAC) e se preferir, poderá dirigir-se a nossa loja na Rua Bernardino de Campos, 156 - Santo André - São Paulo, pois contamos com profissionais farmacêuticos habilitados para mais esclarecimentos. \n \n Os medicamentos sob prescrição só serão dispensados mediante apresentação da receita ou envio por imagens ou e-mail. \n É proibido comercializar medicamentos controlados por meio remoto. \n Medicamentos podem causar efeitos indesejados. \n Evite a automedicação: informe-se com o médico ou farmacêutico. \n 'SE PERSISTIREM OS SINTOMAS, O MÉDICO OU FARMACÊCUTICO DEVERÁ SER CONSULTADO'. \n \n Lei Geral de Proteção de Dados (LGPD): Os dados dos usuários não são utilizados para qualquer forma de promoção, publicidade, propaganda ou outra forma de indução de consumo de medicamentos.",
+      "text": "PARA MEDICAMENTOS SUJEITOS À PRESCRIÇÃO MÉDICA E FORMULAÇÃO MAGISTRAL, SERÁ SEMPRE REALIZADA AVALIAÇÃO PELO FARMACÊUTICO ANTES DA MANIPULAÇÃO E DISPENSAÇÃO. \n \n As informações contidas neste site são exclusivas para profissionais habilitados da área de saúde, não devem ser usadas para automedicação e não substituem, em hipótese alguma a medicação prescrita pelo profissional da área médica. Somente um profissional habilitado está em condições de diagnosticar qualquer problema de saúde e prescrever o tratamento adequado. \n \n Qualquer dúvida sobre os produtos divulgados em nosso site, entre em contato com um de nossos farmacêuticos através do atendimento ao cliente ou pelo telefone (11) 93087-7190 (Vendas/SAC) e se preferir, poderá dirigir-se a nossa loja na Rua Bernardino de Campos, 156 - Santo André - São Paulo, pois contamos com profissionais farmacêuticos habilitados para mais esclarecimentos. \n \n Os medicamentos sob prescrição só serão dispensados mediante apresentação da receita ou envio por imagens ou e-mail. \n É proibido comercializar medicamentos controlados por meio remoto. \n Medicamentos podem causar efeitos indesejados. \n Evite a automedicação: informe-se com o médico ou farmacêutico. \n 'SE PERSISTIREM OS SINTOMAS, O MÉDICO OU FARMACÊCUTICO DEVERÁ SER CONSULTADO'. \n \n Lei Geral de Proteção de Dados (LGPD): Os dados dos usuários não são utilizados para qualquer forma de promoção, publicidade, propaganda ou outra forma de indução de consumo de medicamentos.",
       "blockClass": "footer-aling-center"
     }
   },
@@ -338,7 +338,7 @@
       "type": "external",
       "text": "Whatsapp",
       "link": {
-        "url": "https://api.whatsapp.com/send/?phone=5511932687581&text&app_absent=0",
+        "url": "https://api.whatsapp.com/send/?phone=5511930877190&text&app_absent=0",
         "openNewTab": true
       },
       "src": "/arquivos/whatsapp-biostevi.svg",
