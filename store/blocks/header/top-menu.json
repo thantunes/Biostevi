@@ -1,9 +1,6 @@
 {
   "vtex.menu@2.x:menu#websites": {
-    "children": [
-     "flex-layout.col#logo-desktop",
-      "search-bar"
-    ]
+    "children": ["flex-layout.col#logo-desktop", "search-bar"]
   },
   "flex-layout.col#logo-desktop": {
     "props": {
@@ -12,22 +9,22 @@
     "children": ["logo#desktop"]
   },
 
+  "search-bar": {
+    "blocks": ["autocomplete-result-list.v2"],
+    "props": {
+      "textAlignment": "CENTER",
+      "textPosition": "CENTER",
+      "openAutocompleteOnFocus": true,
+      "text": ""
+    }
+  },
 
- 
-
-"search-bar":{
-  "blocks": ["autocomplete-result-list.v2"],
-  "props": {
-    "textAlignment": "CENTER",
-    "textPosition": "CENTER",
-    "openAutocompleteOnFocus": true,
-    "text": ""
-   
-  }
-},
-
- 
-
+  "autocomplete-result-list.v2": {
+    "props": {
+      "__unstableProductOriginVtex": true
+    },
+    "blocks": ["product-summary.shelf"]
+  },
 
   "vtex.menu@2.x:menu#institutional": {
     "children": [
@@ -37,7 +34,6 @@
       "minicart.v2"
     ]
   },
-
 
   "menu-item#receita": {
     "props": {
@@ -56,7 +52,6 @@
     }
   },
 
-
   "menu-item#meuspedidos": {
     "props": {
       "id": "menu-item-meuspedidos",
@@ -74,13 +69,11 @@
     }
   },
 
-
-
   "rich-text#institutional": {
     "props": {
       "textAlignment": "CENTER",
       "textPosition": "CENTER",
-      
+
       "textColor": "#b19e8a",
       "blockClass": "help-message"
     }
@@ -99,9 +92,7 @@
         "noFollow": false,
         "tagTitle": "Minha Conta",
         "text": "Minha Conta"
-       
       }
     }
   }
-
 }

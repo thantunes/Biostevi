@@ -967,6 +967,60 @@
 :global(.vtex-availability-notify-1-x-notifyLabel) {
   text-align: center;
 }
+:global(.vtex-search-2-x-tileListItem)
+  :global(.vtex-product-summary-2-x-container) {
+  position: relative;
+}
+:global(.vtex-search-2-x-tileListItem)
+  :global(.vtex-product-summary-2-x-container)
+  :global(.vtex-add-to-cart-button-0-x-buttonText) {
+  padding: 18px 0px !important;
+}
+:global(.vtex-search-2-x-tileListItem)
+  :global(.vtex-product-summary-2-x-container)
+  :global(.vtex-product-price-1-x-currencyContainer--summary) {
+  color: #e26001;
+  font-family: Signika;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+:global(.vtex-search-2-x-tileListItem)
+  :global(.vtex-product-summary-2-x-container)
+  :global(.vtex-product-price-1-x-installmentValue)
+  :global(.vtex-product-price-1-x-currencyContainer--summary),
+:global(.vtex-search-2-x-tileListItem)
+  :global(.vtex-product-summary-2-x-container)
+  :global(.vtex-product-price-1-x-installments) {
+  color: #000;
+  font-family: Signika;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+:global(.vtex-search-2-x-tileListItem)
+  :global(.vtex-product-summary-2-x-container)
+  :global(.vtex-product-price-1-x-listPriceValue)
+  :global(.vtex-product-price-1-x-currencyContainer) {
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+}
+
+:global(.vtex-search-2-x-tileListItem)
+  :global(.vtex-product-summary-2-x-container)
+  :global(.vtex-product-price-1-x-savings)
+  :global(.vtex-product-price-1-x-currencyContainer) {
+  font-weight: 400;
+  font-size: 12px;
+}
+
+:global(.vtex-search-2-x-tileListItem)
+  :global(.vtex-product-summary-2-x-container):hover {
+  box-shadow: none;
+}
+
 @media (max-width: 768px) {
   :global(.octadesk-octachat-app--bottomRight),
   :global(.octadesk-octachat-app--bottomRight.octa-widget-v2) {

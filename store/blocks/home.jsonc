@@ -850,7 +850,6 @@
       "image#influenter9",
       "image#influenter6",
       "image#influenter10"
-      // "image#influenter11"
     ]
   },
   "image#influenter3": {
@@ -890,12 +889,6 @@
     }
   },
   "image#influenter10": {
-    "props": {
-      "src": "/arquivos/Jonathas_Morandini.png",
-      "maxWidth": "100%"
-    }
-  },
-  "image#influenter11": {
     "props": {
       "src": "/arquivos/Jonathas_Morandini.png",
       "maxWidth": "100%"
