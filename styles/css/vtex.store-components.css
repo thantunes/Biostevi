@@ -477,6 +477,7 @@
 :global(.vtex-slider__base-internal) {
   background-color: #00c231;
 }
+
 :global(.vtex-store-components-3-x-searchBarContainer)
   :global(.vtex-input-prefix__group) {
   background-color: #fff;
