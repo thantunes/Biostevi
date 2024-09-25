@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { useRuntime } from 'vtex.render-runtime'
 import { OrderForm } from 'vtex.order-manager'
+import axios from 'axios'
 
 const CryptoScript = () => {
   const runtime = useRuntime()
@@ -27,13 +28,13 @@ const CryptoScript = () => {
     if (isLoggedIn) {
       const mobileMenuGreeting = document.querySelector(
         '.vtex-flex-layout-0-x-flexCol--mobile-menu-message'
-      );
-  
+      )
+
       if (mobileMenuGreeting) {
-        mobileMenuGreeting.style.display = 'none';
+        mobileMenuGreeting.style.display = 'none'
       }
     }
-  }, [isLoggedIn]);
+  }, [isLoggedIn])
 
   return null
 }

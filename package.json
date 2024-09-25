@@ -29,5 +29,8 @@
     "typescript": "3.8.3",
     "uglify-js": "^3.17.4",
     "uglifyjs-folder": "^3.3.0"
+  },
+  "dependencies": {
+    "axios": "^1.7.7"
   }
 }

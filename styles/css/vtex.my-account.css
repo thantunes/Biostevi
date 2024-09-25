@@ -1021,6 +1021,16 @@
   box-shadow: none;
 }
 
+:global(.vtex-search-result-3-x-filterTemplateOverflow)
+  :global(.vtex-checkbox__label) {
+  color: #595959;
+}
+
+:global(.vtex-search-result-3-x-orderByText),
+:global(.vtex-search-result-3-x-filterPopupTitle) {
+  color: #595959;
+}
+
 @media (max-width: 768px) {
   :global(.octadesk-octachat-app--bottomRight),
   :global(.octadesk-octachat-app--bottomRight.octa-widget-v2) {

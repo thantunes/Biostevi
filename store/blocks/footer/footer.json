@@ -342,7 +342,9 @@
         "openNewTab": true
       },
       "src": "/arquivos/whatsapp-biostevi.svg",
-      "blockClass": "whatsapp-flutuante-icon"
+      "blockClass": "whatsapp-flutuante-icon",
+      "alt": "Contato pelo Whatsapp",
+      "title": "Contato pelo Whatsapp"
     }
   },
 
