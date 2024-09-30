@@ -90,6 +90,78 @@
 .paragraph--developers-text {
   margin: 0;
 }
+.paragraph--category-main-banner-text {
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 49.28px;
+  color: #fff;
+  margin: 0;
+  font-family: Signika;
+}
+:global(.vtex-flex-layout-0-x-flexRow--tips-board-container) .paragraph {
+  margin: 0;
+}
+.container--tips-board-1-title,
+.container--tips-board-1-subtitle {
+  justify-content: center;
+}
+.container--tips-board-1-subtitle {
+  margin-bottom: 24px;
+}
+.paragraph--tips-board-1-title {
+  font-family: Signika;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 29.57px;
+  color: #000;
+  text-transform: uppercase;
+}
+.paragraph--tips-board-1-subtitle {
+  font-family: Signika;
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 46.82px;
+  text-transform: uppercase;
+  color: #009fc2;
+}
+.strong--tips-board-1-subtitle {
+  font-weight: 700;
+}
+.paragraph--tips-board-top-tip-title {
+  font-family: Signika;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 29.57px;
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.container--tips-board-top-tip-title {
+  margin-bottom: 16px;
+}
+.paragraph--tips-board-top-tip {
+  font-family: Signika;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #fff;
+}
+.paragraph--tips-board-bottom-tip-title {
+  font-family: Signika;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 29.57px;
+  text-transform: uppercase;
+}
+.container--tips-board-bottom-tip-title {
+  margin-bottom: 16px;
+}
+.paragraph--tips-board-bottom-tip {
+  font-family: Signika;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
 @media only screen and (min-width: 640px) {
   .container--question .strong {
     font-size: 40px;
@@ -115,11 +187,12 @@
   .paragraph--mobile-menu-welcome {
     max-height: 20px;
   }
-  .paragraph--mobile-menu-welcome,.paragraph--mobile-menu-login {
+  .paragraph--mobile-menu-welcome,
+  .paragraph--mobile-menu-login {
     margin: 0;
   }
   .link--mobile-menu-welcome {
-    font-family: "Signika";
+    font-family: 'Signika';
     font-weight: 400;
     font-size: 12px;
     line-height: 14.78px;
@@ -127,7 +200,7 @@
     text-decoration: none;
   }
   .link--mobile-menu-login {
-    font-family: "Signika";
+    font-family: 'Signika';
     font-weight: 400;
     font-size: 16px;
     line-height: 19.71px;
@@ -136,6 +209,17 @@
   }
   .container--mobile-menu-welcome {
     margin-top: -4px;
+  }
+  .paragraph--category-main-banner-text {
+    font-size: 20px;
+  }
+  .container--tips-board-1-subtitle {
+    margin-top: 10px;
+  }
+  .paragraph--tips-board-1-subtitle {
+    font-size: 32px;
+    line-height: 40px;
+    text-align: center;
   }
 }
 .wrapper--faq-question .paragraph {

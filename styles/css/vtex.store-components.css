@@ -969,14 +969,17 @@
   color: #777;
 }
 :global(.vtex-search-result-3-x-galleryTitle--layout) {
-  border-bottom: 2px dotted #777;
+  border-bottom: 2px solid #ff6c00;
   font-size: 18px;
-  color: #777;
+  color: #000;
   padding: 15px 0;
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 19.92px;
 }
 :global(.vtex-breadcrumb-1-x-link) {
   font-size: 12px;
-  color: #58595A;
+  color: #58595a;
 }
 :global(.vtex-store-drawer-0-x-opened) {
   background-color: #fff !important;
@@ -1513,7 +1516,7 @@
   opacity: 1;
 }
 :global(.vtex-product-price-1-x-savings--summary) {
-  background: #2D6100;
+  background: #2d6100;
   color: #fff;
   font-family: Signika;
   font-size: 12px;
@@ -1772,6 +1775,18 @@
 .imageElement--whatsapp-flutuante-icon {
   border-radius: 24px;
 }
+:global(.vtex-store-link-0-x-link--category-main-banner-btn) {
+  text-decoration: none;
+  font-family: Signika;
+  font-size: 32px;
+  font-weight: 500;
+  color: #fff;
+  line-height: 39.42px;
+  background-color: #ff6c00;
+  border-radius: 8px;
+  padding: 10px 16px;
+}
+
 @media only screen and (min-width: 640px) {
   :global(.vtex-store-newsletter-1-x-confirmationCheckboxContainer) {
     display: block;
@@ -1812,7 +1827,7 @@
   }
   :global(.vtex-flex-layout-0-x-flexRow--pdp-botao-add-carrinho)
     :global(.vtex-add-to-cart-button-0-x-buttonText) {
-    background-color: #2D6100;
+    background-color: #2d6100;
     font-size: 15px;
     border-radius: 5px;
     font-weight: 700;
@@ -2036,7 +2051,9 @@
     border: none !important;
     padding: 0;
   }
-  :global(.vtex-menu-2-x-submenuAccordion) :global(.vtex-menu-2-x-menuItem) :global(.vtex-menu-2-x-styledLinkContent) {
+  :global(.vtex-menu-2-x-submenuAccordion)
+    :global(.vtex-menu-2-x-menuItem)
+    :global(.vtex-menu-2-x-styledLinkContent) {
     border: none !important;
     padding: 0;
     font-size: 12px !important;
@@ -2385,6 +2402,9 @@
     height: 68px;
     margin: 0;
     margin-left: 12px;
+  }
+  :global(.vtex-store-link-0-x-link--category-main-banner-btn) {
+    font-size: 22px;
   }
 }
 :global(.vtex-store-components-3-x-subscribeLabel),

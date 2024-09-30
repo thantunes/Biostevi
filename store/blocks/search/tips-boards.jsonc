@@ -1,0 +1,289 @@
+{
+    "flex-layout.row#category-main-banner": {
+        "title": "Banner Principal",
+        "children": [
+            "rich-text#category-main-banner-text",
+            "link#category-main-banner-btn"
+        ],
+        "props": {
+            "blockClass": [
+                "category-main-banner"
+            ],
+            "preventHorizontalStretch": true,
+            "preventVerticalStretch": true
+        }
+    },
+    "rich-text#category-main-banner-text": {
+        "title": "Texto",
+        "props": {
+            "blockClass": [
+                "category-main-banner-text"
+            ],
+            "text": "Quer saber como aumentar o libido? "
+        }
+    },
+    "link#category-main-banner-btn": {
+        "props": {
+            "label": "Clique aqui e saiba mais",
+            "href": "/",
+            "blockClass": [
+                "category-main-banner-btn"
+            ]
+        }
+    },
+    "flex-layout.row#tips-board-1-container": {
+        "children": [
+            "flex-layout.col#tips-board-1-content"
+        ],
+        "props": {
+            "blockClass": [
+                "tips-board-container"
+            ]
+        }
+    },
+    "flex-layout.col#tips-board-1-content": {
+        "title": "Quadro Dicas - 1",
+        "children": [
+            "rich-text#tips-board-1-title",
+            "rich-text#tips-board-1-subtitle",
+            "flex-layout.row#tips-board-1-top",
+            "flex-layout.row#tips-board-1-bottom"
+        ],
+        "props": {
+            "blockClass": [
+                "tips-board-content"
+            ],
+            "preventVerticalStretch": true
+        }
+    },
+    "rich-text#tips-board-1-title": {
+        "title": "Título Principal",
+        "props": {
+            "blockClass": [
+                "tips-board-1-title"
+            ],
+            "text": "Dica da Biostévi Pharma"
+        }
+    },
+    "rich-text#tips-board-1-subtitle": {
+        "title": "Subtítulo Principal",
+        "props": {
+            "blockClass": [
+                "tips-board-1-subtitle"
+            ],
+            "text": "**Saiba** como **tratar o baixo libido**"
+        }
+    },
+    "flex-layout.row#tips-board-1-top": {
+        "children": [
+            "image#tips-board-1-top",
+            "flex-layout.col#tips-board-1-top-text-container"
+        ],
+        "props": {
+            "blockClass": [
+                "tips-board-top"
+            ]
+        }
+    },
+    "image#tips-board-1-top": {
+        "title": "Primeira imagem",
+        "props": {
+            "src": "/arquivos/category-tips-board-1-1.png"
+        }
+    },
+    "flex-layout.col#tips-board-1-top-text-container": {
+        "children": [
+            "rich-text#tips-board-1-top-tip-title",
+            "rich-text#tips-board-1-top-tip"
+        ],
+        "props": {
+            "blockClass": [
+                "tips-board-top-text-container"
+            ],
+            "preventVerticalStretch": true
+        }
+    },
+    "rich-text#tips-board-1-top-tip-title": {
+        "title": "Título da dica",
+        "props": {
+            "blockClass": [
+                "tips-board-top-tip-title"
+            ],
+            "text": "Por que **ficamos** com **baixo libido?**"
+        }
+    },
+    "rich-text#tips-board-1-top-tip": {
+        "title": "Conteúdo da dica",
+        "props": {
+            "blockClass": [
+                "tips-board-top-tip"
+            ],
+            "text": "O baixo libido em mulheres pode ter diversas causas, como estresse, cansaço e preocupações diárias, que diminuem o desejo sexual. Alterações hormonais durante a gravidez, ciclo menstrual ou menopausa também influenciam o libido. Fatores emocionais, como ansiedade, depressão ou problemas no relacionamento, podem reduzir o interesse sexual. Além disso, alguns medicamentos e problemas de saúde, como diabetes ou disfunções da tireoide, também afetam o desejo. É importante que a mulher busque ajuda se isso estiver impactando sua qualidade de vida e bem-estar."
+        }
+    },
+    "flex-layout.row#tips-board-1-bottom": {
+        "children": [
+            "flex-layout.col#tips-board-1-bottom-text-container",
+            "image#tips-board-1-bottom"
+        ],
+        "props": {
+            "blockClass": [
+                "tips-board-bottom"
+            ]
+        }
+    },
+    "image#tips-board-1-bottom": {
+        "title": "Primeira imagem",
+        "props": {
+            "src": "/arquivos/category-tips-board-1-2.png"
+        }
+    },
+    "flex-layout.col#tips-board-1-bottom-text-container": {
+        "children": [
+            "rich-text#tips-board-1-bottom-tip-title",
+            "rich-text#tips-board-1-bottom-tip"
+        ],
+        "props": {
+            "blockClass": [
+                "tips-board-bottom-text-container"
+            ],
+            "preventVerticalStretch": true
+        }
+    },
+    "rich-text#tips-board-1-bottom-tip-title": {
+        "title": "Título da dica",
+        "props": {
+            "blockClass": [
+                "tips-board-bottom-tip-title"
+            ],
+            "text": "Tem como **aumentar o libido** e **resolver isso?**"
+        }
+    },
+    "rich-text#tips-board-1-bottom-tip": {
+        "title": "Conteúdo da dica",
+        "props": {
+            "blockClass": [
+                "tips-board-bottom-tip"
+            ],
+            "text": "O tratamento do baixo libido feminino envolve várias abordagens, como reduzir o estresse com atividades relaxantes, melhorar a comunicação no relacionamento, e buscar terapia psicológica ou de casal. Ajustes hormonais, como reposição hormonal na menopausa, podem ser úteis, assim como tratar condições de saúde subjacentes e revisar medicamentos que afetam o desejo sexual. Além disso, cuidar da saúde emocional e autoestima é essencial. Consultar um médico é fundamental para personalizar o tratamento de acordo com as causas individuais."
+        }
+    },
+    // BOARD 2
+    "flex-layout.row#tips-board-2-container": {
+        "children": [
+            "flex-layout.col#tips-board-2-content"
+        ],
+        "props": {
+            "blockClass": [
+                "tips-board-container"
+            ]
+        }
+    },
+    "flex-layout.col#tips-board-2-content": {
+        "title": "Quadro Dicas - 2",
+        "children": [
+            "flex-layout.row#tips-board-2-top",
+            "flex-layout.row#tips-board-2-bottom"
+        ],
+        "props": {
+            "blockClass": [
+                "tips-board-content"
+            ],
+            "preventVerticalStretch": true
+        }
+    },
+    "flex-layout.row#tips-board-2-top": {
+        "children": [
+            "image#tips-board-2-top",
+            "flex-layout.col#tips-board-2-top-text-container"
+        ],
+        "props": {
+            "blockClass": [
+                "tips-board-top"
+            ]
+        }
+    },
+    "image#tips-board-2-top": {
+        "title": "Primeira imagem",
+        "props": {
+            "src": "/arquivos/category-tips-board-2-1.png"
+        }
+    },
+    "flex-layout.col#tips-board-2-top-text-container": {
+        "children": [
+            "rich-text#tips-board-2-top-tip-title",
+            "rich-text#tips-board-2-top-tip"
+        ],
+        "props": {
+            "blockClass": [
+                "tips-board-top-text-container"
+            ],
+            "preventVerticalStretch": true
+        }
+    },
+    "rich-text#tips-board-2-top-tip-title": {
+        "title": "Título da dica",
+        "props": {
+            "blockClass": [
+                "tips-board-top-tip-title"
+            ],
+            "text": "Maiores **problemas** com **baixo libido?**"
+        }
+    },
+    "rich-text#tips-board-2-top-tip": {
+        "title": "Conteúdo da dica",
+        "props": {
+            "blockClass": [
+                "tips-board-top-tip"
+            ],
+            "text": "O baixo libido feminino pode causar diversos problemas, como sentimentos de frustração, baixa autoestima e insatisfação com a própria sexualidade. Isso também pode levar a conflitos e distanciamento no relacionamento, afetando a intimidade e a comunicação entre parceiros. Além disso, pode indicar problemas de saúde física, como desequilíbrios hormonais ou doenças crônicas. A falta de desejo sexual também impacta a qualidade de vida, diminuindo o prazer e a satisfação pessoal. Buscar tratamento ajuda a enfrentar essas questões e restaurar o bem-estar emocional e físico, além de melhorar os relacionamentos."
+        }
+    },
+    "flex-layout.row#tips-board-2-bottom": {
+        "children": [
+            "flex-layout.col#tips-board-2-bottom-text-container",
+            "image#tips-board-2-bottom"
+        ],
+        "props": {
+            "blockClass": [
+                "tips-board-bottom"
+            ]
+        }
+    },
+    "image#tips-board-2-bottom": {
+        "title": "Primeira imagem",
+        "props": {
+            "src": "/arquivos/category-tips-board-2-2.png"
+        }
+    },
+    "flex-layout.col#tips-board-2-bottom-text-container": {
+        "children": [
+            "rich-text#tips-board-2-bottom-tip-title",
+            "rich-text#tips-board-2-bottom-tip"
+        ],
+        "props": {
+            "blockClass": [
+                "tips-board-bottom-text-container"
+            ],
+            "preventVerticalStretch": true
+        }
+    },
+    "rich-text#tips-board-2-bottom-tip-title": {
+        "title": "Título da dica",
+        "props": {
+            "blockClass": [
+                "tips-board-bottom-tip-title"
+            ],
+            "text": "Tem como **aumentar o libido** com **manipulados?**"
+        }
+    },
+    "rich-text#tips-board-2-bottom-tip": {
+        "title": "Conteúdo da dica",
+        "props": {
+            "blockClass": [
+                "tips-board-bottom-tip"
+            ],
+            "text": "Suplementos manipulados, como Tribulus terrestris, maca peruana, DHEA, ginseng, L-arginina e ômega-3, podem ajudar a aumentar o libido feminino. Eles atuam equilibrando hormônios, melhorando a energia e o fluxo sanguíneo, e potencialmente elevando o desejo sexual. No entanto, é crucial consultar um médico antes de iniciar qualquer suplemento para garantir que seja seguro e adequado às necessidades individuais."
+        }
+    }
+}
