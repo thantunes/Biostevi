@@ -345,42 +345,15 @@
 :global(.vtex-product-specifications-1-x-groupName) {
   display: none;
 }
-:global(.vtex-menu-2-x-styledLinkContent--menudesempenhofisico) {
-  font-weight: 700;
-  font-size: 16px;
-  color: #555;
-}
-:global(.vtex-menu-2-x-styledLinkContent--menuemagrecimento) {
-  font-weight: 700;
-  font-size: 16px;
-  color: #555;
-}
-:global(.vtex-menu-2-x-styledLinkContent--menubarbaecabelo) {
-  font-weight: 700;
-  font-size: 16px;
-  color: #555;
-}
-:global(.vtex-menu-2-x-styledLinkContent--menuimunidade) {
-  font-weight: 700;
-  font-size: 16px;
-  color: #555;
-}
-:global(.vtex-menu-2-x-styledLinkContent--menubeleza) {
-  font-weight: 700;
-  font-size: 16px;
-  color: #555;
-}
-:global(.vtex-menu-2-x-styledLinkContent--menusaude) {
-  font-weight: 700;
-  font-size: 16px;
-  color: #555;
-}
-:global(.vtex-menu-2-x-styledLinkContent--blog) {
-  font-weight: 700;
-  font-size: 16px;
-  color: #555;
-}
-:global(.vtex-menu-2-x-styledLink--vegano) {
+:global(.vtex-menu-2-x-styledLinkContent--menudesempenhofisico),
+:global(.vtex-menu-2-x-styledLinkContent--menuemagrecimento),
+:global(.vtex-menu-2-x-styledLinkContent--menubarbaecabelo),
+:global(.vtex-menu-2-x-styledLinkContent--menuimunidade),
+:global(.vtex-menu-2-x-styledLinkContent--menubeleza),
+:global(.vtex-menu-2-x-styledLinkContent--menucosmeticos),
+:global(.vtex-menu-2-x-styledLinkContent--menusaude),
+:global(.vtex-menu-2-x-styledLinkContent--blog),
+:global(.vtex-menu-2-x-styledLinkContent--vegano) {
   font-weight: 700;
   font-size: 16px;
   color: #555;
@@ -2121,6 +2094,13 @@
   }
   :global(.vtex-menu-2-x-menuItem)
     :global(.vtex-menu-2-x-styledLinkContent--saudesexual-mobile)::before {
+    content: '';
+    width: 25px;
+    height: 28px;
+    background: url(/arquivos/mobile-drawer-7.svg) center/100% no-repeat;
+  }
+  :global(.vtex-menu-2-x-menuItem)
+    :global(.vtex-menu-2-x-styledLinkContent--cosmeticos-mobile)::before {
     content: '';
     width: 25px;
     height: 28px;

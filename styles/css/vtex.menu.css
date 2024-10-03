@@ -1,15 +1,24 @@
 .menuItem--link-More {
   background-color: #009fc2;
-  height: 45px;
-  display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   color: #fff;
 }
 .styledLink--link-More {
   color: #fff;
   font-weight: 700;
+}
+@media only screen and (max-width: 980px) {
+  .menuItem--link-More,
+  .styledLinkContainer--link-More,
+  .styledLink--link-More,
+  .styledLinkContent--link-More {
+      display: flex;
+      justify-content: center !important;
+      height: 45px;
+      width: 100% !important;
+      padding: 0 !important;
+  }
 }
 .styledLinkContainer--nutrition,
 .styledLinkContent--bioveg,

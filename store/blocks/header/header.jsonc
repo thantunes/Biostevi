@@ -206,6 +206,7 @@
       "vtex.menu@2.x:menu#desempenhofisico-mobile",
       "vtex.menu@2.x:menu#beleza-mobile",
       "vtex.menu@2.x:menu#saude-mobile",
+      "menu-item#category-cosmeticos-mobile",
       "menu-item#category-saudesexual-mobile",
       "menu-item#category-bioveg-mobile",
       "menu-item#category-bionutrition-mobile",
