@@ -1790,10 +1790,6 @@
     border-radius: 5px;
     font-weight: 700;
   }
-  :global(.vtex-flex-layout-0-x-flexColChild)
-    :global(.vtex-menu-2-x-menuContainerNav) {
-    margin-left: 40px;
-  }
   :global(.vtex-store-components-3-x-shippingContainer) :global(.vtex-button) {
     margin-top: 22px;
   }
