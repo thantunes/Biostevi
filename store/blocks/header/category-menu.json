@@ -25,6 +25,7 @@
       "type": "custom",
       "iconId": null,
       "highlight": false,
+      "margin": 1,
       "itemProps": {
         "type": "internal",
         "categoryID": "97",

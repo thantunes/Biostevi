@@ -25,6 +25,9 @@
   font-size: 0;
 }
 @media(min-width: 1024px) {
+  .menuContainerNav .styledLinkContainer {
+    margin-inline: 0.7rem;
+  }
   .styledLinkContainer--bioveg {
     padding: 0;
   }
