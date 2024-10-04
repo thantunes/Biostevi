@@ -2104,7 +2104,7 @@
     content: '';
     width: 25px;
     height: 28px;
-    background: url(/arquivos/mobile-drawer-7.svg) center/100% no-repeat;
+    background: url(/arquivos/cosmeticos.svg) center/100% no-repeat;
   }
   :global(.vtex-menu-2-x-menuItem) :global(.vtex-menu-2-x-styledLink--bioveg) {
     padding-left: 0;
