@@ -9,6 +9,7 @@
       "menu-item#category-emagrecimento",
       "menu-item#category-desempenhofisico",
       "menu-item#category-beleza",
+      "menu-item#category-cosmeticos",
       "menu-item#category-saude",
       "menu-item#category-saudesexual",
       "menu-item#category-bionutrition",
@@ -24,6 +25,7 @@
       "type": "custom",
       "iconId": null,
       "highlight": false,
+      "margin": 1,
       "itemProps": {
         "type": "internal",
         "categoryID": "97",
@@ -1156,7 +1158,7 @@
       "itemProps": {
         "type": "internal",
         "categoryID": "3",
-        "href": "/beleza/",
+        "href": "/beleza",
         "noFollow": false,
         "tagTitle": "Beleza",
         "text": "Beleza",
@@ -1475,6 +1477,25 @@
         "noFollow": true,
         "tagTitle": "Unhas",
         "text": "Unhas"
+      }
+    }
+  },
+
+  "menu-item#category-cosmeticos": {
+    "props": {
+      "id": "menu-item-category-cosmeticos",
+      "blockClass": "menucosmeticos",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "categoryID": "887091850",
+        "href": "/cosmeticos",
+        "noFollow": false,
+        "tagTitle": "Cosméticos",
+        "text": "Cosméticos",
+        "blockClass": "link-menu"
       }
     }
   },
@@ -2089,6 +2110,23 @@
         "noFollow": true,
         "tagTitle": "Saúde Sexual",
         "text": "Saúde Sexual"
+      }
+    }
+  },
+
+  "menu-item#category-cosmeticos-mobile": {
+    "props": {
+      "id": "menu-item-category-saudesexual",
+      "type": "custom",
+      "blockClass": ["blog", "cosmeticos-mobile"],
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/cosmeticos",
+        "noFollow": true,
+        "tagTitle": "Cosméticos",
+        "text": "Cosméticos"
       }
     }
   },
