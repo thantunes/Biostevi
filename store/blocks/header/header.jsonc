@@ -200,7 +200,7 @@
       "flex-layout.row#topo-menu-mobile",
       //"search-bar",
       // "menu-item#category-lojaonlone",
-      "menu-item#category-imunidade",
+      "menu-item#imunidade-mobile",
       "vtex.menu@2.x:menu#barbacabelo-mobile",
       "vtex.menu@2.x:menu#emagrecimento-mobile",
       "vtex.menu@2.x:menu#desempenhofisico-mobile",
@@ -209,7 +209,7 @@
       "menu-item#category-cosmeticos-mobile",
       "menu-item#category-saudesexual-mobile",
       "menu-item#category-bioveg-mobile",
-      "menu-item#category-bionutrition-mobile",
+      "vtex.menu@2.x:menu#bionutrition-mobile",
       "menu-item#blog-mobile"
     ],
     "props": {
@@ -220,7 +220,7 @@
     "props": {
       "id": "menu-item-category-home",
       "type": "custom",
-      "blockClass": "bioveg",
+      "blockClass": "bioveg-mobile",
       "iconId": null,
       "highlight": false,
       "itemProps": {
@@ -232,19 +232,62 @@
       }
     }
   },
+  "vtex.menu@2.x:menu#bionutrition-mobile": {
+    "props": {
+      "orientation": "vertical",
+      "blockClass": [
+        "bionutrition"
+      ]
+    },
+    "children": [
+      "menu-item#category-bionutrition-mobile"
+    ]
+  },
   "menu-item#category-bionutrition-mobile": {
     "props": {
       "id": "menu-item-category-home",
+      "blockClass": "bionutrition-mobile",
+      "itemProps": {
+        "tagTitle": "Biostévi Nutrition",
+        "text": "Biostévi Nutrition"
+      }
+    },
+    "blocks": [
+      "vtex.menu@2.x:submenu.accordion#bionutrition-mobile"
+    ] 
+  },
+  "vtex.menu@2.x:submenu.accordion#bionutrition-mobile": {
+    "children": [
+      "vtex.menu@2.x:menu#bionutrition-mobile-list"
+    ]
+  },
+  "vtex.menu@2.x:menu#bionutrition-mobile-list": {
+    "props": {
+      "orientation": "vertical"
+    },
+    "children": [
+      "menu-item#chas",
+      "menu-item#farinhas",
+      "menu-item#granolas-snacks",
+      "menu-item#pastas",
+      "menu-item#refeicoes-fit",
+      "menu-item#suplementosbionutri",
+      "menu-item#bionutritionMore"
+    ]
+  },
+  "menu-item#bionutritionMore": {
+    "props": {
+      "id": "menu-item-bionutritionMore",
+      "blockClass": "link-More",
       "type": "custom",
-      "blockClass": "nutrition-mobile",
       "iconId": null,
       "highlight": false,
       "itemProps": {
         "type": "internal",
         "href": "/nutrition",
-        "noFollow": false,
-        "tagTitle": "Biostévi Nutrition",
-        "text": "Biostévi Nutrition"
+        "noFollow": true,
+        "tagTitle": "Ver Todos",
+        "text": "Ver Todos"
       }
     }
   },
@@ -323,6 +366,18 @@
     "props": {
       "src": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/7aa20ecc-1314-4598-9aa0-e69e48080c4a___75154a25a25bad9e8950f9da3c1bbe40.png",
       "maxWidth": "100%"
+    }
+  },
+  "menu-item#imunidade-mobile": {
+    "props": {
+      "blockClass": [
+        "imunidade-mobile"
+      ],
+      "itemProps": {
+        "tagTitle": "Imunidade",
+        "text": "Imunidade",
+        "href": "/imunidade"
+      }
     }
   },
   "vtex.menu@2.x:menu#barbacabelo-mobile": {
