@@ -198,7 +198,7 @@
   background-color: #000;
 }
 :global(.vtex-store-drawer-0-x-drawerContent)
-  :global(.vtex-menu-2-x-menuItem--menuimunidade) {
+  :global(.vtex-menu-2-x-menuItem--menumaisvendidos) {
   margin-top: 0 !important;
 }
 :global(.vtex-flex-layout-0-x-flexRow--texto-informativo-footer)
@@ -348,7 +348,7 @@
 :global(.vtex-menu-2-x-styledLinkContent--menudesempenhofisico),
 :global(.vtex-menu-2-x-styledLinkContent--menuemagrecimento),
 :global(.vtex-menu-2-x-styledLinkContent--menubarbaecabelo),
-:global(.vtex-menu-2-x-styledLinkContent--menuimunidade),
+:global(.vtex-menu-2-x-styledLinkContent--menumaisvendidos),
 :global(.vtex-menu-2-x-styledLinkContent--menubeleza),
 :global(.vtex-menu-2-x-styledLinkContent--menucosmeticos),
 :global(.vtex-menu-2-x-styledLinkContent--menusaude),
@@ -2049,7 +2049,7 @@
     text-align: right;
   }
   :global(.vtex-menu-2-x-menuItem)
-    :global(.vtex-menu-2-x-styledLinkContent--imunidade-mobile)::before {
+    :global(.vtex-menu-2-x-styledLinkContent--mais-vendidos-mobile)::before {
     content: '';
     background: url(/arquivos/mobile-drawer-1.svg) center/100% no-repeat;
     width: 25px;
@@ -2371,8 +2371,8 @@
   text-align: center;
   max-width: 79%;
 }
-@media(min-width: 1025px) {
-  :global(.vtex-menu-2-x-styledLinkContainer--menuimunidade),
+@media (min-width: 1024px) and (max-width: 1200px) {
+  :global(.vtex-menu-2-x-styledLinkContainer--menumaisvendidos),
   :global(.vtex-menu-2-x-styledLinkContainer--menubarbaecabelo),
   :global(.vtex-menu-2-x-styledLinkContainer--menuemagrecimento),
   :global(.vtex-menu-2-x-styledLinkContainer--menudesempenhofisico),
@@ -2384,21 +2384,71 @@
   :global(.vtex-menu-2-x-styledLinkContainer--bioveg) {
     border-right: 1px solid #adadad;
   }
-  :global(.vtex-menu-2-x-styledLinkContainer) {
+  :global(.vtex-menu-2-x-styledLinkContainer--menumaisvendidos),
+  :global(.vtex-menu-2-x-styledLinkContainer--menubarbaecabelo),
+  :global(.vtex-menu-2-x-styledLinkContainer--menuemagrecimento),
+  :global(.vtex-menu-2-x-styledLinkContainer--menudesempenhofisico),
+  :global(.vtex-menu-2-x-styledLinkContainer--menubeleza),
+  :global(.vtex-menu-2-x-styledLinkContainer--menucosmeticos),
+  :global(.vtex-menu-2-x-styledLinkContainer--menusaude),
+  :global(.vtex-menu-2-x-styledLinkContainer--saudesexual),
+  :global(.vtex-menu-2-x-styledLinkContainer--nutrition),
+  :global(.vtex-menu-2-x-styledLinkContainer--bioveg),
+  :global(.vtex-menu-2-x-styledLinkContainer--blog) {
     margin-inline: 0;
-    padding-inline: 0.65rem;
+    padding-inline: 0.5rem;
     padding-block: 0;
     margin-block: 1rem;
   }
-  :global(.vtex-menu-2-x-styledLinkContent) {
+}
+@media(min-width: 1200px) {
+  :global(.vtex-menu-2-x-styledLinkContainer--menumaisvendidos),
+  :global(.vtex-menu-2-x-styledLinkContainer--menubarbaecabelo),
+  :global(.vtex-menu-2-x-styledLinkContainer--menuemagrecimento),
+  :global(.vtex-menu-2-x-styledLinkContainer--menudesempenhofisico),
+  :global(.vtex-menu-2-x-styledLinkContainer--menubeleza),
+  :global(.vtex-menu-2-x-styledLinkContainer--menucosmeticos),
+  :global(.vtex-menu-2-x-styledLinkContainer--menusaude),
+  :global(.vtex-menu-2-x-styledLinkContainer--saudesexual),
+  :global(.vtex-menu-2-x-styledLinkContainer--nutrition),
+  :global(.vtex-menu-2-x-styledLinkContainer--bioveg) {
+    border-right: 1px solid #adadad;
+  }
+  :global(.vtex-menu-2-x-styledLinkContainer--menumaisvendidos),
+  :global(.vtex-menu-2-x-styledLinkContainer--menubarbaecabelo),
+  :global(.vtex-menu-2-x-styledLinkContainer--menuemagrecimento),
+  :global(.vtex-menu-2-x-styledLinkContainer--menudesempenhofisico),
+  :global(.vtex-menu-2-x-styledLinkContainer--menubeleza),
+  :global(.vtex-menu-2-x-styledLinkContainer--menucosmeticos),
+  :global(.vtex-menu-2-x-styledLinkContainer--menusaude),
+  :global(.vtex-menu-2-x-styledLinkContainer--saudesexual),
+  :global(.vtex-menu-2-x-styledLinkContainer--nutrition),
+  :global(.vtex-menu-2-x-styledLinkContainer--bioveg),
+  :global(.vtex-menu-2-x-styledLinkContainer--blog) {
+    margin-inline: 0;
+    padding-inline: 0.5rem;
+    padding-block: 0;
+    margin-block: 1rem;
+  }
+  :global(.vtex-menu-2-x-styledLinkContent--menumaisvendidos),
+  :global(.vtex-menu-2-x-styledLinkContent--menubarbaecabelo),
+  :global(.vtex-menu-2-x-styledLinkContent--menuemagrecimento),
+  :global(.vtex-menu-2-x-styledLinkContent--menudesempenhofisico),
+  :global(.vtex-menu-2-x-styledLinkContent--menubeleza),
+  :global(.vtex-menu-2-x-styledLinkContent--menucosmeticos),
+  :global(.vtex-menu-2-x-styledLinkContent--menusaude),
+  :global(.vtex-menu-2-x-styledLinkContent--saudesexual),
+  :global(.vtex-menu-2-x-styledLinkContent--nutrition),
+  :global(.vtex-menu-2-x-styledLinkContent--bioveg),
+  :global(.vtex-menu-2-x-styledLinkContent--blog) {
     font-weight: 400;
     font-family: 'Signika';
     align-items: center;
     justify-content: flex-start;
-    gap: 5px;
+    gap: 7.5px;
   }
   :global(.vtex-menu-2-x-menuItem)
-    :global(.vtex-menu-2-x-styledLinkContent--menuimunidade)::before {
+    :global(.vtex-menu-2-x-styledLinkContent--menumaisvendidos)::before {
     content: '';
     background: url(/arquivos/mobile-drawer-1.svg) center/100% no-repeat;
     width: 20px;

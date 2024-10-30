@@ -4,7 +4,7 @@
       "experimentalOptimizeRendering": true
     },
     "children": [
-      "menu-item#category-imunidade",
+      "menu-item#mais-vendidos",
       "menu-item#category-barbaecabelo",
       "menu-item#category-emagrecimento",
       "menu-item#category-desempenhofisico",
@@ -18,21 +18,20 @@
     ]
   },
 
-  "menu-item#category-imunidade": {
+  "menu-item#mais-vendidos": {
     "props": {
-      "id": "menu-item-category-imunidade",
-      "blockClass": "menuimunidade",
+      "id": "menu-item-mais-vendidos",
+      "blockClass": "menumaisvendidos",
       "type": "custom",
       "iconId": null,
       "highlight": false,
       "margin": 1,
       "itemProps": {
         "type": "internal",
-        "categoryID": "97",
-        "href": "/saude/imunidade",
+        "href": "/467?map=productClusterIds",
         "noFollow": false,
-        "tagTitle": "Imunidade",
-        "text": "Imunidade",
+        "tagTitle": "Mais Vendidos",
+        "text": "Mais Vendidos",
         "blockClass": "link-menu"
       }
     }
@@ -1560,6 +1559,7 @@
       "orientation": "vertical"
     },
     "children": [
+      "menu-item#imunidade",
       "menu-item#articulacoes",
       "menu-item#cardioprotetor",
       "menu-item#cartilagel",
@@ -1575,7 +1575,6 @@
       "menu-item#fertilidade",
       "menu-item#fibromialgia",
       "menu-item#gestante",
-      "menu-item#imunidade",
       "menu-item#intestino",
       "menu-item#libido",
       "menu-item#memoria",

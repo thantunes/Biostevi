@@ -200,7 +200,7 @@
       "flex-layout.row#topo-menu-mobile",
       //"search-bar",
       // "menu-item#category-lojaonlone",
-      "menu-item#imunidade-mobile",
+      "menu-item#mais-vendidos-mobile",
       "vtex.menu@2.x:menu#barbacabelo-mobile",
       "vtex.menu@2.x:menu#emagrecimento-mobile",
       "vtex.menu@2.x:menu#desempenhofisico-mobile",
@@ -368,15 +368,15 @@
       "maxWidth": "100%"
     }
   },
-  "menu-item#imunidade-mobile": {
+  "menu-item#mais-vendidos-mobile": {
     "props": {
       "blockClass": [
-        "imunidade-mobile"
+        "mais-vendidos-mobile"
       ],
       "itemProps": {
-        "tagTitle": "Imunidade",
-        "text": "Imunidade",
-        "href": "/imunidade"
+        "tagTitle": "Mais Vendidos",
+        "text": "Mais Vendidos",
+        "href": "/467?map=productClusterIds"
       }
     }
   },
@@ -1566,6 +1566,7 @@
       "orientation": "vertical"
     },
     "children": [
+      "menu-item#imunidade",
       "menu-item#articulacoes",
       "menu-item#cardioprotetor",
       "menu-item#cartilagem",
@@ -1581,7 +1582,6 @@
       "menu-item#fertilidade",
       "menu-item#fibromialgia",
       "menu-item#gestante-e-lactante",
-      "menu-item#imunidade",
       "menu-item#libido",
       "menu-item#memoria",
       "menu-item#menopausa",
