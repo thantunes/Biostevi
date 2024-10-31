@@ -2051,6 +2051,13 @@
   :global(.vtex-menu-2-x-menuItem)
     :global(.vtex-menu-2-x-styledLinkContent--mais-vendidos-mobile)::before {
     content: '';
+    background: url(/arquivos/mobile-drawer-11.svg) center/100% no-repeat;
+    width: 25px;
+    height: 28px;
+  }
+  :global(.vtex-menu-2-x-menuItem)
+    :global(.vtex-menu-2-x-styledLinkContent--imunidade-mobile)::before {
+    content: '';
     background: url(/arquivos/mobile-drawer-1.svg) center/100% no-repeat;
     width: 25px;
     height: 28px;
@@ -2450,7 +2457,7 @@
   :global(.vtex-menu-2-x-menuItem)
     :global(.vtex-menu-2-x-styledLinkContent--menumaisvendidos)::before {
     content: '';
-    background: url(/arquivos/mobile-drawer-1.svg) center/100% no-repeat;
+    background: url(/arquivos/mobile-drawer-11.svg) center/100% no-repeat;
     width: 20px;
     height: 23px;
   }

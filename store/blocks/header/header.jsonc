@@ -201,6 +201,7 @@
       //"search-bar",
       // "menu-item#category-lojaonlone",
       "menu-item#mais-vendidos-mobile",
+      "menu-item#imunidade-mobile",
       "vtex.menu@2.x:menu#barbacabelo-mobile",
       "vtex.menu@2.x:menu#emagrecimento-mobile",
       "vtex.menu@2.x:menu#desempenhofisico-mobile",
@@ -377,6 +378,18 @@
         "tagTitle": "Mais Vendidos",
         "text": "Mais Vendidos",
         "href": "/467?map=productClusterIds"
+      }
+    }
+  },
+  "menu-item#imunidade-mobile": {
+    "props": {
+      "blockClass": [
+        "imunidade-mobile"
+      ],
+      "itemProps": {
+        "tagTitle": "Imunidade",
+        "text": "Imunidade",
+        "href": "/saude/imunidade"
       }
     }
   },
