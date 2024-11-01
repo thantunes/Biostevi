@@ -1,5 +1,6 @@
 {
   "vtex.menu@2.x:menu#websites": {
+    "props": {"experimentalOptimizeRendering": false},
     "children": ["flex-layout.col#logo-desktop", "search-bar"]
   },
   "flex-layout.col#logo-desktop": {
@@ -27,6 +28,7 @@
   },
 
   "vtex.menu@2.x:menu#institutional": {
+    "props": {"experimentalOptimizeRendering": false},
     "children": [
       "menu-item#receita",
       "login",

@@ -1,7 +1,7 @@
 {
   "vtex.menu@2.x:menu#category-menu": {
     "props": {
-      "experimentalOptimizeRendering": true
+      "experimentalOptimizeRendering": false
     },
     "children": [
       "menu-item#mais-vendidos",
@@ -59,7 +59,8 @@
 
   "vtex.menu@2.x:submenu#barbaecabelo": {
     "props": {
-      "width": "100%"
+      "width": "100%",
+      "experimentalOptimizeRendering": false
     },
     "children": ["flex-layout.row#menu-barbaecabelo-more"]
   },
@@ -95,7 +96,8 @@
 
   "vtex.menu@2.x:menu#barbaecabelo-more": {
     "props": {
-      "orientation": "vertical"
+      "orientation": "vertical",
+      "experimentalOptimizeRendering": false
     },
     "children": [
       "menu-item#cabelo",
@@ -506,7 +508,8 @@
 
   "vtex.menu@2.x:submenu#emagrecimento": {
     "props": {
-      "width": "100%"
+      "width": "100%",
+      "experimentalOptimizeRendering": false
     },
     "children": ["flex-layout.row#menu-emagrecimento-more"]
   },
@@ -542,7 +545,8 @@
 
   "vtex.menu@2.x:menu#emagrecimento-more": {
     "props": {
-      "orientation": "vertical"
+      "orientation": "vertical",
+      "experimentalOptimizeRendering": false
     },
     "children": [
       "menu-item#acaolipolitica",
@@ -801,7 +805,8 @@
 
   "vtex.menu@2.x:submenu#desempenhofisico": {
     "props": {
-      "width": "100%"
+      "width": "100%",
+      "experimentalOptimizeRendering": false
     },
     "children": ["flex-layout.row#menu-desempenhofisico-more"]
   },
@@ -836,7 +841,8 @@
 
   "vtex.menu@2.x:menu#desempenhofisico-more": {
     "props": {
-      "orientation": "vertical"
+      "orientation": "vertical",
+      "experimentalOptimizeRendering": false
     },
     "children": [
       "menu-item#acidosgraxos",
@@ -1169,7 +1175,8 @@
 
   "vtex.menu@2.x:submenu#beleza": {
     "props": {
-      "width": "100%"
+      "width": "100%",
+      "experimentalOptimizeRendering": false
     },
     "children": ["flex-layout.row#menu-beleza-more"]
   },
@@ -1204,7 +1211,8 @@
 
   "vtex.menu@2.x:menu#beleza-more": {
     "props": {
-      "orientation": "vertical"
+      "orientation": "vertical",
+      "experimentalOptimizeRendering": false
     },
     "children": [
       "menu-item#acaoclaeadora",
@@ -1521,7 +1529,8 @@
 
   "vtex.menu@2.x:submenu#saude": {
     "props": {
-      "width": "100%"
+      "width": "100%",
+      "experimentalOptimizeRendering": false
     },
     "children": ["flex-layout.row#menu-saude-more"]
   },
@@ -1556,7 +1565,8 @@
 
   "vtex.menu@2.x:menu#saude-more": {
     "props": {
-      "orientation": "vertical"
+      "orientation": "vertical",
+      "experimentalOptimizeRendering": false
     },
     "children": [
       "menu-item#imunidade",
@@ -2166,7 +2176,8 @@
   },
   "vtex.menu@2.x:submenu#bionutri": {
     "props": {
-      "width": "100%"
+      "width": "100%",
+      "experimentalOptimizeRendering": false
     },
     "children": ["flex-layout.row#menu-bionutri-more"]
   },
@@ -2198,7 +2209,8 @@
   },
   "vtex.menu@2.x:menu#bionutri-more": {
     "props": {
-      "orientation": "vertical"
+      "orientation": "vertical",
+      "experimentalOptimizeRendering": false
     },
     "children": [
       "menu-item#chas",

@@ -1,7 +1,8 @@
 {
   "vtex.menu@2.x:menu#Products": {
     "props": {
-      "orientation": "vertical"
+      "orientation": "vertical",
+      "experimentalOptimizeRendering": false
     },
     "children": [
       "menu-item#tituloinstitucional",
@@ -139,7 +140,8 @@
 
   "vtex.menu@2.x:menu#footer-decoration": {
     "props": {
-      "orientation": "vertical"
+      "orientation": "vertical",
+      "experimentalOptimizeRendering": false
     },
     "children": [
       "menu-item#ajudatitulo",
@@ -247,7 +249,8 @@
 
   "vtex.menu@2.x:menu#footer-bags": {
     "props": {
-      "orientation": "vertical"
+      "orientation": "vertical",
+      "experimentalOptimizeRendering": false
     },
     "children": [
       "menu-item#atendimendotitulo",
@@ -323,7 +326,8 @@
 
   "vtex.menu@2.x:menu#footer-clothing": {
     "props": {
-      "orientation": "vertical"
+      "orientation": "vertical",
+      "experimentalOptimizeRendering": false
     },
     "children": [
       "menu-item#contatotitulo",
@@ -338,7 +342,8 @@
 
   "vtex.menu@2.x:menu#footer-mobile": {
     "props": {
-      "orientation": "vertical"
+      "orientation": "vertical",
+      "experimentalOptimizeRendering": false
     },
     "children": [
       "menu-item#institucional-mobile",
@@ -370,7 +375,8 @@
 
   "vtex.menu@2.x:menu#clothing-accordion": {
     "props": {
-      "orientation": "vertical"
+      "orientation": "vertical",
+      "experimentalOptimizeRendering": false
     },
     "children": [
       "menu-item#shorts",
@@ -395,7 +401,8 @@
 
   "vtex.menu@2.x:menu#footer-decoration-mobile": {
     "props": {
-      "orientation": "vertical"
+      "orientation": "vertical",
+      "experimentalOptimizeRendering": false
     },
     "children": [
       "menu-item#smartphones",
@@ -420,7 +427,8 @@
 
   "vtex.menu@2.x:menu#footer-institucional-mobile": {
     "props": {
-      "orientation": "vertical"
+      "orientation": "vertical",
+      "experimentalOptimizeRendering": false
     },
     "children": [
       "menu-item#quemsomos",
@@ -555,7 +563,8 @@
 
   "vtex.menu@2.x:menu#footer-horario-atendimento-mobile": {
     "props": {
-      "orientation": "vertical"
+      "orientation": "vertical",
+      "experimentalOptimizeRendering": false
     },
     "children": ["menu-item#semana", "menu-item#finaldesemana"]
   },
