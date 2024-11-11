@@ -209,28 +209,11 @@
       "vtex.menu@2.x:menu#saude-mobile",
       "menu-item#category-cosmeticos-mobile",
       "menu-item#category-saudesexual-mobile",
-      "menu-item#category-bioveg-mobile",
       "vtex.menu@2.x:menu#bionutrition-mobile",
       "menu-item#blog-mobile"
     ],
     "props": {
       "orientation": "vertical"
-    }
-  },
-  "menu-item#category-bioveg-mobile": {
-    "props": {
-      "id": "menu-item-category-home",
-      "type": "custom",
-      "blockClass": "bioveg-mobile",
-      "iconId": null,
-      "highlight": false,
-      "itemProps": {
-        "type": "internal",
-        "href": "/vegano",
-        "noFollow": false,
-        "tagTitle": "Vegano",
-        "text": "Vegano"
-      }
     }
   },
   "vtex.menu@2.x:menu#bionutrition-mobile": {

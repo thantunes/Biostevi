@@ -349,6 +349,7 @@
 :global(.vtex-menu-2-x-styledLinkContent--menuemagrecimento),
 :global(.vtex-menu-2-x-styledLinkContent--menubarbaecabelo),
 :global(.vtex-menu-2-x-styledLinkContent--menumaisvendidos),
+:global(.vtex-menu-2-x-styledLinkContent--imunidade),
 :global(.vtex-menu-2-x-styledLinkContent--menubeleza),
 :global(.vtex-menu-2-x-styledLinkContent--menucosmeticos),
 :global(.vtex-menu-2-x-styledLinkContent--menusaude),
@@ -2380,6 +2381,7 @@
 }
 @media (min-width: 1024px) and (max-width: 1200px) {
   :global(.vtex-menu-2-x-styledLinkContainer--menumaisvendidos),
+  :global(.vtex-menu-2-x-styledLinkContainer--imunidade),
   :global(.vtex-menu-2-x-styledLinkContainer--menubarbaecabelo),
   :global(.vtex-menu-2-x-styledLinkContainer--menuemagrecimento),
   :global(.vtex-menu-2-x-styledLinkContainer--menudesempenhofisico),
@@ -2392,6 +2394,7 @@
     border-right: 1px solid #adadad;
   }
   :global(.vtex-menu-2-x-styledLinkContainer--menumaisvendidos),
+  :global(.vtex-menu-2-x-styledLinkContainer--imunidade),
   :global(.vtex-menu-2-x-styledLinkContainer--menubarbaecabelo),
   :global(.vtex-menu-2-x-styledLinkContainer--menuemagrecimento),
   :global(.vtex-menu-2-x-styledLinkContainer--menudesempenhofisico),
@@ -2410,6 +2413,7 @@
 }
 @media(min-width: 1200px) {
   :global(.vtex-menu-2-x-styledLinkContainer--menumaisvendidos),
+  :global(.vtex-menu-2-x-styledLinkContainer--imunidade),
   :global(.vtex-menu-2-x-styledLinkContainer--menubarbaecabelo),
   :global(.vtex-menu-2-x-styledLinkContainer--menuemagrecimento),
   :global(.vtex-menu-2-x-styledLinkContainer--menudesempenhofisico),
@@ -2422,6 +2426,7 @@
     border-right: 1px solid #adadad;
   }
   :global(.vtex-menu-2-x-styledLinkContainer--menumaisvendidos),
+  :global(.vtex-menu-2-x-styledLinkContainer--imunidade),
   :global(.vtex-menu-2-x-styledLinkContainer--menubarbaecabelo),
   :global(.vtex-menu-2-x-styledLinkContainer--menuemagrecimento),
   :global(.vtex-menu-2-x-styledLinkContainer--menudesempenhofisico),
@@ -2438,6 +2443,7 @@
     margin-block: 1rem;
   }
   :global(.vtex-menu-2-x-styledLinkContent--menumaisvendidos),
+  :global(.vtex-menu-2-x-styledLinkContent--imunidade),
   :global(.vtex-menu-2-x-styledLinkContent--menubarbaecabelo),
   :global(.vtex-menu-2-x-styledLinkContent--menuemagrecimento),
   :global(.vtex-menu-2-x-styledLinkContent--menudesempenhofisico),
@@ -2459,6 +2465,13 @@
     content: '';
     background: url(/arquivos/mobile-drawer-11.svg) center/100% no-repeat;
     width: 20px;
+    height: 23px;
+  }
+  :global(.vtex-menu-2-x-menuItem)
+    :global(.vtex-menu-2-x-styledLinkContent--imunidade)::before {
+    content: '';
+    background: url(/arquivos/mobile-drawer-1.svg) center/100% no-repeat;
+    width: 16px;
     height: 23px;
   }
   :global(.vtex-menu-2-x-menuItem)

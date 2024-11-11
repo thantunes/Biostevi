@@ -5,6 +5,7 @@
     },
     "children": [
       "menu-item#mais-vendidos",
+      "menu-item#category-imunidade",
       "menu-item#category-barbaecabelo",
       "menu-item#category-emagrecimento",
       "menu-item#category-desempenhofisico",
@@ -13,7 +14,6 @@
       "menu-item#category-saude",
       "menu-item#category-saudesexual",
       "menu-item#category-bionutrition",
-      "menu-item#category-bioveg",
       "menu-item#blog"
     ]
   },
@@ -32,6 +32,25 @@
         "noFollow": false,
         "tagTitle": "Mais Vendidos",
         "text": "Mais Vendidos",
+        "blockClass": "link-menu"
+      }
+    }
+  },
+
+  "menu-item#category-imunidade": {
+    "props": {
+      "id": "menu-item-category-imunidade",
+      "blockClass": "imunidade",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "categoryID": "20",
+        "href": "/saude/imunidade",
+        "noFollow": false,
+        "tagTitle": "Imunidade",
+        "text": "Imunidade",
         "blockClass": "link-menu"
       }
     }
@@ -2306,22 +2325,6 @@
     }
   },
 
-  "menu-item#category-bioveg": {
-    "props": {
-      "id": "menu-item-category-home",
-      "type": "custom",
-      "blockClass": "bioveg",
-      "iconId": null,
-      "highlight": false,
-      "itemProps": {
-        "type": "internal",
-        "href": "/vegano",
-        "noFollow": false,
-        "tagTitle": "Vegano",
-        "text": "Vegano"
-      }
-    }
-  },
   "menu-item#category-bioveg-mobile": {
     "props": {
       "id": "menu-item-category-home",
