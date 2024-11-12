@@ -1,0 +1,10 @@
+.categoryHeading {
+    border-bottom: 2px dotted #777;
+    padding: 15px 0;
+}
+
+.categoryHeading h1{
+    color: #777;
+    font-size: 18px!important;
+    margin: 0px!important;
+}
