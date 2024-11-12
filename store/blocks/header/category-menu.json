@@ -4,6 +4,7 @@
       "experimentalOptimizeRendering": true
     },
     "children": [
+      "menu-item#mais-vendidos",
       "menu-item#category-imunidade",
       "menu-item#category-barbaecabelo",
       "menu-item#category-emagrecimento",
@@ -13,22 +14,39 @@
       "menu-item#category-saude",
       "menu-item#category-saudesexual",
       "menu-item#category-bionutrition",
-      "menu-item#category-bioveg",
       "menu-item#blog"
     ]
   },
 
-  "menu-item#category-imunidade": {
+  "menu-item#mais-vendidos": {
     "props": {
-      "id": "menu-item-category-imunidade",
-      "blockClass": "menuimunidade",
+      "id": "menu-item-mais-vendidos",
+      "blockClass": "menumaisvendidos",
       "type": "custom",
       "iconId": null,
       "highlight": false,
       "margin": 1,
       "itemProps": {
         "type": "internal",
-        "categoryID": "97",
+        "href": "/467?map=productClusterIds",
+        "noFollow": false,
+        "tagTitle": "Mais Vendidos",
+        "text": "Mais Vendidos",
+        "blockClass": "link-menu"
+      }
+    }
+  },
+
+  "menu-item#category-imunidade": {
+    "props": {
+      "id": "menu-item-category-imunidade",
+      "blockClass": "imunidade",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "categoryID": "20",
         "href": "/saude/imunidade",
         "noFollow": false,
         "tagTitle": "Imunidade",
@@ -558,7 +576,8 @@
       "menu-item#inibirapetite",
       "menu-item#queimadegordura",
       "menu-item#emagrecimentotermogenico",
-      "menu-item#vontadededoces"
+      "menu-item#vontadededoces",
+      "menu-item#emagrecimentovegano"
     ]
   },
   "menu-item#acaolipolitica": {
@@ -780,6 +799,23 @@
     }
   },
 
+  "menu-item#emagrecimentovegano": {
+    "props": {
+      "id": "menu-item-emagrecimentovegano",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/emagrecimento/vegano",
+        "noFollow": true,
+        "tagTitle": "Vegano",
+        "text": "Vegano"
+      }
+    }
+  },
+
   "menu-item#category-desempenhofisico": {
     "props": {
       "id": "menu-item-category-desempenhofisico",
@@ -856,7 +892,8 @@
       "menu-item#testoterona",
       "menu-item#tpc",
       "menu-item#vasodilatacao",
-      "menu-item#vitaminasminerais"
+      "menu-item#vitaminasminerais",
+      "menu-item#desempenhovegano"
     ]
   },
 
@@ -1148,6 +1185,23 @@
     }
   },
 
+  "menu-item#desempenhovegano": {
+    "props": {
+      "id": "menu-item-desempenhovegano",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/desempenho-fisico/vegano",
+        "noFollow": true,
+        "tagTitle": "Vegano",
+        "text": "Vegano"
+      }
+    }
+  },
+
   "menu-item#category-beleza": {
     "props": {
       "id": "menu-item-category-beleza",
@@ -1222,7 +1276,8 @@
       "menu-item#maosepes",
       "menu-item#olheiras",
       "menu-item#pele",
-      "menu-item#unhas"
+      "menu-item#unhas",
+      "menu-item#beleza-vegano"
     ]
   },
 
@@ -1481,6 +1536,23 @@
     }
   },
 
+  "menu-item#beleza-vegano": {
+    "props": {
+      "id": "menu-item-beleza-vegano",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/beleza/vegano",
+        "noFollow": true,
+        "tagTitle": "Vegano",
+        "text": "Vegano"
+      }
+    }
+  },
+
   "menu-item#category-cosmeticos": {
     "props": {
       "id": "menu-item-category-cosmeticos",
@@ -1560,6 +1632,7 @@
       "orientation": "vertical"
     },
     "children": [
+      "menu-item#imunidade",
       "menu-item#articulacoes",
       "menu-item#cardioprotetor",
       "menu-item#cartilagel",
@@ -1575,7 +1648,6 @@
       "menu-item#fertilidade",
       "menu-item#fibromialgia",
       "menu-item#gestante",
-      "menu-item#imunidade",
       "menu-item#intestino",
       "menu-item#libido",
       "menu-item#memoria",
@@ -1589,7 +1661,8 @@
       "menu-item#sistema-respiratorio",
       "menu-item#tiroides",
       "menu-item#tpm",
-      "menu-item#vitaminaseminerais"
+      "menu-item#vitaminaseminerais",
+      "menu-item#saude-vegano"
     ]
   },
 
@@ -2097,11 +2170,28 @@
     }
   },
 
+  "menu-item#saude-vegano": {
+    "props": {
+      "id": "menu-item-#saudevegano",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/saude/vegano",
+        "noFollow": true,
+        "tagTitle": "Vegano",
+        "text": "Vegano"
+      }
+    }
+  },
+
   "menu-item#category-saudesexual": {
     "props": {
       "id": "menu-item-category-saudesexual",
       "type": "custom",
-      "blockClass": "blog",
+      "blockClass": "saudesexual",
       "iconId": null,
       "highlight": false,
       "itemProps": {
@@ -2118,7 +2208,7 @@
     "props": {
       "id": "menu-item-category-saudesexual",
       "type": "custom",
-      "blockClass": ["blog", "cosmeticos-mobile"],
+      "blockClass": "cosmeticos-mobile",
       "iconId": null,
       "highlight": false,
       "itemProps": {
@@ -2135,7 +2225,7 @@
     "props": {
       "id": "menu-item-category-saudesexual",
       "type": "custom",
-      "blockClass": ["blog", "saudesexual-mobile"],
+      "blockClass": "saudesexual-mobile",
       "iconId": null,
       "highlight": false,
       "itemProps": {
@@ -2203,9 +2293,11 @@
     },
     "children": [
       "menu-item#chas",
+      "menu-item#farinhas",
+      "menu-item#granolas-snacks",
       "menu-item#pastas",
-      "menu-item#suplementosbionutri",
-      "menu-item#farinhas"
+      "menu-item#refeicoes-fit",
+      "menu-item#suplementosbionutri"
     ]
   },
   "menu-item#chas": {
@@ -2265,19 +2357,51 @@
       "highlight": false,
       "itemProps": {
         "type": "internal",
-        "href": "/nutrition/farinhas",
+        "href": "/nutrition/farinhas-e-farelos",
         "noFollow": true,
-        "tagTitle": "Farinhas",
+        "tagTitle": "Farinhas e Farelos",
         "text": "Farinhas"
       }
     }
   },
+  "menu-item#granolas-snacks": {
+    "props": {
+      "id": "menu-item-granolas-snacks",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/nutrition/granolas-e-snacks",
+        "noFollow": true,
+        "tagTitle": "Granolas e Snacks",
+        "text": "Granolas e Snacks"
+      }
+    }
+  },
+  "menu-item#refeicoes-fit": {
+    "props": {
+      "id": "menu-item-refeicoes-fit",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/nutrition/refeicoes-fit",
+        "noFollow": true,
+        "tagTitle": "Refeições Fit",
+        "text": "Refeições Fit"
+      }
+    }
+  },
 
-  "menu-item#category-bioveg": {
+  "menu-item#category-bioveg-mobile": {
     "props": {
       "id": "menu-item-category-home",
       "type": "custom",
-      "blockClass": "bioveg",
+      "blockClass": "bioveg-mobile",
       "iconId": null,
       "highlight": false,
       "itemProps": {
