@@ -576,7 +576,8 @@
       "menu-item#inibirapetite",
       "menu-item#queimadegordura",
       "menu-item#emagrecimentotermogenico",
-      "menu-item#vontadededoces"
+      "menu-item#vontadededoces",
+      "menu-item#emagrecimentovegano"
     ]
   },
   "menu-item#acaolipolitica": {
@@ -798,6 +799,23 @@
     }
   },
 
+  "menu-item#emagrecimentovegano": {
+    "props": {
+      "id": "menu-item-emagrecimentovegano",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/emagrecimento/vegano",
+        "noFollow": true,
+        "tagTitle": "Vegano",
+        "text": "Vegano"
+      }
+    }
+  },
+
   "menu-item#category-desempenhofisico": {
     "props": {
       "id": "menu-item-category-desempenhofisico",
@@ -874,7 +892,8 @@
       "menu-item#testoterona",
       "menu-item#tpc",
       "menu-item#vasodilatacao",
-      "menu-item#vitaminasminerais"
+      "menu-item#vitaminasminerais",
+      "menu-item#desempenhovegano"
     ]
   },
 
@@ -1166,6 +1185,23 @@
     }
   },
 
+  "menu-item#desempenhovegano": {
+    "props": {
+      "id": "menu-item-desempenhovegano",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/desempenho-fisico/vegano",
+        "noFollow": true,
+        "tagTitle": "Vegano",
+        "text": "Vegano"
+      }
+    }
+  },
+
   "menu-item#category-beleza": {
     "props": {
       "id": "menu-item-category-beleza",
@@ -1240,7 +1276,8 @@
       "menu-item#maosepes",
       "menu-item#olheiras",
       "menu-item#pele",
-      "menu-item#unhas"
+      "menu-item#unhas",
+      "menu-item#beleza-vegano"
     ]
   },
 
@@ -1499,6 +1536,23 @@
     }
   },
 
+  "menu-item#beleza-vegano": {
+    "props": {
+      "id": "menu-item-beleza-vegano",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/beleza/vegano",
+        "noFollow": true,
+        "tagTitle": "Vegano",
+        "text": "Vegano"
+      }
+    }
+  },
+
   "menu-item#category-cosmeticos": {
     "props": {
       "id": "menu-item-category-cosmeticos",
@@ -1607,7 +1661,8 @@
       "menu-item#sistema-respiratorio",
       "menu-item#tiroides",
       "menu-item#tpm",
-      "menu-item#vitaminaseminerais"
+      "menu-item#vitaminaseminerais",
+      "menu-item#saude-vegano"
     ]
   },
 
@@ -2111,6 +2166,23 @@
         "noFollow": true,
         "tagTitle": "Vitaminas e Minerais",
         "text": "Vitaminas e Minerais"
+      }
+    }
+  },
+
+  "menu-item#saude-vegano": {
+    "props": {
+      "id": "menu-item-#saudevegano",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/saude/vegano",
+        "noFollow": true,
+        "tagTitle": "Vegano",
+        "text": "Vegano"
       }
     }
   },

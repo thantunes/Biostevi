@@ -666,8 +666,8 @@
         "type": "internal",
         "href": "/barba-e-cabelo/barba/shampoo-e-condicionador",
         "noFollow": false,
-        "tagTitle": "Shampoo e Condicionar",
-        "text": "Shampoo e Condicionar"
+        "tagTitle": "Shampoo e Condicionador",
+        "text": "Shampoo e Condicionador"
       }
     }
   },
@@ -734,6 +734,7 @@
       "menu-item#queimadegordura",
       "menu-item#emagrecimentotermogenico",
       "menu-item#vontadedoces",
+      "menu-item#emagrecimento-vegano",
       "menu-item#EmaMore"
     ]
   },
@@ -932,6 +933,21 @@
       }
     }
   },
+  "menu-item#emagrecimento-vegano": {
+    "props": {
+      "id": "menu-item-shorts",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/emagrecimento/vegano",
+        "noFollow": false,
+        "tagTitle": "Vegano",
+        "text": "Vegano"
+      }
+    }
+  },
   "vtex.menu@2.x:menu#desempenhofisico-mobile": {
     "props": {
       "orientation": "vertical",
@@ -984,6 +1000,7 @@
       "menu-item#vasodilatacao",
       "menu-item#vasodilatacao",
       "menu-item#vitaminaseminerais",
+      "menu-item#desempenhofisicovegano",
       "menu-item#DesemMore"
     ]
   },
@@ -1242,6 +1259,21 @@
       }
     }
   },
+  "menu-item#desempenhofisicovegano": {
+    "props": {
+      "id": "menu-item-shorts",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/desempenho-fisico/vegano",
+        "noFollow": false,
+        "tagTitle": "Vegano",
+        "text": "Vegano"
+      }
+    }
+  },
   "vtex.menu@2.x:menu#beleza-mobile": {
     "props": {
       "orientation": "vertical",
@@ -1291,6 +1323,7 @@
       "menu-item#maosepes",
       "menu-item#olheiraerugas",
       "menu-item#pele",
+      "menu-item#beleza-vegano-mobile",
       "menu-item#BeleMore"
     ]
   },
@@ -1519,6 +1552,21 @@
       }
     }
   },
+  "menu-item#beleza-vegano-mobile": {
+    "props": {
+      "id": "menu-item-shorts",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/beleza/vegano",
+        "noFollow": false,
+        "tagTitle": "Vegano",
+        "text": "Vegano"
+      }
+    }
+  },
   "logo#mobile": {
     "props": {
       "title": "Logo",
@@ -1589,6 +1637,7 @@
       "menu-item#tireoides",
       "menu-item#colicas",
       "menu-item#vitaminas",
+      "menu-item#saudevegano",
       "menu-item#SaudeMore"
     ]
   },
@@ -2024,6 +2073,21 @@
         "noFollow": false,
         "tagTitle": "Vitaminas e Minerais",
         "text": "Vitaminas e Minerais"
+      }
+    }
+  },
+  "menu-item#saudevegano": {
+    "props": {
+      "id": "menu-item-shorts",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/saude/vegano",
+        "noFollow": false,
+        "tagTitle": "Vegano",
+        "text": "Vegano"
       }
     }
   }
