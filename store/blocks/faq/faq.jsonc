@@ -65,12 +65,14 @@
     },
     "image#faq-down-arrow": {
         "props": {
+            "loading": "lazy",
             "src": "/arquivos/faq-down-arrow.svg",
             "maxWidth": "30px"
         }
     },
     "image#faq-up-arrow": {
         "props": {
+            "loading": "lazy",
             "src": "/arquivos/faq-up-arrow.svg",
             "maxWidth": "30px"
         }
