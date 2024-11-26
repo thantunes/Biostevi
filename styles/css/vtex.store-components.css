@@ -2379,7 +2379,6 @@
   text-align: center;
   max-width: 79%;
 }
-<<<<<<< HEAD
 
 
 /*Notfound icons style*/
@@ -2496,9 +2495,14 @@
   }
   :global(.vtex-search-2-x-biggy-autocomplete){
     flex-direction: column-reverse!important;
+  } 	
+}
+@media(min-width: 1840px){
+  :global(.vtex-search-2-x-biggy-autocomplete-wrapper){
+      width: 40vw;
   }
 }
-=======
+
 @media (min-width: 1024px) and (max-width: 1200px) {
   :global(.vtex-menu-2-x-styledLinkContainer--menumaisvendidos),
   :global(.vtex-menu-2-x-styledLinkContainer--imunidade),
@@ -2665,4 +2669,3 @@
     background: url(/arquivos/mobile-drawer-8.svg) center/100% no-repeat;
   }
 }
->>>>>>> 81d2bc1c47fd7e2e64d6bff64d15fd9d76dc173d
