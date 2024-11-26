@@ -152,7 +152,10 @@
     }
   },
   "flex-layout.row#searchtitle": {
-    "children": ["search-title.v2"]
+    "children": [
+      // "search-title.v2"
+      "CategoryHeading"
+    ]
   },
   "flex-layout.row#searchbanner": {
     "children": ["search-banner"]
@@ -221,6 +224,7 @@
     "children": [
       "flex-layout.row#searchinfomobile",
       "flex-layout.row#searchbread",
+      "CategoryHeading",
       "flex-layout.row#searchbanner",
       "flex-layout.row#banner-one",
       "flex-layout.row#productCountMobile",

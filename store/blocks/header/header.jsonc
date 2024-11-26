@@ -17,7 +17,6 @@
       "flex-layout.row#2-desktop",
       "flex-layout.row#3-desktop",
       "sticky-layout#4-desktop",
-      "ChangeTag",
       "CryptoScript",
       "flex-layout.row#iconwhats",
       "flex-layout.row#iconwhats"
@@ -109,7 +108,6 @@
     "children": [
       "sticky-layout#1-envie-sua-receita-mobile",
       "sticky-layout#1-mobile",
-      "ChangeTag",
       "CryptoScript",
       "flex-layout.row#iconwhats"
     ]
@@ -191,6 +189,9 @@
     }
   },
   "drawer": {
+    "props": {
+      "renderingStrategy": "eager"
+    },
     "children": [
       "menu#drawer"
     ]
@@ -200,7 +201,8 @@
       "flex-layout.row#topo-menu-mobile",
       //"search-bar",
       // "menu-item#category-lojaonlone",
-      "menu-item#category-imunidade",
+      "menu-item#mais-vendidos-mobile",
+      "menu-item#imunidade-mobile",
       "vtex.menu@2.x:menu#barbacabelo-mobile",
       "vtex.menu@2.x:menu#emagrecimento-mobile",
       "vtex.menu@2.x:menu#desempenhofisico-mobile",
@@ -208,43 +210,69 @@
       "vtex.menu@2.x:menu#saude-mobile",
       "menu-item#category-cosmeticos-mobile",
       "menu-item#category-saudesexual-mobile",
-      "menu-item#category-bioveg-mobile",
-      "menu-item#category-bionutrition-mobile",
+      "vtex.menu@2.x:menu#bionutrition-mobile",
       "menu-item#blog-mobile"
     ],
     "props": {
       "orientation": "vertical"
     }
   },
-  "menu-item#category-bioveg-mobile": {
+  "vtex.menu@2.x:menu#bionutrition-mobile": {
     "props": {
-      "id": "menu-item-category-home",
-      "type": "custom",
-      "blockClass": "bioveg",
-      "iconId": null,
-      "highlight": false,
-      "itemProps": {
-        "type": "internal",
-        "href": "/vegano",
-        "noFollow": false,
-        "tagTitle": "Vegano",
-        "text": "Vegano"
-      }
-    }
+      "orientation": "vertical",
+      "blockClass": [
+        "bionutrition"
+      ]
+    },
+    "children": [
+      "menu-item#category-bionutrition-mobile"
+    ]
   },
   "menu-item#category-bionutrition-mobile": {
     "props": {
       "id": "menu-item-category-home",
+      "blockClass": "bionutrition-mobile",
+      "itemProps": {
+        "tagTitle": "Biostévi Nutrition",
+        "text": "Biostévi Nutrition"
+      }
+    },
+    "blocks": [
+      "vtex.menu@2.x:submenu.accordion#bionutrition-mobile"
+    ] 
+  },
+  "vtex.menu@2.x:submenu.accordion#bionutrition-mobile": {
+    "children": [
+      "vtex.menu@2.x:menu#bionutrition-mobile-list"
+    ]
+  },
+  "vtex.menu@2.x:menu#bionutrition-mobile-list": {
+    "props": {
+      "orientation": "vertical"
+    },
+    "children": [
+      "menu-item#chas",
+      "menu-item#farinhas",
+      "menu-item#granolas-snacks",
+      "menu-item#pastas",
+      "menu-item#refeicoes-fit",
+      "menu-item#suplementosbionutri",
+      "menu-item#bionutritionMore"
+    ]
+  },
+  "menu-item#bionutritionMore": {
+    "props": {
+      "id": "menu-item-bionutritionMore",
+      "blockClass": "link-More",
       "type": "custom",
-      "blockClass": "nutrition-mobile",
       "iconId": null,
       "highlight": false,
       "itemProps": {
         "type": "internal",
         "href": "/nutrition",
-        "noFollow": false,
-        "tagTitle": "Biostévi Nutrition",
-        "text": "Biostévi Nutrition"
+        "noFollow": true,
+        "tagTitle": "Ver Todos",
+        "text": "Ver Todos"
       }
     }
   },
@@ -323,6 +351,30 @@
     "props": {
       "src": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/7aa20ecc-1314-4598-9aa0-e69e48080c4a___75154a25a25bad9e8950f9da3c1bbe40.png",
       "maxWidth": "100%"
+    }
+  },
+  "menu-item#mais-vendidos-mobile": {
+    "props": {
+      "blockClass": [
+        "mais-vendidos-mobile"
+      ],
+      "itemProps": {
+        "tagTitle": "Mais Vendidos",
+        "text": "Mais Vendidos",
+        "href": "/467?map=productClusterIds"
+      }
+    }
+  },
+  "menu-item#imunidade-mobile": {
+    "props": {
+      "blockClass": [
+        "imunidade-mobile"
+      ],
+      "itemProps": {
+        "tagTitle": "Imunidade",
+        "text": "Imunidade",
+        "href": "/saude/imunidade"
+      }
     }
   },
   "vtex.menu@2.x:menu#barbacabelo-mobile": {
@@ -615,8 +667,8 @@
         "type": "internal",
         "href": "/barba-e-cabelo/barba/shampoo-e-condicionador",
         "noFollow": false,
-        "tagTitle": "Shampoo e Condicionar",
-        "text": "Shampoo e Condicionar"
+        "tagTitle": "Shampoo e Condicionador",
+        "text": "Shampoo e Condicionador"
       }
     }
   },
@@ -683,6 +735,7 @@
       "menu-item#queimadegordura",
       "menu-item#emagrecimentotermogenico",
       "menu-item#vontadedoces",
+      "menu-item#emagrecimento-vegano",
       "menu-item#EmaMore"
     ]
   },
@@ -881,6 +934,21 @@
       }
     }
   },
+  "menu-item#emagrecimento-vegano": {
+    "props": {
+      "id": "menu-item-shorts",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/emagrecimento/vegano",
+        "noFollow": false,
+        "tagTitle": "Vegano",
+        "text": "Vegano"
+      }
+    }
+  },
   "vtex.menu@2.x:menu#desempenhofisico-mobile": {
     "props": {
       "orientation": "vertical",
@@ -933,6 +1001,7 @@
       "menu-item#vasodilatacao",
       "menu-item#vasodilatacao",
       "menu-item#vitaminaseminerais",
+      "menu-item#desempenhofisicovegano",
       "menu-item#DesemMore"
     ]
   },
@@ -1191,6 +1260,21 @@
       }
     }
   },
+  "menu-item#desempenhofisicovegano": {
+    "props": {
+      "id": "menu-item-shorts",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/desempenho-fisico/vegano",
+        "noFollow": false,
+        "tagTitle": "Vegano",
+        "text": "Vegano"
+      }
+    }
+  },
   "vtex.menu@2.x:menu#beleza-mobile": {
     "props": {
       "orientation": "vertical",
@@ -1240,6 +1324,7 @@
       "menu-item#maosepes",
       "menu-item#olheiraerugas",
       "menu-item#pele",
+      "menu-item#beleza-vegano-mobile",
       "menu-item#BeleMore"
     ]
   },
@@ -1468,6 +1553,21 @@
       }
     }
   },
+  "menu-item#beleza-vegano-mobile": {
+    "props": {
+      "id": "menu-item-shorts",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/beleza/vegano",
+        "noFollow": false,
+        "tagTitle": "Vegano",
+        "text": "Vegano"
+      }
+    }
+  },
   "logo#mobile": {
     "props": {
       "title": "Logo",
@@ -1511,6 +1611,7 @@
       "orientation": "vertical"
     },
     "children": [
+      "menu-item#imunidade",
       "menu-item#articulacoes",
       "menu-item#cardioprotetor",
       "menu-item#cartilagem",
@@ -1526,7 +1627,6 @@
       "menu-item#fertilidade",
       "menu-item#fibromialgia",
       "menu-item#gestante-e-lactante",
-      "menu-item#imunidade",
       "menu-item#libido",
       "menu-item#memoria",
       "menu-item#menopausa",
@@ -1538,6 +1638,7 @@
       "menu-item#tireoides",
       "menu-item#colicas",
       "menu-item#vitaminas",
+      "menu-item#saudevegano",
       "menu-item#SaudeMore"
     ]
   },
@@ -1973,6 +2074,21 @@
         "noFollow": false,
         "tagTitle": "Vitaminas e Minerais",
         "text": "Vitaminas e Minerais"
+      }
+    }
+  },
+  "menu-item#saudevegano": {
+    "props": {
+      "id": "menu-item-shorts",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/saude/vegano",
+        "noFollow": false,
+        "tagTitle": "Vegano",
+        "text": "Vegano"
       }
     }
   }

@@ -26,6 +26,9 @@
     "ChangeTag":{
         "component": "ChangeTag"
     },
+    "CategoryHeading":{
+        "component": "CategoryHeading"
+    },
     "CryptoScript":{
         "component": "CryptoScript"
     },

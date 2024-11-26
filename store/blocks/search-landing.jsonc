@@ -58,7 +58,8 @@
   "search-result-layout.desktop": {
     "children": [
       "breadcrumb.search",
-      "search-title.v2",
+      // "search-title.v2",
+      "CategoryHeading",
       "flex-layout.row#top",
       "search-fetch-previous",
       "flex-layout.row#results",
