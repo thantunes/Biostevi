@@ -10,7 +10,7 @@
     color: #009fc2 !important;
     font-size: 26px;
     font-weight: normal !important;
-    padding: 0 1rem !important;
+    line-height: 32px;
 }
 .BlockStyle>div>h2 {
     margin-bottom: 0 !important;
