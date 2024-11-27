@@ -24,7 +24,7 @@
       "flex-layout.row#mosaicoeuqueromobile",
       // "slider-layout#euqueromobile",
       "rich-text#shelf-title-influencers",
-      "slider-layout#influencers",
+      "list-context.image-list#influencers",
       "flex-layout.row#faq-container",
       //"newsletter",
       "flex-layout.row#bloconews"
@@ -311,12 +311,14 @@
   },
   "image#mosaicoum": {
     "props": {
+      "loading": "lazy",
       "src": "https://stevia.vteximg.com.br/arquivos/Mosaico-Outubro-Cabelo-Esquerdasuperior.png",
       "maxWidth": "100%"
     }
   },
   "image#mosaicodois": {
     "props": {
+      "loading": "lazy",
       "src": "https://stevia.vteximg.com.br/arquivos/Mosaico-Outubro-Cabelo-Esquerdainferior.png",
       "maxWidth": "100%"
     }
@@ -331,6 +333,7 @@
   },
   "image#mosaicocentro": {
     "props": {
+      "loading": "lazy",
       "src": "https://stevia.vteximg.com.br/arquivos/Mosaico-Outubro-CabeloPrincipal.png",
       "maxWidth": "100%"
     }
@@ -346,12 +349,14 @@
   },
   "image#mosaicoquarto": {
     "props": {
+      "loading": "lazy",
       "src": "https://stevia.vteximg.com.br/arquivos/Mosaico-Outubro-Cabelo-Direitasuperior.png",
       "maxWidth": "100%"
     }
   },
   "image#mosaicoquinto": {
     "props": {
+      "loading": "lazy",
       "src": "https://stevia.vteximg.com.br/arquivos/Mosaico-Outubro-Cabelo-Direitainferior.png",
       "maxWidth": "100%"
     }
@@ -666,18 +671,21 @@
   },
   "image#mosaicoeuqueroum": {
     "props": {
+      "loading": "lazy",
       "src": "https://stevia.vteximg.com.br/arquivos/menumetabolismo.png",
       "maxWidth": "100%"
     }
   },
   "image#mosaicoeuquerodois": {
     "props": {
+      "loading": "lazy",
       "src": "https://stevia.vteximg.com.br/arquivos/menuanciedade.png",
       "maxWidth": "100%"
     }
   },
   "image#mosaicoeuquerotres": {
     "props": {
+      "loading": "lazy",
       "src": "https://stevia.vteximg.com.br/arquivos/menuemagrecimento.png",
       "maxWidth": "100%"
     }
@@ -691,18 +699,21 @@
   },
   "image#mosaicoeuqueroquatro": {
     "props": {
+      "loading": "lazy",
       "src": "https://stevia.vteximg.com.br/arquivos/menuaumentoseios.png",
       "maxWidth": "100%"
     }
   },
   "image#mosaicoeuquerocinco": {
     "props": {
+      "loading": "lazy",
       "src": "https://stevia.vteximg.com.br/arquivos/menudoces.png",
       "maxWidth": "100%"
     }
   },
   "image#mosaicoeuqueroseis": {
     "props": {
+      "loading": "lazy",
       "src": "https://stevia.vteximg.com.br/arquivos/menuconcentracao.png",
       "maxWidth": "100%"
     }
@@ -716,18 +727,21 @@
   },
   "image#mosaicoeuquerosete": {
     "props": {
+      "loading": "lazy",
       "src": "https://stevia.vteximg.com.br/arquivos/menubarba.png",
       "maxWidth": "100%"
     }
   },
   "image#mosaicoeuquerooito": {
     "props": {
+      "loading": "lazy",
       "src": "https://stevia.vteximg.com.br/arquivos/menugordura.png",
       "maxWidth": "100%"
     }
   },
   "image#mosaicoeuqueronove": {
     "props": {
+      "loading": "lazy",
       "src": "https://stevia.vteximg.com.br/arquivos/menurugas.png",
       "maxWidth": "100%"
     }
@@ -741,18 +755,21 @@
   },
   "image#mosaicoeuquerodez": {
     "props": {
+      "loading": "lazy",
       "src": "https://stevia.vteximg.com.br/arquivos/menucabelo.png",
       "maxWidth": "100%"
     }
   },
   "image#mosaicoeuqueroonze": {
     "props": {
+      "loading": "lazy",
       "src": "https://stevia.vteximg.com.br/arquivos/menucelulite.png",
       "maxWidth": "100%"
     }
   },
   "image#mosaicoeuquerodoze": {
     "props": {
+      "loading": "lazy",
       "src": "https://stevia.vteximg.com.br/arquivos/menuacne.png",
       "maxWidth": "100%"
     }
@@ -806,27 +823,101 @@
       "image#mosaicoeuquerodoze"
     ]
   },
-  "rich-text#question": {
-    "props": {
-      "text": "**This is an example store built using the VTEX platform.\nWant to know more?**",
-      "blockClass": "question"
-    }
-  },
-  "rich-text#link": {
-    "props": {
-      "text": "\n**Reach us at**\nwww.vtex.com.br",
-      "blockClass": "link"
-    }
-  },
-  "product-summary-buy-button": {
-    "props": {
-      "displayBuyButton": "displayButtonAlways"
-    }
-  },
   "rich-text#shelf-title-influencers": {
     "props": {
       "text": "Time Biostévi",
       "blockClass": "shelfTitle"
+    }
+  },
+  "list-context.image-list#influencers": {
+    "title": "Slider Influenciadores",
+    "children": [
+      "slider-layout#influencers"
+    ],
+    "props": {
+      "images": [
+        {
+            "loading": "lazy",
+            "src": "/arquivos/juliana-knust.png",
+            "maxWidth": "100%",
+            "description": "Influenciadora Juliana Knust",
+            "link": {
+              "url": "/juliana-knust"
+            }
+        },
+        {
+            "loading": "lazy",
+            "src": "/arquivos/Laura-Keller.png",
+            "maxWidth": "100%",
+            "description": "Influenciadora Laura Keller",
+            "link": {
+              "url": "/laura-keller"
+            }
+        },
+        {
+            "loading": "lazy",
+            "src": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/4b2c3d87-2687-4bd4-91c1-fd451524cc76___807f8680fb6e77a3448b6f2ed94a63c4.png",
+            "maxWidth": "100%",
+            "description": "Influenciadora Gisele Novaes",
+            "link": {
+              "url": "/gisele-novaes"
+            }
+        },
+        {
+            "loading": "lazy",
+            "src": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/dc13391f-305f-4b47-88df-1a5ff5b90091___c68898c081677c577cd532e12fcad0b0.png",
+            "maxWidth": "100%",
+            "description": "Influenciadora Bel Carvalho",
+            "link": {
+              "url": "/bel-carvalho"
+            }
+        },
+        {
+            "loading": "lazy",
+            "src": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/cbbd018e-6764-4fb2-bf06-d467b1ad4d38___8639b581145dc375a96b70744edec118.png",
+            "maxWidth": "100%",
+            "description": "Influenciadora Fran Moreira",
+            "link": {
+              "url": "/fran-moreira"
+            }
+        },
+        {
+            "loading": "lazy",
+            "src": "/arquivos/Sarah-Paim.png",
+            "maxWidth": "100%",
+            "description": "Influenciadora Sarah Paim",
+            "link": {
+              "url": "/sarah-paim"
+            }
+        },
+        {
+            "loading": "lazy",
+            "src": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/81aee001-8816-4a7a-acb4-44c31132ce77___803d690e444d8cda7e831ff930cdf5c2.png",
+            "maxWidth": "100%",
+            "description": "Influenciadora Michelle Goline",
+            "link": {
+              "url": "/michelle-goline"
+            }
+        },
+        {
+            "loading": "lazy",
+            "src": "/arquivos/Jonathas_Morandini.png",
+            "maxWidth": "100%",
+            "description": "Influenciador Jonathas Morandini",
+            "link": {
+              "url": "/jonathas-morandini"
+            }
+        },
+        {
+            "loading": "lazy",
+            "src": "/arquivos/Malvino-Capa.png",
+            "maxWidth": "100%",
+            "description": "Influenciador Malvino Salvador",
+            "link": {
+              "url": "/malvino-salvador"
+            }
+        }
+      ]
     }
   },
   "slider-layout#influencers": {
@@ -839,91 +930,6 @@
       "infinite": true,
       "showNavigationArrows": "desktopOnly",
       "blockClass": "influenciadores"
-    },
-    "children": [
-      "image#influenter14",
-      "image#influenter7",
-      "image#influenter4",
-      "image#influenter5",
-      "image#influenter3",
-      "image#influenter9",
-      "image#influenter6",
-      "image#influenter10"
-    ]
-  },
-  "image#influenter3": {
-    "props": {
-      "src": "/arquivos/kindpng_785827.png",
-      "maxWidth": "100%"
-    }
-  },
-  "image#influenter4": {
-    "props": {
-      "src": "/arquivos/kindpng_785827.png",
-      "maxWidth": "100%"
-    }
-  },
-  "image#influenter5": {
-    "props": {
-      "src": "/arquivos/kindpng_785827.png",
-      "maxWidth": "100%"
-    }
-  },
-  "image#influenter6": {
-    "props": {
-      "src": "/arquivos/kindpng_785827.png",
-      "maxWidth": "100%"
-    }
-  },
-  "image#influenter7": {
-    "props": {
-      "src": "/arquivos/Laura-Keller.png",
-      "maxWidth": "100%"
-    }
-  },
-  "image#influenter9": {
-    "props": {
-      "src": "/arquivos/Sarah-Paim.png",
-      "maxWidth": "100%"
-    }
-  },
-  "image#influenter10": {
-    "props": {
-      "src": "/arquivos/Jonathas_Morandini.png",
-      "maxWidth": "100%"
-    }
-  },
-  "image#influenter12": {
-    "props": {
-      "src": "/arquivos/Jonathas_Morandini.png",
-      "maxWidth": "100%"
-    }
-  },
-  "image#influenter13": {
-    "props": {
-      "src": "/arquivos/julio-rocha.png",
-      "maxWidth": "100%",
-      "link": {
-        "url": "/julio-rocha"
-      }
-    }
-  },
-  "image#influenter14": {
-    "props": {
-      "src": "/arquivos/juliana-knust.png",
-      "maxWidth": "100%",
-      "link": {
-        "url": "/juliana-knust"
-      }
-    }
-  },
-  "image#influenter15": {
-    "props": {
-      "src": "/arquivos/monique-alfradique.png",
-      "maxWidth": "100%",
-      "link": {
-        "url": "/monique-alfradique"
-      }
     }
   }
 }
