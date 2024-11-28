@@ -6,7 +6,7 @@
       "flex-layout.row#product-main",
       "flex-layout.row#informativos",
       "slider-layout#informativo-mobile",
-      "__fold__",
+      // "__fold__",
       "flex-layout.row#AnchorsComp",
       "DescriptionContructorComp",
       "BuyTogetherComp",

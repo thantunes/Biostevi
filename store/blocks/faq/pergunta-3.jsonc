@@ -50,6 +50,7 @@
     "image#resposta-3-1": {
         "title": "Passo - 1 - Imagem",
         "props": {
+            "loading": "lazy",
             "src": "/arquivos/faq-3-1.png"
         }
     },
@@ -62,6 +63,7 @@
     "image#resposta-3-2": {
         "title": "Passo - 2 - Imagem",
         "props": {
+            "loading": "lazy",
             "src": "/arquivos/faq-3-2.png"
         }
     }

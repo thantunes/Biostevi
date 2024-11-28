@@ -34,18 +34,21 @@
   },
   "image#vtexCert": {
     "props": {
+      "loading": "lazy",
       "src": "assets/footer/selo-vtex.png",
       "maxHeight": "55px"
     }
   },
   "image#SecClear": {
     "props": {
+      "loading": "lazy",
       "src": "assets/footer/selo-clearsale.png",
       "maxHeight": "55px"
     }
   },
   "image#SecLets": {
     "props": {
+      "loading": "lazy",
       "src": "assets/footer/lets-encrypt-selo.png",
       "maxHeight": "55px"
     }
@@ -167,6 +170,7 @@
 
   "image#ame": {
     "props": {
+      "loading": "lazy",
       "src": "https://stevia.vteximg.com.br/arquivos/ame.png",
       "blockClass": "bandeira-ame"
     }
@@ -174,6 +178,7 @@
 
   "image#boleto": {
     "props": {
+      "loading": "lazy",
       "src": "https://stevia.vteximg.com.br/arquivos/boleto.png",
       "blockClass": "bandeira-boleto"
     }
@@ -181,6 +186,7 @@
 
   "image#pix": {
     "props": {
+      "loading": "lazy",
       "src": "https://stevia.vteximg.com.br/arquivos/pix.png",
       "blockClass": "bandeira-pix"
     }
@@ -188,54 +194,63 @@
 
   "image#mastercard": {
     "props": {
+      "loading": "lazy",
       "src": "https://stevia.vteximg.com.br/arquivos/mastercard.png",
       "blockClass": "bandeira-mastercard"
     }
   },
   "image#visa": {
     "props": {
+      "loading": "lazy",
       "src": "https://stevia.vteximg.com.br/arquivos/visa.png",
       "blockClass": "bandeira-visa"
     }
   },
   "image#americanexpress": {
     "props": {
+      "loading": "lazy",
       "src": "https://stevia.vteximg.com.br/arquivos/american.png",
       "blockClass": "bandeira-amex"
     }
   },
   "image#elo": {
     "props": {
+      "loading": "lazy",
       "src": "https://stevia.vteximg.com.br/arquivos/elo.png",
       "blockClass": "bandeira-elo"
     }
   },
   "image#hipercard": {
     "props": {
+      "loading": "lazy",
       "src": "https://stevia.vteximg.com.br/arquivos/hipercard.png",
       "blockClass": "bandeira-hipercard"
     }
   },
   "image#aura": {
     "props": {
+      "loading": "lazy",
       "src": "https://stevia.vteximg.com.br/arquivos/aura.png",
       "blockClass": "bandeira-aura"
     }
   },
   "image#jcb": {
     "props": {
+      "loading": "lazy",
       "src": "https://stevia.vteximg.com.br/arquivos/jcb.png",
       "blockClass": "bandeira-jcb"
     }
   },
   "image#discover": {
     "props": {
+      "loading": "lazy",
       "src": "https://stevia.vteximg.com.br/arquivos/discover.png",
       "blockClass": "bandeira-discover"
     }
   },
   "image#diners": {
     "props": {
+      "loading": "lazy",
       "src": "https://stevia.vteximg.com.br/arquivos/dinners.png",
       "blockClass": "bandeira-diners"
     }
@@ -315,6 +330,7 @@
 
   "image#logo-vtex": {
     "props": {
+      "loading": "lazy",
       "type": "external",
       "text": "Vtex",
       "link": { "url": "https://evision.com.br/", "openNewTab": true },
@@ -325,6 +341,7 @@
 
   "image#logo-evision": {
     "props": {
+      "loading": "lazy",
       "type": "external",
       "text": "eVision",
       "link": { "url": "https://evision.com.br/", "openNewTab": true },

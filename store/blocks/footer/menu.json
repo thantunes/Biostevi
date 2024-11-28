@@ -10,7 +10,7 @@
       "menu-item#blackfriday",
       "menu-item#sale",
       "menu-item#personalization",
-      "menu-item#blog",
+      "menu-item#blog-footer",
       "menu-item#farmaceuticoresponsavel",
       "menu-item#Promo"
     ]
@@ -118,6 +118,22 @@
         "noFollow": false,
         "tagTitle": "Blog Biostévi Pharma",
         "text": "Blog Biostévi Pharma"
+      }
+    }
+  },
+
+  "menu-item#blog-footer": {
+    "props": {
+      "id": "menu-item-blog",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "external",
+        "href": "https://blog.biostevi.com.br/",
+        "noFollow": false,
+        "tagTitle": "Blog",
+        "text": "Blog"
       }
     }
   },

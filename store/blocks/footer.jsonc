@@ -20,6 +20,7 @@
   "image": {
     "props": {
       "width": 154,
+      "loading": "lazy",
       "src": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/f3d36822-86ef-4bf1-85e5-138529e305ea___25fb1d2abe6e31202519b997774cc7e9.png"
     }
   }
