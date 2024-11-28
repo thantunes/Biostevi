@@ -2477,7 +2477,7 @@
     font-size: 14px;
 }
 
-@media(max-width: 1020px){
+@media(max-width: 1024px){
   :global(.vtex-search-2-x-biggy-autocomplete){
     width: 100%!important;
     max-width: 100%!important;
@@ -2486,6 +2486,11 @@
 
   :global(.vtex-search-2-x-biggy-autocomplete-wrapper){
     width: 98vw;
+  }
+  
+  :global(.vtex-search-2-x-biggy-autocomplete-wrapper)
+   :global(.vtex-search-2-x-close-btn){
+    display: none;
   }
 }
 
