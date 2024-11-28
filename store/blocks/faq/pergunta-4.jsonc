@@ -65,6 +65,7 @@
     "image#resposta-4-1-site": {
         "title": "Passo - 1 - Imagem",
         "props": {
+            "loading": "lazy",
             "src": "/arquivos/faq-4-1-sites.png"
         }
     },
@@ -77,6 +78,7 @@
     "image#resposta-4-2-site": {
         "title": "Passo - 2 - Imagem",
         "props": {
+            "loading": "lazy",
             "src": "/arquivos/faq-4-2-sites.png"
         }
     },
@@ -89,6 +91,7 @@
     "image#resposta-4-3-site": {
         "title": "Passo - 3 - Imagem",
         "props": {
+            "loading": "lazy",
             "src": "/arquivos/faq-4-3-sites.png"
         }
     },
@@ -119,6 +122,7 @@
     "image#resposta-4-1-whatsapp": {
         "title": "Passo - 1 - Imagem",
         "props": {
+            "loading": "lazy",
             "src": "/arquivos/faq-4-1-whatsapps.png"
         }
     },
@@ -131,6 +135,7 @@
     "image#resposta-4-2-whatsapp": {
         "title": "Passo - 2 - Imagem",
         "props": {
+            "loading": "lazy",
             "src": "/arquivos/faq-4-2-whatsapps.png"
         }
     },
@@ -143,6 +148,7 @@
     "image#resposta-4-3-whatsapp": {
         "title": "Passo - 3 - Imagem",
         "props": {
+            "loading": "lazy",
             "src": "/arquivos/faq-4-3-whatsapps.png"
         }
     }
