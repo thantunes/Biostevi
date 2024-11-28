@@ -6,7 +6,6 @@
       "flex-layout.row#product-main",
       "flex-layout.row#informativos",
       "slider-layout#informativo-mobile",
-      "flex-layout.row#recommendation-shelf",
       // "__fold__",
       "flex-layout.row#AnchorsComp",
       "DescriptionContructorComp",
@@ -18,12 +17,6 @@
       "rich-text#pdp-informativo1",
       "flex-layout.row#faq-container"
     ]
-  },
-  "flex-layout.row#recommendation-shelf": {
-    "children": ["recommendation-buy-together"]
-  },
-  "slider-layout#view-together": {
-    "children": ["recommendation-buy-together"]
   },
   "rich-text#shelf-titlepdp": {
     "props": {
