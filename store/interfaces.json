@@ -3,6 +3,9 @@
         "component": "DescriptionContructor",
         "composition": "children"
     },
+    "CheckBeneficiosProduct": {
+        "component": "CheckBeneficiosProduct"
+    },
     "UpAnchorComp": {
         "component": "UpAnchor"
     },

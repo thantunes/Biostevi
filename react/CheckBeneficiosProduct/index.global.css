@@ -1,0 +1,41 @@
+.Block h2 {
+    font-family: Signika;
+    text-transform: uppercase;
+    color: #009fc2;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    text-align: start;
+}
+
+.Block p {
+    color: #727273;
+    line-height: 24px;
+    font-size: 14px;
+    white-space: break-spaces;
+    font-family: 'Signika';
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width:768px) {
+    .CustomData {
+        padding-left: .5rem;
+        padding-right: .5rem;
+    }
+    .Block h2 {
+        text-align: center;
+    }
+}
+@media screen and (min-width: 40em) {
+    .CustomData {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+@media screen and (min-width: 80em) { 
+    .CustomData {
+        padding-left: 0rem;
+        padding-right: 0rem;
+    }
+}

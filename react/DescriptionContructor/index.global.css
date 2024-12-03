@@ -299,10 +299,12 @@ iframe {
 
 .Descricao--Inline{
     text-decoration: none;
-    color: #727273;
-    padding-left: 1rem;
+    color: #545454;
+    padding-top: 1rem;
     display: flex;
     flex-direction: column;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
 }
 .Descricao--Inline p {
     margin: 0px;
