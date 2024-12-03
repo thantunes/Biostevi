@@ -2483,6 +2483,14 @@
     max-width: 100%!important;
     min-width: 100%!important;
   }
+  :global(.vtex-search-2-x-biggy-autocomplete)
+    :global(.vtex-search-2-x-itemList--suggestion){
+    order: 0;
+  } 	
+  :global(.vtex-search-2-x-biggy-autocomplete)
+    :global(.vtex-search-2-x-tileList){
+    order: -1;
+  } 	
 
   :global(.vtex-search-2-x-biggy-autocomplete-wrapper){
     width: 98vw;
@@ -2498,9 +2506,6 @@
   :global(.vtex-search-2-x-biggy-autocomplete-wrapper){
     width: 95vw;
   }
-  :global(.vtex-search-2-x-biggy-autocomplete){
-    flex-direction: column-reverse!important;
-  } 	
 }
 @media(min-width: 1840px){
   :global(.vtex-search-2-x-biggy-autocomplete-wrapper){
