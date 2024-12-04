@@ -8,7 +8,11 @@
     text-align: start;
 }
 
-.Block p {
+.Block ul {
+    list-style: none;
+    padding: 0;
+}
+.Block li {
     color: #727273;
     line-height: 24px;
     font-size: 14px;
@@ -26,16 +30,47 @@
     .Block h2 {
         text-align: center;
     }
+    ul.CheckBeneficiosProduct-list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0;
+        justify-content: center;
+        align-items: baseline;
+    }
+
+    .CheckBeneficiosProduct-list li {
+        width: 50%;
+        padding-right: 5px;
+    }
+    
+    .CheckBeneficiosProduct-list li:last-child:nth-child(odd) {
+        width: 75%;
+        padding-right: 5px;
+    }
 }
-@media screen and (min-width: 40em) {
+@media screen and (min-width: 40em) and (max-width:1024px) {
     .CustomData {
         padding-left: 1rem;
         padding-right: 1rem;
     }
 }
-@media screen and (min-width: 80em) { 
+@media screen and (min-width: 1024px) { 
     .CustomData {
         padding-left: 0rem;
         padding-right: 0rem;
     }
+}
+
+.CheckBeneficiosProduct-list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.CheckBeneficiosProduct-list li {
+    display: flex;
+    align-items: center;
 }

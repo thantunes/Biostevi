@@ -1,26 +1,8 @@
 {
   "store.product": {
     "children": [
-      "UpAnchorComp",
-      "flex-layout.row#product-breadcrumb",
       "responsive-layout.desktop#main",
-      "responsive-layout.tablet#main",
-      "responsive-layout.phone#main",
-      // "flex-layout.row#product-main",
-      // "responsive-layout.tablet#benefits",
-      "responsive-layout.mobile#benefits",
-      "flex-layout.row#informativos",
-      "slider-layout#informativo-mobile",
-      // "__fold__",
-      "flex-layout.row#AnchorsComp",
-      "DescriptionContructorComp",
-      "BuyTogetherComp",
-      "shelf.relatedProducts",
-      "product-reviews",
-      "flex-layout.row#buy-together",
-      "product-questions-and-answers",
-      "rich-text#pdp-informativo1",
-      "flex-layout.row#faq-container"
+      "responsive-layout.mobile#main"
     ]
   },
   "flex-layout.row#product-breadcrumb": {
@@ -32,13 +14,60 @@
     ]
   },
   "responsive-layout.desktop#main": {
-    "children": ["flex-layout.row#product-main-d"]
+    "children": [
+      "UpAnchorComp",
+      "flex-layout.row#product-breadcrumb",
+      "flex-layout.row#product-main-d",
+      "flex-layout.row#informativos",
+      "slider-layout#informativo-mobile",
+      "flex-layout.row#AnchorsComp",
+      "DescriptionContructorComp",
+      "BuyTogetherComp",
+      "shelf.relatedProducts",
+      "product-reviews",
+      "flex-layout.row#buy-together",
+      "product-questions-and-answers",
+      "rich-text#pdp-informativo1",
+      "flex-layout.row#faq-container"
+    ]
   },
-  "responsive-layout.tablet#main": {
-    "children": ["flex-layout.row#product-main-tm"]
+  "responsive-layout.mobile#main": {
+    "children": [
+      "UpAnchorComp",
+      "flex-layout.row#product-breadcrumb",
+      "flex-layout.row#product-main-tm",
+      "flex-layout.row#informativos",
+      "CheckBeneficiosProduct",
+      "slider-layout#informativo-mobile",
+      "flex-layout.row#AnchorsComp",
+      "DescriptionContructorComp",
+      "BuyTogetherComp",
+      "shelf.relatedProducts",
+      "product-reviews",
+      "flex-layout.row#buy-together",
+      "product-questions-and-answers",
+      "rich-text#pdp-informativo1",
+      "flex-layout.row#faq-container"
+    ]
   },
   "responsive-layout.phone#main": {
-    "children": ["flex-layout.row#product-main-tm"]
+    "children": [
+      "UpAnchorComp",
+      "flex-layout.row#product-breadcrumb",
+      "flex-layout.row#product-main-tm",
+      "flex-layout.row#informativos",
+      "responsive-layout.mobile#benefits",
+      "slider-layout#informativo-mobile",
+      "flex-layout.row#AnchorsComp",
+      "DescriptionContructorComp",
+      "BuyTogetherComp",
+      "shelf.relatedProducts",
+      "product-reviews",
+      "flex-layout.row#buy-together",
+      "product-questions-and-answers",
+      "rich-text#pdp-informativo1",
+      "flex-layout.row#faq-container"
+    ]
   },
   "flex-layout.row#product-main-d": {
     "props": {
@@ -232,10 +261,13 @@
   },
   "flex-layout.row#review-wishlist": {
     "props": {
-      "marginBottom": 3,
-      "gap": 2,
+      "marginBottom": 2,
+      "colGap": 2,
       "colSizing": "auto",
-      "horizontalAlign": "left"
+      "fullWidth": false,
+      "preventHorizontalStretch": true,
+      "horizontalAlign": "left",
+      "blockClass": "pdp-review-wishlist"
     },
     "children": [
       "add-to-list-btn",
@@ -420,8 +452,8 @@
   "product-summary.shelf#buy-together": {
     "children": [
       "responsive-layout.desktop#product-summary",
-      "responsive-layout.tablet#product-summary",
-      "responsive-layout.phone#product-summary"
+      // "responsive-layout.tablet#product-summary",
+      "responsive-layout.mobile#product-summary"
     ]
   },
   "responsive-layout.desktop#product-summary": {
@@ -434,7 +466,7 @@
       "flex-layout.row#product-summary-mobile"
     ]
   },
-  "responsive-layout.phone#product-summary": {
+  "responsive-layout.mobile#product-summary": {
     "children": [
       "flex-layout.row#product-summary-mobile"
     ]

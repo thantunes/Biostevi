@@ -16,7 +16,9 @@ function CheckBeneficiosProduct() {
                     {properties
                         .filter(({ name, values: [value] }) => name.includes('Check-in Curto') && value)
                         .map(({ name, values: [value] }) => (
-                            <p key={name} dangerouslySetInnerHTML={{ __html: value }} />
+                            <ul key={name} className="CheckBeneficiosProduct-list">
+                                {value.split(/\r?\n/).map((text, index) => <li key={`${name}-${index}`}>{text}</li>)}
+                            </ul>
                         ))}
                 </div>
             )}
