@@ -14,12 +14,22 @@ function CheckBeneficiosProduct() {
                 <div className="Block">
                     <h2>Benefícios</h2>
                     {properties
-                        .filter(({ name, values: [value] }) => name.includes('Check-in Curto') && value)
-                        .map(({ name, values: [value] }) => (
-                            <ul key={name} className="CheckBeneficiosProduct-list">
-                                {value.split(/\r?\n/).map((text, index) => <li key={`${name}-${index}`}>{text}</li>)}
-                            </ul>
-                        ))}
+                        .filter(({ name, values: [value] }) => (
+                            (name.includes('Check-in Curto') && value) ||
+                            (!properties.some(property => property.name.includes('Check-in Curto')) &&
+                            name.includes('Benefícios') && value.split(/\r?\n/).some(text => text.startsWith('-')))
+                        ))
+                        .map(({ name, values: [value] }) => {
+                            const lines = value
+                                .split(/\r?\n/)
+                                .slice(0, 5);
+
+                            return (
+                                <ul key={name} className="CheckBeneficiosProduct-list">
+                                    {lines.map((text, index) => <li key={`${name}-${index}`}>{text.replace('- ', '✅ ').replace(';', '')}</li>)}
+                                </ul>
+                            );
+                        })}
                 </div>
             )}
         </div>

@@ -104,7 +104,6 @@
       "stack-layout"
     ],
     "props": {
-      "width": "35%",
       "rowGap": 0
     }
   },
@@ -138,7 +137,8 @@
         "desktop": "auto",
         "phone": "16:9"
       },
-      "displayThumbnailsArrows": true
+      "displayThumbnailsArrows": true,
+      "thumbnailsOrientation": "horizontal"
     }
   },
   "product-specification-badges": {
