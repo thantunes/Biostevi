@@ -30,7 +30,7 @@ const BuyTogether = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `/api/catalog_system/pub/products/search?fq=productId:${productId}&fq=c:${category}`
+          `/api/catalog_system/pub/products/crossselling/showtogether/${productId}`
         )
         const data = await response.json()
         setProdData(data)
@@ -121,8 +121,8 @@ const BuyTogether = () => {
   }
 
   useEffect(() => {
-    setProdsTouse([ProductRef?.product, ProdData?.[0]])
-  }, [ProdData])
+    setProdsToUse([ProductRef?.product, prodData?.[0]])
+  }, [prodData])
 
   const formatPrice = value => {
     return value?.toLocaleString('pt-BR', {
@@ -133,6 +133,7 @@ const BuyTogether = () => {
   }
 
   return (
+    prodsToUse.length > 1 && (
     <div className={`BuyTogether__Box`}>
       <h2>Compre Junto</h2>
       <div className="BuyTogether__Container__Row">
@@ -195,6 +196,7 @@ const BuyTogether = () => {
         </div>
       </div>
     </div>
+    )
   )
 }
 

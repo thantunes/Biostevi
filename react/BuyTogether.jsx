@@ -1,4 +1,4 @@
-import { BuyTogether } from './BuyTogether/index'
+import BuyTogether from './BuyTogether/index'
 
 
 export default BuyTogether
