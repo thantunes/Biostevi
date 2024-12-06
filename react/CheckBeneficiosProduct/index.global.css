@@ -19,7 +19,6 @@
     white-space: break-spaces;
     font-family: 'Signika';
     font-weight: 600;
-    text-transform: uppercase;
 }
 
 @media screen and (max-width:768px) {

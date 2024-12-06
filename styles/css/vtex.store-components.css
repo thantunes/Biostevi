@@ -685,8 +685,18 @@
 :global(.vtex-login-2-x-arrowUp) {
   left: 50px;
 }
+:global(.vtex-flex-layout-0-x-flexRow--product-main)
+:global(.vtex-store-components-3-x-container),
+  :global(.vtex-flex-layout-0-x-flexRow--breadcrumb)
+  :global(.vtex-store-components-3-x-container) {
+    max-width: 1240px !important;
+}
 :global(.vtex-store-components-3-x-container) {
-  max-width: 1240px !important;
+  max-width: 1140px !important;
+  margin: auto;
+}
+:global(.vtex-store-components-3-x-container) {
+  max-width: 1170px !important;
   margin: auto;
 }
 :global(.vtex-rich-text-0-x-wrapper--shelfTitle) {
@@ -1426,11 +1436,13 @@
 :global(.vtex-rich-text-0-x-paragraph--footer-aling-center) {
   font-size: 10px;
 }
-:global(.vtex-flex-layout-0-x-flexRowContent--bloco-home-informativos) :global(.vtex-rich-text-0-x-headingLevel3) {
+:global(.vtex-flex-layout-0-x-flexRowContent--bloco-home-informativos) :global(.vtex-rich-text-0-x-headingLevel3),
+:global(.vtex-flex-layout-0-x-flexRowContent--bloco-home-informativos) :global(.vtex-rich-text-0-x-strong) {
   font-size: 14px;
   font-weight: 700;
   color: #000;
   margin-bottom: 0;
+  letter-spacing: 1px;
 }
 :global(.vtex-store-footer-2-x-footerLayout) {
   background-color: #d2d3d3;
@@ -1717,36 +1729,42 @@
   font-size: 11px;
   letter-spacing: 1px;
   max-width: 169px;
+  margin-top: 11px;
 }
 :global(.vtex-rich-text-0-x-paragraph--informativo-desconto-progressivo) {
   color: #949494;
   font-size: 11px;
   letter-spacing: 1px;
   max-width: 169px;
+  margin-top: 11px;
 }
 :global(.vtex-rich-text-0-x-paragraph--informativo-desconto) {
   color: #949494;
   font-size: 11px;
   letter-spacing: 1px;
   max-width: 169px;
+  margin-top: 11px;
 }
 :global(.vtex-rich-text-0-x-paragraph--informativo-parcelamento) {
   color: #949494;
   font-size: 11px;
   letter-spacing: 1px;
   max-width: 169px;
+  margin-top: 11px;
 }
 :global(.vtex-rich-text-0-x-paragraph--informativo-site-seguro) {
   color: #949494;
   font-size: 11px;
   letter-spacing: 1px;
   max-width: 169px;
+  margin-top: 11px;
 }
 :global(.vtex-rich-text-0-x-paragraph--informativo-whats) {
   color: #949494;
   font-size: 11px;
   letter-spacing: 1px;
   max-width: 169px;
+  margin-top: 11px;
 }
 :global(.vtex-store-components-3-x-imageElement--footer-logo-vtex) {
   float: right;
