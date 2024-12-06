@@ -134,7 +134,7 @@ const BuyTogether = () => {
 
   return (
     prodsToUse.length > 1 && (
-    <div className={`BuyTogether__Box`}>
+    <div className={`BuyTogether__Box`} id="buy-together-box">
       <h2>Compre Junto</h2>
       <div className="BuyTogether__Container__Row">
         <div className="BuyTogether__Container__Row__Container">
@@ -143,6 +143,7 @@ const BuyTogether = () => {
               <div key={index} className={`BuyTogether__Container`}>
                 <div className={`BuyTogether__Product__Image`}>
                   <img
+                    style={{ aspectRatio: '1/1', width: '100%', height: 'auto', objectFit: 'contain' }}
                     src={product?.items[0].images[0].imageUrl}
                     alt={product?.items[0].images[0].imageText}
                     loading="lazy"
