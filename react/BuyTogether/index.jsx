@@ -133,70 +133,70 @@ const BuyTogether = () => {
   }
 
   return (
-    prodsToUse.length > 1 && (
-    <div className={`BuyTogether__Box`} id="buy-together-box">
-      <h2>Compre Junto</h2>
-      <div className="BuyTogether__Container__Row">
-        <div className="BuyTogether__Container__Row__Container">
-          <div className="BuyTogether__Container__Row__Prod">
-            {prodsToUse.map((product, index) => (
-              <div key={index} className={`BuyTogether__Container`}>
-                <div className={`BuyTogether__Product__Image`}>
-                  <img
-                    style={{ aspectRatio: '1/1', width: '100%', height: 'auto', objectFit: 'contain' }}
-                    src={product?.items[0].images[0].imageUrl}
-                    alt={product?.items[0].images[0].imageText}
-                    loading="lazy"
-                  />
-                </div>
-                <div className={`BuyTogether__Product__Name`}>
-                  <h2>{product?.productName}</h2>
-                </div>
-                <div className={`BuyTogether__Product__Price`}>
-                  <p>
-                    {formatPrice(
-                      product?.items[0].sellers[0].commertialOffer.Price
-                    )}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div
-            className="BuyTogether__Container__Row__Buy"
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-              alignItems: 'center',
-            }}
-          >
-            <p style={{ margin: '0px 25px', fontSize: '52px' }}>=</p>
+    prodsToUse.length >= 2 && prodsToUse.every(product => product && product.items && product.items[0]) && (
+      <div className={`BuyTogether__Box`} id="buy-together-box">
+        <h2>Compre Junto</h2>
+        <div className="BuyTogether__Container__Row">
+          <div className="BuyTogether__Container__Row__Container">
+            <div className="BuyTogether__Container__Row__Prod">
+              {prodsToUse.map((product, index) =>
+                product && product.items && product.items[0] ? (
+                  <div key={index} className={`BuyTogether__Container`}>
+                    <div className={`BuyTogether__Product__Image`}>
+                      <img
+                        style={{ aspectRatio: '1/1', width: '100%', height: 'auto', objectFit: 'contain' }}
+                        src={product.items[0].images[0].imageUrl}
+                        alt={product.items[0].images[0].imageText}
+                        loading="lazy"
+                      />
+                    </div>
+                    <div className={`BuyTogether__Product__Name`}>
+                      <h2>{product.productName}</h2>
+                    </div>
+                    <div className={`BuyTogether__Product__Price`}>
+                      <p>
+                        {formatPrice(product.items[0].sellers[0].commertialOffer.Price)}
+                      </p>
+                    </div>
+                  </div>
+                ) : null
+              )}
+            </div>
             <div
-              className="BuyTogether__Container__Row__Desc"
+              className="BuyTogether__Container__Row__Buy"
               style={{
                 display: 'flex',
-                flexDirection: 'column',
+                flexDirection: 'row',
                 alignItems: 'center',
               }}
             >
-              <h3 style={{ margin: '0px' }}>Comprando dois Produtos por</h3>
-              <p style={{ fontWeight: 'bolder', fontSize: '22px' }}>
-                {formatPrice(
-                  prodsToUse?.[0]?.items[0].sellers[0].commertialOffer.Price +
-                    prodsToUse?.[1]?.items[0].sellers[0].commertialOffer.Price
-                )}
-              </p>
-              <button
-                className="BuyTogether__Container__BuyButton"
-                onClick={saveData}
+              <p style={{ margin: '0px 25px', fontSize: '52px' }}>=</p>
+              <div
+                className="BuyTogether__Container__Row__Desc"
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                }}
               >
-                Adicionar ao Carrinho
-              </button>
+                <h3 style={{ margin: '0px' }}>Comprando dois Produtos por</h3>
+                <p style={{ fontWeight: 'bolder', fontSize: '22px' }}>
+                  {formatPrice(
+                    prodsToUse?.[0]?.items[0].sellers[0].commertialOffer.Price +
+                    prodsToUse?.[1]?.items[0].sellers[0].commertialOffer.Price
+                  )}
+                </p>
+                <button
+                  className="BuyTogether__Container__BuyButton"
+                  onClick={saveData}
+                >
+                  Adicionar ao Carrinho
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
     )
   )
 }
