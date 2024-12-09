@@ -61,7 +61,7 @@ function DescriptionContructor({ children }) {
                 <div>
                     {filteredData.map((e) =>
                         e.name.includes(`${namePrefix}-Titulo`) ? (
-                            <h2 key={e.name} dangerouslySetInnerHTML={{ __html: splitPorTags(e.values[0]) }}></h2>
+                            <h2 key={e.name} dangerouslySetInnerHTML={{ __html: e.values[0] }}></h2>
                         ) : null
                     )}
 
