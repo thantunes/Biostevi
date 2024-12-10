@@ -3,11 +3,26 @@ import { useProduct } from "vtex.product-context";
 import "./index.global.css";
 
 function splitPorTags(texto) {
-    const regex = /(<[^>]+>.*?<\/[^>]+>|[^<]+)/g;
+    // Regex para separar o texto em tags e conteúdo
+    const regex = /(<[^>]+>.*?<\/[^>]+>|<[^>]+>|[^<]+)/g;
     const splitedText = texto.match(regex);
-    const newArrayText = splitedText.map((element) => {
-        return element.charAt(0) === "<" ? element.trim() : `<p>${element.trim()}</p>`;
-    });
+
+    const newArrayText = splitedText
+        .map((element) => {
+            const trimmed = element.trim();
+
+            // Ignora espaços ou strings vazias
+            if (trimmed === "") return "";
+
+            // Verifica se é uma tag HTML e retorna diretamente
+            if (trimmed.startsWith("<")) {
+                return trimmed;
+            }
+
+            // Caso seja texto simples, encapsula em <p>
+            return `<p>${trimmed}</p>`;
+        })
+        .filter(Boolean); // Remove itens vazios do array
 
     return newArrayText.join("");
 }
@@ -51,8 +66,8 @@ function DescriptionContructor({ children }) {
                         e.name?.includes(`${namePrefix}-Banner`) ? (
                             <img
                                 key={e.name}
-                                src={`https://stevia.vteximg.com.br/arquivos/${e.values || ''}`}
-                                style={{ maxWidth: '30%', borderRadius: '20px' }}
+                                src={`https://stevia.vteximg.com.br/arquivos/${e.values || ""}`}
+                                style={{ maxWidth: "30%", borderRadius: "20px" }}
                                 alt=""
                                 loading="lazy"
                             />
@@ -61,7 +76,7 @@ function DescriptionContructor({ children }) {
                 <div>
                     {filteredData.map((e) =>
                         e.name?.includes(`${namePrefix}-Titulo`) ? (
-                            <h2 key={e.name} dangerouslySetInnerHTML={{ __html: e.values?.[0] || '' }}></h2>
+                            <h2 key={e.name} dangerouslySetInnerHTML={{ __html: e.values?.[0] || "" }}></h2>
                         ) : null
                     )}
 
@@ -100,15 +115,15 @@ function DescriptionContructor({ children }) {
                             ></div>
                         ) : null
                     )}
-                    {['Linha1', 'Linha2', 'Linha3', 'Linha4', 'Linha5', 'Linha6', 'Linha7'].map((linha) =>
+                    {["Linha1", "Linha2", "Linha3", "Linha4", "Linha5", "Linha6", "Linha7"].map((linha) =>
                         linha ? renderContent(linha, linha, linha) : null
                     )}
                     <div ref={videoRef}>
-                        {isVideoVisible && properties.some((e) => e.name.includes('Linha8-VIDEO')) ? (
+                        {isVideoVisible && properties.some((e) => e.name.includes("Linha8-VIDEO")) ? (
                             <div
                                 className="vtex-product-specifications-1-x-specificationValue"
                                 dangerouslySetInnerHTML={{
-                                    __html: properties.find((e) => e.name.includes('Linha8-VIDEO')).values?.[0] || '',
+                                    __html: properties.find((e) => e.name.includes("Linha8-VIDEO")).values?.[0] || "",
                                 }}
                             ></div>
                         ) : null}
@@ -119,43 +134,79 @@ function DescriptionContructor({ children }) {
                         }
                         return null;
                     })}
-                    {properties.some((e) => e.name.includes('Imagem-PrimeiroBloco')) &&
+                    {properties.some((e) => e.name.includes("Imagem-PrimeiroBloco")) && (
                         <div className="BlockStyle tableCenter">
                             <table>
-                                {['Primeiro', 'Segundo'].map((prefix, rowIndex) => (
+                                {["Primeiro", "Segundo"].map((prefix, rowIndex) => (
                                     <tr className="TableContentBox" key={`row-${rowIndex}`}>
                                         <td>
                                             <img
                                                 loading="lazy"
                                                 alt=""
-                                                src={`https://stevia.vtexassets.com/arquivos/${properties.find(
-                                                    (e) => e.name.includes(prefix === 'Primeiro' ? 'Imagem-PrimeiroBloco' : 'Imagem-SegundoBloco')
-                                                )?.values || ''}`}
+                                                src={`https://stevia.vtexassets.com/arquivos/${
+                                                    properties.find((e) =>
+                                                        e.name.includes(
+                                                            prefix === "Primeiro"
+                                                                ? "Imagem-PrimeiroBloco"
+                                                                : "Imagem-SegundoBloco"
+                                                        )
+                                                    )?.values || ""
+                                                }`}
                                             />
                                             <div>
                                                 <h3>
-                                                    {properties.find((e) => e.name.includes(prefix === 'Primeiro' ? 'Primeiro-Bloco Check-in-Titulo' : 'Segundo-Bloco-Check-in-Titulo'))?.values || ''}
+                                                    {properties.find((e) =>
+                                                        e.name.includes(
+                                                            prefix === "Primeiro"
+                                                                ? "Primeiro-Bloco Check-in-Titulo"
+                                                                : "Segundo-Bloco-Check-in-Titulo"
+                                                        )
+                                                    )?.values || ""}
                                                 </h3>
                                                 <p>
-                                                    {properties.find((e) => e.name.includes(prefix === 'Primeiro' ? 'Primeiro-Bloco-Check-in-Texto' : 'Segundo -Bloco-Check-in-Texto'))?.values || ''}
+                                                    {properties.find((e) =>
+                                                        e.name.includes(
+                                                            prefix === "Primeiro"
+                                                                ? "Primeiro-Bloco-Check-in-Texto"
+                                                                : "Segundo -Bloco-Check-in-Texto"
+                                                        )
+                                                    )?.values || ""}
                                                 </p>
                                             </div>
                                         </td>
-                                        <td className='TableSpacer'></td>
+                                        <td className="TableSpacer"></td>
                                         <td>
                                             <img
                                                 loading="lazy"
                                                 alt=""
-                                                src={`https://stevia.vtexassets.com/arquivos/${properties.find(
-                                                    (e) => e.name.includes(prefix === 'Primeiro' ? 'Segunda-linha Primeiro Bloco Check-in Imagem' : 'Segunda-linha Segundo Bloco Check-in Imagem')
-                                                )?.values || ''}`}
+                                                src={`https://stevia.vtexassets.com/arquivos/${
+                                                    properties.find((e) =>
+                                                        e.name.includes(
+                                                            prefix === "Primeiro"
+                                                                ? "Segunda-linha Primeiro Bloco Check-in Imagem"
+                                                                : "Segunda-linha Segundo Bloco Check-in Imagem"
+                                                        )
+                                                    )?.values || ""
+                                                }`}
                                             />
                                             <div>
                                                 <h3>
-                                                    {properties.find((e) => e.name.includes(prefix === 'Primeiro' ? 'Segunda-linha Primeiro Bloco Check-in Titulo' : 'Segunda-linha Segundo Bloco Check-in Titulo'))?.values || ''}
+                                                    {properties.find((e) =>
+                                                        e.name.includes(
+                                                            prefix === "Primeiro"
+                                                                ? "Segunda-linha Primeiro Bloco Check-in Titulo"
+                                                                : "Segunda-linha Segundo Bloco Check-in Titulo"
+                                                        )
+                                                    )?.values || ""}
                                                 </h3>
                                                 <p>
-                                                    {properties.find((e) => e.name.includes(prefix === 'Primeiro' ? 'Segunda-linha Primeiro Bloco Check-in Texto' : 'Segunda-linha Segundo Bloco Check-in Texto'))?.values || ''}
+                                                    {properties.find((e) =>
+                                                        e.name.includes(
+                                                            prefix === "Primeiro"
+                                                                ? "Segunda-linha Primeiro Bloco Check-in Texto"
+                                                                : "Segunda-linha Segundo Bloco Check-in Texto"
+                                                        )
+                                                    )?.values || ""}
                                                 </p>
                                             </div>
                                         </td>
@@ -163,7 +214,7 @@ function DescriptionContructor({ children }) {
                                 ))}
                             </table>
                         </div>
-                    }
+                    )}
                     {properties.map((e) => {
                         if (e?.name?.includes("Ultima Sessão-Linha1-Paragrafo2")) {
                             return (
@@ -177,7 +228,7 @@ function DescriptionContructor({ children }) {
                         if (e.name.includes("Ultima Sessão-Linha2-Paragrafo1")) {
                             return (
                                 <div>
-                                    <div dangerouslySetInnerHTML={{ __html: e.values?.[0] || '' }}></div>
+                                    <div dangerouslySetInnerHTML={{ __html: e.values?.[0] || "" }}></div>
                                 </div>
                             );
                         }
