@@ -89,11 +89,8 @@
   
   "rich-text#minicart-default-empty-state": {
     "props": {
-      "text": "Your cart is empty."
+      "text": "Seu carrinho está vazio."
     }
   }
-
-
-
 
 }

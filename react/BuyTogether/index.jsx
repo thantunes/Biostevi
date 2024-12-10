@@ -23,8 +23,6 @@ const BuyTogether = () => {
   useEffect(() => {
     if (!ProductRef || !ProductRef.product) return
 
-    const category =
-      ProductRef.product.categories[ProductRef.product.categories.length - 1]
     const productId = ProductRef.product.productId
 
     const fetchData = async () => {
@@ -44,18 +42,18 @@ const BuyTogether = () => {
 
   useEffect(() => {
     if (ProductRef && prodData && prodData.length > 0) {
-      setProdsToUse([ProductRef.product, prodData[0]])
+      setProdsToUse([ProductRef?.product, ...prodData?.slice(0, 4) || []])
     }
   }, [ProductRef, prodData])
 
-  const saveData = async () => {
+  const saveData = async (prodSelected) => {
     try {
       const productId = ProductRef.product.productId
       const response = await fetch(
         `/api/catalog_system/pub/products/search?fq=productId:${productId}`
       )
       const data = await response.json()
-      populateCart(data, prodData)
+      populateCart(data, prodSelected)
       window.location.hash = '#top'
     } catch (error) {
       console.error('Error fetching product data for cart:', error)
@@ -118,11 +116,26 @@ const BuyTogether = () => {
     ]
     // O addItems ele espera receber um array de objeto com informações úteis do produto para adicionar ao carrinho.
     addItems(cart)
-  }
 
-  useEffect(() => {
-    setProdsToUse([ProductRef?.product, prodData?.[0]])
-  }, [prodData])
+    const modal = document.createElement('div')
+    modal.style.position = 'fixed'
+    modal.style.bottom = '20px'
+    modal.style.left = '10vw'
+    modal.style.maxWidth = '300px'
+    modal.style.borderRadius = '5px'
+    modal.style.backgroundColor = '#2D6100'
+    modal.style.color = 'white'
+    modal.style.zIndex = '90000'
+    modal.style.padding = '20px'
+    modal.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)'
+    modal.innerText = 'Produtos Adicionados ao Carrinho'
+
+    document.body.appendChild(modal)
+
+    setTimeout(() => {
+      document.body.removeChild(modal)
+    }, 4500)
+  }
 
   const formatPrice = value => {
     return value?.toLocaleString('pt-BR', {
@@ -136,12 +149,30 @@ const BuyTogether = () => {
     prodsToUse.length >= 2 && prodsToUse.every(product => product && product.items && product.items[0]) && (
       <div className={`BuyTogether__Box`} id="buy-together-box">
         <h2>Compre Junto</h2>
-        <div className="BuyTogether__Container__Row">
-          <div className="BuyTogether__Container__Row__Container">
-            <div className="BuyTogether__Container__Row__Prod">
-              {prodsToUse.map((product, index) =>
-                product && product.items && product.items[0] ? (
-                  <div key={index} className={`BuyTogether__Container`}>
+        {prodsToUse.map((product, index) =>
+          index > 0 ? (
+            <div key={index} className="BuyTogether__Container__Row">
+              <div className="BuyTogether__Container__Row__Container">
+                <div className="BuyTogether__Container__Row__Prod">
+                  <div className={`BuyTogether__Container`}>
+                    <div className={`BuyTogether__Product__Image`}>
+                      <img
+                        style={{ aspectRatio: '1/1', width: '100%', height: 'auto', objectFit: 'contain' }}
+                        src={prodsToUse[0].items[0].images[0].imageUrl}
+                        alt={prodsToUse[0].items[0].images[0].imageText}
+                        loading="lazy"
+                      />
+                    </div>
+                    <div className={`BuyTogether__Product__Name`}>
+                      <h3>{prodsToUse[0].productName}</h3>
+                    </div>
+                    <div className={`BuyTogether__Product__Price`}>
+                      {formatPrice(
+                        prodsToUse[0].items[0].sellers[0].commertialOffer.Price
+                      )}
+                    </div>
+                  </div>
+                  <div className={`BuyTogether__Container`}>
                     <div className={`BuyTogether__Product__Image`}>
                       <img
                         style={{ aspectRatio: '1/1', width: '100%', height: 'auto', objectFit: 'contain' }}
@@ -151,51 +182,54 @@ const BuyTogether = () => {
                       />
                     </div>
                     <div className={`BuyTogether__Product__Name`}>
-                      <h2>{product.productName}</h2>
+                      <h3>{product.productName}</h3>
                     </div>
                     <div className={`BuyTogether__Product__Price`}>
-                      <p>
-                        {formatPrice(product.items[0].sellers[0].commertialOffer.Price)}
-                      </p>
+                      {formatPrice(product.items[0].sellers[0].commertialOffer.Price)}
                     </div>
                   </div>
-                ) : null
-              )}
-            </div>
-            <div
-              className="BuyTogether__Container__Row__Buy"
-              style={{
-                display: 'flex',
-                flexDirection: 'row',
-                alignItems: 'center',
-              }}
-            >
-              <p style={{ margin: '0px 25px', fontSize: '52px' }}>=</p>
-              <div
-                className="BuyTogether__Container__Row__Desc"
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                }}
-              >
-                <h3 style={{ margin: '0px' }}>Comprando dois Produtos por</h3>
-                <p style={{ fontWeight: 'bolder', fontSize: '22px' }}>
-                  {formatPrice(
-                    prodsToUse?.[0]?.items[0].sellers[0].commertialOffer.Price +
-                    prodsToUse?.[1]?.items[0].sellers[0].commertialOffer.Price
-                  )}
-                </p>
-                <button
-                  className="BuyTogether__Container__BuyButton"
-                  onClick={saveData}
+                </div>
+                <div
+                  className="BuyTogether__Container__Row__Buy"
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                  }}
                 >
-                  Adicionar ao Carrinho
-                </button>
+                  <p style={{ margin: '0px 25px', fontSize: '52px' }}>=</p>
+                  <div
+                    className="BuyTogether__Container__Row__Desc"
+                    style={{
+                      display: 'flex',
+                      flexDirection: 'column',
+                      alignItems: 'center',
+                    }}
+                  >
+                    <p style={{ margin: '0px' }}>Comprando dois Produtos por</p>
+                    <p style={{ fontWeight: 'bolder', fontSize: '22px' }}>
+                      {formatPrice(
+                        prodsToUse[0].items[0].sellers[0].commertialOffer.Price +
+                        product.items[0].sellers[0]
+                          .commertialOffer.Price
+                      )}
+                    </p>
+                    <button
+                      className="BuyTogether__Container__BuyButton"
+                      onClick={() =>
+                        saveData(
+                          [product]
+                        )
+                      }
+                    >
+                      Adicionar ao Carrinho
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
+          ) : null
+        )}
       </div>
     )
   )
