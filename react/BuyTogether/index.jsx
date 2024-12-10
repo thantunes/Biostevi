@@ -42,7 +42,7 @@ const BuyTogether = () => {
 
   useEffect(() => {
     if (ProductRef && prodData && prodData.length > 0) {
-      setProdsToUse([ProductRef?.product, ...prodData?.slice(0, 4) || []])
+      setProdsToUse([ProductRef?.product, ...prodData || []])
     }
   }, [ProductRef, prodData])
 
@@ -197,7 +197,7 @@ const BuyTogether = () => {
                     alignItems: 'center',
                   }}
                 >
-                  <p style={{ margin: '0px 25px', fontSize: '52px' }}>=</p>
+                  <p style={{ margin: '0px 25px', fontSize: '38px' }}>=</p>
                   <div
                     className="BuyTogether__Container__Row__Desc"
                     style={{
@@ -206,8 +206,8 @@ const BuyTogether = () => {
                       alignItems: 'center',
                     }}
                   >
-                    <p style={{ margin: '0px' }}>Comprando dois Produtos por</p>
-                    <p style={{ fontWeight: 'bolder', fontSize: '22px' }}>
+                    <p style={{ margin: '0px', fontFamily: 'Signika' }}>Comprando dois Produtos por</p>
+                    <p className="BuyTogether__Product__Price" style={{ fontWeight: 'bolder', fontSize: '22px' }}>
                       {formatPrice(
                         prodsToUse[0].items[0].sellers[0].commertialOffer.Price +
                         product.items[0].sellers[0]

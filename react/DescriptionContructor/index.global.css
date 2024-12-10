@@ -319,10 +319,6 @@ iframe {
         text-align: center;
     }
 
-    .BuyTogether__Container__Row__Desc p {
-        font-size: 18px !important;
-    }
-
     .BuyTogether__Container:nth-child(odd) {
         margin-right: 0px !important;
     }
@@ -347,15 +343,6 @@ iframe {
 
     .BuyTogether__Container__Row__Buy {
         flex-direction: column !important;
-    }
-
-    .BuyTogether__Container:nth-child(odd) {
-        margin-bottom: 55px;
-    }
-
-    .BuyTogether__Container:nth-child(odd)::after {
-        top: 100% !important;
-        left: calc(50% - 33px) !important;
     }
 
     .BlockStyle p .descricao-pdp-dir {
