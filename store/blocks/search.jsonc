@@ -288,13 +288,162 @@
     }
   },
   "search-not-found-layout": {
-    "children": ["flex-layout.row#searchbread", "flex-layout.row#notfound"]
+    "children": ["flex-layout.row#searchbread", "flex-layout.row#notfound", "flex-layout.row#custom-notfound"]
   },
 
   "flex-layout.row#notfound": {
     "children": ["not-found"],
     "props": {
       "fullWidth": true
+    }
+  },
+
+  "flex-layout.row#custom-notfound": {
+    "children": ["flex-layout.col#custom-notfound"],
+    "props": {
+      "blockClass": "custom-notfound-row"
+    }
+  },
+  
+  "flex-layout.col#custom-notfound": {
+    "children": ["rich-text#custom-notfound", "flex-layout.row#custom-menu"],
+    "props": {
+      "blockClass": "custom-notfound-col"
+    }
+  },
+
+  "rich-text#custom-notfound": {
+    "props": {
+      "text": "Sugestões de busca:",
+      "textPosition": "CENTER",
+      "textAlignment": "CENTER",
+      "blockClass": "custom-notfound-text",
+      "font": "t-heading-4"
+    }
+  },
+
+  "flex-layout.row#custom-menu": {
+    "props": {
+      "blockClass": "custom-menu-row"
+    },
+    "children": ["vtex.menu@2.x:menu#CategoriesNotFound"]
+  },
+
+  "vtex.menu@2.x:menu#CategoriesNotFound": {
+    "props": {
+      "orientation": "vertical"
+    },
+    "children": ["flex-layout.row#custom-menu-items"]
+  },
+
+  "flex-layout.row#custom-menu-items": {
+    "children": [
+      "menu-item#emagrecedores",
+      "menu-item#acne-e-oleosidade",
+      "menu-item#dormir-bem",
+      "menu-item#cabelos-oleosos",
+      "menu-item#imunidade",
+      "menu-item#cicatrizantes",
+      "menu-item#gordura-localizada"
+    ],
+    "props": {
+      "blockClass": "custom-menu-items-row",
+      "horizontalAlign": "center"
+    }
+  },
+
+  "menu-item#emagrecedores": {
+    "props": {
+      "id": "menu-item-emagrecedores",
+      "type": "custom",
+      "highlight": false,
+      "blockClass": "menu-item-not-found",
+      "itemProps": {
+        "tagTitle": "Emagrecedores",
+        "text": "Emagrecedores",
+        "href": "/emagrecimento/emagrecedores"
+      }
+    }
+  },
+  "menu-item#acne-e-oleosidade": {
+    "props": {
+      "id": "menu-item-acne",
+      "type": "custom",
+      "highlight": false,
+      "blockClass": "menu-item-not-found",
+      "itemProps": {
+        "tagTitle": "Acne e Oleosidade",
+        "text": "Acne e Oleosidade",
+        "href": "/beleza/acne-e-oleosidade"
+      }
+    }
+  },
+  "menu-item#dormir-bem": {
+    "props": {
+      "id": "menu-item-dormir",
+      "type": "custom",
+      "highlight": false,
+      "blockClass": "menu-item-not-found",
+      "itemProps": {
+        "tagTitle": "Dormir Bem",
+        "text": "Dormir Bem",
+        "href": "/saude/dormir-bem"
+      }
+    }
+  },
+  "menu-item#cabelos-oleosos": {
+    "props": {
+      "id": "menu-item-cabelos-oleosos",
+      "type": "custom",
+      "highlight": false,
+      "blockClass": "menu-item-not-found",
+      "itemProps": {
+        "tagTitle": "Cabelos Oleosos",
+        "text": "Cabelos Oleosos",
+        "href": "/barba-e-cabelo/cabelo/cabelos-oleosos"
+      }
+    }
+  },
+
+  "menu-item#imunidade": {
+    "props": {
+      "id": "menu-item-imunidade",
+      "type": "custom",
+      "highlight": false,
+      "blockClass": "menu-item-not-found",
+      "itemProps": {
+        "tagTitle": "imunidade",
+        "text": "Imunidade",
+        "href": "/barba-e-cabelo/cabelo/cabelos-oleosos"
+      }
+    }
+  },
+
+  "menu-item#cicatrizantes": {
+    "props": {
+      "id": "menu-item-cicatrizantes",
+      "type": "custom",
+      "highlight": false,
+      "blockClass": "menu-item-not-found",
+      "itemProps": {
+        "tagTitle": "cicatrizantes",
+        "text": "Imunidade",
+        "href": "/barba-e-cabelo/cabelo/cabelos-oleosos"
+      }
+    }
+  },
+
+  "menu-item#gordura-localizada": {
+    "props": {
+      "id": "menu-item-gordura-localizada",
+      "type": "custom",
+      "highlight": false,
+      "blockClass": "menu-item-not-found",
+      "itemProps": {
+        "tagTitle": "Gordura Localizada",
+        "text": "Gordura Localizada",
+        "href": "/emagrecimento/gordura-localizada"
+      }
     }
   },
 

@@ -24,7 +24,7 @@
     "props": {
       "__unstableProductOriginVtex": true
     },
-    "blocks": ["product-summary.shelf"]
+    "blocks": ["product-summary.shelf#nodesc"]
   },
 
   "vtex.menu@2.x:menu#institutional": {

@@ -13,6 +13,19 @@
       "add-to-cart-button"
     ]
   },
+  "product-summary.shelf#nodesc": {
+    "children": [
+      "stack-layout#prodsum",
+      "add-to-list-btn",
+      "product-summary-name",
+      "product-reviews",
+      "product-summary-space",
+      "product-list-price#summary",
+      "flex-layout.row#selling-price-savings",
+      "product-installments#summary",
+      "add-to-cart-button"
+    ]
+  },
   "DescriptionInline": {
     "children": ["product-summary-description"]
   },
