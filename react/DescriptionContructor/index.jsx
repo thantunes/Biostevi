@@ -1,6 +1,16 @@
-import React, { useMemo, useState, useEffect, useRef } from 'react';
-import { useProduct } from 'vtex.product-context';
-import './index.global.css';
+import React, { useMemo, useState, useEffect, useRef } from "react";
+import { useProduct } from "vtex.product-context";
+import "./index.global.css";
+
+function splitPorTags(texto) {
+    const regex = /(<[^>]+>.*?<\/[^>]+>|[^<]+)/g;
+    const splitedText = texto.match(regex);
+    const newArrayText = splitedText.map((element) => {
+        return element.charAt(0) === "<" ? element.trim() : `<p>${element.trim()}</p>`;
+    });
+
+    return newArrayText.join("");
+}
 
 function DescriptionContructor({ children }) {
     const productContextValue = useProduct();
@@ -20,7 +30,7 @@ function DescriptionContructor({ children }) {
                     observer.disconnect();
                 }
             },
-            { root: null, rootMargin: '0px', threshold: 1 }
+            { root: null, rootMargin: "0px", threshold: 1 }
         );
 
         if (videoRef.current) {
@@ -31,7 +41,6 @@ function DescriptionContructor({ children }) {
             if (videoRef.current) observer.unobserve(videoRef.current);
         };
     }, []);
-
 
     const renderContent = (namePrefix, className, includeImages = true) => {
         const filteredData = properties.filter((e) => e.name?.includes(namePrefix));
@@ -57,12 +66,12 @@ function DescriptionContructor({ children }) {
                     )}
 
                     {filteredData.map((e) =>
-                        !e.values?.[0]?.includes('class="descricao-pdp-full"') &&
-                            e.name?.includes(`${namePrefix}-Paragrafo`) ? (
+                        !e.values[0].includes('class="descricao-pdp-full"') &&
+                        e.name.includes(`${namePrefix}-Paragrafo`) ? (
                             <div
                                 key={e.name}
-                                className={`MobileStyle ${className} ${e.values?.[0]?.includes('<a') ? 'TemLink' : ''}`}
-                                dangerouslySetInnerHTML={{ __html: e.values?.[0] || '' }}
+                                className={`MobileStyle ${className} ${e.values[0].includes("<a") ? "TemLink" : ""}`}
+                                dangerouslySetInnerHTML={{ __html: splitPorTags(e.values[0]) }}
                             ></div>
                         ) : null
                     )}
@@ -76,7 +85,7 @@ function DescriptionContructor({ children }) {
             {product?.description ? (
                 <div
                     className="DescBox"
-                    dangerouslySetInnerHTML={{ __html: product.description }}
+                    dangerouslySetInnerHTML={{ __html: splitPorTags(product.description) }}
                     id="MetaTag-PDP"
                 ></div>
             ) : null}
@@ -87,7 +96,7 @@ function DescriptionContructor({ children }) {
                             <div
                                 key={e.name}
                                 className="vtex-product-specifications-1-x-specificationValue MobileStyle"
-                                dangerouslySetInnerHTML={{ __html: e.values[0] }}
+                                dangerouslySetInnerHTML={{ __html: splitPorTags(e.values[0]) }}
                             ></div>
                         ) : null
                     )}
@@ -106,7 +115,7 @@ function DescriptionContructor({ children }) {
                     </div>
                     {properties.map((e) => {
                         if (e.name.includes("Ultima Sessão-Linha1-Paragrafo1")) {
-                            return <div dangerouslySetInnerHTML={{ __html: e.values?.[0] || '' }}></div>
+                            return <div dangerouslySetInnerHTML={{ __html: splitPorTags(e.values[0]) }}></div>;
                         }
                         return null;
                     })}
@@ -155,63 +164,13 @@ function DescriptionContructor({ children }) {
                             </table>
                         </div>
                     }
-                    {/* {properties.find((e) => e.name.includes('Imagem-PrimeiroBloco'))?.values (
-                        <div className="BlockStyle tableCenter">
-                            <table>
-                                {['Primeiro', 'Segundo'].map((prefix, rowIndex) => (
-                                    properties.find((e) => e.name.includes(`Imagem-${prefix}Bloco`))?.values &&
-                                    properties.find((e) => e.name.includes(`Segunda-linha ${prefix} Bloco Check-in Imagem`))?.values &&
-                                    (
-                                        <tr className="TableContentBox" key={`row-${rowIndex}`}>
-                                            <td>
-                                                <img
-                                                    loading="lazy"
-                                                    alt=""
-                                                    src={`https://stevia.vtexassets.com/arquivos/${properties.find(
-                                                        (e) => e.name.includes(prefix === 'Primeiro' ? 'Imagem-PrimeiroBloco' : 'Segunda-linha Primeiro Bloco Check-in Imagem')
-                                                    ).values}`}
-                                                />
-                                                <div>
-                                                    <h3>
-                                                        {properties.find((e) => e.name.includes(prefix === 'Primeiro' ? 'Primeiro-Bloco Check-in-Titulo' : 'Segunda-linha Primeiro Bloco Check-in Titulo'))?.values}
-                                                    </h3>
-                                                    <p>
-                                                        {properties.find((e) => e.name.includes(prefix === 'Primeiro' ? 'Primeiro-Bloco-Check-in-Texto' : 'Segunda-linha Primeiro Bloco Check-in Texto'))?.values}
-                                                    </p>
-                                                </div>
-                                            </td>
-                                            <td className='TableSpacer'></td>
-                                            <td>
-                                                <img
-                                                    loading="lazy"
-                                                    alt=""
-                                                    src={`https://stevia.vtexassets.com/arquivos/${properties.find(
-                                                        (e) => e.name.includes(prefix === 'Primeiro' ? 'Imagem-SegundoBloco' : 'Segunda-linha Segundo Bloco Check-in Imagem')
-                                                    ).values}`}
-                                                />
-                                                <div>
-                                                    <h3>
-                                                        {properties.find((e) => e.name.includes(prefix === 'Primeiro' ? 'Segundo-Bloco-Check-in-Titulo' : 'Segunda-linha Segundo Bloco Check-in Titulo'))?.values}
-                                                    </h3>
-                                                    <p>
-                                                    {properties.find((e) => e.name.includes(prefix === 'Primeiro' ? 'Segundo -Bloco-Check-in-Texto' : 'Segunda-linha Segundo Bloco Check-in Texto'))?.values}
-                                                    </p>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    )
-                                ))}
-                            </table>
-                        </div>
-                    )} */}
-                
                     {properties.map((e) => {
                         if (e?.name?.includes("Ultima Sessão-Linha1-Paragrafo2")) {
                             return (
                                 <div>
-                                    <div dangerouslySetInnerHTML={{ __html: e?.values?.[0] || '' }}></div>
+                                    <div dangerouslySetInnerHTML={{ __html: splitPorTags(e.values[0]) }}></div>
                                 </div>
-                            )
+                            );
                         }
                     })}
                     {properties.map((e) => {
@@ -224,9 +183,9 @@ function DescriptionContructor({ children }) {
                         }
                         return null;
                     })}
-                    {['Benefícios', 'Composição', 'Modo de Usar', 'Advertência'].map((section) => (
+                    {["Benefícios", "Composição", "Modo de Usar", "Advertência"].map((section) => (
                         <>
-                            {section === 'Advertência' && (
+                            {section === "Advertência" && (
                                 <div className="BlockStyle Default-prop">
                                     <div className="Default-Data" id="InformaImp">
                                         {children}
@@ -235,15 +194,27 @@ function DescriptionContructor({ children }) {
                             )}
                             <div className="BlockStyle Default-prop">
                                 <div className="Default-Data">
-                                    {properties.some((e) => e?.name?.includes(section) && e?.values?.[0]) && (
-                                        <h2 id={section === 'Modo de Usar' ? 'ModoDeUsar' : section.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g, '').replace(/ /g, '')}>{section}</h2>
+                                    {properties.some((e) => e.name.includes(section) && e.values[0]) && (
+                                        <h2
+                                            id={
+                                                section === "Modo de Usar"
+                                                    ? "ModoDeUsar"
+                                                    : section
+                                                          .normalize("NFD")
+                                                          .replace(/[\u0300-\u036f]/g, "")
+                                                          .replace(/\s/g, "")
+                                                          .replace(/ /g, "")
+                                            }
+                                        >
+                                            {section}
+                                        </h2>
                                     )}
                                     {properties.map((e) =>
                                         e?.name?.includes(section) && e?.values?.[0] ? (
                                             <span
-                                                key={e?.name}
-                                                style={{ whiteSpace: 'break-spaces' }}
-                                                dangerouslySetInnerHTML={{ __html: e?.values?.[0] || '' }}
+                                                key={e.name}
+                                                style={{ whiteSpace: "break-spaces" }}
+                                                dangerouslySetInnerHTML={{ __html: splitPorTags(e.values[0]) }}
                                             ></span>
                                         ) : null
                                     )}
