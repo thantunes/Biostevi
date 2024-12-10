@@ -6,16 +6,16 @@
     padding: 1rem !important;
 }
 
-.CustomDescData>div>h2 {
+.CustomDescData > div > h2 {
     color: #009fc2 !important;
     font-size: 26px;
     font-weight: normal !important;
     line-height: 32px;
 }
-.BlockStyle>div>h2 {
+.BlockStyle > div > h2 {
     margin-bottom: 0 !important;
 }
-.CustomDescData>div>p {
+.CustomDescData > div > p {
     color: #555;
     font-size: 17px !important;
     font-family: Helvetica;
@@ -27,7 +27,6 @@ html {
     scroll-padding-top: 60px;
 }
 
-
 .BlockStyle {
     display: flex;
     flex-direction: row;
@@ -35,13 +34,13 @@ html {
     align-items: center;
 }
 
-.BlockStyle .TemLink{
+.BlockStyle .TemLink {
     display: block !important;
 }
-.BlockStyle div{
+.BlockStyle div {
     margin: 0px 30px;
 }
-.BlockStyle > div{
+.BlockStyle > div {
     margin: 0px 0px;
     gap: 15px;
 }
@@ -49,8 +48,8 @@ html {
     gap: 25px;
 }
 
-.BlockStyle div>div,
-.BlockStyle div>p {
+.BlockStyle div > div,
+.BlockStyle div > p {
     margin: 15px 0px;
     color: #727273;
     line-height: 24px;
@@ -60,15 +59,13 @@ html {
     margin-top: 0px !important;
     padding-top: 0px !important;
 }
-.BlockStyle div>h2 {
-
+.BlockStyle div > h2 {
     color: #009fc2 !important;
     font-size: 26px;
     font-weight: normal !important;
     text-align: start;
     width: 100%;
     line-height: 32px;
-
 }
 
 /* .BlockStyle p .descricao-pdp-esq {
@@ -82,10 +79,10 @@ html {
     justify-content: center;
 
 } */
-.descricao-pdp-esq, .descricao-pdp-dir{
+.descricao-pdp-esq,
+.descricao-pdp-dir {
     margin: 0px 0px !important;
 }
-
 
 .BlockStyle .descricao-pdp-dir .BlockStyle:nth-child(odd) div:not(.descricao-pdp-esq) {
     width: 90%;
@@ -118,7 +115,7 @@ html {
     text-align: start;
     width: 100%;
     line-height: 24px;
-    padding-left: 0px !important; 
+    padding-left: 0px !important;
     margin-bottom: 10px !important;
 }
 
@@ -134,10 +131,8 @@ html {
     padding-top: 15px;
 }
 
-
 .Default-Data {
     justify-content: flex-start;
-
 }
 
 .BlockStyle table {
@@ -202,7 +197,6 @@ html {
     font-weight: normal !important;
     text-align: start;
     width: 100%;
-
 }
 
 .descricao-pdp-full-check h2 {
@@ -257,11 +251,11 @@ html {
 .DescBox {
     color: #727273;
     line-height: 24px;
-    margin:30px auto;
+    margin: 30px auto;
     white-space: break-spaces;
 }
 
-p.MobileStyle{
+p.MobileStyle {
     margin-bottom: 0px !important;
     padding-bottom: 0px !important;
 }
@@ -283,21 +277,18 @@ iframe {
     text-align: center;
     font-size: unset;
     padding-top: 0px !important;
-    
 }
-
-
 
 .TableContentBox td div h3 {
     text-align: center;
     font-size: unset;
 }
 
-.descricao-pdp-full-check h4{
+.descricao-pdp-full-check h4 {
     color: #009fc2;
 }
 
-.Descricao--Inline{
+.Descricao--Inline {
     text-decoration: none;
     color: #727273;
     padding-left: 1rem;
@@ -307,13 +298,13 @@ iframe {
 .Descricao--Inline p {
     margin: 0px;
 }
-.Default-prop :first-child{
+.Default-prop :first-child {
     margin-top: 20px;
 }
-.descricao-pdp-full>img {
+.descricao-pdp-full > img {
     border-radius: 20px;
 }
-@media screen and (max-width:768px) {
+@media screen and (max-width: 768px) {
     .BuyTogether__Container__Row__Desc h3 {
         font-size: 13px;
         text-align: center;
@@ -323,7 +314,7 @@ iframe {
         margin-right: 0px !important;
     }
 
-    .BuyTogether__Container__Row__Buy>p {
+    .BuyTogether__Container__Row__Buy > p {
         font-size: 32px !important;
     }
 
@@ -352,20 +343,19 @@ iframe {
         padding: unset !important;
         text-align: left;
     }
-    .BlockStyle{
+    .BlockStyle {
         flex-direction: column-reverse;
-
     }
-    .BlockStyle:nth-child(odd){
+    .BlockStyle:nth-child(odd) {
         flex-direction: column;
     }
 
-    .BlockStyle img{
+    .BlockStyle img {
         width: 263px !important;
         margin: 0px;
         max-width: unset !important;
     }
-    .TableContentBox td img{
+    .TableContentBox td img {
         width: 100px !important;
         margin: 0px;
         max-width: 100px;
@@ -373,43 +363,43 @@ iframe {
     .HorizontalBanner img {
         width: 100% !important;
     }
-    .TableContentBox td div h3{
+    .TableContentBox td div h3 {
         font-size: 12px;
     }
-    .TableContentBox td{
+    .TableContentBox td {
         height: 313px !important;
     }
-    .BlockStyle div{
+    .BlockStyle div {
         margin: 0px !important;
         max-height: unset;
         overflow: unset;
     }
-    .TableContentBox td div p{
+    .TableContentBox td div p {
         font-size: 14px;
         line-height: 14px;
     }
-    .Default-prop{
+    .Default-prop {
         align-items: flex-start;
     }
-    
-    .MobileStyle{
+
+    .MobileStyle {
         overflow: visible !important;
         height: fit-content !important;
         max-height: unset !important;
     }
-    .BlockStyle:nth-child(even) .MobileStyle{
+    .BlockStyle:nth-child(even) .MobileStyle {
         flex-direction: column-reverse;
     }
-    .BlockStyle:nth-child(odd) .MobileStyle{
+    .BlockStyle:nth-child(odd) .MobileStyle {
         flex-direction: column;
     }
-    .BlockStyle .MobileStyle .descricao-pdp-full{
+    .BlockStyle .MobileStyle .descricao-pdp-full {
         flex-direction: column-reverse;
     }
-    .descricao-pdp-full-check{
+    .descricao-pdp-full-check {
         margin-top: 0px;
     }
-    .descricao-pdp-full-check img{
+    .descricao-pdp-full-check img {
         margin-top: 0px !important;
     }
 }
@@ -420,6 +410,10 @@ iframe {
 .TableContentBox td div p {
     overflow: visible;
 }
-.BlockStyle .linha4{
+.BlockStyle .linha4 {
     display: block !important;
+}
+
+.DescBox iframe {
+    margin-bottom: 50px;
 }
