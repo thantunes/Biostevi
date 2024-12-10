@@ -58,8 +58,8 @@
   color: #000;
   font-family: arial !important;
 }
-:global(.vtex-address-form__postalCode) {
-  padding-right: 15px;
+:global(.vtex-address-form__postalCode) :global(.vtex-input__suffix) {
+  padding: 0px;
 }
 :global(.vtex-my-cards-1-x-newCardButton) :global(.vtex-button__label) {
   color: #000;
@@ -537,7 +537,7 @@
     margin-top: 25px;
   }
   :global(.vtex-store-components-3-x-productNameContainer--quickview) {
-    padding: 1rem !important;
+    padding: 1rem 0 !important;
   }
   :global(.vtex-flex-layout-0-x-flexColChild):global(.vtex-reviews-and-ratings-3-x-container):global(.vtex-reviews-and-ratings-3-x-reviewsRating) {
     margin-top: 0 !important;
