@@ -1,0 +1,75 @@
+.Block h2 {
+    font-family: Signika;
+    text-transform: uppercase;
+    color: #009fc2;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    text-align: start;
+}
+
+.Block ul {
+    list-style: none;
+    padding: 0;
+}
+.Block li {
+    color: #727273;
+    line-height: 24px;
+    font-size: 14px;
+    white-space: break-spaces;
+    font-family: 'Signika';
+    font-weight: 600;
+}
+
+@media screen and (max-width:768px) {
+    .CustomData {
+        padding-left: .5rem;
+        padding-right: .5rem;
+    }
+    .Block h2 {
+        text-align: center;
+    }
+    ul.CheckBeneficiosProduct-list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0;
+        justify-content: center;
+        align-items: baseline;
+    }
+
+    .CheckBeneficiosProduct-list li {
+        width: 50%;
+        padding-right: 5px;
+    }
+    
+    .CheckBeneficiosProduct-list li:last-child:nth-child(odd) {
+        width: 75%;
+        padding-right: 5px;
+    }
+}
+@media screen and (min-width: 40em) and (max-width:1024px) {
+    .CustomData {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+@media screen and (min-width: 1024px) { 
+    .CustomData {
+        padding-left: 0rem;
+        padding-right: 0rem;
+    }
+}
+
+.CheckBeneficiosProduct-list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.CheckBeneficiosProduct-list li {
+    display: flex;
+    align-items: center;
+}
