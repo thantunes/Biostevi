@@ -26,7 +26,7 @@
       "BuyTogetherComp",
       "shelf.relatedProducts",
       "product-reviews",
-      "flex-layout.row#buy-together",
+      // "flex-layout.row#buy-together",
       "product-questions-and-answers",
       "rich-text#pdp-informativo1",
       "flex-layout.row#faq-container"
@@ -45,7 +45,7 @@
       "BuyTogetherComp",
       "shelf.relatedProducts",
       "product-reviews",
-      "flex-layout.row#buy-together",
+      // "flex-layout.row#buy-together",
       "product-questions-and-answers",
       "rich-text#pdp-informativo1",
       "flex-layout.row#faq-container"
@@ -64,7 +64,7 @@
       "BuyTogetherComp",
       "shelf.relatedProducts",
       "product-reviews",
-      "flex-layout.row#buy-together",
+      // "flex-layout.row#buy-together",
       "product-questions-and-answers",
       "rich-text#pdp-informativo1",
       "flex-layout.row#faq-container"
@@ -431,34 +431,34 @@
       }
     }
   },
-  "flex-layout.row#buy-together": {
-    "children": [
-      "recommendation-buy-together"
-    ],
-    "props": {
-      "blockClass": "TestePrime22"
-    }
-  },
-  "recommendation-buy-together": {
-    "blocks": [
-      "buy-together"
-    ]
-  },
-  "buy-together": {
-    "blocks": [
-      "product-summary.shelf#buy-together"
-    ],
-    "props": {
-      "BuyButton": "add-to-cart-button"
-    }
-  },
-  "product-summary.shelf#buy-together": {
-    "children": [
-      "responsive-layout.desktop#product-summary",
-      // "responsive-layout.tablet#product-summary",
-      "responsive-layout.mobile#product-summary"
-    ]
-  },
+  // "flex-layout.row#buy-together": {
+  //   "children": [
+  //     "recommendation-buy-together"
+  //   ],
+  //   "props": {
+  //     "blockClass": "TestePrime22"
+  //   }
+  // },
+  // "recommendation-buy-together": {
+  //   "blocks": [
+  //     "buy-together"
+  //   ]
+  // },
+  // "buy-together": {
+  //   "blocks": [
+  //     "product-summary.shelf#buy-together"
+  //   ],
+  //   "props": {
+  //     "BuyButton": "add-to-cart-button"
+  //   }
+  // },
+  // "product-summary.shelf#buy-together": {
+  //   "children": [
+  //     "responsive-layout.desktop#product-summary",
+  //     // "responsive-layout.tablet#product-summary",
+  //     "responsive-layout.mobile#product-summary"
+  //   ]
+  // },
   "responsive-layout.desktop#product-summary": {
     "children": [
       "flex-layout.row#product-summary-desktop"
