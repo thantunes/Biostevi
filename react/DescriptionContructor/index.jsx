@@ -3,26 +3,32 @@ import { useProduct } from "vtex.product-context";
 import "./index.global.css";
 
 function splitPorTags(texto) {
-    // Regex para separar o texto em tags e conteúdo
-    const regex = /(<[^>]+>.*?<\/[^>]+>|<[^>]+>.*?(?=<|$)|[^\n]+|(?<=\n(?=\S))|(?=\n(?=\S)))/g;
+    const regex = /(<[^>]+>.*?<\/[^>]+>|<[^>]+>.*?(?=<|$)|[^\n]+|(?<=\n(?=\S))|(?=\n(?=\S))|(?<=\n\n))/g;
     const splitedText = texto.match(regex);
-
     const newArrayText = splitedText
         .map((element) => {
             const trimmed = element.trim();
 
-            // Ignora espaços ou strings vazias
-            if (trimmed === "") return "";
+            if (trimmed === "\n" || trimmed === "" || trimmed === "<p></p>" || trimmed.match(/^\s*$/)) {
+                console.log('Pulei Fora: ' + trimmed);
+                return "";
+            }
 
-            // Verifica se é uma tag HTML e retorna diretamente
             if (trimmed.startsWith("<")) {
+                console.log('Comecei com <: ' + trimmed);
                 return trimmed;
             }
 
-            // Caso seja texto simples, encapsula em <p>
+            console.log('Deu bom: ' + `<p>${trimmed}</p>`);
             return `<p>${trimmed}</p>`;
         })
-        .filter(Boolean); // Remove itens vazios do array
+        .filter((e) => e !== "")
+        .map((e, i, array) => {
+            if (i === array.length - 1 && e.endsWith("</p>")) {
+                return e.replace("</p>", "");
+            }
+            return e;
+        });
 
     return newArrayText.join("");
 }
@@ -114,7 +120,7 @@ function DescriptionContructor({ children }) {
                                 dangerouslySetInnerHTML={{ __html: splitPorTags(e.values[0]) }}
                             ></div>
                         ) : null
-                    )}
+                    ).filter(Boolean)}
                     {["Linha1", "Linha2", "Linha3", "Linha4", "Linha5", "Linha6", "Linha7"].map((linha) =>
                         linha ? renderContent(linha, linha, linha) : null
                     )}
@@ -280,3 +286,4 @@ function DescriptionContructor({ children }) {
 }
 
 export default DescriptionContructor;
+
