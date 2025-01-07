@@ -38,7 +38,6 @@
       "flex-layout.row#product-breadcrumb",
       "flex-layout.row#product-main-tm",
       "flex-layout.row#informativos",
-      "CheckBeneficiosProduct",
       "slider-layout#informativo-mobile",
       "flex-layout.row#AnchorsComp",
       "DescriptionContructorComp",
@@ -57,7 +56,6 @@
       "flex-layout.row#product-breadcrumb",
       "flex-layout.row#product-main-tm",
       "flex-layout.row#informativos",
-      "responsive-layout.mobile#benefits",
       "slider-layout#informativo-mobile",
       "flex-layout.row#AnchorsComp",
       "DescriptionContructorComp",
@@ -196,6 +194,7 @@
       "flex-layout.row#list-price-savings",
       "flex-layout.row#selling-price",
       "product-installments",
+      "shipping-simulator",
       "product-separator",
       "product-identifier.product",
       "sku-selector",
@@ -203,8 +202,8 @@
       "product-gifts",
       "flex-layout.row#BuyQuantity",
       "flex-layout.row#description",
+      "responsive-layout.mobile#benefits",
       "availability-subscriber",
-      "shipping-simulator",
       "share#default"
     ]
   },
@@ -334,7 +333,8 @@
   },
   "shipping-simulator":{
     "props":{
-      "pricingMode":"grouped"
+      "pricingMode":"grouped",
+      "paddingBottom": 3
     }
   },
   "share#default": {
@@ -368,12 +368,6 @@
           "Then": "flex-layout.col#right-col-d",
           "Else": "flex-layout.col#right-Offstock-d"
       }
-  },
-  "responsive-layout.tablet#benefits": {
-    "props": {
-      "blockClass": "beneficios"
-    },
-    "children": ["CheckBeneficiosProduct"]
   },
   "responsive-layout.mobile#benefits": {
     "children": ["CheckBeneficiosProduct"]

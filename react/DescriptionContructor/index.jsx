@@ -4,7 +4,7 @@ import "./index.global.css";
 
 function splitPorTags(texto) {
     // Regex para separar o texto em tags e conteúdo
-    const regex = /(<[^>]+>.*?<\/[^>]+>|<[^>]+>|[^<]+)/g;
+    const regex = /(<[^>]+>.*?<\/[^>]+>|<[^>]+>.*?(?=<|$)|[^\n]+|(?<=\n(?=\S))|(?=\n(?=\S)))/g;
     const splitedText = texto.match(regex);
 
     const newArrayText = splitedText
@@ -251,10 +251,10 @@ function DescriptionContructor({ children }) {
                                                 section === "Modo de Usar"
                                                     ? "ModoDeUsar"
                                                     : section
-                                                          .normalize("NFD")
-                                                          .replace(/[\u0300-\u036f]/g, "")
-                                                          .replace(/\s/g, "")
-                                                          .replace(/ /g, "")
+                                                        .normalize("NFD")
+                                                        .replace(/[\u0300-\u036f]/g, "")
+                                                        .replace(/\s/g, "")
+                                                        .replace(/ /g, "")
                                             }
                                         >
                                             {section}

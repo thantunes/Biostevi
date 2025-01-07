@@ -15,13 +15,6 @@
 .BlockStyle > div > h2 {
     margin-bottom: 0 !important;
 }
-.CustomDescData > div > p {
-    color: #555;
-    font-size: 17px !important;
-    font-family: Helvetica;
-    font-weight: normal;
-    margin-top: 10px;
-}
 
 html {
     scroll-padding-top: 60px;
@@ -32,6 +25,8 @@ html {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    gap: 25px;
+    width: 100%;
 }
 
 .BlockStyle .TemLink {
@@ -44,28 +39,33 @@ html {
     margin: 0px 0px;
     gap: 15px;
 }
-.BlockStyle {
-    gap: 25px;
-}
 
 .BlockStyle div > div,
-.BlockStyle div > p {
-    margin: 15px 0px;
-    color: #727273;
+.BlockStyle p {
+    margin: 7.5px 0!important;
+    color: #555555;
     line-height: 24px;
-    margin-top: 30px;
     white-space: break-spaces;
     flex-direction: row;
-    margin-top: 0px !important;
     padding-top: 0px !important;
 }
-.BlockStyle div > h2 {
+.BlockStyle #InformaImp div {
+    margin: 0!important;
+}
+.BlockStyle:has(#Advertencia) strong {
+    line-height: 33px;
+}
+
+.BlockStyle div > h2,
+.BlockStyle .Default-Data h2 {
     color: #009fc2 !important;
     font-size: 26px;
     font-weight: normal !important;
     text-align: start;
     width: 100%;
     line-height: 32px;
+    margin-bottom: 12px !important;
+    padding-left: 0px !important;
 }
 
 /* .BlockStyle p .descricao-pdp-esq {
@@ -108,26 +108,18 @@ html {
     margin: 10px 0px;
 }
 
-.BlockStyle .Default-Data h2 {
-    color: #009fc2 !important;
-    font-size: 26px;
-    font-weight: normal !important;
-    text-align: start;
-    width: 100%;
-    line-height: 24px;
-    padding-left: 0px !important;
-    margin-bottom: 10px !important;
-}
-
-.Default-Data span {
+.Default-Data span,
+.CustomDescData > div > p,
+.descricao-pdp-full p {
     width: 100%;
     color: #555;
-    font-size: 17px !important;
+    font-size: 16px !important;
     font-family: Helvetica;
     font-weight: normal;
-    margin-top: 10px;
+    line-height: 1.5rem;
     white-space: break-spaces;
-    line-height: 23px;
+}
+.Default-Data span {
     padding-top: 15px;
 }
 
@@ -160,7 +152,7 @@ html {
 }
 
 .tableCenter {
-    margin-top: 25px;
+    margin-top: 10px;
     align-items: center;
     justify-content: center;
 }
@@ -205,7 +197,7 @@ html {
 
 .descricao-pdp-esq,
 .descricao-pdp-full-check {
-    color: #727273;
+    color: #555555;
     line-height: 24px;
     margin-top: 30px;
 }
@@ -218,7 +210,7 @@ html {
 }
 
 .BlockStyle p .descricao-pdp-dir {
-    color: #727273;
+    color: #555555;
     line-height: 24px;
     padding: 1rem;
     margin-top: 30px;
@@ -249,9 +241,9 @@ html {
 }
 
 .DescBox {
-    color: #727273;
+    color: #555555;
     line-height: 24px;
-    margin: 30px auto;
+    margin: 0 auto;
     white-space: break-spaces;
 }
 
@@ -299,9 +291,6 @@ iframe {
 }
 .Descricao--Inline p {
     margin: 0px;
-}
-.Default-prop :first-child {
-    margin-top: 20px;
 }
 .descricao-pdp-full > img {
     border-radius: 20px;
