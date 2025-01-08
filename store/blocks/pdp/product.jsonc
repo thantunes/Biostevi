@@ -191,6 +191,8 @@
       "flex-layout.row#product-name",
       // "product-rating-inline",
       "product-reviews",
+      "flex-layout.row#description",
+      "responsive-layout.mobile#benefits",
       "flex-layout.row#list-price-savings",
       "flex-layout.row#selling-price",
       "product-installments",
@@ -201,8 +203,6 @@
       "product-assembly-options",
       "product-gifts",
       "flex-layout.row#BuyQuantity",
-      "flex-layout.row#description",
-      "responsive-layout.mobile#benefits",
       "availability-subscriber",
       "share#default"
     ]
