@@ -53,5 +53,21 @@
             "label": "Advertência",
             "blockClass":"PDPAnchor"
         }
+    },
+    "flex-layout.row#AnchorsShelf": {
+        "children": [
+            "flex-layout.row#AnchorsShelfContainer"
+        ],
+        "props": {
+            "blockClass": "AnchorsComp"
+        }
+    },
+    "flex-layout.row#AnchorsShelfContainer": {
+        "children": [
+            "AnchorsShelf"
+        ],
+        "props": {
+            "blockClass": "AnchorsContainer"
+        }
     }
 }

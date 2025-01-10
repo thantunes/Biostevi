@@ -1,4 +1,7 @@
 {
+    "AnchorsShelf": {
+        "component": "AnchorsShelf"
+    },
     "DescriptionContructorComp": {
         "component": "DescriptionContructor",
         "composition": "children"
