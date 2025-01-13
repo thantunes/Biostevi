@@ -28,12 +28,12 @@ function AnchorsShelf() {
 
     return (
         <div className={"AnchorsShelfContainer"}>
-            {shelf2 && <div style={{width: "20%", maxWidth: "20%"}}>
+            {shelf2 && <div className={"divAnchors"}>
                 <a href="#performa2" class="vtex-store-link-0-x-link vtex-store-link-0-x-link--PDPAnchor">
                     <span class="vtex-store-link-0-x-label vtex-store-link-0-x-label--PDPAnchor">Mais Vendidos</span>
                 </a>
             </div>}
-            {shelf3 && <div style={{width: "20%", maxWidth: "20%"}}>
+            {shelf3 && <div className={"divAnchors"}>
                 <a href="#performa3" class="vtex-store-link-0-x-link vtex-store-link-0-x-link--PDPAnchor">
                     <span class="vtex-store-link-0-x-label vtex-store-link-0-x-label--PDPAnchor">Selecionados Para Você</span>
                 </a>

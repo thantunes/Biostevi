@@ -96,7 +96,8 @@
       "marginBottom": 7,
       "paddingTop": 7,
       "paddingBottom": 7,
-      "blockClass": "product-main"
+      "blockClass": "product-main",
+      "preventHorizontalStretch": true
     },
     "children": [
       "flex-layout.col#stack-tm",
@@ -613,7 +614,7 @@
   "slider-layout#informativo-mobile": {
     "props": {
       "autoplay": {
-        "timeout": 4000,
+        "timeout": 3000,
         "stopOnHover": false
       },
       "itemsPerPage": {

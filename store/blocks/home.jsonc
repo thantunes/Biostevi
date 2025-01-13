@@ -95,7 +95,7 @@
   "slider-layout#informativo-mobile": {
     "props": {
       "autoplay": {
-        "timeout": 5000,
+        "timeout": 3000,
         "stopOnHover": false
       },
       "itemsPerPage": {
@@ -138,7 +138,7 @@
     ],
     "props": {
       "autoplay": {
-        "timeout": 7000,
+        "timeout": 3000,
         "stopOnHover": true
       },
       "itemsPerPage": {
@@ -371,7 +371,7 @@
   "slider-layout#descontos-mobile": {
     "props": {
       "autoplay": {
-        "timeout": 5000,
+        "timeout": 3000,
         "stopOnHover": false
       },
       "itemsPerPage": {
@@ -394,7 +394,7 @@
   "slider-layout#mosaico-mobile": {
     "props": {
       "autoplay": {
-        "timeout": 5000,
+        "timeout": 3000,
         "stopOnHover": false
       },
       "itemsPerPage": {
@@ -554,7 +554,7 @@
         "phone": 1
       },
       "autoplay": {
-        "timeout": 5000,
+        "timeout": 3000,
         "stopOnHover": true
       },
       "infinite": true,
@@ -624,7 +624,7 @@
   "slider-layout#euqueromobile": {
     "props": {
       "autoplay": {
-        "timeout": 5000,
+        "timeout": 3000,
         "stopOnHover": false
       },
       "itemsPerPage": {

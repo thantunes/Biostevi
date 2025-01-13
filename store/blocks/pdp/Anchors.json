@@ -16,7 +16,8 @@
             "link#-Advertencia"
         ],
         "props": {
-            "blockClass": "AnchorsContainer"
+            "blockClass": "AnchorsContainer",
+            "colGap": 2
         }
     },
     "link#-Beneficios": {
