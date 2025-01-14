@@ -26,7 +26,12 @@ function CheckBeneficiosProduct() {
 
                             return (
                                 <ul key={name} className="CheckBeneficiosProduct-list">
-                                    {lines.map((text, index) => <li key={`${name}-${index}`}>{text.replace('- ', '✅ ').replace(';', '')}</li>)}
+                                    {lines.map((text, index) =>
+                                        <li className='CheckBeneficiosProduct' key={`${name}-${index}`}>
+                                            <div>✅</div>
+                                            <p>{text.replace('- ', '').replace(';', '').replace('✅', '')}</p>
+                                        </li>
+                                    )}
                                 </ul>
                             );
                         })}
