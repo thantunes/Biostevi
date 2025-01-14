@@ -10,19 +10,15 @@ function splitPorTags(texto) {
             const trimmed = element.trim();
 
             if (trimmed === "\n" || trimmed === "" || trimmed === "<p></p>" || trimmed.match(/^\s*$/)) {
-                console.log('Pulei Fora: ' + trimmed);
                 return "";
             }
 
             if ((trimmed.startsWith("<b") && trimmed.endsWith("</b>")) || (trimmed.startsWith("<a") && trimmed.endsWith("</a>")) || (trimmed.startsWith("<strong") && trimmed.endsWith("</strong>"))) {
-                console.log('Comecei com <b e terminei com </b>: ' + trimmed);
                 return `<p>${trimmed}</p>`;
             } else if (trimmed.startsWith("<")) {
-                console.log('Comecei com <: ' + trimmed);
                 return trimmed;
             }
 
-            console.log('Deu bom: ' + `<p>${trimmed}</p>`);
             return `<p>${trimmed}</p>`;
         })
         .filter((e) => e !== "")
