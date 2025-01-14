@@ -14,7 +14,10 @@ function splitPorTags(texto) {
                 return "";
             }
 
-            if (trimmed.startsWith("<")) {
+            if ((trimmed.startsWith("<b") && trimmed.endsWith("</b>")) || (trimmed.startsWith("<a") && trimmed.endsWith("</a>")) || (trimmed.startsWith("<strong") && trimmed.endsWith("</strong>"))) {
+                console.log('Comecei com <b e terminei com </b>: ' + trimmed);
+                return `<p>${trimmed}</p>`;
+            } else if (trimmed.startsWith("<")) {
                 console.log('Comecei com <: ' + trimmed);
                 return trimmed;
             }
