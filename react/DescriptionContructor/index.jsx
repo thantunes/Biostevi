@@ -64,7 +64,9 @@ function DescriptionContructor({ children }) {
     }, []);
 
     const renderContent = (namePrefix, className, includeImages = true) => {
-        const filteredData = properties.filter((e) => e.name?.includes(namePrefix));
+        const filteredData = properties.filter(
+            (e) => e.name?.includes(namePrefix) && !e.name?.includes(`Ultima Sessão-${namePrefix}`)
+        );
         return (
             <div className={`BlockStyle ${className}`}>
                 {includeImages &&
@@ -286,4 +288,5 @@ function DescriptionContructor({ children }) {
 }
 
 export default DescriptionContructor;
+
 

@@ -165,7 +165,8 @@ html {
     align-items: center;
 }
 
-.TableContentBox td img {
+.TableContentBox td img,
+img[src*="wdt-check.png"] {
     min-width: 100px;
     max-width: 100px;
 }
