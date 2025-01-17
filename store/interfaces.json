@@ -38,5 +38,8 @@
     "HeaderDrawer":{
         "component": "HeaderDrawer",
         "composition": "children"
+    },
+    "sequence-pagination": {
+        "component": "SequencePagination"
     }
 }

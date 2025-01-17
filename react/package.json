@@ -7,5 +7,8 @@
     "axios": "^1.7.7",
     "firebase": "^9.17.2",
     "jquery": "^3.6.4"
+  },
+  "devDependencies": {
+    "vtex.search-page-context": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.search-page-context@0.2.0/public/@types/vtex.search-page-context"
   }
 }
