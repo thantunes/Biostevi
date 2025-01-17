@@ -1,33 +1,70 @@
-import React, { useMemo, useEffect, useState } from 'react';
+import React, { useMemo } from 'react';
 import { useSearchPage } from 'vtex.search-page-context/SearchPageContext';
 import { useRuntime } from 'vtex.render-runtime';
 import "./index.global.css"
 
+function shouldNotIncludeMap(map) {
+    if (
+        !map ||
+        map === 'b' ||
+        map === 'brand' ||
+        map === 'c' ||
+        map === 'category-1' ||
+        map === 'department'
+    ) {
+        return true
+    }
+
+    const mapTree = map.split(',')
+
+    if (mapTree.length > 3) {
+        return false
+    }
+
+    return mapTree.every(mapItem => mapItem === 'c')
+}
+
+export function getMapQueryString(searchQuery, hideMap) {
+    if (
+        hideMap ||
+        !searchQuery ||
+        !searchQuery.variables ||
+        shouldNotIncludeMap(searchQuery.variables.map)
+    ) {
+        return ''
+    }
+
+    return `map=${searchQuery.variables.map}`
+}
+
+export function getPriceRange(query) {
+    if (!query.priceRange) return ''
+
+    return `priceRange=${query.priceRange}`
+}
+
+export function getWorkspace(query) {
+    if (!query.workspace) return ''
+
+    return `workspace=${query.workspace}`
+}
+
 const SequencePagination = () => {
     const { searchQuery, maxItemsPerPage, page } = useSearchPage();
-    const { route } = useRuntime();
-    const [path, setPath] = useState(''); // adicionei essa linha para garantir que o path seja setado apenas quando estiver disponível
-
-    useEffect(() => {
-        if (route.canonicalPath) setPath(route.canonicalPath);
-    }, [route]); // utilizei o useEffect para setar o path apenas quando ele estiver disponível
+    const { query } = useRuntime()
+    const hideMap = !query?.map
 
     const windowSize = 4; // Número de páginas antes e depois da página atual para exibir
     const totalPages = useMemo(() => Math.ceil(searchQuery.recordsFiltered / maxItemsPerPage), [searchQuery.recordsFiltered, maxItemsPerPage]);
 
     function createHref(pageNumberParam) {
-        const searchParams = new URLSearchParams(route.path.split('?')[1]);
-        searchParams.forEach((value, key) => {
-            if (key === 'map' && value === 'c') searchParams.delete(key);
-        });
+        const pageParam = pageNumberParam === 1 ? '' : `page=${pageNumberParam}`
 
-        if (searchParams.has("initialMap")) searchParams.delete("initialMap");
-        if (searchParams.has("initialQuery")) searchParams.delete("initialQuery");
+        const queryString = [getMapQueryString(searchQuery, hideMap), getPriceRange(query), pageParam, getWorkspace(query)]
+            .filter(Boolean)
+            .join('&')
 
-        if (searchParams.has("page")) searchParams.delete("page");
-        if (pageNumberParam !== 1) searchParams.set("page", pageNumberParam);
-
-        return `${path}${searchParams.toString() ? '?' : ''}${searchParams.toString()}`;
+        return `${queryString ? `?${queryString}` : '' }`
     }
 
     const createPageLink = (pageNumber, isCurrent = false) => {
@@ -69,7 +106,7 @@ const SequencePagination = () => {
         }
 
         return pages;
-    }, [page, totalPages, windowSize, path]); // adicionei o path como dependência do useMemo
+    }, [page, totalPages, windowSize]);
 
     return (
         <div className="containerPagination">
