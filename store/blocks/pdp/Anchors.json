@@ -16,7 +16,8 @@
             "link#-Advertencia"
         ],
         "props": {
-            "blockClass": "AnchorsContainer"
+            "blockClass": "AnchorsContainer",
+            "colGap": 2
         }
     },
     "link#-Beneficios": {
@@ -52,6 +53,22 @@
             "href":"#Advertencia",
             "label": "Advertência",
             "blockClass":"PDPAnchor"
+        }
+    },
+    "flex-layout.row#AnchorsShelf": {
+        "children": [
+            "flex-layout.row#AnchorsShelfContainer"
+        ],
+        "props": {
+            "blockClass": "AnchorsComp"
+        }
+    },
+    "flex-layout.row#AnchorsShelfContainer": {
+        "children": [
+            "AnchorsShelf"
+        ],
+        "props": {
+            "blockClass": "AnchorsContainer"
         }
     }
 }

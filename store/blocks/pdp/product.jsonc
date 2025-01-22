@@ -22,6 +22,7 @@
       "flex-layout.row#informativos",
       "slider-layout#informativo-mobile",
       "flex-layout.row#AnchorsComp",
+      "flex-layout.row#AnchorsShelf",
       "DescriptionContructorComp",
       "BuyTogetherComp",
       "shelf.relatedProducts",
@@ -40,6 +41,7 @@
       "flex-layout.row#informativos",
       "slider-layout#informativo-mobile",
       "flex-layout.row#AnchorsComp",
+      "flex-layout.row#AnchorsShelf",
       "DescriptionContructorComp",
       "BuyTogetherComp",
       "shelf.relatedProducts",
@@ -58,6 +60,7 @@
       "flex-layout.row#informativos",
       "slider-layout#informativo-mobile",
       "flex-layout.row#AnchorsComp",
+      "flex-layout.row#AnchorsShelf",
       "DescriptionContructorComp",
       "BuyTogetherComp",
       "shelf.relatedProducts",
@@ -91,7 +94,8 @@
       "marginBottom": 7,
       "paddingTop": 7,
       "paddingBottom": 7,
-      "blockClass": "product-main"
+      "blockClass": "product-main",
+      "preventHorizontalStretch": true
     },
     "children": [
       "flex-layout.col#stack-tm",
@@ -604,7 +608,7 @@
   "slider-layout#informativo-mobile": {
     "props": {
       "autoplay": {
-        "timeout": 5000,
+        "timeout": 3000,
         "stopOnHover": false
       },
       "itemsPerPage": {
