@@ -226,7 +226,8 @@
   },
   "flex-layout.row#descontos": {
     "props": {
-      "blockClass": "bloco-home-mosaico"
+      "blockClass": "bloco-home-mosaico",
+      "horizontalAlign": "center"
     },
     "children": [
       "flex-layout.col#primeiro",
@@ -292,7 +293,8 @@
   },
   "flex-layout.row#mosaico": {
     "props": {
-      "blockClass": "bloco-home-mosaico"
+      "blockClass": "bloco-home-mosaico",
+      "horizontalAlign": "center"
     },
     "children": [
       "flex-layout.col#mosaicoprimeiro",

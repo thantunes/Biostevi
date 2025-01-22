@@ -3,26 +3,31 @@ import { useProduct } from "vtex.product-context";
 import "./index.global.css";
 
 function splitPorTags(texto) {
-    // Regex para separar o texto em tags e conteúdo
-    const regex = /(<[^>]+>.*?<\/[^>]+>|<[^>]+>|[^<]+)/g;
+    const regex = /(<[^>]+>.*?<\/[^>]+>|<[^>]+>.*?(?=<|$)|[^\n]+|(?<=\n(?=\S))|(?=\n(?=\S))|(?<=\n\n))/g;
     const splitedText = texto.match(regex);
-
     const newArrayText = splitedText
         .map((element) => {
             const trimmed = element.trim();
 
-            // Ignora espaços ou strings vazias
-            if (trimmed === "") return "";
+            if (trimmed === "\n" || trimmed === "" || trimmed === "<p></p>" || trimmed.match(/^\s*$/)) {
+                return "";
+            }
 
-            // Verifica se é uma tag HTML e retorna diretamente
-            if (trimmed.startsWith("<")) {
+            if ((trimmed.startsWith("<b") && trimmed.endsWith("</b>")) || (trimmed.startsWith("<a") && trimmed.endsWith("</a>")) || (trimmed.startsWith("<strong") && trimmed.endsWith("</strong>"))) {
+                return `<p>${trimmed}</p>`;
+            } else if (trimmed.startsWith("<")) {
                 return trimmed;
             }
 
-            // Caso seja texto simples, encapsula em <p>
             return `<p>${trimmed}</p>`;
         })
-        .filter(Boolean); // Remove itens vazios do array
+        .filter((e) => e !== "")
+        .map((e, i, array) => {
+            if (i === array.length - 1 && e.endsWith("</p>")) {
+                return e.replace("</p>", "");
+            }
+            return e;
+        });
 
     return newArrayText.join("");
 }
@@ -58,7 +63,9 @@ function DescriptionContructor({ children }) {
     }, []);
 
     const renderContent = (namePrefix, className, includeImages = true) => {
-        const filteredData = properties.filter((e) => e.name?.includes(namePrefix));
+        const filteredData = properties.filter(
+            (e) => e.name?.includes(namePrefix) && !e.name?.includes(`Ultima Sessão-${namePrefix}`)
+        );
         return (
             <div className={`BlockStyle ${className}`}>
                 {includeImages &&
@@ -114,7 +121,7 @@ function DescriptionContructor({ children }) {
                                 dangerouslySetInnerHTML={{ __html: splitPorTags(e.values[0]) }}
                             ></div>
                         ) : null
-                    )}
+                    ).filter(Boolean)}
                     {["Linha1", "Linha2", "Linha3", "Linha4", "Linha5", "Linha6", "Linha7"].map((linha) =>
                         linha ? renderContent(linha, linha, linha) : null
                     )}
@@ -251,10 +258,10 @@ function DescriptionContructor({ children }) {
                                                 section === "Modo de Usar"
                                                     ? "ModoDeUsar"
                                                     : section
-                                                          .normalize("NFD")
-                                                          .replace(/[\u0300-\u036f]/g, "")
-                                                          .replace(/\s/g, "")
-                                                          .replace(/ /g, "")
+                                                        .normalize("NFD")
+                                                        .replace(/[\u0300-\u036f]/g, "")
+                                                        .replace(/\s/g, "")
+                                                        .replace(/ /g, "")
                                             }
                                         >
                                             {section}
@@ -280,3 +287,5 @@ function DescriptionContructor({ children }) {
 }
 
 export default DescriptionContructor;
+
+
