@@ -1088,7 +1088,9 @@
   color: #595959;
 }
 
-:global(#omnichat-launcher) {
-    transform: scale(0.7);
-    right: calc(0px - 10px*0.7)!important;
+@media (min-width:640px) {
+  :global(#omnichat-launcher) {
+      transform: scale(0.7);
+      right: calc(0px - 10px*0.7)!important;
+  }
 }
