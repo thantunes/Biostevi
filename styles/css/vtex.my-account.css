@@ -442,11 +442,16 @@
   :global(.render-route-store-product)
     :global(.vtex-store-components-3-x-imageElement--whatsapp-flutuante-icon) {
     position: fixed;
-    bottom: 80px !important;
-    right: 14px !important;
+    bottom: 140px !important;
+    right: 20px !important;
     max-width: 50px;
     z-index: 99999;
   }
+  :global(.vtex-store-components-3-x-imageElement--whatsapp-flutuante-icon) {
+    bottom: 85px !important;
+  }
+  
+
   :global(.vtex-flex-layout-0-x-flexRow--texto-informativo-footer):global(.vtex-breadcrumb-1-x-container):global(.vtex-breadcrumb-1-x-term) {
     white-space: break-spaces !important;
     width: 100% !important;
@@ -1094,27 +1099,4 @@
 :global(.vtex-search-result-3-x-orderByText),
 :global(.vtex-search-result-3-x-filterPopupTitle) {
   color: #595959;
-}
-
-@media (max-width: 768px) {
-  :global(.octadesk-octachat-app--bottomRight),
-  :global(.octadesk-octachat-app--bottomRight.octa-widget-v2) {
-    right: 0px !important;
-    bottom: 75px !important;
-  }
-
-  :global(.render-route-store-product)
-    :global(.vtex-store-components-3-x-imageElement--whatsapp-flutuante-icon) {
-    position: fixed;
-    bottom: 175px !important;
-    right: 25px !important;
-    max-width: 50px;
-    z-index: 99999;
-  }
-
-  :global(.render-route-store-home)
-    :global(.vtex-store-components-3-x-imageElement--whatsapp-flutuante-icon) {
-    bottom: 20px !important;
-    right: 25px !important;
-  }
 }
