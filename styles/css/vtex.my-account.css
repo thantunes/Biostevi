@@ -442,15 +442,15 @@
   :global(.render-route-store-product)
     :global(.vtex-store-components-3-x-imageElement--whatsapp-flutuante-icon) {
     position: fixed;
-    bottom: 175px !important;
+    bottom: 140px !important;
     right: 20px !important;
     max-width: 50px;
     z-index: 99999;
   }
-
-  :global(#omnichat-launcher) {
-    bottom: 80px!important;
+  :global(.vtex-store-components-3-x-imageElement--whatsapp-flutuante-icon) {
+    bottom: 85px !important;
   }
+  
 
   :global(.vtex-flex-layout-0-x-flexRow--texto-informativo-footer):global(.vtex-breadcrumb-1-x-container):global(.vtex-breadcrumb-1-x-term) {
     white-space: break-spaces !important;
@@ -1099,11 +1099,4 @@
 :global(.vtex-search-result-3-x-orderByText),
 :global(.vtex-search-result-3-x-filterPopupTitle) {
   color: #595959;
-}
-
-@media (min-width:640px) {
-  :global(#omnichat-launcher) {
-      transform: scale(0.7);
-      right: calc(0px - 10px*0.7)!important;
-  }
 }

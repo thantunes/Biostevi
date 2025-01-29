@@ -358,8 +358,8 @@
 }
 :global(.vtex-store-components-3-x-imageElement--whatsapp-flutuante-icon) {
   position: fixed;
-  bottom: 97px;
-  right: 25px;
+  bottom: 95px;
+  right: 20px;
   max-width: 50px;
   z-index: 999;
 }
