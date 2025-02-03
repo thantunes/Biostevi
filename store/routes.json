@@ -4,5 +4,9 @@
   },
   "store.custom#landing": {
     "path": "/landing"
+  },
+  "store.custom#search-collection": {
+    "isSitemapEntry": false,
+    "path": "/mais-vendidos/lp/suplementos"
   }
 }
