@@ -3,8 +3,6 @@
     "blocks": [
       "image#search-collection-page",
       "image#search-collection-page-mobile",
-      "flex-layout.row#titulocolecaobuscapersonalizada",
-      "flex-layout.row#descricaocolecaobuscapersonalizada",
       "search-result-layout.customQuery#search-collection"
     ]
   },
@@ -22,34 +20,6 @@
       "minWidth": "100%",
       "src": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/23ce256c-218d-4e19-8e91-4a8ad4400412___c1e627a34d1c2cfd665910b04b3086ab.webp",
       "blockClass": "imagem-landing-colecao-busca-personalizada-mobile"
-    }
-  },
-  "flex-layout.row#titulocolecaobuscapersonalizada": {
-    "children": [
-      "rich-text#collection-title"
-    ],
-    "props": {
-      "blockClass": "titulo-nome-colecao-busca-personalizada"
-    }
-  },
-  "rich-text#collection-title": {
-    "props": {
-      "text": "",
-      "blockClass": "titulo-nome-colecao"
-    }
-  },
-  "flex-layout.row#descricaocolecaobuscapersonalizada": {
-    "children": [
-      "rich-text#collection-description"
-    ],
-    "props": {
-      "blockClass": "descricao-nome-colecao-busca-personalizada"
-    }
-  },
-  "rich-text#collection-description": {
-    "props": {
-      "text": "",
-      "blockClass": "descricao-nome-colecao"
     }
   },
   "search-result-layout.customQuery#search-collection": {
