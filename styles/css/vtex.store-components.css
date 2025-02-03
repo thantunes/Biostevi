@@ -512,6 +512,15 @@
   transform: translate(-50%, 0);
   box-shadow: #333 0 6px 11px -3px;
 }
+:global(.vtex-menu-2-x-submenuWrapper) :global(.vtex-menu-2-x-submenuWrapper) {
+  top: -12.5px;
+  max-width: 350px;
+  min-height: calc(370px + (0.75rem * 2));
+  left: 75%;
+}
+:global(.vtex-menu-2-x-submenuWrapper) :global(.vtex-menu-2-x-submenuWrapper) :global(.vtex-menu-2-x-submenu) {
+  justify-content: flex-start !important;
+}
 :global(.vtex-flex-layout-0-x-flexRow--bloco-home-mosaicoeuquero)
   :global(.vtex-store-components-3-x-imageElement):hover {
   opacity: 1;

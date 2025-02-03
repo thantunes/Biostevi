@@ -201,7 +201,7 @@
       "flex-layout.row#topo-menu-mobile",
       //"search-bar",
       // "menu-item#category-lojaonlone",
-      "menu-item#mais-vendidos-mobile",
+      "vtex.menu@2.x:menu#mais-vendidos-mobile",
       "menu-item#imunidade-mobile",
       "vtex.menu@2.x:menu#barbacabelo-mobile",
       "vtex.menu@2.x:menu#emagrecimento-mobile",
@@ -239,7 +239,7 @@
     },
     "blocks": [
       "vtex.menu@2.x:submenu.accordion#bionutrition-mobile"
-    ] 
+    ]
   },
   "vtex.menu@2.x:submenu.accordion#bionutrition-mobile": {
     "children": [
@@ -353,6 +353,19 @@
       "maxWidth": "100%"
     }
   },
+  // 
+  "vtex.menu@2.x:menu#mais-vendidos-mobile": {
+    "props": {
+      "orientation": "vertical",
+      "blockClass": [
+        "barbacabelo-mobile"
+      ],
+      "experimentalOptimizeRendering": true
+    },
+    "children": [
+      "menu-item#mais-vendidos-mobile"
+    ]
+  },
   "menu-item#mais-vendidos-mobile": {
     "props": {
       "blockClass": [
@@ -360,11 +373,280 @@
       ],
       "itemProps": {
         "tagTitle": "Mais Vendidos",
-        "text": "Mais Vendidos",
-        "href": "/467?map=productClusterIds"
+        "text": "Mais Vendidos"
       }
-    }
+    },
+    "blocks": [
+      "vtex.menu@2.x:submenu.accordion#mais-vendidos-mobile"
+    ]
   },
+  "vtex.menu@2.x:submenu.accordion#mais-vendidos-mobile": {
+    "children": [
+      "vtex.menu@2.x:menu#menu-mais-vendidos-mobile"
+    ]
+  },
+  "vtex.menu@2.x:menu#menu-mais-vendidos-mobile": {
+    "props": {
+      "orientation": "vertical"
+    },
+    "children": [
+      "menu-item#mais-vendidos-barba-e-cabelo-mobile",
+      "menu-item#mais-vendidos-emagrecimento-mobile",
+      "menu-item#mais-vendidos-desempenho-fisico-mobile",
+      "menu-item#mais-vendidos-saude-mobile",
+      "menu-item#mais-vendidos-beleza-mobile",
+      "menu-item#mais-vendidos-saude-sexual-mobile",
+      "menu-item#mais-vendidos-nutrition-mobile"
+    ]
+  },
+  "menu-item#mais-vendidos-barba-e-cabelo-mobile": {
+    "props": {
+      "blockClass": [
+        "mais-vendidos-barba-e-cabelo-mobile"
+      ],
+      "itemProps": {
+        "tagTitle": "Barba e Cabelo",
+        "text": "Barba e Cabelo"
+      }
+    },
+    "blocks": [
+      "vtex.menu@2.x:submenu.accordion#mais-vendidos-barba-e-cabelo-mobile"
+    ]
+  },
+  "vtex.menu@2.x:submenu.accordion#mais-vendidos-barba-e-cabelo-mobile": {
+    "children": [
+      "vtex.menu@2.x:menu#menu-mais-vendidos-barba-e-cabelo-mobile"
+    ]
+  },
+  "vtex.menu@2.x:menu#menu-mais-vendidos-barba-e-cabelo-mobile": {
+    "props": {
+      "orientation": "vertical",
+      "experimentalOptimizeRendering": true
+    },
+    "children": [
+      "menu-item#mais-vendidos-barba-e-cabelo-suplementos-e-vitaminas",
+      "menu-item#mais-vendidos-barba-e-cabelo-locoes",
+      "menu-item#mais-vendidos-barba-e-cabelo-shampoo-condicionador",
+      "menu-item#mais-vendidos-barba-e-cabelo-kit",
+      "menu-item#mais-vendidos-barba-e-cabelo-barba"
+    ]
+  },
+  "menu-item#mais-vendidos-emagrecimento-mobile": {
+    "props": {
+      "blockClass": [
+        "mais-vendidos-emagrecimento-mobile"
+      ],
+      "itemProps": {
+        "tagTitle": "Emagrecimento",
+        "text": "Emagrecimento"
+      }
+    },
+    "blocks": [
+      "vtex.menu@2.x:submenu.accordion#mais-vendidos-emagrecimento-mobile"
+    ]
+  },
+  "vtex.menu@2.x:submenu.accordion#mais-vendidos-emagrecimento-mobile": {
+    "children": [
+      "vtex.menu@2.x:menu#menu-mais-vendidos-emagrecimento-mobile"
+    ]
+  },
+  "vtex.menu@2.x:menu#menu-mais-vendidos-emagrecimento-mobile": {
+    "props": {
+      "orientation": "vertical",
+      "experimentalOptimizeRendering": true
+    },
+    "children": [
+      "menu-item#mais-vendidos-emagrecimento-termogenico",
+      "menu-item#mais-vendidos-emagrecimento-queima-de-gordura",
+      "menu-item#mais-vendidos-emagrecimento-bloqueador-de-gordura",
+      "menu-item#mais-vendidos-emagrecimento-emagrecimento-celulite",
+      "menu-item#mais-vendidos-emagrecimento-bloqueador-de-carboidrato",
+      "menu-item#mais-vendidos-emagrecimento-controle-de-apetite",
+      "menu-item#mais-vendidos-emagrecimento-diuretico",
+      "menu-item#mais-vendidos-emagrecimento-vontade-de-doces",
+      "menu-item#mais-vendidos-emagrecimento-antioxidante-detox",
+      "menu-item#mais-vendidos-emagrecimento-perda-de-peso"
+    ]
+  },
+  "menu-item#mais-vendidos-desempenho-fisico-mobile": {
+    "props": {
+      "blockClass": [
+        "mais-vendidos-desempenho-fisico-mobile"
+      ],
+      "itemProps": {
+        "tagTitle": "Desempenho Físico",
+        "text": "Desempenho Físico"
+      }
+    },
+    "blocks": [
+      "vtex.menu@2.x:submenu.accordion#mais-vendidos-desempenho-fisico-mobile"
+    ]
+  },
+  "vtex.menu@2.x:submenu.accordion#mais-vendidos-desempenho-fisico-mobile": {
+    "children": [
+      "vtex.menu@2.x:menu#menu-mais-vendidos-desempenho-fisico-mobile"
+    ]
+  },
+  "vtex.menu@2.x:menu#menu-mais-vendidos-desempenho-fisico-mobile": {
+    "props": {
+      "orientation": "vertical",
+      "experimentalOptimizeRendering": true
+    },
+    "children": [
+      "menu-item#mais-vendidos-desempenho-físico-ganho-de-massa",
+      "menu-item#mais-vendidos-desempenho-físico-forca-energia",
+      "menu-item#mais-vendidos-desempenho-físico-pre-treino",
+      "menu-item#mais-vendidos-desempenho-físico-intra-treino",
+      "menu-item#mais-vendidos-desempenho-físico-pos-treino",
+      "menu-item#mais-vendidos-desempenho-físico-tpc",
+      "menu-item#mais-vendidos-desempenho-físico-vasodilatador",
+      "menu-item#mais-vendidos-desempenho-físico-vitaminas-minerais-aminoacidos",
+      "menu-item#mais-vendidos-desempenho-físico-termogenico"
+    ]
+  },
+  "menu-item#mais-vendidos-saude-mobile": {
+    "props": {
+      "blockClass": [
+        "mais-vendidos-saude-mobile"
+      ],
+      "itemProps": {
+        "tagTitle": "Saúde",
+        "text": "Saúde"
+      }
+    },
+    "blocks": [
+      "vtex.menu@2.x:submenu.accordion#mais-vendidos-saude-mobile"
+    ]
+  },
+  "vtex.menu@2.x:submenu.accordion#mais-vendidos-saude-mobile": {
+    "children": [
+      "vtex.menu@2.x:menu#menu-mais-vendidos-saude-mobile"
+    ]
+  },
+  "vtex.menu@2.x:menu#menu-mais-vendidos-saude-mobile": {
+    "props": {
+      "orientation": "vertical",
+      "experimentalOptimizeRendering": true
+    },
+    "children": [
+      "menu-item#mais-vendidos-saúde-imunidade",
+      "menu-item#mais-vendidos-saúde-articulacoes-cartilagem",
+      "menu-item#mais-vendidos-saúde-saude-longevidade",
+      "menu-item#mais-vendidos-saúde-digestao-e-refluxo",
+      "menu-item#mais-vendidos-saúde-dormir-bem",
+      "menu-item#mais-vendidos-saúde-memoria-e-concentracao",
+      "menu-item#mais-vendidos-saúde-ansiedade-e-estresse",
+      "menu-item#mais-vendidos-saúde-dores",
+      "menu-item#mais-vendidos-saúde-figado-e-rins",
+      "menu-item#mais-vendidos-saúde-saude-da-mulher",
+      "menu-item#mais-vendidos-saúde-colesterol",
+      "menu-item#mais-vendidos-saúde-lactobacillus-probioticos",
+      "menu-item#mais-vendidos-saúde-magnesios"
+    ]
+  },
+  "menu-item#mais-vendidos-beleza-mobile": {
+    "props": {
+      "blockClass": [
+        "mais-vendidos-beleza-mobile"
+      ],
+      "itemProps": {
+        "tagTitle": "Beleza",
+        "text": "Beleza"
+      }
+    },
+    "blocks": [
+      "vtex.menu@2.x:submenu.accordion#mais-vendidos-beleza-mobile"
+    ]
+  },
+  "vtex.menu@2.x:submenu.accordion#mais-vendidos-beleza-mobile": {
+    "children": [
+      "vtex.menu@2.x:menu#menu-mais-vendidos-beleza-mobile"
+    ]
+  },
+  "vtex.menu@2.x:menu#menu-mais-vendidos-beleza-mobile": {
+    "props": {
+      "orientation": "vertical",
+      "experimentalOptimizeRendering": true
+    },
+    "children": [
+      "menu-item#mais-vendidos-beleza-acne-e-oleosidade",
+      "menu-item#mais-vendidos-beleza-pele",
+      "menu-item#mais-vendidos-beleza-manchas-e-melasma",
+      "menu-item#mais-vendidos-beleza-emagrecimento-celulite",
+      "menu-item#mais-vendidos-beleza-anti-envelhecimento",
+      "menu-item#mais-vendidos-beleza-cilios-e-sobrancelhas",
+      "menu-item#mais-vendidos-beleza-firmadores",
+      "menu-item#mais-vendidos-beleza-lifting",
+      "menu-item#mais-vendidos-beleza-maos-e-pes",
+      "menu-item#mais-vendidos-beleza-unhas",
+      "menu-item#mais-vendidos-beleza-olheiras-e-rugas",
+      "menu-item#mais-vendidos-beleza-cuidado-intimo",
+      "menu-item#mais-vendidos-beleza-cosmeticos"
+    ]
+  },
+  "menu-item#mais-vendidos-saude-sexual-mobile": {
+    "props": {
+      "blockClass": [
+        "mais-vendidos-saude-sexual-mobile"
+      ],
+      "itemProps": {
+        "tagTitle": "Saúde Sexual",
+        "text": "Saúde Sexual"
+      }
+    },
+    "blocks": [
+      "vtex.menu@2.x:submenu.accordion#mais-vendidos-saude-sexual-mobile"
+    ]
+  },
+  "vtex.menu@2.x:submenu.accordion#mais-vendidos-saude-sexual-mobile": {
+    "children": [
+      "vtex.menu@2.x:menu#menu-mais-vendidos-saude-sexual-mobile"
+    ]
+  },
+  "vtex.menu@2.x:menu#menu-mais-vendidos-saude-sexual-mobile": {
+    "props": {
+      "orientation": "vertical",
+      "experimentalOptimizeRendering": true
+    },
+    "children": [
+      "menu-item#mais-vendidos-saúde-sexual-masculino",
+      "menu-item#mais-vendidos-saúde-sexual-feminino"
+    ]
+  },
+  "menu-item#mais-vendidos-nutrition-mobile": {
+    "props": {
+      "blockClass": [
+        "mais-vendidos-nutrition-mobile"
+      ],
+      "itemProps": {
+        "tagTitle": "Nutrition",
+        "text": "Nutrition"
+      }
+    },
+    "blocks": [
+      "vtex.menu@2.x:submenu.accordion#mais-vendidos-nutrition-mobile"
+    ]
+  },
+  "vtex.menu@2.x:submenu.accordion#mais-vendidos-nutrition-mobile": {
+    "children": [
+      "vtex.menu@2.x:menu#menu-mais-vendidos-nutrition-mobile"
+    ]
+  },
+  "vtex.menu@2.x:menu#menu-mais-vendidos-nutrition-mobile": {
+    "props": {
+      "orientation": "vertical",
+      "experimentalOptimizeRendering": true
+    },
+    "children": [
+      "menu-item#mais-vendidos-nutrition-chas",
+      "menu-item#mais-vendidos-nutrition-farinhas",
+      "menu-item#mais-vendidos-nutrition-granolas-e-snacks",
+      "menu-item#mais-vendidos-nutrition-pastas",
+      "menu-item#mais-vendidos-nutrition-refeicoes-fit",
+      "menu-item#mais-vendidos-nutrition-suplementos"
+    ]
+  },
+  // 
   "menu-item#imunidade-mobile": {
     "props": {
       "blockClass": [
