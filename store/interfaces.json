@@ -44,5 +44,8 @@
   },
   "SeoTextPlaceholderAbove": {
     "component": "SeoTextPlaceholderAbove"
+  },
+  "SeoTextPlaceholderBelow": {
+    "component": "SeoTextPlaceholderBelow"
   }
 }

@@ -86,6 +86,7 @@
       "flex-layout.row#searchbanner",
       "flex-layout.row#banner-one",
       "flex-layout.row#result",
+      "flex-layout.row#SeoTextPlaceholderBelow",
       "flex-layout.row#banner-second"
     ],
     "props": {
@@ -137,6 +138,9 @@
   },
   "flex-layout.row#SeoTextPlaceholderAbove": {
     "children": ["SeoTextPlaceholderAbove"]
+  },
+  "flex-layout.row#SeoTextPlaceholderBelow": {
+    "children": ["SeoTextPlaceholderBelow"]
   },
   "flex-layout.row#searchbanner": {
     "children": ["search-banner"]
