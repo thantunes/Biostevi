@@ -9,20 +9,20 @@ const SeoTextPlaceholderBelow = props => {
   }
 
   return (
-    props.content && ( // Renderiza a div apenas se props.content existir
-      <div>
-        <div
-          className={`${styles.wrapperContentSeo} ${
-            isExpanded ? styles.expanded : ''
-          }`}
-        >
-          <div dangerouslySetInnerHTML={{ __html: props.content }}></div>
-        </div>
+    <div>
+      <div
+        className={`${styles.wrapperContentSeo} ${
+          isExpanded ? styles.expanded : ''
+        }`}
+      >
+        <div dangerouslySetInnerHTML={{ __html: props.content }}></div>
+      </div>
+      {props.content && (
         <button className={styles.btnReadMore} onClick={toggleContent}>
           {isExpanded ? 'Ler menos' : 'Ler mais'}
         </button>
-      </div>
-    )
+      )}
+    </div>
   )
 }
 
