@@ -1,0 +1,5 @@
+{
+    "store.custom#app-redirect": {
+        "blocks": ["redirect-app"]
+    }
+}

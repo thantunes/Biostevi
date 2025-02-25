@@ -41,5 +41,8 @@
     "HeaderDrawer":{
         "component": "HeaderDrawer",
         "composition": "children"
+    },
+    "redirect-app": {
+        "component": "RedirectApp"
     }
 }
