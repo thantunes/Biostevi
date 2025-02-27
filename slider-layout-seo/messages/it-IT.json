@@ -1,0 +1,13 @@
+{
+  "admin/editor.slider-layout.title": "Slider-Layout",
+  "admin/editor.slider-layout.infinite": "Infinito",
+  "admin/editor.slider-layout.showNavigation": "Mostra frecce di navigazione",
+  "admin/editor.slider-layout.showPaginationDots": "Mostra punti di impaginazione",
+  "admin/editor.slider-layout.usePagination": "Utilizza impaginazione",
+  "admin/editor.slider-layout.sliderFullWidth": "Larghezza massima",
+  "admin/editor.slider-layout.sliderFullWidthDescription": "Controlla se le diapositive debbano occupare o meno l'intera larghezza disponibile, facendo in modo che le frecce appaiano su di esse.",
+  "admin/editor.slider-layout.sliderNavigationAndPaginationPropertyMobileOnly": "Solo dispositivi mobili",
+  "admin/editor.slider-layout.sliderNavigationAndPaginationPropertyDesktopOnly": "Solo desktop",
+  "admin/editor.slider-layout.sliderNavigationAndPaginationPropertyAlways": "Sempre",
+  "admin/editor.slider-layout.sliderNavigationAndPaginationPropertyNever": "Mai"
+}
