@@ -20,7 +20,7 @@
       "flex-layout.row#product-breadcrumb",
       "flex-layout.row#product-main-d",
       "flex-layout.row#informativos",
-      "slider-layout#informativo-mobile",
+      "slider-layout-seo#informativo-mobile",
       "flex-layout.row#AnchorsComp",
       "flex-layout.row#AnchorsShelf",
       "DescriptionContructorComp",
@@ -39,7 +39,7 @@
       "flex-layout.row#product-breadcrumb",
       "flex-layout.row#product-main-tm",
       "flex-layout.row#informativos",
-      "slider-layout#informativo-mobile",
+      "slider-layout-seo#informativo-mobile",
       "flex-layout.row#AnchorsComp",
       "flex-layout.row#AnchorsShelf",
       "DescriptionContructorComp",
@@ -58,7 +58,7 @@
       "flex-layout.row#product-breadcrumb",
       "flex-layout.row#product-main-tm",
       "flex-layout.row#informativos",
-      "slider-layout#informativo-mobile",
+      "slider-layout-seo#informativo-mobile",
       "flex-layout.row#AnchorsComp",
       "flex-layout.row#AnchorsShelf",
       "DescriptionContructorComp",
@@ -397,7 +397,7 @@
   //     "product-summary.shelf"
   //   ],
   //   "children": [
-  //     "slider-layout#prateleiralancamentos"
+  //     "slider-layout-seo#prateleiralancamentos"
   //   ],
   //   "props": {
   //     "orderBy": "OrderByReleaseDateDESC",
@@ -605,7 +605,7 @@
       "blockClass": "small-text"
     }
   },
-  "slider-layout#informativo-mobile": {
+  "slider-layout-seo#informativo-mobile": {
     "props": {
       "autoplay": {
         "timeout": 3000,

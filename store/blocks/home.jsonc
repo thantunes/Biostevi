@@ -4,17 +4,17 @@
       "list-context.image-list#demo",
       //"info-card#home",
       "flex-layout.row#informativos",
-      "slider-layout#informativo-mobile",
+      "slider-layout-seo#informativo-mobile",
       "rich-text#shelf-title-lancamentos",
       "flex-layout.row#shelfprateleiralancamentos",
       // "__fold__",
       //"shelf#produtos-em-lancamentos",
       "flex-layout.row#descontos",
-      "slider-layout#descontos-mobile",
+      "slider-layout-seo#descontos-mobile",
       "rich-text#shelf-title-maisvendidos",
       "flex-layout.row#shelfmaisvendidos",
       "flex-layout.row#mosaico",
-      "slider-layout#mosaico-mobile",
+      "slider-layout-seo#mosaico-mobile",
       "rich-text#shelf-title-ofertas",
       "flex-layout.row#shelfofertas",
       //"rich-text#question",
@@ -22,7 +22,7 @@
       "rich-text#shelf-title-euquero",
       "flex-layout.row#mosaicoeuquero",
       "flex-layout.row#mosaicoeuqueromobile",
-      // "slider-layout#euqueromobile",
+      // "slider-layout-seo#euqueromobile",
       "rich-text#shelf-title-influencers",
       "list-context.image-list#influencers",
       "flex-layout.row#faq-container",
@@ -73,14 +73,14 @@
       "product-summary.shelf"
     ],
     "children": [
-      "slider-layout#prateleiralancamentos"
+      "slider-layout-seo#prateleiralancamentos"
     ],
     "props": {
       "orderBy": "OrderByReleaseDateDESC",
       "collection": "148"
     }
   },
-  "slider-layout#prateleiralancamentos": {
+  "slider-layout-seo#prateleiralancamentos": {
     "props": {
       "itemsPerPage": {
         "desktop": 4,
@@ -92,7 +92,7 @@
       "blockClass": "shelf"
     }
   },
-  "slider-layout#informativo-mobile": {
+  "slider-layout-seo#informativo-mobile": {
     "props": {
       "autoplay": {
         "timeout": 3000,
@@ -127,7 +127,7 @@
       "responsive-layout.tablet#Informativos"
     ]
   },
-  "slider-layout#SliderLayoutInfomativos": {
+  "slider-layout-seo#SliderLayoutInfomativos": {
     "children": [
       "rich-text#frete-gratis",
       "rich-text#descontoprogressivo",
@@ -171,7 +171,7 @@
   },
   "responsive-layout.tablet#Informativos": {
     "children": [
-      "slider-layout#SliderLayoutInfomativos"
+      "slider-layout-seo#SliderLayoutInfomativos"
     ]
   },
   "rich-text#frete-gratis": {
@@ -370,7 +370,7 @@
     }
   },
   /*thiago*/
-  "slider-layout#descontos-mobile": {
+  "slider-layout-seo#descontos-mobile": {
     "props": {
       "autoplay": {
         "timeout": 3000,
@@ -393,7 +393,7 @@
       "image#produtodescontoquinto"
     ]
   },
-  "slider-layout#mosaico-mobile": {
+  "slider-layout-seo#mosaico-mobile": {
     "props": {
       "autoplay": {
         "timeout": 3000,
@@ -426,14 +426,14 @@
       "product-summary.shelf"
     ],
     "children": [
-      "slider-layout#lancamentos"
+      "slider-layout-seo#lancamentos"
     ],
     "props": {
       "orderBy": "OrderByReleaseDateDESC",
       "collection": "148"
     }
   },
-  "slider-layout#produtos-em-lancamentos": {
+  "slider-layout-seo#produtos-em-lancamentos": {
     "props": {
       "itemsPerPage": {
         "desktop": 4,
@@ -445,7 +445,7 @@
       "blockClass": "shelf"
     }
   },
-  "slider-layout#lancamentos": {
+  "slider-layout-seo#lancamentos": {
     "props": {
       "itemsPerPage": {
         "desktop": 4,
@@ -473,14 +473,14 @@
       "product-summary.shelf"
     ],
     "children": [
-      "slider-layout#maisvendidos"
+      "slider-layout-seo#maisvendidos"
     ],
     "props": {
       "orderBy": "OrderByReleaseDateDESC",
       "collection": "137"
     }
   },
-  "slider-layout#maisvendidos": {
+  "slider-layout-seo#maisvendidos": {
     "props": {
       "itemsPerPage": {
         "desktop": 4,
@@ -508,14 +508,14 @@
       "product-summary.shelf"
     ],
     "children": [
-      "slider-layout#ofertas"
+      "slider-layout-seo#ofertas"
     ],
     "props": {
       "orderBy": "OrderByReleaseDateDESC",
       "collection": "137"
     }
   },
-  "slider-layout#ofertas": {
+  "slider-layout-seo#ofertas": {
     "props": {
       "itemsPerPage": {
         "desktop": 4,
@@ -529,7 +529,7 @@
   },
   "list-context.image-list#demo": {
     "children": [
-      "slider-layout#demo-images"
+      "slider-layout-seo#demo-images"
     ],
     "props": {
       "preload": true,
@@ -548,7 +548,7 @@
       ]
     }
   },
-  "slider-layout#demo-images": {
+  "slider-layout-seo#demo-images": {
     "props": {
       "itemsPerPage": {
         "desktop": 1,
@@ -580,13 +580,13 @@
       "product-summary.shelf"
     ],
     "children": [
-      "slider-layout#demo-products"
+      "slider-layout-seo#demo-products"
     ],
     "props": {
       "orderBy": "OrderByTopSaleDESC"
     }
   },
-  "slider-layout#demo-products": {
+  "slider-layout-seo#demo-products": {
     "props": {
       "itemsPerPage": {
         "desktop": 4,
@@ -623,7 +623,7 @@
       "blockClass": "shelfTitle"
     }
   },
-  "slider-layout#euqueromobile": {
+  "slider-layout-seo#euqueromobile": {
     "props": {
       "autoplay": {
         "timeout": 3000,
@@ -834,7 +834,7 @@
   "list-context.image-list#influencers": {
     "title": "Slider Influenciadores",
     "children": [
-      "slider-layout#influencers"
+      "slider-layout-seo#influencers"
     ],
     "props": {
       "images": [
@@ -922,7 +922,7 @@
       ]
     }
   },
-  "slider-layout#influencers": {
+  "slider-layout-seo#influencers": {
     "props": {
       "itemsPerPage": {
         "desktop": 4,

@@ -39,14 +39,14 @@
 .FormProduct>label:nth-child(1) {
     display: flex;
     flex-direction: row;
-    align-items: start;
+    align-items: flex-start;
     gap: 5px;
 }
 
 .FormProduct>label:nth-child(2) {
     display: flex;
     flex-direction: row;
-    align-items: start;
+    align-items: flex-start;
     gap: 5px;
 }
 
@@ -60,7 +60,7 @@
 .FormProduct {
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
     gap: 15px;
     margin-bottom: 10px;
 }

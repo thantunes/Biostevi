@@ -1,6 +1,6 @@
 {
   "name": "slider-layout-seo",
-  "vendor": "vendorname",
+  "vendor": "stevia",
   "version": "0.24.6",
   "title": "VTEX Slider-Layout",
   "description": "A React Slider component that works well in SPA and SSR",

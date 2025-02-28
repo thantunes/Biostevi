@@ -30,7 +30,7 @@
     },
     "list-context.wishlist": {
       "blocks": ["product-summary.shelf#wishlist"],
-      "children": ["slider-layout#wishlist"]
+      "children": ["slider-layout-seo#wishlist"]
     },
     "product-summary.shelf#wishlist": {
       "children": [
@@ -42,7 +42,7 @@
         "add-to-cart-button"
       ]
     },
-    "slider-layout#wishlist": {
+    "slider-layout-seo#wishlist": {
       "props": {
         "itemsPerPage": {
           "desktop": 5,
