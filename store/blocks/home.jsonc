@@ -1,6 +1,7 @@
 {
   "store.home": {
     "blocks": [
+      "SchemaOrganization",
       "list-context.image-list#demo",
       //"info-card#home",
       "flex-layout.row#informativos",
