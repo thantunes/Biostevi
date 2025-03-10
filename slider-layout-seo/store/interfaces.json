@@ -1,0 +1,13 @@
+{
+  "slider-layout-seo": {
+    "component": "SliderLayout",
+    "composition": "children",
+    "content": {
+      "$ref": "#/definitions/SliderLayout"
+    }
+  },
+  "slider-layout-group-seo": {
+    "component": "SliderLayoutGroup",
+    "composition": "children"
+  }
+}

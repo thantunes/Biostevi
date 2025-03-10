@@ -42,6 +42,9 @@
     "component": "HeaderDrawer",
     "composition": "children"
   },
+  "SchemaOrganization": {
+    "component": "SchemaOrganization"
+  },
   "redirect-app": {
     "component": "RedirectApp"
   },
