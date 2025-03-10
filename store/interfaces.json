@@ -20,29 +20,35 @@
     },
     "DescriptionInline": {
         "component": "CustomDescription",
-        "composition":"children"
+        "composition": "children"
     },
     "ProductCustomDescription": {
         "component": "ProductCustomDescription"
     },
     "EnvioReceitaComp": {
         "component": "EnvioReceita",
-        "composition":"children"
+        "composition": "children"
     },
-    "ChangeTag":{
+    "ChangeTag": {
         "component": "ChangeTag"
     },
-    "CategoryHeading":{
+    "CategoryHeading": {
         "component": "CategoryHeading"
     },
-    "CryptoScript":{
+    "CryptoScript": {
         "component": "CryptoScript"
     },
-    "HeaderDrawer":{
+    "HeaderDrawer": {
         "component": "HeaderDrawer",
         "composition": "children"
     },
     "SchemaOrganization": {
         "component": "SchemaOrganization"
+    },
+    "SeoTextPlaceholderAbove": {
+        "component": "SeoTextPlaceholderAbove"
+    },
+    "SeoTextPlaceholderBelow": {
+        "component": "SeoTextPlaceholderBelow"
     }
 }
