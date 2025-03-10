@@ -1,0 +1,13 @@
+{
+  "admin/editor.slider-layout.title": "เค้าโครงตัวเลื่อน",
+  "admin/editor.slider-layout.infinite": "ไม่จำกัด",
+  "admin/editor.slider-layout.showNavigation": "แสดงลูกศรการนำทาง",
+  "admin/editor.slider-layout.showPaginationDots": "แสดงจุดประการแบ่งหน้า",
+  "admin/editor.slider-layout.usePagination": "ใช้การแบ่งหน้า",
+  "admin/editor.slider-layout.sliderFullWidth": "ความกว้างเต็มที่",
+  "admin/editor.slider-layout.sliderFullWidthDescription": "ควบคุมว่าควรแสดงสไลด์เต็มความกว้างที่ใช้ได้หรือไม่ โดยแสดงลูกศรที่ด้านบนสุดของสไลด์",
+  "admin/editor.slider-layout.sliderNavigationAndPaginationPropertyMobileOnly": "เฉพาะอุปกรณ์เคลื่อนที่",
+  "admin/editor.slider-layout.sliderNavigationAndPaginationPropertyDesktopOnly": "เฉพาะเดสก์ท็อป",
+  "admin/editor.slider-layout.sliderNavigationAndPaginationPropertyAlways": "ทุกครั้ง",
+  "admin/editor.slider-layout.sliderNavigationAndPaginationPropertyNever": "ไม่ต้อง"
+}

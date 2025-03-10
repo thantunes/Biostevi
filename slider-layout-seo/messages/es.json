@@ -1,0 +1,13 @@
+{
+  "admin/editor.slider-layout.title": "Layout del slider",
+  "admin/editor.slider-layout.infinite": "Infinito",
+  "admin/editor.slider-layout.showNavigation": "Mostrar flechas de navegación",
+  "admin/editor.slider-layout.showPaginationDots": "Mostrar puntos de paginación",
+  "admin/editor.slider-layout.usePagination": "Usar paginación",
+  "admin/editor.slider-layout.sliderFullWidth": "Anchura completa",
+  "admin/editor.slider-layout.sliderFullWidthDescription": "Controla si las diapositivas deben ocupar la anchura completa y hacer que las flechas desaparezcan encima de ellas.",
+  "admin/editor.slider-layout.sliderNavigationAndPaginationPropertyMobileOnly": "Solo móvil",
+  "admin/editor.slider-layout.sliderNavigationAndPaginationPropertyDesktopOnly": "Solo escritorio",
+  "admin/editor.slider-layout.sliderNavigationAndPaginationPropertyAlways": "Siempre",
+  "admin/editor.slider-layout.sliderNavigationAndPaginationPropertyNever": "Nunca"
+}

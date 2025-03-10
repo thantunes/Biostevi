@@ -31,14 +31,6 @@
 :global(.vtex-toast) {
   background-color: #009fc2;
 }
-@media (min-width: 780px) {
-  :global(.vtex-account__page):global(.vtex-slider-layout-0-x-sliderLeftArrow) {
-    margin-left: -35px;
-  }
-  :global(.vtex-account__page):global(.vtex-slider-layout-0-x-sliderRightArrow) {
-    margin-right: -35px;
-  }
-}
 :global(.render-route-store-wishlist):global(.vtex-slider-layout-0-x-sliderLayoutContainer) {
   max-width: 1200px;
   margin: auto;
@@ -929,9 +921,7 @@
   position: relative;
   white-space: pre-wrap;
   font-weight: 700;
-  padding-bottom: 5px;
-  margin: 10px;
-  margin-top: 15px;
+  padding: 10px 0 15px;
 }
 :global(.vtex-product-gifts-0-x-productGiftListContainer) {
   margin-top: 10px;
