@@ -271,8 +271,7 @@
     "children": [
       "menu-item#atendimendotitulo",
       "menu-item#bags",
-      "menu-item#backpacks",
-      "ReclameAq"
+      "menu-item#backpacks"
     ]
   },
 
