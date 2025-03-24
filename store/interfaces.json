@@ -53,5 +53,8 @@
   },
   "SeoTextPlaceholderBelow": {
     "component": "SeoTextPlaceholderBelow"
+  },
+  "AppBanner": {
+    "component": "AppBanner"
   }
 }
