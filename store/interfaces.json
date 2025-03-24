@@ -56,5 +56,8 @@
   },
   "AppBanner": {
     "component": "AppBanner"
+  },
+  "AppBadgeFooter": {
+    "component": "AppBadgeFooter"
   }
 }
