@@ -1,6 +1,10 @@
 {
   "store.custom#app-redirect": {
-    "blocks": ["flex-layout.row#downloadApp", "redirect-app"]
+    "blocks": ["flex-layout.row#downloadApp", "redirect-app"],
+    "props": {
+      "blockClass": "badge-app",
+      "paddingTop": "2"
+    }
   },
   "flex-layout.row#downloadApp": {
     "children": ["AppBadgeFooter"]
