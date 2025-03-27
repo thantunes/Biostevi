@@ -8,7 +8,7 @@ function AppBadgeFooter() {
       </div>
       <div className={style.imgWrapper}>
         <a
-          href="https://apps.apple.com/mx/app/biost%C3%A9vi-pharma/id6740829799?uo=2"
+          href="https://play.google.com/store/apps/details?id=com.kobe.biostevi&hl=pt_BR"
           target="_blank"
         >
           <img
@@ -18,7 +18,7 @@ function AppBadgeFooter() {
           />
         </a>
         <a
-          href="https://play.google.com/store/apps/details?id=com.kobe.biostevi&hl=pt_BR"
+          href="https://apps.apple.com/mx/app/biost%C3%A9vi-pharma/id6740829799?uo=2"
           target="_blank"
         >
           <img
