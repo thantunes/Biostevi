@@ -7,7 +7,7 @@
       "flex-layout.row#footer-1-desktop",
       "flex-layout.row#espacamento-footer",
       "flex-layout.row#footer-2-desktop",
-      "flex-layout.row#Security",
+      "flex-layout.row#footer-teste",
       "flex-layout.row#espacamento-footer",
       "flex-layout.row#footer-3-desktop",
       "flex-layout.row#footer-4-desktop",
@@ -20,6 +20,7 @@
       "blockClass": "SecurityFooter"
     }
   },
+  "flex-layout.row#AppBadge": { "children": ["AppBadgeFooter"] },
   "rich-text#SecTitle": {
     "props": {
       "text": "Segurança",
@@ -116,6 +117,9 @@
     "props": {
       "blockClass": "espacamento-footer"
     }
+  },
+  "flex-layout.row#footer-teste": {
+    "children": ["flex-layout.row#Security", "flex-layout.row#AppBadge"]
   },
 
   "flex-layout.row#footer-2-desktop": {
@@ -368,8 +372,8 @@
   "footer-layout.mobile": {
     "children": [
       "flex-layout.row#1-footer-mobile",
+      "flex-layout.row#footer-teste",
       "flex-layout.row#2-footer-mobile",
-      "flex-layout.row#Security",
       "flex-layout.row#footer-3-desktop",
       "flex-layout.row#footer-4-desktop",
       "flex-layout.row#developers"

@@ -1,15 +1,9 @@
 {
   "header": {
-    "blocks": [
-      "header-layout.desktop",
-      "header-layout.mobile"
-    ]
+    "blocks": ["header-layout.desktop", "header-layout.mobile"]
   },
   "header.full": {
-    "blocks": [
-      "header-layout.desktop",
-      "header-layout.mobile"
-    ]
+    "blocks": ["header-layout.desktop", "header-layout.mobile"]
   },
   "header-layout.desktop": {
     "children": [
@@ -23,17 +17,13 @@
     ]
   },
   "flex-layout.row#1-desktop": {
-    "children": [
-      "telemarketing"
-    ],
+    "children": ["telemarketing"],
     "props": {
       "fullWidth": true
     }
   },
   "flex-layout.row#2-desktop": {
-    "children": [
-      "notification.bar#home"
-    ],
+    "children": ["notification.bar#home"],
     "props": {
       "fullWidth": "true"
     }
@@ -65,9 +55,7 @@
     "props": {
       "blockClass": "sticky-header"
     },
-    "children": [
-      "flex-layout.row#4-desktop"
-    ]
+    "children": ["flex-layout.row#4-desktop"]
   },
   "flex-layout.row#4-desktop": {
     "props": {
@@ -91,9 +79,7 @@
     "props": {
       "verticalAlign": "middle"
     },
-    "children": [
-      "vtex.menu@2.x:menu#category-menu"
-    ]
+    "children": ["vtex.menu@2.x:menu#category-menu"]
   },
   "logo#desktop": {
     "props": {
@@ -112,18 +98,30 @@
       "flex-layout.row#iconwhats"
     ]
   },
+  "sticky-layout#1AppBanner": {
+    "props": {
+      "blockClass": "bloco-AppBanner",
+      "preventHorizontalStretch": true,
+      "preserveLayoutOnMobile": true,
+      "fullWidth": true
+    },
+    "children": ["flex-layout.row#AppBanner"]
+  },
+  "flex-layout.row#AppBanner": {
+    "props": {
+      "blockClass": "container-app-content",
+      "fullWidth": true
+    },
+    "children": ["AppBanner"]
+  },
   "sticky-layout#1-envie-sua-receita-mobile": {
     "props": {
       "blockClass": "bloco-envie-sua-receita-mobile-topo"
     },
-    "children": [
-      "flex-layout.row#1-envie-sua-receita-mobile"
-    ]
+    "children": ["flex-layout.row#1-envie-sua-receita-mobile"]
   },
   "flex-layout.row#1-envie-sua-receita-mobile": {
-    "children": [
-      "rich-text#envie-sua-receita-mobile"
-    ],
+    "children": ["rich-text#envie-sua-receita-mobile"],
     "props": {
       "blockClass": "main-header-envie-sua-receita-mobile",
       "preventHorizontalStretch": true,
@@ -146,6 +144,7 @@
       "blockClass": "sticky-header"
     },
     "children": [
+      "flex-layout.row#AppBanner",
       "flex-layout.row#1-mobile",
       "search-bar"
     ]
@@ -163,27 +162,17 @@
     }
   },
   "flex-layout.row#header-mobile-left": {
-    "children": [
-      "drawer",
-      "logo#mobile"
-    ],
+    "children": ["drawer", "logo#mobile"],
     "props": {
-      "blockClass": [
-        "header-mobile-left"
-      ],
+      "blockClass": ["header-mobile-left"],
       "preventHorizontalStretch": true,
       "preventVerticalStretch": true
     }
   },
   "flex-layout.row#header-mobile-right": {
-    "children": [
-      "login",
-      "minicart.v2"
-    ],
+    "children": ["login", "minicart.v2"],
     "props": {
-      "blockClass": [
-        "header-mobile-right"
-      ],
+      "blockClass": ["header-mobile-right"],
       "preventHorizontalStretch": true,
       "preventVerticalStretch": true
     }
@@ -192,9 +181,7 @@
     "props": {
       "renderingStrategy": "eager"
     },
-    "children": [
-      "menu#drawer"
-    ]
+    "children": ["menu#drawer"]
   },
   "menu#drawer": {
     "children": [
@@ -220,13 +207,9 @@
   "vtex.menu@2.x:menu#bionutrition-mobile": {
     "props": {
       "orientation": "vertical",
-      "blockClass": [
-        "bionutrition"
-      ]
+      "blockClass": ["bionutrition"]
     },
-    "children": [
-      "menu-item#category-bionutrition-mobile"
-    ]
+    "children": ["menu-item#category-bionutrition-mobile"]
   },
   "menu-item#category-bionutrition-mobile": {
     "props": {
@@ -237,14 +220,10 @@
         "text": "Biostévi Nutrition"
       }
     },
-    "blocks": [
-      "vtex.menu@2.x:submenu.accordion#bionutrition-mobile"
-    ]
+    "blocks": ["vtex.menu@2.x:submenu.accordion#bionutrition-mobile"]
   },
   "vtex.menu@2.x:submenu.accordion#bionutrition-mobile": {
-    "children": [
-      "vtex.menu@2.x:menu#bionutrition-mobile-list"
-    ]
+    "children": ["vtex.menu@2.x:menu#bionutrition-mobile-list"]
   },
   "vtex.menu@2.x:menu#bionutrition-mobile-list": {
     "props": {
@@ -280,9 +259,7 @@
     "props": {
       "blockClass": "topomenuretratil"
     },
-    "children": [
-      "flex-layout.col#menuretratillogin"
-    ]
+    "children": ["flex-layout.col#menuretratillogin"]
   },
   "image#logotipomenuretratil": {
     "props": {
@@ -302,35 +279,24 @@
     ]
   },
   "flex-layout.col#mobile-menu-message": {
-    "children": [
-      "HeaderDrawer"
-    ],
+    "children": ["HeaderDrawer"],
     "props": {
-      "blockClass": [
-        "mobile-menu-message"
-      ],
+      "blockClass": ["mobile-menu-message"],
       "preventVerticalStretch": true
     }
   },
   "HeaderDrawer": {
-    "children": [
-      "rich-text#mobile-menu-welcome",
-      "rich-text#mobile-menu-login"
-    ]
+    "children": ["rich-text#mobile-menu-welcome", "rich-text#mobile-menu-login"]
   },
   "rich-text#mobile-menu-welcome": {
     "props": {
-      "blockClass": [
-        "mobile-menu-welcome"
-      ],
+      "blockClass": ["mobile-menu-welcome"],
       "text": "[Seja bem-vindo!](/login?returnUrl=%2F)"
     }
   },
   "rich-text#mobile-menu-login": {
     "props": {
-      "blockClass": [
-        "mobile-menu-login"
-      ],
+      "blockClass": ["mobile-menu-login"],
       "text": "[Faça login ou cadastre-se](/login?returnUrl=%2F)"
     }
   },
@@ -353,37 +319,27 @@
       "maxWidth": "100%"
     }
   },
-  // 
+  //
   "vtex.menu@2.x:menu#mais-vendidos-mobile": {
     "props": {
       "orientation": "vertical",
-      "blockClass": [
-        "barbacabelo-mobile"
-      ],
+      "blockClass": ["barbacabelo-mobile"],
       "experimentalOptimizeRendering": true
     },
-    "children": [
-      "menu-item#mais-vendidos-mobile"
-    ]
+    "children": ["menu-item#mais-vendidos-mobile"]
   },
   "menu-item#mais-vendidos-mobile": {
     "props": {
-      "blockClass": [
-        "mais-vendidos-mobile"
-      ],
+      "blockClass": ["mais-vendidos-mobile"],
       "itemProps": {
         "tagTitle": "Mais Vendidos",
         "text": "Mais Vendidos"
       }
     },
-    "blocks": [
-      "vtex.menu@2.x:submenu.accordion#mais-vendidos-mobile"
-    ]
+    "blocks": ["vtex.menu@2.x:submenu.accordion#mais-vendidos-mobile"]
   },
   "vtex.menu@2.x:submenu.accordion#mais-vendidos-mobile": {
-    "children": [
-      "vtex.menu@2.x:menu#menu-mais-vendidos-mobile"
-    ]
+    "children": ["vtex.menu@2.x:menu#menu-mais-vendidos-mobile"]
   },
   "vtex.menu@2.x:menu#menu-mais-vendidos-mobile": {
     "props": {
@@ -401,9 +357,7 @@
   },
   "menu-item#mais-vendidos-barba-e-cabelo-mobile": {
     "props": {
-      "blockClass": [
-        "mais-vendidos-barba-e-cabelo-mobile"
-      ],
+      "blockClass": ["mais-vendidos-barba-e-cabelo-mobile"],
       "itemProps": {
         "tagTitle": "Barba e Cabelo",
         "text": "Barba e Cabelo"
@@ -414,9 +368,7 @@
     ]
   },
   "vtex.menu@2.x:submenu.accordion#mais-vendidos-barba-e-cabelo-mobile": {
-    "children": [
-      "vtex.menu@2.x:menu#menu-mais-vendidos-barba-e-cabelo-mobile"
-    ]
+    "children": ["vtex.menu@2.x:menu#menu-mais-vendidos-barba-e-cabelo-mobile"]
   },
   "vtex.menu@2.x:menu#menu-mais-vendidos-barba-e-cabelo-mobile": {
     "props": {
@@ -433,9 +385,7 @@
   },
   "menu-item#mais-vendidos-emagrecimento-mobile": {
     "props": {
-      "blockClass": [
-        "mais-vendidos-emagrecimento-mobile"
-      ],
+      "blockClass": ["mais-vendidos-emagrecimento-mobile"],
       "itemProps": {
         "tagTitle": "Emagrecimento",
         "text": "Emagrecimento"
@@ -446,9 +396,7 @@
     ]
   },
   "vtex.menu@2.x:submenu.accordion#mais-vendidos-emagrecimento-mobile": {
-    "children": [
-      "vtex.menu@2.x:menu#menu-mais-vendidos-emagrecimento-mobile"
-    ]
+    "children": ["vtex.menu@2.x:menu#menu-mais-vendidos-emagrecimento-mobile"]
   },
   "vtex.menu@2.x:menu#menu-mais-vendidos-emagrecimento-mobile": {
     "props": {
@@ -470,9 +418,7 @@
   },
   "menu-item#mais-vendidos-desempenho-fisico-mobile": {
     "props": {
-      "blockClass": [
-        "mais-vendidos-desempenho-fisico-mobile"
-      ],
+      "blockClass": ["mais-vendidos-desempenho-fisico-mobile"],
       "itemProps": {
         "tagTitle": "Desempenho Físico",
         "text": "Desempenho Físico"
@@ -506,22 +452,16 @@
   },
   "menu-item#mais-vendidos-saude-mobile": {
     "props": {
-      "blockClass": [
-        "mais-vendidos-saude-mobile"
-      ],
+      "blockClass": ["mais-vendidos-saude-mobile"],
       "itemProps": {
         "tagTitle": "Saúde",
         "text": "Saúde"
       }
     },
-    "blocks": [
-      "vtex.menu@2.x:submenu.accordion#mais-vendidos-saude-mobile"
-    ]
+    "blocks": ["vtex.menu@2.x:submenu.accordion#mais-vendidos-saude-mobile"]
   },
   "vtex.menu@2.x:submenu.accordion#mais-vendidos-saude-mobile": {
-    "children": [
-      "vtex.menu@2.x:menu#menu-mais-vendidos-saude-mobile"
-    ]
+    "children": ["vtex.menu@2.x:menu#menu-mais-vendidos-saude-mobile"]
   },
   "vtex.menu@2.x:menu#menu-mais-vendidos-saude-mobile": {
     "props": {
@@ -546,22 +486,16 @@
   },
   "menu-item#mais-vendidos-beleza-mobile": {
     "props": {
-      "blockClass": [
-        "mais-vendidos-beleza-mobile"
-      ],
+      "blockClass": ["mais-vendidos-beleza-mobile"],
       "itemProps": {
         "tagTitle": "Beleza",
         "text": "Beleza"
       }
     },
-    "blocks": [
-      "vtex.menu@2.x:submenu.accordion#mais-vendidos-beleza-mobile"
-    ]
+    "blocks": ["vtex.menu@2.x:submenu.accordion#mais-vendidos-beleza-mobile"]
   },
   "vtex.menu@2.x:submenu.accordion#mais-vendidos-beleza-mobile": {
-    "children": [
-      "vtex.menu@2.x:menu#menu-mais-vendidos-beleza-mobile"
-    ]
+    "children": ["vtex.menu@2.x:menu#menu-mais-vendidos-beleza-mobile"]
   },
   "vtex.menu@2.x:menu#menu-mais-vendidos-beleza-mobile": {
     "props": {
@@ -586,9 +520,7 @@
   },
   "menu-item#mais-vendidos-saude-sexual-mobile": {
     "props": {
-      "blockClass": [
-        "mais-vendidos-saude-sexual-mobile"
-      ],
+      "blockClass": ["mais-vendidos-saude-sexual-mobile"],
       "itemProps": {
         "tagTitle": "Saúde Sexual",
         "text": "Saúde Sexual"
@@ -599,9 +531,7 @@
     ]
   },
   "vtex.menu@2.x:submenu.accordion#mais-vendidos-saude-sexual-mobile": {
-    "children": [
-      "vtex.menu@2.x:menu#menu-mais-vendidos-saude-sexual-mobile"
-    ]
+    "children": ["vtex.menu@2.x:menu#menu-mais-vendidos-saude-sexual-mobile"]
   },
   "vtex.menu@2.x:menu#menu-mais-vendidos-saude-sexual-mobile": {
     "props": {
@@ -615,22 +545,16 @@
   },
   "menu-item#mais-vendidos-nutrition-mobile": {
     "props": {
-      "blockClass": [
-        "mais-vendidos-nutrition-mobile"
-      ],
+      "blockClass": ["mais-vendidos-nutrition-mobile"],
       "itemProps": {
         "tagTitle": "Nutrition",
         "text": "Nutrition"
       }
     },
-    "blocks": [
-      "vtex.menu@2.x:submenu.accordion#mais-vendidos-nutrition-mobile"
-    ]
+    "blocks": ["vtex.menu@2.x:submenu.accordion#mais-vendidos-nutrition-mobile"]
   },
   "vtex.menu@2.x:submenu.accordion#mais-vendidos-nutrition-mobile": {
-    "children": [
-      "vtex.menu@2.x:menu#menu-mais-vendidos-nutrition-mobile"
-    ]
+    "children": ["vtex.menu@2.x:menu#menu-mais-vendidos-nutrition-mobile"]
   },
   "vtex.menu@2.x:menu#menu-mais-vendidos-nutrition-mobile": {
     "props": {
@@ -646,12 +570,10 @@
       "menu-item#mais-vendidos-nutrition-suplementos"
     ]
   },
-  // 
+  //
   "menu-item#imunidade-mobile": {
     "props": {
-      "blockClass": [
-        "imunidade-mobile"
-      ],
+      "blockClass": ["imunidade-mobile"],
       "itemProps": {
         "tagTitle": "Imunidade",
         "text": "Imunidade",
@@ -662,32 +584,22 @@
   "vtex.menu@2.x:menu#barbacabelo-mobile": {
     "props": {
       "orientation": "vertical",
-      "blockClass": [
-        "barbacabelo-mobile"
-      ]
+      "blockClass": ["barbacabelo-mobile"]
     },
-    "children": [
-      "menu-item#barba-e-cabelo-mobile"
-    ]
+    "children": ["menu-item#barba-e-cabelo-mobile"]
   },
   "menu-item#barba-e-cabelo-mobile": {
     "props": {
-      "blockClass": [
-        "barba-e-cabelo-mobile"
-      ],
+      "blockClass": ["barba-e-cabelo-mobile"],
       "itemProps": {
         "tagTitle": "Barba e Cabelo",
         "text": "Barba e Cabelo"
       }
     },
-    "blocks": [
-      "vtex.menu@2.x:submenu.accordion#barba-e-cabelo"
-    ]
+    "blocks": ["vtex.menu@2.x:submenu.accordion#barba-e-cabelo"]
   },
   "vtex.menu@2.x:submenu.accordion#barba-e-cabelo": {
-    "children": [
-      "vtex.menu@2.x:menu#footer-barba-e-cabelo-mobile"
-    ]
+    "children": ["vtex.menu@2.x:menu#footer-barba-e-cabelo-mobile"]
   },
   "vtex.menu@2.x:menu#footer-barba-e-cabelo-mobile": {
     "props": {
@@ -972,32 +884,22 @@
   "vtex.menu@2.x:menu#emagrecimento-mobile": {
     "props": {
       "orientation": "vertical",
-      "blockClass": [
-        "emagrecimento-mobile"
-      ]
+      "blockClass": ["emagrecimento-mobile"]
     },
-    "children": [
-      "menu-item#emagrecimento-mobile"
-    ]
+    "children": ["menu-item#emagrecimento-mobile"]
   },
   "menu-item#emagrecimento-mobile": {
     "props": {
-      "blockClass": [
-        "emagrecimento-mobile"
-      ],
+      "blockClass": ["emagrecimento-mobile"],
       "itemProps": {
         "tagTitle": "Emagrecimento",
         "text": "Emagrecimento"
       }
     },
-    "blocks": [
-      "vtex.menu@2.x:submenu.accordion#emagrecimento"
-    ]
+    "blocks": ["vtex.menu@2.x:submenu.accordion#emagrecimento"]
   },
   "vtex.menu@2.x:submenu.accordion#emagrecimento": {
-    "children": [
-      "vtex.menu@2.x:menu#footer-emagrecimento-mobile"
-    ]
+    "children": ["vtex.menu@2.x:menu#footer-emagrecimento-mobile"]
   },
   "vtex.menu@2.x:menu#footer-emagrecimento-mobile": {
     "props": {
@@ -1234,32 +1136,22 @@
   "vtex.menu@2.x:menu#desempenhofisico-mobile": {
     "props": {
       "orientation": "vertical",
-      "blockClass": [
-        "desempenhofisico-mobile"
-      ]
+      "blockClass": ["desempenhofisico-mobile"]
     },
-    "children": [
-      "menu-item#desempenhofisico-mobile"
-    ]
+    "children": ["menu-item#desempenhofisico-mobile"]
   },
   "menu-item#desempenhofisico-mobile": {
     "props": {
-      "blockClass": [
-        "desempenho-fisico-mobile"
-      ],
+      "blockClass": ["desempenho-fisico-mobile"],
       "itemProps": {
         "tagTitle": "Desempenho Físiso",
         "text": "Desempenho Físico"
       }
     },
-    "blocks": [
-      "vtex.menu@2.x:submenu.accordion#desempenhofisico"
-    ]
+    "blocks": ["vtex.menu@2.x:submenu.accordion#desempenhofisico"]
   },
   "vtex.menu@2.x:submenu.accordion#desempenhofisico": {
-    "children": [
-      "vtex.menu@2.x:menu#footer-desempenhofisico-mobile"
-    ]
+    "children": ["vtex.menu@2.x:menu#footer-desempenhofisico-mobile"]
   },
   "vtex.menu@2.x:menu#footer-desempenhofisico-mobile": {
     "props": {
@@ -1560,32 +1452,22 @@
   "vtex.menu@2.x:menu#beleza-mobile": {
     "props": {
       "orientation": "vertical",
-      "blockClass": [
-        "beleza-mobile"
-      ]
+      "blockClass": ["beleza-mobile"]
     },
-    "children": [
-      "menu-item#beleza-mobile"
-    ]
+    "children": ["menu-item#beleza-mobile"]
   },
   "menu-item#beleza-mobile": {
     "props": {
-      "blockClass": [
-        "beleza-mobile"
-      ],
+      "blockClass": ["beleza-mobile"],
       "itemProps": {
         "tagTitle": "Beleza",
         "text": "Beleza"
       }
     },
-    "blocks": [
-      "vtex.menu@2.x:submenu.accordion#beleza"
-    ]
+    "blocks": ["vtex.menu@2.x:submenu.accordion#beleza"]
   },
   "vtex.menu@2.x:submenu.accordion#beleza": {
-    "children": [
-      "vtex.menu@2.x:menu#footer-beleza-mobile"
-    ]
+    "children": ["vtex.menu@2.x:menu#footer-beleza-mobile"]
   },
   "vtex.menu@2.x:menu#footer-beleza-mobile": {
     "props": {
@@ -1861,32 +1743,22 @@
   "vtex.menu@2.x:menu#saude-mobile": {
     "props": {
       "orientation": "vertical",
-      "blockClass": [
-        "saude-mobile"
-      ]
+      "blockClass": ["saude-mobile"]
     },
-    "children": [
-      "menu-item#saude-mobile"
-    ]
+    "children": ["menu-item#saude-mobile"]
   },
   "menu-item#saude-mobile": {
     "props": {
-      "blockClass": [
-        "saude-mobile"
-      ],
+      "blockClass": ["saude-mobile"],
       "itemProps": {
         "tagTitle": "Saúde",
         "text": "Saúde"
       }
     },
-    "blocks": [
-      "vtex.menu@2.x:submenu.accordion#saude"
-    ]
+    "blocks": ["vtex.menu@2.x:submenu.accordion#saude"]
   },
   "vtex.menu@2.x:submenu.accordion#saude": {
-    "children": [
-      "vtex.menu@2.x:menu#footer-saude-mobile"
-    ]
+    "children": ["vtex.menu@2.x:menu#footer-saude-mobile"]
   },
   "vtex.menu@2.x:menu#footer-saude-mobile": {
     "props": {

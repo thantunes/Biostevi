@@ -1,54 +1,63 @@
 {
-    "AnchorsShelf": {
-        "component": "AnchorsShelf"
-    },
-    "DescriptionContructorComp": {
-        "component": "DescriptionContructor",
-        "composition": "children"
-    },
-    "CheckBeneficiosProduct": {
-        "component": "CheckBeneficiosProduct"
-    },
-    "UpAnchorComp": {
-        "component": "UpAnchor"
-    },
-    "BuyTogetherComp": {
-        "component": "BuyTogether"
-    },
-    "ReclameAq": {
-        "component": "reclameaq"
-    },
-    "DescriptionInline": {
-        "component": "CustomDescription",
-        "composition": "children"
-    },
-    "ProductCustomDescription": {
-        "component": "ProductCustomDescription"
-    },
-    "EnvioReceitaComp": {
-        "component": "EnvioReceita",
-        "composition": "children"
-    },
-    "ChangeTag": {
-        "component": "ChangeTag"
-    },
-    "CategoryHeading": {
-        "component": "CategoryHeading"
-    },
-    "CryptoScript": {
-        "component": "CryptoScript"
-    },
-    "HeaderDrawer": {
-        "component": "HeaderDrawer",
-        "composition": "children"
-    },
-    "SchemaOrganization": {
-        "component": "SchemaOrganization"
-    },
-    "SeoTextPlaceholderAbove": {
-        "component": "SeoTextPlaceholderAbove"
-    },
-    "SeoTextPlaceholderBelow": {
-        "component": "SeoTextPlaceholderBelow"
-    }
+  "AnchorsShelf": {
+    "component": "AnchorsShelf"
+  },
+  "DescriptionContructorComp": {
+    "component": "DescriptionContructor",
+    "composition": "children"
+  },
+  "CheckBeneficiosProduct": {
+    "component": "CheckBeneficiosProduct"
+  },
+  "UpAnchorComp": {
+    "component": "UpAnchor"
+  },
+  "BuyTogetherComp": {
+    "component": "BuyTogether"
+  },
+  "ReclameAq": {
+    "component": "reclameaq"
+  },
+  "DescriptionInline": {
+    "component": "CustomDescription",
+    "composition": "children"
+  },
+  "ProductCustomDescription": {
+    "component": "ProductCustomDescription"
+  },
+  "EnvioReceitaComp": {
+    "component": "EnvioReceita",
+    "composition": "children"
+  },
+  "ChangeTag": {
+    "component": "ChangeTag"
+  },
+  "CategoryHeading": {
+    "component": "CategoryHeading"
+  },
+  "CryptoScript": {
+    "component": "CryptoScript"
+  },
+  "HeaderDrawer": {
+    "component": "HeaderDrawer",
+    "composition": "children"
+  },
+  "SchemaOrganization": {
+    "component": "SchemaOrganization"
+  },
+  "redirect-app": {
+    "component": "RedirectApp"
+  },
+  "SeoTextPlaceholderAbove": {
+    "component": "SeoTextPlaceholderAbove"
+  },
+  "SeoTextPlaceholderBelow": {
+    "component": "SeoTextPlaceholderBelow"
+  },
+  "AppBanner": {
+    "component": "AppBanner"
+  },
+  "AppBadgeFooter": {
+    "component": "AppBadgeFooter"
+  }
 }
