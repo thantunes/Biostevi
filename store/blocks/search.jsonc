@@ -445,6 +445,11 @@
   },
 
   "gallery": {
-    "blocks": ["product-summary.shelf"]
+    "blocks": ["product-summary.shelf"],
+    "props": {
+      "minItemsPerRow": 1,
+      "maxItemsPerRow": 3,
+      "gap": "ph3"
+    }
   }
 }
