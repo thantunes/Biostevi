@@ -4,11 +4,8 @@ import { initializeApp } from "firebase/app";
 import { getDownloadURL, getStorage, ref, uploadBytesResumable } from "firebase/storage"
 import { useProduct } from 'vtex.product-context'
 import './index.global.css'
-import $ from 'jquery'
+
 const EnvioReceita = ({ children }) => {
-
-
-
     // const storage = getStorage(FirebaseApp);
     const [Nome, setNome] = useState('')
     const [Tel, setTel] = useState('')
@@ -68,18 +65,21 @@ const EnvioReceita = ({ children }) => {
             }
         };
 
-        // console.log(Params)
         if (DOCURL != '' && DOCURL != undefined) {
-            console.log($)
-            $.ajax('https://api.emailjs.com/api/v1.0/email/send', {
-                type: 'POST',
-                data: JSON.stringify(data),
-                contentType: 'application/json'
-            }).done(function () {
+            fetch('https://api.emailjs.com/api/v1.0/email/send', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(() => {
                 setDocURL('')
                 setFile('Enviado!')
                 setEnviado(true)
-            }).fail(function (error) {
+            })
+            .catch((error) => {
+                console.error('Erro ao enviar email:', error)
             })
         }
     }, [DOCURL])

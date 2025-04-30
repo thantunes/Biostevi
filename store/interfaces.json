@@ -29,9 +29,6 @@
     "component": "EnvioReceita",
     "composition": "children"
   },
-  "ChangeTag": {
-    "component": "ChangeTag"
-  },
   "CategoryHeading": {
     "component": "CategoryHeading"
   },
