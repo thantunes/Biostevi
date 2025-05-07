@@ -71,7 +71,7 @@
   },
   "list-context.product-list#prateleiralancamentos": {
     "blocks": [
-      "product-summary.shelf"
+      "product-summary.shelf#lazy"
     ],
     "children": [
       "slider-layout-seo#prateleiralancamentos"
@@ -471,7 +471,7 @@
   },
   "list-context.product-list#maisvendidos": {
     "blocks": [
-      "product-summary.shelf"
+      "product-summary.shelf#lazy"
     ],
     "children": [
       "slider-layout-seo#maisvendidos"
@@ -506,7 +506,7 @@
   },
   "list-context.product-list#ofertas": {
     "blocks": [
-      "product-summary.shelf"
+      "product-summary.shelf#lazy"
     ],
     "children": [
       "slider-layout-seo#ofertas"

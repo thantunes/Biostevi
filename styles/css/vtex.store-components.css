@@ -638,6 +638,11 @@
   background-position: 9px;
   background-size: 19px;
 }
+:global(.vtex-product-summary-2-x-imageContainer),
+:global(.vtex-product-summary-2-x-imageNormal) {
+  aspect-ratio: 1/1;
+  width: auto!important;
+}
 :global(.vtex-menu-2-x-styledLinkContent--vegano) {
   color: #fff !important;
 }
