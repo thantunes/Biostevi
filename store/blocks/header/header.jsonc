@@ -7,6 +7,7 @@
   },
   "header-layout.desktop": {
     "children": [
+      "flex-layout.row#hintup-skeleton",
       "flex-layout.row#1-desktop",
       "flex-layout.row#2-desktop",
       "flex-layout.row#3-desktop",
@@ -15,6 +16,12 @@
       "flex-layout.row#iconwhats",
       "flex-layout.row#iconwhats"
     ]
+  },
+  "flex-layout.row#hintup-skeleton": {
+    "props": {
+      "fullWidth": true,
+      "blockClass": "hintup-skeleton"
+    }
   },
   "flex-layout.row#1-desktop": {
     "children": ["telemarketing"],
@@ -92,6 +99,7 @@
   },
   "header-layout.mobile": {
     "children": [
+      "flex-layout.row#hintup-skeleton",
       "sticky-layout#1-envie-sua-receita-mobile",
       "sticky-layout#1-mobile",
       "CryptoScript",

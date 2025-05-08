@@ -175,88 +175,112 @@
   "image#ame": {
     "props": {
       "loading": "lazy",
+      "fetchpriority": "low",
       "src": "https://stevia.vteximg.com.br/arquivos/ame.png",
-      "blockClass": "bandeira-ame"
+      "blockClass": "bandeira-ame",
+      "alt": "Bandeira American Express"
     }
   },
 
   "image#boleto": {
     "props": {
       "loading": "lazy",
+      "fetchpriority": "low",
       "src": "https://stevia.vteximg.com.br/arquivos/boleto.png",
-      "blockClass": "bandeira-boleto"
+      "blockClass": "bandeira-boleto",
+      "alt": "Bandeira Boleto"
     }
   },
 
   "image#pix": {
     "props": {
       "loading": "lazy",
+      "fetchpriority": "low",
       "src": "https://stevia.vteximg.com.br/arquivos/pix.png",
-      "blockClass": "bandeira-pix"
+      "blockClass": "bandeira-pix",
+      "alt": "Bandeira Pix"
     }
   },
 
   "image#mastercard": {
     "props": {
       "loading": "lazy",
+      "fetchpriority": "low",
       "src": "https://stevia.vteximg.com.br/arquivos/mastercard.png",
-      "blockClass": "bandeira-mastercard"
+      "blockClass": "bandeira-mastercard",
+      "alt": "Bandeira Mastercard"
     }
   },
   "image#visa": {
     "props": {
       "loading": "lazy",
+      "fetchpriority": "low",
       "src": "https://stevia.vteximg.com.br/arquivos/visa.png",
-      "blockClass": "bandeira-visa"
+      "blockClass": "bandeira-visa",
+      "alt": "Bandeira Visa"
     }
   },
   "image#americanexpress": {
     "props": {
       "loading": "lazy",
+      "fetchpriority": "low",
       "src": "https://stevia.vteximg.com.br/arquivos/american.png",
-      "blockClass": "bandeira-amex"
+      "blockClass": "bandeira-amex",
+      "alt": "Bandeira American Express"
     }
   },
   "image#elo": {
     "props": {
       "loading": "lazy",
+      "fetchpriority": "low",
       "src": "https://stevia.vteximg.com.br/arquivos/elo.png",
-      "blockClass": "bandeira-elo"
+      "blockClass": "bandeira-elo",
+      "alt": "Bandeira Elo"
     }
   },
   "image#hipercard": {
     "props": {
       "loading": "lazy",
+      "fetchpriority": "low",
       "src": "https://stevia.vteximg.com.br/arquivos/hipercard.png",
-      "blockClass": "bandeira-hipercard"
+      "blockClass": "bandeira-hipercard",
+      "alt": "Bandeira Hipercard"
     }
   },
   "image#aura": {
     "props": {
       "loading": "lazy",
+      "fetchpriority": "low",
       "src": "https://stevia.vteximg.com.br/arquivos/aura.png",
-      "blockClass": "bandeira-aura"
+      "blockClass": "bandeira-aura",
+      "alt": "Bandeira Aura"
     }
   },
   "image#jcb": {
     "props": {
       "loading": "lazy",
+      "fetchpriority": "low",
       "src": "https://stevia.vteximg.com.br/arquivos/jcb.png",
-      "blockClass": "bandeira-jcb"
+      "blockClass": "bandeira-jcb",
+      "alt": "Bandeira JCB"
     }
   },
   "image#discover": {
     "props": {
       "loading": "lazy",
+      "fetchpriority": "low",
       "src": "https://stevia.vteximg.com.br/arquivos/discover.png",
-      "blockClass": "bandeira-discover"
+      "blockClass": "bandeira-discover",
+      "alt": "Bandeira Discover"
     }
   },
   "image#diners": {
     "props": {
       "loading": "lazy",
+      "fetchpriority": "low",
       "src": "https://stevia.vteximg.com.br/arquivos/dinners.png",
-      "blockClass": "bandeira-diners"
+      "blockClass": "bandeira-diners",
+      "alt": "Bandeira Diners"
     }
   },
 
@@ -335,28 +359,33 @@
   "image#logo-vtex": {
     "props": {
       "loading": "lazy",
+      "fetchpriority": "low",
       "type": "external",
       "text": "Vtex",
       "link": { "url": "https://evision.com.br/", "openNewTab": true },
       "src": "/arquivos/footer-logo-vtex-1.png",
-      "blockClass": "footer-logo-vtex"
+      "blockClass": "footer-logo-vtex",
+      "alt": "Logo Vtex"
     }
   },
 
   "image#logo-evision": {
     "props": {
       "loading": "lazy",
+      "fetchpriority": "low",
       "type": "external",
       "text": "eVision",
       "link": { "url": "https://evision.com.br/", "openNewTab": true },
       "src": "arquivos/footer-logo-evision-2.png",
-      "blockClass": "footer-logo-evision"
+      "blockClass": "footer-logo-evision",
+      "alt": "Logo eVision"
     }
   },
 
   "image#whatsapp-flutuante": {
     "props": {
       "type": "external",
+      "fetchpriority": "low",
       "text": "Whatsapp",
       "link": {
         "url": "https://api.whatsapp.com/send/?phone=5511930877190&text&app_absent=0",
