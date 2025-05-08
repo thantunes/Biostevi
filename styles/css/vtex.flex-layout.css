@@ -35,6 +35,15 @@
   color: #727273;
   font-size: 14px;
 }
+.flexRow--hintup-skeleton {
+  height: 30px;
+  background-color: #77c4d0c2;
+}
+@media screen and (max-width: 768px) {
+  .flexRow--hintup-skeleton {
+    height: 46px;
+  }
+}
 .flexRow--deals {
   background-color: #a7afbd;
   padding: 14px 0;
