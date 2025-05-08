@@ -37,7 +37,7 @@
 }
 .flexRow--hintup-skeleton {
   height: 30px;
-  background-color: #77c4d0c2;
+  background-color: #77c4d033;
 }
 @media screen and (max-width: 768px) {
   .flexRow--hintup-skeleton {
@@ -53,6 +53,9 @@
 }
 .flexRow--deals .flexCol {
   align-items: center;
+}
+.flexRow--shelf-prateleira-lancamentos {
+  min-height: 440px;
 }
 .flexCol--filterCol {
   max-width: 500px;
