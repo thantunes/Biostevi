@@ -56,5 +56,8 @@
   },
   "AppBadgeFooter": {
     "component": "AppBadgeFooter"
+  },
+  "sequence-pagination": {
+    "component": "SequencePagination"
   }
 }

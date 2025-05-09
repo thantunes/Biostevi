@@ -162,7 +162,6 @@
   "flex-layout.col#content": {
     "children": [
       "flex-layout.row#searchinfo",
-      "flex-layout.row#fetchprevious",
       "flex-layout.row#products",
       "flex-layout.row#fetchmore"
     ],
@@ -196,7 +195,7 @@
     "props": {
       "marginTop": 3
     },
-    "children": ["search-fetch-more"]
+    "children": ["sequence-pagination"]
   },
   "flex-layout.row#products": {
     "children": ["search-content"]
@@ -214,7 +213,6 @@
       "flex-layout.row#searchbanner",
       "flex-layout.row#banner-one",
       "flex-layout.row#productCountMobile",
-      "flex-layout.row#fetchprevious",
       "flex-layout.row#contentmobile",
       "flex-layout.row#fetchmore",
       "flex-layout.row#banner-second",

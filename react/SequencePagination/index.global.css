@@ -1,0 +1,48 @@
+.containerPagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 7.5px;
+    font-family: "Signika";
+    padding-block: 1rem;
+}
+
+@media screen and (min-width: 64em) {
+    .containerPagination {
+        padding-left: 4rem;
+    }
+}
+
+.containerPagination .page-item {
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ff6c00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerPagination .page-item:has(.page-current) {
+    background-color: #ff6c00;
+    color: white
+}
+
+.containerPagination .page-item .page-current {
+    color: white
+}
+
+.containerPagination .page-item .page-link {
+    color: #ff6c00;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.containerPagination .dots {
+    color: #555;
+}
