@@ -67,7 +67,10 @@
   "flex-layout.row#shelfprateleiralancamentos": {
     "children": [
       "list-context.product-list#prateleiralancamentos"
-    ]
+    ],
+    "props": {
+      "blockClass": "shelf-prateleira-lancamentos"
+    }
   },
   "list-context.product-list#prateleiralancamentos": {
     "blocks": [
