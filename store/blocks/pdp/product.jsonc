@@ -172,6 +172,7 @@
     "children": [
       "flex-layout.row#review-wishlist",
       "flex-layout.row#list-price-savings",
+      "RewardValue",
       "flex-layout.row#selling-price",
       "product-installments",
       "product-separator",
@@ -198,6 +199,7 @@
       "flex-layout.row#description",
       "responsive-layout.mobile#benefits",
       "flex-layout.row#list-price-savings",
+      "RewardValue",
       "flex-layout.row#selling-price",
       "product-installments",
       "shipping-simulator",
