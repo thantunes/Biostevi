@@ -5,17 +5,16 @@ function RewardValue() {
 
   if (!productContext.product) return null
 
-  const product = productContext.product
   const selectedItem = productContext.selectedItem
-  if (!selectedItem.sellers[0]?.commertialOffer?.RewardValue) return null
-  // console.log('Informações do produto: ')
-  // console.log(product)
-  // console.log(productContext)
-  // console.log(selectedItem)
+  const productPrice = selectedItem.sellers[0]?.commertialOffer?.Price
+  const cashbackValue = selectedItem.sellers[0]?.commertialOffer?.RewardValue
+  if (!cashbackValue) return null
+
+  const cashbackPercentage = (cashbackValue / productPrice) * 100
 
   return (
     <div>
-      <p><strong>Ganhe R${selectedItem.sellers[0]?.commertialOffer?.RewardValue?.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})} de cashback</strong></p>
+      <p style={{color: 'rgb(255, 108, 0)'}}><strong>Ganhe {cashbackPercentage.toFixed(2)}% de cashback</strong></p>
     </div>
   )
 }
