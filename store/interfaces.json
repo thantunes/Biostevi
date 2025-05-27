@@ -56,5 +56,8 @@
   },
   "AppBadgeFooter": {
     "component": "AppBadgeFooter"
+  },
+  "RewardValue": {
+    "component": "RewardValue"
   }
 }
