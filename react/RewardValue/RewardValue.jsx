@@ -8,13 +8,15 @@ function RewardValue() {
   const selectedItem = productContext.selectedItem
   const productPrice = selectedItem.sellers[0]?.commertialOffer?.Price
   const cashbackValue = selectedItem.sellers[0]?.commertialOffer?.RewardValue
-  if (!cashbackValue) return null
+  if (!cashbackValue || !productPrice || !selectedItem) return null
 
   const cashbackPercentage = (cashbackValue / productPrice) * 100
 
   return (
     <div>
-      <p style={{color: 'rgb(255, 108, 0)'}}><strong>Ganhe {cashbackPercentage.toFixed(2)}% de cashback</strong></p>
+      <p style={{ color: '#009fc2' }}>
+        <strong>Ganhe {cashbackPercentage.toFixed(2)}% de cashback</strong>
+      </p>
     </div>
   )
 }
