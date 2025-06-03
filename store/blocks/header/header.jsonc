@@ -360,7 +360,8 @@
       "menu-item#mais-vendidos-saude-mobile",
       "menu-item#mais-vendidos-beleza-mobile",
       "menu-item#mais-vendidos-saude-sexual-mobile",
-      "menu-item#mais-vendidos-nutrition-mobile"
+      "menu-item#mais-vendidos-nutrition-mobile",
+      "menu-item#mais-vendidos-suplementacao-diaria-mobile"
     ]
   },
   "menu-item#mais-vendidos-barba-e-cabelo-mobile": {
@@ -579,6 +580,16 @@
     ]
   },
   //
+  "menu-item#mais-vendidos-suplementacao-diaria-mobile": {
+    "props": {
+      "blockClass": ["mais-vendidos-suplementacao-diaria-mobile"],
+      "itemProps": {
+        "tagTitle": "Suplementação Diária",
+        "text": "Suplementação Diária",
+        "href": "/mais-vendidos/lp/suplementacao-diaria"
+      }
+    }
+  },
   "menu-item#imunidade-mobile": {
     "props": {
       "blockClass": ["imunidade-mobile"],
