@@ -57,6 +57,9 @@
   "AppBadgeFooter": {
     "component": "AppBadgeFooter"
   },
+  "sequence-pagination": {
+    "component": "SequencePagination"
+  },
   "RewardValue": {
     "component": "RewardValue"
   }

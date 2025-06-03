@@ -62,7 +62,7 @@
       "flex-layout.row#productCountMobile",
       "flex-layout.row#fetchprevious",
       "flex-layout.row#contentmobile",
-      "flex-layout.row#fetchmore",
+      "flex-layout.row#fetchmore-collection",
       "flex-layout.row#banner-second"
     ],
     "props": {
@@ -72,6 +72,12 @@
         "mode2": "normal"
       }
     }
+  },
+  "flex-layout.row#fetchmore-collection": {
+    "props": {
+      "marginTop": 3
+    },
+    "children": ["search-fetch-more"]
   },
   "flex-layout.row#results-search-collection-page": {
     "children": [

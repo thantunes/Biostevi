@@ -27,7 +27,7 @@
       "margin": 1,
       "itemProps": {
         "type": "internal",
-        "href": "/467?map=productClusterIds",
+        "href": "",
         "noFollow": false,
         "tagTitle": "Mais Vendidos",
         "text": "Mais Vendidos",
@@ -90,7 +90,8 @@
       "menu-item#mais-vendidos-saude",
       "menu-item#mais-vendidos-beleza",
       "menu-item#mais-vendidos-saude-sexual",
-      "menu-item#mais-vendidos-nutrition"
+      "menu-item#mais-vendidos-nutrition",
+      "menu-item#mais-vendidos-suplementacao-diaria"
     ]
   },
   "menu-item#mais-vendidos-barba-e-cabelo": {
@@ -1397,6 +1398,25 @@
     }
   },
   // 
+
+  "menu-item#mais-vendidos-suplementacao-diaria": {
+    "props": {
+      "id": "menu-item-mais-vendidos-suplementacao-diaria",
+      "blockClass": "mais-vendidos-suplementacao-diaria",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/mais-vendidos/lp/suplementacao-diaria",
+        "noFollow": true,
+        "tagTitle": "Suplementação Diária",
+        "text": "Suplementação Diária",
+        "blockClass": "link-menu"
+      }
+    }
+  },
+
   "menu-item#category-imunidade": {
     "props": {
       "id": "menu-item-category-imunidade",

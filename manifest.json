@@ -1,7 +1,7 @@
 {
   "vendor": "stevia",
   "name": "minimumtheme",
-  "version": "6.0.48",
+  "version": "6.0.49",
   "builders": {
     "styles": "2.x",
     "store": "0.x",
@@ -70,7 +70,8 @@
     "vtex.pixel-interfaces": "1.x",
     "vtex.condition-layout": "2.x",
     "vtex.disclosure-layout": "1.x",
-    "stevia.slider-layout-seo": "0.x"
+    "stevia.slider-layout-seo": "0.x",
+    "vtex.search-page-context": "0.x"
   },
   "peerDependencies": {
     "vtex.availability-notify": "1.x",
