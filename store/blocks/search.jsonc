@@ -87,6 +87,7 @@
       "flex-layout.row#banner-one",
       "flex-layout.row#result",
       "flex-layout.row#SeoTextPlaceholderBelow",
+      "FaqComponent",
       "flex-layout.row#banner-second"
     ],
     "props": {
@@ -216,7 +217,8 @@
       "flex-layout.row#contentmobile",
       "flex-layout.row#fetchmore",
       "flex-layout.row#banner-second",
-      "flex-layout.row#SeoTextPlaceholderBelow"
+      "flex-layout.row#SeoTextPlaceholderBelow",
+      "FaqComponent"
     ],
     "props": {
       "pagination": "show-more",
@@ -448,6 +450,26 @@
       "minItemsPerRow": 1,
       "maxItemsPerRow": 3,
       "gap": "ph3"
+    }
+  },
+
+  "FaqComponent": {
+    "props": {
+      "faqs": [
+        {
+          "question": "<h2>Pergunta 1</h2>",
+          "answer": "<p>Lorem ipsum dolor sit amet. Et molestias obcaecati <em>Aut amet in odio praesentium est rerum odit eos officiis omnis</em> aut reiciendis voluptas et officia minima. Non esse delectus <strong>In reprehenderit sed nulla ipsa</strong>. </p><p>Est explicabo alias <em>In sint</em> in amet molestiae sit dicta veritatis. Non placeat excepturi et omnis deserunt <a href='https://www.loremipzum.com' target='_blank'>Id impedit qui praesentium tempora ut voluptas doloribus est officia facilis</a>. Et molestiae doloreQui sunt et praesentium explicabo. Est vero minima non aliquid quasVel unde. </p><p>Cum internos odit sed tempora internosut dolor est optio labore. Cum praesentium quaerat aut eaque labore <a href='https://www.loremipzum.com' target='_blank'>Qui beatae aut autem omnis in unde ipsa sed dolor eaque</a> et voluptas voluptatum! </p><ul><li>Rem maiores odit et accusamus quia hic adipisci amet sit voluptate expedita. </li><li>Est dicta voluptate eum nemo doloremque a odit consequatur ut neque perferendis. </li><li>Et similique iusto quo distinctio velit ut similique modi. </li><li>Aut alias aspernatur vel iste dolores non eligendi dolor. </li><li>In nihil asperiores qui rerum tempore quo consectetur quia. </li></ul>"
+        },
+        {
+          "question": "<h2>Pergunta 2</h2>",
+          "answer": "<p>Lorem ipsum dolor sit amet. Et molestias obcaecati <em>Aut amet in odio praesentium est rerum odit eos officiis omnis</em> aut reiciendis voluptas et officia minima. Non esse delectus <strong>In reprehenderit sed nulla ipsa</strong>. </p><p>Est explicabo alias <em>In sint</em> in amet molestiae sit dicta veritatis. Non placeat excepturi et omnis deserunt <a href='https://www.loremipzum.com' target='_blank'>Id impedit qui praesentium tempora ut voluptas doloribus est officia facilis</a>. Et molestiae doloreQui sunt et praesentium explicabo. Est vero minima non aliquid quasVel unde. </p><p>Cum internos odit sed tempora internosut dolor est optio labore. Cum praesentium quaerat aut eaque labore <a href='https://www.loremipzum.com' target='_blank'>Qui beatae aut autem omnis in unde ipsa sed dolor eaque</a> et voluptas voluptatum! </p><ul><li>Rem maiores odit et accusamus quia hic adipisci amet sit voluptate expedita. </li><li>Est dicta voluptate eum nemo doloremque a odit consequatur ut neque perferendis. </li><li>Et similique iusto quo distinctio velit ut similique modi. </li><li>Aut alias aspernatur vel iste dolores non eligendi dolor. </li><li>In nihil asperiores qui rerum tempore quo consectetur quia. </li></ul>"
+        },
+        {
+          "question": "<h2>Pergunta 3</h2>",
+          "answer": "<p>Lorem ipsum dolor sit amet. Et molestias obcaecati <em>Aut amet in odio praesentium est rerum odit eos officiis omnis</em> aut reiciendis voluptas et officia minima. Non esse delectus <strong>In reprehenderit sed nulla ipsa</strong>. </p><p>Est explicabo alias <em>In sint</em> in amet molestiae sit dicta veritatis. Non placeat excepturi et omnis deserunt <a href='https://www.loremipzum.com' target='_blank'>Id impedit qui praesentium tempora ut voluptas doloribus est officia facilis</a>. Et molestiae doloreQui sunt et praesentium explicabo. Est vero minima non aliquid quasVel unde. </p><p>Cum internos odit sed tempora internosut dolor est optio labore. Cum praesentium quaerat aut eaque labore <a href='https://www.loremipzum.com' target='_blank'>Qui beatae aut autem omnis in unde ipsa sed dolor eaque</a> et voluptas voluptatum! </p><ul><li>Rem maiores odit et accusamus quia hic adipisci amet sit voluptate expedita. </li><li>Est dicta voluptate eum nemo doloremque a odit consequatur ut neque perferendis. </li><li>Et similique iusto quo distinctio velit ut similique modi. </li><li>Aut alias aspernatur vel iste dolores non eligendi dolor. </li><li>In nihil asperiores qui rerum tempore quo consectetur quia. </li></ul>"
+        }
+
+      ]
     }
   }
 }
