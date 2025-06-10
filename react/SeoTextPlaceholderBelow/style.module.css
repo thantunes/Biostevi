@@ -55,3 +55,100 @@
   background-color: transparent;
   padding: 0;
 }
+
+/* Estilização para leitura fluida de todas as tags semânticas clássicas */
+.wrapperContentSeo ul,
+.wrapperContentSeo ol {
+  margin: 1em 0 1em 2em;
+  padding: 0;
+}
+
+.wrapperContentSeo li {
+  margin-bottom: 0.5em;
+}
+
+.wrapperContentSeo strong,
+.wrapperContentSeo b {
+  font-weight: bold;
+  color: #222;
+}
+
+.wrapperContentSeo em,
+.wrapperContentSeo i {
+  font-style: italic;
+  color: #555;
+}
+
+.wrapperContentSeo blockquote {
+  border-left: 4px solid #ff6c00;
+  background: #fff7f2;
+  color: #555;
+  margin: 1.5em 0;
+  padding: 1em 1.5em;
+  font-style: italic;
+  border-radius: 4px;
+}
+
+.wrapperContentSeo pre {
+  background: #f4f4f4;
+  color: #222;
+  padding: 1em;
+  border-radius: 4px;
+  overflow-x: auto;
+  margin: 1.5em 0;
+  font-size: 0.95em;
+}
+
+.wrapperContentSeo code {
+  background: #f4f4f4;
+  color: #c7254e;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-size: 0.95em;
+}
+
+.wrapperContentSeo hr {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 2em 0;
+}
+
+.wrapperContentSeo img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5em auto;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.06);
+}
+
+.wrapperContentSeo table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  background: #fff;
+}
+
+.wrapperContentSeo th,
+.wrapperContentSeo td {
+  border: 1px solid #eee;
+  padding: 0.7em 1em;
+  text-align: left;
+}
+
+.wrapperContentSeo th {
+  background: #fff7f2;
+  color: #ff6c00;
+  font-weight: 600;
+}
+
+.wrapperContentSeo figure {
+  margin: 1.5em 0;
+  text-align: center;
+}
+
+.wrapperContentSeo figcaption {
+  font-size: 0.95em;
+  color: #888;
+  margin-top: 0.5em;
+}
