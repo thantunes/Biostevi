@@ -18,7 +18,7 @@ const FaqComponent = ({ faqs }) => {
     const faqStructuredData = {
         '@context': 'https://schema.org',
         '@type': 'FAQPage',
-        'mainEntity': faqs.map(faq => ({
+        'mainEntity': faqs?.map(faq => ({
             '@type': 'Question',
             'name': stripHtml(faq.question),
             'acceptedAnswer': {
@@ -28,12 +28,14 @@ const FaqComponent = ({ faqs }) => {
         })),
     }
 
+    if (!faqs) return null;
+
     return (
         <div className={style.faqWrapper}>
             <script type="application/ld+json">
                 {JSON.stringify(faqStructuredData)}
             </script>
-            {faqs.map((faq, idx) => (
+            {faqs?.map((faq, idx) => (
                 <div key={idx} className={style.faqItem}>
                     <button
                         className={style.faqQuestion}
@@ -70,16 +72,7 @@ const FaqComponent = ({ faqs }) => {
                         <div
                             className={style.faqAnswerInner}
                             dangerouslySetInnerHTML={{
-                                __html: faq.answer.replace(
-                                    /<img(.*?)>/g,
-                                    (match, group) => {
-                                        if (group.includes('loading=') || group.includes('fetchpriority=')) {
-                                            return match.replace(/loading="[^"]*"/, 'loading="lazy"')
-                                                        .replace(/fetchpriority="[^"]*"/, 'fetchpriority="low"');
-                                        }
-                                        return `<img${group} loading="lazy" fetchpriority="low">`;
-                                    }
-                                ),
+                                __html: faq.answer,
                             }}
                         />
                     </div>
@@ -97,7 +90,6 @@ FaqComponent.schema = {
     properties: {
         faqs: {
             title: 'Perguntas e Respostas',
-            description: 'Preencha em HTML',
             type: 'array',
             items: {
                 type: 'object',
@@ -105,10 +97,12 @@ FaqComponent.schema = {
                     question: {
                         title: 'Pergunta',
                         type: 'string',
+                        description: 'Preencha em HTML',
                     },
                     answer: {
                         title: 'Resposta',
                         type: 'string',
+                        description: 'Preencha em HTML',
                     },
                 },
             },

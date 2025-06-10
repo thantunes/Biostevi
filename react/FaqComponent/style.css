@@ -138,8 +138,11 @@
 }
 
 @media (max-width: 600px) {
+.faqWrapper {
+    padding-inline: 8px;
+} 
   .faqAnswerInner {
-    padding: 16px 8px;
+    padding: 0px 10px;
     font-size: 0.95rem;
     border-radius: 0 0 8px 8px;
   }
