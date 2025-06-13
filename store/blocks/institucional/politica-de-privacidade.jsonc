@@ -1,7 +1,8 @@
 {
   "store.custom#politica-de-privacidade": {
     "blocks": [
-      "flex-layout.row#politica-de-privacidade"
+      "flex-layout.row#politica-de-privacidade",
+      "flex-layout.row#faq-politica-de-privacidade"
     ]
   },
   "flex-layout.row#politica-de-privacidade": {
@@ -119,6 +120,21 @@
   "rich-text#content-7": {
     "props": {
       "text":"content-7" }
+  },
+  "flex-layout.row#faq-politica-de-privacidade": {
+    "children": [
+      "FaqComponent#page-politica-de-privacidade"
+    ]
+  },
+  "FaqComponent#page-politica-de-privacidade": {
+    "props": {
+      "blockClass": "faq-container",
+      "faqs": [ 
+        {
+          "question": "Pergunta 1",
+          "answer": "Resposta 1"
+        }
+      ]
+    }
   }
-  
 }

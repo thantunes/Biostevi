@@ -1,122 +1,126 @@
 {
-    "store.custom#trocas-e-devolucoes": {
-      "blocks": ["flex-layout.row#trocas-e-devolucoes"]
-    },
-    "flex-layout.row#trocas-e-devolucoes": {
-      "children": ["flex-layout.col#text-trocas-e-devolucoes"]
-    },
-    "flex-layout.col#text-trocas-e-devolucoes": {
-      "children": [
-        "rich-text#about-title", 
-        "rich-text#duvidas",
-        "rich-text#email",
-        "rich-text#whats",
-        "rich-text#title-trocas-foi-entregue", 
-        "rich-text#text-trocas-foi-entregue",
-        "rich-text#title-trocas-nao-foi-entregue", 
-        "rich-text#text-trocas-nao-foi-entregue",
-        "rich-text#title-desistencia", 
-        "rich-text#text-desistencia",
-        "rich-text#title-ausente", 
-        "rich-text#text-ausente",
-        "rich-text#title-pedido-erro", 
-        "rich-text#text-pedido-erro"
-      ],
-      "props": {
-        "preventVerticalStretch": true
-      }
-    },
-    "rich-text#about-title": {
-      "props": {
-        "text": "Trocas e Devoluções",
-        "blockClass": "titulo"
-      }
-    },
-    "rich-text#duvidas": {
-      "props": {
-        "text": "Para dúvidas, informações e cancelamentos entre em contato com o nosso atendimento:"
-      }
-    },
-    "rich-text#email": {
-      "props": {
-        "text": "sac@biostevi.com.br"
-      }
-    },
-    "rich-text#whats": {
-      "props": {
-        "text": "WhatsApp: (11) 97133-1874"
-      }
-    },
-    "rich-text#title-trocas-foi-entregue": {
-      "props": {
-        "text": "PARA TROCAS QUANDO O PRODUTO JÁ FOI ENTREGUE:",
-        "blockClass": "subtitulo"
-      }
-    },
-
-    "rich-text#text-trocas-foi-entregue": {
-      "props": {
-        "text": "Envie um e-mail para sac@biostevi.com.br ou entre em contato pelo WhatsApp: (11) 97133-1874 para solicitar o código para envio reverso com os dados a seguir: CPF cadastrado na compra, e-mail, número do pedido e a informação do motivo da troca. \n Produtos com avaria ou não conformidade deverão ser encaminhados para análise e após a validação será realizada a troca. \n Não será realizada a devolução do valor pago, e sim, a troca por outro produto. \n Produtos sem avaria ou não conformidade deverão estar com a embalagem, rótulos e lacres inviolados. O cliente deverá enviar o produto para Biostévi, que após análise, fará a validação e posteriormente a troca."
-      }
-    },
-
-    "rich-text#title-trocas-nao-foi-entregue": {
-      "props": {
-        "text": "PARA TROCAS QUANDO O PRODUTO AINDA NÃO FOI ENTREGUE:",
-        "blockClass": "subtitulo"
-      }
-    },
-
-    "rich-text#text-trocas-nao-foi-entregue": {
-      "props": {
-        "text": "Informe nosso atendimento através do e-mail sac@biostevi.com.br ou entre em contato pelo WhatsApp (11) 97133-1874. Caso o produto esteja com a transportadora, a caminho do seu endereço de entrega, recuse o recebimento e informar imediatamente nossa central de atendimento. \n A troca poderá ser realizada por outros produtos por meio de vale compras que será utilizado para compras em nosso site. \n Devolução de medicamentos que necessitam ficar na geladeira, controlados, antibióticos, não são aceitas, devido às normas da Anvisa. Dúvidas podem ser esclarecidas por meio de consulta à portaria Nº 344/1998 e RDC Nº 20/2011, no site da Anvisa ou através do telefone da ouvidoria da vigilância sanitária: 0800 61 1997."
-      }
-    },
-
-
-
-    "rich-text#title-desistencia": {
-      "props": {
-        "text": "DESISTÊNCIA DA COMPRA DO PRODUTO:",
-        "blockClass": "subtitulo"
-      }
-    },
-
-
-    "rich-text#text-desistencia": {
-      "props": {
-        "text": "Após a data do recebimento do produto, o prazo para desistência da compra é de 7 (sete) dias corridos. \n A troca ou reembolso serão realizados no valor total pago no(s) produto(s) devolvido(s), deduzindo o valor do frete (para pedidos que já estão em transporte ou que já foram entregues), utilizando a mesma forma de pagamento escolhida no processo de compra. \n   Boleto bancário, transferência, pix ou depósito: reembolso efetuado diretamente na conta do próprio cliente dentro do prazo de até 10 dias úteis*  \n  Cartão de crédito: solicitação de estorno realizada dentro de até 10 dias úteis (*), junto a administradora de cartões, lembrando que o prazo de reembolso segue o estipulado pela própria operação de cartão. \n (*) O prazo de estorno/reembolso passa a contar a partir do processamento de check in da mercadoria em nosso centro de distribuição. \n Neste caso, o produto deverá ser encaminhado na embalagem original, com rótulo intacto, sem indícios de uso, sem violação do lacre original do fabricante, todos os seus acessórios e carta de próprio punho justificando a devolução com a assinatura do cliente que efetuou o pedido, além da nota fiscal. /n Para desistência da compra após o prazo de 7 dias da data do recebimento, não serão realizadas devoluções em dinheiro ou através do mesmo método de pagamento feito na compra. Nesses casos a devolução será feita através de Vale Compra que servirá para compra de outros produtos no nosso site. /n O Vale Compra será feito no valor total pago no(s) produto(s) a serem devolvido(s). O valor pago de frete no(s) produto(s) devolvido(s), não será reembolsado. /n Para a efetivação da devolução é necessário efetuar o contato com a nossa central de relacionamento, através do e-mail: sac@biostevi.com.br ou pelo WhatsApp (11) 97133-1874. /n Produtos devolvidos sem essa comunicação, fora do prazo ou com ausência de itens/acessórios que o acompanhem, serão devolvidos ao destinatário sem consulta prévia. \n Para desistência da compra dentro do prazo de 24 horas ou antes do envio do produto, entrar em contato imediatamente com nosso atendimento através do e-mail: sac@biostevi.com.br ou WhatsApp (11) 97133-1874. \n Caso o(s) produto(s) ainda não tenha sido manipulado, a troca ou reembolso serão realizados no valor total pago no(s) produto(s) devolvido(s), incluindo o valor do frete, utilizando a mesma forma de pagamento escolhida no processo de compra. \n Boleto bancário, transferência, pix ou depósito: reembolso efetuado diretamente na conta do próprio cliente dentro do prazo de até 10 dias úteis (*). \n Cartão de crédito: solicitação de estorno realizada dentro de até 10 dias úteis (*), junto a administradora de cartões, lembrando que o prazo de reembolso segue o estipulado pela própria operação de cartão. \n (*) O prazo de estorno/reembolso passa a contar a partir da análise e autorização do motivo da desistência da compra."
-      }
-    },
-
-
-    
-
-
-    "rich-text#title-ausente": {
-      "props": {
-        "text": "CLIENTE AUSENTE PARA O RECEBIMENTO:",
-        "blockClass": "subtitulo"
-      }
-    },
-
-    "rich-text#text-ausente": {
-      "props": {
-        "text": "Caso no ato da entrega não tiver nenhuma pessoa para receber a mercadoria, serão feitas mais duas tentativas de entrega, e se mesmo assim não for encontrado ninguém, a encomenda retornará para o remetente e o cliente deverá arcar com um novo custo de envio."
-      }
-    },
-    "rich-text#title-pedido-erro": {
-      "props": {
-        "text": "PEDIDO COM ERRO NO CADASTRO DE ENDEREÇO:",
-        "blockClass": "subtitulo"
-      }
-    },
-
-    "rich-text#text-pedido-erro": {
-      "props": {
-        "text": "Caso o cliente preencha o cadastro no ato da compra de forma errada impossibilitando a entrega dos produtos ao seu destinatário e queira cancelar a compra, será descontado o valor de 50% da mercadoria mais o frete, e a solicitação deve ser realizada pelo cliente com a nossa Central de Relacionamento, via e-mail: sac@biostevi.com.br ou através do WhatsApp (11) 97133-1874."
-      }
+  "store.custom#trocas-e-devolucoes": {
+    "blocks": [
+      "flex-layout.row#trocas-e-devolucoes",
+      "flex-layout.row#faq-trocas-e-devolucoes"
+    ]
+  },
+  "flex-layout.row#trocas-e-devolucoes": {
+    "children": [
+      "flex-layout.col#text-trocas-e-devolucoes"
+    ]
+  },
+  "flex-layout.col#text-trocas-e-devolucoes": {
+    "children": [
+      "rich-text#about-title",
+      "rich-text#duvidas",
+      "rich-text#email",
+      "rich-text#whats",
+      "rich-text#title-trocas-foi-entregue",
+      "rich-text#text-trocas-foi-entregue",
+      "rich-text#title-trocas-nao-foi-entregue",
+      "rich-text#text-trocas-nao-foi-entregue",
+      "rich-text#title-desistencia",
+      "rich-text#text-desistencia",
+      "rich-text#title-ausente",
+      "rich-text#text-ausente",
+      "rich-text#title-pedido-erro",
+      "rich-text#text-pedido-erro"
+    ],
+    "props": {
+      "preventVerticalStretch": true
     }
-
- 
+  },
+  "rich-text#about-title": {
+    "props": {
+      "text": "Trocas e Devoluções",
+      "blockClass": "titulo"
+    }
+  },
+  "rich-text#duvidas": {
+    "props": {
+      "text": "Para dúvidas, informações e cancelamentos entre em contato com o nosso atendimento:"
+    }
+  },
+  "rich-text#email": {
+    "props": {
+      "text": "sac@biostevi.com.br"
+    }
+  },
+  "rich-text#whats": {
+    "props": {
+      "text": "WhatsApp: (11) 97133-1874"
+    }
+  },
+  "rich-text#title-trocas-foi-entregue": {
+    "props": {
+      "text": "PARA TROCAS QUANDO O PRODUTO JÁ FOI ENTREGUE:",
+      "blockClass": "subtitulo"
+    }
+  },
+  "rich-text#text-trocas-foi-entregue": {
+    "props": {
+      "text": "Envie um e-mail para sac@biostevi.com.br ou entre em contato pelo WhatsApp: (11) 97133-1874 para solicitar o código para envio reverso com os dados a seguir: CPF cadastrado na compra, e-mail, número do pedido e a informação do motivo da troca. \n Produtos com avaria ou não conformidade deverão ser encaminhados para análise e após a validação será realizada a troca. \n Não será realizada a devolução do valor pago, e sim, a troca por outro produto. \n Produtos sem avaria ou não conformidade deverão estar com a embalagem, rótulos e lacres inviolados. O cliente deverá enviar o produto para Biostévi, que após análise, fará a validação e posteriormente a troca."
+    }
+  },
+  "rich-text#title-trocas-nao-foi-entregue": {
+    "props": {
+      "text": "PARA TROCAS QUANDO O PRODUTO AINDA NÃO FOI ENTREGUE:",
+      "blockClass": "subtitulo"
+    }
+  },
+  "rich-text#text-trocas-nao-foi-entregue": {
+    "props": {
+      "text": "Informe nosso atendimento através do e-mail sac@biostevi.com.br ou entre em contato pelo WhatsApp (11) 97133-1874. Caso o produto esteja com a transportadora, a caminho do seu endereço de entrega, recuse o recebimento e informar imediatamente nossa central de atendimento. \n A troca poderá ser realizada por outros produtos por meio de vale compras que será utilizado para compras em nosso site. \n Devolução de medicamentos que necessitam ficar na geladeira, controlados, antibióticos, não são aceitas, devido às normas da Anvisa. Dúvidas podem ser esclarecidas por meio de consulta à portaria Nº 344/1998 e RDC Nº 20/2011, no site da Anvisa ou através do telefone da ouvidoria da vigilância sanitária: 0800 61 1997."
+    }
+  },
+  "rich-text#title-desistencia": {
+    "props": {
+      "text": "DESISTÊNCIA DA COMPRA DO PRODUTO:",
+      "blockClass": "subtitulo"
+    }
+  },
+  "rich-text#text-desistencia": {
+    "props": {
+      "text": "Após a data do recebimento do produto, o prazo para desistência da compra é de 7 (sete) dias corridos. \n A troca ou reembolso serão realizados no valor total pago no(s) produto(s) devolvido(s), deduzindo o valor do frete (para pedidos que já estão em transporte ou que já foram entregues), utilizando a mesma forma de pagamento escolhida no processo de compra. \n   Boleto bancário, transferência, pix ou depósito: reembolso efetuado diretamente na conta do próprio cliente dentro do prazo de até 10 dias úteis*  \n  Cartão de crédito: solicitação de estorno realizada dentro de até 10 dias úteis (*), junto a administradora de cartões, lembrando que o prazo de reembolso segue o estipulado pela própria operação de cartão. \n (*) O prazo de estorno/reembolso passa a contar a partir do processamento de check in da mercadoria em nosso centro de distribuição. \n Neste caso, o produto deverá ser encaminhado na embalagem original, com rótulo intacto, sem indícios de uso, sem violação do lacre original do fabricante, todos os seus acessórios e carta de próprio punho justificando a devolução com a assinatura do cliente que efetuou o pedido, além da nota fiscal. /n Para desistência da compra após o prazo de 7 dias da data do recebimento, não serão realizadas devoluções em dinheiro ou através do mesmo método de pagamento feito na compra. Nesses casos a devolução será feita através de Vale Compra que servirá para compra de outros produtos no nosso site. /n O Vale Compra será feito no valor total pago no(s) produto(s) a serem devolvido(s). O valor pago de frete no(s) produto(s) devolvido(s), não será reembolsado. /n Para a efetivação da devolução é necessário efetuar o contato com a nossa central de relacionamento, através do e-mail: sac@biostevi.com.br ou pelo WhatsApp (11) 97133-1874. /n Produtos devolvidos sem essa comunicação, fora do prazo ou com ausência de itens/acessórios que o acompanhem, serão devolvidos ao destinatário sem consulta prévia. \n Para desistência da compra dentro do prazo de 24 horas ou antes do envio do produto, entrar em contato imediatamente com nosso atendimento através do e-mail: sac@biostevi.com.br ou WhatsApp (11) 97133-1874. \n Caso o(s) produto(s) ainda não tenha sido manipulado, a troca ou reembolso serão realizados no valor total pago no(s) produto(s) devolvido(s), incluindo o valor do frete, utilizando a mesma forma de pagamento escolhida no processo de compra. \n Boleto bancário, transferência, pix ou depósito: reembolso efetuado diretamente na conta do próprio cliente dentro do prazo de até 10 dias úteis (*). \n Cartão de crédito: solicitação de estorno realizada dentro de até 10 dias úteis (*), junto a administradora de cartões, lembrando que o prazo de reembolso segue o estipulado pela própria operação de cartão. \n (*) O prazo de estorno/reembolso passa a contar a partir da análise e autorização do motivo da desistência da compra."
+    }
+  },
+  "rich-text#title-ausente": {
+    "props": {
+      "text": "CLIENTE AUSENTE PARA O RECEBIMENTO:",
+      "blockClass": "subtitulo"
+    }
+  },
+  "rich-text#text-ausente": {
+    "props": {
+      "text": "Caso no ato da entrega não tiver nenhuma pessoa para receber a mercadoria, serão feitas mais duas tentativas de entrega, e se mesmo assim não for encontrado ninguém, a encomenda retornará para o remetente e o cliente deverá arcar com um novo custo de envio."
+    }
+  },
+  "rich-text#title-pedido-erro": {
+    "props": {
+      "text": "PEDIDO COM ERRO NO CADASTRO DE ENDEREÇO:",
+      "blockClass": "subtitulo"
+    }
+  },
+  "rich-text#text-pedido-erro": {
+    "props": {
+      "text": "Caso o cliente preencha o cadastro no ato da compra de forma errada impossibilitando a entrega dos produtos ao seu destinatário e queira cancelar a compra, será descontado o valor de 50% da mercadoria mais o frete, e a solicitação deve ser realizada pelo cliente com a nossa Central de Relacionamento, via e-mail: sac@biostevi.com.br ou através do WhatsApp (11) 97133-1874."
+    }
+  },
+  "flex-layout.row#faq-trocas-e-devolucoes": {
+    "children": [
+      "FaqComponent#page-trocas-e-devolucoes"
+    ]
+  },
+  "FaqComponent#page-trocas-e-devolucoes": {
+    "props": {
+      "blockClass": "faq-container",
+      "faqs": [ 
+        {
+          "question": "Pergunta 1",
+          "answer": "Resposta 1"
+        }
+      ]
+    }
   }
+}

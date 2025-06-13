@@ -1,77 +1,79 @@
 {
-    "store.custom#farmaceutico": {
-      "blocks": ["flex-layout.row#titulo","flex-layout.row#farmaceutico","flex-layout.row#espaco"]
-    },
-
-
-    "flex-layout.row#farmaceutico": {
-      "children": ["flex-layout.col#text-farmaceutico", "image#farmaceutico"]
-    },
-
-
-
-    "flex-layout.row#titulo": {
-        "children": ["rich-text#farmaceutico-page-title"],
-        "props": {
-          "blockClass": "bloco-farmaceutico-titulo-topo",
-          "preventVerticalStretch": true
+  "store.custom#farmaceutico": {
+    "blocks": [
+      "flex-layout.row#titulo",
+      "flex-layout.row#farmaceutico",
+      "flex-layout.row#espaco",
+      "flex-layout.row#faq-farmaceutico"
+    ]
+  },
+  "flex-layout.row#farmaceutico": {
+    "children": [
+      "flex-layout.col#text-farmaceutico",
+      "image#farmaceutico"
+    ]
+  },
+  "flex-layout.row#titulo": {
+    "children": [
+      "rich-text#farmaceutico-page-title"
+    ],
+    "props": {
+      "blockClass": "bloco-farmaceutico-titulo-topo",
+      "preventVerticalStretch": true
+    }
+  },
+  "rich-text#farmaceutico-page-title": {
+    "props": {
+      "text": "FARMACÊUTICO RESPONSÁVEL",
+      "blockClass": "titulo--pagina-farmaceutico"
+    }
+  },
+  "flex-layout.col#text-farmaceutico": {
+    "children": [
+      "rich-text#farmaceutico-title",
+      "rich-text#farmaceutico-content"
+    ],
+    "props": {
+      "blockClass": "bloco-farmaceutico",
+      "preventVerticalStretch": true
+    }
+  },
+  "flex-layout.row#espaco": {
+    "props": {
+      "blockClass": "bloco-farmaceutico-espacamento",
+      "preventVerticalStretch": true
+    }
+  },
+  "rich-text#farmaceutico-title": {
+    "props": {
+      "text": "Helio Takashi Kozima",
+      "blockClass": "titulo-farmaceutico"
+    }
+  },
+  "rich-text#farmaceutico-content": {
+    "props": {
+      "text": "Farmacêutico Bioquímico - CRF 07795/SP \n \n Graduado pela Universidade de São Paulo, com mais de 25 anos de experiência em Gerência de Produção em Indústrias Farmacêuticas, atuou em Laboratórios como: \n \n FURP (Fundação para o Remédio Popular), Laboratório Whitehall - Wyeth, entre outros. Além de ter 15 anos de experiência em Farmácia de Manipulação."
+    }
+  },
+  "image#farmaceutico": {
+    "props": {
+      "src": "https://stevia.vteximg.com.br/arquivos/dr-helio.png?v=637825577646000000"
+    }
+  },
+  "flex-layout.row#faq-farmaceutico": {
+    "children": [
+      "FaqComponent#page-farmaceutico-responsavel"
+    ]
+  },
+  "FaqComponent#page-farmaceutico-responsavel": {
+    "props": {
+      "blockClass": "faq-container",
+      "faqs": [
+        {
+          "question": "Pergunta 1",
+          "answer": "Resposta 1"
         }
-      },
-
-
-      "rich-text#farmaceutico-page-title": {
-        "props": {
-          "text": "FARMACÊUTICO RESPONSÁVEL",
-          "blockClass": "titulo--pagina-farmaceutico"
-        }
-      },
-
-
-
-    "flex-layout.col#text-farmaceutico": {
-      "children": ["rich-text#farmaceutico-title", "rich-text#farmaceutico-content"],
-      "props": {
-        "blockClass": "bloco-farmaceutico",
-        "preventVerticalStretch": true
-      }
-    },
-
-
-
-    "flex-layout.row#espaco":{
-      "props": {
-        "blockClass": "bloco-farmaceutico-espacamento",
-        "preventVerticalStretch": true
-      }
-
-    },
-
-
-    "rich-text#farmaceutico-title": {
-      "props": {
-        "text": "Helio Takashi Kozima",
-        "blockClass": "titulo-farmaceutico"
-      }
-    },
-    "rich-text#farmaceutico-content": {
-      "props": {
-        "text": "Farmacêutico Bioquímico - CRF 07795/SP \n \n Graduado pela Universidade de São Paulo, com mais de 25 anos de experiência em Gerência de Produção em Indústrias Farmacêuticas, atuou em Laboratórios como: \n \n FURP (Fundação para o Remédio Popular), Laboratório Whitehall - Wyeth, entre outros. Além de ter 15 anos de experiência em Farmácia de Manipulação."
-      }
-    },
-
-
-    "image#farmaceutico": {
-        "props": {
-          "src": "https://stevia.vteximg.com.br/arquivos/dr-helio.png?v=637825577646000000"
-         
-        }
-      }
-
-
-
-
-
-    
-
-    
+      ]
+    }
   }
+}
