@@ -486,7 +486,6 @@
   display: flex;
   align-items: center;
   border-bottom: 1px solid #ff6c00 !important;
-  max-width: 1140px !important;
   margin-bottom: 12px !important;
 }
 :global(.vtex-rich-text-0-x-wrapper--shelfTitle){

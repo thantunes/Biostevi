@@ -103,6 +103,9 @@ FaqComponent.schema = {
                         title: 'Resposta',
                         type: 'string',
                         description: 'Preencha em HTML',
+                        widget: {
+                            "ui:widget": "textarea"
+                        }
                     },
                 },
             },
