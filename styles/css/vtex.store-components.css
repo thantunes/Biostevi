@@ -674,6 +674,7 @@
   font-size: 20px !important;
   font-weight: 700 !important;
 }
+:global(.vtex-rich-text-0-x-headingLevel2--faq-title),
 :global(.vtex-rich-text-0-x-headingLevel2--shelfTitle) {
   text-transform: uppercase;
   margin-bottom: 5px;
