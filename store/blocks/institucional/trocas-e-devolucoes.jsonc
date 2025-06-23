@@ -114,13 +114,7 @@
   },
   "FaqComponent#page-trocas-e-devolucoes": {
     "props": {
-      "blockClass": "faq-container",
-      "faqs": [ 
-        {
-          "question": "Pergunta 1",
-          "answer": "Resposta 1"
-        }
-      ]
+      "blockClass": "faq-container"
     }
   }
 }
