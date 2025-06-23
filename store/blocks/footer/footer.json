@@ -4,6 +4,7 @@
   },
   "footer-layout.desktop": {
     "children": [
+      "flex-layout.row#iconwhats",
       "flex-layout.row#footer-1-desktop",
       "flex-layout.row#espacamento-footer",
       "flex-layout.row#footer-2-desktop",
@@ -400,6 +401,7 @@
 
   "footer-layout.mobile": {
     "children": [
+      "flex-layout.row#iconwhats",
       "flex-layout.row#1-footer-mobile",
       "flex-layout.row#footer-teste",
       "flex-layout.row#2-footer-mobile",

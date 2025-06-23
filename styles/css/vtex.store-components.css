@@ -481,7 +481,14 @@
   :global(.vtex-menu-2-x-styledLinkContent):hover {
   color: #ff6c00;
 }
-:global(.vtex-rich-text-0-x-wrapper--shelfTitle) {
+:global(.vtex-rich-text-0-x-wrapper--faq-title){ 
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ff6c00 !important;
+  margin-bottom: 12px !important;
+}
+:global(.vtex-rich-text-0-x-wrapper--shelfTitle){
   border-bottom: 1px solid #ff6c00 !important;
   max-width: 1140px !important;
   margin-bottom: 35px !important;
@@ -666,6 +673,7 @@
   font-size: 20px !important;
   font-weight: 700 !important;
 }
+:global(.vtex-rich-text-0-x-headingLevel2--faq-title),
 :global(.vtex-rich-text-0-x-headingLevel2--shelfTitle) {
   text-transform: uppercase;
   margin-bottom: 5px;
@@ -719,6 +727,7 @@
   display: flex;
   align-items: center;
 }
+:global(.vtex-rich-text-0-x-wrapper--faq-title)::before,
 :global(.vtex-rich-text-0-x-wrapper--shelfTitle)::before {
   content: '';
   width: 38px;
@@ -1501,8 +1510,14 @@
   cursor: default;
   padding-bottom: 12px !important;
 }
-:global(.vtex-flex-layout-0-x-flexColChild)
-  :global(.vtex-rich-text-0-x-wrapper--subtitulo) {
+
+:global(.vtex-rich-text-0-x-headingLevel1--subtitulo),
+:global(.vtex-rich-text-0-x-headingLevel2--subtitulo),
+:global(.vtex-rich-text-0-x-headingLevel3--subtitulo),
+:global(.vtex-rich-text-0-x-headingLevel4--subtitulo),
+:global(.vtex-rich-text-0-x-headingLevel5--subtitulo),
+:global(.vtex-rich-text-0-x-headingLevel6--subtitulo),
+:global(.vtex-rich-text-0-paragraph--subtitulo) {
   line-height: 0 !important;
   width: fit-content;
   color: #555;
@@ -1516,7 +1531,8 @@
 :global(.vtex-rich-text-0-x-paragraph--subtitulo-bold) {
   font-weight: 700;
 }
-:global(.vtex-rich-text-0-x-paragraph--titulo) {
+:global(.vtex-rich-text-0-x-paragraph--titulo),
+:global(.vtex-rich-text-0-x-headingLevel1--titulo) {
   font-weight: 700;
   color: #555;
   font-size: 24px;

@@ -812,11 +812,6 @@
   //     "collapseContent": true
   //   }
   // },
-  "EnvioReceitaComp": {
-    "children": [
-      "flex-layout.row#BuyQuantity"
-    ]
-  },
   "DescriptionContructorComp": {
     "children": [
       "rich-text#Informacoes"

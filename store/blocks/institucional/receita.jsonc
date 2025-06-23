@@ -1,28 +1,27 @@
 {
-    "store.custom#receita": {
-      "blocks": ["flex-layout.row#receita"]
-    },
-    "flex-layout.row#receita": {
-      "children": ["flex-layout.col#text-receita"]
-    },
-    "flex-layout.col#text-receita": {
-      "children": ["rich-text#receita-title", "iframe"],
+  "store.custom#receita": {
+    "blocks": ["flex-layout.row#receita"]
+  },
+  "flex-layout.row#receita": {
+    "children": ["flex-layout.col#text-receita"]
+  },
+  "flex-layout.col#text-receita": {
+    "children": ["rich-text#receita-title", "iframe"],
+    "props": {
+      "preventVerticalStretch": true
+    }
+  },
+  "rich-text#receita-title": {
+    "props": {
+      "text": "Envie sua receita",
+      "blockClass": "titulo"
+    }
+  },
+  "iframe": {
       "props": {
-        "preventVerticalStretch": true
+        "src": "https://blog.biostevi.com.br/receita-farmacia-biostevi/",
+        "width":"100%",
+        "height":"840px"
       }
-    },
-    "rich-text#receita-title": {
-      "props": {
-        "text": "Envie sua receita",
-        "blockClass": "titulo"
-      }
-    },
-    "iframe": {
-        "props": {
-          "src": "https://blog.biostevi.com.br/receita-farmacia-biostevi/",
-          "width":"100%",
-          "height":"840px"
-        }
-      }
-
-  }
+    }
+}

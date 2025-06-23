@@ -25,10 +25,6 @@
   "ProductCustomDescription": {
     "component": "ProductCustomDescription"
   },
-  "EnvioReceitaComp": {
-    "component": "EnvioReceita",
-    "composition": "children"
-  },
   "CategoryHeading": {
     "component": "CategoryHeading"
   },
@@ -62,5 +58,8 @@
   },
   "RewardValue": {
     "component": "RewardValue"
+  },
+  "FaqComponent": {
+    "component": "FaqComponent"
   }
 }

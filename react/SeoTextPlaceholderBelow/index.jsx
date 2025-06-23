@@ -1,24 +1,41 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from "react";
 import styles from './style.module.css'
 
 const SeoTextPlaceholderBelow = props => {
   const [isExpanded, setIsExpanded] = useState(false)
+  const [showReadMore, setShowReadMore] = useState(false)
+  const contentRef = useRef(null)
 
-  const toggleContent = () => {
-    setIsExpanded(!isExpanded)
+  const handleToggleContent = () => {
+    setIsExpanded((prev) => !prev)
   }
+
+  useEffect(() => {
+    if (contentRef.current) {
+      const el = contentRef.current
+      // Pega o line-height computado
+      const lineHeight = parseFloat(getComputedStyle(el).lineHeight)
+      const maxHeight = lineHeight * 8
+      // Se a altura real for maior que a altura máxima de 8 linhas, mostra o botão
+      setShowReadMore(el.scrollHeight > maxHeight)
+    }
+  }, [props.content])
 
   return (
     <div>
       <div
-        className={`${styles.wrapperContentSeo} ${
-          isExpanded ? styles.expanded : ''
-        }`}
+        ref={contentRef}
+        className={`${styles.wrapperContentSeo} ${isExpanded ? styles.expanded : ''}`}
+        aria-expanded={isExpanded}
       >
         <div dangerouslySetInnerHTML={{ __html: props.content }}></div>
       </div>
-      {props.content && (
-        <button className={styles.btnReadMore} onClick={toggleContent}>
+      {showReadMore && (
+        <button
+          className={styles.btnReadMore}
+          onClick={handleToggleContent}
+          aria-label={isExpanded ? 'Ler menos conteúdo' : 'Ler mais conteúdo'}
+        >
           {isExpanded ? 'Ler menos' : 'Ler mais'}
         </button>
       )}

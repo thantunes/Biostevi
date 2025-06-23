@@ -87,6 +87,7 @@
       "flex-layout.row#banner-one",
       "flex-layout.row#result",
       "flex-layout.row#SeoTextPlaceholderBelow",
+      "FaqComponent",
       "flex-layout.row#banner-second"
     ],
     "props": {
@@ -216,7 +217,8 @@
       "flex-layout.row#contentmobile",
       "flex-layout.row#fetchmore",
       "flex-layout.row#banner-second",
-      "flex-layout.row#SeoTextPlaceholderBelow"
+      "flex-layout.row#SeoTextPlaceholderBelow",
+      "FaqComponent"
     ],
     "props": {
       "pagination": "show-more",
