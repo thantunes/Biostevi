@@ -486,6 +486,7 @@
   display: flex;
   align-items: center;
   border-bottom: 1px solid #ff6c00 !important;
+  margin-top: 15px !important;
   margin-bottom: 12px !important;
 }
 :global(.vtex-rich-text-0-x-wrapper--shelfTitle){
@@ -510,10 +511,11 @@
   width: 97%;
 }
 :global(.vtex-reviews-and-ratings-3-x-reviewsHeading) {
-  font-weight: 400;
-  text-transform: uppercase;
+  line-height: 1.5;
+  font-weight: 600;
+  font-size: 1.25rem;
   color: #009fc2 !important;
-  font-size: 1.5em;
+  font-family: Signika;
   text-transform: uppercase;
 }
 :global(.vtex-menu-2-x-submenuWrapper) {
@@ -1276,7 +1278,7 @@
 :global(.vtex-product-specifications-1-x-specificationValue) {
   color: #555;
   font-size: 17px !important;
-  font-family: Helvetica;
+  /* font-family: Helvetica; */
   font-weight: 400;
   margin-top: 10px;
 }
@@ -1408,10 +1410,10 @@
 :global(.vtex-flex-layout-0-x-flexRowContent--bloco-home-informativos) :global(.vtex-rich-text-0-x-headingLevel3),
 :global(.vtex-flex-layout-0-x-flexRowContent--bloco-home-informativos) :global(.vtex-rich-text-0-x-strong) {
   font-size: 14px;
-  font-weight: 700;
-  color: #000;
+  color: #3f3f40;
+  font-weight: 600;
   margin-bottom: 0;
-  letter-spacing: 1px;
+  font-family: Signika;
 }
 :global(.vtex-store-footer-2-x-footerLayout) {
   background-color: #d2d3d3;
@@ -1668,47 +1670,17 @@
 :global(.vtex-input-prefix__group) {
   border: 1px solid #ccc;
 }
-:global(.vtex-rich-text-0-x-paragraph--informativo-frete) {
-  color: #949494;
-  font-size: 11px;
-  letter-spacing: 1px;
-  max-width: 169px;
-  margin-top: 11px;
-}
-:global(.vtex-rich-text-0-x-paragraph--informativo-desconto-progressivo) {
-  color: #949494;
-  font-size: 11px;
-  letter-spacing: 1px;
-  max-width: 169px;
-  margin-top: 11px;
-}
-:global(.vtex-rich-text-0-x-paragraph--informativo-desconto) {
-  color: #949494;
-  font-size: 11px;
-  letter-spacing: 1px;
-  max-width: 169px;
-  margin-top: 11px;
-}
-:global(.vtex-rich-text-0-x-paragraph--informativo-parcelamento) {
-  color: #949494;
-  font-size: 11px;
-  letter-spacing: 1px;
-  max-width: 169px;
-  margin-top: 11px;
-}
-:global(.vtex-rich-text-0-x-paragraph--informativo-site-seguro) {
-  color: #949494;
-  font-size: 11px;
-  letter-spacing: 1px;
-  max-width: 169px;
-  margin-top: 11px;
-}
+:global(.vtex-rich-text-0-x-paragraph--informativo-frete),
+:global(.vtex-rich-text-0-x-paragraph--informativo-desconto-progressivo),
+:global(.vtex-rich-text-0-x-paragraph--informativo-desconto),
+:global(.vtex-rich-text-0-x-paragraph--informativo-parcelamento),
+:global(.vtex-rich-text-0-x-paragraph--informativo-site-seguro),
 :global(.vtex-rich-text-0-x-paragraph--informativo-whats) {
-  color: #949494;
-  font-size: 11px;
-  letter-spacing: 1px;
+  color: #555555;
+  font-size: 12px;
   max-width: 169px;
-  margin-top: 11px;
+  margin-top: 5px;
+  line-height: 1.5;
 }
 :global(.vtex-store-components-3-x-imageElement--footer-logo-vtex) {
   float: right;
@@ -2243,38 +2215,13 @@
     width: unset !important;
     margin: 0;
   }
-  :global(.vtex-rich-text-0-x-paragraph--informativo-frete) {
-    color: #949494;
-    font-size: 9px;
-    letter-spacing: 1px;
-    margin-top: 5px;
-  }
-  :global(.vtex-rich-text-0-x-paragraph--informativo-desconto-progressivo) {
-    color: #949494;
-    font-size: 9px;
-    letter-spacing: 1px;
-    margin-top: 5px;
-  }
-  :global(.vtex-rich-text-0-x-paragraph--informativo-desconto) {
-    color: #949494;
-    font-size: 9px;
-    letter-spacing: 1px;
-    margin-top: 5px;
-  }
-  :global(.vtex-rich-text-0-x-paragraph--informativo-parcelamento) {
-    color: #949494;
-    font-size: 9px;
-    letter-spacing: 1px;
-    margin-top: 5px;
-  }
-  :global(.vtex-rich-text-0-x-paragraph--informativo-site-seguro) {
-    color: #949494;
-    font-size: 9px;
-    letter-spacing: 1px;
-    margin-top: 5px;
-  }
+  :global(.vtex-rich-text-0-x-paragraph--informativo-frete),
+  :global(.vtex-rich-text-0-x-paragraph--informativo-desconto-progressivo),
+  :global(.vtex-rich-text-0-x-paragraph--informativo-desconto),
+  :global(.vtex-rich-text-0-x-paragraph--informativo-parcelamento),
+  :global(.vtex-rich-text-0-x-paragraph--informativo-site-seguro),
   :global(.vtex-rich-text-0-x-paragraph--informativo-whats) {
-    color: #949494;
+    color: #555555;
     font-size: 9px;
     letter-spacing: 1px;
     margin-top: 5px;

@@ -1,5 +1,6 @@
 import React, { useMemo, useState, useEffect, useRef } from "react";
 import { useProduct } from "vtex.product-context";
+import FaqComponent from "../FaqComponent/FaqComponent";
 import "./index.global.css";
 
 function splitPorTags(texto) {
@@ -33,23 +34,25 @@ function splitPorTags(texto) {
 }
 
 function createAccordionFromHTML(htmlString) {
-    if (!htmlString) return { preContent: "", accordionSections: [] };
+    if (!htmlString) return [];
     
     // Usar regex para dividir por h2, preservando todo o conteúdo
     const h2Regex = /<h2[^>]*>.*?<\/h2>/gi;
     const h2Matches = htmlString.match(h2Regex) || [];
     
     if (h2Matches.length === 0) {
-        // Se não há h2s, retorna tudo como preContent
-        return { preContent: htmlString, accordionSections: [] };
+        // Se não há h2s, retorna como um único item de conteúdo sem accordion
+        return [{ isContent: true, content: htmlString }];
     }
     
     // Dividir o HTML usando os h2s como separadores
     const parts = htmlString.split(h2Regex);
-    const accordionSections = [];
+    const result = [];
     
     // O primeiro part é o conteúdo antes do primeiro h2
-    const preContent = parts[0] || "";
+    if (parts[0] && parts[0].trim()) {
+        result.push({ isContent: true, content: parts[0].trim() });
+    }
     
     // Processar cada seção (h2 + conteúdo após ele)
     for (let i = 0; i < h2Matches.length; i++) {
@@ -60,69 +63,41 @@ function createAccordionFromHTML(htmlString) {
         const h2TextMatch = h2Match.match(/<h2[^>]*>(.*?)<\/h2>/i);
         const title = h2TextMatch ? h2TextMatch[1] : h2Match;
         
-        accordionSections.push({
-            title: title,
-            content: content.trim()
+        result.push({
+            isAccordion: true,
+            question: title,
+            answer: content.trim()
         });
     }
     
-    return { preContent: preContent.trim(), accordionSections };
+    return result;
 }
 
-const AccordionRenderer = ({ htmlString, accordionKeyPrefix, openAccordions, handleAccordionToggle }) => {
-    const { preContent, accordionSections } = createAccordionFromHTML(htmlString);
-    
-    if (accordionSections.length === 0) {
-        // Se não há h2s, retorna o conteúdo processado normalmente
-        return <div dangerouslySetInnerHTML={{ __html: splitPorTags(htmlString) }} />;
-    }
+const AccordionRenderer = ({ htmlString, keyPrefix }) => {
+    const accordionData = createAccordionFromHTML(htmlString);
     
     return (
         <div>
-            {/* Conteúdo antes do primeiro h2 */}
-            {preContent && (
-                <div dangerouslySetInnerHTML={{ __html: preContent }} />
-            )}
-            
-            {/* Renderizar accordions */}
-            {accordionSections.map((section, idx) => {
-                const accordionKey = `${accordionKeyPrefix}-h2-${idx}`;
-                const isOpen = openAccordions[accordionKey];
+            {accordionData.map((item, idx) => {
+                if (item.isContent) {
+                    // Conteúdo sem accordion
+                    return <div key={`content-${idx}`} dangerouslySetInnerHTML={{ __html: splitPorTags(item.content) }} />;
+                }
                 
-                return (
-                    <div key={accordionKey} className="accordion-item">
-                        <button
-                            className="accordion-title"
-                            aria-expanded={isOpen}
-                            aria-controls={`accordion-content-${accordionKey}`}
-                            id={`accordion-question-${accordionKey}`}
-                            tabIndex={0}
-                            onClick={() => handleAccordionToggle(accordionKey)}
-                            onKeyDown={e => (e.key === 'Enter' || e.key === ' ') && handleAccordionToggle(accordionKey)}
-                            type="button"
-                        >
-                            <h2 dangerouslySetInnerHTML={{ __html: section.title }}></h2>
-                            <span
-                                className={`accordion-arrow ${isOpen ? 'accordion-arrow-open' : ''}`}
-                                aria-hidden="true"
-                            >
-                                {isOpen ? '-' : '+'}
-                            </span>
-                        </button>
-                        
-                        <div
-                            id={`accordion-content-${accordionKey}`}
-                            role="region"
-                            aria-labelledby={`accordion-question-${accordionKey}`}
-                            className={`accordion-content ${isOpen ? 'accordion-content-open' : ''}`}
-                        >
-                            <div 
-                                className="accordion-content-inner"
-                                dangerouslySetInnerHTML={{ __html: section.content }}
-                            />
-                        </div>
-                    </div>
-                );
+                if (item.isAccordion) {
+                    // Usar FaqComponent para o accordion
+                    return (
+                        <FaqComponent
+                            key={`accordion-${idx}`}
+                            faqs={[{ question: item.question, answer: item.answer }]}
+                            allowMultipleOpen={true}
+                            activeStructuredData={false}
+                            keyPrefix={`${keyPrefix}-${idx}`}
+                        />
+                    );
+                }
+                
+                return null;
             })}
         </div>
     );
@@ -135,7 +110,6 @@ function DescriptionContructor({ children }) {
     const properties = useMemo(() => product?.properties || [], [product]);
 
     const [isVideoVisible, setIsVideoVisible] = useState(false);
-    const [openAccordions, setOpenAccordions] = useState({});
 
     const videoRef = useRef(null);
 
@@ -159,13 +133,6 @@ function DescriptionContructor({ children }) {
         };
     }, []);
 
-    const handleAccordionToggle = (accordionKey) => {
-        setOpenAccordions(prev => ({
-            ...prev,
-            [accordionKey]: !prev[accordionKey]
-        }));
-    };
-
     const renderContent = (namePrefix, className, includeImages = true) => {
         const filteredData = properties.filter(
             (e) => e.name?.includes(namePrefix) && !e.name?.includes(`Ultima Sessão-${namePrefix}`)
@@ -177,6 +144,23 @@ function DescriptionContructor({ children }) {
             !e.values[0].includes('class="descricao-pdp-full"') &&
             e.name.includes(`${namePrefix}-Paragrafo`)
         );
+
+        // Converter para formato do FaqComponent
+        const accordionData = titulos.map((titulo, idx) => {
+            const tituloNumber = titulo.name.match(/Titulo(\d+)/)?.[1];
+            const paragrafosRelacionados = paragrafos.filter(p => 
+                tituloNumber ? p.name.includes(`Paragrafo${tituloNumber}`) : true
+            );
+            
+            const content = (paragrafosRelacionados.length > 0 ? paragrafosRelacionados : paragrafos)
+                .map((paragrafo) => splitPorTags(paragrafo.values[0]))
+                .join('');
+            
+            return {
+                question: titulo.values?.[0] || "",
+                answer: content
+            };
+        });
 
         return (
             <div className={`BlockStyle ${className}`}>
@@ -193,58 +177,14 @@ function DescriptionContructor({ children }) {
                         ) : null
                     )}
                 
-                <div>
-                    {titulos.map((titulo, idx) => {
-                        const accordionKey = `${namePrefix}-${idx}`;
-                        const isOpen = openAccordions[accordionKey];
-                        
-                        // Encontrar parágrafos relacionados ao título atual
-                        const tituloNumber = titulo.name.match(/Titulo(\d+)/)?.[1];
-                        const paragrafosRelacionados = paragrafos.filter(p => 
-                            tituloNumber ? p.name.includes(`Paragrafo${tituloNumber}`) : true
-                        );
-                        
-                        return (
-                            <div key={titulo.name} className="accordion-item">
-                                <button
-                                    className="accordion-title"
-                                    aria-expanded={isOpen}
-                                    aria-controls={`accordion-content-${accordionKey}`}
-                                    id={`accordion-question-${accordionKey}`}
-                                    tabIndex={0}
-                                    onClick={() => handleAccordionToggle(accordionKey)}
-                                    onKeyDown={e => (e.key === 'Enter' || e.key === ' ') && handleAccordionToggle(accordionKey)}
-                                    type="button"
-                                >
-                                    <h2 dangerouslySetInnerHTML={{ __html: titulo.values?.[0] || "" }}></h2>
-                                    <span
-                                        className={`accordion-arrow ${isOpen ? 'accordion-arrow-open' : ''}`}
-                                        aria-hidden="true"
-                                    >
-                                        {isOpen ? '-' : '+'}
-                                    </span>
-                                </button>
-                                
-                                <div
-                                    id={`accordion-content-${accordionKey}`}
-                                    role="region"
-                                    aria-labelledby={`accordion-question-${accordionKey}`}
-                                    className={`accordion-content ${isOpen ? 'accordion-content-open' : ''}`}
-                                >
-                                    <div className="accordion-content-inner">
-                                        {(paragrafosRelacionados.length > 0 ? paragrafosRelacionados : paragrafos).map((paragrafo) => (
-                                            <div
-                                                key={paragrafo.name}
-                                                className={`MobileStyle ${className} ${paragrafo.values[0].includes("<a") ? "TemLink" : ""}`}
-                                                dangerouslySetInnerHTML={{ __html: splitPorTags(paragrafo.values[0]) }}
-                                            ></div>
-                                        ))}
-                                    </div>
-                                </div>
-                            </div>
-                        );
-                    })}
-                </div>
+                {accordionData.length > 0 && (
+                    <FaqComponent
+                        faqs={accordionData}
+                        allowMultipleOpen={true}
+                        activeStructuredData={false}
+                        keyPrefix={`content-${namePrefix}`}
+                    />
+                )}
             </div>
         );
     };
@@ -255,9 +195,7 @@ function DescriptionContructor({ children }) {
                 <div className="DescBox" id="MetaTag-PDP">
                     <AccordionRenderer 
                         htmlString={product.description} 
-                        accordionKeyPrefix="product-description"
-                        openAccordions={openAccordions}
-                        handleAccordionToggle={handleAccordionToggle}
+                        keyPrefix="product-description"
                     />
                 </div>
             ) : null}
@@ -271,9 +209,7 @@ function DescriptionContructor({ children }) {
                             >
                                 <AccordionRenderer 
                                     htmlString={e.values[0]} 
-                                    accordionKeyPrefix={`property-${e.name}`}
-                                    openAccordions={openAccordions}
-                                    handleAccordionToggle={handleAccordionToggle}
+                                    keyPrefix={`property-${e.name}`}
                                 />
                             </div>
                         ) : null
@@ -286,9 +222,7 @@ function DescriptionContructor({ children }) {
                             <div className="vtex-product-specifications-1-x-specificationValue">
                                 <AccordionRenderer 
                                     htmlString={properties.find((e) => e.name.includes("Linha8-VIDEO")).values?.[0] || ""} 
-                                    accordionKeyPrefix="linha8-video"
-                                    openAccordions={openAccordions}
-                                    handleAccordionToggle={handleAccordionToggle}
+                                    keyPrefix="linha8-video"
                                 />
                             </div>
                         ) : null}
@@ -299,9 +233,7 @@ function DescriptionContructor({ children }) {
                                 <div key={e.name}>
                                     <AccordionRenderer 
                                         htmlString={e.values[0]} 
-                                        accordionKeyPrefix={`ultima-sessao-linha1-p1`}
-                                        openAccordions={openAccordions}
-                                        handleAccordionToggle={handleAccordionToggle}
+                                        keyPrefix={`ultima-sessao-linha1-p1`}
                                     />
                                 </div>
                             );
@@ -395,9 +327,7 @@ function DescriptionContructor({ children }) {
                                 <div key={e.name}>
                                     <AccordionRenderer 
                                         htmlString={e.values[0]} 
-                                        accordionKeyPrefix={`ultima-sessao-linha1-p2`}
-                                        openAccordions={openAccordions}
-                                        handleAccordionToggle={handleAccordionToggle}
+                                        keyPrefix={`ultima-sessao-linha1-p2`}
                                     />
                                 </div>
                             );
@@ -410,9 +340,7 @@ function DescriptionContructor({ children }) {
                                 <div key={e.name}>
                                     <AccordionRenderer 
                                         htmlString={e.values?.[0] || ""} 
-                                        accordionKeyPrefix={`ultima-sessao-linha2-p1`}
-                                        openAccordions={openAccordions}
-                                        handleAccordionToggle={handleAccordionToggle}
+                                        keyPrefix={`ultima-sessao-linha2-p1`}
                                     />
                                 </div>
                             );
@@ -431,60 +359,28 @@ function DescriptionContructor({ children }) {
                             <div className="BlockStyle Default-prop">
                                 <div className="Default-Data">
                                     {properties.some((e) => e.name.includes(section) && e.values[0]) && (
-                                        <div className="accordion-item">
-                                            <button
-                                                className="accordion-title"
-                                                aria-expanded={openAccordions[`section-${section}`]}
-                                                aria-controls={`accordion-content-section-${section}`}
-                                                id={`accordion-question-section-${section}`}
-                                                tabIndex={0}
-                                                onClick={() => handleAccordionToggle(`section-${section}`)}
-                                                onKeyDown={e => (e.key === 'Enter' || e.key === ' ') && handleAccordionToggle(`section-${section}`)}
-                                                type="button"
-                                            >
-                                                <h2
-                                                    id={
-                                                        section === "Modo de Usar"
-                                                            ? "ModoDeUsar"
-                                                            : section
-                                                                .normalize("NFD")
-                                                                .replace(/[\u0300-\u036f]/g, "")
-                                                                .replace(/\s/g, "")
-                                                                .replace(/ /g, "")
-                                                    }
-                                                >
-                                                    {section}
-                                                </h2>
-                                                <span
-                                                    className={`accordion-arrow ${openAccordions[`section-${section}`] ? 'accordion-arrow-open' : ''}`}
-                                                    aria-hidden="true"
-                                                >
-                                                    {openAccordions[`section-${section}`] ? '-' : '+'}
-                                                </span>
-                                            </button>
-                                            
-                                            <div
-                                                id={`accordion-content-section-${section}`}
-                                                role="region"
-                                                aria-labelledby={`accordion-question-section-${section}`}
-                                                className={`accordion-content ${openAccordions[`section-${section}`] ? 'accordion-content-open' : ''}`}
-                                            >
-                                                <div className="accordion-content-inner">
-                                                    {properties.map((e) =>
-                                                        e?.name?.includes(section) && e?.values?.[0] ? (
-                                                            <div key={e.name} style={{ whiteSpace: "break-spaces" }}>
-                                                                <AccordionRenderer 
-                                                                    htmlString={e.values[0]} 
-                                                                    accordionKeyPrefix={`section-${section.toLowerCase().replace(/\s/g, '-')}-${e.name}`}
-                                                                    openAccordions={openAccordions}
-                                                                    handleAccordionToggle={handleAccordionToggle}
-                                                                />
-                                                            </div>
-                                                        ) : null
-                                                    )}
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <h2
+                                            id={
+                                                section === "Modo de Usar"
+                                                    ? "ModoDeUsar"
+                                                    : section
+                                                        .normalize("NFD")
+                                                        .replace(/[\u0300-\u036f]/g, "")
+                                                        .replace(/\s/g, "")
+                                                        .replace(/ /g, "")
+                                            }
+                                        >
+                                            {section}
+                                        </h2>
+                                    )}
+                                    {properties.map((e) =>
+                                        e?.name?.includes(section) && e?.values?.[0] ? (
+                                            <span
+                                                key={e.name}
+                                                style={{ whiteSpace: "break-spaces" }}
+                                                dangerouslySetInnerHTML={{ __html: splitPorTags(e.values[0]) }}
+                                            ></span>
+                                        ) : null
                                     )}
                                 </div>
                             </div>
