@@ -244,11 +244,6 @@ function DescriptionContructor({ children }) {
                 const contentParts = splitPorTagsAsArray(content);
                 const questions = [];
 
-                console.log('Content original:', content);
-                console.log('ContentParts após splitPorTagsAsArray:', contentParts);
-                console.log('Tipo de contentParts:', typeof contentParts);
-                console.log('É array?', Array.isArray(contentParts));
-                
                 for (let i = 0; i < contentParts.length; i++) {
                     const part = contentParts[i];
                     if (part.includes("?")) {

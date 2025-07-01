@@ -1,13 +1,9 @@
 import { useEffect } from 'react';
 
 function RedirectApp() {
-    console.log("Amigo estou aqui")
     useEffect(() => {
         const userAgent = navigator.userAgent || navigator.vendor || window.opera;
         const isAndroid = () => /Android/i.test(userAgent) || /\bSilk\b/i.test(userAgent);
-
-        console.log("userAgent")
-        console.log(userAgent)
 
         const isIOS = () =>
             /iPhone|iPad|iPod/i.test(userAgent) ||
