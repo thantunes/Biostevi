@@ -1,46 +1,64 @@
 import React, { useEffect, useState } from 'react';
 import './index.global.css';
 
-function AnchorsShelf() {
-    const [shelf2, setShelf2] = useState(false);
-    const [shelf3, setShelf3] = useState(false);
+const AnchorsShelf = () => {
+    const [anchors, setAnchors] = useState([]);
     
     useEffect(() => {
-        const checkShelf2 = () => {
-            const shelf2Element = document.querySelector('#performa2');
-            if (shelf2Element && shelf2Element.children.length > 0) {
-                setShelf2(true);
+        const checkPerformaElements = () => {
+            // Busca todos os elementos que contenham 'vtex-product-context-provider' e 'performa' na classe
+            const performaElements = document.querySelectorAll('.vtex-product-context-provider performa');
+            const foundAnchors = [];
+            
+            performaElements.forEach((element) => {
+                // Busca o span com classe performa-vitrine-title dentro do elemento
+                const titleSpan = element.querySelector('.performa-vitrine-title');
+                
+                if (titleSpan && titleSpan.textContent && element.children.length > 0) {
+                    // Extrai o ID do elemento ou cria um baseado no índice
+                    const elementId = element.id || element.getAttribute('id');
+                    
+                    if (elementId) {
+                        foundAnchors.push({
+                            id: elementId,
+                            title: titleSpan.textContent.trim()
+                        });
+                    }
+                }
+            });
+            
+            if (foundAnchors.length > 0) {
+                setAnchors(foundAnchors);
             } else {
-                setTimeout(checkShelf2, 100);
+                // Retry após 100ms se não encontrou elementos
+                setTimeout(checkPerformaElements, 100);
             }
         };
-        const checkShelf3 = () => {
-            const shelf3Element = document.querySelector('#performa3');
-            if (shelf3Element && shelf3Element.children.length > 0) {
-                setShelf3(true);
-            } else {
-                setTimeout(checkShelf3, 100);
-            }
-        };
-        if(!shelf2) checkShelf2();
-        if(!shelf3) checkShelf3();
+        
+        checkPerformaElements();
     }, []);
 
+    if (anchors.length === 0) {
+        return null;
+    }
+
     return (
-        <div className={"AnchorsShelfContainer"}>
-            {shelf2 && <div className={"divAnchors"}>
-                <a href="#performa2" class="vtex-store-link-0-x-link vtex-store-link-0-x-link--PDPAnchor">
-                    <span class="vtex-store-link-0-x-label vtex-store-link-0-x-label--PDPAnchor">Mais Vendidos</span>
-                </a>
-            </div>}
-            {shelf3 && <div className={"divAnchors"}>
-                <a href="#performa3" class="vtex-store-link-0-x-link vtex-store-link-0-x-link--PDPAnchor">
-                    <span class="vtex-store-link-0-x-label vtex-store-link-0-x-label--PDPAnchor">Selecionados Para Você</span>
-                </a>
-            </div>} 
+        <div className="AnchorsShelfContainer">
+            {anchors.map((anchor) => (
+                <div key={anchor.id} className="divAnchors">
+                    <a 
+                        href={`#${anchor.id}`} 
+                        className="vtex-store-link-0-x-link vtex-store-link-0-x-link--PDPAnchor"
+                    >
+                        <span className="vtex-store-link-0-x-label vtex-store-link-0-x-label--PDPAnchor">
+                            {anchor.title}
+                        </span>
+                    </a>
+                </div>
+            ))}
         </div>
     );
-}
+};
 
 export default AnchorsShelf;
 

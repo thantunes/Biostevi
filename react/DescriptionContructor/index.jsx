@@ -1,7 +1,33 @@
 import React, { useMemo, useState, useEffect, useRef } from "react";
 import { useProduct } from "vtex.product-context";
-import FaqComponent from "../FaqComponent/FaqComponent";
+import FaqComponent from "../FaqComponent/FaqComponent.jsx";
 import "./index.global.css";
+
+let faqData = [];
+
+// Função para remover HTML e extrair texto limpo
+function removeHTMLTags(htmlString) {
+    if (!htmlString) return "";
+    return htmlString.replace(/<[^>]*>/g, '').trim();
+}
+
+// Função para criar dados estruturados FAQPage
+function createFAQStructuredData(faqData) {
+    if (!faqData || faqData.length === 0) return null;
+    
+    return {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faqData.map(faq => ({
+            "@type": "Question",
+            "name": removeHTMLTags(faq.question),
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": removeHTMLTags(faq.answer)
+            }
+        }))
+    };
+}
 
 function splitPorTags(texto) {
     const regex = /(<[^>]+>.*?<\/[^>]+>|<[^>]+>.*?(?=<|$)|[^\n]+|(?<=\n(?=\S))|(?=\n(?=\S))|(?<=\n\n))/g;
@@ -23,7 +49,7 @@ function splitPorTags(texto) {
             return `<p>${trimmed}</p>`;
         })
         .filter((e) => e !== "")
-        .map((e, i, array) => {
+        .map((e, i, array) => {       
             if (i === array.length - 1 && e.endsWith("</p>")) {
                 return e.replace("</p>", "");
             }
@@ -31,6 +57,31 @@ function splitPorTags(texto) {
         });
 
     return newArrayText.join("");
+}
+
+// Nova função para retornar array de partes
+function splitPorTagsAsArray(texto) {
+    const regex = /(<[^>]+>.*?<\/[^>]+>|<[^>]+>.*?(?=<|$)|[^\n]+|(?<=\n(?=\S))|(?=\n(?=\S))|(?<=\n\n))/g;
+    const splitedText = texto.match(regex);
+    const newArrayText = splitedText
+        .map((element) => {
+            const trimmed = element.trim();
+
+            if (trimmed === "\n" || trimmed === "" || trimmed === "<p></p>" || trimmed.match(/^\s*$/)) {
+                return "";
+            }
+
+            if ((trimmed.startsWith("<b") && trimmed.endsWith("</b>")) || (trimmed.startsWith("<a") && trimmed.endsWith("</a>")) || (trimmed.startsWith("<strong") && trimmed.endsWith("</strong>"))) {
+                return `<p>${trimmed}</p>`;
+            } else if (trimmed.startsWith("<")) {
+                return trimmed;
+            }
+
+            return `<p>${trimmed}</p>`;
+        })
+        .filter((e) => e !== "");
+
+    return newArrayText;
 }
 
 function createAccordionFromHTML(htmlString) {
@@ -85,11 +136,20 @@ const AccordionRenderer = ({ htmlString, keyPrefix }) => {
                 }
                 
                 if (item.isAccordion) {
+                    if (item.question.includes("?")) {
+                        const questionExists = faqData.some(faq => faq.question === item.question);
+                        if (!questionExists) {
+                            faqData.push({ question: item.question, answer: item.answer });
+                        }
+                    }
+
+                    const contentParts = splitPorTags(item.answer);
+
                     // Usar FaqComponent para o accordion
                     return (
                         <FaqComponent
                             key={`accordion-${idx}`}
-                            faqs={[{ question: item.question, answer: item.answer }]}
+                            faqs={[{ question: item.question, answer: contentParts }]}
                             allowMultipleOpen={true}
                             activeStructuredData={false}
                             keyPrefix={`${keyPrefix}-${idx}`}
@@ -133,6 +193,25 @@ function DescriptionContructor({ children }) {
         };
     }, []);
 
+    // Criar dados estruturados FAQPage
+    const faqStructuredData = useMemo(() => createFAQStructuredData(faqData), [faqData]);
+
+    // Inserir dados estruturados no head
+    useEffect(() => {
+        if (faqStructuredData) {
+            const script = document.createElement('script');
+            script.type = 'application/ld+json';
+            script.text = JSON.stringify(faqStructuredData);
+            document.head.appendChild(script);
+
+            return () => {
+                if (document.head.contains(script)) {
+                    document.head.removeChild(script);
+                }
+            };
+        }
+    }, [faqStructuredData]);
+
     const renderContent = (namePrefix, className, includeImages = true) => {
         const filteredData = properties.filter(
             (e) => e.name?.includes(namePrefix) && !e.name?.includes(`Ultima Sessão-${namePrefix}`)
@@ -155,6 +234,37 @@ function DescriptionContructor({ children }) {
             const content = (paragrafosRelacionados.length > 0 ? paragrafosRelacionados : paragrafos)
                 .map((paragrafo) => splitPorTags(paragrafo.values[0]))
                 .join('');
+
+            if (titulo.values?.[0].includes("?")) {
+                const questionExists = faqData.some(faq => faq.question === titulo.values?.[0]);
+                if (!questionExists) {
+                    faqData.push({ question: titulo.values?.[0], answer: content });
+                }
+            } else if (content.includes("?")) {
+                const contentParts = splitPorTagsAsArray(content);
+                const questions = [];
+
+                console.log('Content original:', content);
+                console.log('ContentParts após splitPorTagsAsArray:', contentParts);
+                console.log('Tipo de contentParts:', typeof contentParts);
+                console.log('É array?', Array.isArray(contentParts));
+                
+                for (let i = 0; i < contentParts.length; i++) {
+                    const part = contentParts[i];
+                    if (part.includes("?")) {
+                        questions.push(part);
+                    } else if (questions.length > 0 && !part.includes("?")) {
+                        // Se já temos uma pergunta e encontramos uma resposta
+                        const lastQuestion = questions[questions.length - 1];
+                        const answer = part;
+                        
+                        const questionExists = faqData.some(faq => faq.question === lastQuestion);
+                        if (!questionExists) {
+                            faqData.push({ question: lastQuestion, answer: answer });
+                        }
+                    }
+                }
+            }
             
             return {
                 question: titulo.values?.[0] || "",
