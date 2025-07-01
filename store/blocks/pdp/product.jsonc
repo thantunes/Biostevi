@@ -30,7 +30,7 @@
       // "flex-layout.row#buy-together",
       "product-questions-and-answers",
       "rich-text#pdp-informativo1",
-      "flex-layout.row#faq-container"
+      "flex-layout.row#product-faq-container"
     ]
   },
   "responsive-layout.mobile#main": {
@@ -49,7 +49,7 @@
       // "flex-layout.row#buy-together",
       "product-questions-and-answers",
       "rich-text#pdp-informativo1",
-      "flex-layout.row#faq-container"
+      "flex-layout.row#product-faq-container"
     ]
   },
   "responsive-layout.phone#main": {
@@ -68,7 +68,7 @@
       // "flex-layout.row#buy-together",
       "product-questions-and-answers",
       "rich-text#pdp-informativo1",
-      "flex-layout.row#faq-container"
+      "flex-layout.row#product-faq-container"
     ]
   },
   "flex-layout.row#product-main-d": {
@@ -822,6 +822,48 @@
       "text": "escreva aqui",
       "blockClass": "Informacoes-Imp",
       "title": "Informações importantes"
+    }
+  },
+
+  "flex-layout.row#product-faq-container": {
+    "children": [
+      "flex-layout.col#faq-title-euquero"
+    ]
+  },
+  "flex-layout.col#faq-title-euquero": {
+    "children": [
+      "rich-text#faq-title-faqproduct",
+      "FaqComponent#page-product"
+    ]
+  },
+  "rich-text#faq-title-faqproduct": {
+    "props": {
+      "text": "## PERGUNTAS FREQUENTES",
+      "blockClass": "faq-title"
+    }
+  },
+  "FaqComponent#page-product": {
+    "props": {
+      "blockClass": "faq-container",
+      "activeStructuredData": false,
+      "faqs": [
+        {
+          "question": "<h2>Como acompanhar o meu pedido?</h2>",
+          "answer": "<p>1 - Para acompanhar seu pedido e ter informa&ccedil;&otilde;es sobre c&oacute;digo de rastreio e data de entrega &eacute; muito f&aacute;cil, basta clicar no &iacute;cone &ldquo;Minha Conta&rdquo; no canto superior direito do site.</p><p><img loading='lazy' fetchpriority='low' title='' src='https://stevia.vtexassets.com/arquivos/faq-1-1.png' sizes='' srcset='' alt='' crossorigin='anonymous' /></p><p>2 - Para acessar sua conta em nosso site, existem duas possibilidades:</p><p>1&ordm; Atrav&eacute;s do recebimento do c&oacute;digo de acesso por e-mail<br />2&ordm; Atrav&eacute;s de e-mail e senha</p><p><img loading='lazy' fetchpriority='low' title='' src='https://stevia.vtexassets.com/arquivos/faq-1-2.png' sizes='' srcset='' alt='' crossorigin='anonymous' /></p><p>3 - Ap&oacute;s ter logado em sua conta, clique em PEDIDOS na lateral esquerda</p><p><img loading='lazy' fetchpriority='low' title='' src='https://stevia.vtexassets.com/arquivos/faq-1-3.png' sizes='' srcset='' alt='' crossorigin='anonymous' /></p><p>4 - Selecione o pedido que deseja consultar e clique em cima do &ldquo;ver detalhes do pedido&rdquo;</p><p><img loading='lazy' fetchpriority='low' title='' src='https://stevia.vtexassets.com/arquivos/faq-1-4.png' sizes='' srcset='' alt='' crossorigin='anonymous' /></p><p>5 - Nesta tela voc&ecirc; ter&aacute; acesso a todas as informa&ccedil;&otilde;es sobre o seu pedido, inclusive data estimada de entrega e o c&oacute;digo de rastreio, (caso a entrega seja por correios) quando j&aacute; estiver liberado.</p><p>Se na hora da compra, no campo de entrega, voc&ecirc; selecionou a op&ccedil;&atilde;o de motoboy ou retirada na loja, ir&aacute; aparecer apenas o status do pedido (Sem o c&oacute;digo dos correios).</p><p><img loading='lazy' fetchpriority='low' title='' src='https://stevia.vtexassets.com/arquivos/faq-1-5.png' sizes='' srcset='' alt='' crossorigin='anonymous' /></p><p>6 - Se o c&oacute;digo j&aacute; estiver liberado, basta copia-lo e entrar no site dos correios (<a href='https://rastreamento.correios.com.br/app/index.php' target='_blank'>https://rastreamento.correios.com.br/app/index.php</a>). Cole o c&oacute;digo no campo abaixo, complete o captcha e clique em &ldquo;consultar&rdquo;:</p><p><img loading='lazy' fetchpriority='low' title='' src='https://stevia.vtexassets.com/arquivos/faq-1-6.png' sizes='' srcset='' alt='' crossorigin='anonymous' /></p><p>7 -Pronto, agora &eacute; s&oacute; acompanhar o seu pedido!</p><p><img loading='lazy' fetchpriority='low' title='' src='https://stevia.vtexassets.com/arquivos/faq-1-7.png' sizes='' srcset='' alt='' crossorigin='anonymous' /></p>"
+        },
+        {
+          "question": "<h2>Como recuperar a minha senha?</h2>",
+          "answer": "<p>1 - Para recuperar a sua senha basta entrar no site da Biost&eacute;vi (<a href='/'>www.biostevi.com.br</a>) e clicar no bot&atilde;o &ldquo;Minha conta&rdquo;.</p><p><img loading='lazy' fetchpriority='low' title='' src='https://stevia.vtexassets.com/arquivos/faq-2-1.png' sizes='' srcset='' alt='' crossorigin='anonymous' /></p><p>2 - Ap&oacute;s acessar a &aacute;rea de login, clique na op&ccedil;&atilde;o &ldquo;Esqueci minha senha&rdquo; logo abaixo dos campos de e-mail e senha.</p><p><img loading='lazy' fetchpriority='low' title='' src='https://stevia.vtexassets.com/arquivos/faq-2-2.png' sizes='' srcset='' alt='' crossorigin='anonymous' /></p><p>3 - Agora voc&ecirc; ter&aacute; que adicionar o seu e-mail no campo indicado (Adicionar um e-mail valido que esteja vinculado com a sua conta).</p><p>IMPORTANTE: E-mails que n&atilde;o estiverem vinculados com nenhuma conta, n&atilde;o conseguir&atilde;o recuperar a senha.</p><p><img loading='lazy' fetchpriority='low' title='' src='https://stevia.vtexassets.com/arquivos/faq-2-3.png' sizes='' srcset='' alt='' crossorigin='anonymous' /></p><p>4 - Agora voc&ecirc; ter&aacute; que preencher os campos abaixo com:</p><p>1&ordm; C&oacute;digo de acesso (Esse c&oacute;digo chegar&aacute; para voc&ecirc; por e-mail):</p><p><img loading='lazy' fetchpriority='low' title='' src='https://stevia.vtexassets.com/arquivos/faq-2-4-1.png' sizes='' srcset='' alt='' crossorigin='anonymous' /></p><p>2&ordm; Preencha o campo de senha com uma nova senha que necessariamente precisa ter no m&iacute;nimo 8 caracteres, 1 letra mai&uacute;scula, 1 letra min&uacute;scula e 1 n&uacute;mero</p><p>3&ordm; Repita a mesma senha no terceiro campo.</p><p><img loading='lazy' fetchpriority='low' title='' src='https://stevia.vtexassets.com/arquivos/faq-2-4-2.png' sizes='' srcset='' alt='' crossorigin='anonymous' /></p><p>5 - Ap&oacute;s preencher os campos, clique no bot&atilde;o verde &ldquo;Criar&rdquo;.</p><p><img loading='lazy' fetchpriority='low' title='' src='https://stevia.vtexassets.com/arquivos/faq-2-5.png' sizes='' srcset='' alt='' crossorigin='anonymous' /></p><p>6 - Pronto! Ap&oacute;s isso voc&ecirc; ser&aacute; direcionado para sua conta e sua senha j&aacute; ter&aacute; sido alterada.</p><p><img loading='lazy' fetchpriority='low' title='' src='https://stevia.vtexassets.com/arquivos/faq-2-6.png' sizes='' srcset='' alt='' crossorigin='anonymous' /></p>"
+        },
+        {
+          "question": "<h2>Como saber se tenho direito a frete grátis?</h2>",
+          "answer": "<p>1 - Para conferir as regras do frete gr&aacute;tis &eacute; muito f&aacute;cil. Entre na p&aacute;gina inicial da Biost&eacute;vi (<a href='/'>www.biostevi.com.br</a>) e des&ccedil;a at&eacute; o rodap&eacute;.</p><p><img loading='lazy' fetchpriority='low' title='' src='https://stevia.vtexassets.com/arquivos/faq-3-1.png' sizes='' srcset='' alt='' crossorigin='anonymous' /></p><p>2 - Chegando no rodap&eacute; do site, clique em &ldquo;frete e entrega&rdquo; (<a href='/frete-e-entrega'>/frete-e-entrega</a>).</p><p><img loading='lazy' fetchpriority='low' title='' src='https://stevia.vtexassets.com/arquivos/faq-3-2.png' sizes='' srcset='' alt='' crossorigin='anonymous' /></p>"
+        },
+        {
+          "question": "<h2>Como enviar minhas receitas para manipulação?</h2>",
+          "answer": "<p>Enviar sua receita para a Biost&eacute;vi atrav&eacute;s do site:</p><p>1 - Para voc&ecirc; enviar sua receita para a Biost&eacute;vi, basta entrar no nosso site (<a href='/'>www.biostevi.com.br</a>) e clicar no bot&atilde;o &ldquo;Envie sua Receita&rdquo;.</p><p><img loading='lazy' fetchpriority='low' title='' src='https://stevia.vtexassets.com/arquivos/faq-4-1-sites.png' sizes='' srcset='' alt='' crossorigin='anonymous' /></p><p>2 - Ap&oacute;s entrar nesta p&aacute;gina, preencha os campos a seguir com as suas informa&ccedil;&otilde;es:</p><p>1&ordm; Seu nome;</p><p>2&ordm; Seu e-mail;</p><p>3&ordm; Seu n&uacute;mero de telefone ou n&uacute;mero de celular (WhatsApp);</p><p>4&ordm; Caso queira, pode escrever uma mensagem para especificar algo sobre a receita ou qualquer outra informa&ccedil;&atilde;o que queira nos passar;</p><p>5&ordm; Anexe o arquivo da sua receita.</p><p><img loading='lazy' fetchpriority='low' title='' src='https://stevia.vtexassets.com/arquivos/faq-4-2-sites.png' sizes='' srcset='' alt='' crossorigin='anonymous' /></p><p>3 - Ap&oacute;s preencher todos os campos, basta clicar no bot&atilde;o &ldquo;Enviar&rdquo; e pronto.</p><p><img loading='lazy' fetchpriority='low' title='' src='https://stevia.vtexassets.com/arquivos/faq-4-3-sites.png' sizes='' srcset='' alt='' crossorigin='anonymous' /></p><p>Enviar sua receita para a Biost&eacute;vi atrav&eacute;s do WhatsApp:</p><p>1-Para voc&ecirc; conseguir enviar sua receita para a Biost&eacute;vi, basta entrar no nosso site (<a href='/'>www.biostevi.com.br</a>) e clicar no bot&atilde;o verde do WhatsApp no canto inferior direito.</p><p><img loading='lazy' fetchpriority='low' title='' src='https://stevia.vtexassets.com/arquivos/faq-4-1-whatsapps.png' sizes='' srcset='' alt='' crossorigin='anonymous' /></p><p>2 - Clicando no bot&atilde;o voc&ecirc; ser&aacute; redirecionado para o WhatsApp Web caso esteja no computador (Caso esteja no celular ele ir&aacute; direcionar diretamente para o seu WhatsApp). Entrando no site do WhatsApp, basta clicar no bot&atilde;o iniciar conversa que voc&ecirc; ser&aacute; encaminhado direto para o atendimento.</p><p><img loading='lazy' fetchpriority='low' title='' src='https://stevia.vtexassets.com/arquivos/faq-4-2-whatsapps.png' sizes='' srcset='' alt='' crossorigin='anonymous' /></p><p>3 - Agora &eacute; s&oacute; escrever sua mensagem que um de nossos atendentes entrar&aacute; o mais r&aacute;pido poss&iacute;vel em contato com voc&ecirc;</p><p><img loading='lazy' fetchpriority='low' title='' src='https://stevia.vtexassets.com/arquivos/faq-4-3-whatsapps.png' sizes='' srcset='' alt='' crossorigin='anonymous' /></p>"
+        }
+      ]
     }
   }
 }

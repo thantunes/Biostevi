@@ -35,38 +35,46 @@ function splitPorTags(texto) {
 function createAccordionFromHTML(htmlString) {
     if (!htmlString) return { preContent: "", accordionSections: [] };
     
-    // Usar regex para dividir por h2, preservando todo o conteúdo
-    const h2Regex = /<h2[^>]*>.*?<\/h2>/gi;
-    const h2Matches = htmlString.match(h2Regex) || [];
+    // Criar um parser temporário para trabalhar com o HTML
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = htmlString;
     
-    if (h2Matches.length === 0) {
-        // Se não há h2s, retorna tudo como preContent
-        return { preContent: htmlString, accordionSections: [] };
-    }
-    
-    // Dividir o HTML usando os h2s como separadores
-    const parts = htmlString.split(h2Regex);
+    const elements = Array.from(tempDiv.children);
     const accordionSections = [];
+    let preContent = "";
+    let currentSection = null;
+    let foundFirstH2 = false;
     
-    // O primeiro part é o conteúdo antes do primeiro h2
-    const preContent = parts[0] || "";
+    elements.forEach((element) => {
+        if (element.tagName === 'H2') {
+            // Se já existe uma seção atual, salvá-la
+            if (currentSection) {
+                accordionSections.push(currentSection);
+            }
+            
+            // Iniciar nova seção
+            currentSection = {
+                title: element.innerHTML,
+                content: ""
+            };
+            foundFirstH2 = true;
+            
+        } else if (currentSection) {
+            // Adicionar conteúdo à seção atual
+            currentSection.content += element.outerHTML;
+            
+        } else if (!foundFirstH2) {
+            // Conteúdo antes do primeiro h2
+            preContent += element.outerHTML;
+        }
+    });
     
-    // Processar cada seção (h2 + conteúdo após ele)
-    for (let i = 0; i < h2Matches.length; i++) {
-        const h2Match = h2Matches[i];
-        const content = parts[i + 1] || ""; // Conteúdo após este h2
-        
-        // Extrair apenas o texto do h2 para o título
-        const h2TextMatch = h2Match.match(/<h2[^>]*>(.*?)<\/h2>/i);
-        const title = h2TextMatch ? h2TextMatch[1] : h2Match;
-        
-        accordionSections.push({
-            title: title,
-            content: content.trim()
-        });
+    // Adicionar a última seção se existir
+    if (currentSection) {
+        accordionSections.push(currentSection);
     }
     
-    return { preContent: preContent.trim(), accordionSections };
+    return { preContent, accordionSections };
 }
 
 const AccordionRenderer = ({ htmlString, accordionKeyPrefix, openAccordions, handleAccordionToggle }) => {

@@ -32,9 +32,11 @@ const FaqComponent = ({ faqs }) => {
 
     return (
         <div className={style.faqWrapper}>
-            <script type="application/ld+json">
-                {JSON.stringify(faqStructuredData)}
-            </script>
+            {faqs?.activeStructuredData && (
+                <script type="application/ld+json">
+                    {JSON.stringify(faqStructuredData)}
+                </script>
+            )}
             {faqs?.map((faq, idx) => (
                 <div key={idx} className={style.faqItem}>
                     <button
@@ -91,6 +93,11 @@ FaqComponent.schema = {
         faqs: {
             title: 'Perguntas e Respostas',
             type: 'array',
+            activeStructuredData: {
+                title: 'Ativar RichSnippet FAQPage',
+                type: 'boolean',
+                default: true,
+            },
             items: {
                 type: 'object',
                 properties: {

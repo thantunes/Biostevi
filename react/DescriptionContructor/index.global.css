@@ -38,6 +38,7 @@ html {
 .BlockStyle > div {
     margin: 0px 0px;
     gap: 15px;
+    width: 100%;
 }
 
 .BlockStyle div > div,
@@ -408,4 +409,110 @@ iframe {
 
 .DescBox iframe {
     margin-bottom: 50px;
+}
+
+/* Accordion Styles */
+.accordion-item {
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.accordion-title {
+    width: 100%;
+    padding: 15px 20px;
+    background-color: #f8f9fa;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: left;
+}
+
+.accordion-title:hover {
+    background-color: #e9ecef;
+}
+
+.accordion-title:focus {
+    outline: 2px solid #009fc2;
+    outline-offset: -2px;
+}
+
+.accordion-title h2 {
+    margin: 0 !important;
+    color: #009fc2 !important;
+    font-size: 20px !important;
+    font-weight: normal !important;
+    line-height: 1.4 !important;
+}
+
+.accordion-arrow {
+    font-size: 24px;
+    font-weight: bold;
+    color: #009fc2;
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px!important;
+    height: 30px!important;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: 2px solid #009fc2;
+}
+
+.accordion-arrow-open {
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background-color: #ffffff;
+}
+
+.accordion-content-open {
+    max-height: 1000px;
+    transition: max-height 0.5s ease;
+}
+
+.accordion-content-inner {
+    padding: 20px;
+}
+
+.accordion-content-inner .MobileStyle {
+    margin: 10px 0 !important;
+}
+
+.accordion-content-inner .MobileStyle:first-child {
+    margin-top: 0 !important;
+}
+
+.accordion-content-inner .MobileStyle:last-child {
+    margin-bottom: 0 !important;
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+    .accordion-title {
+        padding: 12px 15px;
+    }
+    
+    .accordion-title h2 {
+        font-size: 18px !important;
+    }
+    
+    .accordion-arrow {
+        width: 25px;
+        height: 25px;
+        font-size: 20px;
+    }
+    
+    .accordion-content-inner {
+        padding: 15px;
+    }
 }
