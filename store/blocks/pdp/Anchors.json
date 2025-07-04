@@ -23,7 +23,7 @@
     "link#-Beneficios": {
         "props": {
             "href":"#Beneficios",
-            "label": "Beneficios",
+            "label": "Benefícios",
             "blockClass":"PDPAnchor"
         }
     },

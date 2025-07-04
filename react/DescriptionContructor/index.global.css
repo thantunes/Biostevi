@@ -11,6 +11,7 @@
 }
 .CustomDescData h2 {
     text-transform: uppercase;
+    text-align: left;
 }
 
 .CustomDescData p {
@@ -388,11 +389,11 @@ iframe {
     .TableContentBox td {
         height: 313px !important;
     }
-    .BlockStyle div {
+    /* .BlockStyle div {
         margin: 0px !important;
         max-height: unset;
         overflow: unset;
-    }
+    } */
     .TableContentBox td div p {
         font-size: 14px;
         line-height: 14px;
