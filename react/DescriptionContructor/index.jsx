@@ -8,19 +8,16 @@ function DescriptionContructor({ children }) {
     const product = useMemo(() => productContextValue?.product, [productContextValue]);
     const properties = useMemo(() => product?.properties || [], [product]);
     
-    // Mover faqData para dentro do componente como state
     const [faqData, setFaqData] = useState([]);
     const [isVideoVisible, setIsVideoVisible] = useState(false);
     const videoRef = useRef(null);
 
-    // Função para remover HTML e extrair texto limpo
     function removeHTMLTags(htmlString) {
         if (!htmlString) return "";
         return htmlString.replace(/<[^>]*>/g, '').trim();
     }
 
-    // Função para adicionar pergunta ao faqData se não existir
-    const addQuestionToFaqData = useCallback((question, answer) => {
+    const processFAQData = useCallback((question, answer) => {
         setFaqData(prev => {
             const questionExists = prev.some(faq => faq.question === question);
             if (!questionExists) {
@@ -30,7 +27,6 @@ function DescriptionContructor({ children }) {
         });
     }, []);
 
-    // Função para criar dados estruturados FAQPage
     function createFAQStructuredData(faqData) {
         if (!faqData || faqData.length === 0) return null;
         
@@ -78,7 +74,6 @@ function DescriptionContructor({ children }) {
         return newArrayText.join("");
     }
 
-    // Nova função para retornar array de partes
     function splitPorTagsAsArray(texto) {
         const regex = /(<[^>]+>.*?<\/[^>]+>|<[^>]+>.*?(?=<|$)|[^\n]+|(?<=\n(?=\S))|(?=\n(?=\S))|(?<=\n\n))/g;
         const splitedText = texto.match(regex);
@@ -106,30 +101,24 @@ function DescriptionContructor({ children }) {
     function createAccordionFromHTML(htmlString) {
         if (!htmlString) return [];
         
-        // Usar regex para dividir por h2, preservando todo o conteúdo
         const h2Regex = /<h2[^>]*>.*?<\/h2>/gi;
         const h2Matches = htmlString.match(h2Regex) || [];
         
         if (h2Matches.length === 0) {
-            // Se não há h2s, retorna como um único item de conteúdo sem accordion
             return [{ isContent: true, content: htmlString }];
         }
         
-        // Dividir o HTML usando os h2s como separadores
         const parts = htmlString.split(h2Regex);
         const result = [];
         
-        // O primeiro part é o conteúdo antes do primeiro h2
         if (parts[0] && parts[0].trim()) {
             result.push({ isContent: true, content: parts[0].trim() });
         }
-        
-        // Processar cada seção (h2 + conteúdo após ele)
+
         for (let i = 0; i < h2Matches.length; i++) {
             const h2Match = h2Matches[i];
-            const content = parts[i + 1] || ""; // Conteúdo após este h2
+            const content = parts[i + 1] || "";
             
-            // Extrair apenas o texto do h2 para o título
             const h2TextMatch = h2Match.match(/<h2[^>]*>(.*?)<\/h2>/i);
             const title = h2TextMatch ? h2TextMatch[1] : h2Match;
             
@@ -146,22 +135,24 @@ function DescriptionContructor({ children }) {
     const AccordionRenderer = ({ htmlString, keyPrefix }) => {
         const accordionData = createAccordionFromHTML(htmlString);
         
+        useEffect(() => {
+            accordionData.forEach((item) => {
+                if (item.isAccordion && item.question.includes("?")) {
+                    processFAQData(item.question, item.answer);
+                }
+            });
+        }, [htmlString, processFAQData]);
+        
         return (
             <div>
                 {accordionData.map((item, idx) => {
                     if (item.isContent) {
-                        // Conteúdo sem accordion
                         return <div key={`content-${idx}`} dangerouslySetInnerHTML={{ __html: splitPorTags(item.content) }} />;
                     }
                     
                     if (item.isAccordion) {
-                        if (item.question.includes("?")) {
-                            addQuestionToFaqData(item.question, item.answer);
-                        }
-
                         const contentParts = splitPorTags(item.answer);
 
-                        // Usar FaqComponent para o accordion
                         return (
                             <FaqComponent
                                 key={`accordion-${idx}`}
@@ -199,10 +190,8 @@ function DescriptionContructor({ children }) {
         };
     }, []);
 
-    // Criar dados estruturados FAQPage
     const faqStructuredData = useMemo(() => createFAQStructuredData(faqData), [faqData]);
 
-    // Inserir dados estruturados no head
     useEffect(() => {
         if (faqStructuredData) {
             const script = document.createElement('script');
@@ -218,19 +207,17 @@ function DescriptionContructor({ children }) {
         }
     }, [faqStructuredData]);
 
-    const renderContent = (namePrefix, className, includeImages = true) => {
+    const renderContent = useCallback((namePrefix, className, includeImages = true) => {
         const filteredData = properties.filter(
             (e) => e.name?.includes(namePrefix) && !e.name?.includes(`Ultima Sessão-${namePrefix}`)
         );
 
-        // Agrupar títulos e parágrafos
         const titulos = filteredData.filter(e => e.name?.includes(`${namePrefix}-Titulo`));
         const paragrafos = filteredData.filter(e => 
             !e.values[0].includes('class="descricao-pdp-full"') &&
             e.name.includes(`${namePrefix}-Paragrafo`)
         );
 
-        // Converter para formato do FaqComponent
         const accordionData = titulos.map((titulo, idx) => {
             const tituloNumber = titulo.name.match(/Titulo(\d+)/)?.[1];
             const paragrafosRelacionados = paragrafos.filter(p => 
@@ -241,31 +228,34 @@ function DescriptionContructor({ children }) {
                 .map((paragrafo) => splitPorTags(paragrafo.values[0]))
                 .join('');
 
-            if (titulo.values?.[0].includes("?")) {
-                addQuestionToFaqData(titulo.values?.[0], content);
-            } else if (content.includes("?")) {
-                const contentParts = splitPorTagsAsArray(content);
-                const questions = [];
-
-                for (let i = 0; i < contentParts.length; i++) {
-                    const part = contentParts[i];
-                    if (part.includes("?")) {
-                        questions.push(part);
-                    } else if (questions.length > 0 && !part.includes("?")) {
-                        // Se já temos uma pergunta e encontramos uma resposta
-                        const lastQuestion = questions[questions.length - 1];
-                        const answer = part;
-                        
-                        addQuestionToFaqData(lastQuestion, answer);
-                    }
-                }
-            }
-            
             return {
                 question: titulo.values?.[0] || "",
                 answer: content
             };
         });
+
+        useEffect(() => {
+            accordionData.forEach((item) => {
+                if (item.question.includes("?")) {
+                    processFAQData(item.question, item.answer);
+                } else if (item.answer.includes("?")) {
+                    const contentParts = splitPorTagsAsArray(item.answer);
+                    const questions = [];
+
+                    for (let i = 0; i < contentParts.length; i++) {
+                        const part = contentParts[i];
+                        if (part.includes("?")) {
+                            questions.push(part);
+                        } else if (questions.length > 0 && !part.includes("?")) {
+                            const lastQuestion = questions[questions.length - 1];
+                            const answer = part;
+                            
+                            processFAQData(lastQuestion, answer);
+                        }
+                    }
+                }
+            });
+        }, [namePrefix, processFAQData]);
 
         return (
             <div className={`BlockStyle ${className}`}>
@@ -292,7 +282,7 @@ function DescriptionContructor({ children }) {
                 )}
             </div>
         );
-    };
+    }, [properties, processFAQData]);
 
     return (
         <div className="CustomDescData">
@@ -452,7 +442,6 @@ function DescriptionContructor({ children }) {
                         }
                         return null;
                     })}
-                    {/* Outras seções */}
                     {["Benefícios", "Composição", "Modo de Usar"].map((section) => (
                         <div className="BlockStyle Default-prop" key={section}>
                             <div className="Default-Data">
@@ -484,7 +473,6 @@ function DescriptionContructor({ children }) {
                         </div>
                     ))}
 
-                    {/* Seção Advertência com FaqComponent */}
                     {properties.some((e) => e.name.includes("Advertência") && e.values[0]) && (
                         <div className="BlockStyle Default-prop" id="Advertencia">
                             <div className="Default-Data" id="InformaImp">
