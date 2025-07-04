@@ -1,177 +1,183 @@
-import React, { useMemo, useState, useEffect, useRef } from "react";
+import React, { useMemo, useState, useEffect, useRef, useCallback } from "react";
 import { useProduct } from "vtex.product-context";
 import FaqComponent from "../FaqComponent/FaqComponent.jsx";
 import "./index.global.css";
 
-let faqData = [];
-
-// Função para remover HTML e extrair texto limpo
-function removeHTMLTags(htmlString) {
-    if (!htmlString) return "";
-    return htmlString.replace(/<[^>]*>/g, '').trim();
-}
-
-// Função para criar dados estruturados FAQPage
-function createFAQStructuredData(faqData) {
-    if (!faqData || faqData.length === 0) return null;
-    
-    return {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": faqData.map(faq => ({
-            "@type": "Question",
-            "name": removeHTMLTags(faq.question),
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": removeHTMLTags(faq.answer)
-            }
-        }))
-    };
-}
-
-function splitPorTags(texto) {
-    const regex = /(<[^>]+>.*?<\/[^>]+>|<[^>]+>.*?(?=<|$)|[^\n]+|(?<=\n(?=\S))|(?=\n(?=\S))|(?<=\n\n))/g;
-    const splitedText = texto.match(regex);
-    const newArrayText = splitedText
-        .map((element) => {
-            const trimmed = element.trim();
-
-            if (trimmed === "\n" || trimmed === "" || trimmed === "<p></p>" || trimmed.match(/^\s*$/)) {
-                return "";
-            }
-
-            if ((trimmed.startsWith("<b") && trimmed.endsWith("</b>")) || (trimmed.startsWith("<a") && trimmed.endsWith("</a>")) || (trimmed.startsWith("<strong") && trimmed.endsWith("</strong>"))) {
-                return `<p>${trimmed}</p>`;
-            } else if (trimmed.startsWith("<")) {
-                return trimmed;
-            }
-
-            return `<p>${trimmed}</p>`;
-        })
-        .filter((e) => e !== "")
-        .map((e, i, array) => {       
-            if (i === array.length - 1 && e.endsWith("</p>")) {
-                return e.replace("</p>", "");
-            }
-            return e;
-        });
-
-    return newArrayText.join("");
-}
-
-// Nova função para retornar array de partes
-function splitPorTagsAsArray(texto) {
-    const regex = /(<[^>]+>.*?<\/[^>]+>|<[^>]+>.*?(?=<|$)|[^\n]+|(?<=\n(?=\S))|(?=\n(?=\S))|(?<=\n\n))/g;
-    const splitedText = texto.match(regex);
-    const newArrayText = splitedText
-        .map((element) => {
-            const trimmed = element.trim();
-
-            if (trimmed === "\n" || trimmed === "" || trimmed === "<p></p>" || trimmed.match(/^\s*$/)) {
-                return "";
-            }
-
-            if ((trimmed.startsWith("<b") && trimmed.endsWith("</b>")) || (trimmed.startsWith("<a") && trimmed.endsWith("</a>")) || (trimmed.startsWith("<strong") && trimmed.endsWith("</strong>"))) {
-                return `<p>${trimmed}</p>`;
-            } else if (trimmed.startsWith("<")) {
-                return trimmed;
-            }
-
-            return `<p>${trimmed}</p>`;
-        })
-        .filter((e) => e !== "");
-
-    return newArrayText;
-}
-
-function createAccordionFromHTML(htmlString) {
-    if (!htmlString) return [];
-    
-    // Usar regex para dividir por h2, preservando todo o conteúdo
-    const h2Regex = /<h2[^>]*>.*?<\/h2>/gi;
-    const h2Matches = htmlString.match(h2Regex) || [];
-    
-    if (h2Matches.length === 0) {
-        // Se não há h2s, retorna como um único item de conteúdo sem accordion
-        return [{ isContent: true, content: htmlString }];
-    }
-    
-    // Dividir o HTML usando os h2s como separadores
-    const parts = htmlString.split(h2Regex);
-    const result = [];
-    
-    // O primeiro part é o conteúdo antes do primeiro h2
-    if (parts[0] && parts[0].trim()) {
-        result.push({ isContent: true, content: parts[0].trim() });
-    }
-    
-    // Processar cada seção (h2 + conteúdo após ele)
-    for (let i = 0; i < h2Matches.length; i++) {
-        const h2Match = h2Matches[i];
-        const content = parts[i + 1] || ""; // Conteúdo após este h2
-        
-        // Extrair apenas o texto do h2 para o título
-        const h2TextMatch = h2Match.match(/<h2[^>]*>(.*?)<\/h2>/i);
-        const title = h2TextMatch ? h2TextMatch[1] : h2Match;
-        
-        result.push({
-            isAccordion: true,
-            question: title,
-            answer: content.trim()
-        });
-    }
-    
-    return result;
-}
-
-const AccordionRenderer = ({ htmlString, keyPrefix }) => {
-    const accordionData = createAccordionFromHTML(htmlString);
-    
-    return (
-        <div>
-            {accordionData.map((item, idx) => {
-                if (item.isContent) {
-                    // Conteúdo sem accordion
-                    return <div key={`content-${idx}`} dangerouslySetInnerHTML={{ __html: splitPorTags(item.content) }} />;
-                }
-                
-                if (item.isAccordion) {
-                    if (item.question.includes("?")) {
-                        const questionExists = faqData.some(faq => faq.question === item.question);
-                        if (!questionExists) {
-                            faqData.push({ question: item.question, answer: item.answer });
-                        }
-                    }
-
-                    const contentParts = splitPorTags(item.answer);
-
-                    // Usar FaqComponent para o accordion
-                    return (
-                        <FaqComponent
-                            key={`accordion-${idx}`}
-                            faqs={[{ question: item.question, answer: contentParts }]}
-                            allowMultipleOpen={true}
-                            activeStructuredData={false}
-                            keyPrefix={`${keyPrefix}-${idx}`}
-                        />
-                    );
-                }
-                
-                return null;
-            })}
-        </div>
-    );
-};
-
 function DescriptionContructor({ children }) {
     const productContextValue = useProduct();
-
     const product = useMemo(() => productContextValue?.product, [productContextValue]);
     const properties = useMemo(() => product?.properties || [], [product]);
-
+    
+    // Mover faqData para dentro do componente como state
+    const [faqData, setFaqData] = useState([]);
     const [isVideoVisible, setIsVideoVisible] = useState(false);
-
     const videoRef = useRef(null);
+
+    // Função para remover HTML e extrair texto limpo
+    function removeHTMLTags(htmlString) {
+        if (!htmlString) return "";
+        return htmlString.replace(/<[^>]*>/g, '').trim();
+    }
+
+    // Função para adicionar pergunta ao faqData se não existir
+    const addQuestionToFaqData = useCallback((question, answer) => {
+        setFaqData(prev => {
+            const questionExists = prev.some(faq => faq.question === question);
+            if (!questionExists) {
+                return [...prev, { question, answer }];
+            }
+            return prev;
+        });
+    }, []);
+
+    // Função para criar dados estruturados FAQPage
+    function createFAQStructuredData(faqData) {
+        if (!faqData || faqData.length === 0) return null;
+        
+        return {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": faqData.map(faq => ({
+                "@type": "Question",
+                "name": removeHTMLTags(faq.question),
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": removeHTMLTags(faq.answer)
+                }
+            }))
+        };
+    }
+
+    function splitPorTags(texto) {
+        const regex = /(<[^>]+>.*?<\/[^>]+>|<[^>]+>.*?(?=<|$)|[^\n]+|(?<=\n(?=\S))|(?=\n(?=\S))|(?<=\n\n))/g;
+        const splitedText = texto.match(regex);
+        const newArrayText = splitedText
+            .map((element) => {
+                const trimmed = element.trim();
+
+                if (trimmed === "\n" || trimmed === "" || trimmed === "<p></p>" || trimmed.match(/^\s*$/)) {
+                    return "";
+                }
+
+                if ((trimmed.startsWith("<b") && trimmed.endsWith("</b>")) || (trimmed.startsWith("<a") && trimmed.endsWith("</a>")) || (trimmed.startsWith("<strong") && trimmed.endsWith("</strong>"))) {
+                    return `<p>${trimmed}</p>`;
+                } else if (trimmed.startsWith("<")) {
+                    return trimmed;
+                }
+
+                return `<p>${trimmed}</p>`;
+            })
+            .filter((e) => e !== "")
+            .map((e, i, array) => {       
+                if (i === array.length - 1 && e.endsWith("</p>")) {
+                    return e.replace("</p>", "");
+                }
+                return e;
+            });
+
+        return newArrayText.join("");
+    }
+
+    // Nova função para retornar array de partes
+    function splitPorTagsAsArray(texto) {
+        const regex = /(<[^>]+>.*?<\/[^>]+>|<[^>]+>.*?(?=<|$)|[^\n]+|(?<=\n(?=\S))|(?=\n(?=\S))|(?<=\n\n))/g;
+        const splitedText = texto.match(regex);
+        const newArrayText = splitedText
+            .map((element) => {
+                const trimmed = element.trim();
+
+                if (trimmed === "\n" || trimmed === "" || trimmed === "<p></p>" || trimmed.match(/^\s*$/)) {
+                    return "";
+                }
+
+                if ((trimmed.startsWith("<b") && trimmed.endsWith("</b>")) || (trimmed.startsWith("<a") && trimmed.endsWith("</a>")) || (trimmed.startsWith("<strong") && trimmed.endsWith("</strong>"))) {
+                    return `<p>${trimmed}</p>`;
+                } else if (trimmed.startsWith("<")) {
+                    return trimmed;
+                }
+
+                return `<p>${trimmed}</p>`;
+            })
+            .filter((e) => e !== "");
+
+        return newArrayText;
+    }
+
+    function createAccordionFromHTML(htmlString) {
+        if (!htmlString) return [];
+        
+        // Usar regex para dividir por h2, preservando todo o conteúdo
+        const h2Regex = /<h2[^>]*>.*?<\/h2>/gi;
+        const h2Matches = htmlString.match(h2Regex) || [];
+        
+        if (h2Matches.length === 0) {
+            // Se não há h2s, retorna como um único item de conteúdo sem accordion
+            return [{ isContent: true, content: htmlString }];
+        }
+        
+        // Dividir o HTML usando os h2s como separadores
+        const parts = htmlString.split(h2Regex);
+        const result = [];
+        
+        // O primeiro part é o conteúdo antes do primeiro h2
+        if (parts[0] && parts[0].trim()) {
+            result.push({ isContent: true, content: parts[0].trim() });
+        }
+        
+        // Processar cada seção (h2 + conteúdo após ele)
+        for (let i = 0; i < h2Matches.length; i++) {
+            const h2Match = h2Matches[i];
+            const content = parts[i + 1] || ""; // Conteúdo após este h2
+            
+            // Extrair apenas o texto do h2 para o título
+            const h2TextMatch = h2Match.match(/<h2[^>]*>(.*?)<\/h2>/i);
+            const title = h2TextMatch ? h2TextMatch[1] : h2Match;
+            
+            result.push({
+                isAccordion: true,
+                question: title,
+                answer: content.trim()
+            });
+        }
+        
+        return result;
+    }
+
+    const AccordionRenderer = ({ htmlString, keyPrefix }) => {
+        const accordionData = createAccordionFromHTML(htmlString);
+        
+        return (
+            <div>
+                {accordionData.map((item, idx) => {
+                    if (item.isContent) {
+                        // Conteúdo sem accordion
+                        return <div key={`content-${idx}`} dangerouslySetInnerHTML={{ __html: splitPorTags(item.content) }} />;
+                    }
+                    
+                    if (item.isAccordion) {
+                        if (item.question.includes("?")) {
+                            addQuestionToFaqData(item.question, item.answer);
+                        }
+
+                        const contentParts = splitPorTags(item.answer);
+
+                        // Usar FaqComponent para o accordion
+                        return (
+                            <FaqComponent
+                                key={`accordion-${idx}`}
+                                faqs={[{ question: item.question, answer: contentParts }]}
+                                allowMultipleOpen={true}
+                                activeStructuredData={false}
+                                keyPrefix={`${keyPrefix}-${idx}`}
+                            />
+                        );
+                    }
+                    
+                    return null;
+                })}
+            </div>
+        );
+    };
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -236,10 +242,7 @@ function DescriptionContructor({ children }) {
                 .join('');
 
             if (titulo.values?.[0].includes("?")) {
-                const questionExists = faqData.some(faq => faq.question === titulo.values?.[0]);
-                if (!questionExists) {
-                    faqData.push({ question: titulo.values?.[0], answer: content });
-                }
+                addQuestionToFaqData(titulo.values?.[0], content);
             } else if (content.includes("?")) {
                 const contentParts = splitPorTagsAsArray(content);
                 const questions = [];
@@ -253,10 +256,7 @@ function DescriptionContructor({ children }) {
                         const lastQuestion = questions[questions.length - 1];
                         const answer = part;
                         
-                        const questionExists = faqData.some(faq => faq.question === lastQuestion);
-                        if (!questionExists) {
-                            faqData.push({ question: lastQuestion, answer: answer });
-                        }
+                        addQuestionToFaqData(lastQuestion, answer);
                     }
                 }
             }
@@ -452,45 +452,57 @@ function DescriptionContructor({ children }) {
                         }
                         return null;
                     })}
-                    {["Benefícios", "Composição", "Modo de Usar", "Advertência"].map((section) => (
-                        <>
-                            {section === "Advertência" && (
-                                <div className="BlockStyle Default-prop">
-                                    <div className="Default-Data" id="InformaImp">
-                                        {children}
-                                    </div>
-                                </div>
-                            )}
-                            <div className="BlockStyle Default-prop">
-                                <div className="Default-Data">
-                                    {properties.some((e) => e.name.includes(section) && e.values[0]) && (
-                                        <h2
-                                            id={
-                                                section === "Modo de Usar"
-                                                    ? "ModoDeUsar"
-                                                    : section
-                                                        .normalize("NFD")
-                                                        .replace(/[\u0300-\u036f]/g, "")
-                                                        .replace(/\s/g, "")
-                                                        .replace(/ /g, "")
-                                            }
-                                        >
-                                            {section}
-                                        </h2>
-                                    )}
-                                    {properties.map((e) =>
-                                        e?.name?.includes(section) && e?.values?.[0] ? (
-                                            <span
-                                                key={e.name}
-                                                style={{ whiteSpace: "break-spaces" }}
-                                                dangerouslySetInnerHTML={{ __html: splitPorTags(e.values[0]) }}
-                                            ></span>
-                                        ) : null
-                                    )}
-                                </div>
+                    {/* Outras seções */}
+                    {["Benefícios", "Composição", "Modo de Usar"].map((section) => (
+                        <div className="BlockStyle Default-prop" key={section}>
+                            <div className="Default-Data">
+                                {properties.some((e) => e.name.includes(section) && e.values[0]) && (
+                                    <h2
+                                        id={
+                                            section === "Modo de Usar"
+                                                ? "ModoDeUsar"
+                                                : section
+                                                    .normalize("NFD")
+                                                    .replace(/[\u0300-\u036f]/g, "")
+                                                    .replace(/\s/g, "")
+                                                    .replace(/ /g, "")
+                                        }
+                                    >
+                                        {section}
+                                    </h2>
+                                )}
+                                {properties.map((e) =>
+                                    e?.name?.includes(section) && e?.values?.[0] ? (
+                                        <span
+                                            key={e.name}
+                                            style={{ whiteSpace: "break-spaces" }}
+                                            dangerouslySetInnerHTML={{ __html: splitPorTags(e.values[0]) }}
+                                        ></span>
+                                    ) : null
+                                )}
                             </div>
-                        </>
+                        </div>
                     ))}
+
+                    {/* Seção Advertência com FaqComponent */}
+                    {properties.some((e) => e.name.includes("Advertência") && e.values[0]) && (
+                        <div className="BlockStyle Default-prop" id="Advertencia">
+                            <div className="Default-Data" id="InformaImp">
+                                <FaqComponent
+                                    faqs={properties
+                                        .filter((e) => e?.name?.includes("Advertência") && e?.values?.[0])
+                                        .map((e) => ({
+                                            question: "Advertência",
+                                            answer: splitPorTags(e.values[0])
+                                        }))}
+                                    allowMultipleOpen={true}
+                                    activeStructuredData={false}
+                                    keyPrefix="advertencia-section"
+                                />
+                                {children}
+                            </div>
+                        </div>
+                    )}
                 </>
             )}
         </div>
