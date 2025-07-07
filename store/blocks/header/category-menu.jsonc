@@ -3793,7 +3793,8 @@
       "menu-item#granolas-snacks",
       "menu-item#pastas",
       "menu-item#refeicoes-fit",
-      "menu-item#suplementosbionutri"
+      "menu-item#suplementosbionutri",
+      "menu-item#barras-de-proteina"
     ]
   },
   "menu-item#chas": {
@@ -3841,6 +3842,22 @@
         "noFollow": true,
         "tagTitle": "Suplementos",
         "text": "Suplementos"
+      }
+    }
+  },
+  "menu-item#barras-de-proteina": {
+    "props": {
+      "id": "menu-item-barras-de-proteina",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/nutrition/barras-de-proteina",
+        "noFollow": true,
+        "tagTitle": "Barras de Proteína",
+        "text": "Barras de Proteína"
       }
     }
   },
