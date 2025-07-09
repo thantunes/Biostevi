@@ -241,6 +241,7 @@
       "menu-item#pastas",
       "menu-item#refeicoes-fit",
       "menu-item#suplementosbionutri",
+      "menu-item#barras-de-proteina",
       "menu-item#bionutritionMore"
     ]
   },
@@ -356,6 +357,7 @@
       "menu-item#mais-vendidos-desempenho-fisico-mobile",
       "menu-item#mais-vendidos-saude-mobile",
       "menu-item#mais-vendidos-beleza-mobile",
+      "menu-item#mais-vendidos-cha-mobile",
       "menu-item#mais-vendidos-saude-sexual-mobile",
       "menu-item#mais-vendidos-nutrition-mobile",
       "menu-item#mais-vendidos-suplementacao-diaria-mobile"
@@ -522,6 +524,34 @@
       "menu-item#mais-vendidos-beleza-olheiras-e-rugas",
       "menu-item#mais-vendidos-beleza-cuidado-intimo",
       "menu-item#mais-vendidos-beleza-cosmeticos"
+    ]
+  },
+  "menu-item#mais-vendidos-cha-mobile": {
+    "props": {
+      "blockClass": ["mais-vendidos-cha-mobile"],
+      "itemProps": {
+        "tagTitle": "Chá/Spots",
+        "text": "Chá/Spots"
+      }
+    },
+    "blocks": ["vtex.menu@2.x:submenu.accordion#mais-vendidos-cha-mobile"]
+  },
+  "vtex.menu@2.x:submenu.accordion#mais-vendidos-cha-mobile": {
+    "children": ["vtex.menu@2.x:menu#menu-mais-vendidos-cha-mobile"]
+  },
+  "vtex.menu@2.x:menu#menu-mais-vendidos-cha-mobile": {
+    "props": {
+      "orientation": "vertical",
+      "experimentalOptimizeRendering": true
+    },
+    "children": [
+      "menu-item#mais-vendidos-cha-emagrecimento",
+      "menu-item#mais-vendidos-cha-desempenho-fisico",
+      "menu-item#mais-vendidos-cha-desempenho-sexual",
+      "menu-item#mais-vendidos-cha-saude",
+      "menu-item#mais-vendidos-cha-beleza",
+      "menu-item#mais-vendidos-cha-saude-intestinal",
+      "menu-item#mais-vendidos-cha-articulacao-ossos"
     ]
   },
   "menu-item#mais-vendidos-saude-sexual-mobile": {

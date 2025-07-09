@@ -137,13 +137,14 @@
 }
 
 :global(.vtex-product-specifications-1-x-specificationValue) h2 {
-  color: #009fc2 !important;
-  font-weight: 400;
-  padding-bottom: 0;
-  font-size: 26px;
-  line-height: 35px;
-  margin-top: 10px;
+  color: #009fc2;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  font-weight: 600;
+  text-align: start;
+  width: 100%;
   margin-bottom: 0;
+  padding-left: 0px;
 }
 
 :global(.vtex-product-specifications-1-x-specificationValue) iframe {
@@ -303,14 +304,6 @@
   color: #000 !important;
 }
 
-:global(.vtex-product-specifications-1-x-specificationValue) h3 {
-  color: #009fc2 !important;
-  font-weight: 400;
-  padding-bottom: 0;
-  font-size: 26px;
-  margin-bottom: 0;
-}
-
 :global(.descricao-pdp-full-check) h4 {
   margin-bottom: 0 !important;
 }
@@ -429,7 +422,7 @@
 :global(.descricao-pdp-esq) p {
   white-space: break-spaces;
   font-size: 20px;
-  font-family: Helvetica;
+  /* font-family: Helvetica; */
   color: #555;
   line-height: 30px;
 }
@@ -437,7 +430,7 @@
 :global(.descricao-pdp-dir) p {
   white-space: break-spaces;
   font-size: 20px;
-  font-family: Helvetica;
+  /* font-family: Helvetica; */
   color: #555;
   line-height: 30px;
 }
@@ -445,7 +438,7 @@
 :global(.descricao-pdp-full) p {
   white-space: break-spaces;
   font-size: 20px;
-  font-family: Helvetica;
+  /* font-family: Helvetica; */
   color: #555;
   line-height: 30px;
   white-space: break-spaces;
@@ -480,7 +473,7 @@
 
 :global(.descricao-pdp-full-checkp) {
   font-size: 20px;
-  font-family: Helvetica;
+  /* font-family: Helvetica; */
   color: #555;
   line-height: 30px;
 }
@@ -597,10 +590,6 @@
     white-space: initial;
     padding-left: 0 !important;
     margin-top: 0 !important;
-  }
-
-  :global(.vtex-product-specifications-1-x-specificationValue) h2 {
-    white-space: initial !important;
   }
 
   :global(.vtex-store-components-3-x-productDescriptionText) h2 {
@@ -991,7 +980,7 @@
 :global(.vtex-flex-layout-0-x-flexRow--new-pdp-checkins) :global(.vtex-store-components-3-x-specificationsTableRow):nth-child(2) {
   color: #555;
   font-size: 17px !important;
-  font-family: Helvetica;
+  /* font-family: Helvetica; */
   font-weight: 400;
   margin-top: 10px;
 }

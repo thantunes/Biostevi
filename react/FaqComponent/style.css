@@ -1,6 +1,5 @@
-/* FAQ Styles */
 .faqWrapper {
-  margin-bottom: 16px;
+  margin-bottom: 0;
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
@@ -31,7 +30,7 @@
     font-weight: 600;
     color: #009fc2;
     font-family: Signika;
-    margin: 0;
+    margin: 0px!important;
 }
 
 .faqQuestion:focus {
@@ -42,13 +41,15 @@
     background: #f9f9f9;
 }
 
-.arrow {
-    display: flex;
-    align-items: center;
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+.faqItem .arrow {
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  width: fit-content;
+  padding: 0;
 }
 
-.arrowOpen {
+.faqItem .arrowOpen {
     transform: rotate(180deg);
 }
 
@@ -56,14 +57,14 @@
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s;
+    transition: max-height 0.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s;
     background: #f9f9f9;
 }
 
 .faqAnswerOpen {
     max-height: 25000px;
     opacity: 1;
-    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s;
+    transition: max-height 0.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s;
 }
 
 .faqAnswerInner {
@@ -74,7 +75,7 @@
     line-height: 1.7;
     border-radius: 0 8px 8px 0;
     box-shadow: 0 2px 8px 0 rgba(0,0,0,0.03);
-    transition: background 0.3s, box-shadow 0.3s;
+    transition: background 0.2s, box-shadow 0.2s;
 }
 
 .faqAnswerInner h2,
@@ -83,14 +84,15 @@
 .faqAnswerInner h5,
 .faqAnswerInner h6 {
   color: #ff6c00;
-  font-weight: 700;
+  font-weight: 600;
   margin: 1.2em 0 0.7em 0;
   line-height: 1.2;
+  font-family: Signika;
 }
-.faqAnswerInner h2 { font-size: 14px; }
-.faqAnswerInner h3 { font-size: 12px; }
-.faqAnswerInner h4 { font-size: 10px; }
-.faqAnswerInner h5 { font-size: 8px; }
+.faqAnswerInner h2 { font-size: 18px; }
+.faqAnswerInner h3 { font-size: 16px; }
+.faqAnswerInner h4 { font-size: 14px; }
+.faqAnswerInner h5 { font-size: 12px; }
 .faqAnswerInner p {
   margin: 1em 0;
   color: #555;

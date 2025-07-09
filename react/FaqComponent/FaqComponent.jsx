@@ -7,11 +7,34 @@ const stripHtml = (html) => {
     return html.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
 }
 
-const FaqComponent = ({ faqs }) => {
+const FaqComponent = ({ 
+    faqs, 
+    allowMultipleOpen = false, 
+    customStyles = {}, 
+    activeStructuredData = true,
+    keyPrefix = 'faq'
+}) => {
     const [openIndex, setOpenIndex] = useState(null)
+    const [openAccordions, setOpenAccordions] = useState({})
 
-    const handleToggle = idx => {
-        setOpenIndex(openIndex === idx ? null : idx)
+    const handleToggle = (idx) => {
+        if (allowMultipleOpen) {
+            const accordionKey = `${keyPrefix}-${idx}`;
+            setOpenAccordions(prev => ({
+                ...prev,
+                [accordionKey]: !prev[accordionKey]
+            }));
+        } else {
+            setOpenIndex(openIndex === idx ? null : idx)
+        }
+    }
+
+    const isOpen = (idx) => {
+        if (allowMultipleOpen) {
+            const accordionKey = `${keyPrefix}-${idx}`;
+            return openAccordions[accordionKey];
+        }
+        return openIndex === idx;
     }
 
     // Geração do JSON-LD FAQPage
@@ -28,49 +51,65 @@ const FaqComponent = ({ faqs }) => {
         })),
     }
 
-    if (!faqs) return null;
+    if (!faqs || !Array.isArray(faqs)) return null;
+
+    // Usar estilos customizados se fornecidos, senão usar os padrão
+    const wrapperClass = style.faqWrapper;
+    const itemClass = style.faqItem;
+    const questionClass = style.faqQuestion;
+    const answerClass = style.faqAnswer;
+    const answerOpenClass = style.faqAnswerOpen;
+    const answerInnerClass = style.faqAnswerInner;
+    const arrowClass = style.arrow;
+    const arrowOpenClass = style.arrowOpen;
 
     return (
-        <div className={style.faqWrapper}>
-            <script type="application/ld+json">
-                {JSON.stringify(faqStructuredData)}
-            </script>
-            {faqs?.map((faq, idx) => (
-                <div key={idx} className={style.faqItem}>
+        <div className={wrapperClass}>
+            {activeStructuredData && (
+                <script type="application/ld+json">
+                    {JSON.stringify(faqStructuredData)}
+                </script>
+            )}
+            {faqs.map((faq, idx) => (
+                <div key={idx} className={itemClass}>
                     <button
-                        className={style.faqQuestion}
-                        aria-expanded={openIndex === idx}
-                        aria-controls={`faq-content-${idx}`}
-                        id={`faq-question-${idx}`}
+                        className={questionClass}
+                        aria-expanded={isOpen(idx)}
+                        aria-controls={`${keyPrefix}-content-${idx}`}
+                        id={`${keyPrefix}-question-${idx}`}
                         tabIndex={0}
                         onClick={() => handleToggle(idx)}
                         onKeyDown={e => (e.key === 'Enter' || e.key === ' ') && handleToggle(idx)}
                         type="button"
                     >
-                        <div dangerouslySetInnerHTML={{ __html: faq.question }} />
+                        {faq.question.includes('<') ? (
+                            <div dangerouslySetInnerHTML={{ __html: faq.question }} />
+                        ) : (
+                            <h2 dangerouslySetInnerHTML={{ __html: faq.question }} />
+                        )}
                         <span
                             className={
-                                openIndex === idx
-                                    ? `${style.arrow} ${style.arrowOpen}`
-                                    : style.arrow
+                                isOpen(idx)
+                                    ? `${arrowClass} ${arrowOpenClass}`
+                                    : arrowClass
                             }
                             aria-hidden="true"
                         >
-                            {openIndex === idx ? '-' : '+'}
+                            {isOpen(idx) ? '-' : '+'}
                         </span>
                     </button>
                     <div
-                        id={`faq-content-${idx}`}
+                        id={`${keyPrefix}-content-${idx}`}
                         role="region"
-                        aria-labelledby={`faq-question-${idx}`}
+                        aria-labelledby={`${keyPrefix}-question-${idx}`}
                         className={
-                            openIndex === idx
-                                ? `${style.faqAnswer} ${style.faqAnswerOpen}`
-                                : style.faqAnswer
+                            isOpen(idx)
+                                ? `${answerClass} ${answerOpenClass}`
+                                : answerClass
                         }
                     >
                         <div
-                            className={style.faqAnswerInner}
+                            className={answerInnerClass}
                             dangerouslySetInnerHTML={{
                                 __html: faq.answer,
                             }}
@@ -91,6 +130,11 @@ FaqComponent.schema = {
         faqs: {
             title: 'Perguntas e Respostas',
             type: 'array',
+            activeStructuredData: {
+                title: 'Ativar RichSnippet FAQPage',
+                type: 'boolean',
+                default: true,
+            },
             items: {
                 type: 'object',
                 properties: {

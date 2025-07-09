@@ -11,9 +11,10 @@
         "children": [
             "link#-Beneficios",
             "link#-Composicao",
-            "link#-ModoDeUsar",
-            "link#-InformaImp",
-            "link#-Advertencia"
+            "link#-ModoDeUsar"
+            // ,
+            // "link#-InformaImp",
+            // "link#-Advertencia"
         ],
         "props": {
             "blockClass": "AnchorsContainer",
@@ -23,7 +24,7 @@
     "link#-Beneficios": {
         "props": {
             "href":"#Beneficios",
-            "label": "Beneficios",
+            "label": "Benefícios",
             "blockClass":"PDPAnchor"
         }
     },

@@ -26,9 +26,11 @@
 
 .BuyTogether__Box > h2 {
     color: #009fc2 !important;
-    font-size: 26px;
-    font-weight: normal !important;
-    line-height: 24px;
+    font-size: 1.35rem;
+    line-height: 1.5;
+    text-transform: uppercase;
+    font-weight: 600 !important;
+    font-family: Signika;
 }
 
 .BuyTogether__Container {

@@ -89,6 +89,7 @@
       "menu-item#mais-vendidos-desempenho-fisico",
       "menu-item#mais-vendidos-saude",
       "menu-item#mais-vendidos-beleza",
+      "menu-item#mais-vendidos-chas",
       "menu-item#mais-vendidos-saude-sexual",
       "menu-item#mais-vendidos-nutrition",
       "menu-item#mais-vendidos-suplementacao-diaria"
@@ -1179,6 +1180,181 @@
       }
     }
   },
+
+
+
+
+
+  "menu-item#mais-vendidos-chas": {
+    "props": {
+      "id": "menu-item-mais-vendidos-chas",
+      "blockClass": "mais-vendidos-chas",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "",
+        "noFollow": false,
+        "tagTitle": "Chás/Spots",
+        "text": "Chás/Spots",
+        "blockClass": "link-menu"
+      }
+    },
+    "blocks": [
+      "vtex.menu@2.x:submenu#mais-vendidos-chas"
+    ]
+  },
+  "vtex.menu@2.x:submenu#mais-vendidos-chas": {
+    "props": {
+      "width": "100%",
+      "experimentalOptimizeRendering": true
+    },
+    "children": [
+      "vtex.menu@2.x:menu#mais-vendidos-chas-more"
+    ]
+  },
+  "vtex.menu@2.x:menu#mais-vendidos-chas-more": {
+    "props": {
+      "orientation": "vertical",
+      "experimentalOptimizeRendering": true
+    },
+    "children": [
+      "menu-item#mais-vendidos-cha-emagrecimento",
+      "menu-item#mais-vendidos-cha-desempenho-fisico",
+      "menu-item#mais-vendidos-cha-desempenho-sexual",
+      "menu-item#mais-vendidos-cha-saude",
+      "menu-item#mais-vendidos-cha-beleza",
+      "menu-item#mais-vendidos-cha-saude-intestinal",
+      "menu-item#mais-vendidos-cha-articulacao-ossos"
+    ]
+  },
+  "menu-item#mais-vendidos-cha-emagrecimento": {
+    "props": {
+      "id": "menu-item-mais-vendidos-cha-emagrecimento",
+      "blockClass": "cha-emagrecimento",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/mais-vendidos/lp/cha-emagrecimento",
+        "noFollow": true,
+        "tagTitle": "Emagrecimento",
+        "text": "Emagrecimento",
+        "blockClass": "link-menu"
+      }
+    }
+  },
+  "menu-item#mais-vendidos-cha-desempenho-fisico": {
+    "props": {
+      "id": "menu-item-mais-vendidos-cha-desempenho-fisico",
+      "blockClass": "cha-desempenho-fisico",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/mais-vendidos/lp/cha-desempenho-fisico",
+        "noFollow": true,
+        "tagTitle": "Desempenho Físico",
+        "text": "Desempenho Físico",
+        "blockClass": "link-menu"
+      }
+    }
+  },
+  "menu-item#mais-vendidos-cha-desempenho-sexual": {
+    "props": {
+      "id": "menu-item-mais-vendidos-cha-desempenho-sexual",
+      "blockClass": "cha-desempenho-sexual",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/mais-vendidos/lp/cha-desempenho-sexual",
+        "noFollow": true,
+        "tagTitle": "Desempenho Sexual",
+        "text": "Desempenho Sexual",
+        "blockClass": "link-menu"
+      }
+    }
+  },
+  "menu-item#mais-vendidos-cha-saude": {
+    "props": {
+      "id": "menu-item-mais-vendidos-cha-saude",
+      "blockClass": "cha-saude",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/mais-vendidos/lp/cha-saude",
+        "noFollow": true,
+        "tagTitle": "Saúde",
+        "text": "Saúde",
+        "blockClass": "link-menu"
+      }
+    }
+  },
+  "menu-item#mais-vendidos-cha-beleza": {
+    "props": {
+      "id": "menu-item-mais-vendidos-cha-beleza",
+      "blockClass": "cha-beleza",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/mais-vendidos/lp/cha-beleza",
+        "noFollow": true,
+        "tagTitle": "Beleza",
+        "text": "Beleza",
+        "blockClass": "link-menu"
+      }
+    }
+  },
+  "menu-item#mais-vendidos-cha-saude-intestinal": {
+    "props": {
+      "id": "menu-item-mais-vendidos-cha-saude-intestinal",
+      "blockClass": "cha-saude-intestinal",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/mais-vendidos/lp/cha-saude-intestinal",
+        "noFollow": true,
+        "tagTitle": "Saúde Intestinal",
+        "text": "Saúde Intestinal",
+        "blockClass": "link-menu"
+      }
+    }
+  },
+  "menu-item#mais-vendidos-cha-articulacao-ossos": {
+    "props": {
+      "id": "menu-item-mais-vendidos-cha-articulacao-ossos",
+      "blockClass": "cha-articulacao-ossos",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/mais-vendidos/lp/cha-articulacao-ossos",
+        "noFollow": true,
+        "tagTitle": "Articulação e Ossos",
+        "text": "Articulação e Ossos",
+        "blockClass": "link-menu"
+      }
+    }
+  },
+
+
+
+
+
+
+
   "menu-item#mais-vendidos-saude-sexual": {
     "props": {
       "id": "menu-item-mais-vendidos-saude-sexual",
@@ -3617,7 +3793,8 @@
       "menu-item#granolas-snacks",
       "menu-item#pastas",
       "menu-item#refeicoes-fit",
-      "menu-item#suplementosbionutri"
+      "menu-item#suplementosbionutri",
+      "menu-item#barras-de-proteina"
     ]
   },
   "menu-item#chas": {
@@ -3665,6 +3842,22 @@
         "noFollow": true,
         "tagTitle": "Suplementos",
         "text": "Suplementos"
+      }
+    }
+  },
+  "menu-item#barras-de-proteina": {
+    "props": {
+      "id": "menu-item-barras-de-proteina",
+      "blockClass": "link-megamenu",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/nutrition/barras-de-proteina",
+        "noFollow": true,
+        "tagTitle": "Barras de Proteína",
+        "text": "Barras de Proteína"
       }
     }
   },

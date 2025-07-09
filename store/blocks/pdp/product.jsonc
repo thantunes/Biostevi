@@ -29,8 +29,7 @@
       "product-reviews",
       // "flex-layout.row#buy-together",
       "product-questions-and-answers",
-      "rich-text#pdp-informativo1",
-      "flex-layout.row#faq-container"
+      "rich-text#pdp-informativo1"
     ]
   },
   "responsive-layout.mobile#main": {
@@ -48,8 +47,7 @@
       "product-reviews",
       // "flex-layout.row#buy-together",
       "product-questions-and-answers",
-      "rich-text#pdp-informativo1",
-      "flex-layout.row#faq-container"
+      "rich-text#pdp-informativo1"
     ]
   },
   "responsive-layout.phone#main": {
@@ -67,8 +65,7 @@
       "product-reviews",
       // "flex-layout.row#buy-together",
       "product-questions-and-answers",
-      "rich-text#pdp-informativo1",
-      "flex-layout.row#faq-container"
+      "rich-text#pdp-informativo1"
     ]
   },
   "flex-layout.row#product-main-d": {
