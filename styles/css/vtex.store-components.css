@@ -651,6 +651,7 @@
 :global(.vtex-product-summary-2-x-imageNormal) {
   aspect-ratio: 1/1;
   width: auto!important;
+  height: 100%!important;
 }
 :global(.vtex-menu-2-x-styledLinkContent--vegano) {
   color: #fff !important;
