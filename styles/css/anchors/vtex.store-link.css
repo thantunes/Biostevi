@@ -13,12 +13,12 @@
     border-radius: 7px;
     font-weight: 600;
     font-family: Signika;
+    margin: 0 0 10px;
 }
 
 .link--PDPAnchor:hover {
     background-color: #009fc2;
     color: #fff;
-    border-radius: 7px
 }
 
 .label--PDPAnchor {
@@ -28,7 +28,7 @@
 
 @media (max-width:768px) {
     .link--PDPAnchor {
-        width: 100% !important;
-        margin: 10px 0
+        width: 90% !important;
+        margin-inline: auto;
     }
 }

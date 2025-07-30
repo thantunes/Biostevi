@@ -2223,7 +2223,7 @@
   :global(.vtex-rich-text-0-x-paragraph--informativo-site-seguro),
   :global(.vtex-rich-text-0-x-paragraph--informativo-whats) {
     color: #555555;
-    font-size: 9px;
+    font-size: 10px;
     letter-spacing: 1px;
     margin-top: 5px;
   }

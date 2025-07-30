@@ -31,6 +31,7 @@
     color: #009fc2;
     font-family: Signika;
     margin: 0px!important;
+    text-align: left;
 }
 
 .faqQuestion:focus {
