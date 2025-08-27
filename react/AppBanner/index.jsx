@@ -15,7 +15,7 @@ const AppBanner = props => {
           />
         </div>
         <div className={styles.wrapperTextContent}>
-          <h4>Biostévi Pharma</h4>
+          <span>Biostévi Pharma</span>
           <p>Baixe o app Biostévi Pharma</p>
         </div>
       </div>

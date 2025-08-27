@@ -61,5 +61,8 @@
   },
   "FaqComponent": {
     "component": "FaqComponent"
+  },
+  "search-button": {
+    "component": "SearchButton"
   }
 }

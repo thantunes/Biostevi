@@ -157,6 +157,7 @@
   "flex-layout.row#1-mobile": {
     "children": [
       "flex-layout.row#header-mobile-left",
+      "logo#mobile",
       "flex-layout.row#header-mobile-right"
     ],
     "props": {
@@ -167,7 +168,7 @@
     }
   },
   "flex-layout.row#header-mobile-left": {
-    "children": ["drawer", "logo#mobile"],
+    "children": ["drawer"],
     "props": {
       "blockClass": ["header-mobile-left"],
       "preventHorizontalStretch": true,
@@ -175,7 +176,7 @@
     }
   },
   "flex-layout.row#header-mobile-right": {
-    "children": ["login", "minicart.v2"],
+    "children": ["search-button","login", "minicart.v2"],
     "props": {
       "blockClass": ["header-mobile-right"],
       "preventHorizontalStretch": true,
