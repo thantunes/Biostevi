@@ -1293,7 +1293,7 @@
 :global(.vtex-flex-layout-0-x-flexRow--textofooterfinal) {
   background-color: #fff;
 }
-:global(.vtex-search-result-3-x-galleryItem)
+/* :global(.vtex-search-result-3-x-galleryItem)
   :global(.vtex-product-summary-2-x-container)
   :global(.vtex-add-to-cart-button-0-x-buttonText) {
   opacity: 0;
@@ -1303,7 +1303,7 @@
   :global(.vtex-product-summary-2-x-container):hover
   :global(.vtex-add-to-cart-button-0-x-buttonText) {
   opacity: 1;
-}
+} */
 :global(.vtex-product-price-1-x-installments)
   :global(.vtex-product-price-1-x-currencyContainer--summary),
 :global(.vtex-search-result-3-x-galleryItem)
