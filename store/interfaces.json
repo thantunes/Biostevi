@@ -61,5 +61,9 @@
   },
   "FaqComponent": {
     "component": "FaqComponent"
+  },
+  "CartOpenerScript": {
+    "component": "CartOpenerScript",
+    "render": "client"
   }
 }
