@@ -16,7 +16,7 @@
   },
   "responsive-layout.desktop#main": {
     "children": [
-      "UpAnchorComp",
+      "FloatingBuyBar",
       "flex-layout.row#product-breadcrumb",
       "flex-layout.row#product-main-d",
       "flex-layout.row#informativos",
