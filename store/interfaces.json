@@ -64,5 +64,12 @@
   },
   "search-button": {
     "component": "SearchButton"
+  },
+  "CartOpenerScript": {
+    "component": "CartOpenerScript",
+    "render": "client"
+  },
+  "FloatingBuyBar": {
+    "component": "FloatingBuyBar"
   }
 }
