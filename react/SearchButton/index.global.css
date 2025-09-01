@@ -1,3 +1,33 @@
+/* Wrapper do botão de busca com controle de max-width */
+.search-button-wrapper {
+    max-width: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Quando estiver sticky E a search-bar externa não estiver visível, permite que o botão apareça */
+.search-button-wrapper--sticky {
+    max-width: 45px;
+    pointer-events: auto;
+    opacity: 1;
+}
+
+/* Quando estiver sticky E ativo (search visível), mantém os 45px */
+.search-button-wrapper--sticky.search-button-wrapper--active {
+    max-width: 45px;
+    opacity: 1;
+}
+
+/* Para garantir que o botão só apareça quando sticky E quando a search externa não estiver visível */
+.search-button-wrapper:not(.search-button-wrapper--sticky) {
+    max-width: 0;
+    pointer-events: none;
+}
+
 /* Botão de busca */
 .search-button {
     background: none;
@@ -12,16 +42,23 @@
     border-radius: 4px;
     min-width: 36px;
     min-height: 36px;
+    flex-shrink: 0;
 }
 
-/* Estilos para o search-bar original quando ativo no sticky */
+/* Botão desabilitado quando a search externa está visível */
+.search-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* Estilos para o search-bar quando ativo no sticky (posicionamento e visuais) */
 .vtex-sticky-layout-0-x-wrapper--stuck .vtex-store-components-3-x-searchBarContainer.search-active {
     display: block !important;
     visibility: visible !important;
-    height: auto !important;
-    max-height: none !important;
-    overflow: visible !important;
     opacity: 1 !important;
+    max-height: 60px !important;
+    overflow: visible !important;
     position: absolute;
     top: 100%;
     left: 0;
@@ -30,34 +67,23 @@
     background: #d2d3d3;
     border-top: 1px solid #e0e0e0;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    animation: slideDown 0.2s ease-out;
-    padding: 15px;
+    padding: 15px !important;
     transform: translateY(0) !important;
     pointer-events: auto !important;
+    transition: all 0.3s ease;
 }
 
-/* Garante que quando não estiver sticky, o search-bar volte ao comportamento normal */
-.vtex-store-components-3-x-searchBarContainer:not(.search-active) {
-    display: block;
-    visibility: visible;
-    height: auto;
-    overflow: visible;
-    opacity: 1;
-    position: static !important;
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    animation: none !important;
-}
-
+/* Animação suave para a abertura da search-bar */
 @keyframes slideDown {
     from {
         opacity: 0;
+        max-height: 0;
         transform: translateY(-10px);
     }
 
     to {
         opacity: 1;
+        max-height: 60px;
         transform: translateY(0);
     }
 }
@@ -82,18 +108,10 @@
 }
 
 /* Transições suaves para elementos que serão escondidos/mostrados */
-.vtex-store-components-3-x-searchBarContainer {
-    transition: opacity 0.3s ease, max-height 0.3s ease, padding 0.3s ease;
+.vtex-sticky-layout-0-x-wrapper .vtex-store-components-3-x-searchBarContainer {
+    transition: all 0.3s ease;
     overflow: hidden;
     display: block;
-}
-
-.vtex-flex-layout-0-x-flexRowContent--container-app-content,
-.vtex-flex-layout-0-x-flexRow--AppBanner,
-[class*="wrapperBannerApp"],
-.vtex-flex-layout-0-x-flexRowContent--AppBanner {
-    transition: opacity 0.3s ease, max-height 0.3s ease, transform 0.3s ease;
-    overflow: hidden;
 }
 
 /* Transição suave para o próprio sticky layout */
@@ -106,42 +124,12 @@
     transition: all 0.3s ease;
 }
 
-/* Esconde o search bar original quando sticky no mobile */
+/* Responsivo - ajustes para mobile */
 @media (max-width: 1024px) {
-    .vtex-sticky-layout-0-x-wrapper--stuck .vtex-store-components-3-x-searchBarContainer:not(.search-active) {
-        opacity: 0;
-        max-height: 0;
-        padding-top: 0;
-        padding-bottom: 0;
-        transform: translateY(-10px);
-        pointer-events: none;
-    }
-
-    /* Esconde o AppBanner quando o header estiver sticky - várias tentativas de seletor */
-    .vtex-sticky-layout-0-x-wrapper--stuck .vtex-flex-layout-0-x-flexRowContent--container-app-content {
-        opacity: 0;
-        max-height: 0;
-        transform: translateY(-10px);
-    }
-
-    .vtex-sticky-layout-0-x-wrapper--stuck .vtex-flex-layout-0-x-flexRow--AppBanner {
-        opacity: 0;
-        max-height: 0;
-        transform: translateY(-10px);
-    }
-
-    /* Tenta pelo componente direto */
-    .vtex-sticky-layout-0-x-wrapper--stuck [class*="wrapperBannerApp"] {
-        opacity: 0;
-        max-height: 0;
-        transform: translateY(-10px);
-    }
-
-    /* Tenta pelo flex-layout que contém o AppBanner */
-    .vtex-sticky-layout-0-x-wrapper--stuck .vtex-flex-layout-0-x-flexRowContent--AppBanner {
-        opacity: 0;
-        max-height: 0;
-        transform: translateY(-10px);
+    /* Estado ativo no mobile */
+    .vtex-sticky-layout-0-x-wrapper--stuck .vtex-store-components-3-x-searchBarContainer.search-active {
+        max-height: 60px !important;
+        padding: 12px 15px !important;
     }
 }
 
@@ -154,13 +142,15 @@
     }
 
     .vtex-sticky-layout-0-x-wrapper--stuck .vtex-store-components-3-x-searchBarContainer.search-active {
-        padding: 12px;
+        max-height: 55px !important;
+        padding: 10px 15px !important;
     }
 }
 
 /* Ajustes para tablets */
 @media (min-width: 769px) and (max-width: 1024px) {
     .vtex-sticky-layout-0-x-wrapper--stuck .vtex-store-components-3-x-searchBarContainer.search-active {
-        padding: 18px;
+        max-height: 65px !important;
+        padding: 18px 15px !important;
     }
 }

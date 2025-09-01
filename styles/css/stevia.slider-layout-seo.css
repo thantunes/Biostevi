@@ -127,9 +127,9 @@
         font-family: Signika;
     }
 
-    .sliderLayoutContainer--carousel {
+    /* .sliderLayoutContainer--carousel {
         margin-top: 85px !important;
-    }
+    } */
 }
 
 .sliderLayoutContainer--shelf :global(.vtex-product-price-1-x-sellingPrice),
