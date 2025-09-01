@@ -1,0 +1,386 @@
+/* Keyframes para animações */
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Componente principal - hidden por padrão */
+.FloatingBuyBar {
+    margin-top: -2px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+    border-bottom: 1px solid #e0e0e0;
+    z-index: 100;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform, opacity;
+}
+
+/* Estado visível */
+.FloatingBuyBar.visible {
+    transform: translateY(0);
+    opacity: 1;
+    animation: slideDown 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Estado de animação */
+.FloatingBuyBar.animating {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Container principal */
+.FloatingBuyBar__Container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto 0;
+    padding: 12px 20px;
+    gap: 20px;
+    min-height: 6.75rem;
+}
+
+/* Imagem do produto */
+.FloatingBuyBar__ProductImage {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+}
+
+.FloatingBuyBar__ProductImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+.FloatingBuyBar__ProductImage:hover img {
+    transform: scale(1.05);
+}
+
+/* Informações do produto */
+.FloatingBuyBar__ProductInfo {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.FloatingBuyBar__ProductTitle {
+    font-family: 'Fabriga', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333333;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.FloatingBuyBar__Discount {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Seção de preços */
+.FloatingBuyBar__PriceSection {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    min-width: 16rem;
+}
+
+.FloatingBuyBar__OriginalPrice {
+    font-family: 'Fabriga', sans-serif;
+    font-size: 12px;
+    color: #727273;
+    text-decoration: line-through;
+    font-weight: 400;
+}
+
+.FloatingBuyBar__Savings {
+    font-family: 'Fabriga', sans-serif;
+    font-size: 12px;
+    color: #555555;
+    font-weight: 500;
+}
+
+.FloatingBuyBar__Installments {
+    font-family: 'Fabriga', sans-serif;
+    font-size: 16px;
+    color: #000000;
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+.FloatingBuyBar__InstallmentValue {
+    color: #ff6c00;
+}
+
+.FloatingBuyBar__FinalPrice {
+    font-family: 'Fabriga', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #ff6c00;
+    line-height: 1.2;
+}
+
+/* Seção de ações */
+.FloatingBuyBar__Actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-shrink: 0;
+}
+
+/* Seletor de quantidade */
+.FloatingBuyBar__QuantitySelector {
+    display: flex;
+    align-items: center;
+    background: white;
+    overflow: hidden;
+}
+
+.FloatingBuyBar__QuantityButton {
+    width: 36px;
+    height: 36px;
+    background: #fff;
+    color: #555555;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+
+.FloatingBuyBar__QuantityButton--minus {
+    border-left: 2px solid #CCCCCC;
+    border-top: 2px solid #CCCCCC;
+    border-bottom: 2px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.FloatingBuyBar__QuantityButton--plus {
+    border-right: 2px solid #CCCCCC;
+    border-top: 2px solid #CCCCCC;
+    border-bottom: 2px solid #CCCCCC;
+    border-left: 1px solid #CCCCCC;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}   
+
+.FloatingBuyBar__QuantityButton:hover:not(:disabled) {
+    background: #f8f8f8;
+}
+
+.FloatingBuyBar__QuantityButton:disabled {
+    cursor: not-allowed;
+}
+
+.FloatingBuyBar__QuantityInput {
+    width: 50px;
+    height: 36px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    color: #000000;
+    font-family: 'Fabriga', sans-serif;
+    background: white;
+    outline: none;
+    border-top: 2px solid #CCCCCC;
+    border-bottom: 2px solid #CCCCCC;
+    border-left: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+}
+
+.FloatingBuyBar__QuantityInput::-webkit-outer-spin-button,
+.FloatingBuyBar__QuantityInput::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.FloatingBuyBar__QuantityInput[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+/* Botão adicionar ao carrinho */
+.FloatingBuyBar__AddToCartButton {
+    background: linear-gradient(135deg, #2D6100 0%, #3a7a00 100%);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-family: 'Fabriga', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+    min-width: 160px;
+}
+
+.FloatingBuyBar__AddToCartButton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.FloatingBuyBar__AddToCartButton:hover:not(:disabled) {
+    background: linear-gradient(135deg, #3a7a00 0%, #2D6100 100%);
+    transform: translateY(-1px);
+}
+
+.FloatingBuyBar__AddToCartButton:hover:not(:disabled)::before {
+    left: 100%;
+}
+
+.FloatingBuyBar__AddToCartButton:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.FloatingBuyBar__AddToCartButton:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+/* Responsividade - esconder em tablets e mobile */
+@media screen and (max-width: 767px) {
+    .FloatingBuyBar {
+        display: none !important;
+    }
+}
+
+/* Responsividade para telas menores de desktop */
+@media screen and (max-width: 1024px) {
+    .FloatingBuyBar__Container {
+        padding: 10px 15px;
+        gap: 15px;
+    }
+
+    .FloatingBuyBar__ProductImage {
+        width: 50px;
+        height: 50px;
+    }
+
+    .FloatingBuyBar__ProductTitle {
+        font-size: 14px;
+    }
+
+    .FloatingBuyBar__FinalPrice {
+        font-size: 18px;
+    }
+
+    .FloatingBuyBar__AddToCartButton {
+        padding: 10px 20px;
+        font-size: 13px;
+        min-width: 140px;
+    }
+
+    .FloatingBuyBar__QuantityButton {
+        width: 32px;
+        height: 32px;
+    }
+
+    .FloatingBuyBar__QuantityInput {
+        width: 45px;
+        height: 32px;
+    }
+}
+
+/* Melhorias de acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+
+    .FloatingBuyBar,
+    .FloatingBuyBar.visible,
+    .FloatingBuyBar__ProductImage img,
+    .FloatingBuyBar__QuantityButton,
+    .FloatingBuyBar__AddToCartButton {
+        animation: none;
+        transition: none;
+    }
+}
+
+/* Estados de carregamento */
+.FloatingBuyBar__AddToCartButton.loading {
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+.FloatingBuyBar__AddToCartButton.loading::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    margin: auto;
+    border: 2px solid transparent;
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
