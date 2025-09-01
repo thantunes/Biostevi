@@ -61,5 +61,12 @@
   },
   "FaqComponent": {
     "component": "FaqComponent"
+  },
+  "CartOpenerScript": {
+    "component": "CartOpenerScript",
+    "render": "client"
+  },
+  "FloatingBuyBar": {
+    "component": "FloatingBuyBar"
   }
 }

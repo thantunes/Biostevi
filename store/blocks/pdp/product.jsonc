@@ -16,7 +16,6 @@
   },
   "responsive-layout.desktop#main": {
     "children": [
-      "UpAnchorComp",
       "flex-layout.row#product-breadcrumb",
       "flex-layout.row#product-main-d",
       "flex-layout.row#informativos",
@@ -27,7 +26,8 @@
       "shelf.relatedProducts",
       "product-reviews",
       "product-questions-and-answers",
-      "rich-text#pdp-informativo1"
+      "rich-text#pdp-informativo1",
+      "FloatingBuyBar"
     ]
   },
   "responsive-layout.mobile#main": {

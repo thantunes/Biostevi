@@ -12,7 +12,8 @@
       "flex-layout.row#2-desktop",
       "flex-layout.row#3-desktop",
       "sticky-layout#4-desktop",
-      "CryptoScript"
+      "CryptoScript",
+      "CartOpenerScript"
     ]
   },
   "flex-layout.row#hintup-skeleton": {
@@ -100,7 +101,8 @@
       "flex-layout.row#hintup-skeleton",
       "sticky-layout#1-envie-sua-receita-mobile",
       "sticky-layout#1-mobile",
-      "CryptoScript"
+      "CryptoScript",
+      "CartOpenerScript"
     ]
   },
   "sticky-layout#1AppBanner": {
