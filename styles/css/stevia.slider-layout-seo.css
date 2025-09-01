@@ -16,6 +16,10 @@
     display: none;
 }
 
+.slide .slideChildrenContainer--shelf {
+    padding: 5px;
+}
+
 .slide :global(.vtex-reviews-and-ratings-3-x-reviewsRatingAverage) {
     display: none;
 }
