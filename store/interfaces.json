@@ -61,5 +61,8 @@
   },
   "FaqComponent": {
     "component": "FaqComponent"
+  },
+  "FloatingBuyBar": {
+    "component": "FloatingBuyBar"
   }
 }
