@@ -68,5 +68,12 @@
   },
   "FloatingBuyBar": {
     "component": "FloatingBuyBar"
+  },
+  "InfoCardList": {
+    "component": "InfoCardList",
+    "composition": "children"
+  },
+  "InfoCard": {
+    "component": "InfoCard"
   }
 }

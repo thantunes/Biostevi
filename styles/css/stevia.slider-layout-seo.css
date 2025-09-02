@@ -48,17 +48,13 @@
 
 .sliderTrackContainer--influenciadores {
     padding-bottom: 20px;
-    margin-bottom: 30px;
-}
-
-.slideChildrenContainer--influenciadores {
-    margin: auto;
+    margin-bottom: 20px;
 }
 
 .sliderLayoutContainer--influenciadores {
     max-width: 1140px;
     margin: auto;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .slide--shelf :global(.vtex-add-to-cart-button-0-x-buttonText) {

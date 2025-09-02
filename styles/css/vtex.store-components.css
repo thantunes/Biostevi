@@ -492,7 +492,7 @@
 :global(.vtex-rich-text-0-x-wrapper--shelfTitle){
   border-bottom: 1px solid #ff6c00 !important;
   max-width: 1140px !important;
-  margin-bottom: 35px !important;
+  margin-bottom: 25px !important;
 }
 :global(.vtex-flex-layout-0-x-flexRow--bloco-home-mosaicoeuquero)
   :global(.vtex-store-components-3-x-imageElement) {

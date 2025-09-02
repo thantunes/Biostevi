@@ -3,13 +3,10 @@
     "blocks": [
       "SchemaOrganization",
       "list-context.image-list#demo",
-      //"info-card#home",
       "flex-layout.row#informativos",
       "slider-layout-seo#informativo-mobile",
       "rich-text#shelf-title-lancamentos",
       "flex-layout.row#shelfprateleiralancamentos",
-      // "__fold__",
-      //"shelf#produtos-em-lancamentos",
       "flex-layout.row#descontos",
       "slider-layout-seo#descontos-mobile",
       "rich-text#shelf-title-maisvendidos",
@@ -18,52 +15,81 @@
       "slider-layout-seo#mosaico-mobile",
       "rich-text#shelf-title-ofertas",
       "flex-layout.row#shelfofertas",
-      //"rich-text#question",
-      // "rich-text#link",
       "rich-text#shelf-title-euquero",
       "flex-layout.row#mosaicoeuquero",
       "flex-layout.row#mosaicoeuqueromobile",
-      // "slider-layout-seo#euqueromobile",
       "rich-text#shelf-title-influencers",
-      "list-context.image-list#influencers",
+      "InfoCardList#info-cards",
       "flex-layout.row#home-faq-container",
-      //"newsletter",
       "flex-layout.row#bloconews"
     ]
   },
-  "flex-layout.row#bloconews": {
-    "props": {
-      "blockClass": "bloco-home-news"
-    },
+
+  "InfoCardList#info-cards": {
     "children": [
-      "newsletter-form"
-    ]
-  },
-  "newsletter-form": {
+      "slider-layout-seo#info-cards"
+    ],
     "props": {
-      "block": [
-        "ErrorState",
-        "SuccessState",
-        "LoadingState"
+      "cards": [
+        {
+          "image": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/56f0f136-1caf-47b2-ab14-be44d5d2436f___612fdc760d60484070a94dec73cb4213.jpg",
+          "title": "Juliana Knust",
+          "description": "Atriz e Influenciadora",
+          "href": "/juliana-knust",
+          "enableCta": true
+        },
+        {
+          "image": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/56f0f136-1caf-47b2-ab14-be44d5d2436f___612fdc760d60484070a94dec73cb4213.jpg",
+          "title": "Laura Keller",
+          "description": "Influenciadora Fitness",
+          "href": "/laura-keller",
+          "enableCta": true
+        },
+        {
+          "image": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/56f0f136-1caf-47b2-ab14-be44d5d2436f___612fdc760d60484070a94dec73cb4213.jpg",
+          "title": "Gisele Novaes",
+          "description": "Influenciadora de Beleza",
+          "href": "/gisele-novaes",
+          "enableCta": true
+        },
+        {
+          "image": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/56f0f136-1caf-47b2-ab14-be44d5d2436f___612fdc760d60484070a94dec73cb4213.jpg",
+          "title": "Bel Carvalho",
+          "description": "Influenciadora Lifestyle",
+          "href": "/bel-carvalho",
+          "enableCta": true
+        },
+        {
+          "image": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/56f0f136-1caf-47b2-ab14-be44d5d2436f___612fdc760d60484070a94dec73cb4213.jpg",
+          "title": "Fran Moreira",
+          "description": "Influenciadora Wellness",
+          "href": "/fran-moreira",
+          "enableCta": true
+        },
+        {
+          "image": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/56f0f136-1caf-47b2-ab14-be44d5d2436f___612fdc760d60484070a94dec73cb4213.jpg",
+          "title": "Gejota",
+          "description": "Influenciador de Tecnologia",
+          "href": "/gejota",
+          "enableCta": true
+        }
       ]
-    },
-    "children": [
-      "rich-text#title-news",
-      "newsletter-input-name",
-      "newsletter-input-email",
-      "newsletter-hidden-field",
-      "newsletter-submit",
-      "newsletter-checkbox-confirmation"
-    ]
-  },
-  "rich-text#title-news": {
-    "props": {
-      "text": "### Receba Ofertas Exclusivas",
-      "textPosition": "center",
-      "textAlignment": "center",
-      "blockClass": "titulo-news"
     }
   },
+
+  "slider-layout-seo#info-cards": {
+    "props": {
+      "itemsPerPage": {
+        "desktop": 5,
+        "tablet": 3.25,
+        "phone": 2.7
+      },
+      "infinite": true,
+      "showNavigationArrows": "desktopOnly",
+      "blockClass": "influenciadores"
+    }
+  },
+
   "flex-layout.row#shelfprateleiralancamentos": {
     "children": [
       "list-context.product-list#prateleiralancamentos"
@@ -96,6 +122,7 @@
       "blockClass": "shelf"
     }
   },
+
   "slider-layout-seo#informativo-mobile": {
     "props": {
       "autoplay": {
@@ -228,6 +255,7 @@
       ]
     }
   },
+
   "flex-layout.row#descontos": {
     "props": {
       "blockClass": "bloco-home-mosaico",
@@ -373,7 +401,7 @@
       "blockClass": "shelfTitle"
     }
   },
-  /*thiago*/
+
   "slider-layout-seo#descontos-mobile": {
     "props": {
       "autoplay": {
@@ -420,35 +448,7 @@
       "image#mosaicoquinto"
     ]
   },
-  "flex-layout.row#shelflancamentos": {
-    "children": [
-      "list-context.product-list#lancamentos"
-    ]
-  },
-  "list-context.product-list#lancamentos": {
-    "blocks": [
-      "product-summary.shelf"
-    ],
-    "children": [
-      "slider-layout-seo#lancamentos"
-    ],
-    "props": {
-      "orderBy": "OrderByReleaseDateDESC",
-      "collection": "148"
-    }
-  },
-  "slider-layout-seo#produtos-em-lancamentos": {
-    "props": {
-      "itemsPerPage": {
-        "desktop": 4,
-        "tablet": 2,
-        "phone": 1
-      },
-      "infinite": true,
-      "fullWidth": false,
-      "blockClass": "shelf"
-    }
-  },
+  
   "slider-layout-seo#lancamentos": {
     "props": {
       "itemsPerPage": {
@@ -531,6 +531,7 @@
       "blockClass": "shelf"
     }
   },
+  
   "list-context.image-list#demo": {
     "children": [
       "slider-layout-seo#demo-images"
@@ -568,94 +569,12 @@
       "blockClass": "carousel"
     }
   },
-  "rich-text#shelf-title": {
-    "props": {
-      "text": "## Lançamento",
-      "blockClass": "shelfTitle"
-    }
-  },
-  "flex-layout.row#shelf": {
-    "children": [
-      "list-context.product-list#demo1"
-    ]
-  },
-  "list-context.product-list#demo1": {
-    "blocks": [
-      "product-summary.shelf"
-    ],
-    "children": [
-      "slider-layout-seo#demo-products"
-    ],
-    "props": {
-      "orderBy": "OrderByTopSaleDESC"
-    }
-  },
-  "slider-layout-seo#demo-products": {
-    "props": {
-      "itemsPerPage": {
-        "desktop": 4,
-        "tablet": 2,
-        "phone": 2
-      },
-      "infinite": true,
-      "fullWidth": true,
-      "blockClass": "shelf"
-    }
-  },
-  "info-card#home": {
-    "props": {
-      "id": "info-card-home",
-      "isFullModeStyle": false,
-      "textPosition": "left",
-      "imageUrl": "https://storecomponents.vteximg.com.br/arquivos/banner-infocard2.png",
-      "headline": "Clearance Sale",
-      "callToActionText": "DISCOVER",
-      "callToActionUrl": "/sale/d",
-      "blockClass": "info-card-home",
-      "textAlignment": "center"
-    }
-  },
-  "rich-text#shelf-title-novidades": {
-    "props": {
-      "text": "NOVIDADES",
-      "blockClass": "shelfTitle"
-    }
-  },
+  
   "rich-text#shelf-title-euquero": {
     "props": {
       "text": "EU QUERO",
       "blockClass": "shelfTitle"
     }
-  },
-  "slider-layout-seo#euqueromobile": {
-    "props": {
-      "autoplay": {
-        "timeout": 3000,
-        "stopOnHover": false
-      },
-      "itemsPerPage": {
-        "desktop": 1,
-        "tablet": 1,
-        "phone": 1
-      },
-      "infinite": true,
-      "showNavigationArrows": "desktopOnly",
-      "blockClass": "carrousel-euquero-mobile"
-    },
-    "children": [
-      "image#mosaicoeuqueroum",
-      "image#mosaicoeuquerodois",
-      "image#mosaicoeuquerotres",
-      "image#mosaicoeuqueroquatro",
-      "image#mosaicoeuquerocinco",
-      "image#mosaicoeuqueroseis",
-      "image#mosaicoeuquerosete",
-      "image#mosaicoeuquerooito",
-      "image#mosaicoeuqueronove",
-      "image#mosaicoeuquerodez",
-      "image#mosaicoeuqueroonze",
-      "image#mosaicoeuquerodoze"
-    ]
   },
   "flex-layout.row#mosaicoeuquero": {
     "props": {
@@ -835,109 +754,7 @@
       "blockClass": "shelfTitle"
     }
   },
-  "list-context.image-list#influencers": {
-    "title": "Slider Influenciadores",
-    "children": [
-      "slider-layout-seo#influencers"
-    ],
-    "props": {
-      "images": [
-        {
-            "loading": "lazy",
-            "src": "/arquivos/juliana-knust.png",
-            "maxWidth": "100%",
-            "description": "Influenciadora Juliana Knust",
-            "link": {
-              "url": "/juliana-knust"
-            }
-        },
-        {
-            "loading": "lazy",
-            "src": "/arquivos/Laura-Keller.png",
-            "maxWidth": "100%",
-            "description": "Influenciadora Laura Keller",
-            "link": {
-              "url": "/laura-keller"
-            }
-        },
-        {
-            "loading": "lazy",
-            "src": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/4b2c3d87-2687-4bd4-91c1-fd451524cc76___807f8680fb6e77a3448b6f2ed94a63c4.png",
-            "maxWidth": "100%",
-            "description": "Influenciadora Gisele Novaes",
-            "link": {
-              "url": "/gisele-novaes"
-            }
-        },
-        {
-            "loading": "lazy",
-            "src": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/dc13391f-305f-4b47-88df-1a5ff5b90091___c68898c081677c577cd532e12fcad0b0.png",
-            "maxWidth": "100%",
-            "description": "Influenciadora Bel Carvalho",
-            "link": {
-              "url": "/bel-carvalho"
-            }
-        },
-        {
-            "loading": "lazy",
-            "src": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/cbbd018e-6764-4fb2-bf06-d467b1ad4d38___8639b581145dc375a96b70744edec118.png",
-            "maxWidth": "100%",
-            "description": "Influenciadora Fran Moreira",
-            "link": {
-              "url": "/fran-moreira"
-            }
-        },
-        {
-            "loading": "lazy",
-            "src": "/arquivos/Sarah-Paim.png",
-            "maxWidth": "100%",
-            "description": "Influenciadora Sarah Paim",
-            "link": {
-              "url": "/sarah-paim"
-            }
-        },
-        {
-            "loading": "lazy",
-            "src": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/81aee001-8816-4a7a-acb4-44c31132ce77___803d690e444d8cda7e831ff930cdf5c2.png",
-            "maxWidth": "100%",
-            "description": "Influenciadora Michelle Goline",
-            "link": {
-              "url": "/michelle-goline"
-            }
-        },
-        {
-            "loading": "lazy",
-            "src": "/arquivos/Jonathas_Morandini.png",
-            "maxWidth": "100%",
-            "description": "Influenciador Jonathas Morandini",
-            "link": {
-              "url": "/jonathas-morandini"
-            }
-        },
-        {
-            "loading": "lazy",
-            "src": "/arquivos/Malvino-Capa.png",
-            "maxWidth": "100%",
-            "description": "Influenciador Malvino Salvador",
-            "link": {
-              "url": "/malvino-salvador"
-            }
-        }
-      ]
-    }
-  },
-  "slider-layout-seo#influencers": {
-    "props": {
-      "itemsPerPage": {
-        "desktop": 4,
-        "tablet": 4,
-        "phone": 2
-      },
-      "infinite": true,
-      "showNavigationArrows": "desktopOnly",
-      "blockClass": "influenciadores"
-    }
-  },
+  
   "flex-layout.row#home-faq-container": {
     "children": [
       "flex-layout.col#faq-title-euquero"
@@ -949,6 +766,7 @@
       "FaqComponent#page-home"
     ]
   },
+
   "rich-text#faq-title-faqhome": {
     "props": {
       "text": "## PERGUNTAS FREQUENTES",
@@ -976,6 +794,40 @@
           "answer": "<p>Enviar sua receita para a Biost&eacute;vi atrav&eacute;s do site:</p><p>1 - Para voc&ecirc; enviar sua receita para a Biost&eacute;vi, basta entrar no nosso site (<a href='/'>www.biostevi.com.br</a>) e clicar no bot&atilde;o &ldquo;Envie sua Receita&rdquo;.</p><p><img loading='lazy' fetchpriority='low' title='' src='https://stevia.vtexassets.com/arquivos/faq-4-1-sites.png' sizes='' srcset='' alt='' crossorigin='anonymous' /></p><p>2 - Ap&oacute;s entrar nesta p&aacute;gina, preencha os campos a seguir com as suas informa&ccedil;&otilde;es:</p><p>1&ordm; Seu nome;</p><p>2&ordm; Seu e-mail;</p><p>3&ordm; Seu n&uacute;mero de telefone ou n&uacute;mero de celular (WhatsApp);</p><p>4&ordm; Caso queira, pode escrever uma mensagem para especificar algo sobre a receita ou qualquer outra informa&ccedil;&atilde;o que queira nos passar;</p><p>5&ordm; Anexe o arquivo da sua receita.</p><p><img loading='lazy' fetchpriority='low' title='' src='https://stevia.vtexassets.com/arquivos/faq-4-2-sites.png' sizes='' srcset='' alt='' crossorigin='anonymous' /></p><p>3 - Ap&oacute;s preencher todos os campos, basta clicar no bot&atilde;o &ldquo;Enviar&rdquo; e pronto.</p><p><img loading='lazy' fetchpriority='low' title='' src='https://stevia.vtexassets.com/arquivos/faq-4-3-sites.png' sizes='' srcset='' alt='' crossorigin='anonymous' /></p><p>Enviar sua receita para a Biost&eacute;vi atrav&eacute;s do WhatsApp:</p><p>1-Para voc&ecirc; conseguir enviar sua receita para a Biost&eacute;vi, basta entrar no nosso site (<a href='/'>www.biostevi.com.br</a>) e clicar no bot&atilde;o verde do WhatsApp no canto inferior direito.</p><p><img loading='lazy' fetchpriority='low' title='' src='https://stevia.vtexassets.com/arquivos/faq-4-1-whatsapps.png' sizes='' srcset='' alt='' crossorigin='anonymous' /></p><p>2 - Clicando no bot&atilde;o voc&ecirc; ser&aacute; redirecionado para o WhatsApp Web caso esteja no computador (Caso esteja no celular ele ir&aacute; direcionar diretamente para o seu WhatsApp). Entrando no site do WhatsApp, basta clicar no bot&atilde;o iniciar conversa que voc&ecirc; ser&aacute; encaminhado direto para o atendimento.</p><p><img loading='lazy' fetchpriority='low' title='' src='https://stevia.vtexassets.com/arquivos/faq-4-2-whatsapps.png' sizes='' srcset='' alt='' crossorigin='anonymous' /></p><p>3 - Agora &eacute; s&oacute; escrever sua mensagem que um de nossos atendentes entrar&aacute; o mais r&aacute;pido poss&iacute;vel em contato com voc&ecirc;</p><p><img loading='lazy' fetchpriority='low' title='' src='https://stevia.vtexassets.com/arquivos/faq-4-3-whatsapps.png' sizes='' srcset='' alt='' crossorigin='anonymous' /></p>"
         }
       ]
+    }
+  },
+
+  "flex-layout.row#bloconews": {
+    "props": {
+      "blockClass": "bloco-home-news"
+    },
+    "children": [
+      "newsletter-form"
+    ]
+  },
+  "newsletter-form": {
+    "props": {
+      "block": [
+        "ErrorState",
+        "SuccessState",
+        "LoadingState"
+      ]
+    },
+    "children": [
+      "rich-text#title-news",
+      "newsletter-input-name",
+      "newsletter-input-email",
+      "newsletter-hidden-field",
+      "newsletter-submit",
+      "newsletter-checkbox-confirmation"
+    ]
+  },
+  "rich-text#title-news": {
+    "props": {
+      "text": "### Receba Ofertas Exclusivas",
+      "textPosition": "CENTER",
+      "textAlignment": "CENTER",
+      "blockClass": "titulo-news"
     }
   }
 }

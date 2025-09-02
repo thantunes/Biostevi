@@ -8,10 +8,10 @@ export const useScreenResize = (infinite: boolean, itemsPerPage: number) => {
 
   useEffect(() => {
     const newSlidesPerPage =
-      totalItems <= itemsPerPage ? totalItems : itemsPerPage
+      totalItems <= Math.floor(itemsPerPage) ? totalItems : itemsPerPage
 
     const newNavigationStep = isPageNavigationStep
-      ? newSlidesPerPage
+      ? 1
       : navigationStep
 
     const setNewState = (shouldCorrectItemPosition: boolean) => {
