@@ -1,0 +1,13 @@
+.noticeListItem :global(.vtex-button__label) {
+    color: #3F3F40;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.barCodeContainer {
+    margin-left: .5rem;
+}
+
+.bankInvoiceEmbedWrapper {
+    display: none;
+}
