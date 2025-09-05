@@ -32,42 +32,42 @@
     "props": {
       "cards": [
         {
-          "image": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/56f0f136-1caf-47b2-ab14-be44d5d2436f___612fdc760d60484070a94dec73cb4213.jpg",
+          "image": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/770d8a14-acec-45f4-8ae3-107694e7b147___2a32148aceade37a8ada2f578e3dff83.jpg",
           "title": "Juliana Knust",
           "description": "Atriz e Influenciadora",
           "href": "/juliana-knust",
           "enableCta": true
         },
         {
-          "image": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/56f0f136-1caf-47b2-ab14-be44d5d2436f___612fdc760d60484070a94dec73cb4213.jpg",
+          "image": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/770d8a14-acec-45f4-8ae3-107694e7b147___2a32148aceade37a8ada2f578e3dff83.jpg",
           "title": "Laura Keller",
           "description": "Influenciadora Fitness",
           "href": "/laura-keller",
           "enableCta": true
         },
         {
-          "image": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/56f0f136-1caf-47b2-ab14-be44d5d2436f___612fdc760d60484070a94dec73cb4213.jpg",
+          "image": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/770d8a14-acec-45f4-8ae3-107694e7b147___2a32148aceade37a8ada2f578e3dff83.jpg",
           "title": "Gisele Novaes",
           "description": "Influenciadora de Beleza",
           "href": "/gisele-novaes",
           "enableCta": true
         },
         {
-          "image": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/56f0f136-1caf-47b2-ab14-be44d5d2436f___612fdc760d60484070a94dec73cb4213.jpg",
+          "image": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/770d8a14-acec-45f4-8ae3-107694e7b147___2a32148aceade37a8ada2f578e3dff83.jpg",
           "title": "Bel Carvalho",
           "description": "Influenciadora Lifestyle",
           "href": "/bel-carvalho",
           "enableCta": true
         },
         {
-          "image": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/56f0f136-1caf-47b2-ab14-be44d5d2436f___612fdc760d60484070a94dec73cb4213.jpg",
+          "image": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/770d8a14-acec-45f4-8ae3-107694e7b147___2a32148aceade37a8ada2f578e3dff83.jpg",
           "title": "Fran Moreira",
           "description": "Influenciadora Wellness",
           "href": "/fran-moreira",
           "enableCta": true
         },
         {
-          "image": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/56f0f136-1caf-47b2-ab14-be44d5d2436f___612fdc760d60484070a94dec73cb4213.jpg",
+          "image": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/770d8a14-acec-45f4-8ae3-107694e7b147___2a32148aceade37a8ada2f578e3dff83.jpg",
           "title": "Gejota",
           "description": "Influenciador de Tecnologia",
           "href": "/gejota",

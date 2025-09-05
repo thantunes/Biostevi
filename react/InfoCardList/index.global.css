@@ -46,11 +46,12 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: all 0.2s ease;
+  transition: all 0.05s ease;
+  object-position: top center;
 }
 
 .info-card:hover .info-card-image {
-  transform: scale(1.05);
+  transform: scale(1.175) translateY(12px);
 }
 
 .info-card-content {
