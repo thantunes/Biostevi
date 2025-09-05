@@ -239,8 +239,6 @@
     "children": [
       "menu-item#chas",
       "menu-item#farinhas",
-      "menu-item#granolas-snacks",
-      "menu-item#pastas",
       "menu-item#refeicoes-fit",
       "menu-item#suplementosbionutri",
       "menu-item#barras-de-proteina",
@@ -602,10 +600,9 @@
     "children": [
       "menu-item#mais-vendidos-nutrition-chas",
       "menu-item#mais-vendidos-nutrition-farinhas",
-      "menu-item#mais-vendidos-nutrition-granolas-e-snacks",
-      "menu-item#mais-vendidos-nutrition-pastas",
       "menu-item#mais-vendidos-nutrition-refeicoes-fit",
-      "menu-item#mais-vendidos-nutrition-suplementos"
+      "menu-item#mais-vendidos-nutrition-suplementos",
+      "menu-item#mais-vendidos-nutrition-barras-de-proteina"
     ]
   },
   //
