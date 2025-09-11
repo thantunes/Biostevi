@@ -114,12 +114,14 @@
     },
     "children": ["AppBanner"]
   },
-  // "sticky-layout#1-envie-sua-receita-mobile": {
-  //   "props": {
-  //     "blockClass": "bloco-envie-sua-receita-mobile-topo"
-  //   },
-  //   "children": ["flex-layout.row#1-envie-sua-receita-mobile"]
-  // },
+  "AppBanner": {
+    "props": {
+      "mainTitle": "Biostévi Pharma",
+      "subtitle": "Ganhe 15% Off na sua 1ª compra pelo APP",
+      "buttonText": "BAIXAR",
+      "buttonLink": "/app"
+    }
+  },
   "flex-layout.row#1-envie-sua-receita-mobile": {
     "children": ["rich-text#envie-sua-receita-mobile"],
     "props": {
