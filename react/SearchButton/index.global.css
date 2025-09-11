@@ -1,6 +1,5 @@
 /* Wrapper do botão de busca com controle de max-width */
 .search-button-wrapper {
-    max-width: 0;
     opacity: 0;
     overflow: hidden;
     transition: all 0.3s ease;
@@ -24,7 +23,6 @@
 
 /* Para garantir que o botão só apareça quando sticky E quando a search externa não estiver visível */
 .search-button-wrapper:not(.search-button-wrapper--sticky) {
-    max-width: 0;
     pointer-events: none;
 }
 
