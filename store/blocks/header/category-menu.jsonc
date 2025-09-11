@@ -3148,7 +3148,6 @@
       "menu-item#extresse",
       "menu-item#fertilidade",
       "menu-item#fibromialgia",
-      "menu-item#gestante",
       "menu-item#intestino",
       "menu-item#libido",
       "menu-item#memoria",
@@ -3446,22 +3445,6 @@
         "noFollow": true,
         "tagTitle": "Fibromialgia",
         "text": "Fibromialgia"
-      }
-    }
-  },
-  "menu-item#gestante": {
-    "props": {
-      "id": "menu-item-gestante",
-      "blockClass": "link-megamenu",
-      "type": "custom",
-      "iconId": null,
-      "highlight": false,
-      "itemProps": {
-        "type": "internal",
-        "href": "/saude/gestante-e-lactante",
-        "noFollow": true,
-        "tagTitle": "Gestante e Lactante",
-        "text": "Gestante e Lactante"
       }
     }
   },
