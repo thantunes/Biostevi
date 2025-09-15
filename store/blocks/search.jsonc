@@ -10,7 +10,7 @@
       "context": {
         "skusFilter": "ALL",
         "simulationBehavior": "default",
-        "maxItemsPerPage": 48
+        "maxItemsPerPage": 24
       }
     }
   },
@@ -30,7 +30,7 @@
       "context": {
         "orderByField": "OrderByReleaseDateDESC",
         "hideUnavailableItems": true,
-        "maxItemsPerPage": 48,
+        "maxItemsPerPage": 24,
         "skusFilter": "ALL",
         "simulationBehavior": "default"
       }
@@ -41,7 +41,7 @@
     "blocks": ["search-result-layout", "flex-layout.row#bloconews"],
     "props": {
       "context": {
-        "maxItemsPerPage": 48,
+        "maxItemsPerPage": 24,
         "skusFilter": "ALL",
         "simulationBehavior": "default"
       }
@@ -52,7 +52,7 @@
     "blocks": ["search-result-layout", "flex-layout.row#bloconews"],
     "props": {
       "context": {
-        "maxItemsPerPage": 48,
+        "maxItemsPerPage": 24,
         "skusFilter": "ALL",
         "simulationBehavior": "default"
       }
@@ -63,7 +63,7 @@
     "blocks": ["search-result-layout", "flex-layout.row#bloconews"],
     "props": {
       "context": {
-        "maxItemsPerPage": 48,
+        "maxItemsPerPage": 24,
         "skusFilter": "ALL",
         "simulationBehavior": "default"
       }
