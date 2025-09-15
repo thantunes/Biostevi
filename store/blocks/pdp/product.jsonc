@@ -401,5 +401,10 @@
       "blockClass": "Informacoes-Imp",
       "title": "Informações importantes"
     }
+  },
+  "FloatingBuyBar": {
+    "children": [
+      "add-to-cart-button#PDP"
+    ]
   }
 }
