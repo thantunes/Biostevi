@@ -1,6 +1,6 @@
 .buttonDataContainer .buttonText {
     border-radius: 8px;
-    background: #2D6100;
+    background: #28b92a;
     padding: 16px 32px;
     color: #fff;
     font-family: Signika;
@@ -10,7 +10,7 @@
     transition: all 0.25s ease-in-out;
 }
 
-:global(.vtex-product-summary-2-x-container):hover .buttonDataContainer .buttonText,
+:global(.vtex-product-summary-2-x-container) .buttonDataContainer .buttonText:hover,
 .buttonDataContainer .buttonText:hover {
-    background: #2d6100da;
+    background: #2D6100;
 }
