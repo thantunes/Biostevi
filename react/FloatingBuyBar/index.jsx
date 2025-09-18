@@ -1,11 +1,9 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react'
 import { useProduct } from 'vtex.product-context'
-import { useOrderItems } from 'vtex.order-items/OrderItems'
 import './index.global.css'
 
-const FloatingBuyBar = () => {
+const FloatingBuyBar = ({ children }) => {
     const productContext = useProduct()
-    const { addItems } = useOrderItems()
 
     const [isVisible, setIsVisible] = useState(false)
     const [quantity, setQuantity] = useState(1)
@@ -83,68 +81,6 @@ const FloatingBuyBar = () => {
         }
     }, [])
 
-    const handleAddToCart = useCallback(async () => {
-        if (!product || !selectedItem || !seller) return
-
-        const cartItem = {
-            additionalInfo: {
-                brandName: product.brand,
-                __typename: 'ItemAdditionalInfo',
-            },
-            availability: true, // Simplificado - sempre true
-            id: selectedItem.itemId,
-            imageUrls: {
-                at1x: selectedItem.images?.[0]?.imageUrl,
-                __typename: 'ImageUrls',
-            },
-            listPrice: commercialOffer?.ListPrice || 0,
-            measurementUnit: selectedItem.measurementUnit,
-            name: product.productName,
-            price: commercialOffer?.Price || 0,
-            productId: product.productId,
-            quantity: quantity,
-            seller: seller.sellerId,
-            sellingPrice: commercialOffer?.Price || 0,
-            skuName: selectedItem.nameComplete,
-            unitMultiplier: selectedItem.unitMultiplier,
-            uniqueId: selectedItem.itemId,
-            isGift: false,
-            __typename: 'Item',
-        }
-
-        try {
-            await addItems([cartItem])
-            
-            // Feedback simples
-            const successModal = document.createElement('div')
-            successModal.style.cssText = `
-                position: fixed;
-                bottom: 20px;
-                left: 50%;
-                transform: translateX(-50%);
-                background-color: #2D6100;
-                color: white;
-                padding: 15px 25px;
-                border-radius: 8px;
-                z-index: 999999;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-                font-family: 'Fabriga', sans-serif;
-                font-weight: 500;
-            `
-            successModal.textContent = 'Produto adicionado ao carrinho!'
-            
-            document.body.appendChild(successModal)
-            
-            setTimeout(() => {
-                if (document.body.contains(successModal)) {
-                    document.body.removeChild(successModal)
-                }
-            }, 3000)
-            
-        } catch (error) {
-            console.error('Erro ao adicionar produto ao carrinho:', error)
-        }
-    }, [product, selectedItem, seller, commercialOffer, quantity, addItems])
 
     const formatPrice = useCallback((price) => {
         return price?.toLocaleString('pt-BR', {
@@ -237,13 +173,7 @@ const FloatingBuyBar = () => {
                 </div>
 
                 <div className="FloatingBuyBar__Actions">
-                    <button
-                        className="FloatingBuyBar__AddToCartButton"
-                        onClick={handleAddToCart}
-                        aria-label="Adicionar ao carrinho"
-                    >
-                        Adicionar ao Carrinho
-                    </button>
+                    {children}
                 </div>
             </div>
         </div>
