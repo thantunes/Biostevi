@@ -67,13 +67,7 @@
     "render": "client"
   },
   "FloatingBuyBar": {
-    "component": "FloatingBuyBar"
-  },
-  "InfoCardList": {
-    "component": "InfoCardList",
+    "component": "FloatingBuyBar",
     "composition": "children"
-  },
-  "InfoCard": {
-    "component": "InfoCard"
   }
 }
