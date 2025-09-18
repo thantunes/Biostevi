@@ -29,7 +29,7 @@
         "mapField": "productClusterIds",
         "skusFilter": "ALL_AVAILABLE",
         "pathSeparator": "/",
-        "maxItemsPerPage": 48
+        "maxItemsPerPage": 24
       }
     },
     "blocks": [

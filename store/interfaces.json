@@ -67,6 +67,7 @@
     "render": "client"
   },
   "FloatingBuyBar": {
-    "component": "FloatingBuyBar"
+    "component": "FloatingBuyBar",
+    "composition": "children"
   }
 }
