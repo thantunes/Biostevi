@@ -28,8 +28,6 @@ const CartOpenerScript = () => {
                 const result = originalPush.apply(this, arguments);
 
                 if (event && typeof event === 'object') {
-                    console.log('📊 DataLayer Event:', event);
-
                     const isAddToCartEvent =
                         event.event === 'add_to_cart' ||
                         event.event === 'addToCart';
@@ -46,10 +44,6 @@ const CartOpenerScript = () => {
         };
 
         const monitorGTMEvents = () => {
-            document.addEventListener('gtm.dom', (e) => {
-                console.log('📊 GTM DOM Event:', e);
-            });
-
             const addToCartEvents = [
                 'add_to_cart',
                 'addToCart'
