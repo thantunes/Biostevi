@@ -31,24 +31,101 @@ const SearchButton = () => {
             searchBarContainer.style.display = ''
           }
         }
+        
+        // Só verifica a search externa quando o estado sticky muda
+        checkExternalSearchVisibility()
       }
     }
 
     const checkExternalSearchVisibility = () => {
-      // A lógica é simples: 
-      // - Se o sticky está "stuck", a search-bar externa está atrás do header (invisível)
-      // - Se não está "stuck", a search-bar externa está visível
       const stickyWrapper = document.querySelector('.vtex-sticky-layout-0-x-wrapper')
       
-      if (stickyWrapper) {
-        const isStuck = stickyWrapper.classList.contains('vtex-sticky-layout-0-x-wrapper--stuck')
-        
-        // Quando stuck = search externa invisível (atrás do header)
-        // Quando não stuck = search externa visível
-        setIsExternalSearchVisible(!isStuck)
-      } else {
-        // Desktop ou caso não encontre o sticky - assume visível
+      if (!stickyWrapper) {
+        // Se não encontrar o sticky wrapper, assume que a search externa está visível (desktop)
         setIsExternalSearchVisible(true)
+        return
+      }
+
+      const isStuck = stickyWrapper.classList.contains('vtex-sticky-layout-0-x-wrapper--stuck')
+      
+      if (!isStuck) {
+        // Se não está stuck, a search externa está visível
+        setIsExternalSearchVisible(true)
+        return
+      }
+
+      // Se está stuck, procura pela search-bar externa (fora do sticky)
+      // Tenta diferentes seletores para encontrar a search-bar externa
+      const possibleSelectors = [
+        '.vtex-store-components-3-x-searchBarContainer',
+        '.vtex-search-2-x-searchBarContainer',
+        '.vtex-search-1-x-searchBarContainer',
+        '[data-testid="search-bar"]',
+        '.search-bar',
+        'input[placeholder*="buscar" i]',
+        'input[placeholder*="search" i]'
+      ]
+      
+      let externalSearchBar = null
+      
+      // Procura por todas as search-bars disponíveis
+      for (const selector of possibleSelectors) {
+        const searchBars = document.querySelectorAll(selector)
+        externalSearchBar = Array.from(searchBars).find(bar => !stickyWrapper.contains(bar))
+        if (externalSearchBar) break
+      }
+      
+      if (!externalSearchBar) {
+        // Se não encontrar a search externa, usa lógica de fallback baseada no scroll e altura do header
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+        const headerHeight = stickyRect.height || 100 // altura do header sticky
+        
+        // Procura por qualquer elemento de search na página para estimar posição
+        const anySearchElement = document.querySelector('input[type="search"], input[placeholder*="buscar" i], input[placeholder*="search" i]')
+        let estimatedSearchPosition = 0
+        
+        if (anySearchElement) {
+          const searchRect = anySearchElement.getBoundingClientRect()
+          estimatedSearchPosition = searchRect.top + scrollTop
+        }
+        
+        // A search está TOTALMENTE atrás se:
+        // 1. O scroll passou completamente da posição estimada da search
+        // 2. OU o scroll é maior que a altura do header + margem de segurança
+        const searchHeight = 50 // altura estimada da search-bar
+        const isCompletelyBehindHeader = scrollTop > (estimatedSearchPosition + searchHeight) || scrollTop > headerHeight
+        
+        setIsExternalSearchVisible(!isCompletelyBehindHeader)
+        return
+      }
+
+      // Verifica se a search externa está realmente atrás do header
+      try {
+        const stickyRect = stickyWrapper.getBoundingClientRect()
+        const externalSearchRect = externalSearchBar.getBoundingClientRect()
+        
+        // Verifica se o elemento tem dimensões válidas
+        if (externalSearchRect.width === 0 && externalSearchRect.height === 0) {
+          setIsExternalSearchVisible(false)
+          return
+        }
+        
+        // Lógica baseada na altura do header e posição da search-bar
+        const headerHeight = stickyRect.height
+        const searchTopPosition = externalSearchRect.top
+        const searchBottomPosition = externalSearchRect.bottom
+        
+        // A search está TOTALMENTE atrás do header se:
+        // 1. O topo da search está acima do topo da tela (scrollou para baixo)
+        // 2. OU a search está completamente oculta pelo header (bottom da search < top do header)
+        const isCompletelyBehindHeader = searchTopPosition < 0 || searchBottomPosition < headerHeight
+        
+        setIsExternalSearchVisible(!isCompletelyBehindHeader)
+        
+      } catch (error) {
+        // Em caso de erro, usa a lógica anterior como fallback
+        console.warn('Erro ao verificar sobreposição da search-bar:', error)
+        setIsExternalSearchVisible(false) // Assume que está atrás quando stuck
       }
     }
 
@@ -101,31 +178,50 @@ const SearchButton = () => {
       document.addEventListener('keydown', handleDocumentInteraction)
     }
 
-    // Verifica estado inicial
+    // Verifica estado inicial apenas uma vez
     checkStickyState()
-    checkExternalSearchVisibility()
 
-    // Observer para mudanças no DOM que podem afetar a visibilidade da search-bar externa
-    const externalSearchObserver = new MutationObserver(() => {
-      checkExternalSearchVisibility()
-    })
+    // Throttle para evitar verificações excessivas durante o scroll
+    let lastCheckTime = 0
+    const throttleDelay = 150 // ms
+    
+    const throttledCheckExternalSearchVisibility = () => {
+      const now = Date.now()
+      if (now - lastCheckTime >= throttleDelay) {
+        lastCheckTime = now
+        checkExternalSearchVisibility()
+      }
+    }
 
-    // Observa mudanças no body para capturar alterações na search-bar externa
-    externalSearchObserver.observe(document.body, {
-      childList: true,
-      subtree: true,
-      attributes: true,
-      attributeFilter: ['class', 'style']
-    })
-
-    // Verifica periodicamente a visibilidade da search-bar externa
-    const intervalId = setInterval(checkExternalSearchVisibility, 1000)
+    // Listener de scroll com throttling e threshold - só executa quando há scroll significativo
+    let isScrolling = false
+    let lastScrollY = window.pageYOffset || document.documentElement.scrollTop
+    const scrollThreshold = 10 // pixels - só verifica se scrollou pelo menos 10px
+    
+    const handleScroll = () => {
+      const currentScrollY = window.pageYOffset || document.documentElement.scrollTop
+      const scrollDelta = Math.abs(currentScrollY - lastScrollY)
+      
+      // Só executa se o scroll for significativo
+      if (scrollDelta >= scrollThreshold) {
+        lastScrollY = currentScrollY
+        
+        if (!isScrolling) {
+          isScrolling = true
+          requestAnimationFrame(() => {
+            throttledCheckExternalSearchVisibility()
+            isScrolling = false
+          })
+        }
+      }
+    }
+    
+    window.addEventListener('scroll', handleScroll, { passive: true })
 
     // Cleanup
     return () => {
       observer.disconnect()
-      externalSearchObserver.disconnect()
-      clearInterval(intervalId)
+      window.removeEventListener('scroll', handleScroll)
       document.removeEventListener('click', handleDocumentInteraction)
       document.removeEventListener('keydown', handleDocumentInteraction)
     }
@@ -173,7 +269,10 @@ const SearchButton = () => {
   }
 
   return (
-    <div className={`search-button-wrapper ${isSticky && !isExternalSearchVisible ? 'search-button-wrapper--sticky' : ''} ${isSearchVisible ? 'search-button-wrapper--active' : ''}`}>
+    <div className={`search-button-wrapper ${isSticky && !isExternalSearchVisible ? 'search-button-wrapper--sticky' : ''} ${isSearchVisible ? 'search-button-wrapper--active' : ''}`} 
+      style={{
+        opacity: isSticky && !isExternalSearchVisible ? 1 : 0
+      }}>
       <button
         ref={searchButtonRef}
         className={`search-button ${isSearchVisible ? 'search-button--active' : ''}`}
@@ -198,7 +297,7 @@ const SearchButton = () => {
                 <rect width="28" height="28" fill="white" transform="translate(0 0.888916)"/>
             </clipPath>
         </defs>
-    </svg>
+      </svg>
 
       </button>
     </div>
