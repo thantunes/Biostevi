@@ -68,8 +68,12 @@
     font-family: Signika;
     color: white;
     text-transform: uppercase;
-    transition: all 0.5s;
+    transition: all 0.3s ease-in-out;
     cursor: pointer;
+}
+
+.BuyTogether__Container__BuyButton:hover {
+    background-color: #2d6100da;
 }
 
 .BuyTogether__Product__Price {
