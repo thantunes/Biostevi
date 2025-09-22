@@ -1465,10 +1465,9 @@
     "children": [
       "menu-item#mais-vendidos-nutrition-chas",
       "menu-item#mais-vendidos-nutrition-farinhas",
-      "menu-item#mais-vendidos-nutrition-granolas-e-snacks",
-      "menu-item#mais-vendidos-nutrition-pastas",
       "menu-item#mais-vendidos-nutrition-refeicoes-fit",
-      "menu-item#mais-vendidos-nutrition-suplementos"
+      "menu-item#mais-vendidos-nutrition-suplementos",
+      "menu-item#mais-vendidos-nutrition-barras-de-proteina"
     ]
   },
   "menu-item#mais-vendidos-nutrition-chas": {
@@ -1505,40 +1504,6 @@
       }
     }
   },
-  "menu-item#mais-vendidos-nutrition-granolas-e-snacks": {
-    "props": {
-      "id": "menu-item-mais-vendidos-nutrition-granolas-e-snacks",
-      "blockClass": "nutrition-granolas-e-snacks",
-      "type": "custom",
-      "iconId": null,
-      "highlight": false,
-      "itemProps": {
-        "type": "internal",
-        "href": "/mais-vendidos/lp/granolas-e-snacks",
-        "noFollow": true,
-        "tagTitle": "Granolas e Snacks",
-        "text": "Granolas e Snacks",
-        "blockClass": "link-menu"
-      }
-    }
-  },
-  "menu-item#mais-vendidos-nutrition-pastas": {
-    "props": {
-      "id": "menu-item-mais-vendidos-nutrition-pastas",
-      "blockClass": "nutrition-pastas",
-      "type": "custom",
-      "iconId": null,
-      "highlight": false,
-      "itemProps": {
-        "type": "internal",
-        "href": "/mais-vendidos/lp/pastas",
-        "noFollow": true,
-        "tagTitle": "Pastas",
-        "text": "Pastas",
-        "blockClass": "link-menu"
-      }
-    }
-  },
   "menu-item#mais-vendidos-nutrition-refeicoes-fit": {
     "props": {
       "id": "menu-item-mais-vendidos-nutrition-refeicoes-fit",
@@ -1569,6 +1534,23 @@
         "noFollow": true,
         "tagTitle": "Suplementos",
         "text": "Suplementos",
+        "blockClass": "link-menu"
+      }
+    }
+  },
+  "menu-item#mais-vendidos-nutrition-barras-de-proteina": {
+    "props": {
+      "id": "menu-item-mais-vendidos-nutrition-barras-de-proteina",
+      "blockClass": "nutrition-barras-de-proteina",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/mais-vendidos/lp/barras-de-proteina",
+        "noFollow": true,
+        "tagTitle": "Barras de Proteína",
+        "text": "Barras de Proteína",
         "blockClass": "link-menu"
       }
     }
@@ -3166,7 +3148,6 @@
       "menu-item#extresse",
       "menu-item#fertilidade",
       "menu-item#fibromialgia",
-      "menu-item#gestante",
       "menu-item#intestino",
       "menu-item#libido",
       "menu-item#memoria",
@@ -3464,22 +3445,6 @@
         "noFollow": true,
         "tagTitle": "Fibromialgia",
         "text": "Fibromialgia"
-      }
-    }
-  },
-  "menu-item#gestante": {
-    "props": {
-      "id": "menu-item-gestante",
-      "blockClass": "link-megamenu",
-      "type": "custom",
-      "iconId": null,
-      "highlight": false,
-      "itemProps": {
-        "type": "internal",
-        "href": "/saude/gestante-e-lactante",
-        "noFollow": true,
-        "tagTitle": "Gestante e Lactante",
-        "text": "Gestante e Lactante"
       }
     }
   },
@@ -3790,8 +3755,6 @@
     "children": [
       "menu-item#chas",
       "menu-item#farinhas",
-      "menu-item#granolas-snacks",
-      "menu-item#pastas",
       "menu-item#refeicoes-fit",
       "menu-item#suplementosbionutri",
       "menu-item#barras-de-proteina"
@@ -3810,22 +3773,6 @@
         "noFollow": true,
         "tagTitle": "Chás",
         "text": "Chás"
-      }
-    }
-  },
-  "menu-item#pastas": {
-    "props": {
-      "id": "menu-item-pastas",
-      "blockClass": "link-megamenu",
-      "type": "custom",
-      "iconId": null,
-      "highlight": false,
-      "itemProps": {
-        "type": "internal",
-        "href": "/nutrition/pastas",
-        "noFollow": true,
-        "tagTitle": "Pastas",
-        "text": "Pastas"
       }
     }
   },
@@ -3874,22 +3821,6 @@
         "noFollow": true,
         "tagTitle": "Farinhas e Farelos",
         "text": "Farinhas"
-      }
-    }
-  },
-  "menu-item#granolas-snacks": {
-    "props": {
-      "id": "menu-item-granolas-snacks",
-      "blockClass": "link-megamenu",
-      "type": "custom",
-      "iconId": null,
-      "highlight": false,
-      "itemProps": {
-        "type": "internal",
-        "href": "/nutrition/granolas-e-snacks",
-        "noFollow": true,
-        "tagTitle": "Granolas e Snacks",
-        "text": "Granolas e Snacks"
       }
     }
   },
