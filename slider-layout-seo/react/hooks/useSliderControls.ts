@@ -18,21 +18,22 @@ export const useSliderControls = (infinite: boolean) => {
     let nextTransformValue = 0
     const activeNavigationStep = step ?? navigationStep
 
-    const nextMaximumSlides = currentSlide - activeNavigationStep
+    // Lógica mais simples: slide anterior é currentSlide - step
+    nextSlide = currentSlide - activeNavigationStep
 
-    if (nextMaximumSlides >= 0) {
-      /** Have more slides hidden on left */
-      nextSlide = nextMaximumSlides
-      nextTransformValue = transformMap[nextSlide]
-    } else if (currentSlide !== 0) {
-      /** Prevent over-slide */
-      nextSlide = 0
-      nextTransformValue = 0
-    } else if (infinite) {
-      /** Have more slides hidden on left */
-      nextSlide = nextMaximumSlides
-      nextTransformValue = transformMap[nextSlide]
+    // Verificar limites
+    if (!infinite) {
+      // Para não infinito, não pode ser menor que 0
+      if (nextSlide < 0) {
+        nextSlide = 0
+      }
+      const maxSlide = Math.max(0, totalItems - Math.floor(slidesPerPage))
+      if (nextSlide >= maxSlide) {
+        nextSlide = maxSlide - 1
+      }
     }
+
+    nextTransformValue = transformMap[nextSlide] || 0
 
     if (groupDispatch) {
       groupDispatch({
@@ -58,21 +59,22 @@ export const useSliderControls = (infinite: boolean) => {
     let nextTransformValue = 0
     const activeNavigationStep = step ?? navigationStep
 
-    const nextMaximumSlides =
-      currentSlide + 1 + slidesPerPage + activeNavigationStep
+    // Lógica mais simples: próximo slide é currentSlide + step
+    nextSlide = currentSlide + activeNavigationStep
 
-    if (nextMaximumSlides <= totalItems) {
-      /** There are some slides hidden on the right */
-      nextSlide = currentSlide + activeNavigationStep
-      nextTransformValue = transformMap[nextSlide]
-    } else if (!infinite || currentSlide < totalItems - slidesPerPage) {
-      /** Prevent over-slide */
-      nextSlide = totalItems - slidesPerPage
-      nextTransformValue = transformMap[nextSlide]
-    } else if (infinite) {
-      nextSlide = currentSlide + activeNavigationStep
-      nextTransformValue = transformMap[nextSlide]
+    // Verificar limites - NUNCA pode passar do que é visível
+    if (!infinite) {
+      // O último slide visível é quando ainda mostra pelo menos 1 item completo
+      const maxSlide = Math.max(0, totalItems - Math.floor(slidesPerPage))
+      if (nextSlide >= maxSlide) {
+        nextSlide = maxSlide - 1
+      }
+      if (nextSlide < 0) {
+        nextSlide = 0
+      }
     }
+
+    nextTransformValue = transformMap[nextSlide] || 0
 
     if (groupDispatch) {
       groupDispatch({

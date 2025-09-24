@@ -232,89 +232,65 @@ const SliderContextProvider: FC<SliderContextProps> = ({
   })
 
   const resolvedNavigationStep: number =
-    navigationStep === 'page' ? itemsPerPage : navigationStep
+    navigationStep === 'page' ? 1 : navigationStep
 
   const resolvedSlidesPerPage: number =
-    totalItems <= itemsPerPage ? totalItems : itemsPerPage
+    totalItems <= Math.floor(itemsPerPage) ? totalItems : itemsPerPage
 
-  const hiddenSlides = infinite ? resolvedSlidesPerPage * 2 : 0
-
-  const newTotalItems = hiddenSlides + totalItems
+  // Removido newTotalItems pois não é mais usado no cálculo simplificado
 
   const slideWidth = useMemo(() => {
-    const baseSlideWidth = 100 / newTotalItems
+    // Para valores decimais, sempre usamos o itemsPerPage original para cálculos de largura
+    const baseSlideWidth = 100 / itemsPerPage
 
     let resultingSlideWidth = baseSlideWidth
 
     if (centerMode !== 'disabled') {
+      // Usar itemsPerPage original para manter precisão decimal
       resultingSlideWidth =
-        (resolvedSlidesPerPage / (resolvedSlidesPerPage + 1)) * baseSlideWidth
+        (itemsPerPage / (itemsPerPage + 1)) * baseSlideWidth
 
       if (centerMode === 'to-the-left' && centerModeSlidesGap) {
         resultingSlideWidth =
-          (baseSlideWidth * resolvedSlidesPerPage) /
-          (resolvedSlidesPerPage + 1 / 2)
+          (baseSlideWidth * itemsPerPage) /
+          (itemsPerPage + 1 / 2)
       }
     }
 
     return resultingSlideWidth
-  }, [newTotalItems, centerMode, centerModeSlidesGap, resolvedSlidesPerPage])
+  }, [itemsPerPage, centerMode, centerModeSlidesGap])
 
   const transformMap = useMemo(() => {
     const currentMap: Record<number, number> = {}
 
-    for (let idx = 0; idx < newTotalItems; ++idx) {
-      const currIdx = infinite ? idx - resolvedSlidesPerPage : idx
-      let transformValue = -(slideWidth * idx)
+    if (infinite) {
+      // Para slider infinito, precisamos compensar os slides clonados no início
+      const preRenderedCount = Math.floor(itemsPerPage)
+      const totalSlides = preRenderedCount + totalItems + preRenderedCount
+      const stepSize = 100 / totalSlides
 
-      if (centerMode !== 'disabled') {
-        // This represents the new value for each transformValue taking into
-        // account the changes made to slideWidth's value due to the fact that
-        // centerMode is enabled.
-        const adjustedTransformValue = -(
-          (1 + 1 / (4 * resolvedSlidesPerPage)) *
-          slideWidth *
-          idx
-        )
-
-        transformValue = adjustedTransformValue
-
-        if (centerMode === 'center') {
-          // This is a correction factor to center the slides when centerMode
-          // is enabled and set to 'center'.
-          const transformCenterCorrection =
-            centerMode === 'center' ? (slideWidth * 3) / 8 : 0
-
-          transformValue += transformCenterCorrection
-        }
-
-        if (centerModeSlidesGap) {
-          transformValue =
-            centerMode === 'center'
-              ? -(slideWidth * (idx - 1 / 2))
-              : -(slideWidth * idx)
-        }
+      for (let i = 0; i < totalItems; i++) {
+        // Offset para compensar os slides clonados no início
+        // Slide 0 real deve estar na posição após os slides clonados
+        currentMap[i] = -((i + preRenderedCount) * stepSize)
       }
-
-      currentMap[currIdx] = transformValue
+    } else {
+      // Para slider normal, cálculo simples
+      const stepSize = 100 / totalItems
+      for (let i = 0; i < totalItems; i++) {
+        currentMap[i] = -(i * stepSize)
+      }
     }
 
     return currentMap
-  }, [
-    slideWidth,
-    newTotalItems,
-    resolvedSlidesPerPage,
-    infinite,
-    centerMode,
-    centerModeSlidesGap,
-  ])
+  }, [totalItems, infinite, itemsPerPage])
 
   const initialSlide = useMemo(() => sliderGroupState?.currentSlide ?? 0, [
     sliderGroupState,
   ])
 
   const initialTransform = useMemo(
-    () => sliderGroupState?.transform ?? transformMap[initialSlide],
+    () => sliderGroupState?.transform ?? (transformMap[initialSlide] || 0),
     [transformMap, initialSlide, sliderGroupState]
   )
 
@@ -345,7 +321,7 @@ const SliderContextProvider: FC<SliderContextProps> = ({
         transformMap,
         slideWidth,
         slidesPerPage: resolvedSlidesPerPage,
-        transform: transformMap[state.currentSlide],
+        transform: transformMap[state.currentSlide] || 0,
         navigationStep: resolvedNavigationStep,
         totalItems,
       },

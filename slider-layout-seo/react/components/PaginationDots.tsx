@@ -20,11 +20,11 @@ const getSelectedDot = (
   slidesToShow: number
 ): number => {
   const realCurrentSlide = passVisibleSlides
-    ? currentSlide + (slidesToShow - 1)
+    ? currentSlide + (Math.floor(slidesToShow) - 1)
     : currentSlide
 
   return passVisibleSlides
-    ? Math.floor(realCurrentSlide / slidesToShow)
+    ? Math.floor(realCurrentSlide / Math.floor(slidesToShow))
     : realCurrentSlide
 }
 
@@ -36,7 +36,7 @@ const getSlideIndices = (
   slidesToShow
     ? [
         ...Array(
-          passVisibleSlides ? Math.ceil(totalItems / slidesToShow) : totalItems
+          passVisibleSlides ? Math.ceil(totalItems / Math.floor(slidesToShow)) : totalItems
         ).keys(),
       ]
     : []
@@ -48,7 +48,7 @@ const PaginationDots: FC<Props> = ({ controls, totalItems, infinite }) => {
   const passVisibleSlides = navigationStep === slidesPerPage
 
   const slideIndexes = getSlideIndices(
-    slidesPerPage,
+    Math.floor(slidesPerPage),
     passVisibleSlides,
     totalItems
   )
@@ -65,9 +65,9 @@ const PaginationDots: FC<Props> = ({ controls, totalItems, infinite }) => {
     // Considering that each pagination dot represents a page, pageDelta
     // represents how many pages did the user "skip" by clicking in the dot.
     const pageDelta =
-      index - getSelectedDot(passVisibleSlides, currentSlide, slidesPerPage)
+      index - getSelectedDot(passVisibleSlides, currentSlide, Math.floor(slidesPerPage))
 
-    const slidesToPass = Math.abs(pageDelta) * navigationStep
+    const slidesToPass = Math.abs(pageDelta) * 1
 
     pageDelta > 0 ? goForward(slidesToPass) : goBack(slidesToPass)
   }
@@ -81,7 +81,7 @@ const PaginationDots: FC<Props> = ({ controls, totalItems, infinite }) => {
       {slideIndexes.map(index => {
         const isActive =
           index ===
-          getSelectedDot(passVisibleSlides, currentSlide, slidesPerPage)
+          getSelectedDot(passVisibleSlides, currentSlide, Math.floor(slidesPerPage))
 
         return (
           <div
