@@ -99,20 +99,13 @@
   "header-layout.mobile": {
     "children": [
       "flex-layout.row#hintup-skeleton",
-      "sticky-layout#1-envie-sua-receita-mobile",
+      "flex-layout.row#1-envie-sua-receita-mobile",
+      "flex-layout.row#AppBanner",
       "sticky-layout#1-mobile",
+      "search-bar",
       "CryptoScript",
       "CartOpenerScript"
     ]
-  },
-  "sticky-layout#1AppBanner": {
-    "props": {
-      "blockClass": "bloco-AppBanner",
-      "preventHorizontalStretch": true,
-      "preserveLayoutOnMobile": true,
-      "fullWidth": true
-    },
-    "children": ["flex-layout.row#AppBanner"]
   },
   "flex-layout.row#AppBanner": {
     "props": {
@@ -121,12 +114,12 @@
     },
     "children": ["AppBanner"]
   },
-  "sticky-layout#1-envie-sua-receita-mobile": {
-    "props": {
-      "blockClass": "bloco-envie-sua-receita-mobile-topo"
-    },
-    "children": ["flex-layout.row#1-envie-sua-receita-mobile"]
-  },
+  // "sticky-layout#1-envie-sua-receita-mobile": {
+  //   "props": {
+  //     "blockClass": "bloco-envie-sua-receita-mobile-topo"
+  //   },
+  //   "children": ["flex-layout.row#1-envie-sua-receita-mobile"]
+  // },
   "flex-layout.row#1-envie-sua-receita-mobile": {
     "children": ["rich-text#envie-sua-receita-mobile"],
     "props": {
@@ -151,7 +144,6 @@
       "blockClass": "sticky-header"
     },
     "children": [
-      "flex-layout.row#AppBanner",
       "flex-layout.row#1-mobile",
       "search-bar"
     ]
@@ -159,6 +151,7 @@
   "flex-layout.row#1-mobile": {
     "children": [
       "flex-layout.row#header-mobile-left",
+      "logo#mobile",
       "flex-layout.row#header-mobile-right"
     ],
     "props": {
@@ -169,7 +162,7 @@
     }
   },
   "flex-layout.row#header-mobile-left": {
-    "children": ["drawer", "logo#mobile"],
+    "children": ["drawer"],
     "props": {
       "blockClass": ["header-mobile-left"],
       "preventHorizontalStretch": true,
@@ -177,7 +170,7 @@
     }
   },
   "flex-layout.row#header-mobile-right": {
-    "children": ["login", "minicart.v2"],
+    "children": ["search-button","login", "minicart.v2"],
     "props": {
       "blockClass": ["header-mobile-right"],
       "preventHorizontalStretch": true,
@@ -239,8 +232,6 @@
     "children": [
       "menu-item#chas",
       "menu-item#farinhas",
-      "menu-item#granolas-snacks",
-      "menu-item#pastas",
       "menu-item#refeicoes-fit",
       "menu-item#suplementosbionutri",
       "menu-item#barras-de-proteina",
@@ -602,10 +593,9 @@
     "children": [
       "menu-item#mais-vendidos-nutrition-chas",
       "menu-item#mais-vendidos-nutrition-farinhas",
-      "menu-item#mais-vendidos-nutrition-granolas-e-snacks",
-      "menu-item#mais-vendidos-nutrition-pastas",
       "menu-item#mais-vendidos-nutrition-refeicoes-fit",
-      "menu-item#mais-vendidos-nutrition-suplementos"
+      "menu-item#mais-vendidos-nutrition-suplementos",
+      "menu-item#mais-vendidos-nutrition-barras-de-proteina"
     ]
   },
   //
@@ -1828,7 +1818,6 @@
       "menu-item#extresse",
       "menu-item#fertilidade",
       "menu-item#fibromialgia",
-      "menu-item#gestante-e-lactante",
       "menu-item#libido",
       "menu-item#memoria",
       "menu-item#menopausa",
@@ -2066,21 +2055,6 @@
         "noFollow": false,
         "tagTitle": "Fibromialgia",
         "text": "Fibromialgia"
-      }
-    }
-  },
-  "menu-item#gestante-e-lactante": {
-    "props": {
-      "id": "menu-item-shorts",
-      "type": "custom",
-      "iconId": null,
-      "highlight": false,
-      "itemProps": {
-        "type": "internal",
-        "href": "/saude/gestante-e-lactante",
-        "noFollow": false,
-        "tagTitle": "Gestante e Lactante",
-        "text": "Gestante e Lactante"
       }
     }
   },

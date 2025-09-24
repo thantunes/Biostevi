@@ -16,6 +16,10 @@
     display: none;
 }
 
+.slide .slideChildrenContainer--shelf {
+    padding: 5px;
+}
+
 .slide :global(.vtex-reviews-and-ratings-3-x-reviewsRatingAverage) {
     display: none;
 }
@@ -57,14 +61,14 @@
     margin-bottom: 20px;
 }
 
-.slide--shelf :global(.vtex-add-to-cart-button-0-x-buttonText) {
+/* .slide--shelf :global(.vtex-add-to-cart-button-0-x-buttonText) {
     opacity: 0;
     transition: 0.2s;
 }
 
 .slide--shelf:hover :global(.vtex-add-to-cart-button-0-x-buttonText) {
     opacity: 1;
-}
+} */
 
 
 @media only screen and (min-width: 640px) {
@@ -123,9 +127,9 @@
         font-family: Signika;
     }
 
-    .sliderLayoutContainer--carousel {
-        margin-top: 0 !important;
-    }
+    /* .sliderLayoutContainer--carousel {
+        margin-top: 85px !important;
+    } */
 }
 
 .sliderLayoutContainer--shelf :global(.vtex-product-price-1-x-sellingPrice),

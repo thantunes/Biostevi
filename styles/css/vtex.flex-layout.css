@@ -151,9 +151,6 @@
     display: flex;
     gap: 20px;
   }
-  .flexRowContent--header-mobile-right {
-    gap: 30px;
-  }
   .flexCol--mobile-menu-message {
     margin-top: 28px;
   }
