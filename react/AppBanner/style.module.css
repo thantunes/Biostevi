@@ -2,10 +2,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fff;
-  height: 50px;
-  padding-left: 8px;
-  padding-right: 8px;
+  background-color: #000;
+  min-height: 50px;
+  padding: 5px 8px;
+  gap:.5rem;
 }
 
 .wrapperLogoText {
@@ -18,14 +18,18 @@
   background-color: #009fc2;
   padding: 5px;
   border-radius: 8px;
+  width: 44px;
+  height: 29px;
 }
 
 .wrapperTextContent {
-  margin-left: 15px;
+  margin-left: .5rem;
 }
 
 .wrapperTextContent span {
   font-weight: 600;
+  color: #fff;
+  font-size: 15px;
 }
 .wrapperTextContent span,
 .wrapperTextContent p {
@@ -34,19 +38,25 @@
 }
 
 .wrapperTextContent p {
-  font-size: 13px;
-  color: #5e5e5e;
+  font-size: 12px;
+  color: #fff;
 }
 
 .wrapperBtnApp a {
   background-color: #009fc2;
   padding: 8px;
   color: #fff;
+  font-weight: 600;
   border-radius: 8px;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 13px;
+  transition: all 0.3s ease;
+}
+
+.wrapperBtnApp a:hover {
+  background-color: #009fc2da;
 }
 
 .container-app-content {
-  background-color: #fff;
+  background-color: #000;
 }
