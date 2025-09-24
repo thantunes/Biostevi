@@ -234,8 +234,6 @@
     "children": [
       "menu-item#chas",
       "menu-item#farinhas",
-      "menu-item#granolas-snacks",
-      "menu-item#pastas",
       "menu-item#refeicoes-fit",
       "menu-item#suplementosbionutri",
       "menu-item#barras-de-proteina",
@@ -597,10 +595,9 @@
     "children": [
       "menu-item#mais-vendidos-nutrition-chas",
       "menu-item#mais-vendidos-nutrition-farinhas",
-      "menu-item#mais-vendidos-nutrition-granolas-e-snacks",
-      "menu-item#mais-vendidos-nutrition-pastas",
       "menu-item#mais-vendidos-nutrition-refeicoes-fit",
-      "menu-item#mais-vendidos-nutrition-suplementos"
+      "menu-item#mais-vendidos-nutrition-suplementos",
+      "menu-item#mais-vendidos-nutrition-barras-de-proteina"
     ]
   },
   //
@@ -1823,7 +1820,6 @@
       "menu-item#extresse",
       "menu-item#fertilidade",
       "menu-item#fibromialgia",
-      "menu-item#gestante-e-lactante",
       "menu-item#libido",
       "menu-item#memoria",
       "menu-item#menopausa",
@@ -2061,21 +2057,6 @@
         "noFollow": false,
         "tagTitle": "Fibromialgia",
         "text": "Fibromialgia"
-      }
-    }
-  },
-  "menu-item#gestante-e-lactante": {
-    "props": {
-      "id": "menu-item-shorts",
-      "type": "custom",
-      "iconId": null,
-      "highlight": false,
-      "itemProps": {
-        "type": "internal",
-        "href": "/saude/gestante-e-lactante",
-        "noFollow": false,
-        "tagTitle": "Gestante e Lactante",
-        "text": "Gestante e Lactante"
       }
     }
   },

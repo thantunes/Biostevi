@@ -1,8 +1,7 @@
 /* Wrapper do botão de busca com controle de max-width */
 .search-button-wrapper {
-    opacity: 0;
     overflow: hidden;
-    transition: all 0.3s ease;
+    transition: all 0.35s ease-in-out;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -12,7 +11,7 @@
 .search-button-wrapper--sticky {
     max-width: 45px;
     pointer-events: auto;
-    opacity: 1;
+    opacity: 1!important;
 }
 
 /* Quando estiver sticky E ativo (search visível), mantém os 45px */

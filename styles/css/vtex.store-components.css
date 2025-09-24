@@ -1292,7 +1292,7 @@
 :global(.vtex-flex-layout-0-x-flexRow--textofooterfinal) {
   background-color: #fff;
 }
-:global(.vtex-search-result-3-x-galleryItem)
+/* :global(.vtex-search-result-3-x-galleryItem)
   :global(.vtex-product-summary-2-x-container)
   :global(.vtex-add-to-cart-button-0-x-buttonText) {
   opacity: 0;
@@ -1302,7 +1302,7 @@
   :global(.vtex-product-summary-2-x-container):hover
   :global(.vtex-add-to-cart-button-0-x-buttonText) {
   opacity: 1;
-}
+} */
 :global(.vtex-product-price-1-x-installments)
   :global(.vtex-product-price-1-x-currencyContainer--summary),
 :global(.vtex-search-result-3-x-galleryItem)
@@ -1728,6 +1728,11 @@
     font-size: 15px;
     border-radius: 5px;
     font-weight: 700;
+    transition: all 0.2s ease-in-out;
+  }
+  :global(.vtex-flex-layout-0-x-flexRow--pdp-botao-add-carrinho)
+    :global(.vtex-add-to-cart-button-0-x-buttonText):hover {
+    background-color: #2d6100da;
   }
   :global(.vtex-flex-layout-0-x-flexRow--bloco-home-mosaicoeuqueromobile) {
     display: none;
