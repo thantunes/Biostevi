@@ -70,10 +70,10 @@
   .container :global(.vtex-button) :global(.vtex-button__label) .label,
   .profile {
     display: block;
-    padding-top: 33px;
-    font-size: 10px !important;
-    background-size: 27px;
-    width: 32px;
+    padding-top: 25px;
+    font-size: 0px !important;
+    background-size: 25px;
+    width: 25px;
     background-image: url(/arquivos/new-profile-mobile.svg) !important;
     font-family: "Signika";
   }

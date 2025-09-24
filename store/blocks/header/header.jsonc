@@ -99,20 +99,13 @@
   "header-layout.mobile": {
     "children": [
       "flex-layout.row#hintup-skeleton",
-      "sticky-layout#1-envie-sua-receita-mobile",
+      "flex-layout.row#1-envie-sua-receita-mobile",
+      "flex-layout.row#AppBanner",
       "sticky-layout#1-mobile",
+      "search-bar",
       "CryptoScript",
       "CartOpenerScript"
     ]
-  },
-  "sticky-layout#1AppBanner": {
-    "props": {
-      "blockClass": "bloco-AppBanner",
-      "preventHorizontalStretch": true,
-      "preserveLayoutOnMobile": true,
-      "fullWidth": true
-    },
-    "children": ["flex-layout.row#AppBanner"]
   },
   "flex-layout.row#AppBanner": {
     "props": {
@@ -121,12 +114,12 @@
     },
     "children": ["AppBanner"]
   },
-  "sticky-layout#1-envie-sua-receita-mobile": {
-    "props": {
-      "blockClass": "bloco-envie-sua-receita-mobile-topo"
-    },
-    "children": ["flex-layout.row#1-envie-sua-receita-mobile"]
-  },
+  // "sticky-layout#1-envie-sua-receita-mobile": {
+  //   "props": {
+  //     "blockClass": "bloco-envie-sua-receita-mobile-topo"
+  //   },
+  //   "children": ["flex-layout.row#1-envie-sua-receita-mobile"]
+  // },
   "flex-layout.row#1-envie-sua-receita-mobile": {
     "children": ["rich-text#envie-sua-receita-mobile"],
     "props": {
@@ -151,7 +144,6 @@
       "blockClass": "sticky-header"
     },
     "children": [
-      "flex-layout.row#AppBanner",
       "flex-layout.row#1-mobile",
       "search-bar"
     ]
@@ -159,6 +151,7 @@
   "flex-layout.row#1-mobile": {
     "children": [
       "flex-layout.row#header-mobile-left",
+      "logo#mobile",
       "flex-layout.row#header-mobile-right"
     ],
     "props": {
@@ -169,7 +162,7 @@
     }
   },
   "flex-layout.row#header-mobile-left": {
-    "children": ["drawer", "logo#mobile"],
+    "children": ["drawer"],
     "props": {
       "blockClass": ["header-mobile-left"],
       "preventHorizontalStretch": true,
@@ -177,7 +170,7 @@
     }
   },
   "flex-layout.row#header-mobile-right": {
-    "children": ["login", "minicart.v2"],
+    "children": ["search-button","login", "minicart.v2"],
     "props": {
       "blockClass": ["header-mobile-right"],
       "preventHorizontalStretch": true,
