@@ -47,13 +47,14 @@ const resolveAriaAttributes = (
 }
 
 const getFirstOrLastVisible = (slidesPerPage: number, index: number) => {
+  const integerSlidesPerPage = Math.floor(slidesPerPage)
   // every multiple of the number of slidesPerPage is a first (e.g. 0,3,6 if slidesPerPage is 3)
-  if (index % slidesPerPage === 0) {
+  if (index % integerSlidesPerPage === 0) {
     return 'firstVisible'
   }
 
   // every slide before  the multiple of the number of slidesPerPage is a last (e.g. 2,5,8 if slidesPerPage is 3)
-  if ((index + 1) % slidesPerPage === 0) {
+  if ((index + 1) % integerSlidesPerPage === 0) {
     return 'lastVisible'
   }
 
@@ -108,14 +109,14 @@ const SliderTrack: FC<Props> = ({
     infinite && children
       ? removeAnalyticsProperties(children as ReactElement[]).slice(
           0,
-          slidesPerPage
+          Math.floor(slidesPerPage)
         )
       : []
 
   const preRenderedSlides =
     infinite && children
       ? removeAnalyticsProperties(children as ReactElement[]).slice(
-          children.length - slidesPerPage
+          children.length - Math.floor(slidesPerPage)
         )
       : []
 
@@ -138,7 +139,7 @@ const SliderTrack: FC<Props> = ({
             ? undefined
             : `transform ${speed}ms ${timing} ${delay}ms`,
         transform: `translate3d(${
-          isOnTouchMove ? transform : transformMap[currentSlide]
+          isOnTouchMove ? transform : (transformMap[currentSlide] || 0)
         }%, 0, 0)`,
         width: trackWidth,
       }}
@@ -186,7 +187,7 @@ const SliderTrack: FC<Props> = ({
         // This is to take into account that there is a clone of the last page
         // in the left, to enable the infinite loop effect in case infinite
         // is set to true.
-        const adjustedIndex = index - (infinite ? slidesPerPage : 0)
+        const adjustedIndex = index - (infinite ? Math.floor(slidesPerPage) : 0)
         const slideContainerStyles = {
           width: `${slideWidth}%`,
           marginLeft:
