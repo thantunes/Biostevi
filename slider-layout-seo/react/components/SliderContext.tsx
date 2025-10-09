@@ -64,6 +64,7 @@ interface AdjustContextValuesAction {
     transform: State['transform']
     navigationStep: State['navigationStep']
     totalItems: State['totalItems']
+    isPageNavigationStep: State['isPageNavigationStep']
   }
 }
 
@@ -197,6 +198,7 @@ function sliderContextReducer(state: State, action: Action): State {
         transform: action.payload.transform,
         navigationStep: action.payload.navigationStep,
         totalItems: action.payload.totalItems,
+        isPageNavigationStep: action.payload.isPageNavigationStep,
       }
 
     default:
@@ -231,11 +233,13 @@ const SliderContextProvider: FC<SliderContextProps> = ({
     totalItems: null,
   })
 
-  const resolvedNavigationStep: number =
-    navigationStep === 'page' ? 1 : navigationStep
-
   const resolvedSlidesPerPage: number =
     totalItems <= Math.floor(itemsPerPage) ? totalItems : itemsPerPage
+
+  const resolvedNavigationStep: number =
+    navigationStep === 'page'
+      ? Math.floor(resolvedSlidesPerPage)
+      : navigationStep
 
   // Removido newTotalItems pois não é mais usado no cálculo simplificado
 
@@ -247,13 +251,11 @@ const SliderContextProvider: FC<SliderContextProps> = ({
 
     if (centerMode !== 'disabled') {
       // Usar itemsPerPage original para manter precisão decimal
-      resultingSlideWidth =
-        (itemsPerPage / (itemsPerPage + 1)) * baseSlideWidth
+      resultingSlideWidth = (itemsPerPage / (itemsPerPage + 1)) * baseSlideWidth
 
       if (centerMode === 'to-the-left' && centerModeSlidesGap) {
         resultingSlideWidth =
-          (baseSlideWidth * itemsPerPage) /
-          (itemsPerPage + 1 / 2)
+          (baseSlideWidth * itemsPerPage) / (itemsPerPage + 1 / 2)
       }
     }
 
@@ -324,6 +326,7 @@ const SliderContextProvider: FC<SliderContextProps> = ({
         transform: transformMap[state.currentSlide] || 0,
         navigationStep: resolvedNavigationStep,
         totalItems,
+        isPageNavigationStep: navigationStep === 'page',
       },
     })
     setPrevProps({ itemsPerPage, totalItems })

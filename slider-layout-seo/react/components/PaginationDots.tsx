@@ -24,7 +24,7 @@ const getSelectedDot = (
     : currentSlide
 
   return passVisibleSlides
-    ? Math.floor(realCurrentSlide / Math.floor(slidesToShow))
+    ? Math.floor(realCurrentSlide / slidesToShow)
     : realCurrentSlide
 }
 
@@ -36,19 +36,25 @@ const getSlideIndices = (
   slidesToShow
     ? [
         ...Array(
-          passVisibleSlides ? Math.ceil(totalItems / Math.floor(slidesToShow)) : totalItems
+          passVisibleSlides ? Math.ceil(totalItems / slidesToShow) : totalItems
         ).keys(),
       ]
     : []
 
 const PaginationDots: FC<Props> = ({ controls, totalItems, infinite }) => {
-  const { slidesPerPage, currentSlide, navigationStep } = useSliderState()
+  const {
+    slidesPerPage,
+    currentSlide,
+    navigationStep,
+    isPageNavigationStep,
+  } = useSliderState()
   const { goBack, goForward } = useSliderControls(infinite)
   const { handles, withModifiers } = useContextCssHandles()
-  const passVisibleSlides = navigationStep === slidesPerPage
+  const passVisibleSlides =
+    isPageNavigationStep || navigationStep === Math.floor(slidesPerPage)
 
   const slideIndexes = getSlideIndices(
-    Math.floor(slidesPerPage),
+    slidesPerPage,
     passVisibleSlides,
     totalItems
   )
@@ -65,9 +71,11 @@ const PaginationDots: FC<Props> = ({ controls, totalItems, infinite }) => {
     // Considering that each pagination dot represents a page, pageDelta
     // represents how many pages did the user "skip" by clicking in the dot.
     const pageDelta =
-      index - getSelectedDot(passVisibleSlides, currentSlide, Math.floor(slidesPerPage))
+      index - getSelectedDot(passVisibleSlides, currentSlide, slidesPerPage)
 
-    const slidesToPass = Math.abs(pageDelta) * 1
+    // When navigating by pages, multiply by slidesPerPage to get the correct number of slides to pass
+    const slidesToPass =
+      Math.abs(pageDelta) * (passVisibleSlides ? Math.floor(slidesPerPage) : 1)
 
     pageDelta > 0 ? goForward(slidesToPass) : goBack(slidesToPass)
   }
@@ -81,7 +89,7 @@ const PaginationDots: FC<Props> = ({ controls, totalItems, infinite }) => {
       {slideIndexes.map(index => {
         const isActive =
           index ===
-          getSelectedDot(passVisibleSlides, currentSlide, Math.floor(slidesPerPage))
+          getSelectedDot(passVisibleSlides, currentSlide, slidesPerPage)
 
         return (
           <div

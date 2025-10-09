@@ -94,6 +94,21 @@ const Slider: FC<Props> = ({
   const touchMoveHandler = (e: React.TouchEvent) =>
     shouldUsePagination && !shouldBeStaticList ? onTouchMove(e) : null
 
+  // Handler para controlar scroll nativo quando usePagination é false
+  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
+    if (!shouldUsePagination && !shouldBeStaticList) {
+      const container = e.currentTarget
+      const maxScrollLeft = container.scrollWidth - container.clientWidth
+
+      // Previne scroll além dos limites
+      if (container.scrollLeft < 0) {
+        container.scrollLeft = 0
+      } else if (container.scrollLeft > maxScrollLeft) {
+        container.scrollLeft = maxScrollLeft
+      }
+    }
+  }
+
   return (
     <section
       onTouchStart={touchStartHandler}
@@ -114,6 +129,7 @@ const Slider: FC<Props> = ({
           shouldUsePagination ? 'overflow-hidden' : 'overflow-x-scroll'
         }`}
         ref={containerRef}
+        onScroll={handleScroll}
       >
         <SliderTrack
           centerMode={centerMode}

@@ -27,9 +27,10 @@ export const useSliderControls = (infinite: boolean) => {
       if (nextSlide < 0) {
         nextSlide = 0
       }
+      // O último slide válido é quando ainda mostra pelo menos 1 item completo
       const maxSlide = Math.max(0, totalItems - Math.floor(slidesPerPage))
-      if (nextSlide >= maxSlide) {
-        nextSlide = maxSlide - 1
+      if (nextSlide > maxSlide) {
+        nextSlide = maxSlide
       }
     }
 
@@ -66,8 +67,8 @@ export const useSliderControls = (infinite: boolean) => {
     if (!infinite) {
       // O último slide visível é quando ainda mostra pelo menos 1 item completo
       const maxSlide = Math.max(0, totalItems - Math.floor(slidesPerPage))
-      if (nextSlide >= maxSlide) {
-        nextSlide = maxSlide - 1
+      if (nextSlide > maxSlide) {
+        nextSlide = maxSlide
       }
       if (nextSlide < 0) {
         nextSlide = 0
