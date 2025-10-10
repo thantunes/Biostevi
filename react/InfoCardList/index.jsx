@@ -154,7 +154,7 @@ InfoCardList.schema = {
       description: 'Adicione, edite ou remova cards da lista',
       type: 'array',
       minItems: 1,
-      maxItems: 10,
+      maxItems: 30,
       items: {
         title: 'Card',
         type: 'object',
