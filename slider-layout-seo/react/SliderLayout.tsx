@@ -21,7 +21,6 @@ interface Props {
 
 function SliderLayout({
   totalItems,
-  infinite = false,
   showNavigationArrows = 'always',
   showPaginationDots = 'always',
   usePagination = true,
@@ -51,7 +50,7 @@ function SliderLayout({
   return (
     <CssHandlesProvider handles={handles} withModifiers={withModifiers}>
       <SliderContextProvider
-        infinite={infinite}
+        infinite={false}
         totalItems={totalSlides}
         itemsPerPage={responsiveItemsPerPage}
         centerMode={responsiveCenterMode}
@@ -61,7 +60,6 @@ function SliderLayout({
         <Slider
           centerMode={responsiveCenterMode}
           centerModeSlidesGap={centerModeSlidesGap}
-          infinite={infinite}
           showNavigationArrows={showNavigationArrows}
           showPaginationDots={showPaginationDots}
           totalItems={totalSlides}
@@ -80,10 +78,6 @@ function SliderLayout({
 const messages = defineMessages({
   sliderTitle: {
     id: 'admin/editor.slider-layout.title',
-    defaultMessage: '',
-  },
-  sliderInfinite: {
-    id: 'admin/editor.slider-layout.infinite',
     defaultMessage: '',
   },
   sliderShowNavigation: {

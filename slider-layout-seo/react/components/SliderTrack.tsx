@@ -1,11 +1,10 @@
-import React, { cloneElement, FC, ReactElement, ReactNode } from 'react'
+import React, { ReactNode, FC } from 'react'
 
 import {
   useSliderState,
   useSliderDispatch,
   SliderLayoutProps,
 } from './SliderContext'
-import { useSliderGroupDispatch } from '../SliderLayoutGroup'
 import { useSliderVisibility } from '../hooks/useSliderVisibility'
 import { useContextCssHandles } from '../modules/cssHandles'
 
@@ -61,22 +60,7 @@ const getFirstOrLastVisible = (slidesPerPage: number, index: number) => {
   return ''
 }
 
-const removeAnalyticsProperties = (children: ReactElement[]) => {
-  return React.Children.toArray(
-    React.Children.map(children, child =>
-      typeof child === 'string' || typeof child === 'number'
-        ? child
-        : cloneElement(child, {
-            ...child.props,
-            // Tells the component it is being duplicated. Each component should handle it
-            __isDuplicated: true,
-          })
-    )
-  )
-}
-
 const SliderTrack: FC<Props> = ({
-  infinite,
   usePagination,
   centerMode,
   centerModeSlidesGap,
@@ -95,7 +79,6 @@ const SliderTrack: FC<Props> = ({
   } = useSliderState()
 
   const dispatch = useSliderDispatch()
-  const groupDispatch = useSliderGroupDispatch()
   const { handles, withModifiers } = useContextCssHandles()
 
   const { shouldRenderItem, isItemVisible } = useSliderVisibility({
@@ -105,22 +88,8 @@ const SliderTrack: FC<Props> = ({
     centerMode,
   })
 
-  const postRenderedSlides =
-    infinite && children
-      ? removeAnalyticsProperties(children as ReactElement[]).slice(
-          0,
-          Math.floor(slidesPerPage)
-        )
-      : []
-
-  const preRenderedSlides =
-    infinite && children
-      ? removeAnalyticsProperties(children as ReactElement[]).slice(
-          children.length - Math.floor(slidesPerPage)
-        )
-      : []
-
-  const slides = preRenderedSlides.concat(children ?? [], postRenderedSlides)
+  // Simplified - no slide cloning for infinite mode
+  const slides = children ?? []
 
   const trackWidth =
     slidesPerPage <= totalItems
@@ -139,55 +108,20 @@ const SliderTrack: FC<Props> = ({
             ? undefined
             : `transform ${speed}ms ${timing} ${delay}ms`,
         transform: `translate3d(${
-          isOnTouchMove ? transform : (transformMap[currentSlide] || 0)
+          isOnTouchMove ? transform : transformMap[currentSlide] || 0
         }%, 0, 0)`,
         width: trackWidth,
       }}
       onTransitionEnd={() => {
+        // Simplified - just disable transition, no loop adjustment needed
         dispatch({ type: 'DISABLE_TRANSITION' })
-
-        if (currentSlide >= totalItems) {
-          dispatch({
-            type: 'ADJUST_CURRENT_SLIDE',
-            payload: {
-              currentSlide: 0,
-              transform: transformMap[0],
-            },
-          })
-          groupDispatch?.({
-            type: 'SLIDE',
-            payload: {
-              currentSlide: 0,
-              transform: transformMap[0],
-            },
-          })
-        }
-
-        if (currentSlide < 0) {
-          dispatch({
-            type: 'ADJUST_CURRENT_SLIDE',
-            payload: {
-              currentSlide: currentSlide + totalItems,
-              transform: transformMap[currentSlide + totalItems],
-            },
-          })
-          groupDispatch?.({
-            type: 'SLIDE',
-            payload: {
-              currentSlide: currentSlide + totalItems,
-              transform: transformMap[currentSlide + totalItems],
-            },
-          })
-        }
       }}
       aria-atomic="false"
       aria-live="polite"
     >
       {slides.map((child, index) => {
-        // This is to take into account that there is a clone of the last page
-        // in the left, to enable the infinite loop effect in case infinite
-        // is set to true.
-        const adjustedIndex = index - (infinite ? Math.floor(slidesPerPage) : 0)
+        // Simplified - no cloned slides adjustment needed
+        const adjustedIndex = index
         const slideContainerStyles = {
           width: `${slideWidth}%`,
           marginLeft:
@@ -230,7 +164,9 @@ const SliderTrack: FC<Props> = ({
             <div
               className={`${handles.slideChildrenContainer} flex justify-center items-center w-100`}
             >
-              {!usePagination || shouldRenderItem(adjustedIndex) ? child : child}
+              {!usePagination || shouldRenderItem(adjustedIndex)
+                ? child
+                : child}
             </div>
           </div>
         )

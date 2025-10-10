@@ -212,7 +212,6 @@ const SliderContextProvider: FC<SliderContextProps> = ({
   totalItems,
   label = 'slider',
   navigationStep = 'page',
-  infinite = false,
   itemsPerPage,
   centerMode,
   slideTransition = {
@@ -265,27 +264,14 @@ const SliderContextProvider: FC<SliderContextProps> = ({
   const transformMap = useMemo(() => {
     const currentMap: Record<number, number> = {}
 
-    if (infinite) {
-      // Para slider infinito, precisamos compensar os slides clonados no início
-      const preRenderedCount = Math.floor(itemsPerPage)
-      const totalSlides = preRenderedCount + totalItems + preRenderedCount
-      const stepSize = 100 / totalSlides
-
-      for (let i = 0; i < totalItems; i++) {
-        // Offset para compensar os slides clonados no início
-        // Slide 0 real deve estar na posição após os slides clonados
-        currentMap[i] = -((i + preRenderedCount) * stepSize)
-      }
-    } else {
-      // Para slider normal, cálculo simples
-      const stepSize = 100 / totalItems
-      for (let i = 0; i < totalItems; i++) {
-        currentMap[i] = -(i * stepSize)
-      }
+    // Simplified calculation - infinite mode removed
+    const stepSize = 100 / totalItems
+    for (let i = 0; i < totalItems; i++) {
+      currentMap[i] = -(i * stepSize)
     }
 
     return currentMap
-  }, [totalItems, infinite, itemsPerPage])
+  }, [totalItems])
 
   const initialSlide = useMemo(() => sliderGroupState?.currentSlide ?? 0, [
     sliderGroupState,
