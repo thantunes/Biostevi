@@ -244,7 +244,7 @@
     },
     "children": [
       "add-to-list-btn",
-      "product-reviews"
+      "konfidencypartnerbr.konfidency-reviews:product-reviews"
     ]
   },
   "sku-selector": {
