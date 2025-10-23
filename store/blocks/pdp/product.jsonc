@@ -24,8 +24,8 @@
       "DescriptionContructorComp",
       "BuyTogetherComp",
       "shelf.relatedProducts",
-      //"konfidencypartnerbr.konfidency-reviews:product-reviews",
-      //"konfidencypartnerbr.konfidency-reviews:product-questions-and-answers",
+      "konfidencypartnerbr.konfidency-reviews:product-reviews",
+      "konfidencypartnerbr.konfidency-reviews:product-questions-and-answers",
       "rich-text#pdp-informativo1",
       "FloatingBuyBar"
     ]
@@ -41,8 +41,8 @@
       "DescriptionContructorComp",
       "BuyTogetherComp",
       "shelf.relatedProducts",
-      //"konfidencypartnerbr.konfidency-reviews:product-reviews",
-      //"konfidencypartnerbr.konfidency-reviews:product-questions-and-answers",
+      "konfidencypartnerbr.konfidency-reviews:product-reviews",
+      "konfidencypartnerbr.konfidency-reviews:product-questions-and-answers",
       "rich-text#pdp-informativo1"
     ]
   },
@@ -169,7 +169,7 @@
     "children": [
       "add-to-list-btn",
       "flex-layout.row#product-name",
-      //"konfidencypartnerbr.konfidency-reviews:product-reviews",
+      "konfidencypartnerbr.konfidency-reviews:product-reviews",
       "flex-layout.row#description",
       "responsive-layout.mobile#benefits",
       "flex-layout.row#list-price-savings",
@@ -211,8 +211,8 @@
     },
     "children": [
       "flex-layout.row#product-name",
-      //"konfidencypartnerbr.konfidency-reviews:product-rating-summary",
-      //"konfidencypartnerbr.konfidency-reviews:product-reviews",
+      "konfidencypartnerbr.konfidency-reviews:product-rating-summary",
+      "konfidencypartnerbr.konfidency-reviews:product-reviews",
       "product-installments",
       "product-separator",
       "product-identifier.product",
@@ -243,8 +243,8 @@
       "blockClass": "pdp-review-wishlist"
     },
     "children": [
-      "add-to-list-btn"
-      //"konfidencypartnerbr.konfidency-reviews:product-reviews"
+      "add-to-list-btn",
+      "konfidencypartnerbr.konfidency-reviews:product-reviews"
     ]
   },
   "sku-selector": {
