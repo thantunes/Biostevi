@@ -76,7 +76,8 @@
     "vtex.availability-notify": "1.x",
     "vtexeurope.minicart-freeshipping-bar": "1.x",
     "vtex.wish-list": "1.x",
-    "vtex.badges": "3.x"
+    "vtex.badges": "3.x",
+    "konfidencypartnerbr.konfidency-reviews": "1.x"
   },
   "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
 }
