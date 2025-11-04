@@ -758,7 +758,8 @@
   "flex-layout.row#bloco-title-home": {
     "children": [
       "flex-layout.col#bloco-title-home-container"
-    ]
+    ],
+    "title": "Bloco h1 e texto Home"
   },
   "flex-layout.col#bloco-title-home-container": {
     "children": [
@@ -773,14 +774,16 @@
     "props": {
       "text": "# 🩵 Cuide da sua saúde com produtos Biostévi",
       "blockClass": "bloco-title-home-h1"
-    }
+    },
+    "title": "H1"
   },
 
   "rich-text#bloco-title-home-text": {
     "props": {
       "text": "Os melhores manipulados, suplementos e vitaminas para o bem-estar, saúde, beleza e energia no dia a dia. Aproveite ofertas exclusivas e entrega rápida em todo o Brasil",
       "blockClass": "bloco-title-home-text"
-    }
+    },
+    "title": "Texto"
   },
   "flex-layout.row#home-faq-container": {
     "children": [
