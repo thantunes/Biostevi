@@ -24,6 +24,7 @@ interface SlideAction {
   payload: {
     transform?: number
     currentSlide: number
+    virtualSlide: number
   }
 }
 
@@ -43,6 +44,7 @@ interface AdjustCurrentSlideAction {
   type: 'ADJUST_CURRENT_SLIDE'
   payload: {
     currentSlide: number
+    virtualSlide: number
     transform?: number
   }
 }
@@ -51,6 +53,7 @@ interface SyncSliderGroupAction {
   type: 'SYNC_SLIDER_GROUP'
   payload: {
     currentSlide: number
+    virtualSlide: number
     transform?: number
   }
 }
@@ -64,6 +67,12 @@ interface AdjustContextValuesAction {
     transform: State['transform']
     navigationStep: State['navigationStep']
     totalItems: State['totalItems']
+    isPageNavigationStep: State['isPageNavigationStep']
+    loopCloneCount: State['loopCloneCount']
+    virtualSlide: State['virtualSlide']
+    virtualTotalItems: State['virtualTotalItems']
+    currentSlide: State['currentSlide']
+    infinite: State['infinite']
   }
 }
 
@@ -110,6 +119,12 @@ interface State extends Partial<SliderLayoutProps> {
   transform: number
   /** Total number of slides */
   totalItems: number
+  /** Additional clones rendered at each edge for looped mode */
+  loopCloneCount: number
+  /** Current index within the virtual track (includes clones) */
+  virtualSlide: number
+  /** Virtual slides count (real slides + clones) */
+  virtualTotalItems: number
   /** Number of slides to slide in navigation */
   navigationStep: number
   /** Whether or not navigationStep prop is set to 'page' */
@@ -119,6 +134,7 @@ interface State extends Partial<SliderLayoutProps> {
   useSlidingTransitionEffect: boolean
   transformMap: Record<number, number>
   slideTransition: Exclude<SliderLayoutProps['slideTransition'], undefined>
+  infinite: boolean
 }
 
 interface SliderContextProps extends SliderLayoutProps {
@@ -148,7 +164,7 @@ function sliderContextReducer(state: State, action: Action): State {
         slidesPerPage: action.payload.slidesPerPage,
         navigationStep: action.payload.navigationStep,
         transform: action.payload.shouldCorrectItemPosition
-          ? state.transformMap[state.currentSlide]
+          ? state.transformMap[state.virtualSlide]
           : state.transform,
       }
 
@@ -157,6 +173,7 @@ function sliderContextReducer(state: State, action: Action): State {
         ...state,
         transform: action.payload.transform ?? state.transform,
         currentSlide: action.payload.currentSlide,
+        virtualSlide: action.payload.virtualSlide,
         useSlidingTransitionEffect: true,
       }
 
@@ -177,13 +194,16 @@ function sliderContextReducer(state: State, action: Action): State {
       return {
         ...state,
         currentSlide: action.payload.currentSlide,
+        virtualSlide: action.payload.virtualSlide,
         transform: action.payload.transform ?? state.transform,
+        useSlidingTransitionEffect: false,
       }
 
     case 'SYNC_SLIDER_GROUP':
       return {
         ...state,
         currentSlide: action.payload.currentSlide,
+        virtualSlide: action.payload.virtualSlide,
         transform: action.payload.transform ?? state.transform,
         useSlidingTransitionEffect: true,
       }
@@ -197,6 +217,12 @@ function sliderContextReducer(state: State, action: Action): State {
         transform: action.payload.transform,
         navigationStep: action.payload.navigationStep,
         totalItems: action.payload.totalItems,
+        isPageNavigationStep: action.payload.isPageNavigationStep,
+        loopCloneCount: action.payload.loopCloneCount,
+        virtualSlide: action.payload.virtualSlide,
+        virtualTotalItems: action.payload.virtualTotalItems,
+        currentSlide: action.payload.currentSlide,
+        infinite: action.payload.infinite,
       }
 
     default:
@@ -210,7 +236,6 @@ const SliderContextProvider: FC<SliderContextProps> = ({
   totalItems,
   label = 'slider',
   navigationStep = 'page',
-  infinite = false,
   itemsPerPage,
   centerMode,
   slideTransition = {
@@ -219,6 +244,7 @@ const SliderContextProvider: FC<SliderContextProps> = ({
     timing: '',
   },
   centerModeSlidesGap,
+  infinite = false,
 }) => {
   const sliderGroupState = useSliderGroupState()
 
@@ -226,16 +252,37 @@ const SliderContextProvider: FC<SliderContextProps> = ({
   const [prevProps, setPrevProps] = useState<{
     itemsPerPage: SliderContextProps['itemsPerPage'] | null
     totalItems: SliderContextProps['totalItems'] | null
+    infinite: SliderContextProps['infinite'] | null
   }>({
     itemsPerPage: null,
     totalItems: null,
+    infinite: null,
   })
-
-  const resolvedNavigationStep: number =
-    navigationStep === 'page' ? 1 : navigationStep
 
   const resolvedSlidesPerPage: number =
     totalItems <= Math.floor(itemsPerPage) ? totalItems : itemsPerPage
+
+  const resolvedNavigationStep: number =
+    navigationStep === 'page'
+      ? Math.floor(resolvedSlidesPerPage)
+      : navigationStep
+
+  const loopCloneCount = (() => {
+    if (!infinite) {
+      return 0
+    }
+
+    const visibleSlidesCeil = Math.max(1, Math.ceil(resolvedSlidesPerPage))
+
+    if (totalItems <= visibleSlidesCeil) {
+      return 0
+    }
+
+    return Math.min(totalItems, visibleSlidesCeil)
+  })()
+
+  const virtualTotalItems =
+    totalItems + (loopCloneCount > 0 ? loopCloneCount * 2 : 0)
 
   // Removido newTotalItems pois não é mais usado no cálculo simplificado
 
@@ -247,13 +294,11 @@ const SliderContextProvider: FC<SliderContextProps> = ({
 
     if (centerMode !== 'disabled') {
       // Usar itemsPerPage original para manter precisão decimal
-      resultingSlideWidth =
-        (itemsPerPage / (itemsPerPage + 1)) * baseSlideWidth
+      resultingSlideWidth = (itemsPerPage / (itemsPerPage + 1)) * baseSlideWidth
 
       if (centerMode === 'to-the-left' && centerModeSlidesGap) {
         resultingSlideWidth =
-          (baseSlideWidth * itemsPerPage) /
-          (itemsPerPage + 1 / 2)
+          (baseSlideWidth * itemsPerPage) / (itemsPerPage + 1 / 2)
       }
     }
 
@@ -263,41 +308,35 @@ const SliderContextProvider: FC<SliderContextProps> = ({
   const transformMap = useMemo(() => {
     const currentMap: Record<number, number> = {}
 
-    if (infinite) {
-      // Para slider infinito, precisamos compensar os slides clonados no início
-      const preRenderedCount = Math.floor(itemsPerPage)
-      const totalSlides = preRenderedCount + totalItems + preRenderedCount
-      const stepSize = 100 / totalSlides
+    const stepSize =
+      virtualTotalItems > 0 ? 100 / virtualTotalItems : 0
 
-      for (let i = 0; i < totalItems; i++) {
-        // Offset para compensar os slides clonados no início
-        // Slide 0 real deve estar na posição após os slides clonados
-        currentMap[i] = -((i + preRenderedCount) * stepSize)
-      }
-    } else {
-      // Para slider normal, cálculo simples
-      const stepSize = 100 / totalItems
-      for (let i = 0; i < totalItems; i++) {
-        currentMap[i] = -(i * stepSize)
-      }
+    for (let i = 0; i < virtualTotalItems; i++) {
+      currentMap[i] = -(i * stepSize)
     }
 
     return currentMap
-  }, [totalItems, infinite, itemsPerPage])
+  }, [virtualTotalItems])
 
   const initialSlide = useMemo(() => sliderGroupState?.currentSlide ?? 0, [
     sliderGroupState,
   ])
 
-  const initialTransform = useMemo(
-    () => sliderGroupState?.transform ?? (transformMap[initialSlide] || 0),
-    [transformMap, initialSlide, sliderGroupState]
-  )
+  const initialVirtualSlide = loopCloneCount + initialSlide
+
+  const initialTransform = useMemo(() => {
+    if (sliderGroupState?.transform !== undefined && sliderGroupState !== null) {
+      return sliderGroupState.transform ?? 0
+    }
+
+    return transformMap[initialVirtualSlide] || 0
+  }, [transformMap, initialVirtualSlide, sliderGroupState])
 
   const [state, dispatch] = useReducer(sliderContextReducer, {
     slideWidth,
     slidesPerPage: resolvedSlidesPerPage,
     currentSlide: initialSlide,
+    virtualSlide: initialVirtualSlide,
     transform: initialTransform,
     transformMap,
     navigationStep: resolvedNavigationStep,
@@ -306,27 +345,43 @@ const SliderContextProvider: FC<SliderContextProps> = ({
     label,
     autoplay,
     totalItems,
+    loopCloneCount,
+    virtualTotalItems,
     isPageNavigationStep: navigationStep === 'page',
     isOnTouchMove: false,
     useSlidingTransitionEffect: false,
+    infinite: loopCloneCount > 0,
   })
 
   if (
     itemsPerPage !== prevProps.itemsPerPage ||
-    totalItems !== prevProps.totalItems
+    totalItems !== prevProps.totalItems ||
+    infinite !== prevProps.infinite
   ) {
+    const maxSlide = Math.max(
+      0,
+      totalItems - Math.floor(resolvedSlidesPerPage)
+    )
+    const nextCurrentSlide = Math.min(state.currentSlide, maxSlide)
+    const nextVirtualSlide = loopCloneCount + nextCurrentSlide
     dispatch({
       type: 'ADJUST_CONTEXT_VALUES',
       payload: {
         transformMap,
         slideWidth,
         slidesPerPage: resolvedSlidesPerPage,
-        transform: transformMap[state.currentSlide] || 0,
+        transform: transformMap[nextVirtualSlide] || 0,
         navigationStep: resolvedNavigationStep,
         totalItems,
+        isPageNavigationStep: navigationStep === 'page',
+        loopCloneCount,
+        virtualSlide: nextVirtualSlide,
+        virtualTotalItems,
+        currentSlide: nextCurrentSlide,
+        infinite: loopCloneCount > 0,
       },
     })
-    setPrevProps({ itemsPerPage, totalItems })
+    setPrevProps({ itemsPerPage, totalItems, infinite })
   }
 
   if (
@@ -334,13 +389,15 @@ const SliderContextProvider: FC<SliderContextProps> = ({
     sliderGroupState.currentSlide !== state.currentSlide
   ) {
     const newCurrentSlide = sliderGroupState?.currentSlide ?? state.currentSlide
+    const newVirtualSlide = loopCloneCount + newCurrentSlide
     const newTransformValue =
-      sliderGroupState?.transform ?? transformMap[newCurrentSlide]
+      sliderGroupState?.transform ?? transformMap[newVirtualSlide]
 
     dispatch({
       type: 'SYNC_SLIDER_GROUP',
       payload: {
         currentSlide: newCurrentSlide,
+        virtualSlide: newVirtualSlide,
         transform: newTransformValue,
       },
     })

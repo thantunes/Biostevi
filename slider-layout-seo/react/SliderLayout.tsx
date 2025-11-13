@@ -21,7 +21,6 @@ interface Props {
 
 function SliderLayout({
   totalItems,
-  infinite = false,
   showNavigationArrows = 'always',
   showPaginationDots = 'always',
   usePagination = true,
@@ -30,6 +29,7 @@ function SliderLayout({
   children,
   centerMode = 'disabled',
   centerModeSlidesGap,
+  infinite = false,
   itemsPerPage = {
     desktop: 5,
     tablet: 3,
@@ -61,7 +61,6 @@ function SliderLayout({
         <Slider
           centerMode={responsiveCenterMode}
           centerModeSlidesGap={centerModeSlidesGap}
-          infinite={infinite}
           showNavigationArrows={showNavigationArrows}
           showPaginationDots={showPaginationDots}
           totalItems={totalSlides}
@@ -69,6 +68,7 @@ function SliderLayout({
           fullWidth={resolvedFullWidth}
           arrowSize={responsiveArrowIconSize}
           itemsPerPage={responsiveItemsPerPage}
+          infinite={infinite}
         >
           {slides}
         </Slider>
@@ -80,10 +80,6 @@ function SliderLayout({
 const messages = defineMessages({
   sliderTitle: {
     id: 'admin/editor.slider-layout.title',
-    defaultMessage: '',
-  },
-  sliderInfinite: {
-    id: 'admin/editor.slider-layout.infinite',
     defaultMessage: '',
   },
   sliderShowNavigation: {

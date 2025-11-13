@@ -1,11 +1,10 @@
-import React, { cloneElement, FC, ReactElement, ReactNode } from 'react'
+import React, { ReactNode, FC } from 'react'
 
 import {
   useSliderState,
   useSliderDispatch,
   SliderLayoutProps,
 } from './SliderContext'
-import { useSliderGroupDispatch } from '../SliderLayoutGroup'
 import { useSliderVisibility } from '../hooks/useSliderVisibility'
 import { useContextCssHandles } from '../modules/cssHandles'
 
@@ -61,41 +60,28 @@ const getFirstOrLastVisible = (slidesPerPage: number, index: number) => {
   return ''
 }
 
-const removeAnalyticsProperties = (children: ReactElement[]) => {
-  return React.Children.toArray(
-    React.Children.map(children, child =>
-      typeof child === 'string' || typeof child === 'number'
-        ? child
-        : cloneElement(child, {
-            ...child.props,
-            // Tells the component it is being duplicated. Each component should handle it
-            __isDuplicated: true,
-          })
-    )
-  )
-}
-
 const SliderTrack: FC<Props> = ({
-  infinite,
   usePagination,
   centerMode,
   centerModeSlidesGap,
   totalItems,
   children,
+  infinite,
 }) => {
   const {
     slideWidth,
     slidesPerPage,
     currentSlide,
+    virtualSlide,
     isOnTouchMove,
     useSlidingTransitionEffect,
     slideTransition: { speed, timing, delay },
     transformMap,
     transform,
+    loopCloneCount,
   } = useSliderState()
 
   const dispatch = useSliderDispatch()
-  const groupDispatch = useSliderGroupDispatch()
   const { handles, withModifiers } = useContextCssHandles()
 
   const { shouldRenderItem, isItemVisible } = useSliderVisibility({
@@ -105,22 +91,72 @@ const SliderTrack: FC<Props> = ({
     centerMode,
   })
 
-  const postRenderedSlides =
-    infinite && children
-      ? removeAnalyticsProperties(children as ReactElement[]).slice(
-          0,
-          Math.floor(slidesPerPage)
-        )
-      : []
+  const baseSlides = children ?? []
+  const baseSlidesCount = baseSlides.length
+  const shouldUseVirtualSlides =
+    Boolean(infinite) && loopCloneCount > 0 && baseSlidesCount > 0
 
-  const preRenderedSlides =
-    infinite && children
-      ? removeAnalyticsProperties(children as ReactElement[]).slice(
-          children.length - Math.floor(slidesPerPage)
-        )
-      : []
+  const cloneNode = (
+    child: Exclude<ReactNode, boolean | null | undefined>,
+    originalIndex: number,
+    position: 'head' | 'tail',
+    cloneIndex: number
+  ) => {
+    if (React.isValidElement(child)) {
+      const originalKey =
+        child.key !== null && child.key !== undefined
+          ? child.key
+          : `${originalIndex}`
 
-  const slides = preRenderedSlides.concat(children ?? [], postRenderedSlides)
+      return React.cloneElement(child, {
+        key: `clone-${position}-${cloneIndex}-${originalKey}`,
+      })
+    }
+
+    return (
+      <React.Fragment key={`clone-${position}-${cloneIndex}-${originalIndex}`}>
+        {child}
+      </React.Fragment>
+    )
+  }
+
+  const headClones = shouldUseVirtualSlides
+    ? baseSlides
+        .slice(baseSlidesCount - loopCloneCount)
+        .map((child, index) =>
+          cloneNode(
+            child,
+            baseSlidesCount - loopCloneCount + index,
+            'head',
+            index
+          )
+        )
+    : []
+
+  const tailClones = shouldUseVirtualSlides
+    ? baseSlides
+        .slice(0, loopCloneCount)
+        .map((child, index) => cloneNode(child, index, 'tail', index))
+    : []
+
+  const slides = shouldUseVirtualSlides
+    ? ([] as Array<Exclude<ReactNode, boolean | null | undefined>>)
+        .concat(headClones)
+        .concat(baseSlides)
+        .concat(tailClones)
+    : baseSlides
+
+  const getRealIndexFromVirtual = (virtualIndex: number) => {
+    if (!shouldUseVirtualSlides || baseSlidesCount === 0) {
+      return virtualIndex
+    }
+
+    const relativeIndex = virtualIndex - loopCloneCount
+    const normalized =
+      ((relativeIndex % baseSlidesCount) + baseSlidesCount) % baseSlidesCount
+
+    return normalized
+  }
 
   const trackWidth =
     slidesPerPage <= totalItems
@@ -139,55 +175,54 @@ const SliderTrack: FC<Props> = ({
             ? undefined
             : `transform ${speed}ms ${timing} ${delay}ms`,
         transform: `translate3d(${
-          isOnTouchMove ? transform : (transformMap[currentSlide] || 0)
+          isOnTouchMove ? transform : transformMap[virtualSlide] || 0
         }%, 0, 0)`,
         width: trackWidth,
       }}
       onTransitionEnd={() => {
         dispatch({ type: 'DISABLE_TRANSITION' })
 
-        if (currentSlide >= totalItems) {
-          dispatch({
-            type: 'ADJUST_CURRENT_SLIDE',
-            payload: {
-              currentSlide: 0,
-              transform: transformMap[0],
-            },
-          })
-          groupDispatch?.({
-            type: 'SLIDE',
-            payload: {
-              currentSlide: 0,
-              transform: transformMap[0],
-            },
-          })
-        }
+        if (
+          shouldUseVirtualSlides &&
+          baseSlidesCount > 0 &&
+          totalItems > 0 &&
+          !isOnTouchMove &&
+          useSlidingTransitionEffect
+        ) {
+          const firstRealIndex = loopCloneCount
+          const lastRealIndex = loopCloneCount + totalItems - 1
 
-        if (currentSlide < 0) {
-          dispatch({
-            type: 'ADJUST_CURRENT_SLIDE',
-            payload: {
-              currentSlide: currentSlide + totalItems,
-              transform: transformMap[currentSlide + totalItems],
-            },
-          })
-          groupDispatch?.({
-            type: 'SLIDE',
-            payload: {
-              currentSlide: currentSlide + totalItems,
-              transform: transformMap[currentSlide + totalItems],
-            },
-          })
+          const isInHeadClones = virtualSlide < firstRealIndex
+          const isInTailClones = virtualSlide > lastRealIndex
+
+          if (isInHeadClones || isInTailClones) {
+            const normalizedRealIndex = getRealIndexFromVirtual(virtualSlide)
+            const normalizedVirtualSlide =
+              loopCloneCount + normalizedRealIndex
+
+            if (normalizedVirtualSlide !== virtualSlide) {
+              const hasDecimalSlides = slidesPerPage % 1 !== 0
+              const delay = hasDecimalSlides ? 100 : 0
+
+              setTimeout(() => {
+                dispatch({
+                  type: 'ADJUST_CURRENT_SLIDE',
+                  payload: {
+                    currentSlide: normalizedRealIndex,
+                    virtualSlide: normalizedVirtualSlide,
+                    transform: transformMap[normalizedVirtualSlide] || 0,
+                  },
+                })
+              }, delay)
+            }
+          }
         }
       }}
       aria-atomic="false"
       aria-live="polite"
     >
       {slides.map((child, index) => {
-        // This is to take into account that there is a clone of the last page
-        // in the left, to enable the infinite loop effect in case infinite
-        // is set to true.
-        const adjustedIndex = index - (infinite ? Math.floor(slidesPerPage) : 0)
+        const realIndex = getRealIndexFromVirtual(index)
         const slideContainerStyles = {
           width: `${slideWidth}%`,
           marginLeft:
@@ -210,19 +245,19 @@ const SliderTrack: FC<Props> = ({
 
         return (
           <div
-            key={adjustedIndex}
+            key={`virtual-slide-${index}`}
             {...resolveAriaAttributes(
-              isItemVisible(adjustedIndex),
-              adjustedIndex,
+              isItemVisible(realIndex),
+              realIndex,
               totalItems
             )}
             className={`${withModifiers('slide', [
-              getFirstOrLastVisible(slidesPerPage, adjustedIndex),
-              isItemVisible(adjustedIndex) ? 'visible' : 'hidden',
+              getFirstOrLastVisible(slidesPerPage, realIndex),
+              isItemVisible(realIndex) ? 'visible' : 'hidden',
             ])} flex relative`}
             data-index={
-              adjustedIndex >= 0 && adjustedIndex < totalItems
-                ? adjustedIndex + 1
+              realIndex >= 0 && realIndex < totalItems
+                ? realIndex + 1
                 : undefined
             }
             style={slideContainerStyles}
@@ -230,7 +265,9 @@ const SliderTrack: FC<Props> = ({
             <div
               className={`${handles.slideChildrenContainer} flex justify-center items-center w-100`}
             >
-              {!usePagination || shouldRenderItem(adjustedIndex) ? child : child}
+              {!usePagination || shouldRenderItem(realIndex)
+                ? child
+                : child}
             </div>
           </div>
         )

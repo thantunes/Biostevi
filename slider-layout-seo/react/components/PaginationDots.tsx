@@ -1,7 +1,7 @@
 import React, { memo, FC } from 'react'
 
 import { useContextCssHandles } from '../modules/cssHandles'
-import { useSliderState } from './SliderContext'
+import { useSliderState, useSliderDispatch } from './SliderContext'
 import { useSliderControls } from '../hooks/useSliderControls'
 
 const DOTS_DEFAULT_SIZE = 0.625
@@ -17,15 +17,28 @@ export const CSS_HANDLES = ['paginationDotsContainer', 'paginationDot'] as const
 const getSelectedDot = (
   passVisibleSlides: boolean,
   currentSlide: number,
-  slidesToShow: number
+  slidesToShow: number,
+  totalItems?: number
 ): number => {
-  const realCurrentSlide = passVisibleSlides
-    ? currentSlide + (Math.floor(slidesToShow) - 1)
-    : currentSlide
+  if (!passVisibleSlides) {
+    return currentSlide
+  }
 
-  return passVisibleSlides
-    ? Math.floor(realCurrentSlide / Math.floor(slidesToShow))
-    : realCurrentSlide
+  if (totalItems === undefined) {
+    const slidesToShowInt = Math.floor(slidesToShow)
+    const realCurrentSlide = currentSlide + (slidesToShowInt - 1)
+    return Math.floor(realCurrentSlide / slidesToShowInt)
+  }
+
+  const totalDots = Math.ceil(totalItems / slidesToShow)
+  const maxSlide = Math.max(0, totalItems - slidesToShow)
+
+  if (currentSlide >= Math.floor(maxSlide)) {
+    return Math.max(0, totalDots - 1)
+  }
+
+  const calculatedDot = Math.round(currentSlide / slidesToShow)
+  return Math.max(0, Math.min(calculatedDot, totalDots - 1))
 }
 
 const getSlideIndices = (
@@ -36,40 +49,141 @@ const getSlideIndices = (
   slidesToShow
     ? [
         ...Array(
-          passVisibleSlides ? Math.ceil(totalItems / Math.floor(slidesToShow)) : totalItems
+          passVisibleSlides ? Math.ceil(totalItems / slidesToShow) : totalItems
         ).keys(),
       ]
     : []
 
 const PaginationDots: FC<Props> = ({ controls, totalItems, infinite }) => {
-  const { slidesPerPage, currentSlide, navigationStep } = useSliderState()
+  const {
+    slidesPerPage,
+    currentSlide,
+    navigationStep,
+    isPageNavigationStep,
+    virtualSlide,
+    loopCloneCount,
+    transformMap,
+  } = useSliderState()
   const { goBack, goForward } = useSliderControls(infinite)
+  const dispatch = useSliderDispatch()
   const { handles, withModifiers } = useContextCssHandles()
-  const passVisibleSlides = navigationStep === slidesPerPage
+  const passVisibleSlides =
+    isPageNavigationStep || navigationStep === Math.floor(slidesPerPage)
 
   const slideIndexes = getSlideIndices(
-    Math.floor(slidesPerPage),
+    slidesPerPage,
     passVisibleSlides,
     totalItems
   )
 
+  const normalizedCurrentSlide = React.useMemo(() => {
+    if (!infinite || loopCloneCount === 0) {
+      return currentSlide
+    }
+
+    const firstRealIndex = loopCloneCount
+    const lastRealIndex = loopCloneCount + totalItems - 1
+
+    if (virtualSlide >= firstRealIndex && virtualSlide <= lastRealIndex) {
+      return Math.max(0, Math.min(virtualSlide - loopCloneCount, totalItems - 1))
+    }
+
+    const relativeIndex = virtualSlide - loopCloneCount
+    const normalized =
+      ((relativeIndex % totalItems) + totalItems) % totalItems
+
+    return Math.max(0, Math.min(normalized, totalItems - 1))
+  }, [infinite, loopCloneCount, currentSlide, virtualSlide, totalItems])
+
   const handleDotClick = (
     event: React.KeyboardEvent | React.MouseEvent,
-    index: number
+    dotIndex: number
   ) => {
     if (event) {
       event.stopPropagation()
       event.preventDefault()
     }
 
-    // Considering that each pagination dot represents a page, pageDelta
-    // represents how many pages did the user "skip" by clicking in the dot.
-    const pageDelta =
-      index - getSelectedDot(passVisibleSlides, currentSlide, Math.floor(slidesPerPage))
+    if (!infinite || loopCloneCount === 0) {
+      let targetSlideIndex: number
 
-    const slidesToPass = Math.abs(pageDelta) * 1
+      if (passVisibleSlides) {
+        const totalDots = Math.ceil(totalItems / slidesPerPage)
+        const lastDotIndex = totalDots - 1
 
-    pageDelta > 0 ? goForward(slidesToPass) : goBack(slidesToPass)
+        if (dotIndex === lastDotIndex) {
+          const maxSlide = Math.max(0, totalItems - slidesPerPage)
+          targetSlideIndex = Math.floor(maxSlide)
+
+          dispatch({
+            type: 'SLIDE',
+            payload: {
+              currentSlide: targetSlideIndex,
+              virtualSlide: targetSlideIndex,
+              transform: transformMap[targetSlideIndex] ?? 0,
+            },
+          })
+          return
+        } else {
+          targetSlideIndex = Math.round(dotIndex * slidesPerPage)
+          const maxSlide = Math.max(0, totalItems - slidesPerPage)
+          targetSlideIndex = Math.min(targetSlideIndex, Math.floor(maxSlide))
+        }
+      } else {
+        targetSlideIndex = Math.min(dotIndex, totalItems - 1)
+      }
+
+      const pageDelta = targetSlideIndex - normalizedCurrentSlide
+      const slidesToPass = Math.abs(pageDelta)
+
+      pageDelta > 0 ? goForward(slidesToPass) : goBack(slidesToPass)
+      return
+    }
+
+    let targetSlideIndex: number
+
+    if (passVisibleSlides) {
+      const slidesPerPageInt = Math.floor(slidesPerPage)
+      targetSlideIndex = dotIndex * slidesPerPageInt
+      const maxSlide = Math.max(0, totalItems - slidesPerPageInt)
+      targetSlideIndex = Math.min(targetSlideIndex, maxSlide)
+    } else {
+      targetSlideIndex = Math.min(dotIndex, totalItems - 1)
+    }
+
+    if (dotIndex === 0) {
+      targetSlideIndex = 0
+    }
+
+    const firstRealIndex = loopCloneCount
+    const lastRealIndex = loopCloneCount + totalItems - 1
+    const isInClones =
+      virtualSlide < firstRealIndex || virtualSlide > lastRealIndex
+
+    if (isInClones || dotIndex === 0) {
+      const targetVirtualSlide = loopCloneCount + targetSlideIndex
+      const targetTransform = transformMap[targetVirtualSlide] ?? 0
+
+      dispatch({
+        type: 'ADJUST_CURRENT_SLIDE',
+        payload: {
+          currentSlide: targetSlideIndex,
+          virtualSlide: targetVirtualSlide,
+          transform: targetTransform,
+        },
+      })
+    } else {
+      const currentDotIndex = getSelectedDot(
+        passVisibleSlides,
+        normalizedCurrentSlide,
+        slidesPerPage,
+        totalItems
+      )
+      const pageDelta = dotIndex - currentDotIndex
+      const slidesToPass =
+        Math.abs(pageDelta) * (passVisibleSlides ? Math.floor(slidesPerPage) : 1)
+      pageDelta > 0 ? goForward(slidesToPass) : goBack(slidesToPass)
+    }
   }
 
   return (
@@ -79,9 +193,13 @@ const PaginationDots: FC<Props> = ({ controls, totalItems, infinite }) => {
       aria-label="Slider pagination dots"
     >
       {slideIndexes.map(index => {
-        const isActive =
-          index ===
-          getSelectedDot(passVisibleSlides, currentSlide, Math.floor(slidesPerPage))
+        const selectedDotIndex = getSelectedDot(
+          passVisibleSlides,
+          normalizedCurrentSlide,
+          slidesPerPage,
+          totalItems
+        )
+        const isActive = index === selectedDotIndex
 
         return (
           <div
