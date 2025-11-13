@@ -66,16 +66,19 @@ const SliderTrack: FC<Props> = ({
   centerModeSlidesGap,
   totalItems,
   children,
+  infinite,
 }) => {
   const {
     slideWidth,
     slidesPerPage,
     currentSlide,
+    virtualSlide,
     isOnTouchMove,
     useSlidingTransitionEffect,
     slideTransition: { speed, timing, delay },
     transformMap,
     transform,
+    loopCloneCount,
   } = useSliderState()
 
   const dispatch = useSliderDispatch()
@@ -88,8 +91,72 @@ const SliderTrack: FC<Props> = ({
     centerMode,
   })
 
-  // Simplified - no slide cloning for infinite mode
-  const slides = children ?? []
+  const baseSlides = children ?? []
+  const baseSlidesCount = baseSlides.length
+  const shouldUseVirtualSlides =
+    Boolean(infinite) && loopCloneCount > 0 && baseSlidesCount > 0
+
+  const cloneNode = (
+    child: Exclude<ReactNode, boolean | null | undefined>,
+    originalIndex: number,
+    position: 'head' | 'tail',
+    cloneIndex: number
+  ) => {
+    if (React.isValidElement(child)) {
+      const originalKey =
+        child.key !== null && child.key !== undefined
+          ? child.key
+          : `${originalIndex}`
+
+      return React.cloneElement(child, {
+        key: `clone-${position}-${cloneIndex}-${originalKey}`,
+      })
+    }
+
+    return (
+      <React.Fragment key={`clone-${position}-${cloneIndex}-${originalIndex}`}>
+        {child}
+      </React.Fragment>
+    )
+  }
+
+  const headClones = shouldUseVirtualSlides
+    ? baseSlides
+        .slice(baseSlidesCount - loopCloneCount)
+        .map((child, index) =>
+          cloneNode(
+            child,
+            baseSlidesCount - loopCloneCount + index,
+            'head',
+            index
+          )
+        )
+    : []
+
+  const tailClones = shouldUseVirtualSlides
+    ? baseSlides
+        .slice(0, loopCloneCount)
+        .map((child, index) => cloneNode(child, index, 'tail', index))
+    : []
+
+  const slides = shouldUseVirtualSlides
+    ? ([] as Array<Exclude<ReactNode, boolean | null | undefined>>)
+        .concat(headClones)
+        .concat(baseSlides)
+        .concat(tailClones)
+    : baseSlides
+
+  const getRealIndexFromVirtual = (virtualIndex: number) => {
+    if (!shouldUseVirtualSlides || baseSlidesCount === 0) {
+      return virtualIndex
+    }
+
+    const relativeIndex = virtualIndex - loopCloneCount
+    const normalized =
+      ((relativeIndex % baseSlidesCount) + baseSlidesCount) % baseSlidesCount
+
+    return normalized
+  }
 
   const trackWidth =
     slidesPerPage <= totalItems
@@ -108,20 +175,54 @@ const SliderTrack: FC<Props> = ({
             ? undefined
             : `transform ${speed}ms ${timing} ${delay}ms`,
         transform: `translate3d(${
-          isOnTouchMove ? transform : transformMap[currentSlide] || 0
+          isOnTouchMove ? transform : transformMap[virtualSlide] || 0
         }%, 0, 0)`,
         width: trackWidth,
       }}
       onTransitionEnd={() => {
-        // Simplified - just disable transition, no loop adjustment needed
         dispatch({ type: 'DISABLE_TRANSITION' })
+
+        if (
+          shouldUseVirtualSlides &&
+          baseSlidesCount > 0 &&
+          totalItems > 0 &&
+          !isOnTouchMove &&
+          useSlidingTransitionEffect
+        ) {
+          const firstRealIndex = loopCloneCount
+          const lastRealIndex = loopCloneCount + totalItems - 1
+
+          const isInHeadClones = virtualSlide < firstRealIndex
+          const isInTailClones = virtualSlide > lastRealIndex
+
+          if (isInHeadClones || isInTailClones) {
+            const normalizedRealIndex = getRealIndexFromVirtual(virtualSlide)
+            const normalizedVirtualSlide =
+              loopCloneCount + normalizedRealIndex
+
+            if (normalizedVirtualSlide !== virtualSlide) {
+              const hasDecimalSlides = slidesPerPage % 1 !== 0
+              const delay = hasDecimalSlides ? 100 : 0
+
+              setTimeout(() => {
+                dispatch({
+                  type: 'ADJUST_CURRENT_SLIDE',
+                  payload: {
+                    currentSlide: normalizedRealIndex,
+                    virtualSlide: normalizedVirtualSlide,
+                    transform: transformMap[normalizedVirtualSlide] || 0,
+                  },
+                })
+              }, delay)
+            }
+          }
+        }
       }}
       aria-atomic="false"
       aria-live="polite"
     >
       {slides.map((child, index) => {
-        // Simplified - no cloned slides adjustment needed
-        const adjustedIndex = index
+        const realIndex = getRealIndexFromVirtual(index)
         const slideContainerStyles = {
           width: `${slideWidth}%`,
           marginLeft:
@@ -144,19 +245,19 @@ const SliderTrack: FC<Props> = ({
 
         return (
           <div
-            key={adjustedIndex}
+            key={`virtual-slide-${index}`}
             {...resolveAriaAttributes(
-              isItemVisible(adjustedIndex),
-              adjustedIndex,
+              isItemVisible(realIndex),
+              realIndex,
               totalItems
             )}
             className={`${withModifiers('slide', [
-              getFirstOrLastVisible(slidesPerPage, adjustedIndex),
-              isItemVisible(adjustedIndex) ? 'visible' : 'hidden',
+              getFirstOrLastVisible(slidesPerPage, realIndex),
+              isItemVisible(realIndex) ? 'visible' : 'hidden',
             ])} flex relative`}
             data-index={
-              adjustedIndex >= 0 && adjustedIndex < totalItems
-                ? adjustedIndex + 1
+              realIndex >= 0 && realIndex < totalItems
+                ? realIndex + 1
                 : undefined
             }
             style={slideContainerStyles}
@@ -164,7 +265,7 @@ const SliderTrack: FC<Props> = ({
             <div
               className={`${handles.slideChildrenContainer} flex justify-center items-center w-100`}
             >
-              {!usePagination || shouldRenderItem(adjustedIndex)
+              {!usePagination || shouldRenderItem(realIndex)
                 ? child
                 : child}
             </div>

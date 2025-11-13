@@ -53,16 +53,18 @@ const Slider: FC<Props> = ({
   const { handles } = useContextCssHandles()
   const { isMobile } = useDevice()
   const { label = 'slider', slidesPerPage } = useSliderState()
+  const shouldBeStaticList = slidesPerPage >= totalItems
+
+  const isLooping = infinite && !shouldBeStaticList
+
   const containerRef = useRef<HTMLDivElement>(null)
   const { onTouchEnd, onTouchStart, onTouchMove } = useTouchHandlers({
-    infinite,
+    infinite: isLooping,
     centerMode,
   })
 
-  useAutoplay(infinite, containerRef)
-  useScreenResize(infinite, itemsPerPage)
-
-  const shouldBeStaticList = slidesPerPage >= totalItems
+  useAutoplay(isLooping, containerRef)
+  useScreenResize(isLooping, itemsPerPage)
 
   const controls = `${label
     .toLowerCase()
@@ -134,7 +136,7 @@ const Slider: FC<Props> = ({
         <SliderTrack
           centerMode={centerMode}
           centerModeSlidesGap={centerModeSlidesGap}
-          infinite={infinite}
+          infinite={isLooping}
           totalItems={totalItems}
           usePagination={shouldUsePagination}
         >
@@ -147,14 +149,14 @@ const Slider: FC<Props> = ({
             totalItems={totalItems}
             orientation="left"
             controls={controls}
-            infinite={infinite}
+            infinite={isLooping}
             arrowSize={arrowSize}
           />
           <Arrow
             totalItems={totalItems}
             orientation="right"
             controls={controls}
-            infinite={infinite}
+            infinite={isLooping}
             arrowSize={arrowSize}
           />
         </Fragment>
@@ -163,7 +165,7 @@ const Slider: FC<Props> = ({
         <PaginationDots
           totalItems={totalItems}
           controls={controls}
-          infinite={infinite}
+          infinite={isLooping}
         />
       )}
     </section>

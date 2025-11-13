@@ -29,6 +29,7 @@ function SliderLayout({
   children,
   centerMode = 'disabled',
   centerModeSlidesGap,
+  infinite = false,
   itemsPerPage = {
     desktop: 5,
     tablet: 3,
@@ -50,7 +51,7 @@ function SliderLayout({
   return (
     <CssHandlesProvider handles={handles} withModifiers={withModifiers}>
       <SliderContextProvider
-        infinite={false}
+        infinite={infinite}
         totalItems={totalSlides}
         itemsPerPage={responsiveItemsPerPage}
         centerMode={responsiveCenterMode}
@@ -67,6 +68,7 @@ function SliderLayout({
           fullWidth={resolvedFullWidth}
           arrowSize={responsiveArrowIconSize}
           itemsPerPage={responsiveItemsPerPage}
+          infinite={infinite}
         >
           {slides}
         </Slider>

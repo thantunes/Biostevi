@@ -8,33 +8,69 @@ export const useSliderControls = (infinite: boolean) => {
     totalItems,
     navigationStep,
     transformMap,
+    loopCloneCount,
+    virtualSlide,
+    virtualTotalItems,
+    infinite: isLoopingEnabled,
   } = useSliderState()
 
   const dispatch = useSliderDispatch()
   const groupDispatch = useSliderGroupDispatch()
 
-  const goBack = (step?: number) => {
-    let nextSlide = 0
-    let nextTransformValue = 0
-    const activeNavigationStep = step ?? navigationStep
+  if (totalItems === 0) {
+    const noop = () => {}
 
-    // Lógica mais simples: slide anterior é currentSlide - step
-    nextSlide = currentSlide - activeNavigationStep
+    return {
+      goForward: noop,
+      goBack: noop,
+    }
+  }
 
-    // Verificar limites
-    if (!infinite) {
-      // Para não infinito, não pode ser menor que 0
-      if (nextSlide < 0) {
-        nextSlide = 0
-      }
-      // O último slide válido é quando ainda mostra pelo menos 1 item completo
-      const maxSlide = Math.max(0, totalItems - Math.floor(slidesPerPage))
-      if (nextSlide > maxSlide) {
-        nextSlide = maxSlide
-      }
+  const looping = infinite && isLoopingEnabled && loopCloneCount > 0
+
+  const getMaxSlide = () =>
+    Math.max(0, totalItems - Math.floor(slidesPerPage))
+
+  const getRealIndexFromVirtual = (targetVirtualSlide: number) => {
+    if (!looping || totalItems === 0) {
+      return Math.max(
+        0,
+        Math.min(targetVirtualSlide, Math.max(0, totalItems - 1))
+      )
     }
 
-    nextTransformValue = transformMap[nextSlide] || 0
+    const relativeIndex = targetVirtualSlide - loopCloneCount
+    const normalized =
+      ((relativeIndex % totalItems) + totalItems) % totalItems
+
+    return normalized
+  }
+
+  const goBack = (step?: number) => {
+    let nextSlide = 0
+    const activeNavigationStep = step ?? navigationStep
+
+    let nextVirtualSlide = virtualSlide - activeNavigationStep
+
+    if (!looping) {
+      // Clamp within bounds for non-looping slider
+      const maxSlide = getMaxSlide()
+      nextSlide = Math.min(
+        Math.max(currentSlide - activeNavigationStep, 0),
+        maxSlide
+      )
+      nextVirtualSlide = nextSlide
+    } else {
+      // Ensure virtual index stays within the virtual track range
+      if (nextVirtualSlide < 0) {
+        nextVirtualSlide =
+          (nextVirtualSlide % virtualTotalItems) + virtualTotalItems
+      }
+      nextVirtualSlide = Math.max(0, nextVirtualSlide)
+      nextSlide = getRealIndexFromVirtual(nextVirtualSlide)
+    }
+
+    const nextTransformValue = transformMap[nextVirtualSlide] || 0
 
     if (groupDispatch) {
       groupDispatch({
@@ -51,31 +87,31 @@ export const useSliderControls = (infinite: boolean) => {
       payload: {
         transform: nextTransformValue,
         currentSlide: nextSlide,
+        virtualSlide: nextVirtualSlide,
       },
     })
   }
 
   const goForward = (step?: number) => {
     let nextSlide = 0
-    let nextTransformValue = 0
     const activeNavigationStep = step ?? navigationStep
 
-    // Lógica mais simples: próximo slide é currentSlide + step
-    nextSlide = currentSlide + activeNavigationStep
+    let nextVirtualSlide = virtualSlide + activeNavigationStep
 
-    // Verificar limites - NUNCA pode passar do que é visível
-    if (!infinite) {
-      // O último slide visível é quando ainda mostra pelo menos 1 item completo
-      const maxSlide = Math.max(0, totalItems - Math.floor(slidesPerPage))
-      if (nextSlide > maxSlide) {
-        nextSlide = maxSlide
+    if (!looping) {
+      // Clamp within bounds for non-looping slider
+      const maxSlide = getMaxSlide()
+      nextSlide = Math.min(nextVirtualSlide, maxSlide)
+      nextSlide = Math.max(0, nextSlide)
+      nextVirtualSlide = nextSlide
+    } else {
+      if (nextVirtualSlide >= virtualTotalItems) {
+        nextVirtualSlide = nextVirtualSlide % virtualTotalItems
       }
-      if (nextSlide < 0) {
-        nextSlide = 0
-      }
+      nextSlide = getRealIndexFromVirtual(nextVirtualSlide)
     }
 
-    nextTransformValue = transformMap[nextSlide] || 0
+    const nextTransformValue = transformMap[nextVirtualSlide] || 0
 
     if (groupDispatch) {
       groupDispatch({
@@ -92,6 +128,7 @@ export const useSliderControls = (infinite: boolean) => {
       payload: {
         transform: nextTransformValue,
         currentSlide: nextSlide,
+        virtualSlide: nextVirtualSlide,
       },
     })
   }
