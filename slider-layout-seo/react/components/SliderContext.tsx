@@ -49,6 +49,14 @@ interface AdjustCurrentSlideAction {
   }
 }
 
+interface StartLoopNormalizationAction {
+  type: 'START_LOOP_NORMALIZATION'
+}
+
+interface EndLoopNormalizationAction {
+  type: 'END_LOOP_NORMALIZATION'
+}
+
 interface SyncSliderGroupAction {
   type: 'SYNC_SLIDER_GROUP'
   payload: {
@@ -73,6 +81,7 @@ interface AdjustContextValuesAction {
     virtualTotalItems: State['virtualTotalItems']
     currentSlide: State['currentSlide']
     infinite: State['infinite']
+  isLoopingAdjustment: State['isLoopingAdjustment']
   }
 }
 
@@ -135,6 +144,7 @@ interface State extends Partial<SliderLayoutProps> {
   transformMap: Record<number, number>
   slideTransition: Exclude<SliderLayoutProps['slideTransition'], undefined>
   infinite: boolean
+  isLoopingAdjustment: boolean
 }
 
 interface SliderContextProps extends SliderLayoutProps {
@@ -151,6 +161,8 @@ type Action =
   | AdjustCurrentSlideAction
   | AdjustContextValuesAction
   | SyncSliderGroupAction
+  | StartLoopNormalizationAction
+  | EndLoopNormalizationAction
 type Dispatch = (action: Action) => void
 
 const SliderStateContext = createContext<State | undefined>(undefined)
@@ -197,6 +209,18 @@ function sliderContextReducer(state: State, action: Action): State {
         virtualSlide: action.payload.virtualSlide,
         transform: action.payload.transform ?? state.transform,
         useSlidingTransitionEffect: false,
+      }
+
+    case 'START_LOOP_NORMALIZATION':
+      return {
+        ...state,
+        isLoopingAdjustment: true,
+      }
+
+    case 'END_LOOP_NORMALIZATION':
+      return {
+        ...state,
+        isLoopingAdjustment: false,
       }
 
     case 'SYNC_SLIDER_GROUP':
@@ -351,6 +375,7 @@ const SliderContextProvider: FC<SliderContextProps> = ({
     isOnTouchMove: false,
     useSlidingTransitionEffect: false,
     infinite: loopCloneCount > 0,
+    isLoopingAdjustment: false,
   })
 
   if (
@@ -379,6 +404,7 @@ const SliderContextProvider: FC<SliderContextProps> = ({
         virtualTotalItems,
         currentSlide: nextCurrentSlide,
         infinite: loopCloneCount > 0,
+        isLoopingAdjustment: state.isLoopingAdjustment,
       },
     })
     setPrevProps({ itemsPerPage, totalItems, infinite })

@@ -12,6 +12,7 @@ export const useSliderControls = (infinite: boolean) => {
     virtualSlide,
     virtualTotalItems,
     infinite: isLoopingEnabled,
+    isLoopingAdjustment,
   } = useSliderState()
 
   const dispatch = useSliderDispatch()
@@ -46,27 +47,49 @@ export const useSliderControls = (infinite: boolean) => {
     return normalized
   }
 
+  const resolveLoopingPosition = () => {
+    if (!looping) {
+      return {
+        baseVirtualSlide: virtualSlide,
+        baseCurrentSlide: currentSlide,
+      }
+    }
+
+    const firstRealIndex = loopCloneCount
+    const lastRealIndex = loopCloneCount + totalItems - 1
+
+    return {
+      baseVirtualSlide: virtualSlide,
+      baseCurrentSlide:
+        virtualSlide >= firstRealIndex && virtualSlide <= lastRealIndex
+          ? currentSlide
+          : getRealIndexFromVirtual(virtualSlide),
+    }
+  }
+
   const goBack = (step?: number) => {
-    let nextSlide = 0
+    if (isLoopingAdjustment) {
+      return
+    }
+
+    const { baseVirtualSlide, baseCurrentSlide } = resolveLoopingPosition()
     const activeNavigationStep = step ?? navigationStep
 
-    let nextVirtualSlide = virtualSlide - activeNavigationStep
+    let nextVirtualSlide = baseVirtualSlide - activeNavigationStep
+    let nextSlide = baseCurrentSlide - activeNavigationStep
 
     if (!looping) {
-      // Clamp within bounds for non-looping slider
       const maxSlide = getMaxSlide()
-      nextSlide = Math.min(
-        Math.max(currentSlide - activeNavigationStep, 0),
-        maxSlide
-      )
+      nextSlide = Math.min(Math.max(nextSlide, 0), maxSlide)
       nextVirtualSlide = nextSlide
     } else {
-      // Ensure virtual index stays within the virtual track range
-      if (nextVirtualSlide < 0) {
-        nextVirtualSlide =
-          (nextVirtualSlide % virtualTotalItems) + virtualTotalItems
-      }
-      nextVirtualSlide = Math.max(0, nextVirtualSlide)
+      const minVirtualIndex = 0
+      const maxVirtualIndex = virtualTotalItems - 1
+
+      nextVirtualSlide = Math.max(
+        minVirtualIndex,
+        Math.min(nextVirtualSlide, maxVirtualIndex)
+      )
       nextSlide = getRealIndexFromVirtual(nextVirtualSlide)
     }
 
@@ -93,21 +116,28 @@ export const useSliderControls = (infinite: boolean) => {
   }
 
   const goForward = (step?: number) => {
-    let nextSlide = 0
+    if (isLoopingAdjustment) {
+      return
+    }
+
+    const { baseVirtualSlide, baseCurrentSlide } = resolveLoopingPosition()
     const activeNavigationStep = step ?? navigationStep
 
-    let nextVirtualSlide = virtualSlide + activeNavigationStep
+    let nextVirtualSlide = baseVirtualSlide + activeNavigationStep
+    let nextSlide = baseCurrentSlide + activeNavigationStep
 
     if (!looping) {
-      // Clamp within bounds for non-looping slider
       const maxSlide = getMaxSlide()
-      nextSlide = Math.min(nextVirtualSlide, maxSlide)
-      nextSlide = Math.max(0, nextSlide)
+      nextSlide = Math.min(Math.max(nextSlide, 0), maxSlide)
       nextVirtualSlide = nextSlide
     } else {
-      if (nextVirtualSlide >= virtualTotalItems) {
-        nextVirtualSlide = nextVirtualSlide % virtualTotalItems
-      }
+      const minVirtualIndex = 0
+      const maxVirtualIndex = virtualTotalItems - 1
+
+      nextVirtualSlide = Math.max(
+        minVirtualIndex,
+        Math.min(nextVirtualSlide, maxVirtualIndex)
+      )
       nextSlide = getRealIndexFromVirtual(nextVirtualSlide)
     }
 

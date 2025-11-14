@@ -163,6 +163,17 @@ const SliderTrack: FC<Props> = ({
       ? `${(slides.length * 100) / slidesPerPage}%`
       : '100%'
 
+  const queueWithoutTransition = (callback: () => void) => {
+    if (typeof window === 'undefined') {
+      callback()
+      return
+    }
+
+    window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(callback)
+    })
+  }
+
   return (
     <div
       data-testid="slider-track"
@@ -180,43 +191,55 @@ const SliderTrack: FC<Props> = ({
         width: trackWidth,
       }}
       onTransitionEnd={() => {
-        dispatch({ type: 'DISABLE_TRANSITION' })
-
-        if (
+        const canAdjustVirtually =
           shouldUseVirtualSlides &&
           baseSlidesCount > 0 &&
           totalItems > 0 &&
-          !isOnTouchMove &&
-          useSlidingTransitionEffect
-        ) {
-          const firstRealIndex = loopCloneCount
-          const lastRealIndex = loopCloneCount + totalItems - 1
+          !isOnTouchMove
 
-          const isInHeadClones = virtualSlide < firstRealIndex
-          const isInTailClones = virtualSlide > lastRealIndex
+        if (!useSlidingTransitionEffect || !canAdjustVirtually) {
+          dispatch({ type: 'DISABLE_TRANSITION' })
 
-          if (isInHeadClones || isInTailClones) {
-            const normalizedRealIndex = getRealIndexFromVirtual(virtualSlide)
-            const normalizedVirtualSlide =
-              loopCloneCount + normalizedRealIndex
-
-            if (normalizedVirtualSlide !== virtualSlide) {
-              const hasDecimalSlides = slidesPerPage % 1 !== 0
-              const delay = hasDecimalSlides ? 100 : 0
-
-              setTimeout(() => {
-                dispatch({
-                  type: 'ADJUST_CURRENT_SLIDE',
-                  payload: {
-                    currentSlide: normalizedRealIndex,
-                    virtualSlide: normalizedVirtualSlide,
-                    transform: transformMap[normalizedVirtualSlide] || 0,
-                  },
-                })
-              }, delay)
-            }
-          }
+          return
         }
+
+        const firstRealIndex = loopCloneCount
+        const lastRealIndex = loopCloneCount + totalItems - 1
+
+        const isInHeadClones = virtualSlide < firstRealIndex
+        const isInTailClones = virtualSlide > lastRealIndex
+
+        if (!isInHeadClones && !isInTailClones) {
+          dispatch({ type: 'DISABLE_TRANSITION' })
+
+          return
+        }
+
+        dispatch({ type: 'DISABLE_TRANSITION' })
+
+        const normalizedRealIndex = getRealIndexFromVirtual(virtualSlide)
+        const normalizedVirtualSlide = loopCloneCount + normalizedRealIndex
+
+        if (normalizedVirtualSlide === virtualSlide) {
+          return
+        }
+
+        dispatch({ type: 'START_LOOP_NORMALIZATION' })
+
+        queueWithoutTransition(() => {
+          dispatch({
+            type: 'ADJUST_CURRENT_SLIDE',
+            payload: {
+              currentSlide: normalizedRealIndex,
+              virtualSlide: normalizedVirtualSlide,
+              transform: transformMap[normalizedVirtualSlide] || 0,
+            },
+          })
+
+          queueWithoutTransition(() => {
+            dispatch({ type: 'END_LOOP_NORMALIZATION' })
+          })
+        })
       }}
       aria-atomic="false"
       aria-live="polite"

@@ -87,7 +87,8 @@
       },
       "infinite": true,
       "showNavigationArrows": "desktopOnly",
-      "blockClass": "influenciadores"
+      "blockClass": "influenciadores",
+      "label": "team-biostevi"
     }
   },
 
