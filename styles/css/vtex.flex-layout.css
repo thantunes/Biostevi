@@ -132,6 +132,10 @@
   align-items: center;
   padding-top: 38px;
 }
+.flexRowContent--pdp-review-wishlist {
+  align-items: center !important;
+  min-height: 35px;
+}
 @media (max-width: 768px) {
   .flexRow--bloco-home-informativos {
     display: none;

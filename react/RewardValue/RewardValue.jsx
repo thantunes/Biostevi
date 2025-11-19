@@ -6,11 +6,15 @@ function RewardValue() {
   if (!productContext.product) return null
 
   const selectedItem = productContext.selectedItem
+  console.log('rewardvalue selectedItem: ', selectedItem)
   const productPrice = selectedItem.sellers[0]?.commertialOffer?.Price
+  console.log('rewardvalue productPrice: ', productPrice)
   const cashbackValue = selectedItem.sellers[0]?.commertialOffer?.RewardValue
+  console.log('rewardvalue cashbackValue: ', cashbackValue)
   if (!cashbackValue || !productPrice || !selectedItem) return null
-
+  
   const cashbackPercentage = (cashbackValue / productPrice) * 100
+  console.log('rewardvalue cashbackPercentage: ', cashbackPercentage)
 
   return (
     <div>
