@@ -332,6 +332,8 @@ const SliderContextProvider: FC<SliderContextProps> = ({
   const transformMap = useMemo(() => {
     const currentMap: Record<number, number> = {}
 
+    // Para valores decimais, manter cálculo baseado no virtualTotalItems
+    // O stepSize representa quanto % mover para passar de um slide para o próximo
     const stepSize =
       virtualTotalItems > 0 ? 100 / virtualTotalItems : 0
 
@@ -383,9 +385,10 @@ const SliderContextProvider: FC<SliderContextProps> = ({
     totalItems !== prevProps.totalItems ||
     infinite !== prevProps.infinite
   ) {
+    // Para valores decimais, calcular maxSlide de forma mais precisa
     const maxSlide = Math.max(
       0,
-      totalItems - Math.floor(resolvedSlidesPerPage)
+      Math.ceil(totalItems - resolvedSlidesPerPage)
     )
     const nextCurrentSlide = Math.min(state.currentSlide, maxSlide)
     const nextVirtualSlide = loopCloneCount + nextCurrentSlide

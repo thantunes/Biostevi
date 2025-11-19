@@ -31,13 +31,25 @@ const getSelectedDot = (
   }
 
   const totalDots = Math.ceil(totalItems / slidesToShow)
-  const maxSlide = Math.max(0, totalItems - slidesToShow)
+  // Para valores decimais, calcular maxSlide de forma mais precisa
+  // Considera que o último slide visível deve mostrar pelo menos parte do último item
+  const maxSlide = Math.max(0, Math.ceil(totalItems - slidesToShow))
 
-  if (currentSlide >= Math.floor(maxSlide)) {
+  // Verifica se estamos no último conjunto de slides
+  // Para valores decimais, precisamos considerar um threshold mais preciso
+  const threshold = slidesToShow % 1 !== 0 
+    ? Math.ceil(maxSlide) - 0.5 
+    : Math.floor(maxSlide)
+
+  if (currentSlide >= threshold) {
     return Math.max(0, totalDots - 1)
   }
 
-  const calculatedDot = Math.round(currentSlide / slidesToShow)
+  // Para valores decimais, usar cálculo mais preciso baseado em proporção
+  const calculatedDot = slidesToShow % 1 !== 0
+    ? Math.floor(currentSlide / slidesToShow)
+    : Math.round(currentSlide / slidesToShow)
+    
   return Math.max(0, Math.min(calculatedDot, totalDots - 1))
 }
 
@@ -112,7 +124,9 @@ const PaginationDots: FC<Props> = ({ controls, totalItems, infinite }) => {
         const lastDotIndex = totalDots - 1
 
         if (dotIndex === lastDotIndex) {
-          const maxSlide = Math.max(0, totalItems - slidesPerPage)
+          // Para valores decimais, calcular o último slide de forma mais precisa
+          // O último slide deve permitir que o último item seja visível
+          const maxSlide = Math.max(0, Math.ceil(totalItems - slidesPerPage))
           targetSlideIndex = Math.floor(maxSlide)
 
           dispatch({
@@ -125,8 +139,12 @@ const PaginationDots: FC<Props> = ({ controls, totalItems, infinite }) => {
           })
           return
         } else {
-          targetSlideIndex = Math.round(dotIndex * slidesPerPage)
-          const maxSlide = Math.max(0, totalItems - slidesPerPage)
+          // Para valores decimais, usar cálculo proporcional mais preciso
+          targetSlideIndex = slidesPerPage % 1 !== 0
+            ? Math.floor(dotIndex * slidesPerPage)
+            : Math.round(dotIndex * slidesPerPage)
+          
+          const maxSlide = Math.max(0, Math.ceil(totalItems - slidesPerPage))
           targetSlideIndex = Math.min(targetSlideIndex, Math.floor(maxSlide))
         }
       } else {
@@ -143,10 +161,13 @@ const PaginationDots: FC<Props> = ({ controls, totalItems, infinite }) => {
     let targetSlideIndex: number
 
     if (passVisibleSlides) {
-      const slidesPerPageInt = Math.floor(slidesPerPage)
-      targetSlideIndex = dotIndex * slidesPerPageInt
-      const maxSlide = Math.max(0, totalItems - slidesPerPageInt)
-      targetSlideIndex = Math.min(targetSlideIndex, maxSlide)
+      // Para valores decimais, usar cálculo proporcional mais preciso
+      targetSlideIndex = slidesPerPage % 1 !== 0
+        ? Math.floor(dotIndex * slidesPerPage)
+        : dotIndex * Math.floor(slidesPerPage)
+      
+      const maxSlide = Math.max(0, Math.ceil(totalItems - slidesPerPage))
+      targetSlideIndex = Math.min(targetSlideIndex, Math.floor(maxSlide))
     } else {
       targetSlideIndex = Math.min(dotIndex, totalItems - 1)
     }
@@ -180,8 +201,10 @@ const PaginationDots: FC<Props> = ({ controls, totalItems, infinite }) => {
         totalItems
       )
       const pageDelta = dotIndex - currentDotIndex
-      const slidesToPass =
-        Math.abs(pageDelta) * (passVisibleSlides ? Math.floor(slidesPerPage) : 1)
+      // Para valores decimais, calcular slidesToPass de forma mais precisa
+      const slidesToPass = passVisibleSlides
+        ? Math.ceil(Math.abs(pageDelta) * slidesPerPage)
+        : Math.abs(pageDelta)
       pageDelta > 0 ? goForward(slidesToPass) : goBack(slidesToPass)
     }
   }

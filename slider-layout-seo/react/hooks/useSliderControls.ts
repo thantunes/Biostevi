@@ -29,8 +29,11 @@ export const useSliderControls = (infinite: boolean) => {
 
   const looping = infinite && isLoopingEnabled && loopCloneCount > 0
 
-  const getMaxSlide = () =>
-    Math.max(0, totalItems - Math.floor(slidesPerPage))
+  const getMaxSlide = () => {
+    // Para valores decimais, calcular maxSlide de forma mais precisa
+    // O último slide deve permitir que o último item seja visível
+    return Math.max(0, Math.ceil(totalItems - slidesPerPage))
+  }
 
   const getRealIndexFromVirtual = (targetVirtualSlide: number) => {
     if (!looping || totalItems === 0) {
