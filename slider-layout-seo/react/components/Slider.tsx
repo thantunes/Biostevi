@@ -58,13 +58,12 @@ const Slider: FC<Props> = ({
   const isLooping = infinite && !shouldBeStaticList
 
   const containerRef = useRef<HTMLDivElement>(null)
+  const sectionRef = useRef<HTMLElement>(null)
+
   const { onTouchEnd, onTouchStart, onTouchMove } = useTouchHandlers({
     infinite: isLooping,
     centerMode,
   })
-
-  useAutoplay(isLooping, containerRef)
-  useScreenResize(isLooping, itemsPerPage)
 
   const controls = `${label
     .toLowerCase()
@@ -72,6 +71,10 @@ const Slider: FC<Props> = ({
     .replace(/ /g, '-')}-items-${Math.random()
     .toString(36)
     .substring(2, 9)}`
+
+
+  useAutoplay(isLooping, containerRef)
+  useScreenResize(isLooping, itemsPerPage)
 
   const shouldShowArrows = Boolean(
     (showNavigationArrows === 'always' ||
@@ -87,14 +90,17 @@ const Slider: FC<Props> = ({
       !shouldBeStaticList
   )
 
-  const touchStartHandler = (e: React.TouchEvent) =>
-    shouldUsePagination && !shouldBeStaticList ? onTouchStart(e) : null
+  const touchStartHandler = (e: React.TouchEvent) => {
+    return shouldUsePagination && !shouldBeStaticList ? onTouchStart(e) : null
+  }
 
-  const touchEndHandler = (e: React.TouchEvent) =>
-    shouldUsePagination && !shouldBeStaticList ? onTouchEnd(e) : null
+  const touchEndHandler = (e: React.TouchEvent) => {
+    return shouldUsePagination && !shouldBeStaticList ? onTouchEnd(e) : null
+  }
 
-  const touchMoveHandler = (e: React.TouchEvent) =>
-    shouldUsePagination && !shouldBeStaticList ? onTouchMove(e) : null
+  const touchMoveHandler = (e: React.TouchEvent) => {
+    return shouldUsePagination && !shouldBeStaticList ? onTouchMove(e) : null
+  }
 
   // Handler para controlar scroll nativo quando usePagination é false
   const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
@@ -113,6 +119,7 @@ const Slider: FC<Props> = ({
 
   return (
     <section
+      ref={sectionRef}
       onTouchStart={touchStartHandler}
       onTouchEnd={touchEndHandler}
       onTouchMove={touchMoveHandler}
@@ -138,7 +145,6 @@ const Slider: FC<Props> = ({
           centerModeSlidesGap={centerModeSlidesGap}
           infinite={isLooping}
           totalItems={totalItems}
-          usePagination={shouldUsePagination}
         >
           {children}
         </SliderTrack>

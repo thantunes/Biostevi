@@ -1,0 +1,81 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+## Rotéiro ao construir um elemento do figma em VTEX IO
+
+> Observação faça tudo de maneira lenta e revise sempre cada etapa antes seguir para a próxima. Execute tudo como um desenvolvedor sênior.
+> Em algumas etapas, você precisará interagir com o usuário. Torne essas interações claras e diretas.
+
+1- **Início da Implementação**
+  * Antes de qualquer desenvolvimento, utilize a rule @figma.mdc.
+  * Essa rule contém diretrizes para a análise e interpretação do componente no Figma.
+  * Garanta que você compreendeu os estilos, espaçamentos e interações do layout.
+
+2- **Validação**
+  * Valide os dados obtidos do Figma e verifique se os dados são os mesmos do Figma.
+
+3- **Versões**
+  * Pergunte ao usuário qual a versão do elemento selecionado (mobile ou desktop).
+  * Dependendo da resposta, solicite a outra versão. O usuário a selecionará e você repetirá os passos 1 e 2 para analisar a outra versão.
+  * Após realizar a análise, você prosseguirá para a próxima etapa com a versão mobile e, ao finalizar, repetirá todo o processo para a versão desktop.
+
+4- **Planejamento e Estudo das Documentações Oficiais**
+  * Consulte o mcp context7 e pesquise documentações sobre o vtex io.
+  * Esses materiais trazem orientações fundamentais sobre os blocos nativos e boas práticas da plataforma.
+  * Tenha especial atenção aos blocos mais usados e à forma correta de organizá-los.
+  * Liste todos os blocos necessários para montar o componente.
+  * Estruture essa lista em pequenos subcomponentes, com base na análise feita no Figma.
+  * Crie um arquivo .md dentro da pasta .cursor/tasks, descrevendo:
+    (Observação: na pasta .cursor/examples/task-model tem um modelo que você deve usar)
+    - As etapas da implementação.
+    - Os subcomponentes e blocos que compõem o elemento.
+    - As dependências entre os blocos (ex: Header depende de Minicart, Login, Search).
+    - Faça no formato de task to-do.
+    - O nome desse arquivo tem que relacionar ao elemento que vai ser criado.
+    - Para cada componente e subcomponente criado você deve colocar o css do mesmo.
+  * Depois de fazer o arquivo .md revise ele se está respeitando os subcomponentes e estilizações que você pegou no figma.
+  * À medida que for implementando cada parte, marque como concluída no arquivo.
+  * Na pasta .cursor/examples/ existe alguns exemplos de alguns blocos nativos da vtex. Leia eles e procure algo que possa usar.
+
+5- **Construção**
+  * Depois de fazer a divisão de todos os sub-componentes na etapa passada, você deve começar pelos os sub-componentes para depois juntar todos no componente final. Por exemplo:
+    - Você identificou um componente que no lado direito tenha texto e no lado esquerdo tenha um banner. Antes de criar o componente container que terá os textos e o banner você vai criar o sub-componente texto e em seguido o componente banner para depois criar o container que terá os dois.
+
+6- **Verificação da Estrutura de Pastas**
+  * Leia atentamente as seguintes rules:
+    - @assets/mdc
+    - @react-component.mdc
+    - @vtex-components.mdc
+  * Certifique-se de que o projeto está estruturado de acordo com as convenções estabelecidas nessas regras.
+  * Analise se o projeto possui arquivos que podem ser reutilizados. Em caso afirmativo, liste-os.
+
+7- **Organização do Projeto**
+  * Baseando-se novamente na rule @vtex-components.mdc, estruture as pastas e arquivos corretamente.
+  * Se construir blocos react use a rule @react-component.mdc.
+  * Essa rule fornece diretrizes importantes para:
+    - Nomeclatura dos diretórios.
+    - Separação entre componentes, estilos, assets e tipos.
+    - Configurações específicas dos blocos VTEX.
+
+8- **Estilização**
+  * Com os blocos montados, siga para a etapa de estilo:
+    - Utilize a rule @style.json e a documentação @VTEX CSS como referência.
+    - Lembre-se: arquivos .css da VTEX não permitem estilização diretamente nas tags HTML.
+    - Use seletores corretos e siga o padrão modular da plataforma.
+
+9- **Validação e Revisão**
+  * Revise todo o elemento criado:
+    - Verifique se o layout está fiel ao Figma.
+    - Confirme se todas as rules em .cursor/rules foram seguidas.
+    - Assegure-se de que todos os subcomponentes planejados foram implementados corretamente.
+  * Caso encontre inconsistências ou erros, retorne ao passo 1 e refaça as etapas necessárias.
+
+10- **Changelog**
+  * Quando o processo estiver concluído, crie um arquivo .md e descreva de forma minuciosa tudo o que você fez para deixar registrado. Faça isso com a permissão do usuário.
+  * Nesse arquivo deve ter logíca adotada, elementos criados, uma breve descrição do componente criado, faça diagramas se possível e etc.
+
+## Observações
+
+* Se o elemento a ser construído for um menu, ele deve ser criado usando elementos personalizados (React), portanto leia a regra @react-component antes de executar.

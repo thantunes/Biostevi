@@ -1,0 +1,106 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+## Estrutura de Pastas para Blocos
+
+
+store/
+├── blocks/
+│   ├── components/                               ← Componentes reutilizáveis entre páginas
+│   │   └── MyComponent/ 	                        ← Pasta do componente
+│   ├── pages/                                    ← Blocos específicos de páginas
+│   │   └── home/
+│   │       ├── components/                       ← Subcomponentes da página
+│   │       │   └── page-component.jsonc          ← Componente da página
+│   │       └── home.jsonc                        ← Arquivo principal da página
+│   └── react-components/                         ← Declarações de blocos para componentes React
+│       └── (my-component-react)/                 ← Pasta do blocos para componentes React
+│           └── my-component-react.jsonc          ← Componente
+│
+├── plugins.json 			                            ← Configurar plugins, se precisar.
+├── contentSchemas.json 	                        ← Estrutra de schemas, se precisar.
+├── interfaces.json                               ← Mapeia blocos React com os componentes
+└── routes.json                                   ← Define rotas das páginas
+
+## Regras para Criação de Blocos
+
+1. **Componentes Reutilizáveis**
+	* Devem estar na pasta: store/blocks/components.
+	* Use esta estrutura para blocos que podem ser usados em várias páginas (ex: banners, botões, seções promocionais).
+
+2. **Páginas**
+	* Devem estar em: store/blocks/pages/{nome-da-página}.
+	* Cada página terá:
+		* Um arquivo principal com o mesmo nome da pasta (home/home.jsonc, category/category.jsonc, etc.).
+		* Uma subpasta components/ para conter blocks/componentes específicos daquela página.
+
+3. **Blocos React**
+	* Devem ser declarados em: store/blocks/react-components/.
+	* Você deve criar uma pasta com o nome desse bloco e dentro dele vai ter arquivos .jsonc para cada versão.
+		react-components/
+		├── (my-component-react)/
+		│   ├── my-component-react-type-1.jsonc
+		│   ├── my-component-react-type-2.jsonc
+		> Mesmo se tiver apenas uma versão seguir esse padrão.
+	* Cada arquivo .jsonc aqui declara um bloco React com o nome correspondente, por exemplo:
+		* n1-product-showcase.jsonc → bloco n1-product-showcase.
+
+4. **Declaração de Componentes React**
+	* No arquivo interfaces.json, mapeie da seguinte forma:
+		```
+		"n1-product-showcase": {
+			"component": "ProductShowcase"
+		}
+		```
+  > O nome colocado ao lado no "component" deve ser o mesmo nome que está sendo exportado no arquivo. Se no arquivo na pasta react você faz um ```export default ProductShowcase``` você deve colocar no arquivo interface no mesmo jeito ```"component": "ProductShowcase"```
+
+## Layouts com Flex Layout
+
+Para criar uma seção no layout de página usando blocos VTEX, use o flex-layout.row como contêiner principal:
+
+```
+"flex-layout.row#banner-container": {
+  "props": {
+    "blockClass": "banner-release",
+    "marginTop": 8,
+    "colGap": 6,
+    "rowGap": 6,
+    "preventHorizontalStretch": true,
+    "horizontalAlign": "center"
+  }
+}
+```
+> Use nomes limpos e claros como banner-container, category-header, etc.
+
+## Convenções e Boas Práticas
+
+1. **Idioma**
+	* Use português em:
+		* Títulos de blocos
+		* Descrições de propriedades
+		* Rótulos visíveis para o usuário
+
+2. **Nomeação**
+	* Os nomes dos blocos devem ser descritivos e em kebab-case.
+	* Evite nomes genéricos como section1, box2, etc.
+
+3. **Estrutura de blocos .jsonc**
+	* Os blocos devem conter apenas os seguintes campos:
+		* title
+		* props
+		* blocks
+		* children
+		* parent
+		* render
+
+> Campos como 0 não são suportados e devem ser evitados.
+
+## Observações
+  * Ao identificar o bloco VTEX IO que será usado, leia a documentação do bloco para poder criar a estrutura correta. De preferência, use as documentações @VTEX BASIC e @VTEX ADVANCED, pois elas contêm instruções importantes para a criação correta dos blocos.
+
+## Restrições
+	* Não crie blocks.json – ele não é utilizado na estrutura correta.
+	* Não coloque arquivos .jsonc que declaram blocos React dentro de components/.
+	* Não misture blocos de página com blocos reutilizáveis – mantenha a separação clara entre pages e components.

@@ -1,0 +1,29 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+## Estrutura de pastas para imagens
+
+```
+
+assets/
+├── icons/
+├── images/
+└── banners/
+```
+
+1. **icons/**
+	* Armazena ícones SVG ou PNG utilizados em componentes ou blocos reutilizáveis.
+	* Deve conter ícones visuais simples, como botões, setas, ícones de redes sociais, etc.
+	* Exemplo: menu.svg, arrow-right.svg, whatsapp-icon.svg
+
+2. **images/**
+	* Armazena imagens de suporte menores, normalmente utilizadas em blocos simples ou decorativos.
+	* Ideal para logotipos, thumbnails, ilustrações pequenas ou detalhes visuais internos de componentes.
+	* Exemplo: logo-footer.png, product-badge.png, illustration-check.svg
+
+3. **banners/**
+	* Armazena imagens grandes e pesadas, usadas principalmente em banners de destaque ou seções visuais importantes do site.
+	* Pode conter imagens para sliders, hero sections, campanhas promocionais, etc.
+	* Exemplo: banner-home-desktop.jpg, black-friday-hero.webp, summer-sale-banner.png

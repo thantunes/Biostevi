@@ -1,16 +1,22 @@
-import React, { useMemo } from 'react';
+import React, {
+  useMemo,
+  Children,
+  cloneElement,
+  isValidElement,
+} from 'react';
 import { Link } from 'vtex.render-runtime';
 import { ListContextProvider } from 'vtex.list-context';
 import './index.global.css';
 
-const InfoCard = React.memo(({
-  image,
-  title,
-  description,
-  ctaText = 'Saiba mais',
-  href,
-  enableCta = false
-}) => {
+const InfoCard = React.memo(
+  ({
+    image,
+    title,
+    description,
+    ctaText = 'Saiba mais',
+    href,
+    enableCta = false,
+  }) => {
   const CardContent = () => (
     <>
       <div className="info-card-image-wrapper">
@@ -49,38 +55,38 @@ const InfoCard = React.memo(({
       </div>
     </>
   );
+    if (href) {
+      return (
+        <div className="info-card">
+          <Link
+            to={href}
+            className="info-card-container"
+            aria-label={`Ver mais sobre ${title}`}
+          >
+            <CardContent />
+          </Link>
+        </div>
+      );
+    }
 
-  // Se tem href, renderiza como link
-  if (href) {
     return (
       <div className="info-card">
-        <Link
-          to={href}
-          className="info-card-container"
-          aria-label={`Ver mais sobre ${title}`}
-        >
+        <div className="info-card-container">
           <CardContent />
-        </Link>
+        </div>
       </div>
     );
   }
+);
 
-  // Se não tem href, renderiza como div
-  return (
-    <div className="info-card">
-      <div className="info-card-container">
-        <CardContent />
-      </div>
-    </div>
-  );
-});
-
-const InfoCardList = React.memo((props) => {
+const InfoCardList = React.memo(props => {
   const { cards = [], children } = props;
-  
+
   const cardElements = useMemo(() => {
-    if (!cards || cards.length === 0) return [];
-    
+    if (!cards || cards.length === 0) {
+      return [];
+    }
+
     return cards.map((card, index) => (
       <InfoCard
         key={`${card.title}-${card.href}-${index}`}
@@ -93,56 +99,77 @@ const InfoCardList = React.memo((props) => {
       />
     ));
   }, [cards]);
-  
-  if (children && cards && cards.length > 0) {
 
+  const enhancedChildren = useMemo(() => {
+    if (!children || cardElements.length === 0) {
+      return children || null;
+    }
+
+    return Children.map(children, child => {
+      if (!isValidElement(child)) {
+        return child;
+      }
+
+      return cloneElement(child, child.props, cardElements);
+    });
+  }, [children, cardElements]);
+
+  if (children && cardElements.length > 0) {
     return (
       <ListContextProvider list={cardElements}>
         <div className="info-card-list-container">
-          <div className="info-card-list-wrapper">
-            {children}
-          </div>
+          <div className="info-card-list-wrapper">{enhancedChildren}</div>
         </div>
       </ListContextProvider>
     );
   }
 
-  // Fallback: renderiza sem ListContextProvider
+  if (cardElements.length > 0) {
+    return (
+      <div className="info-card-list-container">
+        <div className="info-card-list-wrapper">{cardElements}</div>
+      </div>
+    );
+  }
+
+  if (children) {
+    return (
+      <div className="info-card-list-container">
+        <div className="info-card-list-wrapper">{children}</div>
+      </div>
+    );
+  }
+
   return (
     <div className="info-card-list-container">
-      <div className="info-card-list-wrapper">
-        {children}
-        {!children && cardElements}
-        {!children && (!cards || cards.length === 0) && (
-          <div>Sem children e sem cards</div>
-        )}
-      </div>
+      <div className="info-card-list-wrapper" />
     </div>
   );
 });
 
-// Componente individual para ser usado diretamente no slider
-const SingleInfoCard = React.memo(({
-  image,
-  title,
-  description,
-  ctaText = 'Saiba mais',
-  href,
-  enableCta = false
-}) => {
-  return (
-    <div className="info-card-slide">
-      <InfoCard
-        image={image}
-        title={title}
-        description={description}
-        ctaText={ctaText}
-        href={href}
-        enableCta={enableCta}
-      />
-    </div>
-  );
-});
+const SingleInfoCard = React.memo(
+  ({
+    image,
+    title,
+    description,
+    ctaText = 'Saiba mais',
+    href,
+    enableCta = false,
+  }) => {
+    return (
+      <div className="info-card-slide">
+        <InfoCard
+          image={image}
+          title={title}
+          description={description}
+          ctaText={ctaText}
+          href={href}
+          enableCta={enableCta}
+        />
+      </div>
+    );
+  }
+);
 
 InfoCardList.schema = {
   title: 'Lista de Info Cards',
