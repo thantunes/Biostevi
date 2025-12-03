@@ -57,7 +57,8 @@
     "component": "SequencePagination"
   },
   "RewardValue": {
-    "component": "RewardValue"
+    "component": "RewardValue",
+    "render": "client"
   },
   "FaqComponent": {
     "component": "FaqComponent"
