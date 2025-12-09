@@ -1,0 +1,56 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+## Regras Gerais de Estilização
+
+1. **Proibição de Estilização Direta em Tags HTML**
+	* NÃO é permitido usar seletores de tags HTML (ex: div, span, h1) em arquivos CSS.
+	* Sempre use classes geradas via a função class_generator nos componentes reacts.
+
+2. **Uso Correto das Classes no CSS**
+	* As classes CSS devem ser aplicadas às tags HTML criadas dentro do seu componente React usando a função class_generator.
+	* Essas classes devem ser estilizadas dentro do arquivo .scss correspondente ao bloco VTEX usado como contêiner do seu componente.
+	* Exemplo:
+		Se o seu componente React utiliza o bloco flex-layout.row#tool-bar-container como contêiner, o estilo do seu componente deverá estar no arquivo:
+		```vtex.flex-layout.scss```
+
+		E o seletor CSS deverá seguir este padrão:
+
+		```
+		.flexRow--tool-bar-container :global(.vtex-{nome-do-componente}--{nome-da-classe}) {
+			  /* suas regras aqui */
+		}
+		```
+
+		> Isso garante que o estilo seja aplicado somente quando o componente estiver renderizado dentro do contêiner correto.
+
+3. **Grade de Largura Padrão da VTEX**
+	* Para respeitar a grade do layout da loja VTEX (máxima largura centralizada), use o seletor abaixo no CSS para o bloco contêiner da seção:
+		```
+		:global(.vtex-store-components-3-x-container) {
+			max-width: 1200px;
+	 		margin: 0 auto;
+		}
+		```
+
+		> Esse seletor deve ser usado quando você declara o flex-layout.row que serve como contêiner principal de uma seção de página.
+
+## Estrutura de Pastas
+
+styles/
+├── configs/                                ← Configurações globais de estilo (tokens, variáveis, resets, etc.)
+├── scss/                                   ← Estilos organizados por escopo: componentes, páginas e componentes React
+│   ├── components/                         ← Estilos dos blocos VTEX reutilizáveis em todo o site
+│   │   ├── (componente)/
+│   │   │   └── vtex.{bloco}.scss
+│   │   └── ...
+│   ├── pages/                              ← Estilos específicos para páginas do site
+│   │   └── (página)/
+│   │       ├── components/                 ← Estilos de blocos da página organizados por componente
+│   │       │   └── vtex.{bloco}.scss
+│   │       └── vtex.{bloco}.scss
+│   └── react-components/                   ← Estilos de componentes React integrados com blocos VTEX
+│       └── (componente)/
+│           └── vtex.{bloco}.scss

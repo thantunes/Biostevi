@@ -53,16 +53,17 @@ const Slider: FC<Props> = ({
   const { handles } = useContextCssHandles()
   const { isMobile } = useDevice()
   const { label = 'slider', slidesPerPage } = useSliderState()
+  const shouldBeStaticList = slidesPerPage >= totalItems
+
+  const isLooping = infinite && !shouldBeStaticList
+
   const containerRef = useRef<HTMLDivElement>(null)
+  const sectionRef = useRef<HTMLElement>(null)
+
   const { onTouchEnd, onTouchStart, onTouchMove } = useTouchHandlers({
-    infinite,
+    infinite: isLooping,
     centerMode,
   })
-
-  useAutoplay(infinite, containerRef)
-  useScreenResize(infinite, itemsPerPage)
-
-  const shouldBeStaticList = slidesPerPage >= totalItems
 
   const controls = `${label
     .toLowerCase()
@@ -70,6 +71,10 @@ const Slider: FC<Props> = ({
     .replace(/ /g, '-')}-items-${Math.random()
     .toString(36)
     .substring(2, 9)}`
+
+
+  useAutoplay(isLooping, containerRef)
+  useScreenResize(isLooping, itemsPerPage)
 
   const shouldShowArrows = Boolean(
     (showNavigationArrows === 'always' ||
@@ -85,17 +90,36 @@ const Slider: FC<Props> = ({
       !shouldBeStaticList
   )
 
-  const touchStartHandler = (e: React.TouchEvent) =>
-    shouldUsePagination && !shouldBeStaticList ? onTouchStart(e) : null
+  const touchStartHandler = (e: React.TouchEvent) => {
+    return shouldUsePagination && !shouldBeStaticList ? onTouchStart(e) : null
+  }
 
-  const touchEndHandler = (e: React.TouchEvent) =>
-    shouldUsePagination && !shouldBeStaticList ? onTouchEnd(e) : null
+  const touchEndHandler = (e: React.TouchEvent) => {
+    return shouldUsePagination && !shouldBeStaticList ? onTouchEnd(e) : null
+  }
 
-  const touchMoveHandler = (e: React.TouchEvent) =>
-    shouldUsePagination && !shouldBeStaticList ? onTouchMove(e) : null
+  const touchMoveHandler = (e: React.TouchEvent) => {
+    return shouldUsePagination && !shouldBeStaticList ? onTouchMove(e) : null
+  }
+
+  // Handler para controlar scroll nativo quando usePagination é false
+  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
+    if (!shouldUsePagination && !shouldBeStaticList) {
+      const container = e.currentTarget
+      const maxScrollLeft = container.scrollWidth - container.clientWidth
+
+      // Previne scroll além dos limites
+      if (container.scrollLeft < 0) {
+        container.scrollLeft = 0
+      } else if (container.scrollLeft > maxScrollLeft) {
+        container.scrollLeft = maxScrollLeft
+      }
+    }
+  }
 
   return (
     <section
+      ref={sectionRef}
       onTouchStart={touchStartHandler}
       onTouchEnd={touchEndHandler}
       onTouchMove={touchMoveHandler}
@@ -114,13 +138,13 @@ const Slider: FC<Props> = ({
           shouldUsePagination ? 'overflow-hidden' : 'overflow-x-scroll'
         }`}
         ref={containerRef}
+        onScroll={handleScroll}
       >
         <SliderTrack
           centerMode={centerMode}
           centerModeSlidesGap={centerModeSlidesGap}
-          infinite={infinite}
+          infinite={isLooping}
           totalItems={totalItems}
-          usePagination={shouldUsePagination}
         >
           {children}
         </SliderTrack>
@@ -131,14 +155,14 @@ const Slider: FC<Props> = ({
             totalItems={totalItems}
             orientation="left"
             controls={controls}
-            infinite={infinite}
+            infinite={isLooping}
             arrowSize={arrowSize}
           />
           <Arrow
             totalItems={totalItems}
             orientation="right"
             controls={controls}
-            infinite={infinite}
+            infinite={isLooping}
             arrowSize={arrowSize}
           />
         </Fragment>
@@ -147,7 +171,7 @@ const Slider: FC<Props> = ({
         <PaginationDots
           totalItems={totalItems}
           controls={controls}
-          infinite={infinite}
+          infinite={isLooping}
         />
       )}
     </section>

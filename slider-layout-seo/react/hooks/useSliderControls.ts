@@ -8,31 +8,95 @@ export const useSliderControls = (infinite: boolean) => {
     totalItems,
     navigationStep,
     transformMap,
+    loopCloneCount,
+    virtualSlide,
+    virtualTotalItems,
+    infinite: isLoopingEnabled,
+    isLoopingAdjustment,
   } = useSliderState()
 
   const dispatch = useSliderDispatch()
   const groupDispatch = useSliderGroupDispatch()
 
+  if (totalItems === 0) {
+    const noop = () => {}
+
+    return {
+      goForward: noop,
+      goBack: noop,
+    }
+  }
+
+  const looping = infinite && isLoopingEnabled && loopCloneCount > 0
+
+  const getMaxSlide = () => {
+    // Para valores decimais, calcular maxSlide de forma mais precisa
+    // O último slide deve permitir que o último item seja visível
+    return Math.max(0, Math.ceil(totalItems - slidesPerPage))
+  }
+
+  const getRealIndexFromVirtual = (targetVirtualSlide: number) => {
+    if (!looping || totalItems === 0) {
+      return Math.max(
+        0,
+        Math.min(targetVirtualSlide, Math.max(0, totalItems - 1))
+      )
+    }
+
+    const relativeIndex = targetVirtualSlide - loopCloneCount
+    const normalized =
+      ((relativeIndex % totalItems) + totalItems) % totalItems
+
+    return normalized
+  }
+
+  const resolveLoopingPosition = () => {
+    if (!looping) {
+      return {
+        baseVirtualSlide: virtualSlide,
+        baseCurrentSlide: currentSlide,
+      }
+    }
+
+    const firstRealIndex = loopCloneCount
+    const lastRealIndex = loopCloneCount + totalItems - 1
+
+    return {
+      baseVirtualSlide: virtualSlide,
+      baseCurrentSlide:
+        virtualSlide >= firstRealIndex && virtualSlide <= lastRealIndex
+          ? currentSlide
+          : getRealIndexFromVirtual(virtualSlide),
+    }
+  }
+
   const goBack = (step?: number) => {
-    let nextSlide = 0
-    let nextTransformValue = 0
+    if (isLoopingAdjustment) {
+      return
+    }
+
+    const { baseVirtualSlide, baseCurrentSlide } = resolveLoopingPosition()
     const activeNavigationStep = step ?? navigationStep
 
-    const nextMaximumSlides = currentSlide - activeNavigationStep
+    let nextVirtualSlide = baseVirtualSlide - activeNavigationStep
+    let nextSlide = baseCurrentSlide - activeNavigationStep
 
-    if (nextMaximumSlides >= 0) {
-      /** Have more slides hidden on left */
-      nextSlide = nextMaximumSlides
-      nextTransformValue = transformMap[nextSlide]
-    } else if (currentSlide !== 0) {
-      /** Prevent over-slide */
-      nextSlide = 0
-      nextTransformValue = 0
-    } else if (infinite) {
-      /** Have more slides hidden on left */
-      nextSlide = nextMaximumSlides
-      nextTransformValue = transformMap[nextSlide]
+    if (!looping) {
+      const maxSlide = getMaxSlide()
+      nextSlide = Math.min(Math.max(nextSlide, 0), maxSlide)
+      nextVirtualSlide = nextSlide
+    } else {
+      const minVirtualIndex = 0
+      const maxVirtualIndex = virtualTotalItems - 1
+
+      nextVirtualSlide = Math.max(
+        minVirtualIndex,
+        Math.min(nextVirtualSlide, maxVirtualIndex)
+      )
+      nextSlide = getRealIndexFromVirtual(nextVirtualSlide)
     }
+
+    const nextTransformValue = transformMap[nextVirtualSlide] || 0
 
     if (groupDispatch) {
       groupDispatch({
@@ -49,30 +113,38 @@ export const useSliderControls = (infinite: boolean) => {
       payload: {
         transform: nextTransformValue,
         currentSlide: nextSlide,
+        virtualSlide: nextVirtualSlide,
       },
     })
   }
 
   const goForward = (step?: number) => {
-    let nextSlide = 0
-    let nextTransformValue = 0
+    if (isLoopingAdjustment) {
+      return
+    }
+
+    const { baseVirtualSlide, baseCurrentSlide } = resolveLoopingPosition()
     const activeNavigationStep = step ?? navigationStep
 
-    const nextMaximumSlides =
-      currentSlide + 1 + slidesPerPage + activeNavigationStep
+    let nextVirtualSlide = baseVirtualSlide + activeNavigationStep
+    let nextSlide = baseCurrentSlide + activeNavigationStep
 
-    if (nextMaximumSlides <= totalItems) {
-      /** There are some slides hidden on the right */
-      nextSlide = currentSlide + activeNavigationStep
-      nextTransformValue = transformMap[nextSlide]
-    } else if (!infinite || currentSlide < totalItems - slidesPerPage) {
-      /** Prevent over-slide */
-      nextSlide = totalItems - slidesPerPage
-      nextTransformValue = transformMap[nextSlide]
-    } else if (infinite) {
-      nextSlide = currentSlide + activeNavigationStep
-      nextTransformValue = transformMap[nextSlide]
+    if (!looping) {
+      const maxSlide = getMaxSlide()
+      nextSlide = Math.min(Math.max(nextSlide, 0), maxSlide)
+      nextVirtualSlide = nextSlide
+    } else {
+      const minVirtualIndex = 0
+      const maxVirtualIndex = virtualTotalItems - 1
+
+      nextVirtualSlide = Math.max(
+        minVirtualIndex,
+        Math.min(nextVirtualSlide, maxVirtualIndex)
+      )
+      nextSlide = getRealIndexFromVirtual(nextVirtualSlide)
     }
+
+    const nextTransformValue = transformMap[nextVirtualSlide] || 0
 
     if (groupDispatch) {
       groupDispatch({
@@ -89,6 +161,7 @@ export const useSliderControls = (infinite: boolean) => {
       payload: {
         transform: nextTransformValue,
         currentSlide: nextSlide,
+        virtualSlide: nextVirtualSlide,
       },
     })
   }
