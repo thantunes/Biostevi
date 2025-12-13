@@ -230,6 +230,8 @@
   background-position: center;
   background-repeat: no-repeat;
   z-index: 0;
+  transition: transform 0.5s ease;
+  transform: scale(1);
 }
 
 .info-card-euquero-overlay {
@@ -322,6 +324,10 @@
 
 .info-card-euquero:hover .info-card-euquero-anchor-arrow {
   transform: translateX(1.5px);
+}
+
+.info-card-euquero:hover .info-card-euquero-background {
+  transform: scale(1.1);
 }
 
 /* Responsive Eu Quero */
