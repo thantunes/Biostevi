@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "react": "^16.6.3",
-    "react-intl": "^4.5.8"
+    "react-intl": "^4.5.8",
+    "swiper": "^8.4.7"
   },
   "devDependencies": {
     "@types/jest": "^24.9.1",

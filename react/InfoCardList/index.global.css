@@ -159,3 +159,201 @@
 .info-card-slide .info-card {
   height: 100%;
 }
+
+/* Layout Eu Quero Styles */
+.info-card-list-container-euquero {
+  width: 100%;
+}
+
+.info-card-list-wrapper-euquero {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Quando usado com slider-layout-seo */
+.info-card-list-container-euquero .info-card-list-wrapper-euquero {
+  display: block;
+}
+
+.info-card-euquero {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 278/320;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding: .5rem;
+}
+
+.info-card-euquero-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.info-card-euquero-icon {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 2;
+  width: 48px;
+  height: 48px;
+  background: white;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.info-card-euquero-icon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.info-card-euquero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.info-card-euquero-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.info-card-euquero-overlay-base {
+  background: linear-gradient(
+    to top, 
+    #20C0E8E6 0%, 
+    #20C0E880 30%,
+    #00000000 100%
+  );
+}
+
+.info-card-euquero-overlay-hover {
+  background: linear-gradient(
+    to top,
+    #20C0E8E6 0%, 
+    #20C0E880 80%,
+    #00000000 100%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.info-card-euquero-content {
+  position: relative;
+  z-index: 2;
+  margin-top: auto;
+  margin-inline: 16px;
+  margin-bottom: 16px;
+  background: white;
+  padding: 14px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - (16px * 2));
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.10);
+}
+
+.info-card-euquero-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #555555;
+  margin: 0;
+  line-height: 24px;
+  margin-bottom: 2px;
+}
+
+.info-card-euquero-description {
+  font-size: 14px;
+  color: #4A5565;
+  margin: 0;
+  line-height: 24px;
+  margin-bottom: 8px;
+}
+
+.info-card-euquero-anchor {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #009FC2;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.info-card-euquero:hover .info-card-euquero-anchor {
+  color: #009FC2;
+  font-weight: 700;
+}
+
+.info-card-euquero-anchor-text {
+  display: inline-block;
+}
+
+.info-card-euquero-anchor-arrow {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.2s ease;
+}
+
+.info-card-euquero:hover .info-card-euquero-anchor-arrow {
+  transform: translateX(1.5px);
+}
+
+/* Responsive Eu Quero */
+@media (max-width: 768px) {
+  .info-card-list-wrapper-euquero {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+  }
+
+  .info-card-euquero {
+    aspect-ratio: 250/280;
+  }
+
+  .info-card-euquero-content {
+    padding: 1.25rem;
+  }
+
+  .info-card-euquero-title {
+    font-size: 16px;
+  }
+
+  .info-card-euquero-icon {
+    width: 40px;
+    height: 40px;
+    top: 12px;
+    left: 12px;
+    padding: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .info-card-list-wrapper-euquero {
+    grid-template-columns: 1fr;
+  }
+}

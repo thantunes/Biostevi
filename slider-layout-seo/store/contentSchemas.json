@@ -42,6 +42,12 @@
           "title": "admin/editor.slider-layout.sliderFullWidth",
           "description": "admin/editor.slider-layout.sliderFullWidthDescription",
           "type": "boolean"
+        },
+        "sameHeight": {
+          "default": false,
+          "title": "Altura igual para todos os slides",
+          "description": "Quando ativado, todos os slides terão a mesma altura (baseada no slide mais alto)",
+          "type": "boolean"
         }
       }
     }

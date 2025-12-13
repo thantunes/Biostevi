@@ -1,9 +1,8 @@
 import React, { memo, FC, ReactNode } from 'react'
 import { IconCaret } from 'vtex.store-icons'
 
-import { useSliderState } from './SliderContext'
+import { useSliderState, useSwiperInstance } from './SliderContext'
 import useKeyboardArrows from '../hooks/useKeyboardArrows'
-import { useSliderControls } from '../hooks/useSliderControls'
 import { useContextCssHandles } from '../modules/cssHandles'
 
 interface Props {
@@ -30,7 +29,7 @@ const Arrow: FC<Props> = ({
   arrowSize,
 }) => {
   const { currentSlide, slidesPerPage } = useSliderState()
-  const { goBack, goForward } = useSliderControls(infinite)
+  const swiperRef = useSwiperInstance()
 
   const { handles } = useContextCssHandles()
 
@@ -41,24 +40,38 @@ const Arrow: FC<Props> = ({
     ((orientation === 'left' && isLeftEndReached) ||
       (orientation === 'right' && isRightEndReached))
 
-  useKeyboardArrows(goBack, goForward)
-
-  function handleArrowClick(
+  const handleArrowClick = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ) {
+  ) => {
     if (event) {
       event.stopPropagation()
       event.preventDefault()
     }
 
+    if (!swiperRef.current) return
+
     if (orientation === 'left') {
-      goBack()
+      swiperRef.current.slidePrev()
     }
 
     if (orientation === 'right') {
-      goForward()
+      swiperRef.current.slideNext()
     }
   }
+
+  const goBack = () => {
+    if (swiperRef.current) {
+      swiperRef.current.slidePrev()
+    }
+  }
+
+  const goForward = () => {
+    if (swiperRef.current) {
+      swiperRef.current.slideNext()
+    }
+  }
+
+  useKeyboardArrows(goBack, goForward)
 
   return (
     <button

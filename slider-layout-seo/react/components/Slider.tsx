@@ -2,7 +2,6 @@ import React, { FC, useRef, Fragment, ReactNode } from 'react'
 import { useDevice } from 'vtex.device-detector'
 
 import { useScreenResize } from '../hooks/useScreenResize'
-import { useTouchHandlers } from '../hooks/useTouchHandlers'
 import { useAutoplay } from '../hooks/useAutoplay'
 import {
   SliderLayoutProps,
@@ -17,6 +16,7 @@ import PaginationDots, {
   CSS_HANDLES as PaginationDotsCssHandles,
 } from './PaginationDots'
 import { useContextCssHandles } from '../modules/cssHandles'
+import { useSameHeight } from '../hooks/useSameHeight'
 
 interface Props extends SliderLayoutSiteEditorProps {
   arrowSize: number
@@ -24,8 +24,6 @@ interface Props extends SliderLayoutSiteEditorProps {
   itemsPerPage: number
   centerMode: SliderLayoutProps['centerMode']
   centerModeSlidesGap?: SliderLayoutProps['centerModeSlidesGap']
-  // This type comes from React itself. It is the return type for
-  // React.Children.toArray().
   children?: Array<Exclude<ReactNode, boolean | null | undefined>>
 }
 
@@ -49,8 +47,9 @@ const Slider: FC<Props> = ({
   itemsPerPage,
   centerMode,
   centerModeSlidesGap,
+  sameHeight = false,
 }) => {
-  const { handles } = useContextCssHandles()
+  const { handles, withModifiers } = useContextCssHandles()
   const { isMobile } = useDevice()
   const { label = 'slider', slidesPerPage } = useSliderState()
   const shouldBeStaticList = slidesPerPage >= totalItems
@@ -60,11 +59,6 @@ const Slider: FC<Props> = ({
   const containerRef = useRef<HTMLDivElement>(null)
   const sectionRef = useRef<HTMLElement>(null)
 
-  const { onTouchEnd, onTouchStart, onTouchMove } = useTouchHandlers({
-    infinite: isLooping,
-    centerMode,
-  })
-
   const controls = `${label
     .toLowerCase()
     .trim()
@@ -72,9 +66,14 @@ const Slider: FC<Props> = ({
     .toString(36)
     .substring(2, 9)}`
 
-
   useAutoplay(isLooping, containerRef)
   useScreenResize(isLooping, itemsPerPage)
+
+  // Aplicar mesma altura no modo scroll nativo também
+  useSameHeight({
+    enabled: sameHeight && !shouldUsePagination && !shouldBeStaticList,
+    selector: `.${handles.slide}`
+  })
 
   const shouldShowArrows = Boolean(
     (showNavigationArrows === 'always' ||
@@ -90,25 +89,12 @@ const Slider: FC<Props> = ({
       !shouldBeStaticList
   )
 
-  const touchStartHandler = (e: React.TouchEvent) => {
-    return shouldUsePagination && !shouldBeStaticList ? onTouchStart(e) : null
-  }
-
-  const touchEndHandler = (e: React.TouchEvent) => {
-    return shouldUsePagination && !shouldBeStaticList ? onTouchEnd(e) : null
-  }
-
-  const touchMoveHandler = (e: React.TouchEvent) => {
-    return shouldUsePagination && !shouldBeStaticList ? onTouchMove(e) : null
-  }
-
   // Handler para controlar scroll nativo quando usePagination é false
   const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
     if (!shouldUsePagination && !shouldBeStaticList) {
       const container = e.currentTarget
       const maxScrollLeft = container.scrollWidth - container.clientWidth
 
-      // Previne scroll além dos limites
       if (container.scrollLeft < 0) {
         container.scrollLeft = 0
       } else if (container.scrollLeft > maxScrollLeft) {
@@ -117,16 +103,63 @@ const Slider: FC<Props> = ({
     }
   }
 
+  // Se usePagination é false, usar scroll nativo sem Swiper
+  if (!shouldUsePagination && !shouldBeStaticList) {
+    return (
+      <section
+        ref={sectionRef}
+        aria-label={label}
+        id={controls}
+        style={{
+          WebkitOverflowScrolling: 'touch',
+          paddingLeft: fullWidth ? undefined : arrowSize * 2,
+          paddingRight: fullWidth ? undefined : arrowSize * 2,
+          touchAction: 'pan-y',
+        }}
+        className={`w-100 flex items-center relative ${handles.sliderLayoutContainer}`}
+      >
+        <div
+          className={`w-100 ${handles.sliderTrackContainer} overflow-x-scroll`}
+          ref={containerRef}
+          onScroll={handleScroll}
+        >
+          <div
+            className={`${handles.sliderTrack} flex ${
+              centerMode !== 'disabled' ? '' : 'justify-around'
+            } relative pa0 ma0`}
+            style={{
+              width: `${(totalItems * 100) / itemsPerPage}%`,
+            }}
+          >
+            {React.Children.map(children, (child, index) => (
+              <div
+                key={index}
+                className={`${handles.slide} flex relative`}
+                style={{
+                  width: `${100 / itemsPerPage}%`,
+                }}
+              >
+                <div
+                  className={`${withModifiers('slideChildrenContainer', sameHeight ? 'sameHeight' : '')} flex justify-center items-center w-100`}
+                  style={sameHeight ? { height: '100%' } : undefined}
+                >
+                  {child}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  // Usar Swiper quando usePagination é true
   return (
     <section
       ref={sectionRef}
-      onTouchStart={touchStartHandler}
-      onTouchEnd={touchEndHandler}
-      onTouchMove={touchMoveHandler}
       aria-label={label}
       id={controls}
       style={{
-        WebkitOverflowScrolling: !shouldUsePagination ? 'touch' : undefined,
         paddingLeft: fullWidth ? undefined : arrowSize * 2,
         paddingRight: fullWidth ? undefined : arrowSize * 2,
         touchAction: 'pan-y',
@@ -134,17 +167,15 @@ const Slider: FC<Props> = ({
       className={`w-100 flex items-center relative ${handles.sliderLayoutContainer}`}
     >
       <div
-        className={`w-100 ${handles.sliderTrackContainer} ${
-          shouldUsePagination ? 'overflow-hidden' : 'overflow-x-scroll'
-        }`}
+        className={`w-100 ${handles.sliderTrackContainer} overflow-hidden`}
         ref={containerRef}
-        onScroll={handleScroll}
       >
         <SliderTrack
           centerMode={centerMode}
           centerModeSlidesGap={centerModeSlidesGap}
           infinite={isLooping}
           totalItems={totalItems}
+          sameHeight={sameHeight}
         >
           {children}
         </SliderTrack>
