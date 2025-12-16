@@ -1,89 +1,17 @@
 import React, {
   createContext,
-  useReducer,
   useContext,
   FC,
   useMemo,
   useState,
+  useRef,
+  useEffect,
+  useCallback,
 } from 'react'
 import { ResponsiveValuesTypes } from 'vtex.responsive-values'
+import type { Swiper as SwiperType } from 'swiper'
 
 import { useSliderGroupState } from '../SliderLayoutGroup'
-
-interface AdjustOnResizeAction {
-  type: 'ADJUST_ON_RESIZE'
-  payload: {
-    shouldCorrectItemPosition: boolean
-    slidesPerPage: number
-    navigationStep: number
-  }
-}
-
-interface SlideAction {
-  type: 'SLIDE'
-  payload: {
-    transform?: number
-    currentSlide: number
-    virtualSlide: number
-  }
-}
-
-interface TouchAction {
-  type: 'TOUCH'
-  payload: {
-    transform?: number
-    isOnTouchMove: boolean
-  }
-}
-
-interface DisableTransitionAction {
-  type: 'DISABLE_TRANSITION'
-}
-
-interface AdjustCurrentSlideAction {
-  type: 'ADJUST_CURRENT_SLIDE'
-  payload: {
-    currentSlide: number
-    virtualSlide: number
-    transform?: number
-  }
-}
-
-interface StartLoopNormalizationAction {
-  type: 'START_LOOP_NORMALIZATION'
-}
-
-interface EndLoopNormalizationAction {
-  type: 'END_LOOP_NORMALIZATION'
-}
-
-interface SyncSliderGroupAction {
-  type: 'SYNC_SLIDER_GROUP'
-  payload: {
-    currentSlide: number
-    virtualSlide: number
-    transform?: number
-  }
-}
-
-interface AdjustContextValuesAction {
-  type: 'ADJUST_CONTEXT_VALUES'
-  payload: {
-    transformMap: State['transformMap']
-    slideWidth: State['slideWidth']
-    slidesPerPage: State['slidesPerPage']
-    transform: State['transform']
-    navigationStep: State['navigationStep']
-    totalItems: State['totalItems']
-    isPageNavigationStep: State['isPageNavigationStep']
-    loopCloneCount: State['loopCloneCount']
-    virtualSlide: State['virtualSlide']
-    virtualTotalItems: State['virtualTotalItems']
-    currentSlide: State['currentSlide']
-    infinite: State['infinite']
-  isLoopingAdjustment: State['isLoopingAdjustment']
-  }
-}
 
 export interface SliderLayoutSiteEditorProps {
   infinite?: boolean
@@ -92,6 +20,7 @@ export interface SliderLayoutSiteEditorProps {
   usePagination?: boolean
   fullWidth?: boolean
   arrowSize?: ResponsiveValuesTypes.ResponsiveValue<number>
+  sameHeight?: boolean
 }
 
 export interface SliderLayoutProps {
@@ -153,106 +82,13 @@ interface SliderContextProps extends SliderLayoutProps {
   infinite: SliderLayoutSiteEditorProps['infinite']
 }
 
-type Action =
-  | AdjustOnResizeAction
-  | SlideAction
-  | TouchAction
-  | DisableTransitionAction
-  | AdjustCurrentSlideAction
-  | AdjustContextValuesAction
-  | SyncSliderGroupAction
-  | StartLoopNormalizationAction
-  | EndLoopNormalizationAction
-type Dispatch = (action: Action) => void
-
 const SliderStateContext = createContext<State | undefined>(undefined)
-const SliderDispatchContext = createContext<Dispatch | undefined>(undefined)
-
-function sliderContextReducer(state: State, action: Action): State {
-  switch (action.type) {
-    case 'ADJUST_ON_RESIZE':
-      return {
-        ...state,
-        slidesPerPage: action.payload.slidesPerPage,
-        navigationStep: action.payload.navigationStep,
-        transform: action.payload.shouldCorrectItemPosition
-          ? state.transformMap[state.virtualSlide]
-          : state.transform,
-      }
-
-    case 'SLIDE':
-      return {
-        ...state,
-        transform: action.payload.transform ?? state.transform,
-        currentSlide: action.payload.currentSlide,
-        virtualSlide: action.payload.virtualSlide,
-        useSlidingTransitionEffect: true,
-      }
-
-    case 'TOUCH':
-      return {
-        ...state,
-        transform: action.payload.transform ?? state.transform,
-        isOnTouchMove: action.payload.isOnTouchMove,
-      }
-
-    case 'DISABLE_TRANSITION':
-      return {
-        ...state,
-        useSlidingTransitionEffect: false,
-      }
-
-    case 'ADJUST_CURRENT_SLIDE':
-      return {
-        ...state,
-        currentSlide: action.payload.currentSlide,
-        virtualSlide: action.payload.virtualSlide,
-        transform: action.payload.transform ?? state.transform,
-        useSlidingTransitionEffect: false,
-      }
-
-    case 'START_LOOP_NORMALIZATION':
-      return {
-        ...state,
-        isLoopingAdjustment: true,
-      }
-
-    case 'END_LOOP_NORMALIZATION':
-      return {
-        ...state,
-        isLoopingAdjustment: false,
-      }
-
-    case 'SYNC_SLIDER_GROUP':
-      return {
-        ...state,
-        currentSlide: action.payload.currentSlide,
-        virtualSlide: action.payload.virtualSlide,
-        transform: action.payload.transform ?? state.transform,
-        useSlidingTransitionEffect: true,
-      }
-
-    case 'ADJUST_CONTEXT_VALUES':
-      return {
-        ...state,
-        transformMap: action.payload.transformMap,
-        slideWidth: action.payload.slideWidth,
-        slidesPerPage: action.payload.slidesPerPage,
-        transform: action.payload.transform,
-        navigationStep: action.payload.navigationStep,
-        totalItems: action.payload.totalItems,
-        isPageNavigationStep: action.payload.isPageNavigationStep,
-        loopCloneCount: action.payload.loopCloneCount,
-        virtualSlide: action.payload.virtualSlide,
-        virtualTotalItems: action.payload.virtualTotalItems,
-        currentSlide: action.payload.currentSlide,
-        infinite: action.payload.infinite,
-      }
-
-    default:
-      return state
-  }
-}
+const SliderDispatchContext = createContext<((action: any) => void) | undefined>(
+  undefined
+)
+const SwiperInstanceContext = createContext<
+  React.MutableRefObject<SwiperType | null> | undefined
+>(undefined)
 
 const SliderContextProvider: FC<SliderContextProps> = ({
   autoplay,
@@ -271,8 +107,15 @@ const SliderContextProvider: FC<SliderContextProps> = ({
   infinite = false,
 }) => {
   const sliderGroupState = useSliderGroupState()
+  const swiperRef = useRef<SwiperType | null>(null)
+  const isInitializedRef = useRef(false)
+  const isUpdatingRef = useRef(false)
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const [virtualSlide, setVirtualSlide] = useState(0)
+  const [isOnTouchMove, setIsOnTouchMove] = useState(false)
+  const [useSlidingTransitionEffect, setUseSlidingTransitionEffect] =
+    useState(false)
 
-  // This enables us to support dynamic slider-layouts
   const [prevProps, setPrevProps] = useState<{
     itemsPerPage: SliderContextProps['itemsPerPage'] | null
     totalItems: SliderContextProps['totalItems'] | null
@@ -308,16 +151,12 @@ const SliderContextProvider: FC<SliderContextProps> = ({
   const virtualTotalItems =
     totalItems + (loopCloneCount > 0 ? loopCloneCount * 2 : 0)
 
-  // Removido newTotalItems pois não é mais usado no cálculo simplificado
-
   const slideWidth = useMemo(() => {
-    // Para valores decimais, sempre usamos o itemsPerPage original para cálculos de largura
     const baseSlideWidth = 100 / itemsPerPage
 
     let resultingSlideWidth = baseSlideWidth
 
     if (centerMode !== 'disabled') {
-      // Usar itemsPerPage original para manter precisão decimal
       resultingSlideWidth = (itemsPerPage / (itemsPerPage + 1)) * baseSlideWidth
 
       if (centerMode === 'to-the-left' && centerModeSlidesGap) {
@@ -331,11 +170,7 @@ const SliderContextProvider: FC<SliderContextProps> = ({
 
   const transformMap = useMemo(() => {
     const currentMap: Record<number, number> = {}
-
-    // Para valores decimais, manter cálculo baseado no virtualTotalItems
-    // O stepSize representa quanto % mover para passar de um slide para o próximo
-    const stepSize =
-      virtualTotalItems > 0 ? 100 / virtualTotalItems : 0
+    const stepSize = virtualTotalItems > 0 ? 100 / virtualTotalItems : 0
 
     for (let i = 0; i < virtualTotalItems; i++) {
       currentMap[i] = -(i * stepSize)
@@ -344,26 +179,182 @@ const SliderContextProvider: FC<SliderContextProps> = ({
     return currentMap
   }, [virtualTotalItems])
 
-  const initialSlide = useMemo(() => sliderGroupState?.currentSlide ?? 0, [
-    sliderGroupState,
-  ])
+  const initialSlide = useMemo(
+    () => sliderGroupState?.currentSlide ?? 0,
+    [sliderGroupState]
+  )
 
   const initialVirtualSlide = loopCloneCount + initialSlide
 
-  const initialTransform = useMemo(() => {
-    if (sliderGroupState?.transform !== undefined && sliderGroupState !== null) {
-      return sliderGroupState.transform ?? 0
+  // Handlers estáveis usando useCallback
+  const handleSlideChange = useCallback(() => {
+    if (!swiperRef.current || isUpdatingRef.current) return
+
+    const swiper = swiperRef.current
+    const realIndex = swiper.realIndex ?? swiper.activeIndex
+    const activeIndex = swiper.activeIndex
+
+    isUpdatingRef.current = true
+    setCurrentSlide(realIndex)
+    setVirtualSlide(activeIndex)
+    setUseSlidingTransitionEffect(true)
+    setTimeout(() => {
+      isUpdatingRef.current = false
+    }, 0)
+  }, [])
+
+  const handleTouchStart = useCallback(() => {
+    setIsOnTouchMove(true)
+  }, [])
+
+  const handleTouchEnd = useCallback(() => {
+    setIsOnTouchMove(false)
+  }, [])
+
+  const handleTransitionStart = useCallback(() => {
+    setUseSlidingTransitionEffect(true)
+  }, [])
+
+  const handleTransitionEnd = useCallback(() => {
+    setUseSlidingTransitionEffect(false)
+  }, [])
+
+  // Sincronizar com Swiper quando ele mudar
+  useEffect(() => {
+    if (!swiperRef.current || isInitializedRef.current) return
+
+    const swiper = swiperRef.current
+    isInitializedRef.current = true
+
+    swiper.on('slideChange', handleSlideChange)
+    swiper.on('touchStart', handleTouchStart)
+    swiper.on('touchEnd', handleTouchEnd)
+    swiper.on('transitionStart', handleTransitionStart)
+    swiper.on('transitionEnd', handleTransitionEnd)
+
+    return () => {
+      isInitializedRef.current = false
+      swiper.off('slideChange', handleSlideChange)
+      swiper.off('touchStart', handleTouchStart)
+      swiper.off('touchEnd', handleTouchEnd)
+      swiper.off('transitionStart', handleTransitionStart)
+      swiper.off('transitionEnd', handleTransitionEnd)
+    }
+  }, [handleSlideChange, handleTouchStart, handleTouchEnd, handleTransitionStart, handleTransitionEnd])
+
+  // Inicializar estado apenas uma vez
+  useEffect(() => {
+    if (isInitializedRef.current) return
+    setCurrentSlide(initialSlide)
+    setVirtualSlide(initialVirtualSlide)
+  }, [initialSlide, initialVirtualSlide])
+
+  // Ajustar quando props mudarem (sem incluir currentSlide para evitar loop)
+  useEffect(() => {
+    if (
+      itemsPerPage === prevProps.itemsPerPage &&
+      totalItems === prevProps.totalItems &&
+      infinite === prevProps.infinite
+    ) {
+      return
     }
 
-    return transformMap[initialVirtualSlide] || 0
-  }, [transformMap, initialVirtualSlide, sliderGroupState])
+    if (isUpdatingRef.current) return
 
-  const [state, dispatch] = useReducer(sliderContextReducer, {
+    const maxSlide = Math.max(0, Math.ceil(totalItems - resolvedSlidesPerPage))
+    const nextCurrentSlide = Math.min(currentSlide, maxSlide)
+    const nextVirtualSlide = loopCloneCount + nextCurrentSlide
+
+    isUpdatingRef.current = true
+    setCurrentSlide(nextCurrentSlide)
+    setVirtualSlide(nextVirtualSlide)
+    setPrevProps({ itemsPerPage, totalItems, infinite })
+
+    if (swiperRef.current) {
+      swiperRef.current.slideTo(nextVirtualSlide, 0)
+    }
+
+    setTimeout(() => {
+      isUpdatingRef.current = false
+    }, 100)
+  }, [itemsPerPage, totalItems, infinite, resolvedSlidesPerPage, loopCloneCount])
+
+  // Sincronizar com grupo (sem incluir currentSlide para evitar loop)
+  useEffect(() => {
+    if (!sliderGroupState || isUpdatingRef.current) return
+
+    const groupSlide = sliderGroupState.currentSlide
+    if (groupSlide === currentSlide) return
+
+    const newVirtualSlide = loopCloneCount + groupSlide
+
+    isUpdatingRef.current = true
+    setCurrentSlide(groupSlide)
+    setVirtualSlide(newVirtualSlide)
+
+    if (swiperRef.current) {
+      swiperRef.current.slideTo(newVirtualSlide)
+    }
+
+    setTimeout(() => {
+      isUpdatingRef.current = false
+    }, 100)
+  }, [sliderGroupState?.currentSlide, loopCloneCount])
+
+  // Dispatch simplificado para compatibilidade
+  const dispatch = (action: any) => {
+    if (!swiperRef.current) return
+
+    const swiper = swiperRef.current
+
+    switch (action.type) {
+      case 'SLIDE':
+        const { virtualSlide: targetVirtualSlide } = action.payload
+        if (targetVirtualSlide !== undefined) {
+          swiper.slideTo(targetVirtualSlide)
+        }
+        break
+
+      case 'ADJUST_CURRENT_SLIDE':
+        const {
+          currentSlide: adjustCurrentSlide,
+          virtualSlide: adjustVirtualSlide,
+        } = action.payload
+        setCurrentSlide(adjustCurrentSlide)
+        setVirtualSlide(adjustVirtualSlide)
+        if (adjustVirtualSlide !== undefined) {
+          swiper.slideTo(adjustVirtualSlide, 0)
+        }
+        break
+
+      case 'TOUCH':
+        setIsOnTouchMove(action.payload.isOnTouchMove)
+        break
+
+      case 'DISABLE_TRANSITION':
+        setUseSlidingTransitionEffect(false)
+        break
+
+      case 'START_LOOP_NORMALIZATION':
+      case 'END_LOOP_NORMALIZATION':
+        // Swiper gerencia loop automaticamente
+        break
+
+      case 'ADJUST_ON_RESIZE':
+        swiper.update()
+        break
+
+      default:
+        break
+    }
+  }
+
+  const state: State = {
     slideWidth,
     slidesPerPage: resolvedSlidesPerPage,
-    currentSlide: initialSlide,
-    virtualSlide: initialVirtualSlide,
-    transform: initialTransform,
+    currentSlide,
+    virtualSlide,
+    transform: transformMap[virtualSlide] || 0,
     transformMap,
     navigationStep: resolvedNavigationStep,
     slideTransition,
@@ -374,68 +365,18 @@ const SliderContextProvider: FC<SliderContextProps> = ({
     loopCloneCount,
     virtualTotalItems,
     isPageNavigationStep: navigationStep === 'page',
-    isOnTouchMove: false,
-    useSlidingTransitionEffect: false,
+    isOnTouchMove,
+    useSlidingTransitionEffect,
     infinite: loopCloneCount > 0,
     isLoopingAdjustment: false,
-  })
-
-  if (
-    itemsPerPage !== prevProps.itemsPerPage ||
-    totalItems !== prevProps.totalItems ||
-    infinite !== prevProps.infinite
-  ) {
-    // Para valores decimais, calcular maxSlide de forma mais precisa
-    const maxSlide = Math.max(
-      0,
-      Math.ceil(totalItems - resolvedSlidesPerPage)
-    )
-    const nextCurrentSlide = Math.min(state.currentSlide, maxSlide)
-    const nextVirtualSlide = loopCloneCount + nextCurrentSlide
-    dispatch({
-      type: 'ADJUST_CONTEXT_VALUES',
-      payload: {
-        transformMap,
-        slideWidth,
-        slidesPerPage: resolvedSlidesPerPage,
-        transform: transformMap[nextVirtualSlide] || 0,
-        navigationStep: resolvedNavigationStep,
-        totalItems,
-        isPageNavigationStep: navigationStep === 'page',
-        loopCloneCount,
-        virtualSlide: nextVirtualSlide,
-        virtualTotalItems,
-        currentSlide: nextCurrentSlide,
-        infinite: loopCloneCount > 0,
-        isLoopingAdjustment: state.isLoopingAdjustment,
-      },
-    })
-    setPrevProps({ itemsPerPage, totalItems, infinite })
-  }
-
-  if (
-    sliderGroupState &&
-    sliderGroupState.currentSlide !== state.currentSlide
-  ) {
-    const newCurrentSlide = sliderGroupState?.currentSlide ?? state.currentSlide
-    const newVirtualSlide = loopCloneCount + newCurrentSlide
-    const newTransformValue =
-      sliderGroupState?.transform ?? transformMap[newVirtualSlide]
-
-    dispatch({
-      type: 'SYNC_SLIDER_GROUP',
-      payload: {
-        currentSlide: newCurrentSlide,
-        virtualSlide: newVirtualSlide,
-        transform: newTransformValue,
-      },
-    })
   }
 
   return (
     <SliderStateContext.Provider value={state}>
       <SliderDispatchContext.Provider value={dispatch}>
-        {children}
+        <SwiperInstanceContext.Provider value={swiperRef}>
+          {children}
+        </SwiperInstanceContext.Provider>
       </SliderDispatchContext.Provider>
     </SliderStateContext.Provider>
   )
@@ -465,4 +406,16 @@ function useSliderDispatch() {
   return context
 }
 
-export { SliderContextProvider, useSliderDispatch, useSliderState }
+function useSwiperInstance() {
+  const context = useContext(SwiperInstanceContext)
+
+  if (context === undefined) {
+    throw new Error(
+      'useSwiperInstance must be used within a SliderContextProvider'
+    )
+  }
+
+  return context
+}
+
+export { SliderContextProvider, useSliderDispatch, useSliderState, useSwiperInstance }

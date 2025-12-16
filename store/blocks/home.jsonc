@@ -7,6 +7,8 @@
       "slider-layout-seo#informativo-mobile",
       "rich-text#shelf-title-lancamentos",
       "flex-layout.row#shelfprateleiralancamentos",
+      "rich-text#shelf-title-eu-quero",
+      "InfoCardList#euquero",
       "flex-layout.row#descontos",
       "slider-layout-seo#descontos-mobile",
       "rich-text#shelf-title-maisvendidos",
@@ -15,9 +17,6 @@
       "slider-layout-seo#mosaico-mobile",
       "rich-text#shelf-title-ofertas",
       "flex-layout.row#shelfofertas",
-      "rich-text#shelf-title-euquero",
-      "flex-layout.row#mosaicoeuquero",
-      "flex-layout.row#mosaicoeuqueromobile",
       "rich-text#shelf-title-influencers",
       "InfoCardList#info-cards",
       "flex-layout.row#bloco-title-home",
@@ -88,7 +87,8 @@
       "infinite": true,
       "showNavigationArrows": "desktopOnly",
       "blockClass": "influenciadores",
-      "label": "team-biostevi"
+      "label": "team-biostevi",
+      "sameHeight": true
     }
   },
 
@@ -470,6 +470,9 @@
     }
   },
   "flex-layout.row#shelfmaisvendidos": {
+    "props": {
+      "blockClass": "shelf-mais-vendidos"
+    },
     "children": [
       "list-context.product-list#maisvendidos"
     ]
@@ -505,6 +508,9 @@
     }
   },
   "flex-layout.row#shelfofertas": {
+    "props": {
+      "blockClass": "shelf-ofertas"
+    },
     "children": [
       "list-context.product-list#ofertas"
     ]
@@ -572,183 +578,116 @@
     }
   },
   
-  "rich-text#shelf-title-euquero": {
+  "rich-text#shelf-title-eu-quero": {
     "props": {
-      "text": "EU QUERO",
-      "blockClass": "shelfTitle"
+      "text": "## O que você quer melhorar hoje?\nEscolha sua necessidade e veja as soluções ideais para você.",
+      "blockClass": "eu-quero-title"
     }
   },
-  "flex-layout.row#mosaicoeuquero": {
-    "props": {
-      "blockClass": "bloco-home-mosaicoeuquero"
-    },
+  "InfoCardList#euquero": {
     "children": [
-      "flex-layout.col#mosaicoeuqueroprimeiro",
-      "flex-layout.col#mosaicoeuquerosegundo",
-      "flex-layout.col#mosaicoeuqueroterceiro",
-      "flex-layout.col#mosaicoeuqueroquarto"
-    ]
-  },
-  "flex-layout.col#mosaicoeuqueroprimeiro": {
-    "children": [
-      "image#mosaicoeuqueroum",
-      "image#mosaicoeuquerodois",
-      "image#mosaicoeuquerotres"
-    ]
-  },
-  "image#mosaicoeuqueroum": {
+      "slider-layout-seo#euquero"
+    ],
     "props": {
-      "loading": "lazy",
-      "src": "https://stevia.vteximg.com.br/arquivos/menumetabolismo.png",
-      "maxWidth": "100%"
+      "layoutType": "euquero",
+      "cards": [
+        {
+          "backgroundImage": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/f06a534d-29a8-48a0-9e6c-45f7f068af11___d7e5086a13985191dd9ecdca2b4ecd07.jpg",
+          "icon": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/547147a8-03ec-41cf-921a-eeff5effa1ca___de53e996c9317d229ef78b6714e4bb80.svg",
+          "title": "Disfunção Erétil",
+          "description": "Baixa libído ou desempenho",
+          "anchor": "Ver produtos",
+          "href": "/saude/libido-e-estimulante-sexual",
+          "target": "_self"
+        },
+        {
+          "backgroundImage": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/bbc37b5b-9ca1-40df-9030-f6d8b98516c9___9be0d3fd4ffd11cd0d5a8f8410419eea.jpg",
+          "icon": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/2afe964c-c5f6-439d-bd2c-ca7d2b00f4ea___8842db0d79fced97955c9fb9176cee51.svg",
+          "title": "Emagrecedores",
+          "description": "Dificuldade para emagrecer",
+          "anchor": "Ver produtos",
+          "href": "/emagrecimento",
+          "target": "_self"
+        },
+        {
+          "backgroundImage": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/bda41711-bfd2-4375-a09f-ad200129e430___415cb5c5314821a7aed86fc9a512d60f.jpg",
+          "icon": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/1bdde6f6-19d5-4b15-97e3-9c965ae760e0___02764d152faab4f79b3dd3ff22a75108.svg",
+          "title": "Desempenho Físico",
+          "description": "Cansaço constante",
+          "anchor": "Ver produtos",
+          "href": "/desempenho-fisico",
+          "target": "_self"
+        },
+        {
+          "backgroundImage": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/32093b1c-0538-4479-8127-f443fe8ea4f6___55fa80a3de342bafdda90b0ecdc7ff48.jpg",
+          "icon": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/0e06bb36-8155-4bdd-a3a2-531060e55124___0151e4942e897b1cbc894f2172a81e20.svg",
+          "title": "Lactobacillus",
+          "description": "Intestino desregulado",
+          "anchor": "Ver produtos",
+          "href": "/mais-vendidos/lp/lactobacillus-probioticos",
+          "target": "_self"
+        },
+        {
+          "backgroundImage": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/9bba14ae-253d-4071-9568-5d6bd40c9c1b___7f08a29385f6e727c7c44b969f4478bf.jpg",
+          "icon": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/958fd460-ea4a-4574-8569-9ba58f491460___9e4c19f0ef848488e56c60a579452d2c.svg",
+          "title": "Imunidade",
+          "description": "Baixa resistência, infecções",
+          "anchor": "Ver produtos",
+          "href": "/saude/imunidade",
+          "target": "_self"
+        },
+        {
+          "backgroundImage": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/70242133-9e66-4b4c-8f8a-2aad86854850___d821655606cbb76fdc1183e4797ec37f.jpg",
+          "icon": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/a8a3750a-5d3f-4ae6-adb2-26c8693a34c4___8567aa777e53a94c22d2ce2b01b0d4c5.svg",
+          "title": "Cabelos & barba",
+          "description": "Queda, falhas ou fios fracos",
+          "anchor": "Ver produtos",
+          "href": "/barba-e-cabelo",
+          "target": "_self"
+        },
+        {
+          "backgroundImage": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/f6ae9802-80ef-4d5a-93ad-8ef9996a1536___b26d1ea6884fab7282e7cbad60c13cd2.jpg",
+          "icon": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/2463ea89-f838-49e9-a76b-9aa78f94ec8b___9c4cec62062e9a7e82feb6e973334f02.svg",
+          "title": "Saúde da mulher",
+          "description": "TPM, cólicas ou menopausa",
+          "anchor": "Ver produtos",
+          "href": "",
+          "target": "_self"
+        },
+        {
+          "backgroundImage": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/ab3659da-8f09-466b-b11c-1e9fc487d9b0___73f7a793b58bb05602d54ca4535354e4.jpg",
+          "icon": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/ebee76f2-0aec-4723-b41f-8540478b4961___04ab075019ed9c40e07f9d073bb575ac.svg",
+          "title": "Saúde do homem",
+          "description": "Estresse e baixa vitalidade",
+          "anchor": "Ver produtos",
+          "href": "",
+          "target": "_self"
+        },
+        {
+          "backgroundImage": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/b34ac962-3b98-483d-b4a9-32ce87651b3d___98e673524aa39085a0d9f9dc8cf149b8.jpg",
+          "icon": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/0ffb5b11-8d0f-4092-8058-2a5eb372345a___c8811717d7402ed70dc755a73d10e17d.svg",
+          "title": "Dormir bem",
+          "description": "Insônia ou sono leve",
+          "anchor": "Ver produtos",
+          "href": "",
+          "target": "_self"
+        }
+      ]
     }
   },
-  "image#mosaicoeuquerodois": {
+  "slider-layout-seo#euquero": {
     "props": {
-      "loading": "lazy",
-      "src": "https://stevia.vteximg.com.br/arquivos/menuanciedade.png",
-      "maxWidth": "100%"
+      "itemsPerPage": {
+        "desktop": 4,
+        "tablet": 2.5,
+        "phone": 1.4
+      },
+      "infinite": true,
+      "showNavigationArrows": "desktopOnly",
+      "blockClass": "euquero",
+      "label": "euquero-cards",
+      "sameHeight": true
     }
-  },
-  "image#mosaicoeuquerotres": {
-    "props": {
-      "loading": "lazy",
-      "src": "https://stevia.vteximg.com.br/arquivos/menuemagrecimento.png",
-      "maxWidth": "100%"
-    }
-  },
-  "flex-layout.col#mosaicoeuquerosegundo": {
-    "children": [
-      "image#mosaicoeuqueroquatro",
-      "image#mosaicoeuquerocinco",
-      "image#mosaicoeuqueroseis"
-    ]
-  },
-  "image#mosaicoeuqueroquatro": {
-    "props": {
-      "loading": "lazy",
-      "src": "https://stevia.vteximg.com.br/arquivos/menuaumentoseios.png",
-      "maxWidth": "100%"
-    }
-  },
-  "image#mosaicoeuquerocinco": {
-    "props": {
-      "loading": "lazy",
-      "src": "https://stevia.vteximg.com.br/arquivos/menudoces.png",
-      "maxWidth": "100%"
-    }
-  },
-  "image#mosaicoeuqueroseis": {
-    "props": {
-      "loading": "lazy",
-      "src": "https://stevia.vteximg.com.br/arquivos/menuconcentracao.png",
-      "maxWidth": "100%"
-    }
-  },
-  "flex-layout.col#mosaicoeuqueroterceiro": {
-    "children": [
-      "image#mosaicoeuquerosete",
-      "image#mosaicoeuquerooito",
-      "image#mosaicoeuqueronove"
-    ]
-  },
-  "image#mosaicoeuquerosete": {
-    "props": {
-      "loading": "lazy",
-      "src": "https://stevia.vteximg.com.br/arquivos/menubarba.png",
-      "maxWidth": "100%"
-    }
-  },
-  "image#mosaicoeuquerooito": {
-    "props": {
-      "loading": "lazy",
-      "src": "https://stevia.vteximg.com.br/arquivos/menugordura.png",
-      "maxWidth": "100%"
-    }
-  },
-  "image#mosaicoeuqueronove": {
-    "props": {
-      "loading": "lazy",
-      "src": "https://stevia.vteximg.com.br/arquivos/menurugas.png",
-      "maxWidth": "100%"
-    }
-  },
-  "flex-layout.col#mosaicoeuqueroquarto": {
-    "children": [
-      "image#mosaicoeuquerodez",
-      "image#mosaicoeuqueroonze",
-      "image#mosaicoeuquerodoze"
-    ]
-  },
-  "image#mosaicoeuquerodez": {
-    "props": {
-      "loading": "lazy",
-      "src": "https://stevia.vteximg.com.br/arquivos/menucabelo.png",
-      "maxWidth": "100%"
-    }
-  },
-  "image#mosaicoeuqueroonze": {
-    "props": {
-      "loading": "lazy",
-      "src": "https://stevia.vteximg.com.br/arquivos/menucelulite.png",
-      "maxWidth": "100%"
-    }
-  },
-  "image#mosaicoeuquerodoze": {
-    "props": {
-      "loading": "lazy",
-      "src": "https://stevia.vteximg.com.br/arquivos/menuacne.png",
-      "maxWidth": "100%"
-    }
-  },
-  "flex-layout.row#mosaicoeuqueromobile": {
-    "props": {
-      "blockClass": "bloco-home-mosaicoeuqueromobile"
-    },
-    "children": [
-      "flex-layout.col#mosaicoeuqueroprimeiromobile",
-      "flex-layout.col#mosaicoeuquerosegundomobile",
-      "flex-layout.col#mosaicoeuqueroterceiromobile",
-      "flex-layout.col#mosaicoeuqueroquartomobile",
-      "flex-layout.col#mosaicoeuqueroquintomobile",
-      "flex-layout.col#mosaicoeuquerosextomobile"
-    ]
-  },
-  "flex-layout.col#mosaicoeuqueroprimeiromobile": {
-    "children": [
-      "image#mosaicoeuqueroum",
-      "image#mosaicoeuquerodois"
-    ]
-  },
-  "flex-layout.col#mosaicoeuquerosegundomobile": {
-    "children": [
-      "image#mosaicoeuquerotres",
-      "image#mosaicoeuqueroquatro"
-    ]
-  },
-  "flex-layout.col#mosaicoeuqueroterceiromobile": {
-    "children": [
-      "image#mosaicoeuquerocinco",
-      "image#mosaicoeuqueroseis"
-    ]
-  },
-  "flex-layout.col#mosaicoeuqueroquartomobile": {
-    "children": [
-      "image#mosaicoeuquerosete",
-      "image#mosaicoeuquerooito"
-    ]
-  },
-  "flex-layout.col#mosaicoeuqueroquintomobile": {
-    "children": [
-      "image#mosaicoeuqueronove",
-      "image#mosaicoeuquerodez"
-    ]
-  },
-  "flex-layout.col#mosaicoeuquerosextomobile": {
-    "children": [
-      "image#mosaicoeuqueroonze",
-      "image#mosaicoeuquerodoze"
-    ]
   },
   "rich-text#shelf-title-influencers": {
     "props": {
