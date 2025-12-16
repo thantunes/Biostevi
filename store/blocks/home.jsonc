@@ -597,34 +597,16 @@
           "title": "Disfunção Erétil",
           "description": "Baixa libído ou desempenho",
           "anchor": "Ver produtos",
-          "href": "/metabolismo",
-          "target": "_self"
-        },
-        {
-          "backgroundImage": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/70242133-9e66-4b4c-8f8a-2aad86854850___d821655606cbb76fdc1183e4797ec37f.jpg",
-          "icon": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/a8a3750a-5d3f-4ae6-adb2-26c8693a34c4___8567aa777e53a94c22d2ce2b01b0d4c5.svg",
-          "title": "Cabelos & barba",
-          "description": "Queda, falhas ou fios fracos",
-          "anchor": "Ver produtos",
-          "href": "/barba-e-cabelo",
+          "href": "/saude/libido-e-estimulante-sexual",
           "target": "_self"
         },
         {
           "backgroundImage": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/bbc37b5b-9ca1-40df-9030-f6d8b98516c9___9be0d3fd4ffd11cd0d5a8f8410419eea.jpg",
           "icon": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/2afe964c-c5f6-439d-bd2c-ca7d2b00f4ea___8842db0d79fced97955c9fb9176cee51.svg",
-          "title": "Emagrecimento",
+          "title": "Emagrecedores",
           "description": "Dificuldade para emagrecer",
           "anchor": "Ver produtos",
           "href": "/emagrecimento",
-          "target": "_self"
-        },
-        {
-          "backgroundImage": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/9bba14ae-253d-4071-9568-5d6bd40c9c1b___7f08a29385f6e727c7c44b969f4478bf.jpg",
-          "icon": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/958fd460-ea4a-4574-8569-9ba58f491460___9e4c19f0ef848488e56c60a579452d2c.svg",
-          "title": "Imunidade",
-          "description": "Baixa resistência, infecções",
-          "anchor": "Ver produtos",
-          "href": "/saude/imunidade",
           "target": "_self"
         },
         {
@@ -637,12 +619,39 @@
           "target": "_self"
         },
         {
+          "backgroundImage": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/32093b1c-0538-4479-8127-f443fe8ea4f6___55fa80a3de342bafdda90b0ecdc7ff48.jpg",
+          "icon": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/0e06bb36-8155-4bdd-a3a2-531060e55124___0151e4942e897b1cbc894f2172a81e20.svg",
+          "title": "Lactobacillus",
+          "description": "Intestino desregulado",
+          "anchor": "Ver produtos",
+          "href": "/mais-vendidos/lp/lactobacillus-probioticos",
+          "target": "_self"
+        },
+        {
+          "backgroundImage": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/9bba14ae-253d-4071-9568-5d6bd40c9c1b___7f08a29385f6e727c7c44b969f4478bf.jpg",
+          "icon": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/958fd460-ea4a-4574-8569-9ba58f491460___9e4c19f0ef848488e56c60a579452d2c.svg",
+          "title": "Imunidade",
+          "description": "Baixa resistência, infecções",
+          "anchor": "Ver produtos",
+          "href": "/saude/imunidade",
+          "target": "_self"
+        },
+        {
+          "backgroundImage": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/70242133-9e66-4b4c-8f8a-2aad86854850___d821655606cbb76fdc1183e4797ec37f.jpg",
+          "icon": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/a8a3750a-5d3f-4ae6-adb2-26c8693a34c4___8567aa777e53a94c22d2ce2b01b0d4c5.svg",
+          "title": "Cabelos & barba",
+          "description": "Queda, falhas ou fios fracos",
+          "anchor": "Ver produtos",
+          "href": "/barba-e-cabelo",
+          "target": "_self"
+        },
+        {
           "backgroundImage": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/f6ae9802-80ef-4d5a-93ad-8ef9996a1536___b26d1ea6884fab7282e7cbad60c13cd2.jpg",
           "icon": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/2463ea89-f838-49e9-a76b-9aa78f94ec8b___9c4cec62062e9a7e82feb6e973334f02.svg",
           "title": "Saúde da mulher",
           "description": "TPM, cólicas ou menopausa",
           "anchor": "Ver produtos",
-          "href": "/concentracao",
+          "href": "",
           "target": "_self"
         },
         {
@@ -651,7 +660,7 @@
           "title": "Saúde do homem",
           "description": "Estresse e baixa vitalidade",
           "anchor": "Ver produtos",
-          "href": "/barba",
+          "href": "",
           "target": "_self"
         },
         {
@@ -660,16 +669,7 @@
           "title": "Dormir bem",
           "description": "Insônia ou sono leve",
           "anchor": "Ver produtos",
-          "href": "/gordura-localizada",
-          "target": "_self"
-        },
-        {
-          "backgroundImage": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/32093b1c-0538-4479-8127-f443fe8ea4f6___55fa80a3de342bafdda90b0ecdc7ff48.jpg",
-          "icon": "https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/0e06bb36-8155-4bdd-a3a2-531060e55124___0151e4942e897b1cbc894f2172a81e20.svg",
-          "title": "Lactobacillus",
-          "description": "Intestino desregulado",
-          "anchor": "Ver produtos",
-          "href": "/rugas",
+          "href": "",
           "target": "_self"
         }
       ]
