@@ -1,7 +1,7 @@
 import React, { ReactNode, FC, useMemo, useCallback } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import type { Swiper as SwiperType } from 'swiper'
-import { Autoplay } from 'swiper'
+import { Autoplay, Pagination } from 'swiper'
 
 import {
   useSliderState,
@@ -24,6 +24,7 @@ interface Props {
   centerMode: SliderLayoutProps['centerMode']
   centerModeSlidesGap?: SliderLayoutProps['centerModeSlidesGap']
   sameHeight?: boolean
+  showPagination?: boolean
   children?: Array<Exclude<ReactNode, boolean | null | undefined>>
 }
 
@@ -67,6 +68,7 @@ const SliderTrack: FC<Props> = ({
   children,
   infinite,
   sameHeight = false,
+  showPagination = false,
 }) => {
   const {
     slideWidth,
@@ -123,8 +125,11 @@ const SliderTrack: FC<Props> = ({
     if (autoplay) {
       modules.push(Autoplay)
     }
+    if (showPagination) {
+      modules.push(Pagination)
+    }
     return modules
-  }, [autoplay])
+  }, [autoplay, showPagination])
 
   const autoplayConfig = useMemo(() => {
     if (!autoplay) return false
@@ -135,6 +140,15 @@ const SliderTrack: FC<Props> = ({
       pauseOnMouseEnter: autoplay.stopOnHover || false,
     }
   }, [autoplay])
+
+  const paginationConfig = useMemo(() => {
+    if (!showPagination) return false
+
+    return {
+      clickable: true,
+      dynamicBullets: false,
+    }
+  }, [showPagination])
 
   return (
     <Swiper
@@ -147,9 +161,16 @@ const SliderTrack: FC<Props> = ({
       centeredSlidesBounds={centerMode !== 'disabled'}
       speed={speed}
       autoplay={autoplayConfig}
+      pagination={paginationConfig}
       style={{
         width: '100%',
-      }}
+        '--swiper-pagination-bottom': '0',
+        '--swiper-pagination-top': 'auto',
+        'padding-bottom': '25px',
+        '--swiper-theme-color': '#ff6c00',
+        '--swiper-pagination-bullet-height': '11.5px',
+        '--swiper-pagination-bullet-width': '11.5px',
+      } as React.CSSProperties}
       className={handles.sliderTrack}
       data-testid="slider-track"
       aria-atomic="false"
