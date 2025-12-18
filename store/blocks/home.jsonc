@@ -86,6 +86,7 @@
       },
       "infinite": true,
       "showNavigationArrows": "desktopOnly",
+      "showPaginationDots": "always",
       "blockClass": "influenciadores",
       "label": "team-biostevi",
       "sameHeight": true
@@ -121,6 +122,7 @@
       },
       "infinite": true,
       "fullWidth": false,
+      "showPaginationDots": "always",
       "blockClass": "shelf"
     }
   },
@@ -417,6 +419,7 @@
       },
       "infinite": true,
       "showNavigationArrows": "desktopOnly",
+      "showPaginationDots": "always",
       "blockClass": "carrousel-mosaico-mobile"
     },
     "children": [
@@ -440,6 +443,7 @@
       },
       "infinite": true,
       "showNavigationArrows": "desktopOnly",
+      "showPaginationDots": "always",
       "blockClass": "carrousel-mosaico-mobile"
     },
     "children": [
@@ -460,6 +464,7 @@
       },
       "infinite": true,
       "fullWidth": false,
+      "showPaginationDots": "always",
       "blockClass": "shelf"
     }
   },
@@ -498,6 +503,7 @@
       },
       "infinite": true,
       "fullWidth": false,
+      "showPaginationDots": "always",
       "blockClass": "shelf"
     }
   },
@@ -536,6 +542,7 @@
       },
       "infinite": true,
       "fullWidth": false,
+      "showPaginationDots": "always",
       "blockClass": "shelf"
     }
   },
@@ -684,6 +691,7 @@
       },
       "infinite": true,
       "showNavigationArrows": "desktopOnly",
+      "showPaginationDots": "always",
       "blockClass": "euquero",
       "label": "euquero-cards",
       "sameHeight": true

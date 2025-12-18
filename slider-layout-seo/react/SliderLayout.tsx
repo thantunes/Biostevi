@@ -12,6 +12,9 @@ import {
 } from './components/SliderContext'
 import { CssHandlesProvider } from './modules/cssHandles'
 
+// Importar CSS do Swiper nativo
+import './global.css'
+
 export const CSS_HANDLES = SliderCssHandles
 
 interface Props {
