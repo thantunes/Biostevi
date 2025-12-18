@@ -196,9 +196,9 @@
   contain: layout style paint;
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
-  touch-action: pan-x;
+  /* touch-action: pan-x;
   -webkit-touch-callout: none;
-  isolation: isolate;
+  isolation: isolate; */
 }
 
 .info-card-euquero-container {
