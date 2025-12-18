@@ -1,16 +1,25 @@
+.buttonText {
+    background: #00BC7D;
+    font-size: 14px;
+    border-radius: 50px;
+    font-family: Signika;
+    text-transform: capitalize !important;
+    padding: 8px 16px;
+}
+
 .buttonDataContainer .buttonText {
-    border-radius: 8px;
-    background: #28b92a;
-    padding: 16px 32px;
+    border-radius: 50px;
+    background: #00BC7D;
+    padding: 8px 16px;
     color: #fff;
     font-family: Signika;
     font-size: 14px;
     font-weight: 600;
-    font-variant: small-caps;
     transition: all 0.25s ease-in-out;
+    text-transform: capitalize !important;
 }
 
 :global(.vtex-product-summary-2-x-container) .buttonDataContainer .buttonText:hover,
 .buttonDataContainer .buttonText:hover {
-    background: #2D6100;
+    background: #03A36E;
 }

@@ -6,9 +6,17 @@ const AppBanner = ({
   subtitle,
   buttonText,
   buttonLink,
+  backgroundColor = '#000',
+  mainTitleColor = '#fff',
+  subtitleColor = '#fff',
+  buttonBackgroundColor = '#009fc2',
+  buttonTextColor = '#fff',
 }) => {
   return (
-    <div className={styles.wrapperBannerApp}>
+    <div 
+      className={styles.wrapperBannerApp}
+      style={{ backgroundColor }}
+    >
       <div className={styles.wrapperLogoText}>
         <div className={styles.wrapperLogoImg}>
           <img
@@ -21,8 +29,8 @@ const AppBanner = ({
           />
         </div>
         <div className={styles.wrapperTextContent}>
-          <span>{mainTitle}</span>
-          <p>{subtitle}</p>
+          <span style={{ color: mainTitleColor }}>{mainTitle}</span>
+          <p style={{ color: subtitleColor }}>{subtitle}</p>
         </div>
       </div>
       <div className={styles.wrapperBtnApp}>
@@ -30,6 +38,10 @@ const AppBanner = ({
           href={buttonLink}
           aria-label="Baixar aplicativo Biostévi Pharma"
           tabIndex="0"
+          style={{ 
+            backgroundColor: buttonBackgroundColor, 
+            color: buttonTextColor 
+          }}
         >
           {buttonText}
         </a>
@@ -65,6 +77,36 @@ AppBanner.schema = {
       title: "Link do Botão",
       description: "Link do botão",
       default: "/app"
+    },
+    backgroundColor: {
+      type: "string",
+      title: "Cor de Fundo",
+      description: "Cor de fundo do banner (ex: #000, #ffffff, rgb(0,0,0))",
+      default: "#000"
+    },
+    mainTitleColor: {
+      type: "string",
+      title: "Cor do Título Principal",
+      description: "Cor do texto do título principal",
+      default: "#fff"
+    },
+    subtitleColor: {
+      type: "string",
+      title: "Cor do Subtítulo",
+      description: "Cor do texto do subtítulo",
+      default: "#fff"
+    },
+    buttonBackgroundColor: {
+      type: "string",
+      title: "Cor de Fundo do Botão",
+      description: "Cor de fundo do botão",
+      default: "#009fc2"
+    },
+    buttonTextColor: {
+      type: "string",
+      title: "Cor do Texto do Botão",
+      description: "Cor do texto do botão",
+      default: "#fff"
     }
   }
 }

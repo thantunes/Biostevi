@@ -142,12 +142,10 @@
       "showPaginationDots": "never"
     },
     "children": [
-      "rich-text#frete-gratis",
-      "rich-text#descontoprogressivo",
-      "rich-text#desconto",
-      "rich-text#parcelamento",
-      "rich-text#siteseguro",
-      "rich-text#whats1"
+      "rich-text#frete-gratis-s",
+      "rich-text#desconto-s",
+      "rich-text#parcelamento-s",
+      "rich-text#site-seguro-s"
     ]
   },
   "flex-layout.row#informativos": {
@@ -162,12 +160,10 @@
   },
   "slider-layout-seo#SliderLayoutInfomativos": {
     "children": [
-      "rich-text#frete-gratis",
-      "rich-text#descontoprogressivo",
-      "rich-text#desconto",
-      "rich-text#parcelamento",
-      "rich-text#siteseguro",
-      "rich-text#whats1"
+      "rich-text#frete-gratis-s",
+      "rich-text#desconto-s",
+      "rich-text#parcelamento-s",
+      "rich-text#site-seguro-s"
     ],
     "props": {
       "autoplay": {
@@ -191,15 +187,14 @@
   },
   "flex-layout.row#informativosContainer": {
     "props": {
-      "blockClass": "bloco-home-informativos"
+      "blockClass": "bloco-home-informativos",
+      "colGap": 2
     },
     "children": [
-      "rich-text#frete-gratis",
-      "rich-text#descontoprogressivo",
-      "rich-text#desconto",
-      "rich-text#parcelamento",
-      "rich-text#siteseguro",
-      "rich-text#whats1"
+      "rich-text#frete-gratis-s",
+      "rich-text#desconto-s",
+      "rich-text#parcelamento-s",
+      "rich-text#site-seguro-s"
     ]
   },
   "responsive-layout.tablet#Informativos": {
@@ -207,54 +202,36 @@
       "slider-layout-seo#SliderLayoutInfomativos"
     ]
   },
-  "rich-text#frete-gratis": {
+  "rich-text#frete-gratis-s": {
     "props": {
-      "text": "### Frete Grátis* \n Confira as regras",
-      "textPosition": "LEFT",
-      "textAlignment": "LEFT",
+      "text": "### Frete grátis* \n confira as regras",
+      "textPosition": "CENTER",
+      "textAlignment": "CENTER",
       "blockClass": "informativo-frete"
     }
   },
-  "rich-text#descontoprogressivo": {
+  "rich-text#desconto-s": {
     "props": {
-      "text": "### Desconto Progressivo \n Compre mais e pague menos",
-      "textPosition": "LEFT",
-      "textAlignment": "LEFT",
-      "blockClass": "informativo-desconto-progressivo"
-    }
-  },
-  "rich-text#desconto": {
-    "props": {
-      "text": "### 5% de Desconto \n No pix, transf ou boleto",
-      "textPosition": "LEFT",
-      "textAlignment": "LEFT",
+      "text": "### 5% de desconto \n no PIX ou Transferência",
+      "textPosition": "CENTER",
+      "textAlignment": "CENTER",
       "blockClass": "informativo-desconto"
     }
   },
-  "rich-text#parcelamento": {
+  "rich-text#parcelamento-s": {
     "props": {
       "text": "### Parcele em até 10x \n sem juros no cartão",
-      "textPosition": "LEFT",
-      "textAlignment": "LEFT",
+      "textPosition": "CENTER",
+      "textAlignment": "CENTER",
       "blockClass": "informativo-parcelamento"
     }
   },
-  "rich-text#siteseguro": {
+  "rich-text#site-seguro-s": {
     "props": {
-      "text": "### Site seguro \n Proteção para suas informações",
-      "textPosition": "LEFT",
-      "textAlignment": "LEFT",
+      "text": "### Site 100% seguro \n proteção para suas informações",
+      "textPosition": "CENTER",
+      "textAlignment": "CENTER",
       "blockClass": "informativo-site-seguro"
-    }
-  },
-  "rich-text#whats1": {
-    "props": {
-      "text": "### WhatsApp \n (11)97133-1874",
-      "textPosition": "LEFT",
-      "textAlignment": "LEFT",
-      "blockClass": [
-        "informativo-whats"
-      ]
     }
   },
 

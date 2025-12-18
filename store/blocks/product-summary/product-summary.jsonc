@@ -39,9 +39,9 @@
             "add-to-cart-button"
         ]
     },
-    "DescriptionInline": {
-        "children": ["product-summary-description"]
-    },
+    // "DescriptionInline": {
+    //     "children": ["product-summary-description"]
+    // },
     "add-to-cart-button": {
         "props": {
             "onClickBehavior": "add-to-cart"
@@ -120,7 +120,13 @@
     "product-price-savings#summary": {
         "props": {
             "markers": ["discount"],
-            "blockClass": "summary"
+            "blockClass": "summary",
+            "message": "-{savingsPercentage}"
+        }
+    },
+    "product-rating-inline": {
+        "props": {
+            "alignment": "left"
         }
     }
 }

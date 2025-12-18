@@ -3,19 +3,33 @@
   left: -17px;
 }
 .container :global(.vtex-button) :global(.vtex-button__label) .label,
-.profile {
-  background-image: url(https://stevia.vteximg.com.br/arquivos/login.png);
+.container .profile {
   background-repeat: no-repeat;
-  background-position: top center;
   padding-top: 40px;
+  padding-bottom: 0px !important;
+  padding-inline: 0.75rem !important;
+  background-size: 36px;
+  font-family: Signika;
+  background-image: url(/arquivos/new-profile.svg) !important;
+  background-position: top center !important;
+  margin-bottom: 0;
+  width: 70px;
+  margin-inline: -4px 0;
+  font-size: 13px;
+  color: #fff;
+  text-transform: capitalize !important;
+}
+/* .container :global(.vtex-button__label) .label,
+.profile {
+  padding-top: 38px;
   font-size: 13px !important;
   color: #fff !important;
   font-weight: 400 !important;
-  background-size: 33px;
   text-transform: capitalize !important;
-  padding-left: 0;
-  margin: 0 43px 0 35px;
-}
+  padding-inline: 0.75rem!important;
+  font-family: Signika;
+  margin-left: 4px;
+} */
 .accountOptions .button {
   padding-left: 0;
   color: inherit;
@@ -63,24 +77,19 @@
   overflow: visible;
 }
 @media screen and (max-width: 768px) {
-  .container :global(.vtex-button) :global(.vtex-button__label) .label {
-    margin: 0;
-    background-image: url(/arquivos/new-profile-mobile.svg) !important;
-  }
   .container :global(.vtex-button) :global(.vtex-button__label) .label,
-  .profile {
+  .container .profile {
     display: block;
-    padding-top: 25px;
+    margin: 0;
+    padding: 32px 10px 0!important;
     font-size: 0px !important;
-    background-size: 25px;
-    width: 25px;
-    background-image: url(/arquivos/new-profile-mobile.svg) !important;
+    background-size: 32px;
+    width: 32px;
+    background-image: url(/arquivos/new-profile.svg) !important;
+    background-repeat: no-repeat;
+    background-position: center;
     font-family: "Signika";
-  }
-  .container :global(.vtex-button) :global(.vtex-button__label) .profile {
-    margin: 2px -24px 0 3px;
-    text-wrap: wrap;
-    width: 78px;
+    padding-inline: 10px;
   }
   :global(.vtex-flex-layout-0-x-flexRowContent--main-header-mobile) .container {
     display: flex !important;
