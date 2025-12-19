@@ -56,7 +56,6 @@
 }
 .flexRow--shelf-prateleira-lancamentos {
   min-height: 440px;
-  margin-bottom: 30px;
 }
 .flexCol--filterCol {
   max-width: 500px;
@@ -154,4 +153,8 @@
 .flexRow--shelf-mais-vendidos,
 .flexRow--shelf-ofertas {
   margin-bottom: 30px;
+}
+
+.flexColChild--productSummaryPrices {
+  position: static!important;
 }

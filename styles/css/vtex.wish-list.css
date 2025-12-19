@@ -12,13 +12,12 @@
     position: initial
 }
 
-:global(.vtex-search-result-3-x-galleryItem) .wishlistIconContainer {
-    top: 16px;
-    left: 28px
-}
-
 @media (max-width:768px) {
     .wishlistIconContainer {
-        position: initial
+        position: absolute!important;
+    }
+
+    :global(.vtex-flex-layout-0-x-flexRow--product-main) .wishlistIconContainer {
+        position: initial!important;
     }
 }

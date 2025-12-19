@@ -80,5 +80,8 @@
   "InfoCard": {
     "component": "InfoCard",
     "composition": "children"
+  },
+  "product-badge": {
+    "component": "ProductBadge"
   }
 }

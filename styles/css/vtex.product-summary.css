@@ -34,10 +34,10 @@
     text-align: start;
     border-radius: 10px;
     background: #fff;
-    padding: 14px 18px;
+    padding: 16px 16px;
     margin-top: 2px;
     transition: box-shadow .2s ease-in-out;
-    position: relative;
+    position: relative
 }
 
 .container:hover {
@@ -82,7 +82,7 @@
 
 @media (max-width:768px) {
     .container {
-        padding: 0
+        padding: 16px 8px;
     }
 
     .container:hover {

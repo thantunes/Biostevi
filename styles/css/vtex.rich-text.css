@@ -25,9 +25,10 @@
   width: 100%;
   display: flex;
   align-items: center;
-  /* border-bottom: 1px solid #ff6c00 !important; */
+  border-bottom: 1px solid #ff6c00 !important;
   margin-top: 15px !important;
   margin-bottom: 12px !important;
+  padding-bottom: 5px;
 }
 .wrapper--eu-quero-title {
   flex-wrap: wrap;
@@ -245,18 +246,20 @@
 .link--informativo-whats .strong {
   color: #000;
 }
-.wrapper--bloco-title-home-h1 .headingLevel1{
+.wrapper--bloco-title-home-h1 .headingLevel1--bloco-title-home-h1{
   font-size: 28px;
   color:#000;
   font-weight: 600;
   line-height: 30px;
   margin-bottom: 0;
   text-transform: uppercase;
+  font-family: Signika;
 }
-.wrapper--bloco-title-home-text .paragraph{
+.wrapper--bloco-title-home-text .paragraph--bloco-title-home-text{
   font-size: 16px;
   color:#6f6f6f;
   font-weight: 400;
+  font-family: Signika;
 }
 
 @media only screen and (max-width: 768px) {

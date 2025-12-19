@@ -1,9 +1,18 @@
 {
   "add-to-cart-button": {
     "props": {
-      "text":"Adicionar",
+      "text":"Adicionar ao Carrinho",
       "addToCartFeedback": "customEvent",
       "customPixelEventId": "add-to-cart-button"
+    }
+  },
+
+  "add-to-cart-button#summary": {
+    "props": {
+      "text":"Adicionar",
+      "addToCartFeedback": "customEvent",
+      "customPixelEventId": "add-to-cart-button",
+      "onClickBehavior": "add-to-cart"
     }
   },
 

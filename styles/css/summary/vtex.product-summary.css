@@ -24,7 +24,7 @@
 }
 
 .containerNormal {
-    width: 242px
+    width: 268px
 }
 
 @media screen and (max-width:769px) {
@@ -40,6 +40,6 @@
 
 @media screen and (max-width:420px) {
     .containerNormal {
-        width: 134px !important
+        width: 195px !important
     }
 }

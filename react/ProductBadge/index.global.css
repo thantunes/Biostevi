@@ -1,0 +1,105 @@
+/* Product Badge Component - CSS Global */
+
+/* Container - position relative */
+.vtex-stack-layout-0-x-stackContainer {
+  position: relative !important;
+}
+
+/* StackItem do product-badge deve ser static */
+.vtex-stack-layout-0-x-stackItem:has(.productBadgeWrapper),
+.vtex-stack-layout-0-x-stackItem:has([data-badge-wrapper="true"]),
+.vtex-stack-layout-0-x-stackItem:has([data-product-badge="true"]),
+.vtex-stack-layout-0-x-stackItem.absolute:has(.productBadgeWrapper),
+.vtex-stack-layout-0-x-stackItem.absolute:has([data-badge-wrapper="true"]),
+.vtex-stack-layout-0-x-stackItem.absolute:has([data-product-badge="true"]) {
+  position: static !important;
+  top: auto !important;
+  left: auto !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+/* Product Badge - position absolute */
+.vtex-stack-layout-0-x-stackContainer > [data-product-badge="true"],
+.vtex-stack-layout-0-x-stackContainer > .productBadgeWrapper {
+  position: absolute !important;
+  z-index: 10 !important;
+}
+
+.productBadgeWrapper {
+  position: absolute !important;
+  z-index: 10 !important;
+  pointer-events: none;
+  margin: 0;
+  padding: 0;
+}
+
+.productBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  line-height: 1;
+  text-align: center;
+}
+
+/* Posições */
+.productBadgeWrapper.topLeft {
+  top: 8px !important;
+  left: 0px !important;
+  bottom: auto !important;
+  right: auto !important;
+}
+
+.productBadgeWrapper.topRight {
+  top: 8px !important;
+  right: 0px !important;
+  bottom: auto !important;
+  left: auto !important;
+}
+
+.productBadgeWrapper.bottomLeft {
+  bottom: -4px !important;
+  left: 0px !important;
+  top: auto !important;
+  right: auto !important;
+}
+
+.productBadgeWrapper.bottomRight {
+  bottom: -4px !important;
+  right: 0px !important;
+  top: auto !important;
+  left: auto !important;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .productBadgeWrapper.topLeft {
+    top: 6px !important;
+    left: 0px !important;
+    bottom: auto !important;
+    right: auto !important;
+  }
+
+  .productBadgeWrapper.topRight {
+    top: 6px !important;
+    right: 0px !important;
+    bottom: auto !important;
+    left: auto !important;
+  }
+
+  .productBadgeWrapper.bottomLeft {
+    bottom: -4px !important;
+    left: 0px !important;
+  }
+
+  .productBadgeWrapper.bottomRight {
+    bottom: -4px !important;
+    right: 0px !important;
+  }
+  
+  .productBadge {
+    font-size: 12px !important;
+    padding: 4px 8px !important;
+  }
+}
