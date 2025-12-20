@@ -1,6 +1,7 @@
 import React, { FC, useRef, Fragment, ReactNode } from 'react'
 import { useDevice } from 'vtex.device-detector'
 
+// Usando paginação nativa do Swiper
 import { useScreenResize } from '../hooks/useScreenResize'
 import { useAutoplay } from '../hooks/useAutoplay'
 import {
@@ -12,9 +13,6 @@ import SliderTrack, {
   CSS_HANDLES as SliderTrackCssHandles,
 } from './SliderTrack'
 import Arrow, { CSS_HANDLES as ArrowCssHandles } from './Arrow'
-import PaginationDots, {
-  CSS_HANDLES as PaginationDotsCssHandles,
-} from './PaginationDots'
 import { useContextCssHandles } from '../modules/cssHandles'
 import { useSameHeight } from '../hooks/useSameHeight'
 
@@ -32,7 +30,6 @@ export const CSS_HANDLES = [
   'sliderTrackContainer',
   ...SliderTrackCssHandles,
   ...ArrowCssHandles,
-  ...PaginationDotsCssHandles,
 ] as const
 
 const Slider: FC<Props> = ({
@@ -176,6 +173,7 @@ const Slider: FC<Props> = ({
           infinite={isLooping}
           totalItems={totalItems}
           sameHeight={sameHeight}
+          showPagination={shouldShowPaginationDots}
         >
           {children}
         </SliderTrack>
@@ -197,13 +195,6 @@ const Slider: FC<Props> = ({
             arrowSize={arrowSize}
           />
         </Fragment>
-      )}
-      {shouldShowPaginationDots && shouldUsePagination && (
-        <PaginationDots
-          totalItems={totalItems}
-          controls={controls}
-          infinite={isLooping}
-        />
       )}
     </section>
   )
