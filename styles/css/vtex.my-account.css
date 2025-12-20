@@ -39,15 +39,6 @@
   margin: auto;
 }
 
-:global(.vtex-rich-text-0-x-headingLevel1--shelfTitle) {
-  color: #555;
-  text-transform: uppercase;
-  margin-bottom: 5px !important;
-  font-size: 20px !important;
-  font-weight: 700 !important;
-  margin-top: 30px;
-}
-
 :global(.vtex-account__page) {
   max-width: 1100px;
 }
@@ -1209,4 +1200,34 @@
 :global(.vtex-search-result-3-x-orderByText),
 :global(.vtex-search-result-3-x-filterPopupTitle) {
   color: #595959;
+}
+
+:global(#konfidency-reviews-container),
+:global(#konfidency-questions-container) {
+    --primary-color: #ff6c00!important;
+}
+
+:global(.konfidency-badge) {
+    display: none;
+}
+
+:global(.vtex-flex-layout-0-x-flexRow--product-reviews) :global(.vtex-store-components-3-x-container) {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 1140px !important;
+    padding: 1rem !important;
+}
+
+:global(#konfidency-reviews-container) :global(.details) :global(.details-header) :global(.review-count) {
+    font-size: 16px!important;
+}
+
+:global(.konfidency-reviews-details) :global(#konfidency-reviews-container) :global(h2),
+:global(.konfidency-reviews-details) :global(#konfidency-questions-container) :global(h2){
+    font-size: 20px;
+    font-family: Signika;
+    color: #009fc2;
+    font-weight: 600;
+    text-transform: uppercase;
 }

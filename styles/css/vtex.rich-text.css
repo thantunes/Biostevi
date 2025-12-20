@@ -3,13 +3,96 @@
   text-align: center;
   justify-content: center;
 }
-.container--shelfTitle {
+.container--shelfTitle,
+.container--eu-quero-title {
   color: #727273;
   justify-content: center;
   text-align: center;
+  padding: 0 10px;
 }
-.headingLevel2--shelfTitle {
-  font-weight: 200;
+.wrapper--shelfTitle,
+.wrapper--eu-quero-title {
+  border-bottom: 1px solid #ff6c00 !important;
+  max-width: 1140px !important;
+  margin-bottom: 25px !important;
+  text-align: left;
+  width: 100%;
+  border-bottom: 3px dotted #777;
+  display: flex;
+  align-items: center;
+  row-gap: 8px;
+}
+.wrapper--eu-quero-title {
+  flex-wrap: wrap;
+  margin: 35px auto 25px;
+}
+.wrapper--faq-title::before,
+.wrapper--shelfTitle::before,
+.wrapper--eu-quero-title::before {
+  content: '';
+  width: 38px;
+  height: 24px;
+  display: block;
+  background-image: url(/arquivos/biostevi-title-logo.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+  margin-right: 10px;
+  margin-top: -10px;
+}
+.headingLevel1--shelfTitle {
+  color: #555;
+  text-transform: uppercase;
+  margin-bottom: 5px !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  margin-top: 30px;
+}
+.headingLevel2--faq-title,
+.headingLevel2--shelfTitle,
+.headingLevel2--eu-quero-title {
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  color: #000;
+  font-family: Signika;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600 !important;
+  line-height: normal;
+}
+.headingLevel2--eu-quero-title {
+  flex-grow: 1;
+}
+.paragraph--shelfTitle {
+  font-family: Signika;
+  color: #666666;
+  text-transform: uppercase;
+  margin-bottom: 5px !important;
+  font-weight: 700 !important;
+  margin-bottom: 15px;
+  margin-top: 30px;
+  font-size: 18px;
+}
+.paragraph--eu-quero-title {
+  font-family: Signika;
+  width: 100%;
+  color: #666666;
+  font-size: 18px;
+  margin-top: 0;
+}
+@media only screen and (max-width: 980px) {
+  .wrapper--shelfTitle {
+    margin-top: 30px;
+  }
+  .headingLevel2--faq-title,
+  .headingLevel2--shelfTitle,
+  .headingLevel2--eu-quero-title {
+    font-size: 16px;
+  }
+  .paragraph--shelfTitle,
+  .paragraph--eu-quero-title {
+    font-size: 16px;
+  }
 }
 .container--deals .paragraph {
   margin: 0;
@@ -161,7 +244,6 @@
   font-weight: 600;
   line-height: 30px;
   margin-bottom: 0;
-  margin-top: 60px;
   text-transform: uppercase;
 }
 .wrapper--bloco-title-home-text .paragraph{

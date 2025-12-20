@@ -12,6 +12,9 @@ import {
 } from './components/SliderContext'
 import { CssHandlesProvider } from './modules/cssHandles'
 
+// Importar CSS do Swiper nativo
+import './global.css'
+
 export const CSS_HANDLES = SliderCssHandles
 
 interface Props {
@@ -35,6 +38,7 @@ function SliderLayout({
     tablet: 3,
     phone: 1,
   },
+  sameHeight = false,
   classes,
   ...contextProps
 }: PropsWithChildren<SliderLayoutProps & SliderLayoutSiteEditorProps & Props>) {
@@ -69,6 +73,7 @@ function SliderLayout({
           arrowSize={responsiveArrowIconSize}
           itemsPerPage={responsiveItemsPerPage}
           infinite={infinite}
+          sameHeight={sameHeight}
         >
           {slides}
         </Slider>
@@ -156,6 +161,12 @@ SliderLayout.schema = {
           type: 'number',
         },
       },
+    },
+    sameHeight: {
+      title: 'Altura igual para todos os slides',
+      description: 'Quando ativado, todos os slides terão a mesma altura (baseada no slide mais alto)',
+      type: 'boolean',
+      default: false,
     },
   },
 }

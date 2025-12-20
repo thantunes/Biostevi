@@ -1,6 +1,9 @@
 {
   "footer": {
-    "blocks": ["footer-layout.desktop", "footer-layout.mobile"]
+    "blocks": [
+      "footer-layout.desktop",
+      "footer-layout.mobile"
+    ]
   },
   "footer-layout.desktop": {
     "children": [
@@ -16,12 +19,19 @@
     ]
   },
   "flex-layout.row#Security": {
-    "children": ["rich-text#SecTitle", "flex-layout.row#SecImages"],
+    "children": [
+      "rich-text#SecTitle",
+      "flex-layout.row#SecImages"
+    ],
     "props": {
       "blockClass": "SecurityFooter"
     }
   },
-  "flex-layout.row#AppBadge": { "children": ["AppBadgeFooter"] },
+  "flex-layout.row#AppBadge": {
+    "children": [
+      "AppBadgeFooter"
+    ]
+  },
   "rich-text#SecTitle": {
     "props": {
       "text": "Segurança",
@@ -32,7 +42,13 @@
     "props": {
       "blockClass": "SecImages"
     },
-    "children": ["image#vtexCert", "image#SecClear", "image#SecLets"]
+    "children": [
+      "image#vtexCert",
+      "image#SecClear",
+      "image#SecLets"
+      // ,
+      // "store-reviews-badge"
+    ]
   },
   "image#vtexCert": {
     "props": {
@@ -56,12 +72,13 @@
     }
   },
   "flex-layout.row#iconwhats": {
-    "children": ["image#whatsapp-flutuante"],
+    "children": [
+      "image#whatsapp-flutuante"
+    ],
     "props": {
       "blockClass": "textofooterfinal"
     }
   },
-
   "flex-layout.row#footer-1-desktop": {
     "children": [
       "vtex.menu@2.x:menu#Products",
@@ -79,13 +96,11 @@
       "paddingBottom": 3
     }
   },
-
   "footer-spacer": {
     "props": {
       "blockClass": "footer-espaco"
     }
   },
-
   "social-networks": {
     "props": {
       "text": "Social",
@@ -113,18 +128,22 @@
       ]
     }
   },
-
   "flex-layout.row#espacamento-footer": {
     "props": {
       "blockClass": "espacamento-footer"
     }
   },
   "flex-layout.row#footer-teste": {
-    "children": ["flex-layout.row#Security", "flex-layout.row#AppBadge"]
+    "children": [
+      "flex-layout.row#Security",
+      "flex-layout.row#AppBadge"
+    ]
   },
-
   "flex-layout.row#footer-2-desktop": {
-    "children": ["social-networks", "flex-layout.col#metodos-de-pagamentos"],
+    "children": [
+      "social-networks",
+      "flex-layout.col#metodos-de-pagamentos"
+    ],
     "props": {
       "blockClass": "payment-methods"
     }
@@ -132,10 +151,13 @@
   "accepted-payment-methods": {
     "props": {
       "blockClass": "payment-methods-title",
-      "paymentMethods": ["MasterCard", "Visa", "Diners Club"]
+      "paymentMethods": [
+        "MasterCard",
+        "Visa",
+        "Diners Club"
+      ]
     }
   },
-
   "flex-layout.col#metodos-de-pagamentos": {
     "children": [
       "rich-text#metodos-de-pagamentos-titulo",
@@ -145,14 +167,12 @@
       "blockClass": "footer-bandeiras-cartoes"
     }
   },
-
   "rich-text#metodos-de-pagamentos-titulo": {
     "props": {
       "text": "Formas de Pagamento",
       "blockClass": "footer-bandeiras-titulo"
     }
   },
-
   "flex-layout.row#metodos-de-pagamentos-bandeiras": {
     "children": [
       "image#ame",
@@ -172,7 +192,6 @@
       "blockClass": "bandeiras-cartoes"
     }
   },
-
   "image#ame": {
     "props": {
       "loading": "lazy",
@@ -182,7 +201,6 @@
       "alt": "Bandeira American Express"
     }
   },
-
   "image#boleto": {
     "props": {
       "loading": "lazy",
@@ -192,7 +210,6 @@
       "alt": "Bandeira Boleto"
     }
   },
-
   "image#pix": {
     "props": {
       "loading": "lazy",
@@ -202,7 +219,6 @@
       "alt": "Bandeira Pix"
     }
   },
-
   "image#mastercard": {
     "props": {
       "loading": "lazy",
@@ -284,7 +300,6 @@
       "alt": "Bandeira Diners"
     }
   },
-
   "flex-layout.row#footer-3-desktop": {
     "children": [
       "rich-text#footer",
@@ -295,14 +310,12 @@
       "blockClass": "credits"
     }
   },
-
   "rich-text#footer": {
     "props": {
       "text": "BIOSTÉVI PHARMA \n Razão Social: Manipulação Stevia LTDA \n CNPJ 65.776.015/0001-91 \n Rua Bernardino de Campos, 156 - Santo André - São Paulo, CEP 09015-010",
       "blockClass": "footer-aling-center"
     }
   },
-
   "rich-text#farmaucetico": {
     "props": {
       "text": "Farmacêutico Responsável: Dr. Hélio Takashi Kozima | CDF-SP: 7795 \n e-mail: farmaceutico@biostevi.com.br \n AE:1.40443.9 | AFE:7.03654.7 \n Licença Sanitária nº: 354780901-477-000043-1-6 \n Certidão de Regularidade CRF SP 03322",
@@ -321,21 +334,20 @@
       "blockClass": "footer-aling-center"
     }
   },
-
   "flex-layout.row#footer-4-desktop": {
-    "children": ["rich-text#textofooterfinal-1"],
+    "children": [
+      "rich-text#textofooterfinal-1"
+    ],
     "props": {
       "blockClass": "textofooterfinal"
     }
   },
-
   "rich-text#textofooterfinal-1": {
     "props": {
       "text": "PARA MEDICAMENTOS SUJEITOS À PRESCRIÇÃO MÉDICA E FORMULAÇÃO MAGISTRAL, SERÁ SEMPRE REALIZADA AVALIAÇÃO PELO FARMACÊUTICO ANTES DA MANIPULAÇÃO E DISPENSAÇÃO. \n \n As informações contidas neste site são exclusivas para profissionais habilitados da área de saúde, não devem ser usadas para automedicação e não substituem, em hipótese alguma a medicação prescrita pelo profissional da área médica. Somente um profissional habilitado está em condições de diagnosticar qualquer problema de saúde e prescrever o tratamento adequado. \n \n Qualquer dúvida sobre os produtos divulgados em nosso site, entre em contato com um de nossos farmacêuticos através do atendimento ao cliente ou pelo telefone (11) 93087-7190 (Vendas/SAC) e se preferir, poderá dirigir-se a nossa loja na Rua Bernardino de Campos, 156 - Santo André - São Paulo, pois contamos com profissionais farmacêuticos habilitados para mais esclarecimentos. \n \n Os medicamentos sob prescrição só serão dispensados mediante apresentação da receita ou envio por imagens ou e-mail. \n É proibido comercializar medicamentos controlados por meio remoto. \n Medicamentos podem causar efeitos indesejados. \n Evite a automedicação: informe-se com o médico ou farmacêutico. \n 'SE PERSISTIREM OS SINTOMAS, O MÉDICO OU FARMACÊCUTICO DEVERÁ SER CONSULTADO'. \n \n Lei Geral de Proteção de Dados (LGPD): Os dados dos usuários não são utilizados para qualquer forma de promoção, publicidade, propaganda ou outra forma de indução de consumo de medicamentos.",
       "blockClass": "footer-aling-center"
     }
   },
-
   "flex-layout.row#developers": {
     "children": [
       "rich-text#developers-text",
@@ -349,40 +361,42 @@
       "preventVerticalStretch": true
     }
   },
-
   "rich-text#developers-text": {
     "props": {
       "text": "Feito com orgulho",
       "blockClass": "developers-text"
     }
   },
-
   "image#logo-vtex": {
     "props": {
       "loading": "lazy",
       "fetchpriority": "low",
       "type": "external",
       "text": "Vtex",
-      "link": { "url": "https://evision.com.br/", "openNewTab": true },
+      "link": {
+        "url": "https://evision.com.br/",
+        "openNewTab": true
+      },
       "src": "/arquivos/footer-logo-vtex-1.png",
       "blockClass": "footer-logo-vtex",
       "alt": "Logo Vtex"
     }
   },
-
   "image#logo-evision": {
     "props": {
       "loading": "lazy",
       "fetchpriority": "low",
       "type": "external",
       "text": "eVision",
-      "link": { "url": "https://evision.com.br/", "openNewTab": true },
+      "link": {
+        "url": "https://evision.com.br/",
+        "openNewTab": true
+      },
       "src": "arquivos/footer-logo-evision-2.png",
       "blockClass": "footer-logo-evision",
       "alt": "Logo eVision"
     }
   },
-
   "image#whatsapp-flutuante": {
     "props": {
       "type": "external",
@@ -398,7 +412,6 @@
       "title": "Contato pelo Whatsapp"
     }
   },
-
   "footer-layout.mobile": {
     "children": [
       "flex-layout.row#iconwhats",
@@ -411,7 +424,9 @@
     ]
   },
   "flex-layout.row#2-footer-mobile": {
-    "children": ["flex-layout.col#footer-1-mobile"],
+    "children": [
+      "flex-layout.col#footer-1-mobile"
+    ],
     "props": {
       "blockClass": "payment-methods",
       "paddingTop": 4,
@@ -421,7 +436,6 @@
   "flex-layout.col#footer-1-mobile": {
     "children": [
       "flex-layout.col#metodos-de-pagamentos",
-
       "social-networks",
       "rich-text#footer-mobile"
     ],
@@ -437,7 +451,9 @@
       "paddingTop": 4,
       "paddingBottom": 4
     },
-    "children": ["vtex.menu@2.x:menu#footer-mobile"]
+    "children": [
+      "vtex.menu@2.x:menu#footer-mobile"
+    ]
   },
   "rich-text#footer-mobile": {
     "props": {

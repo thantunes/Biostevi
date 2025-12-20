@@ -6,10 +6,45 @@
     :global(.vtex-account__page) .sliderRightArrow {
         margin-right: -35px;
     }
+
+    .sliderLeftArrow--euquero {
+        left: auto !important;
+        right: 45px;
+        top: -80px;
+        bottom: auto !important;
+        border: 2px solid black;
+        height: 30px;
+        width: 30px;
+        padding: 8px;
+        border-radius: 100%;
+    }
+
+    .sliderLeftArrow--euquero .caretIcon--euquero {
+        height: 12.5px;
+        width: auto;
+    }
+
+    .sliderRightArrow--euquero {
+        left: auto !important;
+        right: 0;
+        top: -80px;
+        bottom: auto !important;
+        border: 2px solid black;
+        height: 30px;
+        width: 30px;
+        padding: 8px;
+        border-radius: 100%;
+    }
+
+    .sliderRightArrow--euquero .caretIcon--euquero {
+        height: 12.5px;
+        width: auto;
+    }
+
 }
 
 .slideChildrenContainer :global(.vtex-add-to-cart-button-0-x-buttonText) {
-    font-size: 13px!important;
+    font-size: 13px !important;
 }
 
 .slide :global(.vtex-reviews-and-ratings-3-x-reviewsHeading) {
@@ -55,11 +90,74 @@
     margin-bottom: 20px;
 }
 
-.sliderLayoutContainer--influenciadores {
+.sliderLayoutContainer--influenciadores,
+.sliderLayoutContainer--euquero {
     max-width: 1140px;
     margin: auto;
     margin-bottom: 20px;
 }
+
+/* Paginação nativa do Swiper - Estilos customizados */
+/* .sliderLayoutContainer--euquero .swiper-pagination {
+    bottom: -20px;
+}
+
+.sliderLayoutContainer--influenciadores .swiper-pagination {
+    bottom: -5px;
+}
+
+.sliderLayoutContainer--carrousel-mosaico-mobile .swiper-pagination {
+    bottom: -25px;
+}
+
+.sliderLayoutContainer--shelf .swiper-pagination {
+    bottom: -10px;
+} */
+
+/* Mobile - mostrar dots */
+@media only screen and (max-width: 980px) {
+    .sliderLayoutContainer--euquero .swiper-pagination,
+    .sliderLayoutContainer--influenciadores .swiper-pagination,
+    .sliderLayoutContainer--shelf .swiper-pagination {
+        display: flex !important;
+    }
+
+    .sliderLayoutContainer--euquero .swiper-pagination-bullet,
+    .sliderLayoutContainer--influenciadores .swiper-pagination-bullet,
+    .sliderLayoutContainer--shelf .swiper-pagination-bullet {
+        background-color: #D1D5DB;
+    }
+
+    .sliderLayoutContainer--euquero .swiper-pagination-bullet-active,
+    .sliderLayoutContainer--influenciadores .swiper-pagination-bullet-active,
+    .sliderLayoutContainer--shelf .swiper-pagination-bullet-active {
+        background-color: #009FC2;
+        width: 10px;
+        height: 10px;
+    }
+}
+
+/* Desktop - esconder dots */
+/* @media only screen and (min-width: 981px) {
+    .sliderLayoutContainer--euquero .swiper-pagination,
+    .sliderLayoutContainer--influenciadores .swiper-pagination,
+    .sliderLayoutContainer--shelf .swiper-pagination {
+        display: none !important;
+    }
+}
+
+/* Carrousel mosaico mobile sempre visível quando existe */
+/* @media only screen and (max-width: 639px) {
+    .sliderLayoutContainer--carrousel-mosaico-mobile .swiper-pagination {
+        display: flex !important;
+    }
+} */
+
+/* @media only screen and (min-width: 640px) {
+    .sliderLayoutContainer--carrousel-mosaico-mobile .swiper-pagination {
+        display: none !important;
+    }
+} */
 
 /* .slide--shelf :global(.vtex-add-to-cart-button-0-x-buttonText) {
     opacity: 0;
@@ -84,6 +182,7 @@
         display: none;
     }
 }
+
 @media only screen and (max-width: 980px) {
     .slide--shelf :global(.vtex-add-to-cart-button-0-x-buttonText) {
         opacity: 1 !important;
@@ -140,4 +239,16 @@
     font-style: normal;
     font-weight: 600;
     line-height: normal
+}
+
+.slideChildrenContainer--sameHeight {
+    height: 100% !important;
+}
+
+.slide .slideChildrenContainer--sameHeight {
+    height: 100% !important;
+}
+
+.sliderTrack {
+    padding-bottom: 15px;
 }

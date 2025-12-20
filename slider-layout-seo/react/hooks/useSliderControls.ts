@@ -1,4 +1,4 @@
-import { useSliderDispatch, useSliderState } from '../components/SliderContext'
+import { useSliderState, useSwiperInstance } from '../components/SliderContext'
 import { useSliderGroupDispatch } from '../SliderLayoutGroup'
 
 export const useSliderControls = (infinite: boolean) => {
@@ -7,14 +7,10 @@ export const useSliderControls = (infinite: boolean) => {
     slidesPerPage,
     totalItems,
     navigationStep,
-    transformMap,
     loopCloneCount,
-    virtualSlide,
-    virtualTotalItems,
-    infinite: isLoopingEnabled,
   } = useSliderState()
 
-  const dispatch = useSliderDispatch()
+  const swiperRef = useSwiperInstance()
   const groupDispatch = useSliderGroupDispatch()
 
   if (totalItems === 0) {
@@ -26,111 +22,61 @@ export const useSliderControls = (infinite: boolean) => {
     }
   }
 
-  const looping = infinite && isLoopingEnabled && loopCloneCount > 0
+  const looping = infinite && loopCloneCount > 0
 
-  const getMaxSlide = () =>
-    Math.max(0, totalItems - Math.floor(slidesPerPage))
-
-  const getRealIndexFromVirtual = (targetVirtualSlide: number) => {
-    if (!looping || totalItems === 0) {
-      return Math.max(
-        0,
-        Math.min(targetVirtualSlide, Math.max(0, totalItems - 1))
-      )
-    }
-
-    const relativeIndex = targetVirtualSlide - loopCloneCount
-    const normalized =
-      ((relativeIndex % totalItems) + totalItems) % totalItems
-
-    return normalized
+  const getMaxSlide = () => {
+    return Math.max(0, Math.ceil(totalItems - slidesPerPage))
   }
 
   const goBack = (step?: number) => {
-    let nextSlide = 0
+    if (!swiperRef.current) return
+
+    const swiper = swiperRef.current
     const activeNavigationStep = step ?? navigationStep
 
-    let nextVirtualSlide = virtualSlide - activeNavigationStep
-
     if (!looping) {
-      // Clamp within bounds for non-looping slider
-      const maxSlide = getMaxSlide()
-      nextSlide = Math.min(
-        Math.max(currentSlide - activeNavigationStep, 0),
-        maxSlide
-      )
-      nextVirtualSlide = nextSlide
-    } else {
-      // Ensure virtual index stays within the virtual track range
-      if (nextVirtualSlide < 0) {
-        nextVirtualSlide =
-          (nextVirtualSlide % virtualTotalItems) + virtualTotalItems
+      const currentRealIndex = swiper.realIndex ?? currentSlide
+      const nextSlide = Math.max(0, currentRealIndex - activeNavigationStep)
+      swiper.slideTo(nextSlide)
+
+      if (groupDispatch) {
+        groupDispatch({
+          type: 'SLIDE',
+          payload: {
+            currentSlide: nextSlide,
+            transform: 0,
+          },
+        })
       }
-      nextVirtualSlide = Math.max(0, nextVirtualSlide)
-      nextSlide = getRealIndexFromVirtual(nextVirtualSlide)
+    } else {
+      swiper.slidePrev()
     }
-
-    const nextTransformValue = transformMap[nextVirtualSlide] || 0
-
-    if (groupDispatch) {
-      groupDispatch({
-        type: 'SLIDE',
-        payload: {
-          currentSlide: nextSlide,
-          transform: nextTransformValue,
-        },
-      })
-    }
-
-    dispatch({
-      type: 'SLIDE',
-      payload: {
-        transform: nextTransformValue,
-        currentSlide: nextSlide,
-        virtualSlide: nextVirtualSlide,
-      },
-    })
   }
 
   const goForward = (step?: number) => {
-    let nextSlide = 0
+    if (!swiperRef.current) return
+
+    const swiper = swiperRef.current
     const activeNavigationStep = step ?? navigationStep
 
-    let nextVirtualSlide = virtualSlide + activeNavigationStep
-
     if (!looping) {
-      // Clamp within bounds for non-looping slider
       const maxSlide = getMaxSlide()
-      nextSlide = Math.min(nextVirtualSlide, maxSlide)
-      nextSlide = Math.max(0, nextSlide)
-      nextVirtualSlide = nextSlide
-    } else {
-      if (nextVirtualSlide >= virtualTotalItems) {
-        nextVirtualSlide = nextVirtualSlide % virtualTotalItems
+      const currentRealIndex = swiper.realIndex ?? currentSlide
+      const nextSlide = Math.min(maxSlide, currentRealIndex + activeNavigationStep)
+      swiper.slideTo(nextSlide)
+
+      if (groupDispatch) {
+        groupDispatch({
+          type: 'SLIDE',
+          payload: {
+            currentSlide: nextSlide,
+            transform: 0,
+          },
+        })
       }
-      nextSlide = getRealIndexFromVirtual(nextVirtualSlide)
+    } else {
+      swiper.slideNext()
     }
-
-    const nextTransformValue = transformMap[nextVirtualSlide] || 0
-
-    if (groupDispatch) {
-      groupDispatch({
-        type: 'SLIDE',
-        payload: {
-          currentSlide: nextSlide,
-          transform: nextTransformValue,
-        },
-      })
-    }
-
-    dispatch({
-      type: 'SLIDE',
-      payload: {
-        transform: nextTransformValue,
-        currentSlide: nextSlide,
-        virtualSlide: nextVirtualSlide,
-      },
-    })
   }
 
   return { goForward, goBack }

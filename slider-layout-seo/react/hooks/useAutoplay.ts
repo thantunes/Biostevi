@@ -1,31 +1,32 @@
 import { useEffect } from 'react'
 
-import { useSliderState } from '../components/SliderContext'
-import { useSliderControls } from './useSliderControls'
+import { useSliderState, useSwiperInstance } from '../components/SliderContext'
 import useHovering from './useHovering'
 
 export const useAutoplay = (
-  infinite: boolean,
+  _infinite: boolean,
   containerRef: React.RefObject<HTMLDivElement>
 ) => {
   const { autoplay } = useSliderState()
   const { isHovering } = useHovering(containerRef)
+  const swiperRef = useSwiperInstance()
 
   const shouldStop = autoplay?.stopOnHover && isHovering
 
-  const { goForward } = useSliderControls(infinite)
-
   useEffect(() => {
-    if (!autoplay) {
+    if (!autoplay || !swiperRef.current) {
       return
     }
 
-    const timeout = setTimeout(() => {
-      goForward()
-    }, autoplay.timeout)
+    const swiper = swiperRef.current
 
-    shouldStop && clearTimeout(timeout)
-
-    return () => clearTimeout(timeout)
-  }, [goForward, shouldStop, autoplay])
+    // Configurar autoplay do Swiper
+    if (swiper.autoplay) {
+      if (shouldStop) {
+        swiper.autoplay.stop()
+      } else {
+        swiper.autoplay.start()
+      }
+    }
+  }, [autoplay, shouldStop])
 }

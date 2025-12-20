@@ -36,7 +36,7 @@
   },
 
   "store.product-review-form": {
-    "blocks": ["product-review-form"]
+    "blocks": []
   },
 
   "store.not-found#product": {

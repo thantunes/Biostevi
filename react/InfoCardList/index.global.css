@@ -38,8 +38,6 @@
   transition: all 0.2s ease;
 }
 
-
-
 .info-card-image {
   width: 100%;
   height: 100%;
@@ -154,8 +152,315 @@
 /* Slider mode adjustments */
 .info-card-slide {
   height: 100%;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: relative;
 }
 
 .info-card-slide .info-card {
   height: 100%;
+}
+
+.info-card-slide .info-card-euquero {
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  position: relative;
+}
+
+/* Layout Eu Quero Styles */
+.info-card-list-container-euquero {
+  width: 100%;
+}
+
+.info-card-list-wrapper-euquero {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Quando usado com slider-layout-seo */
+.info-card-list-container-euquero .info-card-list-wrapper-euquero {
+  display: block;
+}
+
+.info-card-euquero {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 278/320;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding: .5rem;
+  contain: layout style paint;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  /* touch-action: pan-x;
+  -webkit-touch-callout: none;
+  isolation: isolate; */
+}
+
+.info-card-euquero-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 24px;
+  overflow: hidden;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+  will-change: auto;
+}
+
+.info-card-euquero-icon {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  background: white;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transform: translateZ(1px);
+  -webkit-transform: translateZ(1px);
+}
+
+.info-card-euquero-icon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.info-card-euquero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+  transform: translateZ(-1px) scale(1);
+  -webkit-transform: translateZ(-1px) scale(1);
+  transition: transform 0.5s ease;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  pointer-events: none;
+}
+
+.info-card-euquero-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  contain: layout style paint;
+  pointer-events: none;
+}
+
+.info-card-euquero-overlay-hover {
+  background: linear-gradient(
+    to top,
+    #20C0E8E6 0%, 
+    #20C0E880 80%,
+    #00000000 100%
+  );
+  height: 150%;
+  top: 0;
+  bottom: auto;
+  z-index: 5;
+  transform: translateZ(0) translateY(20%);
+  -webkit-transform: translateZ(0) translateY(20%);
+  transition: all 0.4s ease-in-out;
+  pointer-events: none;
+  contain: layout style paint;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Garantir visibilidade durante drag do Swiper */
+.swiper-slide .info-card-euquero-content,
+.swiper-slide .info-card-content {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Desabilita transições durante drag do Swiper para performance máxima */
+.swiper-slide-dragging .info-card-euquero-background,
+.swiper-slide-dragging .info-card-euquero-overlay-hover,
+.swiper-slide-dragging .info-card-euquero-anchor,
+.swiper-slide-dragging .info-card-euquero-anchor-arrow {
+  transition: none !important;
+}
+
+/* Otimização para dispositivos touch - desabilita TODAS as transições em mobile */
+@media (hover: none) and (pointer: coarse) {
+  .info-card-euquero-background,
+  .info-card-euquero-overlay-hover,
+  .info-card-euquero-anchor,
+  .info-card-euquero-anchor-arrow {
+    transition: none !important;
+  }
+  
+  .info-card-euquero-background {
+    transform: translateZ(-1px) scale(1);
+    -webkit-transform: translateZ(-1px) scale(1);
+  }
+  
+  /* .info-card-euquero-overlay-hover {
+    transform: translateZ(0) translateY(0);
+    -webkit-transform: translateZ(0) translateY(0);
+    opacity: 1;
+  } */
+}
+
+/* Hover effects apenas em desktop com mouse (não em touch devices) */
+@media (hover: hover) and (pointer: fine) {
+  .info-card-euquero:hover .info-card-euquero-container {
+    will-change: transform;
+  }
+  
+  .info-card-euquero:hover .info-card-euquero-overlay-hover {
+    transform: translateZ(0) translateY(-5%);
+    -webkit-transform: translateZ(0) translateY(-5%);
+  }
+}
+
+.info-card-euquero-content {
+  position: relative;
+  z-index: 10;
+  margin-top: auto;
+  margin-inline: 16px;
+  margin-bottom: 16px;
+  background: white;
+  padding: 14px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - (16px * 2));
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.10);
+  transform: translateZ(1px);
+  -webkit-transform: translateZ(1px);
+}
+
+.info-card-euquero-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #555555;
+  margin: 0;
+  line-height: 24px;
+  margin-bottom: 2px;
+}
+
+.info-card-euquero-description {
+  font-size: 14px;
+  color: #4A5565;
+  margin: 0;
+  line-height: 24px;
+  margin-bottom: 8px;
+}
+
+.info-card-euquero-anchor {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #009FC2;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+/* Hover effects adicionais apenas em desktop com mouse */
+@media (hover: hover) and (pointer: fine) {
+  .info-card-euquero:hover .info-card-euquero-anchor {
+    color: #009FC2;
+    font-weight: 700;
+  }
+
+  .info-card-euquero:hover .info-card-euquero-anchor-arrow {
+    transform: translateX(1.5px);
+    -webkit-transform: translateX(1.5px);
+  }
+  
+  .info-card-euquero:hover .info-card-euquero-background {
+    transform: translateZ(-1px) scale(1.1);
+    -webkit-transform: translateZ(-1px) scale(1.1);
+    will-change: transform;
+  }
+}
+
+.info-card-euquero-anchor-text {
+  display: inline-block;
+}
+
+.info-card-euquero-anchor-arrow {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.2s ease;
+}
+
+/* Responsive Eu Quero */
+@media (max-width: 768px) {
+  .info-card-list-wrapper-euquero {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+  }
+
+  .info-card-euquero {
+    aspect-ratio: 250/280;
+  }
+
+  .info-card-euquero-content {
+    padding: 1.25rem;
+  }
+
+  .info-card-euquero-title {
+    font-size: 16px;
+  }
+
+  .info-card-euquero-icon {
+    width: 40px;
+    height: 40px;
+    top: 12px;
+    left: 12px;
+    padding: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .info-card-list-wrapper-euquero {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Paginação nativa do Swiper - Estilos customizados */
+.swiper-pagination {
+    bottom: -20px;
+}
+
+..swiper-pagination {
+    bottom: -5px;
+}
+
+.swiper-pagination {
+    bottom: -10px;
 }

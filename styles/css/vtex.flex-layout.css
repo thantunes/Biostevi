@@ -56,6 +56,7 @@
 }
 .flexRow--shelf-prateleira-lancamentos {
   min-height: 440px;
+  margin-bottom: 30px;
 }
 .flexCol--filterCol {
   max-width: 500px;
@@ -132,6 +133,10 @@
   align-items: center;
   padding-top: 38px;
 }
+.flexRowContent--pdp-review-wishlist {
+  align-items: center !important;
+  min-height: 35px;
+}
 @media (max-width: 768px) {
   .flexRow--bloco-home-informativos {
     display: none;
@@ -159,7 +164,8 @@
     color: #fff !important;
     margin-left: -3px !important;
   }
-  .flexColChild--mobile-menu-message {
-
-  }
+}
+.flexRow--shelf-mais-vendidos,
+.flexRow--shelf-ofertas {
+  margin-bottom: 30px;
 }

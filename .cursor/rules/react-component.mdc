@@ -1,0 +1,112 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+## Regras gerais
+
+1. **Sem TypeScript:** Os componentes React devem ser escritos apenas em JavaScript.
+
+2. **Nomeação em Inglês:** Variáveis, arquivos, pastas e nomes de componentes devem estar em inglês.
+
+3. **Schema em Português:** Title e description nos arquivos schema.js devem ser escritos em português.
+
+4. **Classes com padrão VTEX:**
+	* Formato: vtex-{component-name}--{identifier}.
+	* Devem ser geradas com a função class_generator dentro da pasta utils.
+
+## Estrutura de Pastas
+
+react/
+├── components/
+├── MyComponent/
+│   └── components/               ← subcomponentes internos (opcional)
+│       ├── index.js              ← lógica principal do componente
+│       └── schema.js             ← schema VTEX (opcional)
+├── utils/                        ← função class_generator fica aqui, além disso aqui fica funções de uso geral
+└── MyComponent.js                ← import/export do componente principal
+
+
+## Processo para Criar um Componente React
+
+1. **Criar Pasta do Componente:**
+	* Dentro de react/components, crie uma pasta com o nome do componente.
+
+2. **Criar index.js:**
+	* Arquivo principal com o código React.
+	* Recebe um bloco VTEX via props (VtexFlexLayout, por exemplo).
+	* Exemplo de estrutura:
+		```
+		function Exemplo({ VtexFlexLayout }){
+      return (
+        <VtexFlexLayout>
+          {/* lógica interna aqui */}
+        </VtexFlexLayout>
+      )
+    }
+		```
+
+3. **Criar schema.js (se necessário):**
+	* Estrutura VTEX JSON Schema.
+	* title e description em português.
+	* Importar no index.js.
+
+  ```
+  export const schema = {
+    // Dados do schema
+  };
+  ```
+
+4. **Criar Arquivo de Entrada na Raiz de react/:**
+	* Exemplo: MyComponent.js
+	* Conteúdo:
+		```
+			import MyComponent from './components/MyComponent';
+			export default MyComponent;
+
+		```
+
+5. **Estilização**
+	* O estilo deve ser colocado no arquivo .scss do componente VTEX pai usado como container (ex: vtex.flex-layout.scss).
+	* Use :global() para aplicar estilos.
+	* Se não houver container VTEX, use vtex.my-account.scss.
+	* Você deve se basear nas rules @styles.mdc e a documentação @VTEX CSS.
+
+6. **Declaração de Bloco JSONC**
+	* Os blocos React são definidos em arquivos .jsonc dentro da pasta react-components.
+		Exemplo:
+		```
+		{
+			"n1-tool-bar": {
+    			"title": "Toolbar"
+			 }
+		}
+		```
+
+	* Se precisar de um bloco VTEX como container:
+		Exemplo:
+		```
+		{
+			"n1-tool-bar#default": {
+    				"title": "Toolbar",
+    				"props": {
+      					"VtexFlexLayout": "flex-layout.row#tool-bar-container"
+				 }
+			 },
+			"flex-layout.row#tool-bar-container": { }
+		}
+		```
+
+7. **interface.json**
+	* Você deve declarar o componente assim:
+	```
+	"n1-tool-bar": {
+  		"component": "ToolBar"
+	}
+	```
+
+  > O nome colocado ao lado no "component" deve ser o mesmo nome que está sendo exportado no arquivo. Se no arquivo na pasta react você faz um ```export default ProductShowcase``` você deve colocar no arquivo interface no mesmo jeito ```"component": "ProductShowcase"```
+
+8. **Ícones SVG Personalizados**
+	* Se o componente precisar de um ícone:
+		* Crie um subcomponente que retorne o SVG dentro da pasta components do seu componente principal.

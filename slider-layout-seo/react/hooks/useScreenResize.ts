@@ -1,45 +1,28 @@
 import { useEffect } from 'react'
 
-import { useSliderDispatch, useSliderState } from '../components/SliderContext'
+import { useSwiperInstance } from '../components/SliderContext'
 
-export const useScreenResize = (infinite: boolean, itemsPerPage: number) => {
-  const { navigationStep, isPageNavigationStep, totalItems } = useSliderState()
-  const dispatch = useSliderDispatch()
+export const useScreenResize = (_infinite: boolean, _itemsPerPage: number) => {
+  const swiperRef = useSwiperInstance()
 
   useEffect(() => {
-    const newSlidesPerPage =
-      totalItems <= Math.floor(itemsPerPage) ? totalItems : itemsPerPage
+    let resizeTimeout: ReturnType<typeof setTimeout>
 
-    const newNavigationStep = isPageNavigationStep
-      ? 1
-      : navigationStep
-
-    const setNewState = (shouldCorrectItemPosition: boolean) => {
-      dispatch({
-        type: 'ADJUST_ON_RESIZE',
-        payload: {
-          shouldCorrectItemPosition,
-          slidesPerPage: newSlidesPerPage,
-          navigationStep: newNavigationStep,
-        },
-      })
+    const onResize = () => {
+      // Debounce para evitar muitas atualizações
+      clearTimeout(resizeTimeout)
+      resizeTimeout = setTimeout(() => {
+        if (swiperRef.current) {
+          swiperRef.current.update()
+        }
+      }, 150)
     }
-
-    const onResize = (value?: UIEvent): void => {
-      setNewState(!value || infinite)
-    }
-
-    setNewState(false)
 
     window.addEventListener('resize', onResize)
 
-    return () => window.removeEventListener('resize', onResize)
-  }, [
-    infinite,
-    dispatch,
-    totalItems,
-    itemsPerPage,
-    isPageNavigationStep,
-    navigationStep,
-  ])
+    return () => {
+      clearTimeout(resizeTimeout)
+      window.removeEventListener('resize', onResize)
+    }
+  }, [])
 }

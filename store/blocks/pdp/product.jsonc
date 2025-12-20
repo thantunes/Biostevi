@@ -24,8 +24,8 @@
       "DescriptionContructorComp",
       "BuyTogetherComp",
       "shelf.relatedProducts",
-      "product-reviews",
-      "product-questions-and-answers",
+      "flex-layout.row#product-reviews",
+      //"product-questions-and-answers",
       "rich-text#pdp-informativo1",
       "FloatingBuyBar"
     ]
@@ -41,8 +41,8 @@
       "DescriptionContructorComp",
       "BuyTogetherComp",
       "shelf.relatedProducts",
-      "product-reviews",
-      "product-questions-and-answers",
+      "flex-layout.row#product-reviews",
+      //"product-questions-and-answers",
       "rich-text#pdp-informativo1"
     ]
   },
@@ -169,7 +169,7 @@
     "children": [
       "add-to-list-btn",
       "flex-layout.row#product-name",
-      "product-reviews",
+      "product-rating-summary",
       "flex-layout.row#description",
       "responsive-layout.mobile#benefits",
       "flex-layout.row#list-price-savings",
@@ -211,8 +211,7 @@
     },
     "children": [
       "flex-layout.row#product-name",
-      "product-rating-inline",
-      "product-reviews",
+      "product-rating-summary",
       "product-installments",
       "product-separator",
       "product-identifier.product",
@@ -235,16 +234,17 @@
   "flex-layout.row#review-wishlist": {
     "props": {
       "marginBottom": 2,
-      "colGap": 2,
+      "colGap": 3,
       "colSizing": "auto",
       "fullWidth": false,
       "preventHorizontalStretch": true,
       "horizontalAlign": "left",
-      "blockClass": "pdp-review-wishlist"
+      "blockClass": "pdp-review-wishlist",
+      "preventVerticalStretch": true
     },
     "children": [
       "add-to-list-btn",
-      "product-reviews"
+      "product-rating-summary"
     ]
   },
   "sku-selector": {
@@ -357,6 +357,14 @@
       }
     }
   },
+  "flex-layout.row#product-reviews": {
+    "props": {
+      "blockClass": "product-reviews"
+    },
+    "children": [
+      "product-reviews"
+    ]
+  },
   "rich-text#pdp-informativo1": {
     "props": {
       "text": "Não se trata de propaganda, e sim de descrição do produto, consulte sempre um especialista.*Venda Sob prescrição de profissional habilitado, podendo este ser o nosso farmacêutico de acordo com a resolução 586/2013 do conselho de farmácia. Consulte-o.Sugestão de uso e benefícios desenvolvidos por profissional habilitado. Todo produto deste site possui dosagens dentro dos padrões usuais.'Abaixo das advertências",
@@ -397,7 +405,7 @@
   },
   "rich-text#Informacoes": {
     "props": {
-      "text": "escreva aqui",
+      "text": "",
       "blockClass": "Informacoes-Imp",
       "title": "Informações importantes"
     }
