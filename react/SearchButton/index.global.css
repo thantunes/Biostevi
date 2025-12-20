@@ -153,6 +153,9 @@
 }
 
 /* CSS Global */
+.konfidency-reviews-multi {
+    min-height: 42px!important;
+}
 .konfidency-reviews-showcase-rating .summary {
     display: flex!important;
     align-items: center!important;
