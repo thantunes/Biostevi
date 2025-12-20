@@ -20,7 +20,6 @@
       "rich-text#shelf-title-influencers",
       "InfoCardList#info-cards",
       "flex-layout.row#bloco-title-home",
-      "flex-layout.row#testimonials-container",
       "store-testimonials",
       "flex-layout.row#home-faq-container",
       "flex-layout.row#bloconews"
@@ -702,19 +701,6 @@
       "blockClass": "euquero",
       "label": "euquero-cards",
       "sameHeight": true
-    }
-  },
-  "flex-layout.row#testimonials-container": {
-    "title": "Bloco de depoimentos",
-    "children": [
-      "rich-text#testimonials-title"
-    ]
-  },
-  "rich-text#testimonials-title": {
-    "title": "Título de depoimentos",
-    "props": {
-      "text": "## Depoimentos dos nossos clientes",
-      "blockClass": "faq-title"
     }
   },
   "rich-text#shelf-title-influencers": {
