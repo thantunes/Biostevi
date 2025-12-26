@@ -1128,7 +1128,7 @@
   background-position: center 0;
   padding-top: 45px;
   width: 100%;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 :global(.vtex-rich-text-0-x-wrapper--informativo-frete) {
   background-image: url(https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/eb55ae2f-200e-4ec0-b91e-dab115c06f18___14551b190fd1519bbb57bc3120ec5125.svg);
@@ -1144,7 +1144,7 @@
 }
 :global(.vtex-flex-layout-0-x-flexRow--bloco-home-informativos)
   :global(.vtex-store-components-3-x-container) {
-  max-width: 1460px !important;
+  max-width: 1050px !important;
   width: 100%;
   border: 1px solid #D2D1D7;
   border-radius: 10px;
@@ -1568,13 +1568,19 @@
 :global(.vtex-rich-text-0-x-paragraph--informativo-frete),
 :global(.vtex-rich-text-0-x-paragraph--informativo-desconto),
 :global(.vtex-rich-text-0-x-paragraph--informativo-parcelamento),
-:global(.vtex-rich-text-0-x-paragraph--informativo-site-seguro) {
+:global(.vtex-rich-text-0-x-paragraph--informativo-site-seguro),
+:global(.vtex-rich-text-0-x-link--informativo-frete) {
   color: #009fc2;
   font-size: 12px;
   max-width: 169px;
   margin-top: 0px;
   line-height: 1.5;
   font-family: Signika;
+  margin-bottom: 3px;
+}
+:global(.vtex-rich-text-0-x-link--informativo-frete) {
+  font-size: 14px;
+  text-decoration: none;
 }
 :global(.vtex-store-components-3-x-imageElement--footer-logo-vtex) {
   float: right;

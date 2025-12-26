@@ -206,7 +206,7 @@
   },
   "rich-text#frete-gratis-s": {
     "props": {
-      "text": "### Frete grátis* \n confira as regras",
+      "text": "### [Frete grátis*](https://www.biostevi.com.br/frete-e-entrega)\nConfira as regras",
       "textPosition": "CENTER",
       "textAlignment": "CENTER",
       "blockClass": "informativo-frete"
