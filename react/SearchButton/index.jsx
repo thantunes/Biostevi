@@ -287,14 +287,14 @@ const SearchButton = () => {
           }
         }}
       >
-      <svg width="28" height="28" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg width="24" height="24" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g clipPath="url(#clip0_42827_5106)">
             <path d="M12.8109 23.0957C17.9532 23.0957 22.1218 18.9271 22.1218 13.7848C22.1218 8.64251 17.9532 4.47388 12.8109 4.47388C7.66864 4.47388 3.5 8.64251 3.5 13.7848C3.5 18.9271 7.66864 23.0957 12.8109 23.0957Z" stroke="white" stroke-width="1.59616" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M20.3948 20.668L26.8461 27.1193" stroke="white" strokeWidth="1.59616" strokeLinecap="round" strokeLinejoin="round"/>
         </g>
         <defs>
             <clipPath id="clip0_42827_5106">
-                <rect width="28" height="28" fill="white" transform="translate(0 0.888916)"/>
+                <rect width="24" height="24" fill="white" transform="translate(0 0.888916)"/>
             </clipPath>
         </defs>
       </svg>

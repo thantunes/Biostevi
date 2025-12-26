@@ -99,10 +99,10 @@
   "header-layout.mobile": {
     "children": [
       "flex-layout.row#hintup-skeleton",
-      "flex-layout.row#1-envie-sua-receita-mobile",
       "flex-layout.row#AppBanner",
       "sticky-layout#1-mobile",
       "search-bar",
+      "flex-layout.row#1-envie-sua-receita-mobile",
       "CryptoScript",
       "CartOpenerScript"
     ]
@@ -117,9 +117,14 @@
   "AppBanner": {
     "props": {
       "mainTitle": "Biostévi Pharma",
-      "subtitle": "Ganhe 15% Off na sua 1ª compra pelo APP",
+      "subtitle": "Baixe o app Biostévi Pharma",
       "buttonText": "BAIXAR",
-      "buttonLink": "/app"
+      "buttonLink": "/app",
+      "backgroundColor": "#fff",
+      "mainTitleColor": "#000",
+      "subtitleColor": "#5E5E5E",
+      "buttonBackgroundColor": "#009fc2",
+      "buttonTextColor": "#fff"
     }
   },
   "flex-layout.row#1-envie-sua-receita-mobile": {

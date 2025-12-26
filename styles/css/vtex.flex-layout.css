@@ -56,7 +56,6 @@
 }
 .flexRow--shelf-prateleira-lancamentos {
   min-height: 440px;
-  margin-bottom: 30px;
 }
 .flexCol--filterCol {
   max-width: 500px;
@@ -92,18 +91,9 @@
 .flexRow--addToCartRow {
   padding-bottom: 1rem;
 }
-.flexRowContent--bloco-home-informativos
-  .stretchChildrenWidth
-  :global(.vtex-rich-text-0-x-container) {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
 .flexRowContent--bloco-home-informativos .stretchChildrenWidth {
-  justify-content: flex-start;
   align-items: flex-start;
-  width: fit-content !important;
+  justify-content: center;
 }
 .flexColChild--login-menu-retratil
   :global(.vtex-store-components-3-x-imageElementLink)
@@ -154,18 +144,17 @@
   }
   .flexRowContent--header-mobile-left, .flexRowContent--header-mobile-right {
     display: flex;
-    gap: 20px;
+    gap: 10px;
   }
   .flexCol--mobile-menu-message {
     margin-top: 28px;
-  }
-  .flexRow--header-mobile-right  :global(.vtex-login-2-x-profile) {
-    background-image: url(/arquivos/new-profile-mobile.svg) !important;
-    color: #fff !important;
-    margin-left: -3px !important;
   }
 }
 .flexRow--shelf-mais-vendidos,
 .flexRow--shelf-ofertas {
   margin-bottom: 30px;
+}
+
+.flexColChild--productSummaryPrices {
+  position: static!important;
 }

@@ -79,22 +79,5 @@
       "textColor": "#b19e8a",
       "blockClass": "help-message"
     }
-  },
-
-  "menu-item#minhaconta": {
-    "props": {
-      "id": "menu-item-shop",
-      "blockClass": "menu-top-minha-conta",
-      "type": "custom",
-      "iconId": null,
-      "highlight": false,
-      "itemProps": {
-        "type": "internal",
-        "href": "/account#/profile",
-        "noFollow": false,
-        "tagTitle": "Minha Conta",
-        "text": "Minha Conta"
-      }
-    }
   }
 }

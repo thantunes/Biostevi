@@ -1,1 +1,21 @@
-.stackItem--product{width:100%}.stackItem--quickview{right:-10px;top:18px;left:auto}
+/* Product Badge - garantir posicionamento correto */
+.stackContainer {
+    position: relative !important;
+}
+
+/* Container específico para imagem e badge */
+.stackContainer--imageBadgeContainer {
+    position: relative !important;
+    width: 100% !important;
+    height: fit-content !important;
+}
+
+.stackItem--product {
+    width: 100%;
+}
+
+.stackItem--quickview {
+    right: -10px;
+    top: 18px;
+    left: auto;
+}
