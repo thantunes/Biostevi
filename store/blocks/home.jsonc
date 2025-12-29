@@ -2,7 +2,8 @@
   "store.home": {
     "blocks": [
       "SchemaOrganization",
-      "list-context.image-list#demo",
+      "list-context.image-list#teste",
+      // "list-context.image-list#demo",
       "flex-layout.row#informativos",
       "slider-layout-seo#informativo-mobile",
       "rich-text#shelf-title-lancamentos",
@@ -549,7 +550,7 @@
   
   "list-context.image-list#demo": {
     "children": [
-      "slider-layout-seo#demo-images"
+     "slider-layout-seo#demo-images"
     ],
     "props": {
       "preload": true,
@@ -561,7 +562,7 @@
           "mobileImage": "https://storecomponents.vteximg.com.br/arquivos/banner-principal-mobile.jpg"
         },
         {
-          "loading": "lazy",
+          "loading": "eager",
           "image": "https://storecomponents.vteximg.com.br/arquivos/banner.jpg",
           "mobileImage": "https://storecomponents.vteximg.com.br/arquivos/banner-principal-mobile.jpg"
         }
@@ -807,5 +808,43 @@
       "textAlignment": "CENTER",
       "blockClass": "titulo-news"
     }
+  },
+
+
+  /* Slider teste */
+    "list-context.image-list#teste": {
+    "children": [
+     "slider-layout#testeslider"
+    ],
+    "props": {
+      "preload": true,
+      "height": 500,
+      "images": [
+        {
+          "loading": "eager",
+          "image": "https://storecomponents.vteximg.com.br/arquivos/banner-principal.png",
+          "mobileImage": "https://storecomponents.vteximg.com.br/arquivos/banner-principal-mobile.jpg"
+        },
+        {
+          "loading": "eager",
+          "image": "https://storecomponents.vteximg.com.br/arquivos/banner.jpg",
+          "mobileImage": "https://storecomponents.vteximg.com.br/arquivos/banner-principal-mobile.jpg"
+        }
+      ]
+    }
+  },
+   "slider-layout#testeslider": {
+    "props": {
+      "itemsPerPage": {
+        "desktop": 1,
+        "tablet":1,
+        "phone": 1
+      },
+      "fullWidth": true,
+      "infinite": true,
+      "showNavigationArrows": "desktopOnly",
+      "blockClass": "carousel"
+    }
   }
+  
 }

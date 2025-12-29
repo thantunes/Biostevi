@@ -2,8 +2,6 @@ import React from "react";
 import { useProduct } from "vtex.product-context";
 import "./index.global.css";
 
-// import { Container } from './styles';
-
 function CustomDescription({ children }) {
     const productContextValue = useProduct();
     const hasShortDescription =
@@ -30,9 +28,6 @@ function CustomDescription({ children }) {
             ) : (
                 [children]
             )}
-            {/* <div class="Descricao--Inline">
-                <p  dangerouslySetInnerHTML={{ __html: productContextValue.product.metaTagDescription }}></p>
-            </div> */}
         </div>
     );
 }

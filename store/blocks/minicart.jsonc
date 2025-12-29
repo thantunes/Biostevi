@@ -7,14 +7,6 @@
     }
   },
 
-  //"minicart.v2": {
-   // "props": {
-    //  "customPixelEventId": "add-to-cart-button"
-   // },
-   // "children": ["minicart-base-content"]
-  //},
-
-
   "minicart.v2": {
     "props": {
 

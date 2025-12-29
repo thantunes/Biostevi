@@ -75,10 +75,7 @@
     "children": [
       "flex-layout.col#category-menu",
       "flex-layout.col#spacer",
-      //"search-bar",
       "locale-switcher"
-      // "login",
-      // "minicart.v2"
     ]
   },
   "flex-layout.col#category-menu": {
@@ -188,8 +185,6 @@
   "menu#drawer": {
     "children": [
       "flex-layout.row#topo-menu-mobile",
-      //"search-bar",
-      // "menu-item#category-lojaonlone",
       "vtex.menu@2.x:menu#mais-vendidos-mobile",
       "menu-item#imunidade-mobile",
       "vtex.menu@2.x:menu#barbacabelo-mobile",
@@ -275,8 +270,6 @@
     "children": [
       "login",
       "flex-layout.col#mobile-menu-message"
-      // "image#teltipomenuretratil",
-      // "image#whatstipomenuretratil"
     ]
   },
   "flex-layout.col#mobile-menu-message": {
@@ -320,7 +313,7 @@
       "maxWidth": "100%"
     }
   },
-  //
+  
   "vtex.menu@2.x:menu#mais-vendidos-mobile": {
     "props": {
       "orientation": "vertical",
@@ -600,7 +593,7 @@
       "menu-item#mais-vendidos-nutrition-barras-de-proteina"
     ]
   },
-  //
+  
   "menu-item#mais-vendidos-suplementacao-diaria-mobile": {
     "props": {
       "blockClass": ["mais-vendidos-suplementacao-diaria-mobile"],
