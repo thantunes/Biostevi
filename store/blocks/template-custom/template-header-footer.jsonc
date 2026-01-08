@@ -1,0 +1,11 @@
+{
+  "store.custom#template-with-header-footer": {
+    "title": "Template with Header and Footer",
+    "blocks": [
+      "CustomReceiveHtml"
+    ],
+    "props": {
+      "blockClass": "template-with-header-footer"
+    }
+  }
+}
