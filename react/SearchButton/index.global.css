@@ -139,3 +139,7 @@
 .swiper:not(.swiper-initialized) .swiper-slide-duplicate {
     display: none;
 }
+
+.konfidency-storeReviewCarousel {
+    font-family: Signika;
+}
