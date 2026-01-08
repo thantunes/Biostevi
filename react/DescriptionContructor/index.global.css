@@ -33,14 +33,6 @@
     margin-bottom: 50px;
 }
 
-/* .DescBox h2 {
-    color: #009fc2 !important;
-    font-size: 26px;
-    font-weight: normal !important;
-    text-align: start;
-    width: 100%;
-} */
-
 .CustomDescData > div > h2 {
     color: #009fc2 !important;
     font-size: 26px;
@@ -70,9 +62,7 @@ html {
 .BlockStyle .TemLink {
     display: block !important;
 }
-/* .BlockStyle div {
-    margin: 0px 30px;
-} */
+
 .BlockStyle > div {
     margin: 0px 0px;
     gap: 15px;
@@ -389,11 +379,7 @@ iframe {
     .TableContentBox td {
         height: 313px !important;
     }
-    /* .BlockStyle div {
-        margin: 0px !important;
-        max-height: unset;
-        overflow: unset;
-    } */
+    
     .TableContentBox td div p {
         font-size: 14px;
         line-height: 14px;

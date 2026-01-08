@@ -5,7 +5,6 @@
             "add-to-list-btn",
             "product-summary-name",
             "product-rating-inline",
-            // "DescriptionInline",
             "product-summary-space",
             "product-list-price#summary",
             "flex-layout.row#selling-price-savings",
@@ -51,14 +50,14 @@
         "children": [
             "product-summary-image#shelf",
             "vtex.product-highlights@2.x:product-highlights#collection",
-            "modal-trigger#quickview" // Check quickview.jsonc
+            "modal-trigger#quickview" 
         ]
     },
     "stack-layout#prodsum-lazy": {
         "children": [
             "product-summary-image#shelf-lazy",
             "vtex.product-highlights@2.x:product-highlights#collection",
-            "modal-trigger#quickview" // Check quickview.jsonc
+            "modal-trigger#quickview" 
         ]
     },
     "product-summary-image#shelf": {

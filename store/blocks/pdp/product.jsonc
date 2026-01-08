@@ -25,7 +25,6 @@
       "BuyTogetherComp",
       "shelf.relatedProducts",
       "flex-layout.row#product-reviews",
-      //"product-questions-and-answers",
       "rich-text#pdp-informativo1",
       "FloatingBuyBar"
     ]
@@ -42,7 +41,6 @@
       "BuyTogetherComp",
       "shelf.relatedProducts",
       "flex-layout.row#product-reviews",
-      //"product-questions-and-answers",
       "rich-text#pdp-informativo1"
     ]
   },

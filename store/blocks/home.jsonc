@@ -553,7 +553,7 @@
   
   "list-context.image-list#demo": {
     "children": [
-      "slider-layout-seo#demo-images"
+     "slider-layout-seo#demo-images"
     ],
     "props": {
       "preload": true,
@@ -565,7 +565,7 @@
           "mobileImage": "https://storecomponents.vteximg.com.br/arquivos/banner-principal-mobile.jpg"
         },
         {
-          "loading": "lazy",
+          "loading": "eager",
           "image": "https://storecomponents.vteximg.com.br/arquivos/banner.jpg",
           "mobileImage": "https://storecomponents.vteximg.com.br/arquivos/banner-principal-mobile.jpg"
         }

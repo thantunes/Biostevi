@@ -413,7 +413,6 @@
 :global(.descricao-pdp-esq) p {
   white-space: break-spaces;
   font-size: 20px;
-  /* font-family: Helvetica; */
   color: #555;
   line-height: 30px;
 }
@@ -421,7 +420,6 @@
 :global(.descricao-pdp-dir) p {
   white-space: break-spaces;
   font-size: 20px;
-  /* font-family: Helvetica; */
   color: #555;
   line-height: 30px;
 }
@@ -429,7 +427,6 @@
 :global(.descricao-pdp-full) p {
   white-space: break-spaces;
   font-size: 20px;
-  /* font-family: Helvetica; */
   color: #555;
   line-height: 30px;
   white-space: break-spaces;
@@ -464,7 +461,6 @@
 
 :global(.descricao-pdp-full-checkp) {
   font-size: 20px;
-  /* font-family: Helvetica; */
   color: #555;
   line-height: 30px;
 }
@@ -718,10 +714,6 @@
     padding-bottom: 80px;
   }
 
-  :global(.render-route-store-product) :global(.vtex-sticky-layout-0-x-container) {
-    /* position: relative !important; */
-  }
-
   :global(.container-app-content) {
     position: fixed;
     top: 0;
@@ -971,7 +963,6 @@
 :global(.vtex-flex-layout-0-x-flexRow--new-pdp-checkins) :global(.vtex-store-components-3-x-specificationsTableRow):nth-child(2) {
   color: #555;
   font-size: 17px !important;
-  /* font-family: Helvetica; */
   font-weight: 400;
   margin-top: 10px;
 }

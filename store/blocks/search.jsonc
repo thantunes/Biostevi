@@ -2,7 +2,6 @@
   "store.search": {
     "blocks": [
       "search-result-layout",
-      //"newsletter"
       "flex-layout.row#bloconews"
     ],
 
@@ -133,7 +132,6 @@
   },
   "flex-layout.row#searchtitle": {
     "children": [
-      // "search-title.v2"
       "CategoryHeading"
     ]
   },

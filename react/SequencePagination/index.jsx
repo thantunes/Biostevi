@@ -54,7 +54,7 @@ const SequencePagination = () => {
     const { query } = useRuntime()
     const hideMap = !query?.map
 
-    const windowSize = 3; // Número de páginas antes e depois da página atual para exibir
+    const windowSize = 3; 
 
     // A VTEX limita a 50 páginas, então não é necessário calcular mais que isso. Caso corrigir, é necessário retornar o código abaixo.
     // const totalPages = useMemo(() => Math.ceil(searchQuery.recordsFiltered / maxItemsPerPage), [searchQuery.recordsFiltered, maxItemsPerPage]);

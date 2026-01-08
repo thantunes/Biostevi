@@ -20,7 +20,7 @@ export const useAutoplay = (
 
     const swiper = swiperRef.current
 
-    // Configurar autoplay do Swiper
+
     if (swiper.autoplay) {
       if (shouldStop) {
         swiper.autoplay.stop()

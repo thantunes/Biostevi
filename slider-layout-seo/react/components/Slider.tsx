@@ -1,7 +1,6 @@
 import React, { FC, useRef, Fragment, ReactNode } from 'react'
 import { useDevice } from 'vtex.device-detector'
 
-// Usando paginação nativa do Swiper
 import { useScreenResize } from '../hooks/useScreenResize'
 import { useAutoplay } from '../hooks/useAutoplay'
 import {
@@ -66,7 +65,6 @@ const Slider: FC<Props> = ({
   useAutoplay(isLooping, containerRef)
   useScreenResize(isLooping, itemsPerPage)
 
-  // Aplicar mesma altura no modo scroll nativo também
   useSameHeight({
     enabled: sameHeight && !shouldUsePagination && !shouldBeStaticList,
     selector: `.${handles.slide}`
@@ -86,7 +84,6 @@ const Slider: FC<Props> = ({
       !shouldBeStaticList
   )
 
-  // Handler para controlar scroll nativo quando usePagination é false
   const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
     if (!shouldUsePagination && !shouldBeStaticList) {
       const container = e.currentTarget
@@ -100,7 +97,6 @@ const Slider: FC<Props> = ({
     }
   }
 
-  // Se usePagination é false, usar scroll nativo sem Swiper
   if (!shouldUsePagination && !shouldBeStaticList) {
     return (
       <section
@@ -150,7 +146,6 @@ const Slider: FC<Props> = ({
     )
   }
 
-  // Usar Swiper quando usePagination é true
   return (
     <section
       ref={sectionRef}

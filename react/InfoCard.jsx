@@ -48,7 +48,6 @@ const InfoCard = ({
     </>
   );
 
-  // Se tem href, renderiza como link
   if (href) {
     return (
       <div className="info-card">
@@ -63,7 +62,6 @@ const InfoCard = ({
     );
   }
 
-  // Se não tem href, renderiza como div
   return (
     <div className="info-card">
       <div className="info-card-container">

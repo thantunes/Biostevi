@@ -1,7 +1,5 @@
 import React, {useEffect, useRef} from 'react';
 
-// import { Container } from './styles';
-
 function Reclameaq() {
     const scriptRef = useRef(null)
     useEffect(()=>{

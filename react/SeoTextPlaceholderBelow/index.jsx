@@ -13,10 +13,8 @@ const SeoTextPlaceholderBelow = props => {
   useEffect(() => {
     if (contentRef.current) {
       const el = contentRef.current
-      // Pega o line-height computado
       const lineHeight = parseFloat(getComputedStyle(el).lineHeight)
       const maxHeight = lineHeight * 8
-      // Se a altura real for maior que a altura máxima de 8 linhas, mostra o botão
       setShowReadMore(el.scrollHeight > maxHeight)
     }
   }, [props.content])

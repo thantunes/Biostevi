@@ -114,7 +114,7 @@ const BuyTogether = () => {
         __typename: 'Item',
       },
     ]
-    // O addItems ele espera receber um array de objeto com informações úteis do produto para adicionar ao carrinho.
+    
     addItems(cart)
 
     const modal = document.createElement('div')

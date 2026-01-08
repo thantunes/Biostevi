@@ -88,7 +88,7 @@ const SliderTrack: FC<Props> = ({
     centerMode,
   })
 
-  // Aplicar mesma altura aos slides quando sameHeight estiver ativo
+
   useSameHeight({ enabled: sameHeight })
 
   const baseSlides = children ?? []

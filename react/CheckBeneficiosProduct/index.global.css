@@ -25,35 +25,8 @@
     .CustomData {
         padding-bottom: 15px;
     }
-    .Block h2 {
-        /* text-align: center; */
-    }
-    ul.CheckBeneficiosProduct-list {
-        /* display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: baseline;
-        column-gap: 0;
-        row-gap: 5px; */
-    }
+}
 
-    .CheckBeneficiosProduct {
-        /* width: 50%;
-        padding-right: 5px; */
-    }
-    
-    .CheckBeneficiosProduct:last-child:nth-child(odd) {
-        /* width: unset; */
-        /* padding-right: 5px; */
-    }
-}
-@media screen and (min-width: 40em) and (max-width:1024px) {
-    .CustomData {
-        /* padding-left: 1rem;
-        padding-right: 1rem; */
-    }
-}
 @media screen and (min-width: 1024px) { 
     .CustomData {
         padding-left: 0rem;
