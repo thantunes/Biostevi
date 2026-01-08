@@ -287,16 +287,9 @@ const SearchButton = () => {
           }
         }}
       >
-      <svg width="24" height="24" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g clipPath="url(#clip0_42827_5106)">
-            <path d="M12.8109 23.0957C17.9532 23.0957 22.1218 18.9271 22.1218 13.7848C22.1218 8.64251 17.9532 4.47388 12.8109 4.47388C7.66864 4.47388 3.5 8.64251 3.5 13.7848C3.5 18.9271 7.66864 23.0957 12.8109 23.0957Z" stroke="white" stroke-width="1.59616" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M20.3948 20.668L26.8461 27.1193" stroke="white" strokeWidth="1.59616" strokeLinecap="round" strokeLinejoin="round"/>
-        </g>
-        <defs>
-            <clipPath id="clip0_42827_5106">
-                <rect width="24" height="24" fill="white" transform="translate(0 0.888916)"/>
-            </clipPath>
-        </defs>
+        
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 16 16" fill="none">
+       <path d="M15.707 13.293L13 10.586C13.63 9.536 14 8.311 14 7C14 3.14 10.859 0 7 0C3.141 0 0 3.14 0 7C0 10.86 3.141 14 7 14C8.312 14 9.536 13.631 10.586 13L13.293 15.707C13.488 15.902 13.744 16 14 16C14.256 16 14.512 15.902 14.707 15.707L15.707 14.707C16.098 14.316 16.098 13.684 15.707 13.293ZM7 12C4.239 12 2 9.761 2 7C2 4.239 4.239 2 7 2C9.761 2 12 4.239 12 7C12 9.761 9.761 12 7 12Z" fill="white"/>
       </svg>
 
       </button>

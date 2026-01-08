@@ -439,8 +439,9 @@
 :global(.vtex-flex-layout-0-x-flexColChild) {
   position: relative;
 }
+
 :global(.vtex-store-components-3-x-searchIcon) {
-  color: #009fc2 !important;
+   color: #009fc2 !important; 
 }
 :global(.vtex-slider__base-internal) {
   background-color: #00c231;
@@ -621,7 +622,8 @@
   color: #fff !important;
 }
 :global(.vtex-minicart-2-x-minicartQuantityBadgeDefault) {
-  right: -2.8rem;
+  /* right: -2.8rem; */
+  right: -0.9rem;
 }
 :global(.vtex-store-components-3-x-logoImage) {
   max-width: 155px;
@@ -2011,7 +2013,7 @@
   }
   :global(.vtex-minicart-2-x-minicartQuantityBadgeDefault) {
     right: -0.9rem;
-    top: -0.5rem;
+     top: -0.5rem; 
     background-color: #e26001;
   }
   :global(.vtex-flex-layout-0-x-flexColChild--login-menu-retratil) {
@@ -2451,3 +2453,14 @@
   max-height: 0 !important;
   overflow: hidden !important;
 }
+
+
+ :global(.vtex-minicart-2-x-minicartQuantityBadgeDefault) {
+    top: -0.38rem;
+  }
+
+  @media only screen and (max-width: 990px) {
+    :global(.vtex-minicart-2-x-minicartQuantityBadgeDefault) {
+       top: -0.05rem; 
+     }
+  }
