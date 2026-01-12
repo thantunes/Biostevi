@@ -1222,3 +1222,11 @@
     font-weight: 600;
     text-transform: uppercase;
 }
+
+/* REMOÇÃO HEADER E FOOTER DO TEMPLATE EM BRANCO */
+:global(.render-route-store-custom-template-em-branco) :global(.vtex-flex-layout-0-x-flexRow--hintup-skeleton),
+:global(.render-route-store-custom-template-em-branco) :global(.vtex-flex-layout-0-x-flexRow--menu-link),
+:global(.render-route-store-custom-template-em-branco) :global(.vtex-flex-layout-0-x-flexRowContent--main-header),
+:global(.render-route-store-custom-template-em-branco) :global(.vtex-store-footer-2-x-footerLayout) {
+    display: none;
+}
