@@ -99,24 +99,6 @@
     margin-bottom: 20px;
 }
 
-/* Paginação nativa do Swiper - Estilos customizados */
-/* .sliderLayoutContainer--euquero .swiper-pagination {
-    bottom: -20px;
-}
-
-.sliderLayoutContainer--influenciadores .swiper-pagination {
-    bottom: -5px;
-}
-
-.sliderLayoutContainer--carrousel-mosaico-mobile .swiper-pagination {
-    bottom: -25px;
-}
-
-.sliderLayoutContainer--shelf .swiper-pagination {
-    bottom: -10px;
-} */
-
-/* Mobile - mostrar dots */
 @media only screen and (max-width: 980px) {
     .sliderLayoutContainer--euquero .swiper-pagination,
     .sliderLayoutContainer--influenciadores .swiper-pagination,
@@ -196,10 +178,6 @@
         font-family: Signika;
         color: #009FC2;
     }
-
-    /* .sliderLayoutContainer--carousel {
-        margin-top: 85px !important;
-    } */
 }
 
 .sliderLayoutContainer--shelf :global(.vtex-product-price-1-x-sellingPrice),

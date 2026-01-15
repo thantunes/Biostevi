@@ -15,22 +15,22 @@
       "rich-text#about-title",
       "rich-text#Subtitle-1",
       "rich-text#content-1",
-      //
+      
       "rich-text#subtitle-2",
       "rich-text#content-2",
-      //
+      
       "rich-text#subtitle-3",
       "rich-text#content-3",
-      //
+      
       "rich-text#subtitle-4",
       "rich-text#content-4",
-      //
+      
       "rich-text#subtitle-5",
       "rich-text#content-5",
-      //
+      
       "rich-text#subtitle-6",
       "rich-text#content-6",
-      //
+      
       "rich-text#subtitle-7",
       "rich-text#content-7"
     ],
@@ -55,7 +55,7 @@
       "text": "content-1"
     }
   },
-  //
+  
   "rich-text#subtitle-2": {
     "props": {
       "text": "subtitle-2:",
@@ -66,7 +66,7 @@
     "props": {
       "text":"content-2" }
   },
-  //
+  
   "rich-text#subtitle-3": {
     "props": {
       "text": "subtitle-3:",
@@ -77,7 +77,7 @@
     "props": {
       "text":"content-3" }
   },
-  //
+  
   "rich-text#subtitle-4": {
     "props": {
       "text": "subtitle-4:",
@@ -88,7 +88,7 @@
     "props": {
       "text":"content-4" }
   },
-  //
+  
   "rich-text#subtitle-5": {
     "props": {
       "text": "subtitle-5:",
@@ -99,7 +99,7 @@
     "props": {
       "text":"content-5" }
   },
-  //
+  
   "rich-text#subtitle-6": {
     "props": {
       "text": "subtitle-6:",
@@ -110,7 +110,7 @@
     "props": {
       "text":"content-6" }
   },
-  //
+  
   "rich-text#subtitle-7": {
     "props": {
       "text": "subtitle-7:",

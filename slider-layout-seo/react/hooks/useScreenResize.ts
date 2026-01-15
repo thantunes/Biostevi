@@ -9,7 +9,6 @@ export const useScreenResize = (_infinite: boolean, _itemsPerPage: number) => {
     let resizeTimeout: ReturnType<typeof setTimeout>
 
     const onResize = () => {
-      // Debounce para evitar muitas atualizações
       clearTimeout(resizeTimeout)
       resizeTimeout = setTimeout(() => {
         if (swiperRef.current) {

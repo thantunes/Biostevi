@@ -1,8 +1,6 @@
 import React from 'react'
 import { useProduct } from 'vtex.product-context'
 
-// import { Container } from './styles';
-
 function ProductCustomDescription() {
   const productContextValue = useProduct()
   const shortDescription = productContextValue?.product?.properties.find(

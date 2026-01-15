@@ -54,7 +54,7 @@
       "op-notices"
     ]
   },
-  // each order section
+  
   "op-order": {
     "children": [
       "flex-layout.row#order-header",
@@ -67,7 +67,7 @@
       "op-order-total"
     ]
   },
-  // each order header
+  
   "flex-layout.row#order-header": {
     "props": {
       "fullWidth": true,
@@ -97,7 +97,7 @@
       "op-order-options"
     ]
   },
-  // payment section
+  
   "op-section#payments": {
     "props": {
       "name": "paymentMethods"
@@ -107,7 +107,7 @@
       "responsive-layout.mobile#order-options-mobile"
     ]
   },
-  // bottom of top section of order header
+  
   "responsive-layout.mobile#order-options-mobile": {
     "children": [
       "op-order-options#mobile"

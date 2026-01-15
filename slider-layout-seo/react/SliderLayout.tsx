@@ -12,13 +12,11 @@ import {
 } from './components/SliderContext'
 import { CssHandlesProvider } from './modules/cssHandles'
 
-// Importar CSS do Swiper nativo
 import './global.css'
 
 export const CSS_HANDLES = SliderCssHandles
 
 interface Props {
-  /** Used to override default CSS handles */
   classes?: CssHandlesTypes.CustomClasses<typeof CSS_HANDLES>
 }
 
@@ -49,7 +47,7 @@ function SliderLayout({
   const responsiveItemsPerPage = useResponsiveValue(itemsPerPage)
   const responsiveCenterMode = useResponsiveValue(centerMode)
   const slides = React.Children.toArray(children).concat(list)
-  // Force fullWidth mode when centerMode is on
+
   const resolvedFullWidth = fullWidth || responsiveCenterMode !== 'disabled'
 
   return (

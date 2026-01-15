@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import style from './style.css'
 
-// Função utilitária para remover tags HTML
 const stripHtml = (html) => {
     if (!html) return '';
     return html.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
@@ -37,7 +36,6 @@ const FaqComponent = ({
         return openIndex === idx;
     }
 
-    // Geração do JSON-LD FAQPage
     const faqStructuredData = {
         '@context': 'https://schema.org',
         '@type': 'FAQPage',
@@ -53,7 +51,6 @@ const FaqComponent = ({
 
     if (!faqs || !Array.isArray(faqs)) return null;
 
-    // Usar estilos customizados se fornecidos, senão usar os padrão
     const wrapperClass = style.faqWrapper;
     const itemClass = style.faqItem;
     const questionClass = style.faqQuestion;

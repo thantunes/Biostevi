@@ -42,16 +42,20 @@
         "children": [
             "product-summary-image#shelf",
             "product-badge",
-            "vtex.product-highlights@2.x:product-highlights#collection"
+            "vtex.product-highlights@2.x:product-highlights#collection",
             // "modal-trigger#quickview" // Check quickview.jsonc
+            // "vtex.product-highlights@2.x:product-highlights#collection",
+            "modal-trigger#quickview" 
         ]
     },
     "stack-layout#prodsum-lazy": {
         "children": [
             "product-summary-image#shelf-lazy",
             "product-badge",
-            "vtex.product-highlights@2.x:product-highlights#collection"
+            "vtex.product-highlights@2.x:product-highlights#collection",
             // "modal-trigger#quickview" // Check quickview.jsonc
+            // "vtex.product-highlights@2.x:product-highlights#collection",
+            "modal-trigger#quickview" 
         ]
     },
     "product-badge": {

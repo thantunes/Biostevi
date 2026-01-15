@@ -27,14 +27,11 @@ export interface SliderLayoutProps {
   totalItems?: number
   label?: string
   slideTransition?: {
-    /** Transition speed in ms */
     speed: number
-    /** Transition delay in ms */
     delay: number
     timing: string
   }
   autoplay?: {
-    /** Timeout duration in ms */
     timeout: number
     stopOnHover?: boolean
   }
@@ -47,27 +44,16 @@ export interface SliderLayoutProps {
 }
 
 interface State extends Partial<SliderLayoutProps> {
-  /** Width of each slide */
   slideWidth: number
-  /** Number of slides to show per page */
   slidesPerPage: number
-  /** Index of the leftmost slide of the current page */
   currentSlide: number
-  /** Current transform value */
   transform: number
-  /** Total number of slides */
   totalItems: number
-  /** Additional clones rendered at each edge for looped mode */
   loopCloneCount: number
-  /** Current index within the virtual track (includes clones) */
   virtualSlide: number
-  /** Virtual slides count (real slides + clones) */
   virtualTotalItems: number
-  /** Number of slides to slide in navigation */
   navigationStep: number
-  /** Whether or not navigationStep prop is set to 'page' */
   isPageNavigationStep: boolean
-  /** Whether or not a touchmove event is happening */
   isOnTouchMove: boolean
   useSlidingTransitionEffect: boolean
   transformMap: Record<number, number>
@@ -186,7 +172,6 @@ const SliderContextProvider: FC<SliderContextProps> = ({
 
   const initialVirtualSlide = loopCloneCount + initialSlide
 
-  // Handlers estáveis usando useCallback
   const handleSlideChange = useCallback(() => {
     if (!swiperRef.current || isUpdatingRef.current) return
 
@@ -219,7 +204,7 @@ const SliderContextProvider: FC<SliderContextProps> = ({
     setUseSlidingTransitionEffect(false)
   }, [])
 
-  // Sincronizar com Swiper quando ele mudar
+
   useEffect(() => {
     if (!swiperRef.current || isInitializedRef.current) return
 
@@ -242,14 +227,12 @@ const SliderContextProvider: FC<SliderContextProps> = ({
     }
   }, [handleSlideChange, handleTouchStart, handleTouchEnd, handleTransitionStart, handleTransitionEnd])
 
-  // Inicializar estado apenas uma vez
   useEffect(() => {
     if (isInitializedRef.current) return
     setCurrentSlide(initialSlide)
     setVirtualSlide(initialVirtualSlide)
   }, [initialSlide, initialVirtualSlide])
 
-  // Ajustar quando props mudarem (sem incluir currentSlide para evitar loop)
   useEffect(() => {
     if (
       itemsPerPage === prevProps.itemsPerPage &&
@@ -279,7 +262,6 @@ const SliderContextProvider: FC<SliderContextProps> = ({
     }, 100)
   }, [itemsPerPage, totalItems, infinite, resolvedSlidesPerPage, loopCloneCount])
 
-  // Sincronizar com grupo (sem incluir currentSlide para evitar loop)
   useEffect(() => {
     if (!sliderGroupState || isUpdatingRef.current) return
 
@@ -301,7 +283,6 @@ const SliderContextProvider: FC<SliderContextProps> = ({
     }, 100)
   }, [sliderGroupState?.currentSlide, loopCloneCount])
 
-  // Dispatch simplificado para compatibilidade
   const dispatch = (action: any) => {
     if (!swiperRef.current) return
 
@@ -337,7 +318,7 @@ const SliderContextProvider: FC<SliderContextProps> = ({
 
       case 'START_LOOP_NORMALIZATION':
       case 'END_LOOP_NORMALIZATION':
-        // Swiper gerencia loop automaticamente
+
         break
 
       case 'ADJUST_ON_RESIZE':

@@ -7,16 +7,13 @@ const AnchorsShelf = ({ anchors = [] }) => {
     useEffect(() => {
 
         const checkPerformaElements = () => {
-            // Busca todos os elementos que contenham 'vtex-product-context-provider' e 'performa' na classe
             const performaElements = document.querySelectorAll('.vtex-product-context-provider performa');
             const foundAnchors = [];
             
             performaElements.forEach((element) => {
-                // Busca o span com classe performa-vitrine-title dentro do elemento
                 const titleSpan = element.querySelector('.performa-vitrine-title');
                 
                 if (titleSpan && titleSpan.textContent && element.children.length > 0) {
-                    // Extrai o ID do elemento ou cria um baseado no índice
                     const elementId = element.id || element.getAttribute('id');
                     
                     if (elementId) {
@@ -32,7 +29,6 @@ const AnchorsShelf = ({ anchors = [] }) => {
             if (foundAnchors.length > 0) {
                 setDynamicAnchors(foundAnchors);
             } else {
-                // Retry após 100ms se não encontrou elementos
                 setTimeout(checkPerformaElements, 100);
             }
         };
@@ -40,7 +36,6 @@ const AnchorsShelf = ({ anchors = [] }) => {
         checkPerformaElements();
     }, [dynamicAnchors]);
 
-    // Combina anchors configurados com anchors dinâmicos
     const allAnchors = [...anchors, ...dynamicAnchors];
     
     if (allAnchors.length === 0) {

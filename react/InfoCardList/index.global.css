@@ -1,4 +1,3 @@
-/* InfoCardList - Global CSS */
 
 .info-card-list-container {
   width: 100%;
@@ -6,7 +5,6 @@
   font-family: Signika;
 }
 
-/* Info Card Styles */
 .info-card {
   padding: 1rem;
   height: 100%;
@@ -109,7 +107,6 @@
   font-size: 1rem;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .info-card-list-wrapper {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -148,7 +145,6 @@
   }
 }
 
-/* Slider mode adjustments */
 .info-card-slide {
   height: 100%;
   transform: translateZ(0);
@@ -168,7 +164,6 @@
   position: relative;
 }
 
-/* Layout Eu Quero Styles */
 .info-card-list-container-euquero {
   width: 100%;
 }
@@ -179,7 +174,6 @@
   gap: 1.5rem;
 }
 
-/* Quando usado com slider-layout-seo */
 .info-card-list-container-euquero .info-card-list-wrapper-euquero {
   display: block;
 }
@@ -195,9 +189,6 @@
   contain: layout style paint;
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
-  /* touch-action: pan-x;
-  -webkit-touch-callout: none;
-  isolation: isolate; */
 }
 
 .info-card-euquero-container {
@@ -294,14 +285,12 @@
   -webkit-backface-visibility: hidden;
 }
 
-/* Garantir visibilidade durante drag do Swiper */
 .swiper-slide .info-card-euquero-content,
 .swiper-slide .info-card-content {
   opacity: 1 !important;
   visibility: visible !important;
 }
 
-/* Desabilita transições durante drag do Swiper para performance máxima */
 .swiper-slide-dragging .info-card-euquero-background,
 .swiper-slide-dragging .info-card-euquero-overlay-hover,
 .swiper-slide-dragging .info-card-euquero-anchor,
@@ -309,7 +298,6 @@
   transition: none !important;
 }
 
-/* Otimização para dispositivos touch - desabilita TODAS as transições em mobile */
 @media (hover: none) and (pointer: coarse) {
   .info-card-euquero-background,
   .info-card-euquero-overlay-hover,
@@ -323,14 +311,10 @@
     -webkit-transform: translateZ(-1px) scale(1);
   }
   
-  /* .info-card-euquero-overlay-hover {
-    transform: translateZ(0) translateY(0);
-    -webkit-transform: translateZ(0) translateY(0);
-    opacity: 1;
-  } */
+ 
 }
 
-/* Hover effects apenas em desktop com mouse (não em touch devices) */
+
 @media (hover: hover) and (pointer: fine) {
   .info-card-euquero:hover .info-card-euquero-container {
     will-change: transform;
@@ -388,7 +372,7 @@
   cursor: pointer;
 }
 
-/* Hover effects adicionais apenas em desktop com mouse */
+
 @media (hover: hover) and (pointer: fine) {
   .info-card-euquero:hover .info-card-euquero-anchor {
     color: #009FC2;
@@ -417,7 +401,7 @@
   transition: transform 0.2s ease;
 }
 
-/* Responsive Eu Quero */
+
 @media (max-width: 768px) {
   .info-card-list-wrapper-euquero {
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -451,12 +435,12 @@
   }
 }
 
-/* Paginação nativa do Swiper - Estilos customizados */
+
 .swiper-pagination {
     bottom: -20px;
 }
 
-..swiper-pagination {
+.swiper-pagination {
     bottom: -5px;
 }
 

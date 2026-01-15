@@ -20,6 +20,7 @@
       "rich-text#shelf-title-influencers",
       "InfoCardList#info-cards",
       "flex-layout.row#bloco-title-home",
+      "store-testimonials",
       "flex-layout.row#home-faq-container",
       "flex-layout.row#bloconews"
     ]
@@ -94,6 +95,7 @@
   },
 
   "flex-layout.row#shelfprateleiralancamentos": {
+    "title": "Shelf de produtos de lançamentos",
     "children": [
       "list-context.product-list#prateleiralancamentos"
     ],
@@ -377,6 +379,7 @@
     }
   },
   "rich-text#shelf-title-lancamentos": {
+    "title": "Título de shelf de lançamentos",
     "props": {
       "text": "# Lançamentos Biostévi",
       "blockClass": "shelfTitle"
@@ -384,6 +387,7 @@
   },
 
   "slider-layout-seo#descontos-mobile": {
+    "title": "Slider de descontos para mobile",
     "props": {
       "autoplay": {
         "timeout": 3000,
@@ -526,7 +530,7 @@
   
   "list-context.image-list#demo": {
     "children": [
-      "slider-layout-seo#demo-images"
+     "slider-layout-seo#demo-images"
     ],
     "props": {
       "preload": true,
@@ -538,7 +542,7 @@
           "mobileImage": "https://storecomponents.vteximg.com.br/arquivos/banner-principal-mobile.jpg"
         },
         {
-          "loading": "lazy",
+          "loading": "eager",
           "image": "https://storecomponents.vteximg.com.br/arquivos/banner.jpg",
           "mobileImage": "https://storecomponents.vteximg.com.br/arquivos/banner-principal-mobile.jpg"
         }
@@ -563,12 +567,14 @@
   },
   
   "rich-text#shelf-title-eu-quero": {
+    "title": "Título de shelf eu quero",
     "props": {
       "text": "## O que você quer melhorar hoje?\nEscolha sua necessidade e veja as soluções ideais para você.",
       "blockClass": "eu-quero-title"
     }
   },
   "InfoCardList#euquero": {
+    "title": "Lista de cards eu quero",
     "children": [
       "slider-layout-seo#euquero"
     ],
@@ -676,7 +682,7 @@
   },
   "rich-text#shelf-title-influencers": {
     "props": {
-      "text": "Time Biostévi",
+      "text": "## Time Biostévi",
       "blockClass": "shelfTitle"
     }
   },
@@ -711,6 +717,7 @@
     "title": "Texto"
   },
   "flex-layout.row#home-faq-container": {
+    "title": "Bloco de perguntas frequentes",
     "children": [
       "flex-layout.col#faq-title-euquero"
     ]
@@ -723,12 +730,14 @@
   },
 
   "rich-text#faq-title-faqhome": {
+    "title": "Título de perguntas frequentes",
     "props": {
       "text": "## PERGUNTAS FREQUENTES",
       "blockClass": "faq-title"
     }
   },
   "FaqComponent#page-home": {
+    "title": "Perguntas frequentes",
     "props": {
       "blockClass": "faq-container",
       "faqs": [
@@ -753,6 +762,7 @@
   },
 
   "flex-layout.row#bloconews": {
+    "title": "Bloco de newsletter",
     "props": {
       "blockClass": "bloco-home-news"
     },

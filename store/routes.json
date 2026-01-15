@@ -8,5 +8,12 @@
   "store.custom#search-collection": {
     "isSitemapEntry": false,
     "path": "/mais-vendidos/lp/suplementos"
+  },
+  "store.custom#template-with-header-footer": {
+    "path": "/template-with-header-footer"
+  },
+  "store.custom#template-em-branco": {
+    "path": "/template-em-branco"
   }
+
 }
