@@ -41,7 +41,8 @@
     "stack-layout#prodsum": {
         "children": [
             "product-summary-image#shelf",
-            "product-badge",
+            "ProductFlagShelf",
+            /* "product-badge", */
             "vtex.product-highlights@2.x:product-highlights#collection",
             // "modal-trigger#quickview" // Check quickview.jsonc
             // "vtex.product-highlights@2.x:product-highlights#collection",
@@ -51,7 +52,8 @@
     "stack-layout#prodsum-lazy": {
         "children": [
             "product-summary-image#shelf-lazy",
-            "product-badge",
+            "ProductFlagShelf",
+            /* "product-badge", */
             "vtex.product-highlights@2.x:product-highlights#collection",
             // "modal-trigger#quickview" // Check quickview.jsonc
             // "vtex.product-highlights@2.x:product-highlights#collection",

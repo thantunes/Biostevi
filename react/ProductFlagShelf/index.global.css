@@ -1,0 +1,22 @@
+.product-flag-shelf {
+  background-color: #FFF7ED;
+  border: 1px solid #FFD6A7;
+  border-radius: 8px;
+  padding: 4px 8px;
+  transform: translateY(203px);
+}
+
+.card-tag {
+  font-size: 14px;
+  font-weight: 500;
+  color: #CA3500;
+}
+
+@media (max-width: 768px) {
+  .product-flag-shelf {
+    transform: translateY(137px);
+  }
+  .card-tag { 
+    font-size: 11px;
+  }
+}
