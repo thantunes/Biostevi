@@ -1,0 +1,14 @@
+{
+  "store.custom#template-em-branco": {
+    "title": "Template em branco",
+    "blocks": [
+      "CustomReceiveHtml"
+    ]
+  }
+
+ /*  "CustomReceiveHtml#no-header": {
+    "props": {
+      "remove_header_footer": true
+    }
+  } */
+}
