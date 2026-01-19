@@ -1440,6 +1440,7 @@
   :global(.vtex-store-components-3-x-imageElement) {
   max-height: 258px;
   padding-bottom: 5px;
+  border-radius: 24px;
 }
 :global(.vtex-rich-text-0-x-link--envie-sua-receita-mobile-texto) {
   padding-top: 5px;
@@ -1469,11 +1470,13 @@
 :global(.vtex-flex-layout-0-x-flexColChild--mosaico-bloco-2)
   :global(.vtex-store-components-3-x-imageElement) {
   max-height: 526px;
+  border-radius: 24px;
 }
 :global(.vtex-flex-layout-0-x-flexColChild--mosaico-bloco-3)
   :global(.vtex-store-components-3-x-imageElement) {
   max-height: 258px;
   padding-bottom: 5px;
+  border-radius: 24px;
 }
 :global(.vtex-rich-text-0-x-wrapper--titulo-news) {
   text-align: center;

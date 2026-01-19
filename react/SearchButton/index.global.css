@@ -157,3 +157,15 @@
 .konfidency-storeReviewCarousel {
     font-family: Signika;
 }
+
+@media(max-width: 768px) {
+    .konfidency-reviews-showcase-rating .summary {
+        margin-top: 12px !important;
+    }
+}
+
+@media(max-width: 480px) {
+    .konfidency-reviews-showcase-rating .summary {
+       margin-top: 28px !important;
+    }
+}
