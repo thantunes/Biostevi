@@ -1994,6 +1994,7 @@
     line-height: 15px;
     padding: 9px !important;
   }
+  
   :global(.vtex-store-components-3-x-searchBarInnerContainer) {
     width: 100%;
     margin-left: 0;
@@ -2464,3 +2465,6 @@
        top: -0.05rem; 
      }
   }
+
+
+   

@@ -40,6 +40,8 @@
 
 @media screen and (max-width:420px) {
     .containerNormal {
-        width: 195px !important
+        /* width: 195px !important */
+        margin-left: -12px;
+        width: 159px !important;
     }
 }

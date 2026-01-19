@@ -28,6 +28,11 @@
         background-position: 22.5% 5px!important;
     }
 }
+@media(max-width: 470px){
+    :global(.vtex-flex-layout-0-x-flexCol--productSummaryCart) .buttonText {
+        background-position: 17.5% 5px!important;
+    }
+}
 .buttonDataContainer .buttonText {
     border-radius: 50px;
     background: #00BC7D;
