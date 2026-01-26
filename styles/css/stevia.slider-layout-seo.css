@@ -159,6 +159,7 @@
         max-width: 350px !important;
         padding-bottom: 15px;
         padding: 20px;
+        border-radius: 32px;
     }
 
     .sliderLayoutContainer--carrousel-euquero-mobile :global(.vtex-store-components-3-x-imageElement) {
@@ -184,7 +185,7 @@
 .sliderLayoutContainer--shelf :global(.vtex-product-price-1-x-sellingPrice) :global(.vtex-product-price-1-x-currencyContainer--summary) {
     color: #009966;
     font-family: Signika;
-    font-size: 18px;
+    font-size: 22px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -210,3 +211,4 @@
 .caretIcon--euquero {
     color: #000;
 }
+

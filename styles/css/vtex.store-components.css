@@ -492,7 +492,7 @@
 }
 :global(.vtex-search-result-3-x-galleryItem) {
   position: relative;
-  margin-top: 30px;
+  /* margin-top: 30px; */
 }
 :global(.vtex-menu-2-x-submenu) :global(.vtex-flex-layout-0-x-flexRow) {
   width: 97%;

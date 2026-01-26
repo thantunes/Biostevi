@@ -1,3 +1,16 @@
 .productHighlightWrapper--collection{position:absolute;top:13px;left:-6px;width:200px}.productHighlightText{background:#faebd7;border-radius:20px;padding:5px 10px}
 
-@media screen and (max-width:768px){.productHighlightWrapper--collection{top: -10px; left: 1px;}}
+ :global(.vtex-search-result-3-x-galleryItem) .productHighlightWrapper--collection {
+        top: 1px !important;
+    }
+
+@media screen and (max-width:768px){
+  .productHighlightWrapper--collection{
+    top: -8px; 
+    left: 1px;
+  }
+
+  :global(.vtex-search-result-3-x-galleryItem) .productHighlightWrapper--collection {
+        top: -20px !important;
+    }
+}

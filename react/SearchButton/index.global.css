@@ -147,6 +147,17 @@
     font-family: Signika;
     margin-bottom: 6px!important;
 }
+.konfidency-reviews-showcase-rating .summary .starsV2{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.konfidency-reviews-showcase-rating .summary .starsV2 .star {
+    width: 16px;
+    height: 16px;
+}
+
 .konfidency-reviews-showcase-rating .summary .review-count {
     color: #979899;
 }

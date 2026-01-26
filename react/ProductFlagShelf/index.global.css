@@ -2,13 +2,14 @@
   background-color: #FFF7ED;
   border: 1px solid #FFD6A7;
   border-radius: 8px;
-  padding: 4px 8px;
+  padding: 0px 8px 4px;
+  line-height: 1;
   transform: translateY(203px);
 }
 
 .card-tag {
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 12px;
+  font-weight: 400;
   color: #CA3500;
   font-family: 'Signika', sans-serif;
 }
