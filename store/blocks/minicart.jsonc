@@ -1,11 +1,28 @@
 {
   "add-to-cart-button": {
     "props": {
-      "text":"Adicionar ao carrinho",
+      "text":"Adicionar ao Carrinho",
       "addToCartFeedback": "customEvent",
       "customPixelEventId": "add-to-cart-button"
     }
   },
+
+  "add-to-cart-button#summary": {
+    "props": {
+      "text":"Adicionar",
+      "addToCartFeedback": "customEvent",
+      "customPixelEventId": "add-to-cart-button",
+      "onClickBehavior": "add-to-cart"
+    }
+  },
+
+  //"minicart.v2": {
+   // "props": {
+    //  "customPixelEventId": "add-to-cart-button"
+   // },
+   // "children": ["minicart-base-content"]
+  //},
+
 
   "minicart.v2": {
     "props": {

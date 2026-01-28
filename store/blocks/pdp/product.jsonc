@@ -388,14 +388,13 @@
       "showPaginationDots": "never"
     },
     "children": [
-      "rich-text#frete-gratis",
-      "rich-text#descontoprogressivo",
-      "rich-text#desconto",
-      "rich-text#parcelamento",
-      "rich-text#siteseguro",
-      "rich-text#whats1"
+      "rich-text#frete-gratis-s",
+      "rich-text#desconto-s",
+      "rich-text#parcelamento-s",
+      "rich-text#site-seguro-s"
     ]
   },
+
   "DescriptionContructorComp": {
     "children": [
       "rich-text#Informacoes"

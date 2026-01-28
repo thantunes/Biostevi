@@ -81,7 +81,13 @@
     "component": "InfoCard",
     "composition": "children"
   },
+  "product-badge": {
+    "component": "ProductBadge"
+  },
   "CustomReceiveHtml": {
     "component": "CustomReceiveHtml"
+  },
+  "ProductFlagShelf": {
+    "component": "ProductFlagShelf"
   }
 }
