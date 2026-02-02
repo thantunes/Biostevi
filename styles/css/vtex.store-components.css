@@ -1,19 +1,13 @@
 @import url(https://fonts.googleapis.com/css2?family=Signika:wght@300..700&display=swap);
 :global(.vtex-flex-layout-0-x-flexRow--product-main)
-  :global(.vtex-product-price-1-x-currencyCode),
+  :global(.vtex-product-price-1-x-sellingPriceValue),
 :global(.vtex-flex-layout-0-x-flexRow--product-main)
-  :global(.vtex-product-price-1-x-currencyInteger),
-:global(.vtex-flex-layout-0-x-flexRow--product-main)
-  :global(.vtex-product-price-1-x-currencyDecimal),
-:global(.vtex-flex-layout-0-x-flexRow--product-main)
-  :global(.vtex-product-price-1-x-currencyGroup),
-:global(.vtex-flex-layout-0-x-flexRow--product-main)
-  :global(.vtex-product-price-1-x-currencyFraction){
-  color: #ff6c00;
+  :global(.vtex-product-price-1-x-installments) :global(.vtex-product-price-1-x-installmentValue) {
+    color: #ff6c00;
 }
 :global(.vtex-product-price-1-x-installments) {
   color: #000;
-  font-size: 15px;
+  font-size: 15px;  
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -445,8 +439,9 @@
 :global(.vtex-flex-layout-0-x-flexColChild) {
   position: relative;
 }
+
 :global(.vtex-store-components-3-x-searchIcon) {
-  color: #009fc2 !important;
+   color: #009fc2 !important; 
 }
 :global(.vtex-slider__base-internal) {
   background-color: #00c231;
@@ -455,11 +450,16 @@
 :global(.vtex-store-components-3-x-searchBarContainer)
   :global(.vtex-input-prefix__group) {
   background-color: #fff;
-  width: 535px;
-  margin-left: 95px;
-  margin-right: 58px;
+  width: 600px;
+  margin-left: 65px;
+  margin-right: 45px;
   margin-top: 14px;
   max-height: 38px;
+  border-radius: 50px;
+}
+:global(.vtex-store-components-3-x-searchBarContainer)
+  :global(.vtex-input-prefix__group) :global(.vtex-styleguide-9-x-input) {
+  font-family: Signika;
 }
 :global(.vtex-locale-switcher-0-x-container) {
   display: none;
@@ -481,14 +481,6 @@
   :global(.vtex-menu-2-x-styledLinkContent):hover {
   color: #ff6c00;
 }
-:global(.vtex-rich-text-0-x-wrapper--faq-title){ 
-  width: 100%;
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid #ff6c00 !important;
-  margin-top: 15px !important;
-  margin-bottom: 12px !important;
-}
 :global(.vtex-flex-layout-0-x-flexRow--bloco-home-mosaicoeuquero)
   :global(.vtex-store-components-3-x-imageElement) {
   width: 90% !important;
@@ -500,7 +492,7 @@
 }
 :global(.vtex-search-result-3-x-galleryItem) {
   position: relative;
-  margin-top: 30px;
+  /* margin-top: 30px; */
 }
 :global(.vtex-menu-2-x-submenu) :global(.vtex-flex-layout-0-x-flexRow) {
   width: 97%;
@@ -547,11 +539,18 @@
 }
 :global(.vtex-flex-layout-0-x-flexRowContent--menu-link) {
   justify-content: left !important;
+  width: 100% !important;
+  display: flex !important;
+}
+:global(.vtex-flex-layout-0-x-flexRowContent--menu-link)
+  :global(.vtex-menu-2-x-menuContainerNav) {
+  flex: 1 !important;
+  width: 100% !important;
 }
 :global(.vtex-flex-layout-0-x-flexRowContent--menu-link)
   :global(.vtex-menu-2-x-menuContainerNav)
   :global(.vtex-menu-2-x-styledLinkContent--menu-top-pedidos) {
-  background-image: url(https://stevia.vteximg.com.br/arquivos/cart.png);
+  background-image: url(/arquivos/new-bag.svg);
   background-repeat: no-repeat;
   background-position: top center;
   padding-top: 40px;
@@ -559,14 +558,15 @@
   color: #fff !important;
   font-weight: 400 !important;
   background-size: 36px;
+  font-family: Signika;
 }
-:global(.vtex-minicart-2-x-minicartContainer)::before {
+:global(.vtex-minicart-2-x-minicartContainer) :global(.vtex-button__label)::before {
   content: 'Meu Carrinho';
   font-size: 13px;
   color: #fff;
   text-transform: capitalize;
   position: absolute;
-  margin-top: 51px;
+  margin-top: 20px;
 }
 :global(.vtex-minicart-2-x-minicartWrapperContainer) {
   width: 105px;
@@ -583,7 +583,7 @@
 :global(.vtex-flex-layout-0-x-flexRowContent--menu-link)
   :global(.vtex-menu-2-x-menuContainerNav)
   :global(.vtex-menu-2-x-styledLinkContent--menu-top-receita) {
-  background-image: url(https://stevia.vteximg.com.br/arquivos/envie-receita-br.png);
+  background-image: url(/arquivos/new-receipe-upload.svg);
   background-repeat: no-repeat;
   background-position: top center;
   padding-top: 40px;
@@ -591,45 +591,15 @@
   color: #fff !important;
   font-weight: 400 !important;
   background-size: 36px;
+  font-family: Signika;
 }
 :global(.vtex-product-price-1-x-listPriceValue--summary)
-  :global(.vtex-product-price-1-x-currencyContainer)
-  :global(.vtex-product-price-1-x-currencyCode--summary),
-:global(.vtex-product-price-1-x-listPriceValue--summary)
-  :global(.vtex-product-price-1-x-currencyContainer)
-  :global(.vtex-product-price-1-x-currencyInteger--summary),
-:global(.vtex-product-price-1-x-listPriceValue--summary)
-  :global(.vtex-product-price-1-x-currencyContainer)
-  :global(.vtex-product-price-1-x-currencyDecimal--summary),
-:global(.vtex-product-price-1-x-listPriceValue--summary)
-  :global(.vtex-product-price-1-x-currencyContainer)
-  :global(.vtex-product-price-1-x-currencyFraction--summary),
-  :global(.vtex-product-price-1-x-listPriceValue--summary)
-  :global(.vtex-product-price-1-x-currencyContainer)
-  :global(.vtex-product-price-1-x-currencyGroup--summary) {
-  color: #555 !important;
-  font-size: 12px;
+  :global(.vtex-product-price-1-x-currencyContainer) {
+  color: #ADADAD !important;
+  font-size: 14px;
 }
 :global(.vtex-flex-layout-0-x-flexRow--product-main)
-  :global(.vtex-product-price-1-x-listPrice)
-  :global(.vtex-product-price-1-x-currencyContainer)
-  :global(.vtex-product-price-1-x-currencyCode),
-:global(.vtex-flex-layout-0-x-flexRow--product-main)
-  :global(.vtex-product-price-1-x-listPrice)
-  :global(.vtex-product-price-1-x-currencyContainer)
-  :global(.vtex-product-price-1-x-currencyDecimal),
-:global(.vtex-flex-layout-0-x-flexRow--product-main)
-  :global(.vtex-product-price-1-x-listPrice)
-  :global(.vtex-product-price-1-x-currencyContainer)
-  :global(.vtex-product-price-1-x-currencyFraction),
-:global(.vtex-flex-layout-0-x-flexRow--product-main)
-  :global(.vtex-product-price-1-x-listPrice)
-  :global(.vtex-product-price-1-x-currencyContainer)
-  :global(.vtex-product-price-1-x-currencyInteger),
-:global(.vtex-flex-layout-0-x-flexRow--product-main)
-  :global(.vtex-product-price-1-x-listPrice)
-  :global(.vtex-product-price-1-x-currencyContainer)
-  :global(.vtex-product-price-1-x-currencyLiteral) {
+  :global(.vtex-product-price-1-x-listPrice) {
   color: #727273;
 }
 :global(.vtex-menu-2-x-styledLinkContainer--vegano) {
@@ -651,18 +621,9 @@
 :global(.vtex-menu-2-x-styledLinkContent--vegano) {
   color: #fff !important;
 }
-:global(.vtex-menu-2-x-styledLinkContent--menu-top-minha-conta) {
-  background-image: url(https://stevia.vteximg.com.br/arquivos/login.png);
-  background-repeat: no-repeat;
-  background-position: top center;
-  padding-top: 40px;
-  font-size: 13px !important;
-  color: #fff !important;
-  font-weight: 400 !important;
-  background-size: 33px;
-}
 :global(.vtex-minicart-2-x-minicartQuantityBadgeDefault) {
-  right: -2.8rem;
+  /* right: -2.8rem; */
+  right: -0.9rem;
 }
 :global(.vtex-store-components-3-x-logoImage) {
   max-width: 155px;
@@ -670,16 +631,19 @@
 }
 :global(.vtex-flex-layout-0-x-flexRowContent--menu-link) {
   background-color: #009fc2 !important;
+  width: 100% !important;
   max-width: 1240px;
   margin: auto;
 }
-:global(.vtex-minicart-2-x-minicartContainer) {
-  background: url(https://stevia.vteximg.com.br/arquivos/cart.png) no-repeat;
-  background-position: 22px 9px;
+:global(.vtex-minicart-2-x-minicartContainer) :global(.vtex-button__label) {
+  background: url(/arquivos/new-bag.svg);
+  background-repeat: no-repeat;
+  background-position: top center;
   background-size: 35px;
-  width: 100px;
-  background-size: 35px;
-  margin-top: -13px;
+  padding-top: 20px !important;
+  font-family: 'Signika';
+  width: 93px;
+  height: 53px;
 }
 :global(.vtex-login-2-x-arrowUp) {
   left: 50px;
@@ -756,12 +720,12 @@
 }
 :global(.vtex-add-to-cart-button-0-x-buttonText) {
   font-size: 13px;
-  padding: 18px 22px !important;
+  padding: 18px 22px;
   width: 100%;
   color: #fff;
 }
 :global(.vtex-product-summary-2-x-brandName) {
-  color: #000;
+  color: #1D293D;
   font-family: Signika;
   font-size: 16px;
   font-weight: 400;
@@ -773,6 +737,11 @@
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
+@media(max-width: 420px){
+  :global(.vtex-product-summary-2-x-brandName) {
+    font-size: 14px;
+  }
+}
 :global(.vtex-wish-list-1-x-wishlistIconContainer) {
   height: 35px;
 }
@@ -780,8 +749,23 @@
   padding: 0px;
 }
 :global(.vtex-wish-list-1-x-wishlistIconContainer) :global(.vtex-button) :global(.vtex-wish-list-1-x-outline) {
-  background-image: url('data:image/svg+xml,<svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 22.8686C12.9638 22.8686 12.9279 22.8612 12.8946 22.8468C12.8613 22.8325 12.8313 22.8115 12.8064 22.7852L2.92892 12.3573C1.69016 11.1122 0.996374 9.42623 1.00001 7.66984C1.00001 3.99297 3.99064 1.00234 7.66657 1.00234C8.70198 1.00163 9.72326 1.24258 10.6492 1.70602C11.5751 2.16946 12.38 2.8426 13 3.67188C13.6197 2.84217 14.4246 2.16858 15.3505 1.70472C16.2764 1.24087 17.2978 0.99956 18.3334 1C22.0094 1.00234 25 3.99297 25 7.66984C25.0031 9.42648 24.3086 11.1125 23.0692 12.3573L13.1936 22.7856C13.1686 22.8119 13.1386 22.8328 13.1053 22.847C13.0721 22.8613 13.0362 22.8686 13 22.8686ZM7.66657 1.53531C4.28454 1.53531 1.53345 4.28688 1.53345 7.66984C1.53078 9.28597 2.16976 10.8371 3.31001 11.9823L3.31376 11.9866L13 22.2142L22.6858 11.9884C23.2519 11.4207 23.7007 10.7469 24.0063 10.0057C24.3119 9.26444 24.4685 8.47023 24.467 7.66844C24.467 4.28688 21.7159 1.53531 18.3339 1.53531C17.3217 1.53515 16.3252 1.78588 15.4335 2.26507C14.5419 2.74426 13.7829 3.43697 13.2245 4.28125C13.1988 4.31596 13.1653 4.34416 13.1267 4.36358C13.0881 4.38301 13.0455 4.39313 13.0023 4.39313C12.9591 4.39313 12.9165 4.38301 12.878 4.36358C12.8394 4.34416 12.8059 4.31596 12.7802 4.28125C12.2214 3.43638 11.4617 2.74329 10.5693 2.26407C9.67687 1.78485 8.67952 1.53446 7.66657 1.53531Z" stroke="%23FF0000"/></svg>')!important;
+  background-image: url(/arquivos/new-wishlist.svg)!important;
   background-repeat: no-repeat;
+  background-size: 24px;
+}
+:global(.vtex-wish-list-1-x-wishlistIconContainer) :global(.vtex-button) :global(.vtex-wish-list-1-x-fill) {
+  background-image: url(/arquivos/new-wishlist-fill.svg)!important;
+  background-repeat: no-repeat;
+  background-size: 24px;
+}
+@media(max-width: 768px){
+  :global(.vtex-wish-list-1-x-wishlistIconContainer)  {
+    position: absolute!important;
+  }
+
+  :global(.vtex-flex-layout-0-x-flexRow--product-main) :global(.vtex-wish-list-1-x-wishlistIconContainer)  {
+      position: initial!important;
+  }
 }
 :global(.vtex-flex-layout-0-x-flexRowContent--product-main) :global(.vtex-reviews-and-ratings-3-x-container),
 :global(.vtex-flex-layout-0-x-flexRowContent--product-main) :global(.vtex-reviews-and-ratings-3-x-reviewsRating) {
@@ -912,33 +896,11 @@
   font-size: 20px;
   padding: 15px;
 }
-:global(.vtex-search-result-3-x-gallery)
-  :global(.vtex-add-to-cart-button-0-x-buttonText) {
-  font-size: 13px;
-  padding: 0;
-}
 :global(.vtex-product-price-1-x-savings),
 :global(.vtex-product-price-1-x-savingsValue)
-  :global(.vtex-product-price-1-x-currencyCode),
-:global(.vtex-product-price-1-x-savingsValue)
-  :global(.vtex-product-price-1-x-currencyLiteral),
-:global(.vtex-product-price-1-x-savingsValue)
-  :global(.vtex-product-price-1-x-currencyInteger),
-:global(.vtex-product-price-1-x-savingsValue)
-  :global(.vtex-product-price-1-x-currencyDecimal),
-:global(.vtex-product-price-1-x-savingsValue)
-  :global(.vtex-product-price-1-x-currencyFraction),
 :global(.vtex-product-price-1-x-listPrice)
-  :global(.vtex-product-price-1-x-currencyCode),
-:global(.vtex-product-price-1-x-listPrice)
-  :global(.vtex-product-price-1-x-currencyLiteral),
-:global(.vtex-product-price-1-x-listPrice)
-  :global(.vtex-product-price-1-x-currencyInteger),
-:global(.vtex-product-price-1-x-listPrice)
-  :global(.vtex-product-price-1-x-currencyDecimal),
-:global(.vtex-product-price-1-x-listPrice)
-  :global(.vtex-product-price-1-x-currencyFraction){
-  color: #555;
+  :global(.vtex-product-price-1-x-currencyCode){
+    color: #555;
 }
 :global(.vtex-checkbox__label) {
   font-weight: 400;
@@ -977,6 +939,7 @@
   font-size: 10px;
   color: #777;
   max-width: 200px;
+  margin: 0;
 }
 :global(.vtex-minicart-2-x-cartIcon) {
   color: transparent;
@@ -1132,7 +1095,8 @@
   margin-left: 0 !important;
 }
 :global(.vtex-product-summary-2-x-nameContainer) {
-  min-height: 56px;
+  min-height: 40px;
+  padding-top: 0;
 }
 :global(.vtex-flex-layout-0-x-flexColChild)
   :global(.vtex-reviews-and-ratings-3-x-container)
@@ -1157,59 +1121,34 @@
   line-height: 25px;
   color: #555;
 }
-:global(.vtex-rich-text-0-x-wrapper--informativo-frete) {
-  background-image: url(https://stevia.vtexassets.com/arquivos/icon-frete-gratis.png);
-  background-size: contain;
+:global(.vtex-rich-text-0-x-wrapper--informativo-frete),
+:global(.vtex-rich-text-0-x-wrapper--informativo-desconto),
+:global(.vtex-rich-text-0-x-wrapper--informativo-parcelamento),
+:global(.vtex-rich-text-0-x-wrapper--informativo-site-seguro) {
+  background-size: 50px;
   background-repeat: no-repeat;
-  background-position: left 0;
-  padding-left: 74px;
+  background-position: center 0;
+  padding-top: 45px;
   width: 100%;
+  margin-top: 5px;
 }
-:global(.vtex-rich-text-0-x-wrapper--informativo-desconto-progressivo) {
-  background-image: url(https://stevia.vtexassets.com/arquivos/icon-desconto-progressivo.png);
-  background-size: 65px;
-  background-repeat: no-repeat;
-  background-position: left 0;
-  padding-left: 74px;
-  width: 100%;
+:global(.vtex-rich-text-0-x-wrapper--informativo-frete) {
+  background-image: url(https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/eb55ae2f-200e-4ec0-b91e-dab115c06f18___14551b190fd1519bbb57bc3120ec5125.svg);
 }
 :global(.vtex-rich-text-0-x-wrapper--informativo-desconto) {
-  background-image: url(https://stevia.vtexassets.com/arquivos/icon-desconto.png);
-  background-size: 65px;
-  background-repeat: no-repeat;
-  background-position: left 0;
-  padding-left: 74px;
-  width: 100%;
+  background-image: url(https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/2d80a9c2-92f2-4f05-adf6-4d45e8a0c5fe___c097df74f333cf83fc06f51816827a31.svg);
 }
-:global(.vtex-rich-text-0-x-container--informativo-parcelamento) {
-  background-image: url(https://stevia.vtexassets.com/arquivos/icon-parcele.png);
-  background-size: 65px;
-  background-repeat: no-repeat;
-  background-position: left 0;
-  padding-left: 74px;
-  width: 100%;
+:global(.vtex-rich-text-0-x-wrapper--informativo-parcelamento) {
+  background-image: url(https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/82ae4b08-cc1e-4b2c-bd7f-6aa3563b8a45___bdf310f8dc2aaa0ca2e074295f9732c1.svg);
 }
-:global(.vtex-rich-text-0-x-container--informativo-site-seguro) {
-  background-image: url(https://stevia.vtexassets.com/arquivos/icon-site-seguro.png);
-  background-size: 65px;
-  background-repeat: no-repeat;
-  background-position: left 0;
-  padding-left: 74px;
-  width: 100%;
-}
-:global(.vtex-rich-text-0-x-container--informativo-whats) {
-  background-image: url(https://stevia.vtexassets.com/arquivos/icon-whatsapp.png);
-  background-size: 65px;
-  background-repeat: no-repeat;
-  background-position: left 0;
-  padding-left: 64px;
-  width: 100%;
+:global(.vtex-rich-text-0-x-wrapper--informativo-site-seguro) {
+  background-image: url(https://stevia.vtexassets.com/assets/vtex.file-manager-graphql/images/816488fc-ad37-4ec6-bb68-208730722767___e98137c114857ec9d457006d13b0b4c4.svg);
 }
 :global(.vtex-flex-layout-0-x-flexRow--bloco-home-informativos)
   :global(.vtex-store-components-3-x-container) {
-  max-width: 1460px !important;
+  max-width: 1050px !important;
   width: 100%;
-  border: 1px solid #ededed;
+  border: 1px solid #D2D1D7;
   border-radius: 10px;
   margin: 30px auto;
 }
@@ -1241,17 +1180,6 @@
 :global(.vtex-flex-layout-0-x-flexRow--textofooterfinal) {
   background-color: #fff;
 }
-/* :global(.vtex-search-result-3-x-galleryItem)
-  :global(.vtex-product-summary-2-x-container)
-  :global(.vtex-add-to-cart-button-0-x-buttonText) {
-  opacity: 0;
-  transition: 0.2s;
-}
-:global(.vtex-search-result-3-x-galleryItem)
-  :global(.vtex-product-summary-2-x-container):hover
-  :global(.vtex-add-to-cart-button-0-x-buttonText) {
-  opacity: 1;
-} */
 :global(.vtex-product-price-1-x-installments)
   :global(.vtex-product-price-1-x-currencyContainer--summary),
 :global(.vtex-search-result-3-x-galleryItem)
@@ -1285,6 +1213,7 @@
 }
 :global(.vtex-product-price-1-x-listPrice--summary) {
   text-align: left;
+  margin-bottom: 0px;
 }
 :global(.vtex-product-price-1-x-listPrice--summary)
   :global(.vtex-product-price-1-x-currencyContainer--summary) {
@@ -1346,6 +1275,8 @@
   justify-content: center !important;
   margin: auto;
   max-width: 1370px;
+  gap: .5rem;
+  min-width: 680px;
 }
 :global(.vtex-rich-text-0-x-container--informativo-frete) {
   justify-content: center !important;
@@ -1359,8 +1290,9 @@
 :global(.vtex-flex-layout-0-x-flexRowContent--bloco-home-informativos) :global(.vtex-rich-text-0-x-headingLevel3),
 :global(.vtex-flex-layout-0-x-flexRowContent--bloco-home-informativos) :global(.vtex-rich-text-0-x-strong) {
   font-size: 14px;
-  color: #3f3f40;
+  color: #009fc2;
   font-weight: 600;
+  margin-top: 10px;
   margin-bottom: 0;
   font-family: Signika;
 }
@@ -1389,36 +1321,51 @@
   border: none;
   background-color: transparent;
 }
-:global(.vtex-add-to-cart-button-0-x-buttonText) {
-  background-color: #00c231;
-  font-size: 13px;
-  border-radius: 10px;
-}
 :global(.vtex-button__label) {
   padding: 0;
 }
+:global(.vtex-search-result-3-x-galleryItem) :global(.vtex-product-price-1-x-sellingPrice),
+:global(.vtex-search-result-3-x-galleryItem) :global(.vtex-product-price-1-x-sellingPrice) :global(.vtex-product-price-1-x-currencyContainer--summary) {
+  color: #009966;
+  font-family: Signika;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 0;
+}
 :global(.vtex-product-price-1-x-savings--summary) {
-  background: #2D6100;
+  background: #009966;
+  color: #fff;
+  border-radius: 200px;
+  align-items: center;
+  display: flex;
+  position: absolute;
+  padding: 4px 8px;
+  top: 10px;
+  left: 10px; 
+  line-height: 16px;
   color: #fff;
   font-family: Signika;
   font-size: 12px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  font-variant: small-caps;
-  border-radius: 100px;
-  align-items: center;
-  display: flex;
-  position: absolute;
-  top: 11px;
-  padding: 8px 16px;
-  right: 16px;
 }
-:global(.vtex-search-result-3-x-galleryItem)
+:global(.vtex-search-result-3-x-galleryItem) :global(.vtex-product-price-1-x-installments),
+:global(.vtex-search-result-3-x-galleryItem) :global(.vtex-product-price-1-x-installments) :global(.vtex-product-price-1-x-currencyContainer--summary){
+    color: #979899;
+    font-family: Signika;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+/* :global(.vtex-search-result-3-x-galleryItem)
   :global(.vtex-product-price-1-x-savings--summary) {
   top: 20px;
   right: 24px;
-}
+} */
 :global(.vtex-product-price-1-x-savings--summary)
   :global(.vtex-product-price-1-x-currencyContainer--summary) {
   margin-left: 3px;
@@ -1493,16 +1440,18 @@
   :global(.vtex-store-components-3-x-imageElement) {
   max-height: 258px;
   padding-bottom: 5px;
+  border-radius: 24px;
 }
 :global(.vtex-rich-text-0-x-link--envie-sua-receita-mobile-texto) {
   padding-top: 5px;
   color: #fff;
   font-size: 14px;
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 400;
+  font-family: Signika;
 }
 :global(.vtex-rich-text-0-x-container--envie-sua-receita-mobile-texto) {
-  background-image: url(/arquivos/envie-receita-br.png?v=637412198317900000);
+  background-image: url(/arquivos/new-receipe-upload.svg);
   background-repeat: no-repeat;
   background-size: 30px;
   background-position: center left;
@@ -1521,11 +1470,13 @@
 :global(.vtex-flex-layout-0-x-flexColChild--mosaico-bloco-2)
   :global(.vtex-store-components-3-x-imageElement) {
   max-height: 526px;
+  border-radius: 24px;
 }
 :global(.vtex-flex-layout-0-x-flexColChild--mosaico-bloco-3)
   :global(.vtex-store-components-3-x-imageElement) {
   max-height: 258px;
   padding-bottom: 5px;
+  border-radius: 24px;
 }
 :global(.vtex-rich-text-0-x-wrapper--titulo-news) {
   text-align: center;
@@ -1620,16 +1571,21 @@
   border: 1px solid #ccc;
 }
 :global(.vtex-rich-text-0-x-paragraph--informativo-frete),
-:global(.vtex-rich-text-0-x-paragraph--informativo-desconto-progressivo),
 :global(.vtex-rich-text-0-x-paragraph--informativo-desconto),
 :global(.vtex-rich-text-0-x-paragraph--informativo-parcelamento),
 :global(.vtex-rich-text-0-x-paragraph--informativo-site-seguro),
-:global(.vtex-rich-text-0-x-paragraph--informativo-whats) {
-  color: #555555;
+:global(.vtex-rich-text-0-x-link--informativo-frete) {
+  color: #009fc2;
   font-size: 12px;
   max-width: 169px;
-  margin-top: 5px;
+  margin-top: 0px;
   line-height: 1.5;
+  font-family: Signika;
+  margin-bottom: 3px;
+}
+:global(.vtex-rich-text-0-x-link--informativo-frete) {
+  font-size: 14px;
+  text-decoration: none;
 }
 :global(.vtex-store-components-3-x-imageElement--footer-logo-vtex) {
   float: right;
@@ -1801,19 +1757,19 @@
     padding-right: 0;
     padding-bottom: 5px;
   }
-  :global(.vtex-minicart-2-x-minicartContainer) {
+  :global(.vtex-minicart-2-x-minicartContainer) :global(.vtex-button__label) {
     margin-top: 0px;
     background-position: 0;
-    background-image: url(/arquivos/new-minicart-icon.svg) !important;
-    width: fit-content !important;
-    background-size: 22px;
+    background-image: url(/arquivos/new-bag.svg)!important;
+    width: 32px;
+    background-size: 32px;
+  }
+  :global(.vtex-minicart-2-x-minicartContainer) :global(.vtex-button__label)::before {
+    content: none;
   }
   :global(.vtex-minicart-2-x-openIconContainer),
   :global(.vtex-minicart-2-x-minicartWrapperContainer) {
     width: fit-content !important;
-  }
-  :global(.vtex-minicart-2-x-minicartContainer)::before {
-    display: none;
   }
   :global(.vtex-flex-layout-0-x-flexRow--bloco-home-news) {
     margin-top: 30px;
@@ -1824,20 +1780,12 @@
   :global(.vtex-flex-layout-0-x-flexRowContent--bloco-home-mosaico) {
     display: none;
   }
-  :global(.vtex-rich-text-0-x-container--informativo-parcelamento) {
+  :global(.vtex-rich-text-0-x-container--informativo-frete),
+  :global(.vtex-rich-text-0-x-container--informativo-desconto)
+  :global(.vtex-rich-text-0-x-container--informativo-parcelamento),
+  :global(.vtex-rich-text-0-x-container--informativo-site-seguro){
     justify-content: center !important;
     width: auto;
-  }
-  :global(.vtex-rich-text-0-x-container--informativo-whats) {
-    justify-content: center !important;
-    width: auto;
-  }
-  :global(.vtex-rich-text-0-x-container--informativo-site-seguro) {
-    justify-content: center !important;
-    width: auto;
-  }
-  :global(.vtex-rich-text-0-x-wrapper--informativo-parcelamento) {
-    justify-content: center !important;
   }
   :global(.vtex-flex-layout-0-x-flexRowContent--bloco-home-informativos) {
     display: none;
@@ -2049,6 +1997,7 @@
     line-height: 15px;
     padding: 9px !important;
   }
+  
   :global(.vtex-store-components-3-x-searchBarInnerContainer) {
     width: 100%;
     margin-left: 0;
@@ -2063,15 +2012,12 @@
     float: left;
     width: 50% !important;
   }
-  :global(.vtex-product-price-1-x-savings--summary) {
-    top: 0;
-  }
   :global(.vtex-add-to-cart-button-0-x-buttonText) {
     padding: 11px 22px !important;
   }
   :global(.vtex-minicart-2-x-minicartQuantityBadgeDefault) {
     right: -0.9rem;
-    top: -0.5rem;
+     top: -0.5rem; 
     background-color: #e26001;
   }
   :global(.vtex-flex-layout-0-x-flexColChild--login-menu-retratil) {
@@ -2172,17 +2118,6 @@
   .searchBarInnerContainer {
     width: unset !important;
     margin: 0;
-  }
-  :global(.vtex-rich-text-0-x-paragraph--informativo-frete),
-  :global(.vtex-rich-text-0-x-paragraph--informativo-desconto-progressivo),
-  :global(.vtex-rich-text-0-x-paragraph--informativo-desconto),
-  :global(.vtex-rich-text-0-x-paragraph--informativo-parcelamento),
-  :global(.vtex-rich-text-0-x-paragraph--informativo-site-seguro),
-  :global(.vtex-rich-text-0-x-paragraph--informativo-whats) {
-    color: #555555;
-    font-size: 10px;
-    letter-spacing: 1px;
-    margin-top: 5px;
   }
   .logoContainer {
     display: flex;
@@ -2522,3 +2457,17 @@
   max-height: 0 !important;
   overflow: hidden !important;
 }
+
+
+ :global(.vtex-minicart-2-x-minicartQuantityBadgeDefault) {
+    top: -0.38rem;
+  }
+
+  @media only screen and (max-width: 990px) {
+    :global(.vtex-minicart-2-x-minicartQuantityBadgeDefault) {
+       top: -0.05rem; 
+     }
+  }
+
+
+   

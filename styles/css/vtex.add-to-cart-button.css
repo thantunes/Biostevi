@@ -1,16 +1,51 @@
+.buttonText, :global(.vtex-flex-layout-0-x-flexColChild--productSummaryCartOnly) .buttonText{
+    background: #00BC7D;
+    font-size: 14px;
+    border-radius: 50px;
+    font-family: Signika;
+    text-transform: capitalize !important;
+    padding: 10px 16px;
+}
+
+:global(.vtex-flex-layout-0-x-flexColChild--productSummaryCartOnly) .buttonText {
+    background: #979899;
+    font-size: 14px;
+    border-radius: 50px;
+    font-family: Signika;
+    text-transform: capitalize !important;
+    padding: 10px 16px;
+}
+
+:global(.vtex-flex-layout-0-x-flexCol--productSummaryCart) .buttonText {
+    background-image: url('/arquivos/new-icon-cart.svg')!important;
+    background-repeat: no-repeat!important;
+    padding: 10px 16px 10px 35px!important;
+    background-position: 10px 5px!important;
+}
+
+@media(max-width: 768px){
+    :global(.vtex-flex-layout-0-x-flexCol--productSummaryCart) .buttonText {
+        background-position: 22.5% 5px!important;
+    }
+}
+@media(max-width: 470px){
+    :global(.vtex-flex-layout-0-x-flexCol--productSummaryCart) .buttonText {
+        background-position: 17.5% 5px!important;
+    }
+}
 .buttonDataContainer .buttonText {
-    border-radius: 8px;
-    background: #28b92a;
-    padding: 16px 32px;
+    border-radius: 50px;
+    background: #00BC7D;
+    padding: 10px 16px;
     color: #fff;
     font-family: Signika;
     font-size: 14px;
     font-weight: 600;
-    font-variant: small-caps;
     transition: all 0.25s ease-in-out;
+    text-transform: capitalize !important;
 }
 
 :global(.vtex-product-summary-2-x-container) .buttonDataContainer .buttonText:hover,
 .buttonDataContainer .buttonText:hover {
-    background: #2D6100;
+    background: #03A36E;
 }

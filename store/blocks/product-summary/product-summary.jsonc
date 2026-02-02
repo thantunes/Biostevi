@@ -3,44 +3,36 @@
         "children": [
             "stack-layout#prodsum",
             "add-to-list-btn",
-            "product-summary-name",
             "product-rating-inline",
+            "product-summary-name",
+            // "DescriptionInline",
             "product-summary-space",
-            "product-list-price#summary",
-            "flex-layout.row#selling-price-savings",
-            "product-installments#summary",
-            "add-to-cart-button"
+            "condition-layout.product#product-summary-stock"
         ]
     },
     "product-summary.shelf#lazy": {
         "children": [
         "stack-layout#prodsum-lazy",
         "add-to-list-btn",
-        "product-summary-name",
         "product-rating-inline",
+        "product-summary-name",
         "product-summary-space",
-        "product-list-price#summary",
-        "flex-layout.row#selling-price-savings",
-        "product-installments#summary",
-        "add-to-cart-button"
+        "condition-layout.product#product-summary-stock"
         ]
     },
     "product-summary.shelf#nodesc": {
         "children": [
             "stack-layout#prodsum",
             "add-to-list-btn",
-            "product-summary-name",
             "product-rating-inline",
+            "product-summary-name",
             "product-summary-space",
-            "product-list-price#summary",
-            "flex-layout.row#selling-price-savings",
-            "product-installments#summary",
-            "add-to-cart-button"
+            "condition-layout.product#product-summary-stock"
         ]
     },
-    "DescriptionInline": {
-        "children": ["product-summary-description"]
-    },
+    // "DescriptionInline": {
+    //     "children": ["product-summary-description"]
+    // },
     "add-to-cart-button": {
         "props": {
             "onClickBehavior": "add-to-cart"
@@ -49,16 +41,38 @@
     "stack-layout#prodsum": {
         "children": [
             "product-summary-image#shelf",
+            "ProductFlagShelf",
+            /* "product-badge", */
             "vtex.product-highlights@2.x:product-highlights#collection",
+            // "modal-trigger#quickview" // Check quickview.jsonc
+            // "vtex.product-highlights@2.x:product-highlights#collection",
             "modal-trigger#quickview" 
         ]
     },
     "stack-layout#prodsum-lazy": {
         "children": [
             "product-summary-image#shelf-lazy",
+            "ProductFlagShelf",
+            /* "product-badge", */
             "vtex.product-highlights@2.x:product-highlights#collection",
+            // "modal-trigger#quickview" // Check quickview.jsonc
+            // "vtex.product-highlights@2.x:product-highlights#collection",
             "modal-trigger#quickview" 
         ]
+    },
+    "product-badge": {
+        "props": {
+            "text": "Estimulador de GLP-1",
+            "position": "bottom-left",
+            "textColor": "#CA3500",
+            "backgroundColor": "#FFF7ED",
+            "borderColor": "#FFD6A7",
+            "borderWidth": "1px",
+            "borderRadius": "8px",
+            "fontSize": "14px",
+            "fontWeight": "500",
+            "padding": "4px 8px"
+        }
     },
     "product-summary-image#shelf": {
         "props": {
@@ -108,7 +122,8 @@
     },
     "product-installments#summary": {
         "props": {
-            "blockClass": "summary"
+            "blockClass": "summary",
+            "message": "ou {installmentsNumber}x de {installmentValue}"
         }
     },
     "product-selling-price#summary": {
@@ -119,7 +134,70 @@
     "product-price-savings#summary": {
         "props": {
             "markers": ["discount"],
-            "blockClass": "summary"
+            "blockClass": "summary",
+            "message": "-{savingsPercentage}"
         }
+    },
+    "product-rating-inline": {
+        "props": {
+            "alignment": "left"
+        }
+    },
+    "condition-layout.product#product-summary-stock": {
+        "props": {
+            "conditions": [
+                {
+                    "subject": "isProductAvailable"
+                }
+            ],
+            "Then": "flex-layout.row#product-summary-with-prices",
+            "Else": "flex-layout.col#product-summary-cart-only"
+        }
+    },
+    "flex-layout.row#product-summary-with-prices": {
+        "props": {
+            "colGap": 3,
+            "preserveLayoutOnMobile": false,
+            "preventHorizontalStretch": true,
+            "colSizing": "auto",
+            "blockClass": "productSummaryPriceCart"
+        },
+        "children": [
+            "flex-layout.col#product-summary-prices",
+            "flex-layout.col#product-summary-cart"
+        ]
+    },
+    "flex-layout.col#product-summary-cart-only": {
+        "props": {
+            "width": "100%",
+            "fullWidth": true,
+            "blockClass": "productSummaryCartOnly",
+            "verticalAlign": "bottom"
+        },
+        "children": [
+            "add-to-cart-button#summary"
+        ]
+    },
+    "flex-layout.col#product-summary-prices": {
+        "props": {
+            "width": "grow",
+            "blockClass": "productSummaryPrices"
+        },
+        "children": [
+            "product-list-price#summary",
+            "flex-layout.row#selling-price-savings",
+            "product-installments#summary"
+        ]
+    },
+    "flex-layout.col#product-summary-cart": {
+        "props": {
+            "verticalAlign": "bottom",
+            "preventVerticalStretch": true,
+            "blockClass": "productSummaryCart",
+            "fullWidth": true
+        },
+        "children": [
+            "add-to-cart-button#summary"
+        ]
     }
 }

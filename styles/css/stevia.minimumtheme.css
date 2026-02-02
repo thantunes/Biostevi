@@ -1,0 +1,11 @@
+
+/* Garantir que wishlist e outros elementos não sejam afetados */
+:global(.vtex-wish-list-1-x-wishlistIconContainer) {
+    position: absolute !important;
+    z-index: 11 !important;
+}
+
+/* Garantir que savings não seja afetado */
+:global(.vtex-product-price-1-x-savings) {
+    position: relative !important;
+}

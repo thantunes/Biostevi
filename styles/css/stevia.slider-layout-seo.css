@@ -53,6 +53,7 @@
 
 .slide .slideChildrenContainer--shelf {
     padding: 5px;
+    height: 100%;
 }
 
 .slide :global(.vtex-reviews-and-ratings-3-x-reviewsRatingAverage) {
@@ -76,10 +77,11 @@
     padding-left: 0;
 }
 
-.sliderLayoutContainer--shelf :global(.vtex-product-price-1-x-installments) {
-    color: #000;
+.sliderLayoutContainer--shelf :global(.vtex-product-price-1-x-installments) ,
+.sliderLayoutContainer--shelf :global(.vtex-product-price-1-x-installments) :global(.vtex-product-price-1-x-currencyContainer--summary){
+    color: #979899;
     font-family: Signika;
-    font-size: 15px;
+    font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -157,6 +159,7 @@
         max-width: 350px !important;
         padding-bottom: 15px;
         padding: 20px;
+        border-radius: 32px;
     }
 
     .sliderLayoutContainer--carrousel-euquero-mobile :global(.vtex-store-components-3-x-imageElement) {
@@ -174,17 +177,19 @@
         padding-top: 0;
         margin-bottom: 0;
         font-family: Signika;
+        color: #009FC2;
     }
 }
 
 .sliderLayoutContainer--shelf :global(.vtex-product-price-1-x-sellingPrice),
 .sliderLayoutContainer--shelf :global(.vtex-product-price-1-x-sellingPrice) :global(.vtex-product-price-1-x-currencyContainer--summary) {
-    color: #e26001;
+    color: #009966;
     font-family: Signika;
-    font-size: 28px;
+    font-size: 22px;
     font-style: normal;
-    font-weight: 600;
-    line-height: normal
+    font-weight: 500;
+    line-height: normal;
+    margin: 0;
 }
 
 .slideChildrenContainer--sameHeight {
@@ -198,3 +203,12 @@
 .sliderTrack {
     padding-bottom: 15px;
 }
+
+.caretIcon {
+    color: #6F6F6F
+}
+
+.caretIcon--euquero {
+    color: #000;
+}
+
