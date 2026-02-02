@@ -7,6 +7,11 @@
         margin-right: -35px;
     }
 
+    .sliderLeftArrow--influenciadores, 
+    .sliderRightArrow--influenciadores {
+        display: none;
+    }
+
     .sliderLeftArrow--euquero {
         left: auto !important;
         right: 45px;
