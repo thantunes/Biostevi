@@ -1635,6 +1635,7 @@
     font-weight: 700;
     transition: all 0.2s ease-in-out;
     padding: 18px 22px;
+    text-transform: uppercase !important;
   }
   :global(.vtex-flex-layout-0-x-flexRow--pdp-botao-add-carrinho)
     :global(.vtex-add-to-cart-button-0-x-buttonText):hover {
