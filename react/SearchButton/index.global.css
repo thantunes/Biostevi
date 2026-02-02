@@ -148,14 +148,14 @@
     margin-bottom: 6px!important;
 }
 .konfidency-reviews-showcase-rating .summary .starsV2{
-    display: flex;
-    align-items: center;
-    gap: 6px;
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
 }
 
 .konfidency-reviews-showcase-rating .summary .starsV2 .star {
-    width: 16px;
-    height: 16px;
+    width: 16px !important;
+    height: 16px !important;
 }
 
 .konfidency-reviews-showcase-rating .summary .review-count {
