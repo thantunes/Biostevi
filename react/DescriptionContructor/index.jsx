@@ -1,7 +1,6 @@
 import React, { useMemo, useState, useEffect, useRef, useCallback } from "react";
 import { useProduct } from "vtex.product-context";
 import FaqComponent from "../FaqComponent/FaqComponent.jsx";
-import "./index.global.css";
 
 function DescriptionContructor({ children }) {
     const productContextValue = useProduct();
@@ -258,7 +257,7 @@ function DescriptionContructor({ children }) {
         }, [namePrefix, processFAQData]);
 
         return (
-            <div className={`BlockStyle ${className}`}>
+            <div className={`vtex-DescriptionContructor--block ${className}`}>
                 {includeImages &&
                     filteredData.map((e) =>
                         e.name?.includes(`${namePrefix}-Banner`) ? (
@@ -285,9 +284,9 @@ function DescriptionContructor({ children }) {
     }, [properties, processFAQData]);
 
     return (
-        <div className="CustomDescData">
+        <div className="vtex-DescriptionContructor--wrapper">
             {product?.description ? (
-                <div className="DescBox" id="MetaTag-PDP">
+                <div className="vtex-DescriptionContructor--desc-box" id="MetaTag-PDP">
                     <AccordionRenderer 
                         htmlString={product.description} 
                         keyPrefix="product-description"
@@ -300,7 +299,7 @@ function DescriptionContructor({ children }) {
                         e.values?.[0]?.includes('class="descricao-pdp-full"') ? (
                             <div
                                 key={e.name}
-                                className="vtex-product-specifications-1-x-specificationValue MobileStyle"
+                                className="vtex-product-specifications-1-x-specificationValue vtex-DescriptionContructor--mobile"
                             >
                                 <AccordionRenderer 
                                     htmlString={e.values[0]} 
@@ -336,10 +335,10 @@ function DescriptionContructor({ children }) {
                         return null;
                     })}
                     {properties.some((e) => e.name.includes("Imagem-PrimeiroBloco")) && (
-                        <div className="BlockStyle tableCenter">
+                        <div className="vtex-DescriptionContructor--block vtex-DescriptionContructor--table-center">
                             <table>
                                 {["Primeiro", "Segundo"].map((prefix, rowIndex) => (
-                                    <tr className="TableContentBox" key={`row-${rowIndex}`}>
+                                    <tr className="vtex-DescriptionContructor--table-row" key={`row-${rowIndex}`}>
                                         <td>
                                             <img
                                                 loading="lazy"
@@ -375,7 +374,7 @@ function DescriptionContructor({ children }) {
                                                 </p>
                                             </div>
                                         </td>
-                                        <td className="TableSpacer"></td>
+                                        <td className="vtex-DescriptionContructor--table-spacer"></td>
                                         <td>
                                             <img
                                                 loading="lazy"
@@ -443,8 +442,8 @@ function DescriptionContructor({ children }) {
                         return null;
                     })}
                     {["Benefícios", "Composição", "Modo de Usar"].map((section) => (
-                        <div className="BlockStyle Default-prop" key={section}>
-                            <div className="Default-Data">
+                        <div className="vtex-DescriptionContructor--block vtex-DescriptionContructor--default-block" key={section}>
+                            <div className="vtex-DescriptionContructor--default-data">
                                 {properties.some((e) => e.name.includes(section) && e.values[0]) && (
                                     <h2
                                         id={
@@ -474,8 +473,8 @@ function DescriptionContructor({ children }) {
                     ))}
 
                     {properties.some((e) => e.name.includes("Advertência") && e.values[0]) && (
-                        <div className="BlockStyle Default-prop" id="Advertencia">
-                            <div className="Default-Data" id="InformaImp">
+                        <div className="vtex-DescriptionContructor--block vtex-DescriptionContructor--default-block" id="Advertencia">
+                            <div className="vtex-DescriptionContructor--default-data" id="InformaImp">
                                 <FaqComponent
                                     faqs={properties
                                         .filter((e) => e?.name?.includes("Advertência") && e?.values?.[0])

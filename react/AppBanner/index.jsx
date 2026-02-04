@@ -1,5 +1,4 @@
 import React from 'react'
-import styles from './style.module.css'
 
 const AppBanner = ({
   mainTitle,
@@ -13,12 +12,12 @@ const AppBanner = ({
   buttonTextColor = '#fff',
 }) => {
   return (
-    <div 
-      className={styles.wrapperBannerApp}
+    <div
+      className="vtex-AppBanner--wrapper"
       style={{ backgroundColor }}
     >
-      <div className={styles.wrapperLogoText}>
-        <div className={styles.wrapperLogoImg}>
+      <div className="vtex-AppBanner--logo-text">
+        <div className="vtex-AppBanner--logo-img">
           <img
             src="https://stevia.vteximg.com.br/arquivos/biostevi-title-logo.svg"
             alt="Biostévi"
@@ -28,19 +27,19 @@ const AppBanner = ({
             fetchpriority="high"
           />
         </div>
-        <div className={styles.wrapperTextContent}>
+        <div className="vtex-AppBanner--text-content">
           <span style={{ color: mainTitleColor }}>{mainTitle}</span>
           <p style={{ color: subtitleColor }}>{subtitle}</p>
         </div>
       </div>
-      <div className={styles.wrapperBtnApp}>
-        <a 
+      <div className="vtex-AppBanner--btn">
+        <a
           href={buttonLink}
           aria-label="Baixar aplicativo Biostévi Pharma"
           tabIndex="0"
-          style={{ 
-            backgroundColor: buttonBackgroundColor, 
-            color: buttonTextColor 
+          style={{
+            backgroundColor: buttonBackgroundColor,
+            color: buttonTextColor
           }}
         >
           {buttonText}

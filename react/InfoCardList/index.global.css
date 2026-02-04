@@ -1,11 +1,11 @@
 
-.info-card-list-container {
+:global(.vtex-InfoCardList--container) {
   width: 100%;
   margin: 0 auto;
   font-family: Signika;
 }
 
-.info-card {
+:global(.vtex-InfoCardList--card) {
   padding: 1rem;
   height: 100%;
   display: flex;
@@ -14,7 +14,7 @@
   align-items: center;
 }
 
-.info-card-container {
+:global(.vtex-InfoCardList--card-container) {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,7 +23,7 @@
   color: inherit;
 }
 
-.info-card-image-wrapper {
+:global(.vtex-InfoCardList--image-wrapper) {
   display: flex;
   justify-content: center;
   margin-bottom: 1rem;
@@ -35,7 +35,7 @@
   transition: all 0.2s ease;
 }
 
-.info-card-image {
+:global(.vtex-InfoCardList--card-image) {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -43,7 +43,7 @@
   object-position: top center;
 }
 
-.info-card-content {
+:global(.vtex-InfoCardList--content) {
   text-align: center;
   flex: 1;
   display: flex;
@@ -52,7 +52,7 @@
   align-items: center;
 }
 
-.info-card-title {
+:global(.vtex-InfoCardList--card-title) {
   font-size: 1.125rem;
   margin-top: 0;
   margin-bottom: 0.5rem;
@@ -63,24 +63,24 @@
 }
 
 @media(min-width: 768px) {
-  .info-card:hover .info-card-title {
+  :global(.vtex-InfoCardList--card:hover .vtex-InfoCardList--card-title) {
     font-weight: 600;
     color: #009FC2;
   }
-  .info-card:hover .info-card-button {
+  :global(.vtex-InfoCardList--card:hover .vtex-InfoCardList--card-button) {
     background: #FF6D00;
     color: white;
     font-weight: 700;
   }
-  .info-card:hover .info-card-image-wrapper {
+  :global(.vtex-InfoCardList--card:hover .vtex-InfoCardList--image-wrapper) {
     border-width: 3px;
   }
-  .info-card:hover .info-card-image {
+  :global(.vtex-InfoCardList--card:hover .vtex-InfoCardList--card-image) {
     transform: scale(1.175) translateY(12px);
   }
 }
 
-.info-card-description {
+:global(.vtex-InfoCardList--card-description) {
   font-size: 1rem;
   color: #6F6F6F;
   margin-top: 0rem;
@@ -88,7 +88,7 @@
   line-height: 1.4;
 }
 
-.info-card-button {
+:global(.vtex-InfoCardList--card-button) {
   display: inline-block;
   padding: 0.75rem 1.15rem;
   border: 1px solid #FF6D00;
@@ -103,49 +103,49 @@
   max-width: 120px;
 }
 
-.info-card-button-text {
+:global(.vtex-InfoCardList--card-button-text) {
   font-size: 1rem;
 }
 
 @media (max-width: 768px) {
-  .info-card-list-wrapper {
+  :global(.vtex-InfoCardList--wrapper) {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1rem;
   }
 
-  .info-card {
+  :global(.vtex-InfoCardList--card) {
     padding: .75rem;
   }
 
-  .info-card-title {
+  :global(.vtex-InfoCardList--card-title) {
     font-size: 1rem;
   }
 
-  .info-card-description {
+  :global(.vtex-InfoCardList--card-description) {
     font-size: .875rem;
   }
 
-  .info-card-button {
+  :global(.vtex-InfoCardList--card-button) {
     max-width: none;
   }
 
-  .info-card-button .info-card-button-text {
+  :global(.vtex-InfoCardList--card-button .vtex-InfoCardList--card-button-text) {
     font-size: .875rem;
   }
 
-  .info-card-image-wrapper {
+  :global(.vtex-InfoCardList--image-wrapper) {
     width: 100px;
     height: 100px;
   }
 }
 
 @media (max-width: 480px) {
-  .info-card-list-wrapper {
+  :global(.vtex-InfoCardList--wrapper) {
     grid-template-columns: 1fr;
   }
 }
 
-.info-card-slide {
+:global(.vtex-InfoCardList--slide) {
   height: 100%;
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
@@ -154,31 +154,31 @@
   position: relative;
 }
 
-.info-card-slide .info-card {
+:global(.vtex-InfoCardList--slide .vtex-InfoCardList--card) {
   height: 100%;
 }
 
-.info-card-slide .info-card-euquero {
+:global(.vtex-InfoCardList--slide .vtex-InfoCardList--euquero) {
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
   position: relative;
 }
 
-.info-card-list-container-euquero {
+:global(.vtex-InfoCardList--container-euquero) {
   width: 100%;
 }
 
-.info-card-list-wrapper-euquero {
+:global(.vtex-InfoCardList--wrapper-euquero) {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
 }
 
-.info-card-list-container-euquero .info-card-list-wrapper-euquero {
+:global(.vtex-InfoCardList--container-euquero .vtex-InfoCardList--wrapper-euquero) {
   display: block;
 }
 
-.info-card-euquero {
+:global(.vtex-InfoCardList--euquero) {
   position: relative;
   width: 100%;
   aspect-ratio: 278/320;
@@ -191,7 +191,7 @@
   -webkit-transform: translateZ(0);
 }
 
-.info-card-euquero-container {
+:global(.vtex-InfoCardList--euquero-container) {
   position: relative;
   width: 100%;
   height: 100%;
@@ -210,7 +210,7 @@
   will-change: auto;
 }
 
-.info-card-euquero-icon {
+:global(.vtex-InfoCardList--euquero-icon) {
   position: absolute;
   top: 16px;
   left: 16px;
@@ -228,13 +228,13 @@
   -webkit-transform: translateZ(1px);
 }
 
-.info-card-euquero-icon-img {
+:global(.vtex-InfoCardList--euquero-icon-img) {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
-.info-card-euquero-background {
+:global(.vtex-InfoCardList--euquero-background) {
   position: absolute;
   top: 0;
   left: 0;
@@ -252,7 +252,7 @@
   pointer-events: none;
 }
 
-.info-card-euquero-overlay {
+:global(.vtex-InfoCardList--euquero-overlay) {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -265,7 +265,7 @@
   pointer-events: none;
 }
 
-.info-card-euquero-overlay-hover {
+:global(.vtex-InfoCardList--euquero-overlay-hover) {
   background: linear-gradient(
     to top,
     #20C0E8E6 0%, 
@@ -285,48 +285,48 @@
   -webkit-backface-visibility: hidden;
 }
 
-.swiper-slide .info-card-euquero-content,
-.swiper-slide .info-card-content {
+:global(.swiper-slide .vtex-InfoCardList--euquero-content),
+:global(.swiper-slide .vtex-InfoCardList--content) {
   opacity: 1 !important;
   visibility: visible !important;
 }
 
-.swiper-slide-dragging .info-card-euquero-background,
-.swiper-slide-dragging .info-card-euquero-overlay-hover,
-.swiper-slide-dragging .info-card-euquero-anchor,
-.swiper-slide-dragging .info-card-euquero-anchor-arrow {
+:global(.swiper-slide-dragging .vtex-InfoCardList--euquero-background),
+:global(.swiper-slide-dragging .vtex-InfoCardList--euquero-overlay-hover),
+:global(.swiper-slide-dragging .vtex-InfoCardList--euquero-anchor),
+:global(.swiper-slide-dragging .vtex-InfoCardList--euquero-anchor-arrow) {
   transition: none !important;
 }
 
 @media (hover: none) and (pointer: coarse) {
-  .info-card-euquero-background,
-  .info-card-euquero-overlay-hover,
-  .info-card-euquero-anchor,
-  .info-card-euquero-anchor-arrow {
+  :global(.vtex-InfoCardList--euquero-background),
+  :global(.vtex-InfoCardList--euquero-overlay-hover),
+  :global(.vtex-InfoCardList--euquero-anchor),
+  :global(.vtex-InfoCardList--euquero-anchor-arrow) {
     transition: none !important;
   }
   
-  .info-card-euquero-background {
+  :global(.vtex-InfoCardList--euquero-background) {
     transform: translateZ(-1px) scale(1);
     -webkit-transform: translateZ(-1px) scale(1);
   }
   
- 
+  
 }
 
 
 @media (hover: hover) and (pointer: fine) {
-  .info-card-euquero:hover .info-card-euquero-container {
+  :global(.vtex-InfoCardList--euquero:hover .vtex-InfoCardList--euquero-container) {
     will-change: transform;
   }
   
-  .info-card-euquero:hover .info-card-euquero-overlay-hover {
+  :global(.vtex-InfoCardList--euquero:hover .vtex-InfoCardList--euquero-overlay-hover) {
     transform: translateZ(0) translateY(-5%);
     -webkit-transform: translateZ(0) translateY(-5%);
   }
 }
 
-.info-card-euquero-content {
+:global(.vtex-InfoCardList--euquero-content) {
   position: relative;
   z-index: 10;
   margin-top: auto;
@@ -343,7 +343,7 @@
   -webkit-transform: translateZ(1px);
 }
 
-.info-card-euquero-title {
+:global(.vtex-InfoCardList--euquero-title) {
   font-size: 20px;
   font-weight: 700;
   color: #555555;
@@ -352,7 +352,7 @@
   margin-bottom: 2px;
 }
 
-.info-card-euquero-description {
+:global(.vtex-InfoCardList--euquero-description) {
   font-size: 14px;
   color: #4A5565;
   margin: 0;
@@ -360,7 +360,7 @@
   margin-bottom: 8px;
 }
 
-.info-card-euquero-anchor {
+:global(.vtex-InfoCardList--euquero-anchor) {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -374,28 +374,28 @@
 
 
 @media (hover: hover) and (pointer: fine) {
-  .info-card-euquero:hover .info-card-euquero-anchor {
+  :global(.vtex-InfoCardList--euquero:hover .vtex-InfoCardList--euquero-anchor) {
     color: #009FC2;
     font-weight: 700;
   }
 
-  .info-card-euquero:hover .info-card-euquero-anchor-arrow {
+  :global(.vtex-InfoCardList--euquero:hover .vtex-InfoCardList--euquero-anchor-arrow) {
     transform: translateX(1.5px);
     -webkit-transform: translateX(1.5px);
   }
   
-  .info-card-euquero:hover .info-card-euquero-background {
+  :global(.vtex-InfoCardList--euquero:hover .vtex-InfoCardList--euquero-background) {
     transform: translateZ(-1px) scale(1.1);
     -webkit-transform: translateZ(-1px) scale(1.1);
     will-change: transform;
   }
 }
 
-.info-card-euquero-anchor-text {
+:global(.vtex-InfoCardList--euquero-anchor-text) {
   display: inline-block;
 }
 
-.info-card-euquero-anchor-arrow {
+:global(.vtex-InfoCardList--euquero-anchor-arrow) {
   width: 16px;
   height: 16px;
   transition: transform 0.2s ease;
@@ -403,24 +403,24 @@
 
 
 @media (max-width: 768px) {
-  .info-card-list-wrapper-euquero {
+  :global(.vtex-InfoCardList--wrapper-euquero) {
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 1rem;
   }
 
-  .info-card-euquero {
+  :global(.vtex-InfoCardList--euquero) {
     aspect-ratio: 250/280;
   }
 
-  .info-card-euquero-content {
+  :global(.vtex-InfoCardList--euquero-content) {
     padding: 1.25rem;
   }
 
-  .info-card-euquero-title {
+  :global(.vtex-InfoCardList--euquero-title) {
     font-size: 16px;
   }
 
-  .info-card-euquero-icon {
+  :global(.vtex-InfoCardList--euquero-icon) {
     width: 40px;
     height: 40px;
     top: 12px;
@@ -430,20 +430,7 @@
 }
 
 @media (max-width: 480px) {
-  .info-card-list-wrapper-euquero {
+  :global(.vtex-InfoCardList--wrapper-euquero) {
     grid-template-columns: 1fr;
   }
-}
-
-
-.swiper-pagination {
-    bottom: -20px;
-}
-
-.swiper-pagination {
-    bottom: -5px;
-}
-
-.swiper-pagination {
-    bottom: -10px;
 }

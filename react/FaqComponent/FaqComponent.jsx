@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import style from './style.css'
 
 const stripHtml = (html) => {
     if (!html) return '';
@@ -51,26 +50,17 @@ const FaqComponent = ({
 
     if (!faqs || !Array.isArray(faqs)) return null;
 
-    const wrapperClass = style.faqWrapper;
-    const itemClass = style.faqItem;
-    const questionClass = style.faqQuestion;
-    const answerClass = style.faqAnswer;
-    const answerOpenClass = style.faqAnswerOpen;
-    const answerInnerClass = style.faqAnswerInner;
-    const arrowClass = style.arrow;
-    const arrowOpenClass = style.arrowOpen;
-
     return (
-        <div className={wrapperClass}>
+        <div className="vtex-FaqComponent--wrapper">
             {activeStructuredData && (
                 <script type="application/ld+json">
                     {JSON.stringify(faqStructuredData)}
                 </script>
             )}
             {faqs.map((faq, idx) => (
-                <div key={idx} className={itemClass}>
+                <div key={idx} className="vtex-FaqComponent--item">
                     <button
-                        className={questionClass}
+                        className="vtex-FaqComponent--question"
                         aria-expanded={isOpen(idx)}
                         aria-controls={`${keyPrefix}-content-${idx}`}
                         id={`${keyPrefix}-question-${idx}`}
@@ -87,8 +77,8 @@ const FaqComponent = ({
                         <span
                             className={
                                 isOpen(idx)
-                                    ? `${arrowClass} ${arrowOpenClass}`
-                                    : arrowClass
+                                    ? 'vtex-FaqComponent--arrow vtex-FaqComponent--arrow-open'
+                                    : 'vtex-FaqComponent--arrow'
                             }
                             aria-hidden="true"
                         >
@@ -101,12 +91,12 @@ const FaqComponent = ({
                         aria-labelledby={`${keyPrefix}-question-${idx}`}
                         className={
                             isOpen(idx)
-                                ? `${answerClass} ${answerOpenClass}`
-                                : answerClass
+                                ? 'vtex-FaqComponent--answer vtex-FaqComponent--answer-open'
+                                : 'vtex-FaqComponent--answer'
                         }
                     >
                         <div
-                            className={answerInnerClass}
+                            className="vtex-FaqComponent--answer-inner"
                             dangerouslySetInnerHTML={{
                                 __html: faq.answer,
                             }}

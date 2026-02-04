@@ -52,16 +52,16 @@
     font-size: 13px !important;
 }
 
-.slide :global(.vtex-reviews-and-ratings-3-x-reviewsHeading) {
+/* .slide :global(.vtex-reviews-and-ratings-3-x-reviewsHeading) {
     display: none;
-}
+} */
 
 .slide .slideChildrenContainer--shelf {
     padding: 5px;
     height: 100%;
 }
 
-.slide :global(.vtex-reviews-and-ratings-3-x-reviewsRatingAverage) {
+/* .slide :global(.vtex-reviews-and-ratings-3-x-reviewsRatingAverage) {
     display: none;
 }
 
@@ -80,7 +80,7 @@
 .slide .slide :global(.vtex-reviews-and-ratings-3-x-container) {
     margin-left: 0;
     padding-left: 0;
-}
+} */
 
 .sliderLayoutContainer--shelf :global(.vtex-product-price-1-x-installments) ,
 .sliderLayoutContainer--shelf :global(.vtex-product-price-1-x-installments) :global(.vtex-product-price-1-x-currencyContainer--summary){

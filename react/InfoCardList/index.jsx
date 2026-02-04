@@ -1,11 +1,10 @@
 import React, { Children, cloneElement, isValidElement } from 'react';
 import { Link } from 'vtex.render-runtime';
 import { ListContextProvider } from 'vtex.list-context';
-import './index.global.css';
 
 const ArrowIcon = () => (
   <svg 
-    className="info-card-euquero-anchor-arrow"
+    className="vtex-InfoCardList--euquero-anchor-arrow"
     width="16" 
     height="16" 
     viewBox="0 0 16 16" 
@@ -32,35 +31,35 @@ const InfoCard = ({
 }) => {
   const CardContent = () => (
     <>
-      <div className="info-card-image-wrapper">
+      <div className="vtex-InfoCardList--image-wrapper">
         <img
           src={image}
           alt={title || 'Info Card'}
-          className="info-card-image"
+          className="vtex-InfoCardList--card-image"
           loading="lazy"
         />
       </div>
       
-      <div className="info-card-content">
+      <div className="vtex-InfoCardList--content">
         {title && (
-          <h3 className="info-card-title">
+          <h3 className="vtex-InfoCardList--card-title">
             {title}
           </h3>
         )}
         
         {description && (
-          <p className="info-card-description">
+          <p className="vtex-InfoCardList--card-description">
             {description}
           </p>
         )}
         
         {enableCta && href && (
           <Link
-            className="info-card-button"
+            className="vtex-InfoCardList--card-button"
             to={href}
             aria-label={ctaText}
           >
-            <span className="info-card-button-text">
+            <span className="vtex-InfoCardList--card-button-text">
               {ctaText}
             </span>
           </Link>
@@ -71,10 +70,10 @@ const InfoCard = ({
 
   if (href) {
     return (
-      <div className="info-card">
+      <div className="vtex-InfoCardList--card">
         <Link
           to={href}
-          className="info-card-container"
+          className="vtex-InfoCardList--card-container"
           aria-label={`Ver mais sobre ${title}`}
         >
           <CardContent />
@@ -84,8 +83,8 @@ const InfoCard = ({
   }
 
   return (
-    <div className="info-card">
-      <div className="info-card-container">
+    <div className="vtex-InfoCardList--card">
+      <div className="vtex-InfoCardList--card-container">
         <CardContent />
       </div>
     </div>
@@ -115,41 +114,41 @@ const InfoCardEuQuero = ({
   const cardContent = (
     <>
       {icon && (
-        <div className="info-card-euquero-icon">
+        <div className="vtex-InfoCardList--euquero-icon">
           <img
             src={icon}
             alt=""
-            className="info-card-euquero-icon-img"
+            className="vtex-InfoCardList--euquero-icon-img"
             loading="lazy"
           />
         </div>
       )}
       
       <div 
-        className="info-card-euquero-background"
+        className="vtex-InfoCardList--euquero-background"
         style={backgroundStyle}
       >
         <div 
-          className="info-card-euquero-overlay info-card-euquero-overlay-hover"
+          className="vtex-InfoCardList--euquero-overlay vtex-InfoCardList--euquero-overlay-hover"
         />
       </div>
       
-      <div className="info-card-euquero-content">
+      <div className="vtex-InfoCardList--euquero-content">
         {title && (
-          <h3 className="info-card-euquero-title">
+          <h3 className="vtex-InfoCardList--euquero-title">
             {title}
           </h3>
         )}
         
         {description && (
-          <p className="info-card-euquero-description">
+          <p className="vtex-InfoCardList--euquero-description">
             {description}
           </p>
         )}
         
         {anchor && href && (
-          <div className="info-card-euquero-anchor">
-            <span className="info-card-euquero-anchor-text">
+          <div className="vtex-InfoCardList--euquero-anchor">
+            <span className="vtex-InfoCardList--euquero-anchor-text">
               {anchor}
             </span>
             <ArrowIcon />
@@ -162,12 +161,12 @@ const InfoCardEuQuero = ({
   if (href) {
     if (isExternal) {
       return (
-        <div className="info-card-euquero">
+        <div className="vtex-InfoCardList--euquero">
           <a
             href={href}
             target={linkTarget}
             rel={linkRel}
-            className="info-card-euquero-container"
+            className="vtex-InfoCardList--euquero-container"
             aria-label={ariaLabel}
           >
             {cardContent}
@@ -177,11 +176,11 @@ const InfoCardEuQuero = ({
     }
 
     return (
-      <div className="info-card-euquero">
+      <div className="vtex-InfoCardList--euquero">
         <Link
           to={href}
           target={linkTarget}
-          className="info-card-euquero-container"
+          className="vtex-InfoCardList--euquero-container"
           aria-label={ariaLabel}
         >
           {cardContent}
@@ -191,8 +190,8 @@ const InfoCardEuQuero = ({
   }
 
   return (
-    <div className="info-card-euquero">
-      <div className="info-card-euquero-container">
+    <div className="vtex-InfoCardList--euquero">
+      <div className="vtex-InfoCardList--euquero-container">
         {cardContent}
       </div>
     </div>
@@ -203,12 +202,12 @@ InfoCardEuQuero.displayName = 'InfoCardEuQuero';
 
 const InfoCardList = ({ cards = [], children, layoutType = 'influenciadores' }) => {
   const containerClass = layoutType === 'euquero' 
-    ? 'info-card-list-container info-card-list-container-euquero' 
-    : 'info-card-list-container';
+    ? 'vtex-InfoCardList--container vtex-InfoCardList--container-euquero' 
+    : 'vtex-InfoCardList--container';
   
   const wrapperClass = layoutType === 'euquero'
-    ? 'info-card-list-wrapper info-card-list-wrapper-euquero'
-    : 'info-card-list-wrapper';
+    ? 'vtex-InfoCardList--wrapper vtex-InfoCardList--wrapper-euquero'
+    : 'vtex-InfoCardList--wrapper';
 
   let cardElements = [];
 
@@ -296,7 +295,7 @@ const SingleInfoCard = ({
 }) => {
   if (layoutType === 'euquero') {
     return (
-      <div className="info-card-slide">
+      <div className="vtex-InfoCardList--slide">
         <InfoCardEuQuero
           backgroundImage={backgroundImage}
           icon={icon}
@@ -311,7 +310,7 @@ const SingleInfoCard = ({
   }
 
   return (
-    <div className="info-card-slide">
+    <div className="vtex-InfoCardList--slide">
       <InfoCard
         image={image}
         title={title}

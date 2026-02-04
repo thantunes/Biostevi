@@ -1,6 +1,5 @@
 import React, { useMemo } from 'react';
 import { useProduct } from 'vtex.product-context';
-import './index.global.css';
 
 function CheckBeneficiosProduct() {
     const productContextValue = useProduct();
@@ -9,9 +8,9 @@ function CheckBeneficiosProduct() {
     const properties = useMemo(() => product?.properties || [], [product]);
 
     return (
-        <div className="CustomData">
+        <div className="vtex-CheckBeneficiosProduct--wrapper">
             {properties.length > 0 && (
-                <div className="Block">
+                <div className="vtex-CheckBeneficiosProduct--block">
                     <h2>Benefícios</h2>
                     {properties
                         .filter(({ name, values: [value] }) => (
@@ -25,9 +24,9 @@ function CheckBeneficiosProduct() {
                                 .slice(0, 5);
 
                             return (
-                                <ul key={name} className="CheckBeneficiosProduct-list">
+                                <ul key={name} className="vtex-CheckBeneficiosProduct--list">
                                     {lines.map((text, index) =>
-                                        <li className='CheckBeneficiosProduct' key={`${name}-${index}`}>
+                                        <li className="vtex-CheckBeneficiosProduct--item" key={`${name}-${index}`}>
                                             <div>✅</div>
                                             <p>{text.replace('- ', '').replace(';', '').replace('✅', '')}</p>
                                         </li>

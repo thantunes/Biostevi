@@ -1,0 +1,44 @@
+:global(.stevia-slider-layout-seo-0-x-sliderLayoutContainer) :global(.swiper) :global(.swiper-slide-duplicate) {
+    display: none !important;
+}
+
+:global(.stevia-slider-layout-seo-0-x-sliderLayoutContainer) :global(.swiper-initialized) :global(.swiper-slide-duplicate) {
+    display: block !important;
+}
+
+:global(.stevia-slider-layout-seo-0-x-sliderLayoutContainer) :global(.swiper) {
+    padding-bottom: 25px !important;
+}
+
+:global(.stevia-slider-layout-seo-0-x-sliderLayoutContainer) :global(.swiper-slide) {
+    height: auto !important;
+}
+
+:global(.stevia-slider-layout-seo-0-x-sliderLayoutContainer) :global(.swiper-pagination) {
+    position: absolute;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 0;
+    z-index: 10;
+}
+
+:global(.swiper-pagination-bullet) {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #D1D5DB;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    opacity: 1;
+    margin: 0 !important;
+}
+
+:global(.swiper-pagination-bullet-active) {
+    background-color: #009FC2;
+    width: 10px;
+    height: 10px;
+}

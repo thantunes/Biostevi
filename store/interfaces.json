@@ -77,10 +77,6 @@
     "component": "InfoCardList",
     "composition": "children"
   },
-  "InfoCard": {
-    "component": "InfoCard",
-    "composition": "children"
-  },
   "product-badge": {
     "component": "ProductBadge"
   },
