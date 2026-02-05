@@ -178,6 +178,9 @@
 
 :global(.vtex-InfoCardList--container-euquero .vtex-InfoCardList--wrapper-euquero) {
     display: block;
+    max-width: 1140px;
+    margin: auto;
+    margin-bottom: 20px;
 }
 
 :global(.vtex-InfoCardList--euquero) {
