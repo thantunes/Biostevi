@@ -7,7 +7,7 @@
       "slider-layout-seo#informativo-mobile",
       "rich-text#shelf-title-lancamentos",
       "flex-layout.row#shelfprateleiralancamentos",
-      "rich-text#shelf-title-eu-quero",
+      "flex-layout.row#home-euquero-container",
       "InfoCardList#euquero",
       "flex-layout.row#descontos",
       "slider-layout-seo#descontos-mobile",
@@ -565,7 +565,12 @@
       "blockClass": "carousel"
     }
   },
-  
+
+  "flex-layout.row#home-euquero-container": {
+    "children": [
+      "rich-text#shelf-title-eu-quero"
+    ]
+  },
   "rich-text#shelf-title-eu-quero": {
     "title": "Título de shelf eu quero",
     "props": {
