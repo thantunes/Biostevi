@@ -97,6 +97,12 @@
     margin-bottom: 20px;
 }
 
+.sliderLayoutContainer--influenciadores {
+    max-width: 1140px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
 @media only screen and (max-width: 980px) {
     .sliderLayoutContainer--euquero .swiper-pagination,
     .sliderLayoutContainer--influenciadores .swiper-pagination,
