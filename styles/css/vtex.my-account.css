@@ -1230,3 +1230,7 @@
 :global(.render-route-store-custom-template-em-branco) :global(.vtex-store-footer-2-x-footerLayout) {
     display: none;
 }
+
+:global(.render-route-store-product) :global(.bg-base) {
+  background-color: #fff !important;
+}
