@@ -179,13 +179,13 @@
   color: #fff;
 }
 
-:global(.vtex-reviews-and-ratings-3-x-formSection) :global(.vtex-button) {
+/* :global(.vtex-reviews-and-ratings-3-x-formSection) :global(.vtex-button) {
   color: #000;
   border: 1px solid;
   font-size: 14px;
   padding: 0 20px;
   margin-top: 15px;
-}
+} */
 
 :global(.vtex-my-account-1-x-boxContainerBody):global(.hover-bg-danger):hover {
   background-color: red !important;

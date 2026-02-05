@@ -1,4 +1,4 @@
-.element :global(.vtex-reviews-and-ratings-3-x-reviewsRatingAverage) {
+/* .element :global(.vtex-reviews-and-ratings-3-x-reviewsRatingAverage) {
     display: none
 }
 
@@ -21,6 +21,10 @@
 .element :global(.vtex-reviews-and-ratings-3-x-container) {
     margin-left: 0;
     padding-left: 0
+} */
+
+.clearLink {
+    text-decoration: none;
 }
 
 .containerNormal {

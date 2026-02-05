@@ -24,12 +24,6 @@
     padding-bottom: 0
 }
 
-.brandName {
-    font-weight: 600;
-    font-size: 18px;
-    color: #2e2e2e
-}
-
 .container {
     text-align: start;
     border-radius: 10px;
@@ -60,10 +54,10 @@
     font-weight: 400;
     margin-top: 12px
 }
-
+/* 
 .containerNormal :global(.vtex-reviews-and-ratings-3-x-reviewCommentsContainer) {
     display: none
-}
+} */
 
 :global(.vtex-product-specifications-1-x-specificationValue) {
     display: flex;

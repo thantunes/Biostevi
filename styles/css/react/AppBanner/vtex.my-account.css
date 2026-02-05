@@ -1,0 +1,55 @@
+:global(.vtex-AppBanner--wrapper) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 50px;
+    padding: 5px 8px;
+    gap: .5rem;
+    font-family: Signika;
+  }
+  
+  :global(.vtex-AppBanner--logo-text) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  :global(.vtex-AppBanner--logo-img) {
+    background-color: #009fc2;
+    padding: 5px;
+    border-radius: 8px;
+    width: 44px;
+    height: 29px;
+  }
+  
+  :global(.vtex-AppBanner--text-content) {
+    margin-left: .5rem;
+  }
+  
+  :global(.vtex-AppBanner--text-content span) {
+    font-weight: 600;
+    font-size: 15px;
+  }
+  :global(.vtex-AppBanner--text-content span),
+  :global(.vtex-AppBanner--text-content p) {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  
+  :global(.vtex-AppBanner--text-content p) {
+    font-size: 12px;
+  }
+  
+  :global(.vtex-AppBanner--btn a) {
+    padding: 8px;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 13px;
+    transition: all 0.3s ease;
+  }
+  
+  :global(.vtex-AppBanner--btn a:hover) {
+    opacity: 0.85;
+  }
+  

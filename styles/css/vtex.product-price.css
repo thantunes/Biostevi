@@ -33,7 +33,6 @@
 
 .savings {
     font-weight: 500;
-    color: #79b03a
 }
 
 .sellingPriceValue--summary {
@@ -43,7 +42,6 @@
 }
 
 .savings--summary {
-    background: #8bc34a;
     border-radius: 1000px;
     align-items: center;
     display: flex

@@ -1,0 +1,43 @@
+:global(.konfidency-storeReviewCarousel),
+:global(.konfidency-reviews-summary) {
+    font-family: Signika;
+}
+
+:global(.konfidency-reviews-multi) {
+    min-height: 42px !important;
+}
+
+:global(.konfidency-reviews-showcase-rating) :global(.summary) {
+    display: flex !important;
+    align-items: center !important;
+    margin-inline: 0 !important;
+    font-family: Signika;
+    margin-bottom: 6px !important;
+}
+
+:global(.konfidency-reviews-showcase-rating) :global(.summary) :global(.starsV2) {
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+}
+
+:global(.konfidency-reviews-showcase-rating) :global(.summary) :global(.starsV2) :global(.star) {
+    width: 16px !important;
+    height: 16px !important;
+}
+
+:global(.konfidency-reviews-showcase-rating) :global(.summary) :global(.review-count) {
+    color: #979899;
+}
+
+@media(max-width: 768px) {
+    :global(.konfidency-reviews-showcase-rating) :global(.summary) {
+        margin-top: 12px !important;
+    }
+}
+
+@media(max-width: 480px) {
+    :global(.konfidency-reviews-showcase-rating) :global(.summary) {
+        margin-top: 28px !important;
+    }
+}

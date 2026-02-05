@@ -1,8 +1,8 @@
 :global(.vtex-FaqComponent--wrapper) {
-  margin-bottom: 0;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    margin-bottom: 0;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 :global(.vtex-FaqComponent--item:not(:last-child)) {
@@ -29,7 +29,7 @@
     font-weight: 600;
     color: #009fc2;
     font-family: Signika;
-    margin: 0px!important;
+    margin: 0px !important;
     text-align: left;
 }
 
@@ -42,11 +42,11 @@
 }
 
 :global(.vtex-FaqComponent--item .vtex-FaqComponent--arrow) {
-  display: flex;
-  align-items: center;
-  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  width: fit-content;
-  padding: 0;
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    width: fit-content;
+    padding: 0;
 }
 
 :global(.vtex-FaqComponent--item .vtex-FaqComponent--arrow-open) {
@@ -74,7 +74,7 @@
     font-size: 14px;
     line-height: 1.7;
     border-radius: 0 8px 8px 0;
-    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.03);
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.03);
     transition: background 0.2s, box-shadow 0.2s;
 }
 
@@ -83,72 +83,95 @@
 :global(.vtex-FaqComponent--answer-inner h4),
 :global(.vtex-FaqComponent--answer-inner h5),
 :global(.vtex-FaqComponent--answer-inner h6) {
-  color: #ff6c00;
-  font-weight: 600;
-  margin: 1.2em 0 0.7em 0;
-  line-height: 1.2;
-  font-family: Signika;
+    color: #ff6c00;
+    font-weight: 600;
+    margin: 1.2em 0 0.7em 0;
+    line-height: 1.2;
+    font-family: Signika;
 }
-:global(.vtex-FaqComponent--answer-inner h2) { font-size: 18px; }
-:global(.vtex-FaqComponent--answer-inner h3) { font-size: 16px; }
-:global(.vtex-FaqComponent--answer-inner h4) { font-size: 14px; }
-:global(.vtex-FaqComponent--answer-inner h5) { font-size: 12px; }
+
+:global(.vtex-FaqComponent--answer-inner h2) {
+    font-size: 18px;
+}
+
+:global(.vtex-FaqComponent--answer-inner h3) {
+    font-size: 16px;
+}
+
+:global(.vtex-FaqComponent--answer-inner h4) {
+    font-size: 14px;
+}
+
+:global(.vtex-FaqComponent--answer-inner h5) {
+    font-size: 12px;
+}
+
 :global(.vtex-FaqComponent--answer-inner p) {
-  margin: 1em 0;
-  color: #555;
+    margin: 1em 0;
+    color: #555;
 }
+
 :global(.vtex-FaqComponent--answer-inner a) {
-  color: #ff6c00;
-  text-decoration: underline;
-  transition: opacity 0.2s;
+    color: #ff6c00;
+    text-decoration: underline;
+    transition: opacity 0.2s;
 }
+
 :global(.vtex-FaqComponent--answer-inner a:hover),
 :global(.vtex-FaqComponent--answer-inner a:focus) {
-  opacity: 0.95;
-  outline: none;
+    opacity: 0.95;
+    outline: none;
 }
+
 :global(.vtex-FaqComponent--answer-inner ul),
 :global(.vtex-FaqComponent--answer-inner ol) {
-  margin: 1em 0 1em 2em;
-  padding: 0;
+    margin: 1em 0 1em 2em;
+    padding: 0;
 }
+
 :global(.vtex-FaqComponent--answer-inner li) {
-  margin-bottom: 0.5em;
+    margin-bottom: 0.5em;
 }
+
 :global(.vtex-FaqComponent--answer-inner strong),
 :global(.vtex-FaqComponent--answer-inner b) {
-  font-weight: bold;
-  color: #555;
+    font-weight: bold;
+    color: #555;
 }
+
 :global(.vtex-FaqComponent--answer-inner em),
 :global(.vtex-FaqComponent--answer-inner i) {
-  font-style: italic;
-  color: #555;
+    font-style: italic;
+    color: #555;
 }
+
 :global(.vtex-FaqComponent--answer-inner hr) {
-  border: none;
-  border-top: 1px solid #eee;
-  margin: 2em 0;
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 2em 0;
 }
+
 :global(.vtex-FaqComponent--answer-inner img) {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 1.5em auto;
-  border-radius: 6px;
-  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.06);
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1.5em auto;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.06);
 }
 
 @media (max-width: 600px) {
-:global(.vtex-FaqComponent--wrapper) {
-    padding-inline: 8px;
-} 
-  :global(.vtex-FaqComponent--answer-inner) {
-    padding: 5px 10px;
-    font-size: 0.95rem;
-    border-radius: 0 0 8px 8px;
-  }
-  :global(.vtex-FaqComponent--question) {
-    padding: 16px 8px;
-  }
+    :global(.vtex-FaqComponent--wrapper) {
+        padding-inline: 8px;
+    }
+
+    :global(.vtex-FaqComponent--answer-inner) {
+        padding: 5px 10px;
+        font-size: 0.95rem;
+        border-radius: 0 0 8px 8px;
+    }
+
+    :global(.vtex-FaqComponent--question) {
+        padding: 16px 8px;
+    }
 }

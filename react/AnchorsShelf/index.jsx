@@ -43,21 +43,24 @@ const AnchorsShelf = ({ anchors = [] }) => {
     }
 
     return (
-        <FlexLayout
-            row
-        >
-            {allAnchors.slice(0, 5).map((anchor) => (
-                <a 
-                    key={anchor.id}
-                    href={anchor.href} 
-                    className="vtex-store-link-0-x-link vtex-store-link-0-x-link--PDPAnchor"
-                >
-                    <span className="vtex-store-link-0-x-label vtex-store-link-0-x-label--PDPAnchor">
-                        {anchor.title}
-                    </span>
-                </a>
-            ))}
-        </FlexLayout>
+        <div className="vtex-AnchorsShelf--wrapper">
+            <FlexLayout
+                row
+                blockClass="anchors-shelf-wrapper"
+            >
+                {allAnchors.slice(0, 5).map((anchor) => (
+                    <a 
+                        key={anchor.id}
+                        href={anchor.href} 
+                        className="vtex-store-link-0-x-link vtex-store-link-0-x-link--PDPAnchor"
+                    >
+                        <span className="vtex-store-link-0-x-label vtex-store-link-0-x-label--PDPAnchor">
+                            {anchor.title}
+                        </span>
+                    </a>
+                ))}
+            </FlexLayout>
+        </div>
     );
 };
 

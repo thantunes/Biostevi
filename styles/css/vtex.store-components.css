@@ -497,14 +497,14 @@
 :global(.vtex-menu-2-x-submenu) :global(.vtex-flex-layout-0-x-flexRow) {
   width: 97%;
 }
-:global(.vtex-reviews-and-ratings-3-x-reviewsHeading) {
+/* :global(.vtex-reviews-and-ratings-3-x-reviewsHeading) {
   line-height: 1.5;
   font-weight: 600;
   font-size: 1.25rem;
   color: #009fc2 !important;
   font-family: Signika;
   text-transform: uppercase;
-}
+} */
 :global(.vtex-menu-2-x-submenuWrapper) {
   max-width: 1175px;
   left: 50%;
@@ -524,15 +524,15 @@
   :global(.vtex-store-components-3-x-imageElement):hover {
   opacity: 1;
 }
-:global(.vtex-reviews-and-ratings-3-x-reviewsHeading) {
+/* :global(.vtex-reviews-and-ratings-3-x-reviewsHeading) {
   border-bottom: none;
-}
+} */
 :global(.vtex-menu-2-x-styledLinkContent--link-megamenu) {
   font-weight: 400 !important;
 }
-:global(.vtex-reviews-and-ratings-3-x-container) {
+/* :global(.vtex-reviews-and-ratings-3-x-container) {
   max-width: 1140px;
-}
+} */
 :global(.vtex-shelf-1-x-shelfContentContainer) {
   max-width: 1140px;
   margin: auto;
@@ -767,16 +767,16 @@
       position: initial!important;
   }
 }
-:global(.vtex-flex-layout-0-x-flexRowContent--product-main) :global(.vtex-reviews-and-ratings-3-x-container),
+/* :global(.vtex-flex-layout-0-x-flexRowContent--product-main) :global(.vtex-reviews-and-ratings-3-x-container),
 :global(.vtex-flex-layout-0-x-flexRowContent--product-main) :global(.vtex-reviews-and-ratings-3-x-reviewsRating) {
   color: #545454;
   height: 30px !important;
   overflow: hidden;
-}
-:global(.vtex-flex-layout-0-x-flexRowContent--product-main) :global(.vtex-reviews-and-ratings-3-x-reviewCommentsContainer),
+} */
+/* :global(.vtex-flex-layout-0-x-flexRowContent--product-main) :global(.vtex-reviews-and-ratings-3-x-reviewCommentsContainer),
 :global(.vtex-reviews-and-ratings-2-x-inlineContainer) {
   display: none;
-}
+} */
 :global(.vtex-numeric-stepper__plus-button) {
   background-color: #009fc2;
   color: #fff;
@@ -996,7 +996,7 @@
   margin-top: 30px;
   white-space: break-spaces;
 }
-:global(.vtex-flex-layout-0-x-flexColChild)
+/* :global(.vtex-flex-layout-0-x-flexColChild)
   :global(.vtex-reviews-and-ratings-3-x-container)
   :global(.vtex-reviews-and-ratings-3-x-reviewsHeading) {
   display: none;
@@ -1010,12 +1010,12 @@
   :global(.vtex-reviews-and-ratings-3-x-container)
   :global(.vtex-reviews-and-ratings-3-x-reviewsRatingCount) {
   display: none;
-}
+} */
 :global(.vtex-store-components-3-x-specificationsTabsContainer)
   :global(.vtex-store-components-3-x-specificationsTitle) {
   display: none;
 }
-:global(.vtex-flex-layout-0-x-flexColChild)
+/* :global(.vtex-flex-layout-0-x-flexColChild)
   :global(.vtex-reviews-and-ratings-3-x-container)
   :global(.vtex-reviews-and-ratings-3-x-reviewsOrderBy) {
   display: none;
@@ -1044,12 +1044,12 @@
   :global(.vtex-reviews-and-ratings-2-x-container)
   :global(.vtex-reviews-and-ratings-2-x-reviewsRatingCount) {
   display: none;
-}
+} */
 :global(.vtex-store-components-2-x-specificationsTabsContainer)
   :global(.vtex-store-components-2-x-specificationsTitle) {
   display: none;
 }
-:global(.vtex-flex-layout-0-x-flexColChild)
+/* :global(.vtex-flex-layout-0-x-flexColChild)
   :global(.vtex-reviews-and-ratings-2-x-container)
   :global(.vtex-reviews-and-ratings-2-x-reviewsOrderBy) {
   display: none;
@@ -1073,7 +1073,7 @@
 }
 :global(.vtex-reviews-and-ratings-3-x-writeReviewButton) {
   color: #000 !important;
-}
+} */
 :global(.vtex__icon-caret-down) {
   color: #000;
 }
@@ -1085,7 +1085,7 @@
   white-space: break-spaces;
   line-height: 23px;
 }
-:global(.vtex-search-result-3-x-galleryItem)
+/* :global(.vtex-search-result-3-x-galleryItem)
   :global(.vtex-reviews-and-ratings-3-x-container) {
   margin-left: 0;
   padding-left: 0;
@@ -1093,12 +1093,12 @@
 :global(.vtex-search-result-3-x-galleryItem)
   :global(.vtex-reviews-and-ratings-3-x-reviewsRating) {
   margin-left: 0 !important;
-}
+} */
 :global(.vtex-product-summary-2-x-nameContainer) {
   min-height: 40px;
   padding-top: 0;
 }
-:global(.vtex-flex-layout-0-x-flexColChild)
+/* :global(.vtex-flex-layout-0-x-flexColChild)
   :global(.vtex-reviews-and-ratings-3-x-container)
   :global(.vtex-reviews-and-ratings-3-x-writeReviewContainer) {
   float: right;
@@ -1107,14 +1107,14 @@
 }
 :global(.vtex-reviews-and-ratings-3-x-star) {
   color: #fbbc04;
-}
-:global(.vtex-flex-layout-0-x-flexColChild)
+} */
+/* :global(.vtex-flex-layout-0-x-flexColChild)
   :global(.vtex-reviews-and-ratings-3-x-container)
   :global(.vtex-store-components-3-x-specificationsTab)
   :global(.vtex-store-components-3-x-content) {
   line-height: 25px;
   color: #555;
-}
+} */
 :global(.vtex-store-components-3-x-specificationItemSpecifications--especificacao-do-produto-2) {
   line-height: 40px;
   border: none;
@@ -1197,12 +1197,12 @@
 :global(.vtex-product-summary-2-x-description) {
   text-align: left;
 }
-:global(.vtex-reviews-and-ratings-3-x-reviewsRatingAverage) {
+/* :global(.vtex-reviews-and-ratings-3-x-reviewsRatingAverage) {
   font-size: 12px;
 }
 :global(.vtex-reviews-and-ratings-3-x-reviewsRatingCount) {
   font-size: 12px;
-}
+} */
 :global(.vtex-store-newsletter-1-x-nameInputContainer)
   :global(.vtex-input-prefix__group) {
   border: none;
@@ -1224,11 +1224,11 @@
   font-weight: 400;
   line-height: normal;
 }
-:global(.vtex-reviews-and-ratings-3-x-loginLink) {
+/* :global(.vtex-reviews-and-ratings-3-x-loginLink) {
   color: #ff6c00;
   padding-left: 0;
   text-decoration: none;
-}
+} */
 :global(.vtex-product-price-1-x-savings--summary)
   :global(.vtex-product-price-1-x-currencyInteger) {
   color: #fff !important;
@@ -1483,7 +1483,7 @@
   width: 100%;
   font-size: 20px;
 }
-:global(.vtex-search-result-3-x-gallery)
+/* :global(.vtex-search-result-3-x-gallery)
   :global(.vtex-reviews-and-ratings-3-x-reviewsHeading) {
   display: none;
 }
@@ -1498,7 +1498,7 @@
 :global(.vtex-search-result-3-x-gallery)
   :global(.vtex-reviews-and-ratings-3-x-reviewsRatingCount) {
   display: none;
-}
+} */
 :global(.vtex-rich-text-0-x-container--small-text) {
   font-size: 10px;
   max-width: 1120px;
@@ -1512,10 +1512,10 @@
   :global(.vtex-store-components-3-x-imageElement--bandeira) {
   max-width: 46px;
 }
-:global(.vtex-search-result-3-x-gallery)
+/* :global(.vtex-search-result-3-x-gallery)
   :global(.vtex-reviews-and-ratings-3-x-reviewsOrderBy) {
   display: none;
-}
+} */
 :global(.vtex-rich-text-0-x-wrapper--titulo-news)
   :global(.vtex-rich-text-0-x-heading-level-3) {
   font-size: 20px;

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useCssHandles } from 'vtex.css-handles'
 import { useProduct } from 'vtex.product-context'
 import { useOrderItems } from 'vtex.order-items/OrderItems'

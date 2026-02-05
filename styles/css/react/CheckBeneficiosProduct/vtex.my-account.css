@@ -1,4 +1,4 @@
-.Block h2 {
+:global(.vtex-CheckBeneficiosProduct--block h2) {
     font-family: Signika;
     text-transform: uppercase;
     color: #009fc2;
@@ -8,11 +8,12 @@
     text-align: flex-start;
 }
 
-.Block ul {
+:global(.vtex-CheckBeneficiosProduct--block ul) {
     list-style: none;
     padding: 0;
 }
-.Block li {
+
+:global(.vtex-CheckBeneficiosProduct--block li) {
     color: #727273;
     line-height: 24px;
     font-size: 14px;
@@ -22,19 +23,19 @@
 }
 
 @media screen and (max-width:768px) {
-    .CustomData {
+    :global(.vtex-CheckBeneficiosProduct--wrapper) {
         padding-bottom: 15px;
     }
 }
 
 @media screen and (min-width: 1024px) { 
-    .CustomData {
+    :global(.vtex-CheckBeneficiosProduct--wrapper) {
         padding-left: 0rem;
         padding-right: 0rem;
     }
 }
 
-.CheckBeneficiosProduct-list {
+:global(.vtex-CheckBeneficiosProduct--list) {
     display: flex;
     flex-direction: column;
     list-style: none;
@@ -42,11 +43,11 @@
     margin: 0;
 }
 
-.CheckBeneficiosProduct {
+:global(.vtex-CheckBeneficiosProduct--item) {
     display: flex;
     align-items: flex-start;
 }
 
-.CheckBeneficiosProduct p {
+:global(.vtex-CheckBeneficiosProduct--item p) {
     margin: 0;
 }
