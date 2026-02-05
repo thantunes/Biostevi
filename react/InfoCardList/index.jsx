@@ -250,7 +250,7 @@ const InfoCardList = ({ cards = [], children, layoutType = 'influenciadores' }) 
 
     return (
       <ListContextProvider list={cardElements}>
-        <div className={containerClass}>
+        <div className={"vtex-InfoCardList--container vtex-store-components-3-x-container " + containerClass}>
           <div className={wrapperClass}>{enhancedChildren}</div>
         </div>
       </ListContextProvider>
@@ -259,7 +259,7 @@ const InfoCardList = ({ cards = [], children, layoutType = 'influenciadores' }) 
 
   if (cardElements.length > 0) {
     return (
-      <div className={containerClass}>
+      <div className={"vtex-InfoCardList--container vtex-store-components-3-x-container " + containerClass}>
         <div className={wrapperClass}>{cardElements}</div>
       </div>
     );
@@ -267,14 +267,14 @@ const InfoCardList = ({ cards = [], children, layoutType = 'influenciadores' }) 
 
   if (children) {
     return (
-      <div className={containerClass}>
+      <div className={"vtex-InfoCardList--container vtex-store-components-3-x-container " + containerClass}>
         <div className={wrapperClass}>{children}</div>
       </div>
     );
   }
 
   return (
-    <div className={containerClass}>
+    <div className={"vtex-InfoCardList--container vtex-store-components-3-x-container " + containerClass}>
       <div className={wrapperClass} />
     </div>
   );
