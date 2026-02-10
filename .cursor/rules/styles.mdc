@@ -37,6 +37,17 @@ alwaysApply: false
 
 		> Esse seletor deve ser usado quando você declara o flex-layout.row que serve como contêiner principal de uma seção de página.
 
+4. **Seletores CSS deprecated na VTEX**
+	* A partir de 18/12/2019, a VTEX passou a desencorajar customização por estrutura HTML; a preferência é usar **CSS Handles** (ex.: `.foo`).
+	* **Permitidos:** seletores de classe (`.foo`), pseudo-seletores (`:hover`, `:focus`, `:first-child`, etc.), pseudo-elementos (`::before`, `::after`), `:nth-child(even)`/`:nth-child(odd)`, combinador de espaço (`.foo .bar`), `[data-...]`, e `:global(vtex-{AppName}-{AppVersion}-{ComponentName})` para elementos de outros apps.
+	* **Deprecated (evitar):** seletores por tag (`div`, `span`), combinadores `>`, `+`, `~`, `:nth-child(n)` com número fixo, atributos que não sejam `[data-...]`, e `:global()` em classes que não sejam CSS Handles de outros apps.
+	* Customização baseada em estrutura HTML é frágil: mudanças no HTML podem quebrar o layout. CSS Handles são estáveis ao longo da versão major.
+
+5. **Override de estilos deprecated com `vtex.my-account.css`**
+	* Quando for **necessário** sobrescrever estilos de componentes VTEX que só podem ser alcançados por seletores deprecated (ex.: classes internas como `.vtex-store-components-3-x-*`, `.vtex-flex-layout-0-x-*`), use o arquivo **`vtex.my-account.css`**.
+	* Esse arquivo fica em `styles/css/vtex.my-account.css` e é o local permitido no projeto para regras que “passam por cima” desses seletores, usando `:global()` quando não houver CSS Handle disponível.
+	* Preferir sempre CSS Handles nos arquivos SCSS por escopo (components/pages/react-components). Usar `vtex.my-account.css` apenas quando não houver alternativa via Handles.
+
 ## Estrutura de Pastas
 
 styles/

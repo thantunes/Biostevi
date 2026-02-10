@@ -1,3 +1,10 @@
+# Documentação do repositório
+
+- **AGENTS.MD** (na raiz do projeto): documentação central para o agente — arquitetura do projeto, decisões de design e como o sistema funciona. Consultada quando necessário.
+- **docs/specs/** — especificações por feature (Spec → Plan → Tasks); ver `docs/specs/README.md`.
+
+---
+
 # Minimum Boilerplate Theme
 
 The minimum Boilerplate Theme is basic store front model based on the VTEX IO Store Framework.

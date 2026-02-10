@@ -1,6 +1,6 @@
 ---
 description:
-globs:
+globs: [react/**]
 alwaysApply: false
 ---
 ## Regras gerais
@@ -12,7 +12,7 @@ alwaysApply: false
 3. **Schema em Português:** Title e description nos arquivos schema.js devem ser escritos em português.
 
 4. **Classes com padrão VTEX:**
-	* Formato: vtex-{component-name}--{identifier}.
+	* Formato: vtex-{ComponentName}--{identifier}.
 	* Devem ser geradas com a função class_generator dentro da pasta utils.
 
 ## Estrutura de Pastas

@@ -1,0 +1,32 @@
+---
+alwaysApply: true
+---
+## Decisões de design
+
+- **Idioma em UI e docs:** português (títulos, rótulos, descrições de props).
+- **Nomeação:** blocos em kebab-case; componentes React com nomes descritivos.
+- **Blocos:** apenas `title`, `props`, `blocks`, `children`, `parent`, `render` nos JSONC; sem uso de `0` como campo.
+- **Separação:** blocos reutilizáveis vs blocos de página; blocos React declarados em pasta dedicada (não dentro de `components/` de página).
+- **Specs:** fluxo Spec → Plan → Tasks para features relevantes; documentação em `docs/specs/` (consultada quando necessário).
+
+---
+
+## Regras que todo agente deve seguir
+
+- Aplicar as **RULES** (`.cursor/rules/`) em toda implementação de bloco ou componente (estilo, React, VTEX, assets).
+- Manter **idioma em UI e docs** em português (títulos, rótulos, descrições).
+- **Não** colocar em AGENTS.MD: passos de deploy, workflows de debug ou procedimentos específicos — isso é SKILL. **Não** usar MCP para regras de código ou workflows internos.
+
+---
+
+## Integração com a arquitetura de contexto (Cursor/Claude)
+
+| Recurso | Propósito | Disponibilidade |
+|--------|-----------|------------------|
+| **AGENTS.MD** (este arquivo) | Regras, convenções, arquitetura, como trabalhar | **Sempre presente** |
+| **RULES** (`.cursor/rules/`) | Convenções de código, estilo, restrições por tipo de arquivo | Sempre ou por glob |
+| **SKILLS** (`.cursor/skills/`) | Workflows e procedimentos (commit/push, docs, a11y, prettier, QA, refactor, SEO). O *que* fazer em situações específicas | **Sob demanda** (quando a tarefa pedir) |
+| **MCP** | Ferramentas externas (APIs, DB, Slack, etc.) — o que o agente *pode acessar* | **Quando conecta** |
+| **Specs** (`docs/specs/`) | Especificações por feature (plano, tarefas) | Consultar quando a mudança tiver spec |
+
+Ao receber uma tarefa: usar AGENTS.MD para contexto; aplicar RULES na implementação; invocar SKILLS quando a tarefa for de commit, documentar componente, a11y, formatar, etc.; consultar `docs/specs/` quando houver spec da feature.
