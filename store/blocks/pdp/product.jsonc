@@ -191,6 +191,7 @@
       "rowGap": 0
     },
     "children": [
+      "flex-layout.row#review-wishlist",
       "product-installments",
       "product-separator",
       "product-identifier.product",
