@@ -270,3 +270,13 @@
     padding-inline: 15px;
   }
 }
+
+.paragraph--pdp-informativo-container {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #3f3f40;
+  font-family: Fabriga, -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
