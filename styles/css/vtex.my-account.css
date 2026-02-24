@@ -117,12 +117,15 @@
 }
 
 :global(.vtex-search-result-3-x-filterAccordionItemBox .vtex-checkbox__inner-container),
-:global(.vtex-search-result-3-x-filterItem .vtex-checkbox__inner-container) {
+:global(.vtex-search-result-3-x-filterItem .vtex-checkbox__inner-container),
+:global(.vtex-search-result-3-x-sidebar .vtex-search-result-3-x-filterAccordionItemBox .vtex-checkbox__inner-container),
+:global(.vtex-search-result-3-x-sidebar .vtex-search-result-3-x-filterItem .vtex-checkbox__inner-container) {
   opacity: 0!important;
   display: none!important;
 }
 
-:global(.vtex-checkbox__container .vtex-checkbox__input) {
+:global(.vtex-search-result-3-x-sidebar .vtex-checkbox__container .vtex-checkbox__input),
+:global(.vtex-search-result-3-x-filters--layout .vtex-checkbox__container .vtex-checkbox__input) {
 appearance: none!important;           /* Remove estilo padrão */
 -webkit-appearance: none!important;   /* Safari */
 width: 15px!important;
@@ -138,7 +141,8 @@ opacity: 1
 }
 
 /* Quando estiver selecionado */
-:global(.vtex-checkbox__container .vtex-checkbox__input:checked) {
+:global(.vtex-search-result-3-x-sidebar .vtex-checkbox__container .vtex-checkbox__input:checked),
+:global(.vtex-search-result-3-x-filters--layout .vtex-checkbox__container .vtex-checkbox__input:checked) {
 border: 2px solid #000!important;     /* Borda 1px mais grossa */
 }
 
