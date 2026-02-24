@@ -324,7 +324,7 @@
   },
   "rich-text#pdp-informativo-container": {
     "props": {
-      "text": "Conteúdo informativo destinado exclusivamente a profissionais habilitados a prescrição.",
+      "text": "Conteúdo informativo destinado exclusivamente a profissionais habilitados à prescrição.",
       "blockClass": "pdp-informativo-container"
     }
   },
