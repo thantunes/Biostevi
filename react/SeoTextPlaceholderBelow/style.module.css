@@ -5,6 +5,7 @@
   -webkit-line-clamp: 8; 
   -webkit-box-orient: vertical;
   transition: all 0.3s ease;
+  font-family: Signika;
 }
 
 .wrapperContentSeo.expanded {

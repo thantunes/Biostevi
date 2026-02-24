@@ -443,9 +443,6 @@
 :global(.vtex-store-components-3-x-searchIcon) {
    color: #009fc2 !important; 
 }
-:global(.vtex-slider__base-internal) {
-  background-color: #00c231;
-}
 
 :global(.vtex-store-components-3-x-searchBarContainer)
   :global(.vtex-input-prefix__group) {
@@ -915,13 +912,6 @@
   background-color: #fff !important;
   z-index: 999999;
 }
-:global(.vtex-search-result-3-x-filter)
-  :global(.vtex-search-result-3-x-filterTitle) {
-  color: #000;
-  font-size: 18px;
-  padding-bottom: 5px;
-  border-bottom: 2px solid #ff6c00;
-}
 :global(.vtex-search-result-3-x-categoryItemName) {
   color: #777;
   font-size: 12px;
@@ -983,8 +973,32 @@
   border: 1px solid #ccc;
   padding-left: 15px !important;
 }
-:global(.vtex-slider__selector) {
-  background-color: #00c231;
+:global(.vtex-slider__selector),
+:global(.vtex-slider__base-internal) {
+  background-color: #ff6c00;
+}
+:global(.vtex-slider-container) {
+  display: flex;
+  flex-direction: column;
+}
+:global(.vtex-slider-container) :global(.vtex-slider) {
+  order: 2;
+}
+:global(.vtex-slider__dash) {
+  display: none;
+}
+:global(.vtex-slider__left-value),
+:global(.vtex-slider__right-value) {
+  font-family: Signika;
+}
+:global(.vtex-slider__left-value) {
+  margin-left: -10px;
+}
+:global(.vtex-slider__right-value) {
+  margin-right: -10px;
+}
+:global(.vtex-slider__values-container) {
+  justify-content: space-between;
 }
 :global(.vtex-store-components-3-x-productDescriptionText) {
   margin-top: 30px;

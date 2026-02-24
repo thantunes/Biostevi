@@ -451,9 +451,17 @@
     }
   },
 
+  "breadcrumb.search": {
+    "props": {
+      "showOnMobile": true,
+      "homeIconSize": 18
+    }
+  },
+
   "breadcrumb": {
     "props": {
-      "showOnMobile": true
+      "showOnMobile": true,
+      "homeIconSize": 18
     }
   },
 

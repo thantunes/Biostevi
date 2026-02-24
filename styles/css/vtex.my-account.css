@@ -106,6 +106,46 @@
   padding-bottom: 2rem;
 }
 
+:global(.render-route-store-search-department) :global(.vtex-breadcrumb-1-x-container),
+:global(.render-route-store-search-category) :global(.vtex-breadcrumb-1-x-container),
+:global(.render-route-store-search-subcategory) :global(.vtex-breadcrumb-1-x-container) {
+  font-family: Signika;
+}
+
+:global(.vtex-search-result-3-x-searchResultContainer .vtex-search-result-3-x-container--layout .vtex-flex-layout-0-x-stretchChildrenWidth:has(.vtex-flex-layout-0-x-flexCol--switcherMobileCol)) {
+  display: none !important;
+}
+
+:global(.vtex-search-result-3-x-filterAccordionItemBox .vtex-checkbox__inner-container),
+:global(.vtex-search-result-3-x-filterItem .vtex-checkbox__inner-container) {
+  opacity: 0!important;
+  display: none!important;
+}
+
+:global(.vtex-checkbox__container .vtex-checkbox__input) {
+appearance: none!important;           /* Remove estilo padrão */
+-webkit-appearance: none!important;   /* Safari */
+width: 15px!important;
+height: 15px!important;
+border: 1px solid #000;     /* Borda preta */
+border-radius: 100%;         /* Deixa redondo */
+background-color: #fff;     /* Fundo branco */
+cursor: pointer;
+transition: all 0.2s ease;
+display: inline-block;
+position: relative;
+opacity: 1
+}
+
+/* Quando estiver selecionado */
+:global(.vtex-checkbox__container .vtex-checkbox__input:checked) {
+border: 2px solid #000!important;     /* Borda 1px mais grossa */
+}
+
+:global(.vtex-search-result-3-x-totalProducts--layout) {
+  font-family: Signika;
+}
+
 @media(min-width: 1024px) {
   :global(.vtex-render__container-id-search-collection) :global(.vtex-search-result-3-x-totalProducts--layout) {
     justify-content: flex-start;
@@ -1184,13 +1224,10 @@
   box-shadow: none;
 }
 
-:global(.vtex-search-result-3-x-filterTemplateOverflow) :global(.vtex-checkbox__label) {
-  color: #595959;
-}
-
 :global(.vtex-search-result-3-x-orderByText),
 :global(.vtex-search-result-3-x-filterPopupTitle) {
   color: #595959;
+  font-family: Signika;
 }
 
 :global(#konfidency-reviews-container),
