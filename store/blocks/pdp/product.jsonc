@@ -156,7 +156,8 @@
       "flex-layout.row#BuyQuantity",
       "availability-subscriber",
       "shipping-simulator",
-      "share#default"
+      "share#default",
+      "rich-text#pdp-informativo-container"
     ]
   },
   "flex-layout.col#right-col-tm": {
@@ -182,7 +183,8 @@
       "product-gifts",
       "flex-layout.row#BuyQuantity",
       "availability-subscriber",
-      "share#default"
+      "share#default",
+      "rich-text#pdp-informativo-container"
     ]
   },
   "flex-layout.col#right-Offstock-d": {
@@ -200,7 +202,8 @@
       "product-gifts",
       "flex-layout.row#BuyQuantity-outStock",
       "availability-notify",
-      "share#default"
+      "share#default",
+      "rich-text#pdp-informativo-container"
     ]
   },
   "flex-layout.col#right-Offstock-tm": {
@@ -219,7 +222,8 @@
       "product-gifts",
       "flex-layout.row#BuyQuantity-outStock",
       "availability-notify",
-      "share#default"
+      "share#default",
+      "rich-text#pdp-informativo-container"
     ]
   },
   "flex-layout.row#product-name": {
@@ -316,6 +320,12 @@
         "Twitter": false,
         "Pinterest": false
       }
+    }
+  },
+  "rich-text#pdp-informativo-container": {
+    "props": {
+      "text": "Conteúdo informativo destinado exclusivamente a profissionais habilitados à prescrição.",
+      "blockClass": "pdp-informativo-container"
     }
   },
   "condition-layout.product#ProductAvailable-right-tm": {
