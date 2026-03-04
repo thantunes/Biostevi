@@ -1227,7 +1227,11 @@
 :global(body:has([data-template-type="blank"])) :global(.vtex-flex-layout-0-x-flexRow--hintup-skeleton),
 :global(body:has([data-template-type="blank"])) :global(.vtex-flex-layout-0-x-flexRow--menu-link),
 :global(body:has([data-template-type="blank"])) :global(.vtex-flex-layout-0-x-flexRowContent--main-header),
-:global(body:has([data-template-type="blank"])) :global(.vtex-store-footer-2-x-footerLayout) {
+:global(body:has([data-template-type="blank"])) :global(.vtex-store-footer-2-x-footerLayout),
+:global(body:has([data-template-type="blank"])) :global(.vtex-flex-layout-0-x-flexRow--container-app-content),
+:global(body:has([data-template-type="blank"])) :global(.vtex-sticky-layout-0-x-wrapper--sticky-header),
+:global(body:has([data-template-type="blank"])) :global(.vtex-store-components-3-x-searchBarContainer),
+:global(body:has([data-template-type="blank"])) :global(.vtex-flex-layout-0-x-flexRow--main-header-envie-sua-receita-mobile) {
     display: none;
 }
 
