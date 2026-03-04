@@ -1224,10 +1224,10 @@
 }
 
 /* REMOÇÃO HEADER E FOOTER DO TEMPLATE EM BRANCO */
-:global(.render-route-store-custom-template-em-branco) :global(.vtex-flex-layout-0-x-flexRow--hintup-skeleton),
-:global(.render-route-store-custom-template-em-branco) :global(.vtex-flex-layout-0-x-flexRow--menu-link),
-:global(.render-route-store-custom-template-em-branco) :global(.vtex-flex-layout-0-x-flexRowContent--main-header),
-:global(.render-route-store-custom-template-em-branco) :global(.vtex-store-footer-2-x-footerLayout) {
+:global(.render-route-vtex-store-2-x-store-custom-link-na-bio) :global(.vtex-flex-layout-0-x-flexRow--hintup-skeleton),
+:global(.render-route-vtex-store-2-x-store-custom-link-na-bio) :global(.vtex-flex-layout-0-x-flexRow--menu-link),
+:global(.render-route-vtex-store-2-x-store-custom-link-na-bio) :global(.vtex-flex-layout-0-x-flexRowContent--main-header),
+:global(.render-route-vtex-store-2-x-store-custom-link-na-bio) :global(.vtex-store-footer-2-x-footerLayout) {
     display: none;
 }
 
