@@ -1231,7 +1231,8 @@
 :global(body:has([data-template-type="blank"])) :global(.vtex-flex-layout-0-x-flexRow--container-app-content),
 :global(body:has([data-template-type="blank"])) :global(.vtex-sticky-layout-0-x-wrapper--sticky-header),
 :global(body:has([data-template-type="blank"])) :global(.vtex-store-components-3-x-searchBarContainer),
-:global(body:has([data-template-type="blank"])) :global(.vtex-flex-layout-0-x-flexRow--main-header-envie-sua-receita-mobile) {
+:global(body:has([data-template-type="blank"])) :global(.vtex-flex-layout-0-x-flexRow--main-header-envie-sua-receita-mobile),
+:global(body:has([data-template-type="blank"])) :global(.hintup-poptop-progress-container) {
     display: none;
 }
 
