@@ -143,7 +143,7 @@ opacity: 1
 /* Quando estiver selecionado */
 :global(.vtex-search-result-3-x-sidebar .vtex-checkbox__container .vtex-checkbox__input:checked),
 :global(.vtex-search-result-3-x-filters--layout .vtex-checkbox__container .vtex-checkbox__input:checked) {
-border: 2px solid #000!important;     /* Borda 1px mais grossa */
+border: 3px solid #000!important;     /* Borda 1px mais grossa */
 }
 
 :global(.vtex-search-result-3-x-totalProducts--layout) {

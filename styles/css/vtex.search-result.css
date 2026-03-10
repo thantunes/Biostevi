@@ -55,9 +55,9 @@
     border: none;
 }
 
-.filter__container--category-3,
+.filter__container--category-2,
 .filter__container--priceRange,
 .accordionFilterContainer--faixas-de-preco,
-.accordionFilterContainer--subcategoria {
+.accordionFilterContainer--categoria {
     display: block;
 }
