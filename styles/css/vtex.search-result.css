@@ -1,0 +1,63 @@
+.sidebar {
+    z-index: 2200000000;
+}
+
+@media(min-width: 768px) {
+    .filters--layout {
+        margin-top: 16px;
+        padding: 16px;
+        background-color: #efefef;
+        border-radius: 12px;
+    }
+}
+
+.filter {
+    padding-block: 0.5rem;
+}
+
+.filter .filterTitle,
+.filterBreadcrumbsText,
+.accordionFilterItemTitle,
+.filterBreadcrumbsItemName {
+    color: #8c8b8b;
+    font-size: 18px;
+    padding-bottom: 5px;
+    font-family: Signika;
+}
+
+.filterBreadcrumbsItem .caretIcon {
+    padding: 0 0 5px 8px;
+}
+
+.filterAccordionItemBox :global(.vtex-checkbox__label) ,
+.filterTemplateOverflow :global(.vtex-checkbox__label) {
+    font-family: Signika;
+    color: #8c8b8b;
+    font-size: 14px;
+}
+
+.filterButtonsBox :global(.vtex-button) {
+    background-color: #efefef;
+}
+
+.filterButtonsBox :global(.vtex-button__label),
+.orderByOptionItem {
+    font-family: Signika;
+}
+
+.filter__container--priceRange .filterTemplateOverflow :global(.vtex-slider-container) {
+    padding: 0 10px;
+}
+
+.filter__container,
+.accordionFilterContainer {
+    display: none;
+    border: none;
+}
+
+.filter__container--category-2,
+.filter__container--priceRange,
+.accordionFilterContainer--faixas-de-preco,
+.accordionFilterContainer--categoria {
+    display: block;
+}

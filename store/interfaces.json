@@ -26,7 +26,8 @@
     "component": "ProductCustomDescription"
   },
   "CategoryHeading": {
-    "component": "CategoryHeading"
+    "component": "CategoryHeading",
+    "composition": "children"
   },
   "CryptoScript": {
     "component": "CryptoScript"
